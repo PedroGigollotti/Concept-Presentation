@@ -3,69 +3,892 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Method · Concept</title>
+<title>The Method, Live · Concept · Pedro Gigollotti</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --black: #000; --white: #fff; --red: #E32F2E; --red-hi: #FF4342;
-    --sans: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  :root{
+    --black:#000; --panel:#141414; --panel-2:#1C1C1C; --white:#fff;
+    --red:#E32F2E; --red-hi:#FF4342;
+    --gray:#8A8F98; --gray-dark:#4A4E57;
+    --line-dark:rgba(255,255,255,.14); --line-light:rgba(0,0,0,.09);
+    --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+    --serif:'Instrument Serif',Georgia,serif;
   }
-  body {
-    margin: 0; background: var(--black); color: var(--white);
-    font-family: var(--sans); -webkit-font-smoothing: antialiased;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    min-height: 100vh; padding: 20px; text-align: center;
-  }
-  h1 { font-weight: 400; font-size: 32px; letter-spacing: -0.02em; margin-bottom: 20px; }
-  p { font-size: 16px; color: #8A8F98; max-width: 500px; line-height: 1.6; margin-bottom: 40px; }
-  
-  .btn {
-    display: inline-flex; align-items: center; gap: 9px; text-decoration: none; font-family: var(--sans);
-    font-weight: 600; font-size: 15px; padding: 15px 28px; border-radius: 999px;
-    border: 1.5px solid currentColor; cursor: pointer; background: none; transition: all .25s ease;
-  }
-  .btn-outline { color: #fff; }
-  .btn-outline:hover { background: #fff; color: #000; transform: translateY(-3px); }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#000;color:#fff;font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  em,i{font-family:var(--serif);font-style:italic;color:var(--red);}
+  button{font-family:var(--sans);}
+
+  /* NAV */
+  #nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
+    justify-content:space-between;gap:12px;padding:14px 32px;
+    background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line-dark);}
+  #nav .brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+  #nav .brand svg{height:28px;width:auto;aspect-ratio:996/852;transition:transform .35s ease;}
+  #nav .brand:hover svg{transform:rotate(-10deg) scale(1.1);}
+  #nav .back{color:#8A8F98;font-size:12px;letter-spacing:1px;font-weight:600;}
+  #nav .brand:hover .back{color:#fff;}
+  .nav-right{display:flex;align-items:center;gap:12px;}
+  .lang-switch{display:flex;gap:3px;background:rgba(255,255,255,.09);border-radius:999px;padding:4px;}
+  .lang-switch button{background:none;border:none;color:#9AA0A8;font-weight:600;font-size:11px;
+    padding:7px 11px;border-radius:999px;cursor:pointer;transition:all .22s ease;}
+  .lang-switch button.active{background:var(--red);color:#fff;}
+  #nav .cta{background:var(--red);color:#fff;border:none;border-radius:999px;padding:10px 20px;
+    font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;text-decoration:none;
+    transition:transform .18s ease,background .22s ease,box-shadow .22s ease;}
+  #nav .cta:hover{background:var(--red-hi);transform:translateY(-2px);box-shadow:0 8px 22px rgba(227,47,46,.4);}
+  @media (max-width:760px){#nav{padding:10px 16px;} #nav .back{display:none;} #nav .cta{padding:9px 14px;font-size:12px;}}
+
+  /* LAYOUT */
+  .wrap{max-width:980px;margin:0 auto;padding:0 32px;}
+  .section-pad{padding:96px 0;}
+  @media (max-width:760px){.section-pad{padding:62px 0;} .wrap{padding:0 20px;}}
+  .bg-white{background:#fff;color:#000;}
+  .bg-red{background:var(--red);color:#fff;}
+
+  .kicker{font-size:11.5px;font-weight:600;letter-spacing:3px;color:var(--red);margin:0 0 18px;}
+  h1.hero{font-weight:400;margin:0;font-size:clamp(34px,6vw,68px);line-height:1.05;letter-spacing:-.03em;}
+  h2.headline{font-weight:400;margin:0 0 20px;font-size:clamp(26px,4vw,46px);line-height:1.1;letter-spacing:-.02em;}
+  .lede{font-size:clamp(15.5px,1.5vw,18px);line-height:1.62;color:#C3C7CE;max-width:700px;}
+  .lede.dark{color:var(--gray-dark);}
+  .note{font-size:13.5px;line-height:1.6;color:#8A8F98;}
+
+  .callout-band{padding:48px 0;}
+  .callout-band p{margin:0;font-family:var(--serif);font-style:italic;
+    font-size:clamp(20px,2.6vw,30px);line-height:1.32;max-width:860px;}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;
+    font-size:15px;padding:14px 26px;border-radius:999px;border:1.5px solid currentColor;
+    cursor:pointer;background:none;color:inherit;
+    transition:transform .18s ease,background .25s ease,color .25s ease,box-shadow .25s ease;}
+  .btn-solid{background:var(--red);border-color:var(--red);color:#fff;}
+  .btn-solid:hover{background:var(--red-hi);transform:translateY(-3px);box-shadow:0 12px 30px rgba(227,47,46,.38);}
+  .btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none;}
+
+  /* REVEALS */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  .reveal.d1{transition-delay:.09s;} .reveal.d2{transition-delay:.18s;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none;}}
+
+  /* HERO */
+  #hero{padding:150px 0 60px;}
+  .hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;}
+  .chip{border:1px solid var(--line-dark);border-radius:999px;padding:8px 15px;font-size:12px;color:#B8BCC4;}
+
+  /* LAB BLOCK: the core signature device */
+  .lab{background:var(--panel);border:1px solid var(--line-dark);border-radius:24px;
+    padding:30px;margin-top:26px;}
+  .lab-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;flex-wrap:wrap;}
+  .lab-step{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--red);line-height:1;}
+  .lab-head h3{margin:0;font-size:20px;font-weight:600;}
+  .lab-p{font-size:14.5px;line-height:1.62;color:#B8BCC4;margin:10px 0 0;}
+  .lab-do{font-size:12px;letter-spacing:1.6px;font-weight:600;color:var(--red);margin:22px 0 14px;}
+  @media (max-width:760px){.lab{padding:22px 18px;border-radius:18px;}}
+
+  /* ACCESS: email */
+  .mail{background:#0B0B0B;border:1px solid var(--line-dark);border-radius:16px;overflow:hidden;}
+  .mail-bar{display:flex;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line-dark);
+    font-size:12px;color:#7E838C;}
+  .mail-body{padding:20px 18px;font-size:15.5px;line-height:1.85;color:#E4E6EA;}
+  .hot{border-bottom:2px dashed var(--red);cursor:pointer;padding-bottom:1px;
+    transition:background .2s ease,color .2s ease;}
+  .hot:hover,.hot:focus-visible{background:rgba(227,47,46,.18);outline:none;}
+  .hot.open{background:var(--red);color:#fff;border-bottom-color:var(--red);}
+  #accOut{margin-top:16px;min-height:96px;}
+  .out{background:var(--panel-2);border-left:2px solid var(--red);border-radius:0 14px 14px 0;padding:16px 18px;}
+  .out .surface{font-size:12px;letter-spacing:1.4px;color:#7E838C;font-weight:600;margin-bottom:8px;}
+  .out h4{margin:0 0 8px;font-size:16px;font-weight:600;color:#fff;}
+  .out p{margin:0;font-size:14.5px;line-height:1.62;color:#B8BCC4;}
+  .out.empty{border-left-color:#3A3A3A;color:#6E727A;font-size:14px;display:flex;align-items:center;}
+
+  /* ANALYSIS: register ladder */
+  .rl-track{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:18px;}
+  .rl-track button{background:#0B0B0B;border:1px solid var(--line-dark);color:#8A8F98;
+    border-radius:12px;padding:12px 4px;font-size:11.5px;font-weight:600;cursor:pointer;
+    line-height:1.3;transition:all .25s cubic-bezier(.22,1,.36,1);}
+  .rl-track button.on{background:var(--red);border-color:var(--red);color:#fff;transform:translateY(-3px);}
+  .rl-sent{background:#0B0B0B;border:1px solid var(--line-dark);border-radius:16px;padding:22px 20px;
+    font-size:16.5px;line-height:1.6;color:#fff;min-height:96px;}
+  .rl-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+  @media (max-width:640px){.rl-grid{grid-template-columns:1fr;}}
+  .meter-lbl{display:flex;justify-content:space-between;font-size:12px;color:#8A8F98;margin-bottom:7px;}
+  .meter{height:7px;border-radius:99px;background:#262626;overflow:hidden;}
+  .meter i{display:block;height:100%;border-radius:99px;transition:width .5s cubic-bezier(.22,1,.36,1);}
+  .rl-verdict{margin-top:16px;background:var(--panel-2);border-radius:14px;padding:16px 18px;}
+  .rl-verdict .h{font-size:12px;letter-spacing:1.4px;font-weight:600;color:var(--red);margin-bottom:7px;}
+  .rl-verdict p{margin:0;font-size:14.5px;line-height:1.6;color:#C3C7CE;}
+  .rl-heard{margin-top:12px;font-size:14px;color:#8A8F98;line-height:1.55;}
+  .rl-heard b{color:#fff;font-weight:600;}
+
+  /* ACTIVATION */
+  .act-msg{background:#0B0B0B;border:1px solid var(--line-dark);border-radius:16px;padding:20px 18px;
+    font-size:15.5px;line-height:1.75;color:#E4E6EA;}
+  .act-msg .who{font-size:12px;letter-spacing:1.4px;color:#7E838C;font-weight:600;margin-bottom:10px;}
+  .timer{display:flex;align-items:center;gap:12px;margin:20px 0 14px;}
+  .timer .n{font-family:var(--serif);font-size:34px;line-height:1;color:var(--red);min-width:52px;}
+  .timer .bar{flex:1;height:5px;background:#262626;border-radius:99px;overflow:hidden;}
+  .timer .bar i{display:block;height:100%;width:100%;background:var(--red);border-radius:99px;}
+  .timer .lbl{font-size:12px;color:#7E838C;letter-spacing:1.2px;}
+  .opt{display:block;width:100%;text-align:left;background:#0B0B0B;border:1px solid var(--line-dark);
+    color:#E4E6EA;border-radius:14px;padding:16px 18px;font-size:15px;line-height:1.5;
+    cursor:pointer;margin-bottom:10px;transition:all .22s ease;}
+  .opt:hover:not(:disabled){border-color:var(--red);transform:translateX(4px);}
+  .opt:disabled{cursor:default;opacity:.4;}
+  .opt.picked{opacity:1;border-color:var(--red);background:#180d0d;}
+  .verdict-card{border-radius:16px;padding:20px 18px;margin-top:6px;}
+  .verdict-card.bad{background:#1E0E0E;border:1px solid rgba(227,47,46,.5);}
+  .verdict-card.good{background:var(--red);border:1px solid var(--red);}
+  .verdict-card .t{font-size:12px;letter-spacing:1.6px;font-weight:600;margin-bottom:9px;}
+  .verdict-card.bad .t{color:var(--red);}
+  .verdict-card.good .t{color:rgba(255,255,255,.75);}
+  .verdict-card p{margin:0;font-size:15px;line-height:1.62;}
+  .verdict-card.bad p{color:#C3C7CE;}
+  .verdict-card.good p{color:#fff;}
+
+  /* PSYCHO DEMOS */
+  .stim{background:#0B0B0B;border:1px solid var(--line-dark);border-radius:16px;padding:28px 20px;
+    text-align:center;}
+  .stim .q{font-size:22px;font-weight:600;margin-bottom:20px;color:#fff;}
+  .stim .pair{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+  .stim .pair button{background:var(--panel-2);border:1px solid var(--line-dark);color:#fff;
+    border-radius:12px;padding:14px 26px;font-size:16px;font-weight:600;cursor:pointer;
+    transition:all .18s ease;}
+  .stim .pair button:hover{border-color:var(--red);background:#241010;transform:translateY(-2px);}
+  .stim .prog{font-size:12px;color:#6E727A;letter-spacing:1.4px;margin-top:20px;}
+  .digits{font-family:var(--serif);font-size:clamp(38px,8vw,64px);letter-spacing:.16em;color:#fff;}
+  .recall-in{background:var(--panel-2);border:1px solid var(--line-dark);color:#fff;border-radius:12px;
+    padding:14px 16px;font-size:20px;letter-spacing:.2em;text-align:center;width:190px;
+    font-family:var(--sans);}
+  .recall-in:focus{outline:none;border-color:var(--red);}
+  .score{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px;}
+  .score .s .n{font-family:var(--serif);font-size:38px;color:var(--red);line-height:1;}
+  .score .s .l{font-size:12px;color:#8A8F98;margin-top:6px;}
+  .take{margin-top:18px;background:var(--panel-2);border-radius:14px;padding:16px 18px;
+    border-left:2px solid var(--red);}
+  .take .h{font-size:12px;letter-spacing:1.4px;font-weight:600;color:var(--red);margin-bottom:8px;}
+  .take p{margin:0;font-size:14.5px;line-height:1.62;color:#C3C7CE;}
+  .hidden{display:none;}
+
+  /* INTERFERENCE */
+  .tabs{display:flex;gap:6px;margin-bottom:16px;}
+  .tabs button{background:#0B0B0B;border:1px solid var(--line-dark);color:#8A8F98;border-radius:999px;
+    padding:8px 16px;font-size:12px;font-weight:600;cursor:pointer;transition:all .22s ease;}
+  .tabs button.on{background:#fff;color:#000;border-color:#fff;}
+  .trap{background:#0B0B0B;border:1px solid var(--line-dark);border-radius:14px;padding:16px 18px;
+    margin-bottom:9px;cursor:pointer;transition:border-color .22s ease;}
+  .trap:hover{border-color:var(--red);}
+  .trap .l1{font-size:15px;color:#fff;font-weight:600;}
+  .trap .arrow{color:var(--red);margin:0 8px;font-family:var(--serif);font-style:italic;}
+  .trap .wrong{color:var(--red);text-decoration:line-through;text-decoration-thickness:1px;}
+  .trap .exp{max-height:0;overflow:hidden;transition:max-height .4s ease,margin .4s ease;}
+  .trap.open .exp{max-height:200px;margin-top:12px;}
+  .trap .exp p{margin:0;font-size:14px;line-height:1.6;color:#8A8F98;}
+  .trap .exp b{color:#fff;}
+
+  /* EMOTION */
+  .em-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  @media (max-width:760px){.em-grid{grid-template-columns:1fr;}}
+  .em{background:#0B0B0B;border:1px solid var(--line-dark);border-radius:16px;padding:20px 18px;
+    cursor:pointer;transition:border-color .25s ease,transform .25s ease;}
+  .em:hover{border-color:var(--red);transform:translateY(-4px);}
+  .em .msg{font-size:15px;line-height:1.55;color:#fff;min-height:66px;}
+  .em .rate{font-size:12px;letter-spacing:1.2px;color:var(--red);font-weight:600;margin-top:14px;}
+  .em .rev{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+  .em.open .rev{max-height:280px;}
+  .em .rev p{margin:14px 0 0;font-size:13.5px;line-height:1.6;color:#8A8F98;}
+
+  /* PLAIN TABLE */
+  .plain-row{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;padding:22px 0;
+    border-top:1px solid var(--line-light);}
+  .plain-row.head{border-top:none;padding-bottom:10px;}
+  .plain-row .a{font-weight:600;font-size:16px;}
+  .plain-row .b{font-size:15px;line-height:1.6;color:var(--gray-dark);}
+  .plain-row .ht{font-size:11.5px;letter-spacing:2px;font-weight:600;color:var(--red);}
+  .plain-row.star .a{color:var(--red);}
+  @media (max-width:640px){.plain-row{grid-template-columns:1fr;gap:6px;padding:18px 0;}
+    .plain-row.head{display:none;}}
+
+  footer{padding:32px 0 44px;border-top:1px solid var(--line-dark);}
+  .footrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+    gap:14px;font-size:11.5px;color:#7E838C;}
+  .footrow svg{height:22px;width:auto;aspect-ratio:996/852;vertical-align:middle;margin-right:9px;}
 </style>
 </head>
 <body>
 
-  <h1 id="title">The Method in Action</h1>
-  <p id="subtitle">The interactive demonstration goes here.</p>
+<nav id="nav">
+  <a class="brand" id="homeLink" href="index.html">
+    <svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 996 852" fill-rule="evenodd"><path fill="#E32F2E" d="M541.5,849.4C519.3,847.8 509.3,846.6 491.5,843.9C450.9,837.5 410.8,824.5 371.0,804.5C290.1,764.1 227.5,701.7 186.8,621.1C182.5,612.6 177.6,602.2 175.9,598.1C174.2,593.9 172.2,589.1 171.4,587.5C170.1,584.5 164.1,568.2 161.5,560.5C157.3,548.0 151.0,523.7 151.0,520.3L151.0,518.0L229.2,518.2L307.4,518.5L311.2,529.0C341.4,612.6 406.4,672.1 492.8,695.1C531.3,705.4 582.9,707.3 620.5,699.8C656.3,692.7 682.5,681.9 712.6,661.9C718.2,658.2 727.4,651.4 733.1,646.9C744.0,638.2 768.4,614.3 776.0,604.7C780.1,599.6 783.3,597.7 784.2,599.8C784.4,600.3 794.2,609.8 806.0,621.0C817.8,632.2 841.6,654.6 858.8,670.9C875.9,687.1 890.0,701.3 890.0,701.3C890.0,704.0 858.9,736.6 843.5,750.0C807.3,781.5 768.8,804.9 725.5,821.8C700.8,831.4 670.9,839.4 642.5,844.0C638.6,844.6 634.1,845.3 632.5,845.6C616.3,848.3 558.6,850.7 541.5,849.4ZM149.4,338.2C151.0,326.5 159.7,295.2 166.4,277.2C195.0,200.5 243.7,133.9 304.5,88.6C329.4,70.0 348.2,58.4 373.5,46.0C422.6,22.1 463.7,10.4 521.5,3.8C536.2,2.1 598.9,2.1 613.0,3.8C641.6,7.2 645.0,7.8 665.5,12.2C715.2,22.9 758.6,42.3 802.4,73.3C818.5,84.7 835.4,99.2 853.4,117.2L870.4,134.0L865.9,138.6C861.6,143.1 789.5,213.1 771.6,230.2L762.5,238.9L753.6,229.4C727.7,201.6 691.7,176.3 660.4,163.7C648.7,159.0 630.0,153.7 618.0,151.6C604.9,149.3 579.6,147.0 567.5,147.0C555.6,147.0 529.1,149.3 516.5,151.5C474.2,158.8 432.5,176.6 399.5,201.5C357.8,233.0 326.5,277.2 309.4,328.8L304.6,343.0L226.7,343.0L148.7,343.0L149.4,338.2Z"/></svg>
+    <span class="back" data-t="back"></span>
+  </a>
+  <div class="nav-right">
+    <div class="lang-switch" id="langSwitch">
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="pt">PT</button>
+      <button type="button" data-lang="it">IT</button>
+    </div>
+    <a class="cta" id="navCta" href="#book"></a>
+  </div>
+</nav>
 
-  <a class="btn btn-outline" id="backBtn" href="index.html">Back to Concept</a>
+<section id="hero">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="hero_kicker"></p>
+    <h1 class="hero reveal d1">
+      <span data-t="hero_h1_a"></span> <i data-t="hero_h1_em"></i><br><span data-t="hero_h1_b"></span>
+    </h1>
+    <p class="lede reveal d2" style="margin-top:24px;" data-t="hero_lede"></p>
+    <div class="hero-meta reveal d2">
+      <span class="chip" data-t="chip1"></span>
+      <span class="chip" data-t="chip2"></span>
+      <span class="chip" data-t="chip3"></span>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="padding-top:60px;">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="base_kicker"></p>
+    <h2 class="headline reveal d1"><span data-t="base_h2_a"></span> <i data-t="base_h2_em"></i> <span data-t="base_h2_b"></span></h2>
+    <div class="lab reveal d1">
+      <div class="lab-head"><span class="lab-step">i.</span><h3 data-t="base_1_t"></h3></div>
+      <p class="lab-p" data-t="base_1_p"></p>
+    </div>
+    <div class="lab reveal d2">
+      <div class="lab-head"><span class="lab-step">ii.</span><h3 data-t="base_2_t"></h3></div>
+      <p class="lab-p" data-t="base_2_p"></p>
+    </div>
+  </div>
+</section>
+<section class="bg-red callout-band"><div class="wrap"><p class="reveal" data-t="base_band"></p></div></section>
+
+<section class="section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="taa_kicker"></p>
+    <h2 class="headline reveal d1"><span data-t="taa_h2_a"></span> <i data-t="taa_h2_em"></i> <span data-t="taa_h2_b"></span></h2>
+    <p class="lede reveal d2" data-t="taa_lede"></p>
+
+    <div class="lab reveal">
+      <div class="lab-head"><span class="lab-step">A1</span><h3 data-t="acc_t"></h3></div>
+      <p class="lab-p" data-t="acc_p"></p>
+      <div class="lab-do" data-t="acc_do"></div>
+      <div class="mail">
+        <div class="mail-bar"><span data-t="mail_from"></span></div>
+        <div class="mail-body">
+          Hi Marco,<br><br>
+          Thanks for the revised quote. <span class="hot" tabindex="0" data-x="0">To be honest</span>, we were expecting something closer to the figure we discussed in June. <span class="hot" tabindex="0" data-x="1">I'd hate for this to stall over 8%</span>. <span class="hot" tabindex="0" data-x="2">Could you have another look?</span><br><br>
+          Best,<br>Elena
+        </div>
+      </div>
+      <div id="accOut"><div class="out empty" data-t="acc_empty"></div></div>
+    </div>
+
+    <div class="lab reveal">
+      <div class="lab-head"><span class="lab-step">A2</span><h3 data-t="ana_t"></h3></div>
+      <p class="lab-p" data-t="ana_p"></p>
+      <div class="lab-do" data-t="ana_do"></div>
+      <div class="rl-track" id="rlTrack"></div>
+      <div class="rl-sent" id="rlSent"></div>
+      <div class="rl-heard" id="rlHeard"></div>
+      <div class="rl-grid">
+        <div>
+          <div class="meter-lbl"><span data-t="m_warm"></span><span id="wVal">0</span></div>
+          <div class="meter"><i id="wBar" style="width:0;background:#5A5F68"></i></div>
+        </div>
+        <div>
+          <div class="meter-lbl"><span data-t="m_auth"></span><span id="aVal">0</span></div>
+          <div class="meter"><i id="aBar" style="width:0;background:var(--red)"></i></div>
+        </div>
+      </div>
+      <div class="rl-verdict">
+        <div class="h" data-t="v_head"></div>
+        <p id="rlVerdict"></p>
+      </div>
+      <p class="lab-p" style="margin-top:18px;" data-t="ana_note"></p>
+    </div>
+
+    <div class="lab reveal">
+      <div class="lab-head"><span class="lab-step">A3</span><h3 data-t="act_t"></h3></div>
+      <p class="lab-p" data-t="act_p"></p>
+      <div class="lab-do" data-t="act_do"></div>
+      <div class="act-msg">
+        <div class="who" data-t="act_who"></div>
+        "I understand. Let me be direct: we have another quote 8% below yours. I'd rather work with you. Help me justify that internally."
+      </div>
+
+      <div id="actStartWrap" style="margin-top:20px;">
+        <button class="btn btn-solid" id="actStart" data-t="act_start"></button>
+      </div>
+
+      <div id="actPlay" class="hidden">
+        <div class="timer">
+          <span class="n" id="actN">20</span>
+          <div class="bar"><i id="actBar"></i></div>
+          <span class="lbl" data-t="act_timer"></span>
+        </div>
+        <div id="actOpts"></div>
+      </div>
+
+      <div id="actResult" class="hidden" style="margin-top:16px;"></div>
+      <p class="lab-p hidden" id="actNote" style="margin-top:18px;" data-t="act_note"></p>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="background:#080808;">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="psy_kicker"></p>
+    <h2 class="headline reveal d1"><span data-t="psy_h2_a"></span> <i data-t="psy_h2_em"></i> <span data-t="psy_h2_b"></span></h2>
+    <p class="lede reveal d2" data-t="psy_lede"></p>
+
+    <div class="lab reveal">
+      <div class="lab-head"><span class="lab-step">01</span><h3 data-t="d1_t"></h3></div>
+      <p class="lab-p" data-t="d1_p"></p>
+      <div class="lab-do" data-t="d1_do"></div>
+      <div id="d1Start"><button class="btn btn-solid" id="d1Btn" data-t="d1_btn"></button></div>
+      <div id="d1Play" class="hidden">
+        <div class="stim">
+          <div class="q" id="d1Q"></div>
+          <div class="pair" id="d1Pair"></div>
+          <div class="prog" id="d1Prog"></div>
+        </div>
+      </div>
+      <div id="d1Res" class="hidden">
+        <div class="stim" style="text-align:left;">
+          <div class="score">
+            <div class="s"><div class="n" id="d1Ms">0</div><div class="l" data-t="d1_ms_l"></div></div>
+            <div class="s"><div class="n" id="d1Acc">0</div><div class="l" data-t="d1_acc_l"></div></div>
+          </div>
+        </div>
+        <div class="take"><div class="h" data-t="take_h"></div><p id="d1Take"></p></div>
+      </div>
+    </div>
+
+    <div class="lab reveal">
+      <div class="lab-head"><span class="lab-step">02</span><h3 data-t="d2_t"></h3></div>
+      <p class="lab-p" data-t="d2_p"></p>
+      <div class="lab-do" data-t="d2_do"></div>
+      <div class="tabs" id="d2Tabs">
+        <button type="button" data-l1="it" data-t="d2_tab_it"></button>
+        <button type="button" data-l1="pt" data-t="d2_tab_pt"></button>
+      </div>
+      <div id="d2List"></div>
+      <div class="take"><div class="h" data-t="take_h"></div><p data-t="d2_take"></p></div>
+    </div>
+
+    <div class="lab reveal">
+      <div class="lab-head"><span class="lab-step">03</span><h3 data-t="d3_t"></h3></div>
+      <p class="lab-p" data-t="d3_p"></p>
+      <div class="lab-do" data-t="d3_do"></div>
+      <div id="d3Start"><button class="btn btn-solid" id="d3Btn" data-t="d3_btn"></button></div>
+
+      <div id="d3Mem" class="hidden">
+        <div class="stim">
+          <div class="prog" style="margin:0 0 16px;" data-t="d3_memorize"></div>
+          <div class="digits" id="d3Digits"></div>
+        </div>
+      </div>
+
+      <div id="d3Task" class="hidden">
+        <div class="stim">
+          <div class="q" id="d3Q"></div>
+          <div class="pair" id="d3Pair"></div>
+        </div>
+      </div>
+
+      <div id="d3Recall" class="hidden">
+        <div class="stim">
+          <div class="prog" style="margin:0 0 16px;" data-t="d3_recall"></div>
+          <input class="recall-in" id="d3In" inputmode="numeric" maxlength="6" autocomplete="off">
+          <div style="margin-top:18px;"><button class="btn btn-solid" id="d3Check" data-t="d3_check"></button></div>
+        </div>
+      </div>
+
+      <div id="d3Res" class="hidden">
+        <div class="stim" style="text-align:left;">
+          <p style="margin:0;font-size:15.5px;line-height:1.6;color:#fff;" id="d3Score"></p>
+        </div>
+        <div class="take"><div class="h" data-t="take_h"></div><p data-t="d3_take"></p></div>
+      </div>
+    </div>
+
+    <div class="lab reveal">
+      <div class="lab-head"><span class="lab-step">04</span><h3 data-t="d4_t"></h3></div>
+      <p class="lab-p" data-t="d4_p"></p>
+      <div class="lab-do" data-t="d4_do"></div>
+      <div class="em-grid" id="emGrid"></div>
+      <div class="take"><div class="h" data-t="take_h"></div><p data-t="d4_take"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="tbl_kicker"></p>
+    <h2 class="headline reveal d1" data-t="tbl_h2"></h2>
+    <div class="reveal d2" id="plainTable" style="margin-top:36px;"></div>
+    <p class="note reveal" style="margin-top:26px;" data-t="tbl_note"></p>
+  </div>
+</section>
+
+<section id="book" class="section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="cta_kicker"></p>
+    <h2 class="headline reveal d1"><span data-t="cta_h2_a"></span> <i data-t="cta_h2_em"></i><span data-t="cta_h2_b"></span></h2>
+    <p class="lede reveal d2" style="margin-bottom:32px;" data-t="cta_p"></p>
+    <div class="reveal d2">
+      <a class="btn btn-solid" id="ctaMail" href="#"></a>
+      <span id="copyToast" style="margin-left:14px;font-size:13px;color:#7CD992;opacity:0;transition:opacity .3s ease;"></span>
+    </div>
+    <p class="note reveal" style="margin-top:28px;" data-t="cta_name"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footrow">
+      <div>
+        <svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 996 852" fill-rule="evenodd"><path fill="#E32F2E" d="M541.5,849.4C519.3,847.8 509.3,846.6 491.5,843.9C450.9,837.5 410.8,824.5 371.0,804.5C290.1,764.1 227.5,701.7 186.8,621.1C182.5,612.6 177.6,602.2 175.9,598.1C174.2,593.9 172.2,589.1 171.4,587.5C170.1,584.5 164.1,568.2 161.5,560.5C157.3,548.0 151.0,523.7 151.0,520.3L151.0,518.0L229.2,518.2L307.4,518.5L311.2,529.0C341.4,612.6 406.4,672.1 492.8,695.1C531.3,705.4 582.9,707.3 620.5,699.8C656.3,692.7 682.5,681.9 712.6,661.9C718.2,658.2 727.4,651.4 733.1,646.9C744.0,638.2 768.4,614.3 776.0,604.7C780.1,599.6 783.3,597.7 784.2,599.8C784.4,600.3 794.2,609.8 806.0,621.0C817.8,632.2 841.6,654.6 858.8,670.9C875.9,687.1 890.0,701.3 890.0,701.3C890.0,704.0 858.9,736.6 843.5,750.0C807.3,781.5 768.8,804.9 725.5,821.8C700.8,831.4 670.9,839.4 642.5,844.0C638.6,844.6 634.1,845.3 632.5,845.6C616.3,848.3 558.6,850.7 541.5,849.4ZM149.4,338.2C151.0,326.5 159.7,295.2 166.4,277.2C195.0,200.5 243.7,133.9 304.5,88.6C329.4,70.0 348.2,58.4 373.5,46.0C422.6,22.1 463.7,10.4 521.5,3.8C536.2,2.1 598.9,2.1 613.0,3.8C641.6,7.2 645.0,7.8 665.5,12.2C715.2,22.9 758.6,42.3 802.4,73.3C818.5,84.7 835.4,99.2 853.4,117.2L870.4,134.0L865.9,138.6C861.6,143.1 789.5,213.1 771.6,230.2L762.5,238.9L753.6,229.4C727.7,201.6 691.7,176.3 660.4,163.7C648.7,159.0 630.0,153.7 618.0,151.6C604.9,149.3 579.6,147.0 567.5,147.0C555.6,147.0 529.1,149.3 516.5,151.5C474.2,158.8 432.5,176.6 399.5,201.5C357.8,233.0 326.5,277.2 309.4,328.8L304.6,343.0L226.7,343.0L148.7,343.0L149.4,338.2Z"/></svg>
+        <span data-t="foot_tag"></span>
+      </div>
+      <div data-t="foot_copy"></div>
+    </div>
+  </div>
+</footer>
 
 <script>
-  const methodI18N = {
-    en: {
-      title: "The Method in Action",
-      subtitle: "The interactive demonstration goes here.",
-      back: "Back to Concept"
-    },
-    pt: {
-      title: "O Método na Prática",
-      subtitle: "A demonstração interativa será exibida aqui.",
-      back: "Voltar para Concept"
-    },
-    it: {
-      title: "Il Metodo in Azione",
-      subtitle: "La dimostrazione interattiva verrà mostrata qui.",
-      back: "Torna a Concept"
-    }
-  };
+var EMAIL = "pedro.gigollotti@me.com";
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const lang = urlParams.get('lang') || 'en';
+/* ============ CONTENT (stimuli stay in English on purpose) ============ */
+var REG_SENT = [
+  "Please be advised that the quotation issued on 14 June constitutes our final commercial offer.",
+  "Thank you for your message. I have reviewed the figures and I am unable to revise the quotation at this stage.",
+  "Thanks Marco. I've gone back over the numbers and 8% isn't there. But let's look at what can move: timeline, volume, payment terms.",
+  "Hey Marco, had another look, 8% just isn't there I'm afraid. Happy to work something out though?",
+  "Marco, come on. You know I can't do 8%."
+];
+var REG_METERS = [[6,92],[30,74],[72,82],[80,34],[88,26]];
 
-  document.documentElement.lang = lang;
-  document.getElementById('title').textContent = methodI18N[lang].title;
-  document.getElementById('subtitle').textContent = methodI18N[lang].subtitle;
-  
-  const backBtn = document.getElementById('backBtn');
-  backBtn.textContent = methodI18N[lang].back;
-  backBtn.setAttribute('href', 'index.html?lang=' + lang);
-</script>
-</body>
-</html>
+var ACT_OPTS = [
+  "\u201cI completely understand. Let me see what I can do.\u201d",
+  "\u201cUnfortunately that is not possible.\u201d",
+  "\u201cThen let's build that justification together. What does your team need to see to sign off at our number?\u201d"
+];
+
+var D1_ITEMS = [
+  {q:"___ a decision",  a:"make",  b:"do",       ok:0},
+  {q:"___ rain",        a:"strong",b:"heavy",    ok:1},
+  {q:"___ a risk",      a:"take",  b:"make",     ok:0},
+  {q:"___ coffee",      a:"strong",b:"powerful", ok:0},
+  {q:"___ progress",    a:"do",    b:"make",     ok:1},
+  {q:"___ an exception",a:"make",  b:"do",       ok:0}
+];
+
+var D3_Q = {q:"We're not going to agree ___ the price today.", a:"on", b:"with", ok:0};
+
+/* ============ I18N ============ */
+var I18N = {
+en:{
+  back:"BACK TO CONCEPT", nav_cta:"Book the call",
+  hero_kicker:"THE METHOD, LIVE",
+  hero_h1_a:"Don't read the method.", hero_h1_em:"Run it", hero_h1_b:"on yourself.",
+  hero_lede:"This page is not a description of how I teach. It is a compressed version of an actual lesson, with you as the student. Six short demonstrations. Nothing to install, nothing to submit, no data leaves your browser.",
+  chip1:"About 6 minutes", chip2:"Works on your phone", chip3:"Your answers stay local",
+
+  base_kicker:"WHERE EVERYONE ELSE STARTS",
+  base_h2_a:"The Communicative Approach is", base_h2_em:"table stakes", base_h2_b:", not a differentiator.",
+  base_1_t:"What every school sells you",
+  base_1_p:"Language is learned by using it, not by studying it. Lessons run in English, students speak from minute one, grammar serves the task instead of the other way round. This has been the industry standard since the 1980s, and it works. I use it too. Any provider who does not is simply behind.",
+  base_2_t:"Where it stops being enough",
+  base_2_p:"The Communicative Approach optimises for one thing: getting the message across. In a negotiation, getting the message across is the floor, not the ceiling. Your client understood the sentence perfectly. They just trusted you slightly less afterwards, and neither of you can say exactly why. That gap is what the next three sections are about.",
+  base_band:"Every school teaches your team to be understood. I train them to be believed.",
+
+  taa_kicker:"THE TRIPLE A CYCLE",
+  taa_h2_a:"One real message,", taa_h2_em:"three", taa_h2_b:"beats.",
+  taa_lede:"Every lesson I teach runs the same cycle: Access, Analysis, Activation. Below it runs on one authentic email, the kind your sales team gets on a Tuesday. Do it in order.",
+
+  acc_t:"Access", acc_p:"Access means meeting the language where it actually lives: a message that was really sent, not one written for a coursebook. Nothing here is simplified. This is the raw material.",
+  acc_do:"CLICK THE THREE UNDERLINED PHRASES",
+  mail_from:"From: Elena Rossi · Procurement · Subject: Revised quote",
+  acc_empty:"Click a phrase above to see what it is really doing.",
+  acc_x1_s:"LOOKS LIKE: POLITENESS", acc_x1_t:"It is a warning shot.",
+  acc_x1_p:"Coursebooks file this under \u201cexpressing an opinion\u201d, which is adorable. In a negotiation it does something else entirely: it marks everything before it as diplomacy and everything after it as the actual position. When a client says \u201cto be honest\u201d, the friendly part of the email has quietly left the building.",
+  acc_x2_s:"LOOKS LIKE: GOOD WILL", acc_x2_t:"It is a threat wearing a very nice coat.",
+  acc_x2_p:"\u201cI'd hate for\u201d does not mean she would hate it. It means she has already pictured it, and she is fine. The number carries the pressure, the grammar carries the smile, and your team reads the smile, because the smile is the part somebody taught them.",
+  acc_x3_s:"LOOKS LIKE: A QUESTION", acc_x3_t:"It is an instruction with a question mark stapled to it.",
+  acc_x3_p:"\u201cHave another look\u201d presupposes there is something to find. Answer \u201cyes, I looked\u201d and you have walked, politely and fluently, into the trap she built for you. Maximum courtesy, zero flexibility. It is the most English sentence in the email.",
+
+  ana_t:"Analysis", ana_p:"Now the reply. Your position is fixed: the price does not move. Same message, five registers, from frozen to intimate. Only one of them holds the price and keeps the client.",
+  ana_do:"MOVE ACROSS THE FIVE REGISTERS",
+  reg_names:["Frozen","Formal","Consultative","Casual","Intimate"],
+  m_warm:"Warmth", m_auth:"Authority", v_head:"WHAT IT COSTS YOU",
+  heard_h:"What Marco hears:",
+  reg_heard:[
+    "This is now a legal matter.",
+    "Correct. Closed. Distant.",
+    "Firm, and still on my side.",
+    "There is room. Push again.",
+    "We are friends. Or we are not."
+  ],
+  reg_verdict:[
+    "Grammatically flawless. Legally airtight. Somewhere a lawyer just felt a warm glow. You have also turned a supplier into an opposing party, and nothing in that sentence is wrong, which is precisely why nobody will ever tell you it was.",
+    "Correct, safe, and roughly as warm as a filing cabinet. Perfectly fine with a stranger. Expensive with a client you want to keep for another three years. You held the price and paid for it in a currency you did not know you had.",
+    "There it is. It refuses without ever saying the word no, keeps your authority fully intact, and hands Marco a brand new thing to negotiate about that costs you nothing. This is the register almost nobody reaches in a second language under pressure, and it is the entire reason I have a job.",
+    "Charming. You also just blinked. \u201cI'm afraid\u201d plus that hopeful little \u201cthough?\u201d told him the door is still open. He will push again, and now you get to hold the same line twice, which is roughly twice as hard.",
+    "Magnificent if you have had dinner with him three times. Career-limiting if you have not. Register is a bet on the relationship, and most people place that bet without ever noticing they are gambling."
+  ],
+  ana_note:"This is the step every other method skips. Meaning is where they stop. I do not stop until the register is right, because your client is not grading the meaning.",
+
+  act_t:"Activation", act_p:"Language you have understood is not language you can use. Activation is the moment I put it under pressure, because pressure is the only condition your team will ever actually use it in.",
+  act_do:"20 SECONDS. PICK YOUR LINE.",
+  act_who:"MARCO REPLIES",
+  act_start:"Start the clock",
+  act_timer:"TIME LEFT",
+  act_res:[
+    "You conceded, warmly and fluently. \u201cLet me see what I can do\u201d is heard as a yes with the paperwork still pending. You agreed to nothing and lost the 8% anyway, which is a remarkable rate of return. It is also the most popular answer under time pressure, in every language I have ever taught.",
+    "Door closed, correctly, and Marco goes back to his boss with empty hands. He wanted to fight for you. You handed him nothing to fight with. He will take the cheaper quote and feel a little guilty about it, and his guilt will not appear anywhere on your P&L.",
+    "That is the one. You refused without ever saying no and turned Marco into your accomplice in the refusal. The price did not move. The conversation did. Look at what it actually cost: one conditional, one question, and absolutely no apology."
+  ],
+  act_timeout:"Time is up, and this is not a failure, it is the finding. You had twenty seconds and a quiet room. Your team gets about four seconds and a client looking straight at them. Four seconds is where the brain grabs the nearest safe sentence, and the nearest safe sentence is almost always the one that gives away the money.",
+  act_note:"You just did all three steps. Access gave you the raw language, Analysis gave you the map, Activation put it under load. Roughly forty five minutes of this, once or twice a week, on your team's actual emails.",
+
+  psy_kicker:"THE PART NOBODY ELSE SELLS",
+  psy_h2_a:"Your team's English is not broken.", psy_h2_em:"The retrieval", psy_h2_b:"is.",
+  psy_lede:"Psycholinguistics is the study of how language is stored and retrieved in the brain. It is why people who read contracts in English every day go silent the moment the stakes rise. Four demonstrations. Run them on yourself, honestly, and notice how it feels rather than how you score.",
+
+  take_h:"WHAT THIS MEANS FOR YOUR TEAM",
+
+  d1_t:"Storage: you do not store words. You store neighbourhoods.",
+  d1_p:"A native speaker does not build \u201cmake a decision\u201d out of a verb and a noun. They pull the whole phrase off the shelf, already assembled. Learners build it every single time, and building costs milliseconds.",
+  d1_do:"SIX PAIRS. PICK THE NATURAL ONE, FAST.",
+  d1_btn:"Start",
+  d1_ms_l:"Your average, in milliseconds",
+  d1_acc_l:"Correct out of 6",
+  d1_take_fast:"Fast, and that is exactly the point. The pairs that arrived instantly were never assembled at all: you took them off the shelf in one piece. The ones that made you pause, you were building from parts, live, like a person assembling furniture while someone watches. Now add a client, a margin in your head and an objection in your ear, and watch the furniture wobble.",
+  d1_take_slow:"Good news: you knew every single word. Bad news: knowing was never the problem. Every millisecond you spent choosing was a millisecond you were not listening to your client, and your client noticed without knowing what they noticed. A vocabulary list will not fix this, because the list is not the thing that broke. You fix it by training the phrase as one piece until it turns up already assembled.",
+
+  d2_t:"Interference: your first language is still in the room.",
+  d2_p:"When two words compete, the faster one wins, and the faster one is usually the one that sounds like your mother tongue. This is not carelessness. It is a race, and the wrong runner is closer to the finish line.",
+  d2_do:"PICK A LANGUAGE. TAP EACH TRAP.",
+  d2_tab_it:"Italian speakers", d2_tab_pt:"Portuguese speakers",
+  d2_take:"None of these people lack vocabulary. They know the correct word. It simply loses the race, every time, under pressure. A word list will not fix that, because the list is not what is failing. What changes it is repeated retrieval under load, which is precisely what the Activation step is for.",
+
+  d3_t:"Load: this is why the room goes quiet.",
+  d3_p:"Working memory holds about four things at once. In a negotiation your team is already holding the numbers, the client's last objection, and their boss's red line. Then they need a conditional.",
+  d3_do:"HOLD FIVE DIGITS. ANSWER ONE QUESTION. GIVE THE DIGITS BACK.",
+  d3_btn:"Start",
+  d3_memorize:"MEMORISE THESE. FOUR SECONDS.",
+  d3_recall:"NOW TYPE THE FIVE DIGITS",
+  d3_check:"Check",
+  d3_ok:"Digits intact, grammar intact. You are in the minority, and I suspect you felt the strain anyway. Now add a client, a price, a boss with a red line, and a room full of people waiting for you to speak. Something is going to fall, and it will not be the price.",
+  d3_partial:"One survived, one did not. That is the whole demonstration. Neither task was hard. A child can do the digits, and you have been reading English contracts for years. They only became difficult the second they arrived together.",
+  d3_fail:"Both gone. Take a moment to appreciate how easy each of those was on its own. That is the point, and it is also why your best negotiator can sound like a beginner at minute forty of a call.",
+  d3_take:"Something always drops, and it is never the numbers. It is the language, because the language is the only part still charging you rent. This is why I train to automaticity and not to correctness. Correct English that costs attention is English that vanishes at the exact moment the stakes arrive.",
+
+  d4_t:"Emotion: the tone lands before the sentence ends.",
+  d4_p:"Listeners register the emotional charge of a message before they have finished processing its content. Your client felt something about the sentence before they reached the verb. Three messages, identical information.",
+  d4_do:"TAP EACH ONE",
+  d4_msgs:[
+    "\u201cWe need to talk about the deadline.\u201d",
+    "\u201cI have concerns regarding the current timeline.\u201d",
+    "\u201cCan I grab you for five minutes about the deadline?\u201d"
+  ],
+  d4_rates:["THREAT: HIGH","THREAT: MEDIUM","THREAT: LOW"],
+  d4_revs:[
+    "Neutral words, radioactive pattern. \u201cWe need to talk\u201d is the sentence English reserves for firing people and ending marriages. Your team deploys it cheerfully about a Gantt chart, then wonders why the call opened at four degrees below zero.",
+    "Nobody can point at a rude word here, which is exactly why nobody will ever correct it. \u201cConcerns\u201d and \u201cregarding\u201d push the register up, and up reads as cold. The recipient stops solving and starts defending. Beautifully written, quietly expensive.",
+    "Same information, zero threat. \u201cGrab you for five minutes\u201d shrinks the problem before you have even described it, which is a small act of genius that essentially nobody performs by accident in a second language."
+  ],
+  d4_take:"This is the emotional layer, and it decides whether your client leans in or leans back. It is measurable, it is teachable, and it has never once appeared on any exam your team has passed.",
+
+  tbl_kicker:"THE LABELS, TRANSLATED",
+  tbl_h2:"What I would call this in a lecture. What it means to you.",
+  tbl_c1:"THE ACADEMIC NAME", tbl_c2:"WHAT IT ACTUALLY DOES FOR YOUR TEAM",
+  tbl_rows:[
+    ["Communicative Approach","We use the language instead of studying it. Standard practice. If a provider cannot offer this, walk away."],
+    ["Lexical Approach","I train phrases, not words, so retrieval gets faster and speech stops costing attention. That was demonstration 01."],
+    ["Constructivism","Your team derives the rule instead of receiving it, by comparing English with their own language. Derived rules survive pressure. Memorised ones do not."],
+    ["Psycholinguistics and pragmatics","I work on what the brain does under load, and on what the sentence does to the listener. This is the layer your competitors are not selling, because most of them cannot teach it."]
+  ],
+  tbl_note:"The first three are craft. The fourth is the reason a fluent team still loses the room, and the reason you are on this page.",
+
+  cta_kicker:"NEXT STEP",
+  cta_h2_a:"Now run it on", cta_h2_em:"your team", cta_h2_b:".",
+  cta_p:"Everything you just did, I do live, with your people, on their actual emails and their actual calls. Forty five minutes, no charge, no obligation. I tell you exactly where they break down under pressure, and whether training is even worth your budget.",
+  cta_btn:"Book the diagnostic call",
+  cta_copied:"Email address copied",
+  cta_name:"Pedro Gigollotti · Teacher and Academic Director · São Paulo · Rome · Milano",
+  mail_subject:"Diagnostic call",
+  mail_body:"Team size:\nCurrent level:\nGoal:\nTimeline:",
+  foot_tag:"CONCEPT · MIND YOUR FUTURE",
+  foot_copy:"© 2026 Concept."
+},
+
+pt:{
+  back:"VOLTAR AO INÍCIO", nav_cta:"Agendar a conversa",
+  hero_kicker:"O MÉTODO, NA PRÁTICA",
+  hero_h1_a:"Não leia sobre o método.", hero_h1_em:"Teste-o", hero_h1_b:"em você mesmo.",
+  hero_lede:"Esta página não descreve como eu ensino. Ela é uma versão condensada de uma aula real, com você no lugar do aluno. Seis demonstrações curtas. Nada para instalar, nada para enviar, nenhum dado sai do seu navegador.",
+  chip1:"Cerca de 6 minutos", chip2:"Funciona no celular", chip3:"Suas respostas ficam no seu aparelho",
+
+  base_kicker:"ONDE TODO MUNDO COMEÇA",
+  base_h2_a:"A Abordagem Comunicativa é o", base_h2_em:"mínimo", base_h2_b:", não um diferencial.",
+  base_1_t:"O que toda escola te vende",
+  base_1_p:"O idioma se aprende usando, não estudando. Aula em inglês do começo ao fim, o aluno fala desde o primeiro minuto, a gramática serve à tarefa e não o contrário. Isso é padrão de mercado desde os anos 80 e funciona. Eu também uso. Quem não usa está simplesmente atrasado.",
+  base_2_t:"Onde isso deixa de bastar",
+  base_2_p:"A Abordagem Comunicativa otimiza uma coisa só: fazer a mensagem chegar. Numa negociação, fazer a mensagem chegar é o piso, não o teto. O seu cliente entendeu a frase perfeitamente. Ele só passou a confiar um pouco menos depois dela, e nenhum dos dois sabe dizer exatamente por quê. É essa lacuna que as próximas três seções atacam.",
+  base_band:"Toda escola treina sua equipe para ser compreendida. Eu treino para que ela seja levada a sério.",
+
+  taa_kicker:"O CICLO TRIPLE A",
+  taa_h2_a:"Uma mensagem real,", taa_h2_em:"três", taa_h2_b:"tempos.",
+  taa_lede:"Toda aula minha segue o mesmo ciclo: Access, Analysis, Activation. Abaixo ele roda sobre um e-mail autêntico, do tipo que sua equipe comercial recebe numa terça-feira qualquer. Faça na ordem.",
+
+  acc_t:"Access (Acesso)", acc_p:"Acesso é encontrar a língua onde ela realmente vive: uma mensagem que foi de fato enviada, não uma que alguém escreveu para um livro didático. Nada aqui foi simplificado. É a matéria-prima crua.",
+  acc_do:"CLIQUE NOS TRÊS TRECHOS SUBLINHADOS",
+  mail_from:"De: Elena Rossi · Compras · Assunto: Proposta revisada",
+  acc_empty:"Clique em um trecho acima para ver o que ele está de fato fazendo.",
+  acc_x1_s:"PARECE: EDUCAÇÃO", acc_x1_t:"É um tiro de aviso.",
+  acc_x1_p:"O livro didático classifica isso como \u201cexpressar opinião\u201d, o que é fofo. Numa negociação, faz outra coisa completamente diferente: marca tudo o que veio antes como diplomacia e tudo o que vem depois como a posição real. Quando um cliente diz \u201cto be honest\u201d, a parte simpática do e-mail já saiu de fininho pela porta dos fundos.",
+  acc_x2_s:"PARECE: BOA VONTADE", acc_x2_t:"É uma ameaça de terno bem cortado.",
+  acc_x2_p:"\u201cI'd hate for\u201d não quer dizer que ela detestaria. Quer dizer que ela já imaginou a cena e está tranquila. O número carrega a pressão, a gramática carrega o sorriso, e sua equipe lê o sorriso, porque o sorriso é a parte que alguém ensinou.",
+  acc_x3_s:"PARECE: UMA PERGUNTA", acc_x3_t:"É uma ordem com um ponto de interrogação grampeado.",
+  acc_x3_p:"\u201cHave another look\u201d pressupõe que existe algo a ser encontrado. Responda \u201csim, eu olhei\u201d e você caminhou, educadíssimo e fluente, direto para dentro da armadilha que ela montou. Cortesia máxima, flexibilidade zero. É a frase mais inglesa do e-mail inteiro.",
+
+  ana_t:"Analysis (Análise)", ana_p:"Agora a resposta. Sua posição é fixa: o preço não se move. Mesma mensagem, cinco registros, do engessado ao íntimo. Só um deles segura o preço e mantém o cliente.",
+  ana_do:"PERCORRA OS CINCO REGISTROS",
+  reg_names:["Engessado","Formal","Consultivo","Casual","Íntimo"],
+  m_warm:"Proximidade", m_auth:"Autoridade", v_head:"O QUE ISSO TE CUSTA",
+  heard_h:"O que o Marco escuta:",
+  reg_heard:[
+    "Isso agora virou caso jurídico.",
+    "Correto. Fechado. Distante.",
+    "Firme, e ainda do meu lado.",
+    "Tem margem. Empurra de novo.",
+    "Ou somos amigos, ou não somos."
+  ],
+  reg_verdict:[
+    "Gramaticalmente impecável. Juridicamente blindado. Em algum lugar um advogado sentiu um calorzinho no peito. Você também acabou de transformar um fornecedor em parte contrária, e não há nada de errado na frase, que é exatamente o motivo pelo qual ninguém nunca vai te avisar que havia.",
+    "Correto, seguro e mais ou menos tão caloroso quanto um arquivo de aço. Perfeito com um estranho. Caro demais com um cliente que você quer manter por mais três anos. Você segurou o preço e pagou numa moeda que nem sabia que tinha.",
+    "É aqui. Recusa sem nunca dizer a palavra não, mantém sua autoridade intacta e entrega ao Marco um eixo novinho de negociação que não te custa nada. É o registro que quase ninguém alcança em outro idioma sob pressão, e é a razão inteira pela qual eu tenho emprego.",
+    "Simpático. E você piscou. O \u201cI'm afraid\u201d mais aquele \u201cthough?\u201d cheio de esperança acabaram de avisar que a porta continua aberta. Ele vai empurrar de novo, e agora você tem o privilégio de segurar a mesma linha duas vezes, o que é aproximadamente duas vezes mais difícil.",
+    "Magnífico se vocês já jantaram juntos três vezes. Limitador de carreira se não jantaram. Registro é uma aposta sobre a relação, e quase todo mundo aposta sem jamais perceber que está no cassino."
+  ],
+  ana_note:"Esta é a etapa que todo outro método pula. Eles param no significado. Eu só paro quando o registro está certo, porque o seu cliente não está avaliando o significado.",
+
+  act_t:"Activation (Ativação)", act_p:"Língua que você entendeu não é língua que você usa. Ativação é o momento em que eu coloco pressão, porque pressão é a única condição em que sua equipe realmente vai usar aquilo.",
+  act_do:"20 SEGUNDOS. ESCOLHA SUA FRASE.",
+  act_who:"MARCO RESPONDE",
+  act_start:"Iniciar o cronômetro",
+  act_timer:"TEMPO RESTANTE",
+  act_res:[
+    "Você cedeu, com calor e fluência. \u201cLet me see what I can do\u201d é escutado como um sim com a papelada ainda pendente. Você não concordou com nada e perdeu os 8% mesmo assim, o que é uma taxa de retorno impressionante. Também é a resposta preferida sob pressão de tempo, em todos os idiomas que eu já ensinei.",
+    "Porta fechada, corretamente, e o Marco volta para o chefe dele de mãos abanando. Ele queria brigar por você. Você não deu munição nenhuma. Ele vai pegar a proposta mais barata e sentir uma culpinha leve, e a culpa dele não vai aparecer em lugar nenhum do seu resultado.",
+    "É essa. Você recusou sem nunca dizer não e transformou o Marco em cúmplice da própria recusa. O preço não se moveu. A conversa se moveu. Repare no custo real disso: um condicional, uma pergunta e absolutamente nenhum pedido de desculpas."
+  ],
+  act_timeout:"Acabou o tempo, e isso não é fracasso, é o achado. Você teve vinte segundos e uma sala silenciosa. Sua equipe tem uns quatro segundos e um cliente olhando fixo para ela. Quatro segundos é onde o cérebro agarra a frase segura mais próxima, e a frase segura mais próxima é quase sempre a que entrega o dinheiro.",
+  act_note:"Você acabou de percorrer as três etapas. Access entregou a língua crua, Analysis entregou o mapa, Activation colocou tudo sob carga. Cerca de quarenta e cinco minutos disso, uma ou duas vezes por semana, sobre os e-mails reais da sua equipe.",
+
+  psy_kicker:"A PARTE QUE NINGUÉM MAIS VENDE",
+  psy_h2_a:"O inglês da sua equipe não está quebrado.", psy_h2_em:"O acesso", psy_h2_b:"está.",
+  psy_lede:"Psicolinguística é o estudo de como a língua é armazenada e recuperada no cérebro. É o motivo pelo qual gente que lê contrato em inglês todo dia trava no instante em que a coisa fica séria. Quatro demonstrações. Faça você mesmo, com honestidade, e repare menos na sua nota e mais na sensação.",
+
+  take_h:"O QUE ISSO SIGNIFICA PARA A SUA EQUIPE",
+
+  d1_t:"Armazenamento: você não guarda palavras. Guarda vizinhanças.",
+  d1_p:"Um nativo não monta \u201cmake a decision\u201d juntando verbo e substantivo. Ele puxa a frase inteira da prateleira, já montada. O aprendiz remonta tudo de novo, toda vez, e montar custa milissegundos.",
+  d1_do:"SEIS PARES. ESCOLHA O NATURAL, RÁPIDO.",
+  d1_btn:"Começar",
+  d1_ms_l:"Sua média, em milissegundos",
+  d1_acc_l:"Acertos em 6",
+  d1_take_fast:"Rápido, e é exatamente esse o ponto. Os pares que chegaram na hora não foram montados: você tirou da prateleira inteiros. Aqueles em que você hesitou, você estava montando peça por peça, ao vivo, como quem monta um móvel com alguém olhando. Agora acrescente um cliente, uma margem na cabeça e uma objeção no ouvido, e veja o móvel balançar.",
+  d1_take_slow:"Boa notícia: você conhecia todas as palavras. Má notícia: conhecer nunca foi o problema. Cada milissegundo gasto escolhendo foi um milissegundo em que você não estava ouvindo o cliente, e o cliente percebeu sem saber o que percebeu. Lista de vocabulário não conserta isso, porque não é a lista que quebrou. Conserta-se treinando a frase como bloco único, até ela aparecer já montada.",
+
+  d2_t:"Interferência: sua língua materna continua na sala.",
+  d2_p:"Quando duas palavras competem, vence a mais rápida, e a mais rápida costuma ser a que se parece com a sua língua materna. Não é descuido. É uma corrida, e o corredor errado largou mais perto da linha de chegada.",
+  d2_do:"ESCOLHA UM IDIOMA. TOQUE EM CADA ARMADILHA.",
+  d2_tab_it:"Falantes de italiano", d2_tab_pt:"Falantes de português",
+  d2_take:"Nenhuma dessas pessoas tem falta de vocabulário. Elas sabem a palavra certa. A palavra certa simplesmente perde a corrida, toda vez, sob pressão. Lista de vocabulário não resolve, porque não é a lista que está falhando. O que muda isso é a recuperação repetida sob carga, que é exatamente para o que serve a etapa de Ativação.",
+
+  d3_t:"Carga: é por isso que a sala fica em silêncio.",
+  d3_p:"A memória de trabalho segura umas quatro coisas por vez. Numa negociação, sua equipe já está segurando os números, a última objeção do cliente e o limite do chefe. E aí ela precisa de um condicional.",
+  d3_do:"GUARDE CINCO DÍGITOS. RESPONDA UMA PERGUNTA. DEVOLVA OS DÍGITOS.",
+  d3_btn:"Começar",
+  d3_memorize:"MEMORIZE. QUATRO SEGUNDOS.",
+  d3_recall:"AGORA DIGITE OS CINCO DÍGITOS",
+  d3_check:"Verificar",
+  d3_ok:"Dígitos intactos, gramática intacta. Você está na minoria, e desconfio que sentiu o esforço mesmo assim. Agora acrescente um cliente, um preço, um chefe com um limite e uma sala cheia de gente esperando você falar. Alguma coisa vai cair, e não vai ser o preço.",
+  d3_partial:"Um sobreviveu, o outro não. É essa a demonstração inteira. Nenhuma das duas tarefas era difícil. Uma criança faz os dígitos, e você lê contratos em inglês há anos. As duas só ficaram difíceis no segundo em que chegaram juntas.",
+  d3_fail:"Os dois se foram. Reserve um instante para apreciar como cada um deles era fácil sozinho. É esse o ponto, e é também por isso que o seu melhor negociador soa como iniciante no minuto quarenta de uma call.",
+  d3_take:"Sempre cai alguma coisa, e nunca são os números. É a língua, porque a língua é a única parte que ainda te cobra aluguel. É por isso que eu treino até a automatização, não até a correção. Inglês correto que consome atenção é inglês que evapora no exato momento em que a coisa aperta.",
+
+  d4_t:"Emoção: o tom chega antes de a frase terminar.",
+  d4_p:"O ouvinte registra a carga emocional da mensagem antes de terminar de processar o conteúdo. Seu cliente já sentiu algo sobre a frase antes de chegar ao verbo. Três mensagens, informação idêntica.",
+  d4_do:"TOQUE EM CADA UMA",
+  d4_msgs:[
+    "\u201cWe need to talk about the deadline.\u201d",
+    "\u201cI have concerns regarding the current timeline.\u201d",
+    "\u201cCan I grab you for five minutes about the deadline?\u201d"
+  ],
+  d4_rates:["AMEAÇA: ALTA","AMEAÇA: MÉDIA","AMEAÇA: BAIXA"],
+  d4_revs:[
+    "Palavras neutre, padrão radioativo. \u201cWe need to talk\u201d é a frase que o inglês reserva para demitir gente e terminar casamentos. Sua equipe dispara isso alegremente sobre um cronograma e depois se pergunta por que a call começou a quatro graus negativos.",
+    "Ninguém consegue apontar uma palavra grosseira aqui, e é exatamente por isso que ninguém nunca vai corrigir. \u201cConcerns\u201d e \u201cregarding\u201d empurram o registro para cima, e para cima é lido como frieza. O destinatário para de resolver e começa a se defender. Lindamente escrito, silenciosamente caro.",
+    "Mesma informação, ameaça zero. \u201cGrab you for five minutes\u201d encolhe o problema antes mesmo de você descrevê-lo, o que é um pequeno ato de genialidade que praticamente ninguém executa por acaso em outro idioma."
+  ],
+  d4_take:"Essa é a camada emocional, e é ela que decide se o cliente se inclina para frente ou se joga o corpo para trás. É mensurável, é ensinável, e nunca apareceu em nenhuma prova que a sua equipe já passou.",
+
+  tbl_kicker:"OS RÓTULOS, TRADUZIDOS",
+  tbl_h2:"Como eu chamaria isso num congresso. O que significa para você.",
+  tbl_c1:"O NOME ACADÊMICO", tbl_c2:"O QUE ISSO REALMENTE FAZ PELA SUA EQUIPE",
+  tbl_rows:[
+    ["Abordagem Comunicativa","Usamos a língua em vez de estudá-la. Prática padrão. Se um fornecedor não oferece isso, vá embora."],
+    ["Abordagem Lexical","Treino frases, não palavras, para que o acesso fique mais rápido e falar deixe de consumir atenção. Foi a demonstração 01."],
+    ["Construtivismo","Sua equipe deduz a regra em vez de recebê-la, comparando o inglês com a própria língua. Regra deduzida sobrevive à pressão. Regra decorada não."],
+    ["Psicolinguística e pragmática","Trabalho o que o cérebro faz sob carga e o que a frase faz com quem ouve. É a camada que seus concorrentes não vendem, porque a maioria não sabe ensinar."]
+  ],
+  tbl_note:"As três primeiras são ofício. A quarta é a razão pela qual uma equipe fluente ainda perde a sala, e a razão pela qual você está nesta página.",
+
+  cta_kicker:"PRÓXIMO PASSO",
+  cta_h2_a:"Agora rode isso com", cta_h2_em:"a sua equipe", cta_h2_b:".",
+  cta_p:"Tudo o que você acabou de fazer, eu faço ao vivo, com a sua gente, sobre os e-mails e as calls reais deles. Quarenta e cinco minutos, sem custo, sem compromisso. Eu digo exatamente onde eles quebram sob pressão e se o treinamento vale ou não o seu orçamento.",
+  cta_btn:"Agendar a sessão de diagnóstico",
+  cta_copied:"E-mail copiado",
+  cta_name:"Pedro Gigollotti · Professor e Diretor Acadêmico · São Paulo · Roma · Milão",
+  mail_subject:"Sessão de diagnóstico",
+  mail_body:"Tamanho da equipe:\nNível atual:\nObjetivo:\nPrazo:",
+  foot_tag:"CONCEPT · MIND YOUR FUTURE",
+  foot_copy:"© 2026 Concept."
+},
+
+it:{
+  back:"TORNA ALLA HOME", nav_cta:"Prenota la call",
+  hero_kicker:"IL METODO, DAL VIVO",
+  hero_h1_a:"Non leggere il metodo.", hero_h1_em:"Provalo", hero_h1_b:"su di te.",
+  hero_lede:"Questa pagina non descrive come insegno. È una versione compressa di una lezione vera, con te al posto dello studente. Sei brevi dimostrazioni. Niente da installare, niente da inviare, nessun dato esce dal tuo browser.",
+  chip1:"Circa 6 minuti", chip2:"Funziona da telefono", chip3:"Le risposte restano sul tuo dispositivo",
+
+  base_kicker:"DA DOVE PARTONO TUTTI",
+  base_h2_a:"L'Approccio Comunicativo è il", base_h2_em:"minimo", base_h2_b:", non un vantaggio.",
+  base_1_t:"Quello che ti vende ogni scuola",
+  base_1_p:"La lingua si impara usandola, non studiandola. Lezioni interamente in inglese, lo studente parla dal primo minuto, la grammatica serve al compito e non viceversa. È lo standard di settore dagli anni Ottanta e funziona. Lo uso anch'io. Chi non lo fa è semplicemente indietro.",
+  base_2_t:"Dove smette di bastare",
+  base_2_p:"L'Approccio Comunicativo ottimizza una cosa sola: far arrivare il messaggio. In una trattativa, far arrivare il messaggio è il pavimento, non il soffitto. Il tuo cliente ha capito benissimo la frase. Si è solo fidato un po' meno dopo averla letta, e nessuno dei due saprebbe dire esattamente perché. È di questa distanza che parlano le prossime tre sezioni.",
+  base_band:"Ogni scuola allena il tuo team a farsi capire. Io lo alleno a farsi credere.",
+
+  taa_kicker:"IL CICLO TRIPLE A",
+  taa_h2_a:"Un messaggio vero,", taa_h2_em:"tre", taa_h2_b:"tempi.",
+  taa_lede:"Ogni mia lezione segue lo stesso ciclo: Access, Analysis, Activation. Qui sotto gira su una e-mail autentica, di quelle che il tuo commerciale riceve un martedì qualunque. Falle in ordine.",
+
+  acc_t:"Access (Accesso)", acc_p:"Accesso significa incontrare la lingua dove vive davvero: un messaggio realmente inviato, non uno scritto per un libro di testo. Qui non c'è nulla di semplificato. È materia prima grezza.",
+  acc_do:"CLICCA SULLE TRE ESPRESSIONI SOTTOLINEATE",
+  mail_from:"Da: Elena Rossi · Acquisti · Oggetto: Preventivo revisionato",
+  acc_empty:"Clicca su un'espressione qui sopra per vedere cosa sta davvero facendo.",
+  acc_x1_s:"SEMBRA: CORTESIA", acc_x1_t:"È un colpo di avvertimento.",
+  acc_x1_p:"I libri di testo lo catalogano sotto \u201cesprimere un'opinione\u201d, il che è tenerissimo. In una trattativa fa tutt'altro: marca tutto ciò che precede come diplomazia e tutto ciò che segue come la posizione vera. Quando un cliente dice \u201cto be honest\u201d, la parte cordiale dell'e-mail è già uscita dalla porta sul retro.",
+  acc_x2_s:"SEMBRA: BUONA VOLONTÀ", acc_x2_t:"È una minaccia con un ottimo cappotto.",
+  acc_x2_p:"\u201cI'd hate for\u201d non significa che le dispiacerebbe. Significa che se l'è già immaginato e sta benissimo. Il numero porta la pressione, la grammatica porta il sorriso, e il tuo team legge il sorriso, perché il sorriso è la parte che qualcuno gli ha insegnato.",
+  acc_x3_s:"SEMBRA: UNA DOMANDA", acc_x3_t:"È un ordine con un punto interrogativo pinzato sopra.",
+  acc_x3_p:"\u201cHave another look\u201d presuppone che ci sia qualcosa da trovare. Risponda \u201csì, ho guardato\u201d e sei entrato, educato e fluente, esattamente nella trappola che ti ha costruito. Massima cortesia, zero flessibilità. È la frase più inglese di tutta l'e-mail.",
+
+  ana_t:"Analysis (Analisi)", ana_p:"Ora la risposta. La tua posizione è fissa: il prezzo non si muove. Stesso messaggio, cinque registri, dall'ingessato al confidenziale. Uno solo tiene il prezzo e tiene il cliente.",
+  ana_do:"ATTRAVERSA I CINQUE REGISTROS",
+  reg_names:["Ingessato","Formale","Consultivo","Informale","Confidenziale"],
+  m_warm:"Calore", m_auth:"Autorevolezza", v_head:"QUANTO TI COSTA",
+  heard_h:"Cosa sente Marco:",
+  reg_heard:[
+    "Adesso è diventata una questione legale.",
+    "Corretto. Chiuso. Distante.",
+    "Fermo, e ancora dalla mia parte.",
+    "C'è margine. Insisti ancora.",
+    "O siamo amici, o non lo siamo."
+  ],
+  reg_verdict:[
+    "Grammaticalmente impeccabile. Giuridicamente blindata. Da qualche parte un avvocato ha appena provato un piacevole tepore. Hai anche trasformato un fornitore in controparte, e nella frase non c'è nulla di sbagliato, che è precisamente il motivo per cui nessuno ti dirà mai che c'era.",
+    "Corretto, sicuro e caloroso più o meno quanto uno schedario. Perfetto con uno sconosciuto. Costoso con un cliente che vuoi tenere per altri tre anni. Hai tenuto il prezzo e l'hai pagato in una valuta che non sapevi di possedere.",
+    "Eccolo. Rifiuta senza pronunciare mai la parola no, tiene intatta la tua autorevolezza e consegna a Marco un asse di trattativa nuovo di zecca che a te non costa nulla. È il registro che quasi nessuno raggiunge in una seconda lingua sotto pressione, ed è l'intero motivo per cui io ho un lavoro.",
+    "Simpatico. E hai appena sbattuto le palpebre. Quel \u201cI'm afraid\u201d più quel \u201cthough?\u201d pieno di speranza gli hanno detto che la porta è ancora aperta. Insisterà di nuovo, e ora hai il privilegio di tenere due volte lo stesso punto, il che è circa il doppio più difficile.",
+    "Magnifico se ci hai cenato insieme tre volte. Fatale per la carriera se non è così. Il registro è una scommessa sul rapporto, e quasi tutti la piazzano senza accorgersi di essere al tavolo verde."
+  ],
+  ana_note:"È il passaggio che ogni altro metodo salta. Loro si fermano al significato. Io mi fermo solo quando il registro è giusto, perché il tuo cliente non sta valutando il significato.",
+
+  act_t:"Activation (Attivazione)", act_p:"La lingua che hai capito non è la lingua che sai usare. L'attivazione è il momento in cui aggiungo pressione, perché la pressione è l'unica condizione in cui il tuo team la userà davvero.",
+  act_do:"20 SECONDI. SCEGLI LA TUA RISPOSTA.",
+  act_who:"MARCO RISPONDE",
+  act_start:"Avvia il cronometro",
+  act_timer:"TEMPO RIMASTO",
+  act_res:[
+    "Hai ceduto, con calore e con eleganza. \u201cLet me see what I can do\u201d viene sentito come un sì con le carte ancora da firmare. Non hai concesso nulla e hai perso comunque l'8%, che è un notevole tasso di rendimento. È anche la risposta preferita sotto pressione di tempo, in tutte le lingue che ho insegnato.",
+    "Porta chiusa, correttamente, e Marco torna dal suo capo a mani vuote. Voleva combattere per te. Non gli hai dato niente con cui combattere. Prenderà il preventivo più basso e si sentirà vagamente in colpa, e il suo senso di colpa non comparirà da nessuna parte nel tuo bilancio.",
+    "Questa è quella giusta. Hai rifiutato senza dire mai no e hai reso Marco complice del rifiuto. Il prezzo non si è mosso. La conversazione sì. Guarda cosa è costato davvero: un condizionale, una domanda e nessunissima scusa."
+  ],
+  act_timeout:"Tempo scaduto, e non è un fallimento, è il dato. Tu avevi venti secondi e una stanza silenziosa. Il tuo team ha circa quattro secondi e un cliente che lo fissa. Quattro secondi sono il punto in cui il cervello afferra la frase sicura più vicina, e la frase sicura più vicina è quasi sempre quella che regala i soldi.",
+  act_note:"Hai appena percorso i tre passaggi. Access ti ha dato la lingua grezza, Analysis la mappa, Activation ha messo tutto sotto carico. Circa quarantacinque minuti di questo, una o due volte a settimana, sulle e-mail reali del tuo team.",
+
+  psy_kicker:"LA PARTE CHE NESSUN ALTRO VENDE",
+  psy_h2_a:"L'inglese del tuo team non è rotto.", psy_h2_em:"Il recupero", psy_h2_b:"lo è.",
+  psy_lede:"La psicolinguistica studia come la lingua viene immagazzinata e recuperata nel cervello. È il motivo per cui chi legge contratti in inglese ogni giorno ammutolisce nel momento in cui la posta in gioco si alza. Quattro dimostrazioni. Falle su di te, onestamente, e guarda meno il punteggio e più la sensazione.",
+
+  take_h:"COSA SIGNIFICA PER IL TUO TEAM",
+
+  d1_t:"Memoria: non immagazzini parole. Immagazzini quartieri.",
+  d1_p:"Un madrelingua non costruisce \u201cmake a decision\u201d mettendo insieme un verbo e un sostantivo. Prende l'intera espressione dallo scaffale, già montata. Chi impara la rimonta ogni singola volta, e montare costa millisecondi.",
+  d1_do:"SEI COPPIE. SCEGLI QUELLA NATURALE, IN FRETTA.",
+  d1_btn:"Inizia",
+  d1_ms_l:"La tua media, in millisecondi",
+  d1_acc_l:"Corrette su 6",
+  d1_take_fast:"Veloce, ed è esattamente il punto. Le coppie arrivate all'istante non le hai montate affatto: le hai prese dallo scaffale già intere. Quelle su cui hai esitato le stavi costruendo pezzo per pezzo, dal vivo, come chi monta un mobile mentre qualcuno lo guarda. Ora aggiungi un cliente, un margine in testa e un'obiezione nell'orecchio, e osserva il mobile traballare.",
+  d1_take_slow:"Buona notizia: conoscevi tutte le parole. Cattiva notizia: conoscerle non è mai stato il problema. Ogni millisecondo speso a scegliere è un millisecondo in cui non stavi ascoltando il cliente, e il cliente se n'è accorto senza sapere di cosa. Una lista di vocaboli non lo aggiusta, perché non è la lista che si è rotta. Si aggiusta allenando l'espressione come blocco unico, finché non si presenta già montata.",
+
+  d2_t:"Interferenza: la tua prima lingua è ancora nella stanza.",
+  d2_p:"Quando due parole competono vince la più veloce, e la più veloce è di solito quella che somiglia alla tua lingua madre. Non è distrazione. È una corsa, e il corridore sbagliato parte più vicino al traguardo.",
+  d2_do:"SCEGLI UNA LINGUA. TOCCA OGNI TRAPPOLA.",
+  d2_tab_it:"Italofoni", d2_tab_pt:"Lusofoni",
+  d2_take:"Nessuna di queste persone ha lacune di vocabolario. La parola giusta la conoscono. Semplicemente perde la corsa, ogni volta, sotto pressione. Una lista di vocaboli non la risolve, perché non è la lista a fallire. Ciò che la cambia è il recupero ripetuto sotto carico, che è esattamente lo scopo della fase di Attivazione.",
+
+  d3_t:"Carico: ecco perché in riunione cala il silenzio.",
+  d3_p:"La memoria di lavoro regge circa quattro elementi alla volta. In una trattativa il tuo team sta già reggendo i numeri, l'ultima obiezione del cliente e la soglia del capo. E a quel punto gli serve un condizionale.",
+  d3_do:"TIENI CINQUE CIFRE. RISPONDI A UNA DOMANDA. RESTITUISCI LE CIFRE.",
+  d3_btn:"Inizia",
+  d3_memorize:"MEMORIZZALE. QUATTRO SECONDI.",
+  d3_recall:"ORA DIGITA LE CINQUE CIFRE",
+  d3_check:"Verifica",
+  d3_ok:"Cifre intatte, grammatica intatta. Sei in minoranza, e sospetto che la fatica l'abbia sentita comunque. Ora aggiungi un cliente, un prezzo, un capo con una soglia invalicabile e una stanza piena di gente che aspetta che tu parli. Qualcosa cadrà, e non sarà il prezzo.",
+  d3_partial:"Una è sopravvissuta, l'altra no. È tutta qui la dimostrazione. Nessuna delle due attività era difficile. Le cifre le fa un bambino, e tu leggi contratti in inglese da anni. Sono diventate difficili nell'istante esatto in cui sono arrivate insieme.",
+  d3_fail:"Perse entrambe. Concediti un attimo per apprezzare quanto fosse facile ciascuna presa da sola. È questo il punto, ed è anche il motivo per cui il tuo miglior negoziatore sembra un principiante al minuto quaranta di una call.",
+  d3_take:"Qualcosa cade sempre, e non sono mai i numeri. È la lingua, perché la lingua è l'unica parte che ti sta ancora chiedendo l'affitto. Ecco perché alleno fino all'automatismo e non fino alla correttezza. Un inglese corretto che consuma attenzione è un inglese che svanisce nell'esatto momento in cui la posta si alza.",
+
+  d4_t:"Emozione: il tono arriva prima che la frase finisca.",
+  d4_p:"Chi ascolta registra la carica emotiva del messaggio prima di finire di elaborarne il contenuto. Il tuo cliente ha già provato qualcosa per quella frase prima di arrivare al verbo. Tre messaggi, informazione identica.",
+  d4_do:"TOCCA OGNUNO",
+  d4_msgs:[
+    "\u201cWe need to talk about the deadline.\u201d",
+    "\u201cI have concerns regarding the current timeline.\u201d",
+    "\u201cCan I grab you for five minutes about the deadline?\u201d"
+  ],
+  d4_rates:["MINACCIA: ALTA","MINACCIA: MEDIA","MINACCIA: BASSA"],
+  d4_revs:[
+    "Parole neutre, schema radioattivo. \u201cWe need to talk\u201d è la frase che l'inglese riserva ai licenziamenti e alla fine dei matrimoni. Il tuo team la sgancia allegramente a proposito di un diagramma di Gantt, e poi si chiede perché la call sia partita a quattro gradi sotto zero.",
+    "Qui nessuno può indicare una parola scortese, ed è esattamente per questo che nessuno la correggerà mai. \u201cConcerns\u201d e \u201cregarding\u201d alzano il registro, e alzato viene letto come freddo. Chi riceve smette di risolvere e comincia a difendersi. Scritto benissimo, e caro in silenzio.",
+    "Stessa informazione, minaccia zero. \u201cGrab you for five minutes\u201d rimpicciolisce il problema prima ancora che tu lo descriva, il che è un piccolo atto di genio che praticamente nessuno compie per caso in una seconda lingua."
+  ],
+  d4_take:"Questo è lo strato emotivo, ed è quello che decide se il cliente si sporge in avanti o si appoggia allo schienale. È misurabile, è insegnabile, e non è mai comparso in nessun esame che il tuo team abbia superato.",
+
+  tbl_kicker:"LE ETICHETTE, TRADUZITE",
+  tbl_h2:"Come lo chiamerei a un convegno. Cosa significa per te.",
+  tbl_c1:"IL NOME ACCADEMICO", tbl_c2:"COSA FA DAVVERO PER IL TUO TEAM",
+  tbl_rows:[
+    ["Approccio Comunicativo","Usiamo la lingua invece di studiarla. Prassi standard. Se un fornitore non te lo garantisce, cambia fornitore."],
+    ["Approccio Lessicale","Alleno espressioni, non parole, così il recupero accelera e parlare smette di costare attenzione. Era la dimostrazione 01."],
+    ["Costruttivismo","Il tuo team ricava la regola invece di riceverla, confrontando l'inglese con la propria lingua. Una regola ricavata regge sotto pressione. Una imparata a memoria no."],
+    ["Psicolinguistica e pragmatica","Lavoro su cosa fa il cervello sotto carico e su cosa fa la frase a chi ascolta. È lo strato che i tuoi concorrenti non vendono, perché in gran parte non sanno insegnarlo."]
+  ],
+  tbl_note:"I primi tre sono mestiere. Il quarto è il motivo per cui un team fluente perde comunque la stanza, ed è il motivo per cui sei su questa pagina.",
+
+  cta_kicker:"PROSSIMO PASSO",
+  cta_h2_a:"Ora provalo sul", cta_h2_em:"tuo team",
