@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Method · Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000; --white: #fff; --red: #E32F2E; --red-hi: #FF4342;
+    --sans: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+  body {
+    margin: 0; background: var(--black); color: var(--white);
+    font-family: var(--sans); -webkit-font-smoothing: antialiased;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 100vh; padding: 20px; text-align: center;
+  }
+  h1 { font-weight: 400; font-size: 32px; letter-spacing: -0.02em; margin-bottom: 20px; }
+  p { font-size: 16px; color: #8A8F98; max-width: 500px; line-height: 1.6; margin-bottom: 40px; }
+  
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px; text-decoration: none; font-family: var(--sans);
+    font-weight: 600; font-size: 15px; padding: 15px 28px; border-radius: 999px;
+    border: 1.5px solid currentColor; cursor: pointer; background: none; transition: all .25s ease;
+  }
+  .btn-outline { color: #fff; }
+  .btn-outline:hover { background: #fff; color: #000; transform: translateY(-3px); }
+</style>
+</head>
+<body>
+
+  <h1 id="title">The Method in Action</h1>
+  <p id="subtitle">The interactive demonstration goes here.</p>
+
+  <a class="btn btn-outline" id="backBtn" href="index.html">Back to Concept</a>
+
+<script>
+  const methodI18N = {
+    en: {
+      title: "The Method in Action",
+      subtitle: "The interactive demonstration goes here.",
+      back: "Back to Concept"
+    },
+    pt: {
+      title: "O Método na Prática",
+      subtitle: "A demonstração interativa será exibida aqui.",
+      back: "Voltar para Concept"
+    },
+    it: {
+      title: "Il Metodo in Azione",
+      subtitle: "La dimostrazione interattiva verrà mostrata qui.",
+      back: "Torna a Concept"
+    }
+  };
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const lang = urlParams.get('lang') || 'en';
+
+  document.documentElement.lang = lang;
+  document.getElementById('title').textContent = methodI18N[lang].title;
+  document.getElementById('subtitle').textContent = methodI18N[lang].subtitle;
+  
+  const backBtn = document.getElementById('backBtn');
+  backBtn.textContent = methodI18N[lang].back;
+  backBtn.setAttribute('href', 'index.html?lang=' + lang);
+</script>
+</body>
+</html>
