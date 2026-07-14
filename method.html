@@ -29,7 +29,7 @@
     background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
     border-bottom:1px solid var(--line-dark);}
   #nav .brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
-  #nav .brand svg{height:28px;width:auto;aspect-ratio:996/852;transition:transform .35s ease;}
+  #nav .brand svg{height:28px;width:auto;overflow:visible;transition:transform .35s ease;}
   #nav .brand:hover svg{transform:rotate(-10deg) scale(1.1);}
   #nav .back{color:#8A8F98;font-size:12px;letter-spacing:1px;font-weight:600;}
   #nav .brand:hover .back{color:#fff;}
@@ -217,7 +217,7 @@
   footer{padding:32px 0 44px;border-top:1px solid var(--line-dark);}
   .footrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
     gap:14px;font-size:11.5px;color:#7E838C;}
-  .footrow svg{height:22px;width:auto;aspect-ratio:996/852;vertical-align:middle;margin-right:9px;}
+  .footrow svg{height:22px;width:auto;overflow:visible;vertical-align:middle;margin-right:9px;}
 </style>
 </head>
 <body>
@@ -233,7 +233,7 @@
       <button type="button" data-lang="pt">PT</button>
       <button type="button" data-lang="it">IT</button>
     </div>
-    <a class="cta" id="navCta" href="#book"></a>
+    <a class="cta" id="navCta" href="#book" data-t="nav_cta"></a>
   </div>
 </nav>
 
@@ -500,6 +500,7 @@ en:{
   hero_h1_a:"Don't read the method.", hero_h1_em:"Run it", hero_h1_b:"on yourself.",
   hero_lede:"This page is not a description of how I teach. It is a compressed version of an actual lesson, with you as the student. Six short demonstrations. Nothing to install, nothing to submit, no data leaves your browser.",
   chip1:"About 6 minutes", chip2:"Works on your phone", chip3:"Your answers stay local",
+  hero_cta1:"Run the method on yourself",
 
   base_kicker:"WHERE EVERYONE ELSE STARTS",
   base_h2_a:"The Communicative Approach is", base_h2_em:"table stakes", base_h2_b:", not a differentiator.",
@@ -636,6 +637,7 @@ pt:{
   hero_h1_a:"Não leia sobre o método.", hero_h1_em:"Teste-o", hero_h1_b:"em você mesmo.",
   hero_lede:"Esta página não descreve como eu ensino. Ela é uma versão condensada de uma aula real, com você no lugar do aluno. Seis demonstrações curtas. Nada para instalar, nada para enviar, nenhum dado sai do seu navegador.",
   chip1:"Cerca de 6 minutos", chip2:"Funciona no celular", chip3:"Suas respostas ficam no seu aparelho",
+  hero_cta1:"Teste o método em você",
 
   base_kicker:"ONDE TODO MUNDO COMEÇA",
   base_h2_a:"A Abordagem Comunicativa é o", base_h2_em:"mínimo", base_h2_b:", não um diferencial.",
@@ -737,7 +739,7 @@ pt:{
   ],
   d4_rates:["AMEAÇA: ALTA","AMEAÇA: MÉDIA","AMEAÇA: BAIXA"],
   d4_revs:[
-    "Palavras neutre, padrão radioativo. \u201cWe need to talk\u201d é a frase que o inglês reserva para demitir gente e terminar casamentos. Sua equipe dispara isso alegremente sobre um cronograma e depois se pergunta por que a call começou a quatro graus negativos.",
+    "Palavras neutras, padrão radioativo. \u201cWe need to talk\u201d é a frase que o inglês reserva para demitir gente e terminar casamentos. Sua equipe dispara isso alegremente sobre um cronograma e depois se pergunta por que a call começou a quatro graus negativos.",
     "Ninguém consegue apontar uma palavra grosseira aqui, e é exatamente por isso que ninguém nunca vai corrigir. \u201cConcerns\u201d e \u201cregarding\u201d empurram o registro para cima, e para cima é lido como frieza. O destinatário para de resolver e começa a se defender. Lindamente escrito, silenciosamente caro.",
     "Mesma informação, ameaça zero. \u201cGrab you for five minutes\u201d encolhe o problema antes mesmo de você descrevê-lo, o que é um pequeno ato de genialidade que praticamente ninguém executa por acaso em outro idioma."
   ],
@@ -772,6 +774,7 @@ it:{
   hero_h1_a:"Non leggere il metodo.", hero_h1_em:"Provalo", hero_h1_b:"su di te.",
   hero_lede:"Questa pagina non descrive come insegno. È una versione compressa di una lezione vera, con te al posto dello studente. Sei brevi dimostrazioni. Niente da installare, niente da inviare, nessun dato esce dal tuo browser.",
   chip1:"Circa 6 minuti", chip2:"Funziona da telefono", chip3:"Le risposte restano sul tuo dispositivo",
+  hero_cta1:"Prova il metodo su di te",
 
   base_kicker:"DA DOVE PARTONO TUTTI",
   base_h2_a:"L'Approccio Comunicativo è il", base_h2_em:"minimo", base_h2_b:", non un vantaggio.",
@@ -794,10 +797,10 @@ it:{
   acc_x2_s:"SEMBRA: BUONA VOLONTÀ", acc_x2_t:"È una minaccia con un ottimo cappotto.",
   acc_x2_p:"\u201cI'd hate for\u201d non significa che le dispiacerebbe. Significa che se l'è già immaginato e sta benissimo. Il numero porta la pressione, la grammatica porta il sorriso, e il tuo team legge il sorriso, perché il sorriso è la parte che qualcuno gli ha insegnato.",
   acc_x3_s:"SEMBRA: UNA DOMANDA", acc_x3_t:"È un ordine con un punto interrogativo pinzato sopra.",
-  acc_x3_p:"\u201cHave another look\u201d presuppone che ci sia qualcosa da trovare. Risponda \u201csì, ho guardato\u201d e sei entrato, educato e fluente, esattamente nella trappola che ti ha costruito. Massima cortesia, zero flessibilità. È la frase più inglese di tutta l'e-mail.",
+  acc_x3_p:"\u201cHave another look\u201d presuppone che ci sia qualcosa da trovare. Rispondi \u201csì, ho guardato\u201d e sei entrato, educato e fluente, esattamente nella trappola che ti ha costruito. Massima cortesia, zero flessibilità. È la frase più inglese di tutta l'e-mail.",
 
   ana_t:"Analysis (Analisi)", ana_p:"Ora la risposta. La tua posizione è fissa: il prezzo non si muove. Stesso messaggio, cinque registri, dall'ingessato al confidenziale. Uno solo tiene il prezzo e tiene il cliente.",
-  ana_do:"ATTRAVERSA I CINQUE REGISTROS",
+  ana_do:"ATTRAVERSA I CINQUE REGISTRI",
   reg_names:["Ingessato","Formale","Consultivo","Informale","Confidenziale"],
   m_warm:"Calore", m_auth:"Autorevolezza", v_head:"QUANTO TI COSTA",
   heard_h:"Cosa sente Marco:",
@@ -879,7 +882,7 @@ it:{
   ],
   d4_take:"Questo è lo strato emotivo, ed è quello che decide se il cliente si sporge in avanti o si appoggia allo schienale. È misurabile, è insegnabile, e non è mai comparso in nessun esame che il tuo team abbia superato.",
 
-  tbl_kicker:"LE ETICHETTE, TRADUZITE",
+  tbl_kicker:"LE ETICHETTE, TRADOTTE",
   tbl_h2:"Come lo chiamerei a un convegno. Cosa significa per te.",
   tbl_c1:"IL NOME ACCADEMICO", tbl_c2:"COSA FA DAVVERO PER IL TUO TEAM",
   tbl_rows:[
@@ -891,4 +894,414 @@ it:{
   tbl_note:"I primi tre sono mestiere. Il quarto è il motivo per cui un team fluente perde comunque la stanza, ed è il motivo per cui sei su questa pagina.",
 
   cta_kicker:"PROSSIMO PASSO",
-  cta_h2_a:"Ora provalo sul", cta_h2_em:"tuo team",
+  cta_h2_a:"Ora provalo sul", cta_h2_em:"tuo team", cta_h2_b:".",
+  cta_p:"Tutto quello che hai appena fatto, io lo faccio dal vivo, con le tue persone, sulle loro e-mail e sulle loro call reali. Quarantacinque minuti, senza costi, senza impegno. Ti dico esattamente dove cedono sotto pressione, e se la formazione valga davvero il tuo budget.",
+  cta_btn:"Prenota la call diagnostica",
+  cta_copied:"Indirizzo e-mail copiato",
+  cta_name:"Pedro Gigollotti · Insegnante e Direttore Accademico · San Paolo · Roma · Milano",
+  mail_subject:"Call diagnostica",
+  mail_body:"Dimensione del team:\nLivello attuale:\nObiettivo:\nTempistiche:",
+  foot_tag:"CONCEPT · MIND YOUR FUTURE",
+  foot_copy:"© 2026 Concept."
+}
+};
+
+/* interference data: L1 form, wrong EN pull, right EN, explanation key */
+var TRAPS = {
+  it:[
+    {l1:"Pretendo una risposta.", wrong:"I pretend an answer.", right:"I expect an answer.",
+     exp:{en:"<b>Pretend</b> means to fake. Your brain grabbed it because it sounds like <b>pretendere</b>, and in a race between meaning and sound, sound turns up in running shoes. You have just informed your client, with total confidence, that you are bluffing.",
+          pt:"<b>Pretend</b> significa fingir. Seu cérebro agarrou essa palavra porque ela soa como <b>pretendere</b>, e numa corrida entre sentido e som, o som chega de tênis de corrida. Você acabou de informar ao cliente, com toda a confiança do mundo, que está blefando.",
+          it:"<b>Pretend</b> significa fingere. Il tuo cervello l'ha afferrata perché suona come <b>pretendere</b>, e in una gara tra significato e suono, il suono si presenta con le scarpe da corsa. Hai appena informato il cliente, con grande sicurezza, che stai bluffando."}},
+    {l1:"Attualmente lavoriamo con tre fornitori.", wrong:"Actually we work with three suppliers.", right:"Currently we work with three suppliers.",
+     exp:{en:"<b>Actually</b> means \u201cin fact, contrary to what you appear to believe\u201d. You meant to report a simple state of affairs. Instead you told him he was wrong, before the sentence had even started.",
+          pt:"<b>Actually</b> significa \u201cna verdade, ao contrário do que você parece acreditar\u201d. Você queria relatar um fato simples. Em vez disso, disse a ele que ele estava enganado antes mesmo de a frase começar.",
+          it:"<b>Actually</b> significa \u201cin realtà, al contrario di quel che sembri credere\u201d. Volevi riferire un dato semplice. Gli hai invece detto che si sbagliava, prima ancora che la frase iniziasse."}},
+    {l1:"È una persona molto sensibile.", wrong:"He is very sensible.", right:"He is very sensitive.",
+     exp:{en:"<b>Sensible</b> means level-headed and practical. You meant emotionally attuned. You have just described a colleague, in a performance review, as suspiciously reasonable.",
+          pt:"<b>Sensible</b> significa sensato, pé no chão. Você queria dizer sensível. Você acabou de descrever um colega, numa avaliação de desempenho, como alguém suspeitosamente razoável.",
+          it:"<b>Sensible</b> significa assennato, con i piedi per terra. Tu intendevi sensibile. Hai appena descritto un collega, in una valutazione delle performance, come sospettosamente ragionevole."}},
+    {l1:"Eventualmente possiamo rivedere il prezzo.", wrong:"Eventually we can review the price.", right:"If necessary, we can review the price.",
+     exp:{en:"<b>Eventually</b> means in the end, sooner or later, inevitably. You intended to promise absolutely nothing, and instead promised a discount with no expiry date. Marco is already forwarding this to his boss.",
+          pt:"<b>Eventually</b> significa no fim das contas, mais cedo ou mais tarde, inevitavelmente. Sua intenção era não prometer absolutamente nada, e você prometeu um desconto sem data de validade. O Marco já está encaminhando isso para o chefe dele.",
+          it:"<b>Eventually</b> significa alla fine, prima o poi, inevitabilmente. Volevi non promettere assolutamente nulla, e hai promesso uno sconto senza data di scadenza. Marco lo sta già inoltrando al suo capo."}}
+  ],
+  pt:[
+    {l1:"Pretendo fechar até sexta.", wrong:"I pretend to close by Friday.", right:"I intend to close by Friday.",
+     exp:{en:"<b>Pretend</b> means to fake. It wins the race because it sounds like <b>pretender</b>, and sound always leaves the blocks first. You have just announced, in a professional setting, that you are only pretending to close.",
+          pt:"<b>Pretend</b> significa fingir. Ela vence a corrida porque soa como <b>pretender</b>, e o som sempre larga na frente. Você acabou de anunciar, num contexto profissional, que está só fingindo que vai fechar.",
+          it:"<b>Pretend</b> significa fingere. Vince la corsa perché suona come <b>pretender</b>, e il suono parte sempre per primo. Hai appena annunciato, in un contesto professionale, che stai solo fingendo di chiudere."}},
+    {l1:"Vou assistir à reunião.", wrong:"I will assist the meeting.", right:"I will attend the meeting.",
+     exp:{en:"<b>Assist</b> means to help. You did not say you would be there. You said you would be assisting, which raises a genuinely interesting question about who is running this meeting and whether they know.",
+          pt:"<b>Assist</b> significa ajudar. Você não disse que vai estar lá. Disse que vai auxiliar, o que levanta uma dúvida sinceramente interessante sobre quem está conduzindo essa reunião e se essa pessoa sabe disso.",
+          it:"<b>Assist</b> significa aiutare. Non hai detto che ci sarai. Hai detto che darai assistenza, il che solleva una domanda davvero interessante su chi stia conducendo la riunione e se ne sia al corrente."}},
+    {l1:"Ele é muito esperto.", wrong:"He is very expert.", right:"He is very clever.",
+     exp:{en:"<b>Expert</b> is about credentials on a wall. <b>Esperto</b> is about wits in a room. You reached for the compliment next door, and your listener quietly recalculated who you were talking about.",
+          pt:"<b>Expert</b> fala de diploma na parede. <b>Esperto</b> fala de raciocínio na sala. Você pegou o elogio do vizinho, e quem ouviu recalculou em silêncio de quem você estava falando.",
+          it:"<b>Expert</b> parla di titoli appesi al muro. <b>Esperto</b> (in portoghese) parla di prontezza nella stanza. Hai preso il complimento della porta accanto, e chi ascoltava ha silenziosamente ricalcolato di chi stessi parlando."}},
+    {l1:"Vamos realizar o projeto este ano.", wrong:"We will realize the project this year.", right:"We will carry out the project this year.",
+     exp:{en:"<b>Realize</b> means to become aware of something. You have told the board that this year, at long last, you intend to notice the project. And every native speaker in that room heard it.",
+          pt:"<b>Realize</b> significa perceber, dar-se conta. Você disse ao conselho que este ano, finalmente, pretende reparar que o projeto existe. E todo nativo naquela sala ouviu isso.",
+          it:"<b>Realize</b> significa rendersi conto. Hai detto al consiglio che quest'anno, finalmente, intendi accorgerti del progetto. E ogni madrelingua in quella stanza l'ha sentito."}}
+  ]
+};
+
+/* ============ STATE ============ */
+var lang = "en";
+function T(k){ return I18N[lang][k]; }
+
+function getLang(){
+  var m = /[?&]lang=(en|pt|it)/.exec(window.location.search);
+  return m ? m[1] : "en";
+}
+
+function applyLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  var els = document.querySelectorAll("[data-t]");
+  for(var i=0;i<els.length;i++){
+    var v = I18N[l][els[i].getAttribute("data-t")];
+    if(typeof v === "string") els[i].textContent = v;
+  }
+  document.getElementById("homeLink").setAttribute("href","index.html?lang="+l);
+  
+  // Translating the buttons that might not have data-t attributes naturally
+  var navCta = document.getElementById("navCta");
+  if(navCta) {
+    navCta.textContent = T("nav_cta");
+    navCta.setAttribute("href", "#book");
+  }
+  
+  var heroCta = document.getElementById("heroCta1");
+  if(heroCta) {
+    heroCta.textContent = T("hero_cta1");
+    heroCta.setAttribute("href", "#book");
+  }
+  
+  var cm = document.getElementById("ctaMail");
+  if(cm) {
+    cm.textContent = T("cta_btn");
+    cm.setAttribute("href","mailto:"+EMAIL+"?subject="+encodeURIComponent(T("mail_subject"))+"&body="+encodeURIComponent(T("mail_body")));
+  }
+
+  var sw = document.querySelectorAll("#langSwitch button");
+  for(var b=0;b<sw.length;b++){
+    sw[b].className = (sw[b].getAttribute("data-lang")===l) ? "active" : "";
+  }
+  
+  buildRegisters(); buildPlain(); buildEmotion(); buildTraps(d2L1);
+  resetAccess();
+  observeAll();
+}
+
+/* ============ REVEALS ============ */
+var obs = null;
+function observeAll(){
+  var els = document.querySelectorAll(".reveal");
+  if(!("IntersectionObserver" in window)){
+    for(var i=0;i<els.length;i++) els[i].classList.add("visible");
+    return;
+  }
+  if(!obs){
+    obs = new IntersectionObserver(function(en){
+      for(var i=0;i<en.length;i++){ if(en[i].isIntersecting) en[i].target.classList.add("visible"); }
+    },{threshold:0.06});
+  }
+  for(var j=0;j<els.length;j++) obs.observe(els[j]);
+}
+
+/* ============ ACCESS ============ */
+function resetAccess(){
+  var o = document.getElementById("accOut");
+  o.innerHTML = '<div class="out empty">'+T("acc_empty")+'</div>';
+  var hs = document.querySelectorAll(".hot");
+  for(var i=0;i<hs.length;i++) hs[i].classList.remove("open");
+}
+function showAccess(i){
+  var hs = document.querySelectorAll(".hot");
+  for(var k=0;k<hs.length;k++) hs[k].classList.toggle("open", k===i);
+  document.getElementById("accOut").innerHTML =
+    '<div class="out">' +
+      '<div class="surface">'+T("acc_x"+(i+1)+"_s")+'</div>' +
+      '<h4>'+T("acc_x"+(i+1)+"_t")+'</h4>' +
+      '<p>'+T("acc_x"+(i+1)+"_p")+'</p>' +
+    '</div>';
+}
+(function(){
+  var hs = document.querySelectorAll(".hot");
+  for(var i=0;i<hs.length;i++){
+    (function(el){
+      var idx = parseInt(el.getAttribute("data-x"),10);
+      el.addEventListener("click", function(){ showAccess(idx); });
+      el.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); showAccess(idx);} });
+    })(hs[i]);
+  }
+})();
+
+/* ============ ANALYSIS ============ */
+var regIdx = 2;
+function buildRegisters(){
+  var tr = document.getElementById("rlTrack");
+  tr.innerHTML = "";
+  for(var i=0;i<5;i++){
+    (function(i){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = T("reg_names")[i];
+      b.addEventListener("click", function(){ setRegister(i); });
+      tr.appendChild(b);
+    })(i);
+  }
+  setRegister(regIdx);
+}
+function setRegister(i){
+  regIdx = i;
+  var btns = document.querySelectorAll("#rlTrack button");
+  for(var k=0;k<btns.length;k++) btns[k].classList.toggle("on", k===i);
+  document.getElementById("rlSent").textContent = REG_SENT[i];
+  document.getElementById("rlHeard").innerHTML = "<b>"+T("heard_h")+"</b> "+T("reg_heard")[i];
+  var w = REG_METERS[i][0], a = REG_METERS[i][1];
+  document.getElementById("wBar").style.width = w+"%";
+  document.getElementById("aBar").style.width = a+"%";
+  document.getElementById("wVal").textContent = w;
+  document.getElementById("aVal").textContent = a;
+  document.getElementById("rlVerdict").textContent = T("reg_verdict")[i];
+}
+
+/* ============ ACTIVATION ============ */
+var actTimer = null, actLeft = 20, actDone = false;
+document.getElementById("actStart").addEventListener("click", function(){
+  document.getElementById("actStartWrap").classList.add("hidden");
+  document.getElementById("actPlay").classList.remove("hidden");
+  actDone = false; actLeft = 20;
+  var box = document.getElementById("actOpts");
+  box.innerHTML = "";
+  for(var i=0;i<3;i++){
+    (function(i){
+      var b = document.createElement("button");
+      b.className = "opt"; b.type = "button";
+      b.textContent = ACT_OPTS[i];
+      b.addEventListener("click", function(){ actPick(i, b); });
+      box.appendChild(b);
+    })(i);
+  }
+  document.getElementById("actN").textContent = "20";
+  document.getElementById("actBar").style.width = "100%";
+  document.getElementById("actBar").style.transition = "width 1s linear";
+  actTimer = setInterval(function(){
+    actLeft--;
+    document.getElementById("actN").textContent = actLeft;
+    document.getElementById("actBar").style.width = (actLeft/20*100)+"%";
+    if(actLeft<=0){ clearInterval(actTimer); if(!actDone) actTimeout(); }
+  },1000);
+});
+function actLock(){
+  var os = document.querySelectorAll("#actOpts .opt");
+  for(var i=0;i<os.length;i++) os[i].disabled = true;
+  document.getElementById("actNote").classList.remove("hidden");
+}
+function actPick(i, btn){
+  if(actDone) return;
+  actDone = true;
+  clearInterval(actTimer);
+  actLock();
+  btn.classList.add("picked");
+  btn.disabled = false;
+  var good = (i===2);
+  var r = document.getElementById("actResult");
+  r.classList.remove("hidden");
+  r.innerHTML = '<div class="verdict-card '+(good?"good":"bad")+'">' +
+    '<div class="t">'+T("v_head")+'</div><p>'+T("act_res")[i]+'</p></div>';
+}
+function actTimeout(){
+  actDone = true;
+  actLock();
+  var r = document.getElementById("actResult");
+  r.classList.remove("hidden");
+  r.innerHTML = '<div class="verdict-card bad"><div class="t">'+T("v_head")+'</div><p>'+T("act_timeout")+'</p></div>';
+}
+
+/* ============ D1 CHUNKS ============ */
+var d1i = 0, d1t0 = 0, d1times = [], d1hits = 0;
+document.getElementById("d1Btn").addEventListener("click", function(){
+  d1i = 0; d1times = []; d1hits = 0;
+  document.getElementById("d1Start").classList.add("hidden");
+  document.getElementById("d1Res").classList.add("hidden");
+  document.getElementById("d1Play").classList.remove("hidden");
+  d1Next();
+});
+function d1Next(){
+  if(d1i >= D1_ITEMS.length){ d1End(); return; }
+  var it = D1_ITEMS[d1i];
+  document.getElementById("d1Q").textContent = it.q;
+  var p = document.getElementById("d1Pair");
+  p.innerHTML = "";
+  var opts = [it.a, it.b];
+  for(var k=0;k<2;k++){
+    (function(k){
+      var b = document.createElement("button");
+      b.type="button"; b.textContent = opts[k];
+      b.addEventListener("click", function(){ d1Pick(k===it.ok); });
+      p.appendChild(b);
+    })(k);
+  }
+  document.getElementById("d1Prog").textContent = (d1i+1)+" / "+D1_ITEMS.length;
+  d1t0 = Date.now();
+}
+function d1Pick(correct){
+  d1times.push(Date.now()-d1t0);
+  if(correct) d1hits++;
+  d1i++;
+  d1Next();
+}
+function d1End(){
+  var sum = 0;
+  for(var i=0;i<d1times.length;i++) sum += d1times[i];
+  var avg = Math.round(sum/d1times.length);
+  document.getElementById("d1Play").classList.add("hidden");
+  document.getElementById("d1Res").classList.remove("hidden");
+  document.getElementById("d1Ms").textContent = avg;
+  document.getElementById("d1Acc").textContent = d1hits;
+  document.getElementById("d1Take").textContent = (avg < 900 && d1hits >= 5) ? T("d1_take_fast") : T("d1_take_slow");
+  document.getElementById("d1Start").classList.remove("hidden");
+}
+
+/* ============ D2 INTERFERENCE ============ */
+var d2L1 = "it";
+function buildTraps(l1){
+  d2L1 = l1;
+  var tabs = document.querySelectorAll("#d2Tabs button");
+  for(var i=0;i<tabs.length;i++) tabs[i].classList.toggle("on", tabs[i].getAttribute("data-l1")===l1);
+  var list = document.getElementById("d2List");
+  list.innerHTML = "";
+  var arr = TRAPS[l1];
+  for(var j=0;j<arr.length;j++){
+    (function(t){
+      var d = document.createElement("div");
+      d.className = "trap";
+      d.innerHTML = '<div class="l1">'+t.l1+'</div>' +
+        '<div style="margin-top:8px;font-size:15px;">' +
+          '<span class="wrong">'+t.wrong+'</span><span class="arrow">&rarr;</span>' +
+          '<span style="color:#fff;">'+t.right+'</span>' +
+        '</div>' +
+        '<div class="exp"><p>'+t.exp[lang]+'</p></div>';
+      d.addEventListener("click", function(){ d.classList.toggle("open"); });
+      list.appendChild(d);
+    })(arr[j]);
+  }
+}
+(function(){
+  var tabs = document.querySelectorAll("#d2Tabs button");
+  for(var i=0;i<tabs.length;i++){
+    (function(b){ b.addEventListener("click", function(){ buildTraps(b.getAttribute("data-l1")); }); })(tabs[i]);
+  }
+})();
+
+/* ============ D3 LOAD ============ */
+var d3Digits = "", d3LangOK = false;
+document.getElementById("d3Btn").addEventListener("click", function(){
+  d3Digits = "";
+  for(var i=0;i<5;i++) d3Digits += Math.floor(Math.random()*10);
+  document.getElementById("d3Start").classList.add("hidden");
+  document.getElementById("d3Res").classList.add("hidden");
+  document.getElementById("d3Digits").textContent = d3Digits.split("").join(" ");
+  document.getElementById("d3Mem").classList.remove("hidden");
+  setTimeout(function(){
+    document.getElementById("d3Mem").classList.add("hidden");
+    d3ShowTask();
+  }, 4000);
+});
+function d3ShowTask(){
+  document.getElementById("d3Q").textContent = D3_Q.q;
+  var p = document.getElementById("d3Pair");
+  p.innerHTML = "";
+  var opts = [D3_Q.a, D3_Q.b];
+  for(var k=0;k<2;k++){
+    (function(k){
+      var b = document.createElement("button");
+      b.type="button"; b.textContent = opts[k];
+      b.addEventListener("click", function(){
+        d3LangOK = (k === D3_Q.ok);
+        document.getElementById("d3Task").classList.add("hidden");
+        document.getElementById("d3Recall").classList.remove("hidden");
+        document.getElementById("d3In").value = "";
+        document.getElementById("d3In").focus();
+      });
+      p.appendChild(b);
+    })(k);
+  }
+  document.getElementById("d3Task").classList.remove("hidden");
+}
+document.getElementById("d3Check").addEventListener("click", function(){
+  var val = document.getElementById("d3In").value.replace(/\D/g,"");
+  var digitsOK = (val === d3Digits);
+  document.getElementById("d3Recall").classList.add("hidden");
+  document.getElementById("d3Res").classList.remove("hidden");
+  document.getElementById("d3Start").classList.remove("hidden");
+  var msg;
+  if(digitsOK && d3LangOK) msg = T("d3_ok");
+  else if(digitsOK || d3LangOK) msg = T("d3_partial");
+  else msg = T("d3_fail");
+  document.getElementById("d3Score").textContent = msg;
+});
+
+/* ============ D4 EMOTION ============ */
+function buildEmotion(){
+  var g = document.getElementById("emGrid");
+  g.innerHTML = "";
+  for(var i=0;i<3;i++){
+    (function(i){
+      var d = document.createElement("div");
+      d.className = "em";
+      d.innerHTML = '<div class="msg">'+T("d4_msgs")[i]+'</div>' +
+        '<div class="rate">'+T("d4_rates")[i]+'</div>' +
+        '<div class="rev"><p>'+T("d4_revs")[i]+'</p></div>';
+      d.addEventListener("click", function(){ d.classList.toggle("open"); });
+      g.appendChild(d);
+    })(i);
+  }
+}
+
+/* ============ PLAIN TABLE ============ */
+function buildPlain(){
+  var root = document.getElementById("plainTable");
+  root.innerHTML = "";
+  var h = document.createElement("div");
+  h.className = "plain-row head";
+  h.innerHTML = '<div class="ht">'+T("tbl_c1")+'</div><div class="ht">'+T("tbl_c2")+'</div>';
+  root.appendChild(h);
+  var rows = T("tbl_rows");
+  for(var i=0;i<rows.length;i++){
+    var r = document.createElement("div");
+    r.className = "plain-row" + (i===3 ? " star" : "");
+    r.innerHTML = '<div class="a">'+rows[i][0]+'</div><div class="b">'+rows[i][1]+'</div>';
+    root.appendChild(r);
+  }
+}
+
+/* ============ MISC ============ */
+document.getElementById("ctaMail").addEventListener("click", function(){
+  var toast = document.getElementById("copyToast");
+  function done(){
+    toast.textContent = T("cta_copied");
+    toast.style.opacity = "1";
+    setTimeout(function(){ toast.style.opacity = "0"; }, 2800);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(EMAIL).then(done, function(){});
+  }
+});
+var swb = document.querySelectorAll("#langSwitch button");
+for(var s=0;s<swb.length;s++){
+  (function(b){
+    b.addEventListener("click", function(e){
+      e.preventDefault();
+      applyLang(b.getAttribute("data-lang"));
+    });
+  })(swb[s]);
+}
+
+applyLang(getLang());
+</script>
+</body>
+</html>
