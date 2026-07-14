@@ -378,7 +378,7 @@
       <span data-t="hero_h1_b"></span> <i data-t="hero_h1_em"></i> <span data-t="hero_h1_c"></span>
     </h1>
     <p class="lede on-dark reveal d2" style="margin-top:26px;" data-t="hero_lede"></p>
-    <div class="ctas reveal d3"><a class="btn btn-outline" id="heroCta1" href="#method"></a></div>
+    <div class="ctas reveal d3"><a class="btn btn-outline" id="heroCta1" href="#"></a></div>
     <div class="scrollcue reveal d3"><span class="bar"></span><span data-t="scroll"></span></div>
   </div>
 </section>
@@ -501,6 +501,9 @@
       <div class="card reveal-scale"><h3 data-t="m1_t"></h3><p data-t="m1_p"></p></div>
       <div class="card reveal-scale d1"><h3 data-t="m2_t"></h3><p data-t="m2_p"></p></div>
     </div>
+    <div class="reveal" style="margin-top:34px; text-align:center;">
+      <a class="btn btn-solid" id="methodCta2" href="#"></a>
+    </div>
   </div>
 </section>
 
@@ -622,7 +625,7 @@ window.I18N = {
     hero_h1_em: "close",
     hero_h1_c: "in it?",
     hero_lede: "I'm Pedro Gigollotti. For 25 years I've trained professionals who already \"know the language\" and still lose the room. I teach the layer standard courses skip: register, pragmatics, and timing under pressure.",
-    hero_cta1: "See the method",
+    hero_cta1: "Run the method on yourself",
     scroll: "SCROLL",
 
     stat1_suffix: "+", stat1_label: "years training professionals to communicate under pressure",
@@ -779,7 +782,7 @@ window.I18N = {
     hero_h1_em: "fecham",
     hero_h1_c: "negócios nele?",
     hero_lede: "Sou Pedro Gigollotti. Há 25 anos preparo profissionais que até \"falam a língua\", mas perdem o controle da reunião. Ensino aquilo que os cursos convencionais pulam: registro, pragmática e timing sob pressão.",
-    hero_cta1: "Conheça o método",
+    hero_cta1: "Teste o método em você",
     scroll: "ROLE PARA BAIXO",
 
     stat1_suffix: "+", stat1_label: "anos treinando profissionais para se comunicarem sob pressão",
@@ -936,7 +939,7 @@ window.I18N = {
     hero_h1_em: "chiudere",
     hero_h1_c: "i contratti?",
     hero_lede: "Sono Pedro Gigollotti. Da 25 anni preparo professionisti che, pur conoscendo la lingua, non riescono a tenere in pugno la situazione. Insegno quello che i corsi standard tralasciano: il registro, la pragmatica e la gestione dei tempi sotto pressione.",
-    hero_cta1: "Scopri il metodo",
+    hero_cta1: "Prova il metodo su di te",
     scroll: "SCORRI VERSO IL BASSO",
 
     stat1_suffix: "+", stat1_label: "anni di esperienza nel preparare i professionisti a comunicare sotto pressione",
@@ -1224,12 +1227,24 @@ function applyLang(lang){
     if(typeof v === 'string') els[i].textContent = v;
   }
   document.getElementById('navCta').textContent = t('nav_cta');
-  document.getElementById('heroCta1').textContent = t('hero_cta1');
   document.getElementById('contactCta').textContent = t('contact_cta');
   document.getElementById('startCta').textContent = t('start_cta');
+  
   var el = document.getElementById('emailLink');
   el.textContent = EMAIL;
   el.setAttribute('href', mailHref());
+  
+  // NEW: Sets the link to the second page and carries the language parameter over
+  var hCta = document.getElementById('heroCta1');
+  if(hCta) {
+    hCta.textContent = t('hero_cta1');
+    hCta.setAttribute('href', 'method.html?lang=' + lang);
+  }
+  var mCta = document.getElementById('methodCta2');
+  if(mCta) {
+    mCta.textContent = t('hero_cta1');
+    mCta.setAttribute('href', 'method.html?lang=' + lang);
+  }
 
   var ctrs = document.querySelectorAll('.counter');
   for(var n=0;n<ctrs.length;n++){
@@ -1338,15 +1353,12 @@ function pickLang(lang){
   enterSite(lang);
 }
 
-// BULLETPROOF EVENT ATTACHMENT FOR THE OPENING BUTTONS
 var gateBtns = document.querySelectorAll('#intro .lang-btn');
 for (var i = 0; i < gateBtns.length; i++) {
-  // Catch standard click
   gateBtns[i].addEventListener('click', function(e) {
     e.preventDefault();
     pickLang(this.getAttribute('data-lang'));
   });
-  // Catch mobile tap immediately
   gateBtns[i].addEventListener('touchend', function(e) {
     e.preventDefault();
     pickLang(this.getAttribute('data-lang'));
@@ -1363,7 +1375,16 @@ for(var s=0; s<sw.length; s++){
   })(sw[s]);
 }
 
-applyLang('en');
+// NEW: Smart URL check. If a client returns from the method page, 
+// the URL will have ?lang=xx, skipping the black intro gate completely.
+var urlParams = new URLSearchParams(window.location.search);
+var langParam = urlParams.get('lang');
+if(langParam && window.I18N[langParam]) {
+  gateUsed = true;
+  enterSite(langParam);
+} else {
+  applyLang('en');
+}
 </script>
 </body>
 </html>
