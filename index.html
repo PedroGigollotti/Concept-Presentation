@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro Gigollotti · Concept · Language Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#000; --panel:#141414; --white:#fff;
+    --red:#E32F2E; --red-hi:#FF4342;
+    --gray:#8A8F98; --gray-dark:#4A4E57;
+    --line-dark:rgba(255,255,255,.14); --line-light:rgba(0,0,0,.09);
+    --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+    --serif:'Instrument Serif',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#000;color:#000;font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body.locked{overflow:hidden;height:100vh;}
+  a{color:inherit;}
+  em,i{font-family:var(--serif);font-style:italic;color:var(--red);}
+
+  /* ===== INTRO / LANGUAGE GATE ===== */
+  #intro{
+    position:fixed;top:0;left:0;right:0;bottom:0;
+    width:100%;height:100%;
+    z-index:1000;background:#000;
+    overflow-y:auto;-webkit-overflow-scrolling:touch;
+    transition:opacity .9s ease, visibility .9s ease;
+  }
+  #intro.done{opacity:0;visibility:hidden;pointer-events:none;}
+  .intro-inner{
+    position:relative;z-index:3;
+    min-height:100%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:40px 20px;box-sizing:border-box;
+  }
+  .intro-glow, .intro-ring{pointer-events:none;}
+  .intro-glow{
+    position:absolute;top:50%;left:50%;
+    width:900px;height:900px;max-width:150vw;max-height:150vw;
+    margin:-450px 0 0 -450px;border-radius:50%;
+    background:radial-gradient(circle, rgba(227,47,46,.20) 0%, rgba(227,47,46,0) 62%);
+    opacity:0;animation:glowIn 2.4s ease forwards .25s;z-index:1;
+  }
+  @keyframes glowIn{to{opacity:1;}}
+  .intro-ring{
+    position:absolute;top:50%;left:50%;margin:-170px 0 0 -170px;
+    border:1.5px solid rgba(227,47,46,.45);border-radius:50%;
+    width:340px;height:340px;opacity:0;z-index:1;
+    animation:ringPulse 2.8s ease-out infinite 1.4s;
+  }
+  .intro-ring.r2{animation-delay:2.1s;}
+  @keyframes ringPulse{0%{opacity:.65;transform:scale(.8);}100%{opacity:0;transform:scale(1.5);}}
+
+  .intro-logo{
+    width:52vw;max-width:280px;height:auto;aspect-ratio:996/852;opacity:0;
+    transform:scale(.55) rotate(-20deg);
+    animation:logoIn 1.7s cubic-bezier(.22,1,.36,1) forwards .15s;
+    position:relative;z-index:2;
+    filter:drop-shadow(0 0 46px rgba(227,47,46,.4));
+  }
+  @keyframes logoIn{
+    0%{opacity:0;transform:scale(.55) rotate(-20deg);}
+    60%{opacity:1;}
+    100%{opacity:1;transform:scale(1) rotate(0);}
+  }
+  .intro-word{margin-top:30px;color:#fff;font-size:12px;letter-spacing:7px;opacity:0;
+    animation:fadeUp .9s ease forwards 1.5s;position:relative;z-index:2;}
+  .intro-tag{margin-top:10px;color:#7A7F88;font-size:10.5px;letter-spacing:3px;opacity:0;
+    animation:fadeUp .9s ease forwards 1.75s;position:relative;z-index:2;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+
+  .lang-block{margin-top:52px;opacity:0;animation:fadeUp 1s ease forwards 2.1s;
+    position:relative;z-index:999;text-align:center;width:100%;pointer-events:auto;}
+  .lang-prompt{color:#6E727A;font-size:10.5px;letter-spacing:2.5px;margin-bottom:22px;line-height:1.9;}
+  .lang-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:0 -8px;}
+  .lang-row > .lang-btn{margin:0 8px 16px;}
+  @supports (gap:1px){ .lang-row{margin:0;} .lang-row > .lang-btn{margin:0;} }
+  
+  .lang-btn{
+    position:relative;
+    z-index:1000;
+    pointer-events:auto;
+    width:128px;padding:24px 12px 18px;background:#0E0E0E;
+    border:1px solid rgba(255,255,255,.14);border-radius:20px;
+    cursor:pointer;color:#fff;font-family:var(--sans);
+    display:flex;flex-direction:column;align-items:center;gap:11px;
+    -webkit-tap-highlight-color:rgba(227,47,46,.3);touch-action:manipulation;
+    transition:transform .28s cubic-bezier(.22,1,.36,1),border-color .28s ease,background .28s ease;
+  }
+  .lang-btn:hover,.lang-btn:focus-visible,.lang-btn:active{
+    transform:translateY(-6px);border-color:var(--red);background:#171717;outline:none;
+  }
+  .lang-btn .flag{width:44px;height:44px;border-radius:50%;overflow:hidden;pointer-events:none;}
+  .lang-btn .flag svg{width:100%;height:100%;display:block;}
+  .lang-btn .code{font-weight:600;font-size:15px;letter-spacing:1px;pointer-events:none;}
+  .lang-btn .name{font-size:11px;color:#8A8F98;pointer-events:none;}
+  @media (max-width:420px){
+    .lang-row{gap:10px;}
+    .lang-btn{width:94px;padding:18px 8px 14px;border-radius:16px;}
+    .lang-btn .flag{width:36px;height:36px;}
+    .intro-logo{width:44vw;}
+    .lang-block{margin-top:38px;}
+  }
+
+  /* ===== NAV ===== */
+  #nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
+    justify-content:space-between;gap:12px;padding:16px 32px;
+    transition:background .35s ease,backdrop-filter .35s ease,padding .35s ease;}
+  #nav.scrolled{background:rgba(0,0,0,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);padding:10px 32px;}
+  #nav .brand{display:flex;align-items:center;gap:11px;}
+  #nav .brand svg{height:30px;width:auto;aspect-ratio:996/852;transition:transform .35s ease;}
+  #nav .brand:hover svg{transform:rotate(-10deg) scale(1.1);}
+  #nav .wordmark{color:#fff;font-weight:600;font-size:16px;letter-spacing:2.5px;}
+  .nav-right{display:flex;align-items:center;gap:12px;z-index:105;}
+  .lang-switch{display:flex;gap:3px;background:rgba(255,255,255,.09);border-radius:999px;padding:4px;z-index:110;position:relative;}
+  .lang-switch button{background:none;border:none;color:#9AA0A8;font-family:var(--sans);
+    font-weight:600;font-size:11px;padding:7px 11px;border-radius:999px;cursor:pointer;
+    -webkit-tap-highlight-color:rgba(227,47,46,.3);touch-action:manipulation;transition:all .22s ease;position:relative;z-index:120;}
+  .lang-switch button.active{background:var(--red);color:#fff;}
+  #nav .cta{background:var(--red);color:#fff;border:none;border-radius:999px;padding:10px 20px;
+    font-family:var(--sans);font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;
+    touch-action:manipulation;transition:transform .18s ease,background .22s ease,box-shadow .22s ease;z-index:110;position:relative;}
+  #nav .cta:hover{background:var(--red-hi);transform:translateY(-2px);box-shadow:0 8px 22px rgba(227,47,46,.4);}
+  @media (max-width:760px){
+    #nav{padding:12px 16px;}
+    #nav .wordmark{display:none;}
+    #nav .cta{padding:9px 14px;font-size:12px;}
+    .lang-switch button{padding:9px 11px;font-size:11px;}
+  }
+
+  /* ===== LAYOUT ===== */
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .bg-black{background:#000;color:#fff;}
+  .bg-white{background:#fff;color:#000;}
+  .bg-red{background:var(--red);color:#fff;}
+  .section-pad{padding:116px 0;}
+  @media (max-width:760px){.section-pad{padding:70px 0;} .wrap{padding:0 20px;}}
+
+  .kicker{font-size:11.5px;font-weight:600;letter-spacing:3px;color:var(--red);margin:0 0 18px;}
+  h1.hero{font-weight:400;margin:0;font-size:clamp(36px,7.2vw,84px);line-height:1.04;letter-spacing:-.03em;}
+  h2.headline{font-weight:400;margin:0 0 22px;font-size:clamp(27px,4.3vw,53px);line-height:1.08;letter-spacing:-.02em;}
+  .lede{font-size:clamp(15.5px,1.5vw,18.5px);line-height:1.6;color:var(--gray-dark);max-width:680px;}
+  .lede.on-dark{color:#C3C7CE;}
+  .body-copy{font-size:15.5px;line-height:1.68;color:var(--gray-dark);}
+  .body-copy.on-dark{color:#C3C7CE;}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-family:var(--sans);
+    font-weight:600;font-size:15px;padding:15px 28px;border-radius:999px;border:1.5px solid currentColor;
+    cursor:pointer;background:none;touch-action:manipulation;
+    transition:transform .18s ease,background .25s ease,color .25s ease,box-shadow .25s ease;}
+  .btn-solid{background:var(--red);border-color:var(--red);color:#fff;}
+  .btn-solid:hover{background:var(--red-hi);transform:translateY(-3px);box-shadow:0 12px 30px rgba(227,47,46,.38);}
+  .btn-outline{color:#fff;}
+  .btn-outline:hover{background:#fff;color:#000;transform:translateY(-3px);}
+
+  /* ===== REVEALS ===== */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  .reveal.d1{transition-delay:.1s;} .reveal.d2{transition-delay:.2s;} .reveal.d3{transition-delay:.3s;}
+  .reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1);}
+  .reveal-left.visible{opacity:1;transform:translateX(0);}
+  .reveal-scale{opacity:0;transform:scale(.94);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1);}
+  .reveal-scale.visible{opacity:1;transform:scale(1);}
+  @media (prefers-reduced-motion:reduce){
+    .reveal,.reveal-left,.reveal-scale{opacity:1!important;transform:none!important;transition:none;}
+    .intro-logo,.intro-word,.intro-tag,.lang-block{animation-duration:.01s!important;opacity:1!important;transform:none!important;}
+    .intro-ring{display:none;}
+  }
+
+  /* ===== HERO ===== */
+  #hero{padding:168px 0 80px;}
+  #hero .market{font-size:11.5px;letter-spacing:3px;color:#7E838C;margin-bottom:26px;}
+  #hero .ctas{margin-top:40px;}
+  .scrollcue{margin-top:68px;display:flex;align-items:center;gap:11px;font-size:11px;letter-spacing:2px;color:#6E727A;}
+  .scrollcue .bar{width:1px;height:32px;background:linear-gradient(to bottom,var(--red),transparent);animation:cue 1.9s ease-in-out infinite;}
+  @keyframes cue{0%,100%{opacity:.25;transform:scaleY(.6);}50%{opacity:1;transform:scaleY(1);}}
+
+  /* ===== STATS ===== */
+  #stats{padding:20px 0 116px;}
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:42px;}
+  .stat-num{font-size:clamp(38px,5.5vw,66px);letter-spacing:-.02em;color:#fff;line-height:1;}
+  .stat-num .accent{color:var(--red);font-family:var(--serif);font-style:italic;}
+  .stat-label{margin-top:12px;font-size:13.5px;color:#8D929B;line-height:1.5;}
+  @media (max-width:760px){.stat-grid{grid-template-columns:1fr;gap:32px;}}
+
+  /* ===== CARDS ===== */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr;}}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+  @media (max-width:760px){.two-col{grid-template-columns:1fr;gap:22px;}}
+
+  .card{background:#F5F5F6;border:1px solid var(--line-light);border-radius:26px;padding:34px;
+    transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .35s ease;}
+  .card:hover{transform:translateY(-8px);box-shadow:0 20px 44px rgba(0,0,0,.1);border-color:rgba(227,47,46,.35);}
+  .card h3{font-weight:600;font-size:19px;margin:0 0 12px;line-height:1.3;}
+  .card p{margin:0;font-size:14.5px;line-height:1.62;color:var(--gray-dark);}
+  .card.on-dark{background:var(--panel);border-color:var(--line-dark);color:#fff;}
+  .card.on-dark p{color:#C3C7CE;}
+  .card.hero-card{background:var(--red);border-color:var(--red);color:#fff;}
+  .card.hero-card p{color:rgba(255,255,255,.93);}
+  .card .num{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--red);
+    line-height:1;margin-bottom:14px;display:block;}
+  .card.hero-card .num{color:#fff;}
+
+  .callout-band{padding:54px 0;overflow:hidden;}
+  .callout-band p{margin:0;font-family:var(--serif);font-style:italic;
+    font-size:clamp(21px,2.7vw,32px);line-height:1.32;max-width:920px;}
+
+  /* ===== LADDER ===== */
+  .ladder{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin-top:42px;}
+  .ladder .rung{border-radius:16px;padding:24px 6px;text-align:center;
+    transition:transform .3s cubic-bezier(.22,1,.36,1);}
+  .ladder .rung:hover{transform:translateY(-8px) scale(1.03);}
+  .ladder .code{font-size:clamp(18px,2.2vw,28px);font-weight:600;}
+  .ladder .lbl{font-size:10.5px;margin-top:6px;opacity:.86;}
+  @media (max-width:700px){.ladder{grid-template-columns:repeat(3,1fr);}}
+
+  .pill{background:#000;color:#fff;border-radius:999px;padding:10px 16px;text-align:center;
+    font-weight:600;font-size:12.5px;transition:transform .25s ease;}
+  .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;justify-content:center;}
+
+  /* ===== CHARTS ===== */
+  .chart-card{background:var(--panel);border-radius:26px;padding:26px 22px;border:1px solid var(--line-dark);}
+  .chart-title{font-size:13.5px;font-weight:600;color:#fff;margin-bottom:6px;}
+  .chart-sub{font-size:11.5px;color:#8D929B;margin-bottom:18px;}
+  .chart-card svg{width:100%;height:auto;display:block;overflow:visible;}
+  .cline{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:1000;stroke-dashoffset:1000;}
+  .visible .cline{animation:draw 1.7s cubic-bezier(.4,0,.2,1) forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .cdot{opacity:0;}
+  .visible .cdot{animation:dotIn .4s ease forwards;}
+  @keyframes dotIn{to{opacity:1;}}
+  .cbar{transform:scaleY(0);transform-origin:bottom;}
+  .visible .cbar{animation:barUp .9s cubic-bezier(.22,1,.36,1) forwards;}
+  @keyframes barUp{to{transform:scaleY(1);}}
+  .clabel{font-family:var(--sans);font-size:11px;fill:#8D929B;}
+  .cvalue{font-family:var(--sans);font-size:13px;font-weight:600;fill:#fff;opacity:0;}
+  .visible .cvalue{animation:dotIn .5s ease forwards .7s;}
+  .clegend{display:flex;gap:18px;margin-top:16px;flex-wrap:wrap;}
+  .clegend span{display:flex;align-items:center;gap:7px;font-size:11.5px;color:#B8BCC4;}
+  .clegend i{width:14px;height:3px;border-radius:2px;display:block;font-style:normal;}
+
+  /* ===== WHY TABLE ===== */
+  #whyTable{margin-top:46px;}
+  .why-row{display:grid;grid-template-columns:1.9fr repeat(3,1fr);align-items:center;
+    gap:10px;border-top:1px solid var(--line-light);}
+  .why-row.head{border-top:none;}
+  .why-row .rowlabel{font-size:14.5px;padding:18px 0;}
+  .why-col-title{font-weight:600;font-size:13.5px;text-align:center;line-height:1.35;}
+  .mark{width:30px;height:30px;border-radius:50%;margin:0 auto;display:flex;
+    align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.22,1,.36,1);}
+  .why-row:hover .mark{transform:scale(1.18);}
+  .mark svg{width:13px;height:13px;fill:#fff;}
+  .cc{background:#000;color:#fff;padding:0 12px;}
+  .why-row.head .cc{border-radius:20px 20px 0 0;padding:22px 12px 16px;}
+  .why-row:last-child .cc{border-radius:0 0 20px 20px;padding-bottom:20px;}
+  .why-row .cell{text-align:center;padding:16px 0;}
+  @media (max-width:760px){
+    .why-row{grid-template-columns:1.4fr repeat(3,1fr);gap:4px;}
+    .why-row .rowlabel{font-size:12.5px;padding:14px 0;}
+    .why-col-title{font-size:10.5px;}
+    .cc{padding:0 4px;}
+    .mark{width:26px;height:26px;}
+  }
+
+
+  /* ===== TRUST STRIP ===== */
+  .trust{padding:52px 0;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
+  .trust-label{font-size:11px;letter-spacing:2.5px;color:#6E727A;text-align:center;margin-bottom:22px;}
+  .trust-row{display:flex;gap:44px;justify-content:center;align-items:center;flex-wrap:wrap;}
+  .trust-row span{font-size:clamp(15px,2vw,21px);font-weight:600;color:#fff;opacity:.72;
+    letter-spacing:.5px;transition:opacity .3s ease,transform .3s ease;}
+  .trust-row span:hover{opacity:1;transform:translateY(-3px);}
+
+  /* ===== TESTIMONIALS ===== */
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;}
+  @media (max-width:980px){.quote-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:700px){.quote-grid{grid-template-columns:1fr;}}
+  .quote{background:#fff;border:1px solid var(--line-light);border-radius:24px;padding:30px;
+    display:flex;flex-direction:column;
+    transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .35s ease;}
+  .quote:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(0,0,0,.09);border-color:rgba(227,47,46,.3);}
+  .quote .qm{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--red);
+    line-height:.8;margin-bottom:12px;}
+  .quote p{margin:0 0 22px;font-size:14.5px;line-height:1.65;color:var(--gray-dark);flex:1;}
+  .quote .who{font-weight:600;font-size:14px;color:#000;}
+  .quote .role{font-size:12.5px;color:#8A8F98;margin-top:3px;line-height:1.4;}
+  .quote.feature{background:#000;border-color:#000;}
+  .quote.feature p{color:#D6D9DE;font-size:16px;}
+  .quote.feature .who{color:#fff;}
+  .quote.feature .role{color:#9AA0A8;}
+
+  /* ===== HOW TO START ===== */
+  .start-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px;}
+  @media (max-width:900px){.start-grid{grid-template-columns:1fr;}}
+  .step{border-left:2px solid var(--red);padding:6px 0 6px 22px;}
+  .step h3{margin:0 0 8px;font-size:18px;font-weight:600;color:#fff;}
+  .step p{margin:0;font-size:14.5px;line-height:1.6;color:#B8BCC4;}
+  .capacity{margin-top:40px;padding:22px 26px;border-radius:18px;background:rgba(255,255,255,.05);
+    border:1px solid var(--line-dark);font-size:14px;line-height:1.6;color:#B8BCC4;max-width:760px;}
+
+  /* ===== CONTACT ===== */
+  #contact{padding:120px 0 66px;}
+  .copy-toast{display:inline-block;margin-left:16px;font-size:13px;color:#7CD992;
+    opacity:0;transform:translateY(6px);transition:opacity .3s ease,transform .3s ease;}
+  .copy-toast.show{opacity:1;transform:translateY(0);}
+  .email-block{margin-top:30px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .email-or{font-size:14px;color:#8D929B;}
+  .email-link{font-size:clamp(16px,2vw,22px);color:#fff;text-decoration:none;
+    border-bottom:2px solid var(--red);padding-bottom:2px;transition:color .25s ease;}
+  .email-link:hover{color:var(--red);}
+  .contact-name{font-size:15px;color:#8D929B;margin-top:38px;}
+  footer{padding:34px 0 44px;border-top:1px solid var(--line-dark);}
+  .footrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+    gap:14px;font-size:11.5px;color:#7E838C;}
+  .footrow .fl{display:flex;align-items:center;gap:11px;}
+  .footrow svg{height:24px;width:auto;aspect-ratio:996/852;}
+</style>
+</head>
+<body class="locked">
+
+<!-- ===== INTRO / LANGUAGE GATE ===== -->
+<div id="intro">
+  <div class="intro-glow"></div>
+  <div class="intro-ring"></div>
+  <div class="intro-ring r2"></div>
+  <div class="intro-inner">
+  <svg class="intro-logo" role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 996 852" fill-rule="evenodd"><path fill="#E32F2E" d="M541.5,849.4C519.3,847.8 509.3,846.6 491.5,843.9C450.9,837.5 410.8,824.5 371.0,804.5C290.1,764.1 227.5,701.7 186.8,621.1C182.5,612.6 177.6,602.2 175.9,598.1C174.2,593.9 172.2,589.1 171.4,587.5C170.1,584.5 164.1,568.2 161.5,560.5C157.3,548.0 151.0,523.7 151.0,520.3L151.0,518.0L229.2,518.2L307.4,518.5L311.2,529.0C341.4,612.6 406.4,672.1 492.8,695.1C531.3,705.4 582.9,707.3 620.5,699.8C656.3,692.7 682.5,681.9 712.6,661.9C718.2,658.2 727.4,651.4 733.1,646.9C744.0,638.2 768.4,614.3 776.0,604.7C780.1,599.6 783.3,597.7 784.2,599.8C784.4,600.3 794.2,609.8 806.0,621.0C817.8,632.2 841.6,654.6 858.8,670.9C875.9,687.1 890.0,701.3 890.0,701.3C890.0,704.0 858.9,736.6 843.5,750.0C807.3,781.5 768.8,804.9 725.5,821.8C700.8,831.4 670.9,839.4 642.5,844.0C638.6,844.6 634.1,845.3 632.5,845.6C616.3,848.3 558.6,850.7 541.5,849.4ZM149.4,338.2C151.0,326.5 159.7,295.2 166.4,277.2C195.0,200.5 243.7,133.9 304.5,88.6C329.4,70.0 348.2,58.4 373.5,46.0C422.6,22.1 463.7,10.4 521.5,3.8C536.2,2.1 598.9,2.1 613.0,3.8C641.6,7.2 645.0,7.8 665.5,12.2C715.2,22.9 758.6,42.3 802.4,73.3C818.5,84.7 835.4,99.2 853.4,117.2L870.4,134.0L865.9,138.6C861.6,143.1 789.5,213.1 771.6,230.2L762.5,238.9L753.6,229.4C727.7,201.6 691.7,176.3 660.4,163.7C648.7,159.0 630.0,153.7 618.0,151.6C604.9,149.3 579.6,147.0 567.5,147.0C555.6,147.0 529.1,149.3 516.5,151.5C474.2,158.8 432.5,176.6 399.5,201.5C357.8,233.0 326.5,277.2 309.4,328.8L304.6,343.0L226.7,343.0L148.7,343.0L149.4,338.2Z"/><path fill="#FFFFFF" d="M393.2,454.0C387.7,452.7 382.6,448.6 379.6,443.1C377.1,438.4 376.8,437.1 377.2,430.5C377.5,424.2 378.0,422.5 380.6,418.8C388.7,407.2 404.4,405.9 414.1,416.0C425.0,427.2 422.2,445.5 408.5,452.3C404.6,454.2 397.4,455.0 393.2,454.0ZM468.5,453.5C463.7,451.8 460.5,448.3 459.1,443.2C458.5,441.2 458.0,432.9 458.0,424.8C458.0,410.7 458.1,410.0 460.0,410.0C461.9,410.0 462.0,410.7 462.0,426.2C462.0,440.7 462.2,442.9 464.0,445.8C468.2,452.7 479.1,452.9 483.7,446.1C485.2,443.9 485.6,440.7 485.8,426.8C486.1,413.1 486.4,410.0 487.6,410.0C488.8,410.0 489.0,413.0 489.0,427.2C489.0,442.6 488.8,444.9 487.0,447.7C483.6,453.4 475.4,455.9 468.5,453.5ZM713.2,454.0C711.4,453.6 708.7,452.2 707.3,450.9C702.7,446.6 702.0,443.3 702.0,426.0C702.0,412.4 702.2,410.0 703.5,410.0C704.8,410.0 705.0,412.2 705.0,423.8C705.0,431.3 705.5,439.3 706.0,441.5C708.1,450.6 718.4,454.2 725.2,448.1L728.5,445.2L729.0,427.8C729.5,412.1 729.7,410.5 731.3,410.2C733.0,409.8 733.1,410.9 732.8,427.3C732.5,443.2 732.3,445.1 730.4,447.6C726.1,453.4 720.1,455.6 713.2,454.0ZM846.0,454.3C842.0,453.5 837.9,450.0 835.9,445.6C834.3,442.2 834.0,438.9 834.0,425.7C834.0,411.1 834.1,409.9 835.8,410.2C837.3,410.5 837.6,412.4 838.0,427.8L838.5,445.2L841.8,448.1C848.0,453.6 857.3,451.3 860.6,443.4C861.6,441.1 862.0,435.5 862.0,425.0C862.0,412.3 862.2,410.0 863.5,410.0C864.8,410.0 865.0,412.5 865.0,426.5C865.0,441.1 864.8,443.5 863.0,447.0C860.2,452.5 853.1,455.6 846.0,454.3ZM1.0,432.0C1.0,403.3 0.6,403.4 15.4,429.1L21.2,439.3L25.8,431.4C37.8,410.4 38.2,409.9 39.8,410.2C41.3,410.5 41.5,412.7 41.5,432.0C41.5,451.5 41.3,453.5 39.8,453.8C38.2,454.1 38.0,452.6 37.8,435.8L37.5,417.5L30.0,430.8C25.1,439.4 22.0,443.9 21.0,443.8C20.2,443.6 16.5,438.1 12.8,431.5C9.0,424.9 5.5,419.1 5.0,418.6C4.3,417.9 4.0,424.2 4.0,435.8C4.0,451.3 3.8,454.0 2.5,454.0C1.2,454.0 1.0,450.9 1.0,432.0ZM82.0,431.9C82.0,411.4 82.1,409.9 83.8,410.2C85.3,410.5 85.5,412.5 85.8,432.3C86.0,453.5 86.0,454.0 84.0,454.0C82.1,454.0 82.0,453.4 82.0,431.9ZM126.0,431.9L126.0,409.9L128.6,410.2C130.8,410.4 133.2,413.5 143.1,428.9L155.0,447.3L155.0,428.6C155.0,412.7 155.2,410.0 156.5,410.0C157.8,410.0 158.0,413.1 158.0,432.1C158.0,452.2 157.8,454.1 156.3,453.8C155.4,453.6 149.2,445.0 142.6,434.7L130.5,415.8L130.2,434.9C130.0,453.2 129.9,454.0 128.0,454.0C126.1,454.0 126.0,453.3 126.0,431.9ZM200.0,432.0L200.0,410.0L207.8,410.0C224.0,410.0 232.4,416.3 233.7,429.4C234.5,437.1 232.5,442.8 227.5,447.6C222.6,452.4 217.2,454.0 206.5,454.0L200.0,454.0L200.0,432.0ZM326.0,443.8L326.0,433.5L319.4,423.0C311.4,410.3 311.3,410.0 313.7,410.0C314.8,410.0 316.4,411.4 317.5,413.2C318.5,415.0 321.3,419.6 323.8,423.4L328.1,430.2L334.3,420.1C338.4,413.5 341.1,410.0 342.2,410.0C343.2,410.0 344.0,410.3 344.0,410.7C344.0,411.0 340.9,416.4 337.0,422.6L330.0,433.8L330.0,443.9C330.0,453.3 329.9,454.0 328.0,454.0C326.1,454.0 326.0,453.3 326.0,443.8ZM529.2,432.2L529.5,410.5L536.0,410.2C539.6,410.0 543.9,410.2 545.7,410.5C550.2,411.3 554.8,415.5 556.1,420.0C557.6,425.1 555.1,430.6 549.7,433.6L546.0,435.7L552.0,444.3C555.3,449.1 558.0,453.2 558.0,453.5C558.0,453.8 557.1,454.0 556.1,454.0C554.8,454.0 552.3,451.2 548.4,445.2C545.3,440.4 542.6,436.4 542.5,436.2C542.0,435.5 537.4,435.1 535.3,435.6C533.1,436.2 533.0,436.6 533.0,445.1C533.0,453.4 532.9,454.0 531.0,454.0C529.0,454.0 529.0,453.5 529.2,432.2ZM640.0,432.0L640.0,410.0L652.0,410.0C663.3,410.0 664.0,410.1 664.0,412.0C664.0,413.9 663.3,414.0 653.5,414.0L642.9,414.0L643.2,422.2L643.5,430.5L652.8,430.8C660.1,431.0 662.0,431.4 662.0,432.5C662.0,433.7 660.2,434.0 652.5,434.0L643.0,434.0L643.0,444.0C643.0,452.2 642.7,454.0 641.5,454.0C640.2,454.0 640.0,450.9 640.0,432.0ZM781.0,434.0L781.0,414.1L775.3,413.8C770.7,413.6 769.4,413.1 769.2,411.8C768.9,410.2 770.1,410.0 782.9,410.0C796.3,410.0 797.0,410.1 797.0,412.0C797.0,413.8 796.3,414.0 791.0,414.0L785.0,414.0L785.0,434.0C785.0,453.3 784.9,454.0 783.0,454.0C781.1,454.0 781.0,453.3 781.0,434.0ZM905.0,431.9L905.0,409.8L913.8,410.2C923.3,410.6 927.2,412.0 930.3,416.2C934.5,421.8 931.7,431.2 925.0,434.0C923.4,434.7 922.0,435.4 922.0,435.7C922.0,435.9 924.4,439.5 927.3,443.8C934.5,454.2 934.5,454.0 932.1,454.0C930.7,454.0 928.2,451.2 923.8,444.8C917.2,435.1 917.4,435.2 910.2,435.9C909.4,436.0 909.0,438.5 909.0,445.0C909.0,453.3 908.9,454.0 907.0,454.0C905.1,454.0 905.0,453.3 905.0,431.9ZM970.0,432.0L970.0,409.9L982.2,410.2C993.0,410.5 994.5,410.7 994.8,412.2C995.1,413.8 994.1,414.0 984.6,414.0L974.0,414.0L974.0,422.5L974.0,431.0L983.5,431.0C991.3,431.0 993.0,431.3 993.0,432.5C993.0,433.7 991.3,434.0 983.5,434.0L974.0,434.0L974.0,442.0L974.0,450.0L984.6,450.0C994.1,450.0 995.1,450.2 994.8,451.8C994.5,453.3 993.0,453.5 982.2,453.8L970.0,454.1L970.0,432.0ZM406.8,449.1C411.4,446.8 413.5,444.5 415.5,439.7C418.5,432.5 417.0,424.1 411.6,418.2C402.4,408.0 385.2,412.4 381.1,425.9C379.4,431.8 379.8,435.2 382.8,441.0C384.9,445.2 386.5,447.0 389.9,448.7C395.3,451.5 401.8,451.7 406.8,449.1ZM222.6,447.4C227.8,443.5 229.4,440.4 229.8,433.0C230.6,420.1 224.4,414.0 210.6,414.0L203.0,414.0L203.0,432.1L203.0,450.2L211.4,449.9C218.0,449.6 220.5,449.0 222.6,447.4ZM550.0,429.4C551.1,428.3 552.3,425.7 552.7,423.7C553.2,420.6 552.8,419.7 550.2,417.0C547.4,414.2 546.6,414.0 540.1,414.0L533.0,414.0L533.0,423.1L533.0,432.2L540.5,431.8C546.4,431.5 548.4,431.0 550.0,429.4ZM926.2,429.2C929.6,425.9 929.3,419.5 925.7,416.4C923.3,414.4 921.8,414.0 915.9,414.0L909.0,414.0L909.0,423.1L909.0,432.2L916.5,431.8C922.6,431.5 924.4,431.1 926.2,429.2Z"/></svg>
+  <div class="intro-word">CONCEPT</div>
+  <div class="intro-tag">MIND YOUR FUTURE</div>
+
+  <div class="lang-block">
+    <div class="lang-prompt">Choose your language · Escolha o idioma · Scegli la lingua</div>
+    <div class="lang-row">
+      <button class="lang-btn" type="button" data-lang="en" aria-label="English">
+        <span class="flag"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg></span>
+        <span class="code">EN</span><span class="name">English</span>
+      </button>
+      <button class="lang-btn" type="button" data-lang="pt" aria-label="Português">
+        <span class="flag"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#009B3A"/><path d="M30 8L54 30 30 52 6 30z" fill="#FEDF00"/><circle cx="30" cy="30" r="10" fill="#002776"/></svg></span>
+        <span class="code">PT</span><span class="name">Português</span>
+      </button>
+      <button class="lang-btn" type="button" data-lang="it" aria-label="Italiano">
+        <span class="flag"><svg viewBox="0 0 60 60"><rect width="20" height="60" fill="#009246"/><rect x="20" width="20" height="60" fill="#fff"/><rect x="40" width="20" height="60" fill="#CE2B37"/></svg></span>
+        <span class="code">IT</span><span class="name">Italiano</span>
+      </button>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <div class="brand"><svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 996 852" fill-rule="evenodd"><path fill="#E32F2E" d="M541.5,849.4C519.3,847.8 509.3,846.6 491.5,843.9C450.9,837.5 410.8,824.5 371.0,804.5C290.1,764.1 227.5,701.7 186.8,621.1C182.5,612.6 177.6,602.2 175.9,598.1C174.2,593.9 172.2,589.1 171.4,587.5C170.1,584.5 164.1,568.2 161.5,560.5C157.3,548.0 151.0,523.7 151.0,520.3L151.0,518.0L229.2,518.2L307.4,518.5L311.2,529.0C341.4,612.6 406.4,672.1 492.8,695.1C531.3,705.4 582.9,707.3 620.5,699.8C656.3,692.7 682.5,681.9 712.6,661.9C718.2,658.2 727.4,651.4 733.1,646.9C744.0,638.2 768.4,614.3 776.0,604.7C780.1,599.6 783.3,597.7 784.2,599.8C784.4,600.3 794.2,609.8 806.0,621.0C817.8,632.2 841.6,654.6 858.8,670.9C875.9,687.1 890.0,701.3 890.0,701.3C890.0,704.0 858.9,736.6 843.5,750.0C807.3,781.5 768.8,804.9 725.5,821.8C700.8,831.4 670.9,839.4 642.5,844.0C638.6,844.6 634.1,845.3 632.5,845.6C616.3,848.3 558.6,850.7 541.5,849.4ZM149.4,338.2C151.0,326.5 159.7,295.2 166.4,277.2C195.0,200.5 243.7,133.9 304.5,88.6C329.4,70.0 348.2,58.4 373.5,46.0C422.6,22.1 463.7,10.4 521.5,3.8C536.2,2.1 598.9,2.1 613.0,3.8C641.6,7.2 645.0,7.8 665.5,12.2C715.2,22.9 758.6,42.3 802.4,73.3C818.5,84.7 835.4,99.2 853.4,117.2L870.4,134.0L865.9,138.6C861.6,143.1 789.5,213.1 771.6,230.2L762.5,238.9L753.6,229.4C727.7,201.6 691.7,176.3 660.4,163.7C648.7,159.0 630.0,153.7 618.0,151.6C604.9,149.3 579.6,147.0 567.5,147.0C555.6,147.0 529.1,149.3 516.5,151.5C474.2,158.8 432.5,176.6 399.5,201.5C357.8,233.0 326.5,277.2 309.4,328.8L304.6,343.0L226.7,343.0L148.7,343.0L149.4,338.2Z"/></svg><span class="wordmark">CONCEPT</span></div>
+  <div class="nav-right">
+    <div class="lang-switch" id="langSwitch">
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="pt">PT</button>
+      <button type="button" data-lang="it">IT</button>
+    </div>
+    <button class="cta" id="navCta" type="button"></button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero" class="bg-black">
+  <div class="wrap">
+    <div class="market reveal" data-t="hero_market"></div>
+    <h1 class="hero reveal d1">
+      <span data-t="hero_h1_a"></span><br>
+      <span data-t="hero_h1_b"></span> <i data-t="hero_h1_em"></i> <span data-t="hero_h1_c"></span>
+    </h1>
+    <p class="lede on-dark reveal d2" style="margin-top:26px;" data-t="hero_lede"></p>
+    <div class="ctas reveal d3"><a class="btn btn-outline" id="heroCta1" href="#method"></a></div>
+    <div class="scrollcue reveal d3"><span class="bar"></span><span data-t="scroll"></span></div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section id="stats" class="bg-black">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="reveal">
+        <div class="stat-num"><span class="counter" data-target="25">25</span><span class="accent" data-t="stat1_suffix"></span></div>
+        <div class="stat-label" data-t="stat1_label"></div>
+      </div>
+      <div class="reveal d1">
+        <div class="stat-num"><span class="counter" data-target="6">6</span></div>
+        <div class="stat-label" data-t="stat2_label"></div>
+      </div>
+      <div class="reveal d2">
+        <div class="stat-num"><span data-t="stat3_num"></span><span class="accent" data-t="stat3_suffix"></span></div>
+        <div class="stat-label" data-t="stat3_label"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section id="problem" class="bg-white section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="problem_kicker"></p>
+    <h2 class="headline reveal d1"><span data-t="problem_h2_a"></span> <i data-t="problem_h2_em"></i> <span data-t="problem_h2_b"></span></h2>
+    <div class="two-col">
+      <p class="body-copy reveal d2" data-t="problem_p1"></p>
+      <p class="body-copy reveal d3" data-t="problem_p2"></p>
+    </div>
+  </div>
+</section>
+<section class="bg-red callout-band"><div class="wrap"><p class="reveal-left" data-t="band1"></p></div></section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="bg-black section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="about_kicker"></p>
+    <h2 class="headline reveal d1" style="color:#fff;"><span data-t="about_h2_a"></span> <i data-t="about_h2_em"></i><span data-t="about_h2_b"></span></h2>
+    <div class="two-col" style="margin-bottom:42px;">
+      <p class="body-copy on-dark reveal d2" data-t="about_p1"></p>
+      <p class="body-copy on-dark reveal d3" data-t="about_p2"></p>
+    </div>
+    <div class="grid-3">
+      <div class="card on-dark reveal-scale"><h3 data-t="cred1_t"></h3><p data-t="cred1_p"></p></div>
+      <div class="card on-dark reveal-scale d1"><h3 data-t="cred2_t"></h3><p data-t="cred2_p"></p></div>
+      <div class="card on-dark reveal-scale d2"><h3 data-t="cred3_t"></h3><p data-t="cred3_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<section class="bg-black">
+  <div class="wrap trust">
+    <div class="trust-label reveal" data-t="trust_label"></div>
+    <div class="trust-row reveal d1">
+      <span>Bending Spoons</span>
+      <span>Prysmian</span>
+      <span>Changan Italy</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="proof" class="bg-white section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="proof_kicker"></p>
+    <h2 class="headline reveal d1"><span data-t="proof_h2_a"></span> <i data-t="proof_h2_em"></i> <span data-t="proof_h2_b"></span></h2>
+    <div class="quote-grid">
+      <div class="quote feature reveal-scale">
+        <div class="qm">&ldquo;</div><p data-t="q1"></p>
+        <div class="who" data-t="q1_n"></div><div class="role" data-t="q1_r"></div>
+      </div>
+      <div class="quote reveal-scale d1">
+        <div class="qm">&ldquo;</div><p data-t="q2"></p>
+        <div class="who" data-t="q2_n"></div><div class="role" data-t="q2_r"></div>
+      </div>
+      <div class="quote reveal-scale d2">
+        <div class="qm">&ldquo;</div><p data-t="q3"></p>
+        <div class="who" data-t="q3_n"></div><div class="role" data-t="q3_r"></div>
+      </div>
+      <div class="quote reveal-scale">
+        <div class="qm">&ldquo;</div><p data-t="q4"></p>
+        <div class="who" data-t="q4_n"></div><div class="role" data-t="q4_r"></div>
+      </div>
+      <div class="quote reveal-scale d1">
+        <div class="qm">&ldquo;</div><p data-t="q5"></p>
+        <div class="who" data-t="q5_n"></div><div class="role" data-t="q5_r"></div>
+      </div>
+      <div class="quote reveal-scale d2">
+        <div class="qm">&ldquo;</div><p data-t="q6"></p>
+        <div class="who" data-t="q6_n"></div><div class="role" data-t="q6_r"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHO ===== -->
+<section class="bg-white section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="who_kicker"></p>
+    <h2 class="headline reveal d1"><span data-t="who_h2_a"></span> <i data-t="who_h2_em"></i> <span data-t="who_h2_b"></span></h2>
+    <div class="grid-3">
+      <div class="card reveal-scale"><span class="num">01</span><h3 data-t="who1_t"></h3><p data-t="who1_p"></p></div>
+      <div class="card reveal-scale d1"><span class="num">02</span><h3 data-t="who2_t"></h3><p data-t="who2_p"></p></div>
+      <div class="card reveal-scale d2"><span class="num">03</span><h3 data-t="who3_t"></h3><p data-t="who3_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== METHOD ===== -->
+<section id="method" class="bg-white section-pad" style="padding-top:0;">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="method_kicker"></p>
+    <h2 class="headline reveal d1" data-t="method_h2"></h2>
+    <div class="grid-2">
+      <div class="card reveal-scale"><h3 data-t="m1_t"></h3><p data-t="m1_p"></p></div>
+      <div class="card reveal-scale d1"><h3 data-t="m2_t"></h3><p data-t="m2_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRIPLE A ===== -->
+<section class="bg-black section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="triple_kicker"></p>
+    <h2 class="headline reveal d1" style="color:#fff;"><span data-t="triple_h2_a"></span> <i data-t="triple_h2_em"></i> <span data-t="triple_h2_b"></span></h2>
+    <div class="grid-3">
+      <div class="card on-dark reveal-scale"><span class="num">A1</span><h3 data-t="t1_t"></h3><p data-t="t1_p"></p></div>
+      <div class="card hero-card reveal-scale d1"><span class="num">A2</span><h3 data-t="t2_t"></h3><p data-t="t2_p"></p></div>
+      <div class="card on-dark reveal-scale d2"><span class="num">A3</span><h3 data-t="t3_t"></h3><p data-t="t3_p"></p></div>
+    </div>
+  </div>
+</section>
+<section class="bg-red callout-band"><div class="wrap"><p class="reveal-left" data-t="band2"></p></div></section>
+
+<!-- ===== LEVELS ===== -->
+<section class="bg-white section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="levels_kicker"></p>
+    <h2 class="headline reveal d1" data-t="levels_h2"></h2>
+    <p class="lede reveal d2" data-t="levels_lede"></p>
+    <div class="ladder" id="ladder"></div>
+    <p class="body-copy reveal" style="margin-top:26px;font-style:italic;color:#8A8F98;" data-t="levels_note"></p>
+  </div>
+</section>
+
+<!-- ===== PROGRAMS ===== -->
+<section class="bg-white section-pad" style="padding-top:0;">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="courses_kicker"></p>
+    <h2 class="headline reveal d1" data-t="courses_h2"></h2>
+    <p class="lede reveal d2" style="margin-bottom:36px;" data-t="courses_lede"></p>
+    <div class="grid-3">
+      <div class="card reveal-scale"><span class="num">01</span><h3 data-t="c1_t"></h3><p data-t="c1_p"></p></div>
+      <div class="card reveal-scale d1"><span class="num">02</span><h3 data-t="c2_t"></h3><p data-t="c2_p"></p></div>
+      <div class="card reveal-scale d2"><span class="num">03</span><h3 data-t="c3_t"></h3><p data-t="c3_p"></p></div>
+    </div>
+    <div class="pill-row reveal" id="pillRow"></div>
+  </div>
+</section>
+
+<!-- ===== LEARNING ===== -->
+<section class="bg-black section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="learn_kicker"></p>
+    <h2 class="headline reveal d1" style="color:#fff;" data-t="learn_h2"></h2>
+    <p class="lede on-dark reveal d2" data-t="learn_lede"></p>
+    <div class="grid-2" style="margin-top:42px;">
+      <div class="chart-card reveal-scale" id="chart1"></div>
+      <div class="chart-card reveal-scale d1" id="chart2"></div>
+    </div>
+    <p class="body-copy on-dark reveal" style="margin-top:30px;max-width:760px;" data-t="learn_note"></p>
+  </div>
+</section>
+
+<!-- ===== WHY ===== -->
+<section class="bg-white section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="why_kicker"></p>
+    <h2 class="headline reveal d1"><span data-t="why_h2_a"></span> <i data-t="why_h2_em"></i> <span data-t="why_h2_b"></span></h2>
+    <div id="whyTable" class="reveal"></div>
+  </div>
+</section>
+
+<!-- ===== HOW TO START ===== -->
+<section id="start" class="bg-black section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="start_kicker"></p>
+    <h2 class="headline reveal d1" style="color:#fff;"><span data-t="start_h2_a"></span> <i data-t="start_h2_em"></i><span data-t="start_h2_b"></span></h2>
+    <p class="lede on-dark reveal d2" data-t="start_lede"></p>
+    <div class="start-grid">
+      <div class="step reveal"><h3 data-t="start_1_t"></h3><p data-t="start_1_p"></p></div>
+      <div class="step reveal d1"><h3 data-t="start_2_t"></h3><p data-t="start_2_p"></p></div>
+      <div class="step reveal d2"><h3 data-t="start_3_t"></h3><p data-t="start_3_p"></p></div>
+    </div>
+    <div class="capacity reveal" data-t="capacity_note"></div>
+    <div class="reveal" style="margin-top:36px;">
+      <button class="btn btn-solid" id="startCta" type="button"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="bg-black">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="contact_kicker"></p>
+    <h2 class="headline reveal d1" style="color:#fff;"><span data-t="contact_h2_a"></span> <i data-t="contact_h2_em"></i><span data-t="contact_h2_b"></span></h2>
+    <p class="lede on-dark reveal d2" style="margin-bottom:36px;" data-t="contact_lede"></p>
+    <div class="reveal d3">
+      <button class="btn btn-solid" id="contactCta" type="button"></button>
+      <span id="copyToast" class="copy-toast"></span>
+    </div>
+    <div class="email-block reveal">
+      <span class="email-or" data-t="contact_or"></span>
+      <a class="email-link" id="emailLink" href="#"></a>
+    </div>
+    <div class="contact-name reveal" data-t="contact_name"></div>
+  </div>
+</section>
+
+<footer class="bg-black">
+  <div class="wrap">
+    <div class="footrow">
+      <div class="fl"><svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 996 852" fill-rule="evenodd"><path fill="#E32F2E" d="M541.5,849.4C519.3,847.8 509.3,846.6 491.5,843.9C450.9,837.5 410.8,824.5 371.0,804.5C290.1,764.1 227.5,701.7 186.8,621.1C182.5,612.6 177.6,602.2 175.9,598.1C174.2,593.9 172.2,589.1 171.4,587.5C170.1,584.5 164.1,568.2 161.5,560.5C157.3,548.0 151.0,523.7 151.0,520.3L151.0,518.0L229.2,518.2L307.4,518.5L311.2,529.0C341.4,612.6 406.4,672.1 492.8,695.1C531.3,705.4 582.9,707.3 620.5,699.8C656.3,692.7 682.5,681.9 712.6,661.9C718.2,658.2 727.4,651.4 733.1,646.9C744.0,638.2 768.4,614.3 776.0,604.7C780.1,599.6 783.3,597.7 784.2,599.8C784.4,600.3 794.2,609.8 806.0,621.0C817.8,632.2 841.6,654.6 858.8,670.9C875.9,687.1 890.0,701.3 890.0,701.3C890.0,704.0 858.9,736.6 843.5,750.0C807.3,781.5 768.8,804.9 725.5,821.8C700.8,831.4 670.9,839.4 642.5,844.0C638.6,844.6 634.1,845.3 632.5,845.6C616.3,848.3 558.6,850.7 541.5,849.4ZM149.4,338.2C151.0,326.5 159.7,295.2 166.4,277.2C195.0,200.5 243.7,133.9 304.5,88.6C329.4,70.0 348.2,58.4 373.5,46.0C422.6,22.1 463.7,10.4 521.5,3.8C536.2,2.1 598.9,2.1 613.0,3.8C641.6,7.2 645.0,7.8 665.5,12.2C715.2,22.9 758.6,42.3 802.4,73.3C818.5,84.7 835.4,99.2 853.4,117.2L870.4,134.0L865.9,138.6C861.6,143.1 789.5,213.1 771.6,230.2L762.5,238.9L753.6,229.4C727.7,201.6 691.7,176.3 660.4,163.7C648.7,159.0 630.0,153.7 618.0,151.6C604.9,149.3 579.6,147.0 567.5,147.0C555.6,147.0 529.1,149.3 516.5,151.5C474.2,158.8 432.5,176.6 399.5,201.5C357.8,233.0 326.5,277.2 309.4,328.8L304.6,343.0L226.7,343.0L148.7,343.0L149.4,338.2Z"/></svg><span data-t="footer_tag"></span></div>
+      <div data-t="footer_copy"></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.I18N = {
+  en: {
+    nav_cta: "Contact me",
+    hero_market: "SÃO PAULO · ROME · MILANO",
+    hero_h1_a: "Your team speaks English.",
+    hero_h1_b: "Do they",
+    hero_h1_em: "close",
+    hero_h1_c: "in it?",
+    hero_lede: "I'm Pedro Gigollotti. For 25 years I've trained professionals who already \"know the language\" and still lose the room. I teach the layer standard courses skip: register, pragmatics, and timing under pressure.",
+    hero_cta1: "See the method",
+    scroll: "SCROLL",
+
+    stat1_suffix: "+", stat1_label: "years training professionals to communicate under pressure",
+    stat2_label: "countries: Brazil, USA, England, Ireland, Malta, Italy",
+    stat3_num: "1", stat3_suffix: "×", stat3_label: "teacher. Every lesson taught by me, never delegated",
+
+    problem_kicker: "THE PROBLEM",
+    problem_h2_a: "Fluent on paper.",
+    problem_h2_em: "Hesitant",
+    problem_h2_b: "in the room.",
+    problem_p1: "Your people passed the test. They read the contracts, they follow the calls. But in the negotiation, the board update, the difficult client conversation, they hesitate. They soften when they should hold firm, or push when they should hedge. The deal doesn't fail on grammar. It fails on tone.",
+    problem_p2: "That gap isn't vocabulary. It's pragmatics, register, and timing: the layer standard courses rarely teach, because it's harder to test and harder to sell. It's also the layer your senior people are judged on, in every room that matters.",
+    band1: "Built for the moment the meeting gets real, not the moment the test ends.",
+
+    about_kicker: "WHO YOU'LL BE WORKING WITH",
+    about_h2_a: "Not an agency.",
+    about_h2_em: "One teacher",
+    about_h2_b: ", 25 years in.",
+    about_p1: "I've spent a quarter of a century teaching professional communication across six countries: Brazil, the USA, England, Ireland, Malta, and Italy. That range isn't a travel list. It's why I can teach how English actually shifts between a London boardroom, a New York sales call, and a Milan negotiation.",
+    about_p2: "Alongside teaching, I work in teacher training, Cambridge examination preparation, syllabus design, and corporate communication projects. When you hire me, you get the person who designed the program delivering it. No account manager, no rotating junior staff, no diluted method.",
+    cred1_t: "Teacher training",
+    cred1_p: "I train the trainers, which means the method is built to be taught precisely, not improvised.",
+    cred2_t: "Cambridge examinations",
+    cred2_p: "Deep experience preparing candidates for Cambridge and ALTE-benchmarked assessment.",
+    cred3_t: "Syllabus & project design",
+    cred3_p: "I build the curriculum around your context: your industry, your scenarios, your real communication goals.",
+
+    method_kicker: "THE METHOD",
+    method_h2: "A method with a mechanism, not just a name.",
+    m1_t: "Lexical Approach",
+    m1_p: "Language is taught the way it's actually used, as chunks and collocations rather than isolated grammar. Roots, trunk, branches, leaves: every lesson grows from real context, not a word list.",
+    m2_t: "Constructivism",
+    m2_p: "Students reason through grammar by comparing it to their own native language, and reach conclusions themselves. A rule you derive sticks longer than one you're handed.",
+
+    triple_kicker: "THE TRIPLE A CYCLE. EVERY LESSON.",
+    triple_h2_a: "Where the difference",
+    triple_h2_em: "actually",
+    triple_h2_b: "shows up.",
+    t1_t: "Access",
+    t1_p: "Students meet new language in a real, unmodified context: an email, a call, a negotiation.",
+    t2_t: "Analysis",
+    t2_p: "The key step. Every expression is mapped onto five registers, from frozen to intimate, so students learn exactly when a phrase costs them credibility.",
+    t3_t: "Activation",
+    t3_p: "That language gets used right away, in a scenario close to what the student will actually face at work.",
+    band2: "Most methods stop at meaning. Mine doesn't stop until the register is right.",
+
+    who_kicker: "WHO I WORK WITH",
+    who_h2_a: "Trained for the rooms",
+    who_h2_em: "your revenue",
+    who_h2_b: "depends on.",
+    who1_t: "Leadership & client-facing teams",
+    who1_p: "Executives, sales, and account leads who negotiate, present, and defend positions in English, where tone carries as much weight as terms.",
+    who2_t: "International & expanding companies",
+    who2_p: "Teams working across borders and cultures, where a misread register costs credibility with partners, investors, and clients.",
+    who3_t: "HR & L&D departments",
+    who3_p: "Buyers who need progress they can report: CEFR-mapped levels, monthly per-skill tracking, and outcomes that survive a budget review.",
+
+    levels_kicker: "LEVELS",
+    levels_h2: "Levels the market already recognizes.",
+    levels_lede: "Every program is mapped directly onto the CEFR scale (A1 to C2) and tested against Cambridge and ALTE benchmarks. Progress is measured against a global standard, not an internal scorecard.",
+    lv: ["Beginner","Elementary","Intermediate","Upper-Int.","Advanced","Mastery"],
+    levels_note: "Register and pragmatics work intensifies from B1 onward, exactly where most learners plateau.",
+
+    courses_kicker: "THE PROGRAMS",
+    courses_h2: "Built around you, not a catalogue.",
+    courses_lede: "There is no fixed menu. I design each program around the conversations your people actually have: the clients they lose, the meetings they dread, the deals on the table.",
+    c1_t: "Individuals",
+    c1_p: "One-to-one work with a senior professional who needs to perform in a specific room: a board, a pitch, a negotiation.",
+    c2_t: "Teams & departments",
+    c2_p: "Group programs shaped around a shared context, whether that's a sales floor, a legal team, or a leadership group.",
+    c3_t: "Your sector, your scenarios",
+    c3_p: "I've built programs across finance, law, logistics, marketing, HR, and negotiation. Whatever your field, the syllabus is written after I understand it, not before.",
+    c_pills: ["Online or in person","Individual or group","Cambridge exam prep"],
+
+    learn_kicker: "THE LEARNING",
+    learn_h2: "Pace tied to progress, not the calendar.",
+    learn_lede: "Hours are structured around ALTE-defined benchmarks. A student who reaches a stage's goals faster than scheduled advances immediately, with no waiting on a fixed calendar built for someone else's pace.",
+    chart1_title: "Level reached over 6 months",
+    chart1_s1: "Fixed-calendar course",
+    chart1_s2: "My approach (progress-based)",
+    chart1_labels: ["M1","M2","M3","M4","M5","M6"],
+    chart2_title: "Points per skill, per assessment",
+    chart2_labels: ["Listening","Speaking","Reading","Writing"],
+    learn_note: "I weight speaking and listening higher on purpose. Production, actually speaking and understanding in real time, is what separates fluency from a passed test. Every student is assessed after every lesson, and you get a monthly report: hours, attendance, skill-by-skill trend, and my written notes. Progress you can put in front of a budget review.",
+
+    why_kicker: "WHY WORK WITH ME",
+    why_h2_a: "Built for the gap",
+    why_h2_em: "the alternatives",
+    why_h2_b: "leave behind.",
+    why_rows: [
+      "Real-time speaking practice, not drills",
+      "Register & tone, taught explicitly",
+      "Human feedback, every single lesson",
+      "Progress you can report (CEFR-mapped)",
+      "Pace set by results, not a fixed calendar",
+      "Syllabus written for your business",
+      "Taught by the person who designed it"
+    ],
+    why_cols: ["Self-study apps","Language schools","Working with me"],
+
+    contact_kicker: "GET IN TOUCH",
+    contact_h2_a: "Let's build the program",
+    contact_h2_em: "for your team",
+    contact_h2_b: ".",
+    contact_lede: "Tell me the team, the goal, and the deadline. I'll come back with a proposal, not a brochure. Programs run online, in person, or blended, for individuals or full departments.",
+    contact_cta: "Contact me",
+    contact_copied: "Email address copied to your clipboard",
+    contact_or: "Or write to me directly:",
+    contact_name: "Pedro Gigollotti · Teacher & Academic Director",
+    mail_subject: "English program enquiry",
+    mail_body: "Team size:\nCurrent level:\nGoal:\nTimeline:",
+    proof_kicker: "WHAT CLIENTS SAY",
+    proof_h2_a: "Judge the method by",
+    proof_h2_em: "the people",
+    proof_h2_b: "who lived it.",
+    trust_label: "Professionals I've trained work at",
+    q1: "So grateful for his teaching approach and methodology. Effective learning is important for effective communication: the how and why determine how your register and tone of voice can be tailored to the challenging current landscape of communication.",
+    q1_n: "Serena Pistillo", q1_r: "Executive Coach & Business Advisor, ICF ACC",
+    q2: "After one month I can say Pedro is more than an English teacher. Thanks to his extensive experience in English and psychology he quickly understood my needs and adapted the learning to my goals and personality. His lessons are interactive, dynamic, and never boring.",
+    q2_n: "Giuseppe De Luca", q2_r: "Design Lead, Bending Spoons",
+    q3: "Pedro is an incredible professional. From day one he understood exactly where my gaps were and took me where I wanted to go. Unlike the classic English courses, Pedro teaches you the language for real, breaking out of the usual patterns.",
+    q3_n: "Davide Russo", q3_r: "Executive Search & Leadership Advisory, Financial Services",
+    q4: "I tried several English programs with different teachers, but Pedro and his approach are unique. The best ever, no doubt.",
+    q4_n: "Serena Delmonte", q4_r: "Treasury Manager, Bending Spoons",
+    q5: "Pedro is not the classic English teacher, he is fantastic. His method is tailored, extremely effective and useful for improving communication in English. For the first time ever I like taking English classes and I can really see results.",
+    q5_n: "Laura Duglio", q5_r: "Tax, Bending Spoons",
+    q6: "Two years of lessons and they are never trivial. He has a background and a competence that put him well above a simple English teacher.",
+    q6_n: "Dario Giliberti", q6_r: "Regional Sales Manager, Changan Italy",
+
+    start_kicker: "HOW TO START",
+    start_h2_a: "One call.",
+    start_h2_em: "No charge",
+    start_h2_b: ", no obligation.",
+    start_lede: "Before anyone commits to anything, I run a 45-minute diagnostic call. I speak with one or two of your people, and I tell you precisely where they break down under pressure and what it would take to fix it. You then decide whether to go further.",
+    start_1_t: "45 minutes",
+    start_1_p: "A real conversation with your people, not a sales pitch. I need to hear them speak to diagnose anything.",
+    start_2_t: "A written diagnosis",
+    start_2_p: "You get my honest read: current CEFR level, the specific gaps, and whether I think training is even worth it.",
+    start_3_t: "Then you decide",
+    start_3_p: "If it makes sense, I write a proposal built on what I heard. If it doesn't, I will tell you that too.",
+    capacity_note: "I work with a limited number of clients at a time, because I teach every lesson myself. If we are a fit, I will tell you honestly what availability looks like.",
+    start_cta: "Book the diagnostic call",
+    chart1_sub: "Illustrative: how progress-based pacing compares with a fixed calendar.",
+    chart2_sub: "My actual assessment weighting, applied after every lesson.",
+    footer_tag: "PEDRO GIGOLLOTTI · CONCEPT · SÃO PAULO · ROME · MILANO",
+    footer_copy: "© 2026 Concept. Mind your future."
+  },
+
+  pt: {
+    nav_cta: "Falar comigo",
+    hero_market: "SÃO PAULO · ROMA · MILÃO",
+    hero_h1_a: "Sua equipe fala inglês.",
+    hero_h1_b: "Mas eles",
+    hero_h1_em: "fecham",
+    hero_h1_c: "negócios nele?",
+    hero_lede: "Sou Pedro Gigollotti. Há 25 anos preparo profissionais que até \"falam a língua\", mas perdem o controle da reunião. Ensino aquilo que os cursos convencionais pulam: registro, pragmática e timing sob pressão.",
+    hero_cta1: "Conheça o método",
+    scroll: "ROLE PARA BAIXO",
+
+    stat1_suffix: "+", stat1_label: "anos treinando profissionais para se comunicarem sob pressão",
+    stat2_label: "países de atuação: Brasil, EUA, Inglaterra, Irlanda, Malta e Itália",
+    stat3_num: "1", stat3_suffix: "×", stat3_label: "especialista. Cada aula é conduzida por mim, sem delegar a terceiros",
+
+    problem_kicker: "O PROBLEMA",
+    problem_h2_a: "Fluentes no papel.",
+    problem_h2_em: "Hesitantes",
+    problem_h2_b: "na prática.",
+    problem_p1: "Sua equipe passa nas provas, lê os contratos e acompanha as calls diárias sem problemas. Mas na hora da negociação, da apresentação ao conselho ou daquela conversa difícil com o cliente, eles hesitam. Acabam recuando quando deveriam se impor, ou soam agressivos quando deveriam ser estratégicos. O negócio não cai por causa da gramática. Cai por causa do tom.",
+    problem_p2: "Isso não é falta de vocabulário. É falta de pragmática, adequação de registro e timing: habilidades que as escolas raramente ensinam, pois são difíceis de testar e padronizar. Mas é exatamente por essa camada que seus profissionais seniores são julgados nas reuniões que realmente importam.",
+    band1: "Um método feito para a hora em que o jogo fica sério, e não para tirar nota em prova.",
+
+    about_kicker: "COM QUEM VOCÊ VAI TRABALHAR",
+    about_h2_a: "Nada de agências.",
+    about_h2_em: "Apenas um especialista",
+    about_h2_b: ", com 25 anos de estrada.",
+    about_p1: "Passei um quarto de século ensinando comunicação corporativa em seis países: Brasil, EUA, Inglaterra, Irlanda, Malta e Itália. Isso não é só um roteiro de viagens. É o que me permite entender de verdade como o inglês muda entre uma reunião de diretoria em Londres, uma call de vendas em Nova York e uma negociação tensa em Milão.",
+    about_p2: "Além de dar aulas, atuo na formação de professores, na preparação para exames Cambridge, no design de materiais e na condução de projetos de comunicação corporativa. Ao me contratar, você lida diretamente com quem criou o método e vai conduzir o treinamento. Sem gerentes de conta, sem rodízio de professores iniciantes, sem conteúdo diluído.",
+    cred1_t: "Formação de professores",
+    cred1_p: "Treino os próprios instrutores, o que garante um método altamente preciso, estruturado e livre de improvisos.",
+    cred2_t: "Certificações Cambridge",
+    cred2_p: "Sólida experiência preparando candidatos para exames com o alto rigor dos padrões Cambridge e ALTE.",
+    cred3_t: "Syllabus sob medida",
+    cred3_p: "Desenvolvo o conteúdo com base na realidade do seu negócio, no seu mercado e nos cenários reais que a sua equipe enfrenta.",
+
+    method_kicker: "O MÉTODO",
+    method_h2: "Uma metodologia com fundamento, não apenas um nome de impacto.",
+    m1_t: "Abordagem Lexical (Lexical Approach)",
+    m1_p: "Ensino o idioma da mesma forma que ele é usado na vida real: através de blocos e combinações de palavras (collocations), e não com regras gramaticais isoladas. Cada aula nasce de um contexto corporativo autêntico.",
+    m2_t: "Construtivismo",
+    m2_p: "Os alunos constroem o raciocínio comparando o inglês com a sua língua materna. Uma regra que você mesmo deduz e decifra fica gravada por muito mais tempo do que uma que você apenas decora.",
+
+    triple_kicker: "O CICLO TRIPLE A. EM TODAS AS AULAS.",
+    triple_h2_a: "Onde a diferença",
+    triple_h2_em: "realmente",
+    triple_h2_b: "acontece.",
+    t1_t: "Access (Acesso)",
+    t1_p: "O aluno entra em contato direto com a linguagem em seu contexto natural: um e-mail real, uma ligação ou uma negociação.",
+    t2_t: "Analysis (Análise)",
+    t2_p: "A etapa mais importante. Cada expressão é analisada em cinco níveis de formalidade (do mais engessado ao mais íntimo), para que o aluno entenda perfeitamente quando uma frase pode custar a sua credibilidade.",
+    t3_t: "Activation (Ativação)",
+    t3_p: "O vocabulário novo é testado na mesma hora, através de simulações muito próximas da rotina de trabalho real que o aluno tem na empresa.",
+    band2: "A maioria dos cursos para na tradução. O meu só avança quando o tom está perfeito.",
+
+    who_kicker: "PÚBLICO-ALVO",
+    who_h2_a: "Preparados para os cenários que",
+    who_h2_em: "geram receita",
+    who_h2_b: "para a sua empresa.",
+    who1_t: "C-Levels e Times de Linha de Frente",
+    who1_p: "Executivos, diretores e líderes comerciais que precisam negociar, expor ideias e defender posições em inglês – situações onde o tom da voz pesa tanto quanto os termos do contrato.",
+    who2_t: "Empresas com expansão global",
+    who2_p: "Equipes que atuam em diferentes culturas e fusos, onde um pequeno erro de registro pode acabar com a confiança de parceiros, investidores e clientes.",
+    who3_t: "Setores de RH e T&D",
+    who3_p: "Gestores que precisam comprovar os resultados: métricas reais alinhadas ao padrão CEFR, evolução mensal por competência e um progresso que justifique o investimento da diretoria.",
+
+    levels_kicker: "NÍVEIS DE PROFICIÊNCIA",
+    levels_h2: "Níveis de proficiência que o mercado já entende.",
+    levels_lede: "Todos os programas são nivelados pela escala oficial do CEFR (A1 ao C2) e validados contra as métricas da Cambridge e ALTE. A evolução da sua equipe é medida por um padrão global inquestionável, não por uma nota interna.",
+    lv: ["Iniciante","Básico","Intermediário","Intermediário Superior","Avançado","Proficiente"],
+    levels_note: "O foco em registro e pragmática ganha peso a partir do nível B1, justamente no ponto em que a maior parte das pessoas costuma travar.",
+
+    courses_kicker: "OS PROGRAMAS",
+    courses_h2: "Feito sob medida para você, sem soluções de prateleira.",
+    courses_lede: "Aqui não existe menu fixo. O programa é desenhado com base nas conversas que a sua equipe realmente tem no dia a dia: os clientes que estão perdendo, as reuniões mais difíceis e as negociações que estão na mesa.",
+    c1_t: "Treinamento Individual",
+    c1_p: "Mentoria direta para executivos seniores que precisam de alta performance num cenário específico: apresentações ao board, pitches ou grandes negociações internacionais.",
+    c2_t: "Times e Departamentos",
+    c2_p: "Programas em grupo adaptados à realidade específica de cada setor, seja para uma equipe comercial, um time jurídico ou gerentes em formação.",
+    c3_t: "O seu setor, a sua realidade",
+    c3_p: "Com vivência em finanças, direito, logística, marketing e negociação, o conteúdo das aulas só é fechado depois que eu entendo profundamente como funciona o seu mercado.",
+    c_pills: ["Aulas online ou presenciais","Formato individual ou em grupo","Preparação para exames Cambridge"],
+
+    learn_kicker: "A JORNADA",
+    learn_h2: "O avanço dita o ritmo, não o calendário.",
+    learn_lede: "A carga horária é baseada no ritmo ideal de aprendizagem (ALTE). Se o aluno atingir as metas de um nível antes do tempo previsto, ele avança na mesma hora. Sem enrolação e sem ter que esperar o fim do semestre.",
+    chart1_title: "Nível de inglês atingido em 6 meses",
+    chart1_s1: "Curso padrão de calendário fixo",
+    chart1_s2: "Método Concept (focado em desempenho)",
+    chart1_labels: ["M1","M2","M3","M4","M5","M6"],
+    chart2_title: "Pontos por competência, por avaliação",
+    chart2_labels: ["Compreensão Auditiva","Fala","Leitura","Escrita"],
+    learn_note: "Eu dou muito mais peso à fala e à escuta de propósito. Falar de verdade e entender tudo em tempo real é o que separa alguém fluente de alguém que só passou na prova. Cada aluno é avaliado em todas as aulas, gerando um relatório mensal claro com: presença, horas cumpridas, evolução por habilidade e meu feedback detalhado.",
+
+    why_kicker: "POR QUE ME CONTRATAR",
+    why_h2_a: "Criado para suprir",
+    why_h2_em: "as falhas",
+    why_h2_b: "do ensino tradicional.",
+    why_rows: [
+      "Prática de fala real, sem repetições robotizadas",
+      "Ensino claro sobre registro de formalidade e pragmática",
+      "Feedback pontual de um profissional sênior em cada aula",
+      "Progresso comprovado e rastreável (padrão CEFR)",
+      "O ritmo acompanha os resultados, não as datas do calendário",
+      "Material desenvolvido exclusivamente para o seu negócio",
+      "Aulas dadas por quem elaborou toda a metodologia"
+    ],
+    why_cols: ["Apps de autoestudo","Escolas de inglês","Trabalhar comigo"],
+
+    contact_kicker: "VAMOS CONVERSAR",
+    contact_h2_a: "Podemos montar o programa ideal",
+    contact_h2_em: "para a sua equipe",
+    contact_h2_b: ".",
+    contact_lede: "Me conte o tamanho da equipe, o principal desafio de vocês e o prazo que têm em mente. Eu retorno com uma proposta executiva direta ao ponto. Programas online, presenciais ou híbridos.",
+    contact_cta: "Falar comigo",
+    contact_copied: "E-mail copiado com sucesso",
+    contact_or: "Ou me escreva diretamente em:",
+    contact_name: "Pedro Gigollotti · Professor & Diretor Acadêmico",
+    mail_subject: "Interesse no programa de inglês corporativo",
+    mail_body: "Tamanho da equipe:\nNível atual de inglês:\nQual é o objetivo principal?:\nPrazo para iniciar:",
+    proof_kicker: "O QUE OS CLIENTES DIZEM",
+    proof_h2_a: "Avalie o método pela evolução dos",
+    proof_h2_em: "líderes",
+    proof_h2_b: "que vivenciaram isso na prática.",
+    trust_label: "Profissionais que já treinei estão em empresas como",
+    q1: "Sou muito grata pela metodologia dele. Aprender de forma estratégica é o grande diferencial: entender o 'como' e o 'porquê' nos dá a chave para ajustar nosso tom de voz e o registro de formalidade no cenário complexo de hoje.",
+    q1_n: "Serena Pistillo", q1_r: "Executive Coach & Business Advisor, ICF ACC",
+    q2: "Depois de um mês de aulas, já dá para dizer que o Pedro é muito mais que um professor de inglês. Com sua bagagem e visão de psicologia, ele sacou rápido o que eu precisava e adaptou o ensino ao meu perfil e às minhas metas. As aulas são super dinâmicas, nada daquela mesmice de sempre.",
+    q2_n: "Giuseppe De Luca", q2_r: "Design Lead, Bending Spoons",
+    q3: "O Pedro é um profissional fora da curva. Logo no primeiro dia, ele percebeu onde eu estava errando e me levou exatamente aonde eu queria chegar. Esqueça os cursos clássicos: ele ensina o inglês da vida real, quebrando os velhos padrões.",
+    q3_n: "Davide Russo", q3_r: "Executive Search & Leadership Advisory, Financial Services",
+    q4: "Já passei por vários programas e professores, mas o Pedro e o método dele não têm comparação. É, sem dúvida alguma, o melhor do mercado.",
+    q4_n: "Serena Delmonte", q4_r: "Treasury Manager, Bending Spoons",
+    q5: "O Pedro passa longe do perfil tradicional, ele é fantástico. O método sob medida dá muito resultado e ajudou de verdade a destravar a minha comunicação. Pela primeira vez na vida eu tenho prazer em fazer aulas de inglês e consigo ver minha evolução toda semana.",
+    q5_n: "Laura Duglio", q5_r: "Tax, Bending Spoons",
+    q6: "Já são dois anos de aulas e nenhuma delas cai na rotina. A bagagem e o nível de competência dele o colocam em um patamar totalmente diferente de um professor de idiomas comum.",
+    q6_n: "Dario Giliberti", q6_r: "Regional Sales Manager, Changan Italy",
+
+    start_kicker: "COMO FUNCIONA O INÍCIO",
+    start_h2_a: "Uma conversa inicial.",
+    start_h2_em: "Sem custo",
+    start_h2_b: ", sem compromisso.",
+    start_lede: "Antes de fechar qualquer contrato, eu conduzo uma sessão de diagnóstico de 45 minutos. Eu converso com uma ou duas pessoas da sua equipe e te digo com clareza onde a comunicação deles falha sob pressão e o que precisa ser feito para resolver. Depois disso, você decide se quer avançar.",
+    start_1_t: "Sessão Prática de 45 Minutos",
+    start_1_p: "Uma conversa autêntica com a sua equipe, e não um discurso de vendas. Eu preciso ouvi-los falar na prática para conseguir fazer um diagnóstico real.",
+    start_2_t: "Diagnóstico por escrito",
+    start_2_p: "Você receberá o meu feedback honesto: o nível CEFR exato de cada um, os pontos técnicos em que estão falhando e se o treinamento realmente vai valer a pena no seu caso.",
+    start_3_t: "A decisão é sua",
+    start_3_p: "Se fizer sentido, montarei uma proposta baseada naquilo que escutei na sessão. Se não fizer sentido, eu serei o primeiro a te falar.",
+    capacity_note: "Trabalho com um número limitado de clientes por vez porque faço questão de dar cada uma das aulas pessoalmente. Se o seu projeto tiver sinergia com o meu trabalho, te falarei com transparência sobre os horários e a minha disponibilidade.",
+    start_cta: "Agendar a sessão de diagnóstico",
+    chart1_sub: "Comparativo ilustrativo: O avanço pelo método Concept vs. cronogramas padrões de escolas.",
+    chart2_sub: "O peso de cada competência aplicado logo após o fim de cada aula.",
+    footer_tag: "PEDRO GIGOLLOTTI · CONCEPT · SÃO PAULO · ROMA · MILÃO",
+    footer_copy: "© 2026 Concept. Todos os direitos reservados."
+  },
+
+  it: {
+    nav_cta: "Contattami",
+    hero_market: "SAN PAOLO · ROMA · MILANO",
+    hero_h1_a: "Il tuo team parla inglese.",
+    hero_h1_b: "Ma riesce a",
+    hero_h1_em: "chiudere",
+    hero_h1_c: "i contratti?",
+    hero_lede: "Sono Pedro Gigollotti. Da 25 anni preparo professionisti che, pur conoscendo la lingua, non riescono a tenere in pugno la situazione. Insegno quello che i corsi standard tralasciano: il registro, la pragmatica e la gestione dei tempi sotto pressione.",
+    hero_cta1: "Scopri il metodo",
+    scroll: "SCORRI VERSO IL BASSO",
+
+    stat1_suffix: "+", stat1_label: "anni di esperienza nel preparare i professionisti a comunicare sotto pressione",
+    stat2_label: "paesi in cui ho operato: Brasile, USA, Regno Unito, Irlanda, Malta e Italia",
+    stat3_num: "1", stat3_suffix: "×", stat3_label: "insegnante. Ogni singola lezione è tenuta da me, senza deleghe",
+
+    problem_kicker: "IL PROBLEMA",
+    problem_h2_a: "Fluenti sulla carta.",
+    problem_h2_em: "Insicuri",
+    problem_h2_b: "sul campo.",
+    problem_p1: "Il tuo team passa i test. Leggono i contratti, gestiscono le call senza problemi. Ma durante una negoziazione, davanti al consiglio di amministrazione o in una discussione difficile con un cliente, esitano. Cedono quando dovrebbero tenere il punto, o sono troppo aggressivi quando servirebbe diplomazia. L'accordo non salta per un errore di grammatica, ma per una questione di tono.",
+    problem_p2: "Non è una questione di vocabolario. È questione di pragmatica, di registro linguistico e tempismo: competenze che le scuole raramente insegnano, perché difficili da valutare e da standardizzare. Eppure, è proprio su questo che i tuoi profili senior vengono giudicati nei momenti decisivi.",
+    band1: "Pensato per il momento in cui il gioco si fa duro, non per prendere un bel voto all'esame.",
+
+    about_kicker: "CON CHI LAVORERAI",
+    about_h2_a: "Nessun intermediario.",
+    about_h2_em: "Un solo esperto",
+    about_h2_b: "con 25 anni di esperienza.",
+    about_p1: "Ho passato un quarto di secolo a formare i professionisti di sei paesi: Brasile, Stati Uniti, Regno Unito, Irlanda, Malta e Italia. Non è solo un elenco di viaggi, è ciò che mi permette di capire veramente come cambia l'inglese tra un CdA a Londra, una call di vendita a New York e una trattativa complessa a Milano.",
+    about_p2: "Oltre a fare lezione, mi occupo di formare docenti, preparare candidati per le certificazioni Cambridge, sviluppare materiali didattici e gestire progetti di comunicazione aziendale. Quando mi assumi, lavori direttamente con chi ha creato il metodo e condurrà le lezioni. Nessun account manager, nessuna rotazione di insegnanti alle prime armi, nessun programma standardizzato.",
+    cred1_t: "Formazione dei docenti",
+    cred1_p: "Formo i formatori stessi, garantendo un metodo estremamente preciso, strutturato e senza spazio per l'improvvisazione.",
+    cred2_t: "Certificazioni Cambridge",
+    cred2_p: "Solida esperienza nel preparare candidati agli esami secondo i rigorosi standard Cambridge e ALTE.",
+    cred3_t: "Syllabus su misura",
+    cred3_p: "Sviluppo il piano didattico in base alla realtà della tua azienda, al tuo mercato e alle situazioni reali che il tuo team affronta ogni giorno.",
+
+    method_kicker: "IL METODO",
+    method_h2: "Una metodologia con basi solide, non solo uno slogan.",
+    m1_t: "Approccio Lessicale (Lexical Approach)",
+    m1_p: "La lingua viene insegnata così come viene parlata nella realtà: attraverso blocchi di parole e collocazioni, e non con regole grammaticali isolate. Ogni lezione nasce da un contesto lavorativo autentico.",
+    m2_t: "Costruttivismo",
+    m2_p: "Gli studenti sviluppano il ragionamento confrontando l'inglese con la propria lingua madre. Una regola scoperta e decifrata da soli rimane impressa molto più a lungo di una imparata a memoria.",
+
+    triple_kicker: "IL CICLO TRIPLE A. IN OGNI LEZIONE.",
+    triple_h2_a: "Dove la differenza",
+    triple_h2_em: "si fa",
+    triple_h2_b: "sentire.",
+    t1_t: "Access (Accesso)",
+    t1_p: "Lo studente entra in contatto con la lingua in un contesto naturale: un'e-mail reale, una telefonata o una negoziazione vera e propria.",
+    t2_t: "Analysis (Analisi)",
+    t2_p: "Il passaggio chiave. Ogni espressione viene analizzata su cinque livelli di formalità (dall'ingessato al confidenziale), affinché lo studente capisca esattamente quando una determinata frase può comprometterne la credibilità.",
+    t3_t: "Activation (Attivazione)",
+    t3_p: "Le nuove espressioni vengono messe subito alla prova tramite simulazioni molto vicine alle reali dinamiche lavorative dello studente.",
+    band2: "La maggior parte dei metodi si ferma alla traduzione. Il mio si ferma solo quando il tono è perfetto.",
+
+    who_kicker: "A CHI MI RIVOLGO",
+    who_h2_a: "Preparati per i contesti che",
+    who_h2_em: "generano fatturato",
+    who_h2_b: "per la tua azienda.",
+    who1_t: "C-Levels e Team di prima linea",
+    who1_p: "Dirigenti, responsabili e leader commerciali che devono negoziare, presentare idee e difendere posizioni aziendali in inglese, in situazioni in cui il tono della voce pesa tanto quanto i termini del contratto.",
+    who2_t: "Aziende in espansione globale",
+    who2_p: "Realtà che operano tra culture diverse, in cui anche un piccolo errore nel registro di formalità può distruggere la fiducia di partner, investitori o clienti.",
+    who3_t: "Reparti HR e Formazione",
+    who3_p: "Manager che devono dimostrare i risultati: metriche chiare basate sul quadro CEFR, valutazioni mensili delle competenze e progressi in grado di giustificare il budget aziendale.",
+
+    levels_kicker: "LIVELLI DI COMPETENZA",
+    levels_h2: "Livelli di competenza che il mercato comprende già.",
+    levels_lede: "Tutti i programmi sono rigorosamente allineati alla scala ufficiale CEFR (da A1 a C2) e valutati secondo le metriche Cambridge e ALTE. L'evoluzione del tuo team viene misurata con uno standard internazionale indiscutibile, non con voti interni.",
+    lv: ["Principiante","Elementare","Intermedio","Interm. Superiore","Avanzato","Padronanza"],
+    levels_note: "L'attenzione al registro e alla pragmatica diventa prioritaria a partire dal livello B1, esattamente il momento in cui la maggior parte delle persone smette di progredire.",
+
+    courses_kicker: "I PROGRAMMI",
+    courses_h2: "Progettato su misura, niente soluzioni preimpostate.",
+    courses_lede: "Non c'è un menu fisso. Il programma è costruito sulle conversazioni reali del tuo team: i clienti che perdono, le riunioni che temono e le trattative più importanti sul tavolo.",
+    c1_t: "Formazione Individuale",
+    c1_p: "Sessioni dirette per figure senior che necessitano di prestazioni immediate in un contesto specifico: riunioni del consiglio direttivo, pitch o grandi trattative internazionali.",
+    c2_t: "Team e Dipartimenti",
+    c2_p: "Programmi di gruppo modellati sulle specifiche esigenze operative del reparto, che si tratti della squadra vendite, del team legale o dei quadri dirigenti.",
+    c3_t: "Il tuo settore, la tua realtà",
+    c3_p: "Lavorando da anni nel campo della finanza, legge, logistica, marketing e negoziazione, progetto i contenuti solo dopo aver compreso a fondo i meccanismi del tuo mercato.",
+    c_pills: ["Lezioni online o in presenza","Formato individuale o di gruppo","Preparazione esami Cambridge"],
+
+    learn_kicker: "IL PERCORSO",
+    learn_h2: "I progressi dettano il ritmo, non il calendario.",
+    learn_lede: "Il monte ore si basa sui ritmi di apprendimento standard internazionali (ALTE). Se lo studente raggiunge prima gli obiettivi, passa subito al livello successivo. Senza perdite di tempo e senza dover aspettare la fine del trimestre.",
+    chart1_title: "Livello di inglese raggiunto in 6 mesi",
+    chart1_s1: "Corso standard a calendario fisso",
+    chart1_s2: "Metodo Concept (focalizzato sulle prestazioni)",
+    chart1_labels: ["M1","M2","M3","M4","M5","M6"],
+    chart2_title: "Punti per competenza ad ogni valutazione",
+    chart2_labels: ["Ascolto","Parlato","Lettura","Scrittura"],
+    learn_note: "Do molto più peso all'ascolto e al parlato, e c'è un motivo: parlare davvero e capire tutto in tempo reale è ciò che separa la vera fluenza dal semplice superamento di un test. Valuto ogni studente a ogni singola lezione e ti consegno un report mensile chiaro con: presenze, ore completate, evoluzione per competenza e il mio feedback dettagliato.",
+
+    why_kicker: "PERCHÉ SCEGLIERMI",
+    why_h2_a: "Studiato per colmare",
+    why_h2_em: "le lacune",
+    why_h2_b: "dell'insegnamento tradizionale.",
+    why_rows: [
+      "Pratica di conversazione reale, niente ripetizioni a pappagallo",
+      "Insegnamento chiaro sul livello di formalità e sulla pragmatica",
+      "Feedback preciso da parte di un professionista senior, a ogni lezione",
+      "Progressi documentabili e tracciabili (Standard CEFR)",
+      "Il ritmo segue i risultati reali, non le scadenze del calendario",
+      "Materiale sviluppato in esclusiva per le necessità della tua azienda",
+      "Lezioni condotte da chi ha ideato l'intera metodologia"
+    ],
+    why_cols: ["App di autoapprendimento","Scuole di lingue","Lavorare con me"],
+
+    contact_kicker: "PARLIAMONE",
+    contact_h2_a: "Possiamo costruire il programma perfetto",
+    contact_h2_em: "per la tua squadra",
+    contact_h2_b: ".",
+    contact_lede: "Dimmi quante persone compongono il team, qual è la vostra sfida principale e i tempi previsti. Ti risponderò con una proposta chiara e dritta al punto. Formazione online, in presenza o ibrida.",
+    contact_cta: "Contattami ora",
+    contact_copied: "Indirizzo e-mail copiato correttamente",
+    contact_or: "Oppure scrivimi direttamente a:",
+    contact_name: "Pedro Gigollotti · Insegnante e Direttore Accademico",
+    mail_subject: "Interesse nel programma di inglese aziendale",
+    mail_body: "Dimensioni del team:\nLivello attuale di inglese:\nQual è l'obiettivo principale?:\nTempistiche per iniziare:",
+    proof_kicker: "COSA DICONO I CLIENTI",
+    proof_h2_a: "Valuta il metodo dai risultati ottenuti dai",
+    proof_h2_em: "leader",
+    proof_h2_b: "che l'hanno provato sulla loro pelle.",
+    trust_label: "I professionisti che ho formato lavorano in aziende come",
+    q1: "Sono molto grata per la sua metodologia. Imparare in modo strategico fa davvero la differenza: capire il 'come' e il 'perché' ci offre gli strumenti per adattare il tono e il registro nel panorama complesso della comunicazione odierna.",
+    q1_n: "Serena Pistillo", q1_r: "Executive Coach & Business Advisor, ICF ACC",
+    q2: "Dopo un mese posso dire che Pedro è molto più di un semplice insegnante di inglese. Grazie alla sua esperienza linguistica e psicologica, ha inquadrato subito le mie necessità, adattando il percorso ai miei obiettivi. Lezioni dinamiche e mai noiose.",
+    q2_n: "Giuseppe De Luca", q2_r: "Design Lead, Bending Spoons",
+    q3: "Pedro è un professionista eccezionale. Dal primo giorno ha capito esattamente dove peccavo e mi ha portato dritto al punto. A differenza dei classici corsi, lui ti insegna l'inglese che si usa davvero, rompendo i soliti schemi.",
+    q3_n: "Davide Russo", q3_r: "Executive Search & Leadership Advisory, Financial Services",
+    q4: "Ho provato vari programmi e insegnanti diversi, ma Pedro e il suo metodo non temono confronti. È senza alcun dubbio il migliore sul mercato.",
+    q4_n: "Serena Delmonte", q4_r: "Treasury Manager, Bending Spoons",
+    q5: "Pedro è l'opposto dell'insegnante tradizionale: è fantastico. Il metodo su misura dà ottimi risultati e mi ha aiutato davvero a sbloccare la mia comunicazione in ambito business. Per la prima volta ho voglia di fare lezione e noto miglioramenti di settimana in settimana.",
+    q5_n: "Laura Duglio", q5_r: "Tax, Bending Spoons",
+    q6: "Frequento le sue lezioni da due anni e non sono mai ripetitive. Il suo bagaglio culturale e il suo livello di competenza lo elevano nettamente al di sopra di un comune insegnante di lingue.",
+    q6_n: "Dario Giliberti", q6_r: "Regional Sales Manager, Changan Italy",
+
+    start_kicker: "COME INIZIARE",
+    start_h2_a: "Una chiacchierata.",
+    start_h2_em: "Senza costi",
+    start_h2_b: ", senza impegno.",
+    start_lede: "Prima di firmare qualsiasi contratto, conduco una sessione diagnostica di 45 minuti. Parlo con una o due persone del tuo team e ti dico chiaramente dove la loro comunicazione cede sotto pressione e cosa bisogna fare per risolvere il problema. Dopodiché, decidi tu se vuoi andare avanti.",
+    start_1_t: "Sessione Pratica di 45 Minuti",
+    start_1_p: "Una vera conversazione con la tua squadra, non un discorso di vendita. Ho bisogno di sentirli parlare sul campo per poter fare una diagnosi corretta.",
+    start_2_t: "Analisi scritta dettagliata",
+    start_2_p: "Riceverai il mio feedback onesto: il livello CEFR esatto di ognuno, i punti tecnici in cui stanno sbagliando e ti dirò se, nel tuo caso specifico, la formazione valga davvero la pena.",
+    start_3_t: "A te la decisione",
+    start_3_p: "Se ci sono le basi per procedere, formulerò una proposta in linea con ciò che ho osservato. In caso contrario, sarò il primo a fartelo presente.",
+    capacity_note: "Lavoro con un numero limitato di clienti per volta perché ci tengo a condurre personalmente ogni lezione. Se ritengo che il progetto sia in linea col mio lavoro, ti parlerò in totale trasparenza dei miei orari e della mia disponibilità.",
+    start_cta: "Prenota la call diagnostica",
+    chart1_sub: "Esempio illustrativo: l'avanzamento tramite metodo Concept vs il calendario tipico di una scuola.",
+    chart2_sub: "Il peso effettivo applicato per ogni competenza al termine di ogni singola lezione.",
+    footer_tag: "PEDRO GIGOLLOTTI · CONCEPT · SAN PAOLO · ROMA · MILANO",
+    footer_copy: "© 2026 Concept. Tutti i diritti riservati."
+  }
+};
+</script>
+<script>
+var EMAIL = "pedro.gigollotti@me.com";
+var CODES = ["A1","A2","B1","B2","C1","C2"];
+var LADDER_BG = ["#EDEFF3","#C9CEDA","#1D2A4A","#7A1F1F","#B22424","#E32F2E"];
+var LADDER_FG = ["#000","#000","#fff","#fff","#fff","#fff"];
+var ICON_CHECK = "M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z";
+var ICON_X = "M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z";
+
+var MARKS = [
+  [0,0,0,0,0,0,0],
+  [0,0,1,0,0,0,0],
+  [1,1,1,1,1,1,1]
+];
+
+var currentLang = "en";
+function t(k){ return window.I18N[currentLang][k]; }
+function mailHref(){
+  var d = window.I18N[currentLang];
+  return "mailto:" + EMAIL + "?subject=" + encodeURIComponent(d.mail_subject) +
+         "&body=" + encodeURIComponent(d.mail_body);
+}
+function svgMark(yes){
+  return '<svg viewBox="0 0 512 512"><path d="' + (yes ? ICON_CHECK : ICON_X) + '"/></svg>';
+}
+
+function buildLadder(){
+  var d = window.I18N[currentLang], el = document.getElementById('ladder');
+  el.innerHTML = "";
+  for(var i=0;i<6;i++){
+    var r = document.createElement('div');
+    r.className = 'rung reveal-scale';
+    r.style.background = LADDER_BG[i];
+    r.style.color = LADDER_FG[i];
+    r.style.transitionDelay = (i*0.06)+'s';
+    r.innerHTML = '<div class="code">'+CODES[i]+'</div><div class="lbl">'+d.lv[i]+'</div>';
+    el.appendChild(r);
+  }
+}
+
+function buildWhy(){
+  var d = window.I18N[currentLang], root = document.getElementById('whyTable');
+  root.innerHTML = "";
+  var head = document.createElement('div');
+  head.className = 'why-row head';
+  var h = '<div></div>';
+  for(var c=0;c<3;c++){
+    h += '<div class="'+(c===2?'cc':'')+'" style="text-align:center;padding:20px 8px;">' +
+         '<div class="why-col-title">'+d.why_cols[c]+'</div></div>';
+  }
+  head.innerHTML = h;
+  root.appendChild(head);
+  for(var r=0;r<d.why_rows.length;r++){
+    var row = document.createElement('div');
+    row.className = 'why-row';
+    var cells = '<div class="rowlabel">'+d.why_rows[r]+'</div>';
+    for(var c2=0;c2<3;c2++){
+      var yes = MARKS[c2][r] === 1;
+      cells += '<div class="cell '+(c2===2?'cc':'')+'">' +
+               '<div class="mark" style="background:'+(yes?'#E32F2E':'#C7C9CD')+';">' +
+               svgMark(yes) + '</div></div>';
+    }
+    row.innerHTML = cells;
+    root.appendChild(row);
+  }
+}
+
+function buildPills(){
+  var d = window.I18N[currentLang], el = document.getElementById('pillRow');
+  el.innerHTML = "";
+  for(var i=0;i<d.c_pills.length;i++){
+    var p = document.createElement('div');
+    p.className = 'pill';
+    p.textContent = d.c_pills[i];
+    el.appendChild(p);
+  }
+}
+
+function buildCharts(){
+  var d = window.I18N[currentLang];
+
+  var W=440, H=230, PL=34, PR=12, PT=12, PB=30;
+  var fixed=[1,1.8,2.6,3.4,4.2,5], mine=[1.3,2.6,3.7,4.6,5.4,6], maxY=6.5;
+  var xs=function(i){ return PL + i*((W-PL-PR)/(fixed.length-1)); };
+  var ys=function(v){ return H-PB - (v/maxY)*(H-PT-PB); };
+  var g='';
+  for(var y=0;y<=6;y+=2){
+    g += '<line x1="'+PL+'" y1="'+ys(y)+'" x2="'+(W-PR)+'" y2="'+ys(y)+'" stroke="#262626" stroke-width="1"/>' +
+         '<text class="clabel" x="'+(PL-8)+'" y="'+(ys(y)+4)+'" text-anchor="end">'+y+'</text>';
+  }
+  function poly(arr){ var p=''; for(var i=0;i<arr.length;i++){ p += (i?' L':'M')+xs(i)+','+ys(arr[i]); } return p; }
+  var dots='';
+  for(var i=0;i<mine.length;i++){
+    dots += '<circle class="cdot" cx="'+xs(i)+'" cy="'+ys(mine[i])+'" r="4" fill="#E32F2E" style="animation-delay:'+(0.9+i*0.08)+'s"/>';
+    g += '<text class="clabel" x="'+xs(i)+'" y="'+(H-PB+18)+'" text-anchor="middle">'+d.chart1_labels[i]+'</text>';
+  }
+  document.getElementById('chart1').innerHTML =
+    '<div class="chart-title">'+d.chart1_title+'</div><div class="chart-sub">'+d.chart1_sub+'</div>' +
+    '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+d.chart1_title+'">' + g +
+      '<path class="cline" d="'+poly(fixed)+'" stroke="#5A5F68"/>' +
+      '<path class="cline" d="'+poly(mine)+'" stroke="#E32F2E" style="animation-delay:.25s"/>' + dots +
+    '</svg>' +
+    '<div class="clegend">' +
+      '<span><i style="background:#5A5F68"></i>'+d.chart1_s1+'</span>' +
+      '<span><i style="background:#E32F2E"></i>'+d.chart1_s2+'</span>' +
+    '</div>';
+
+  var vals=[3,3,2,2], BW=440, BH=230, bPL=30, bPB=34, bPT=22;
+  var barW=52, gap=(BW-bPL-16-vals.length*barW)/(vals.length-1);
+  var maxV=3.4;
+  var g2='';
+  for(var k=0;k<=3;k++){
+    var yy = BH-bPB - (k/maxV)*(BH-bPT-bPB);
+    g2 += '<line x1="'+bPL+'" y1="'+yy+'" x2="'+(BW-8)+'" y2="'+yy+'" stroke="#262626" stroke-width="1"/>' +
+          '<text class="clabel" x="'+(bPL-8)+'" y="'+(yy+4)+'" text-anchor="end">'+k+'</text>';
+  }
+  for(var b=0;b<vals.length;b++){
+    var bx = bPL + 8 + b*(barW+gap);
+    var bh = (vals[b]/maxV)*(BH-bPT-bPB);
+    var by = BH-bPB-bh;
+    var col = (b<2) ? '#E32F2E' : '#5A5F68';
+    g2 += '<rect class="cbar" x="'+bx+'" y="'+by+'" width="'+barW+'" height="'+bh+'" rx="7" fill="'+col+'" style="animation-delay:'+(b*0.1)+'s"/>' +
+          '<text class="cvalue" x="'+(bx+barW/2)+'" y="'+(by-8)+'" text-anchor="middle" style="animation-delay:'+(0.5+b*0.1)+'s">'+vals[b]+'</text>' +
+          '<text class="clabel" x="'+(bx+barW/2)+'" y="'+(BH-bPB+18)+'" text-anchor="middle">'+d.chart2_labels[b]+'</text>';
+  }
+  document.getElementById('chart2').innerHTML =
+    '<div class="chart-title">'+d.chart2_title+'</div><div class="chart-sub">'+d.chart2_sub+'</div>' +
+    '<svg viewBox="0 0 '+BW+' '+BH+'" role="img" aria-label="'+d.chart2_title+'">'+g2+'</svg>';
+}
+
+function applyLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  var els = document.querySelectorAll('[data-t]');
+  for(var i=0;i<els.length;i++){
+    var v = window.I18N[lang][els[i].getAttribute('data-t')];
+    if(typeof v === 'string') els[i].textContent = v;
+  }
+  document.getElementById('navCta').textContent = t('nav_cta');
+  document.getElementById('heroCta1').textContent = t('hero_cta1');
+  document.getElementById('contactCta').textContent = t('contact_cta');
+  document.getElementById('startCta').textContent = t('start_cta');
+  var el = document.getElementById('emailLink');
+  el.textContent = EMAIL;
+  el.setAttribute('href', mailHref());
+
+  var ctrs = document.querySelectorAll('.counter');
+  for(var n=0;n<ctrs.length;n++){
+    ctrs[n].textContent = ctrs[n].getAttribute('data-target');
+    delete ctrs[n].dataset.done;
+  }
+
+  buildLadder(); buildWhy(); buildPills(); buildCharts();
+
+  var btns = document.querySelectorAll('#langSwitch button');
+  for(var b=0;b<btns.length;b++){
+    btns[b].className = (btns[b].getAttribute('data-lang')===lang) ? 'active' : '';
+  }
+  
+  observeAll(true);
+}
+
+var observer = null;
+function observeAll(forceRefresh = false){
+  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale');
+  if(!('IntersectionObserver' in window)){
+    for(var i=0;i<els.length;i++) els[i].classList.add('visible');
+    return;
+  }
+  if(forceRefresh && observer){
+    observer.disconnect();
+    observer = null;
+  }
+  if(!observer){
+    observer = new IntersectionObserver(function(entries){
+      for(var i=0;i<entries.length;i++){
+        if(entries[i].isIntersecting){
+          entries[i].target.classList.add('visible');
+          var c = entries[i].target.querySelector ? entries[i].target.querySelector('.counter') : null;
+          if(c) runCounter(c);
+        }
+      }
+    }, {threshold:0.05});
+  }
+  for(var j=0;j<els.length;j++) observer.observe(els[j]);
+}
+
+function runCounter(el){
+  if(!el || el.dataset.done) return;
+  el.dataset.done = "1";
+  var target = parseInt(el.getAttribute('data-target'),10);
+  if(isNaN(target)) return;
+  var start = null;
+  function step(ts){
+    if(!start) start = ts;
+    var p = Math.min((ts-start)/1300, 1);
+    el.textContent = Math.round((1-Math.pow(1-p,3))*target);
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function copyEmail(){
+  var toast = document.getElementById('copyToast');
+  function done(){
+    toast.textContent = t('contact_copied');
+    toast.classList.add('show');
+    setTimeout(function(){ toast.classList.remove('show'); }, 2800);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(EMAIL).then(done, function(){ fallbackCopy(done); });
+  } else {
+    fallbackCopy(done);
+  }
+  try { window.location.href = mailHref(); } catch(e){}
+}
+function fallbackCopy(done){
+  try{
+    var ta = document.createElement('textarea');
+    ta.value = EMAIL; ta.setAttribute('readonly','');
+    ta.style.cssText = 'position:absolute;left:-9999px;';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    done();
+  }catch(e){}
+}
+document.getElementById('contactCta').addEventListener('click', copyEmail);
+document.getElementById('startCta').addEventListener('click', copyEmail);
+document.getElementById('navCta').addEventListener('click', function(){
+  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+});
+
+window.addEventListener('scroll', function(){
+  var nav = document.getElementById('nav');
+  if(window.scrollY > 40){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+});
+
+function enterSite(lang){
+  applyLang(lang);
+  document.getElementById('intro').classList.add('done');
+  document.body.classList.remove('locked');
+  window.scrollTo(0,0);
+  setTimeout(function(){ observeAll(true); }, 400);
+}
+
+var gateUsed = false;
+function pickLang(lang){
+  if(gateUsed || !lang) return;
+  gateUsed = true;
+  enterSite(lang);
+}
+
+// BULLETPROOF EVENT ATTACHMENT FOR THE OPENING BUTTONS
+var gateBtns = document.querySelectorAll('#intro .lang-btn');
+for (var i = 0; i < gateBtns.length; i++) {
+  // Catch standard click
+  gateBtns[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    pickLang(this.getAttribute('data-lang'));
+  });
+  // Catch mobile tap immediately
+  gateBtns[i].addEventListener('touchend', function(e) {
+    e.preventDefault();
+    pickLang(this.getAttribute('data-lang'));
+  });
+}
+
+var sw = document.querySelectorAll('#langSwitch button');
+for(var s=0; s<sw.length; s++){
+  (function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      applyLang(btn.getAttribute('data-lang'));
+    });
+  })(sw[s]);
+}
+
+applyLang('en');
+</script>
+</body>
+</html>
