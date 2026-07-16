@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* High-end palette: Richer blacks, platinum silvers, sharp red */
+    /* High-end palette */
     --black:#000; --panel:#0B0B0B; --white:#fff;
     --red:#E32F2E; --red-hi:#FF4342;
     --gray:#8A8F98; --gray-dark:#4A4E57; --silver:#E4E6EA;
@@ -49,9 +49,9 @@
   }
   @keyframes glowIn{to{opacity:1;}}
   .intro-ring{
-    position:absolute;top:50%;left:50%;margin:-170px 0 0 -170px;
+    position:absolute;top:50%;left:50%;margin:-210px 0 0 -210px;
     border:1px solid rgba(227,47,46,.35);border-radius:50%;
-    width:340px;height:340px;opacity:0;z-index:1;
+    width:420px;height:420px;opacity:0;z-index:1;
     animation:ringPulse 3s cubic-bezier(0.25, 1, 0.25, 1) infinite 1.4s;
   }
   .intro-ring.r2{animation-delay:2.1s;}
@@ -59,7 +59,7 @@
 
   /* NEW LOGO SVG STYLING */
   .intro-logo{
-    width:55vw;max-width:260px;height:auto;opacity:0;overflow:visible;
+    width:70vw;max-width:340px;height:auto;opacity:0;overflow:visible;
     transform:scale(.55) rotate(-20deg);
     animation:logoIn 1.7s cubic-bezier(.22,1,.36,1) forwards .15s;
     position:relative;z-index:2;
@@ -71,11 +71,21 @@
     100%{opacity:1;transform:scale(1) rotate(0);}
   }
   
-  /* NEW LOGO TYPOGRAPHY */
-  .intro-word{margin-top:34px;color:var(--red);font-size:16px;font-weight:600;letter-spacing:10px;opacity:0;
-    animation:fadeUp .9s ease forwards 1.5s;position:relative;z-index:2; padding-left:10px;}
-  .intro-tag{margin-top:12px;color:var(--silver);font-size:11px;letter-spacing:4px;opacity:0;
-    animation:fadeUp .9s ease forwards 1.75s;position:relative;z-index:2; padding-left:4px;}
+  /* TICKING ANIMATION FOR THE LOGO NEEDLE */
+  .needle {
+    transform-origin: 200px 200px;
+    animation: tickTock 60s steps(60) infinite;
+  }
+  @keyframes tickTock {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* NEW LOGO TYPOGRAPHY (Tighter spacing) */
+  .intro-word{margin-top:12px;color:var(--red);font-size:18px;font-weight:600;letter-spacing:12px;opacity:0;
+    animation:fadeUp .9s ease forwards 1.5s;position:relative;z-index:2; padding-left:12px;}
+  .intro-tag{margin-top:2px;color:var(--silver);font-size:11.5px;letter-spacing:5px;opacity:0;
+    animation:fadeUp .9s ease forwards 1.75s;position:relative;z-index:2; padding-left:5px;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 
   .lang-block{margin-top:58px;opacity:0;animation:fadeUp 1s ease forwards 2.1s;
@@ -105,7 +115,7 @@
     .lang-row{gap:10px;}
     .lang-btn{width:94px;padding:18px 8px 14px;border-radius:16px;}
     .lang-btn .flag{width:36px;height:36px;}
-    .intro-logo{width:44vw;}
+    .intro-logo{width:65vw;}
     .lang-block{margin-top:44px;}
   }
 
@@ -334,12 +344,13 @@
   <div class="intro-ring"></div>
   <div class="intro-ring r2"></div>
   <div class="intro-inner">
-  <!-- NEW HIGH END LOGO SVG -->
   <svg class="intro-logo" role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
     <path d="M 281.3 118.7 A 115 115 0 1 0 281.3 281.3" stroke="#E4E6EA" stroke-width="16" stroke-linecap="round" fill="none"/>
-    <polygon points="196,204 283,117 288,122 204,196" fill="#E32F2E"/>
-    <circle cx="200" cy="200" r="13" fill="#E4E6EA"/>
-    <circle cx="200" cy="200" r="4" fill="#E32F2E"/>
+    <g class="needle">
+      <polygon points="196,204 283,117 288,122 204,196" fill="#E32F2E"/>
+      <circle cx="200" cy="200" r="13" fill="#E4E6EA"/>
+      <circle cx="200" cy="200" r="4" fill="#E32F2E"/>
+    </g>
   </svg>
   <div class="intro-word">CONCEPT</div>
   <div class="intro-tag">MIND YOUR FUTURE</div>
@@ -369,9 +380,11 @@
   <div class="brand">
     <svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
       <path d="M 281.3 118.7 A 115 115 0 1 0 281.3 281.3" stroke="#E4E6EA" stroke-width="16" stroke-linecap="round" fill="none"/>
-      <polygon points="196,204 283,117 288,122 204,196" fill="#E32F2E"/>
-      <circle cx="200" cy="200" r="13" fill="#E4E6EA"/>
-      <circle cx="200" cy="200" r="4" fill="#E32F2E"/>
+      <g class="needle">
+        <polygon points="196,204 283,117 288,122 204,196" fill="#E32F2E"/>
+        <circle cx="200" cy="200" r="13" fill="#E4E6EA"/>
+        <circle cx="200" cy="200" r="4" fill="#E32F2E"/>
+      </g>
     </svg>
     <span class="wordmark">CONCEPT</span>
   </div>
@@ -629,9 +642,11 @@
       <div class="fl">
         <svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
           <path d="M 281.3 118.7 A 115 115 0 1 0 281.3 281.3" stroke="#E4E6EA" stroke-width="16" stroke-linecap="round" fill="none"/>
-          <polygon points="196,204 283,117 288,122 204,196" fill="#E32F2E"/>
-          <circle cx="200" cy="200" r="13" fill="#E4E6EA"/>
-          <circle cx="200" cy="200" r="4" fill="#E32F2E"/>
+          <g class="needle">
+            <polygon points="196,204 283,117 288,122 204,196" fill="#E32F2E"/>
+            <circle cx="200" cy="200" r="13" fill="#E4E6EA"/>
+            <circle cx="200" cy="200" r="4" fill="#E32F2E"/>
+          </g>
         </svg>
         <span data-t="footer_tag"></span>
       </div>
@@ -1129,10 +1144,11 @@ var LADDER_FG = ["#000","#000","#fff","#fff","#fff","#fff"];
 var ICON_CHECK = "M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z";
 var ICON_X = "M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z";
 
+// Binary only: yes or no. No ambiguous middle state.
 var MARKS = [
-  [0,0,0,0,0,0,0],
-  [0,0,1,0,0,0,0],
-  [1,1,1,1,1,1,1]
+  [0,0,0,0,0,0,0],   // self-study apps
+  [0,0,1,0,0,0,0],   // language schools
+  [1,1,1,1,1,1,1]    // working with me
 ];
 
 var currentLang = "en";
@@ -1198,8 +1214,11 @@ function buildPills(){
   }
 }
 
+/* ---- Charts drawn as inline SVG. No external library, so they always render. ---- */
 function buildCharts(){
   var d = window.I18N[currentLang];
+
+  // Chart 1: progress line, fixed calendar vs progress-based
   var W=440, H=230, PL=34, PR=12, PT=12, PB=30;
   var fixed=[1,1.8,2.6,3.4,4.2,5], mine=[1.3,2.6,3.7,4.6,5.4,6], maxY=6.5;
   var xs=function(i){ return PL + i*((W-PL-PR)/(fixed.length-1)); };
@@ -1226,6 +1245,7 @@ function buildCharts(){
       '<span><i style="background:#E32F2E"></i>'+d.chart1_s2+'</span>' +
     '</div>';
 
+  // Chart 2: points per skill
   var vals=[3,3,2,2], BW=440, BH=230, bPL=30, bPB=34, bPT=22;
   var barW=52, gap=(BW-bPL-16-vals.length*barW)/(vals.length-1);
   var maxV=3.4;
@@ -1265,6 +1285,7 @@ function applyLang(lang){
   el.textContent = EMAIL;
   el.setAttribute('href', mailHref());
   
+  // Link to the method page carrying the language param
   var hCta = document.getElementById('heroCta1');
   if(hCta) {
     hCta.textContent = t('hero_cta1');
@@ -1405,6 +1426,7 @@ for(var s=0; s<sw.length; s++){
   })(sw[s]);
 }
 
+// Smart URL check: skips language gate if coming from the method page
 var urlParams = new URLSearchParams(window.location.search);
 var langParam = urlParams.get('lang');
 if(langParam && window.I18N[langParam]) {
