@@ -1,0 +1,52 @@
+<svg viewBox="0 0 440 640" xmlns="http://www.w3.org/2000/svg" font-family="Calibri, Carlito, Arial, sans-serif">
+  <defs>
+    <linearGradient id="platinum" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E7E8EA"/>
+      <stop offset="50%" stop-color="#7C7F84"/>
+      <stop offset="100%" stop-color="#E7E8EA"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="400" height="600" rx="10" fill="#0A0B0D" stroke="#1A1A1A" stroke-width="1"/>
+
+    <text x="362" y="52" text-anchor="end" fill="#6E6E6E" font-size="10" letter-spacing="3">CEFR LEVEL B1-B2</text>
+
+    <text x="38" y="86" font-family="Georgia, serif" font-size="34" fill="#E7E8EA">It's what happens</text>
+    <text x="38" y="126" font-family="Georgia, serif" font-size="34" fill="#E7E8EA"><tspan fill="#B3132B" font-style="italic">after</tspan> grammar.</text>
+
+    <text x="38" y="176" fill="#C4C6C9" font-size="13.5">
+      <tspan x="38" dy="0">You can get by in English, but getting by has a</tspan>
+      <tspan x="38" dy="21">ceiling. You simplify to stay safe, opinions come out</tspan>
+      <tspan x="38" dy="21">blunter than you mean, and in a fast meeting you go</tspan>
+      <tspan x="38" dy="21">quiet. This book moves you from surviving a</tspan>
+      <tspan x="38" dy="21">conversation to steering one: expressing ideas with</tspan>
+      <tspan x="38" dy="21">nuance, explaining your reasoning, and holding your</tspan>
+      <tspan x="38" dy="21">own when the discussion speeds up.</tspan>
+    </text>
+
+    <text x="38" y="352" fill="#6E7176" font-size="11" letter-spacing="3">INSIDE, YOU WILL LEARN TO</text>
+
+    <g fill="#D2D4D6" font-size="12.5">
+      <polygon points="40,372 45,376 40,380 35,376" fill="#B3132B"/>
+      <text x="54" y="380">Move from getting by to saying what you really mean</text>
+      <polygon points="40,396 45,400 40,404 35,400" fill="#B3132B"/>
+      <text x="54" y="404">Explain and justify your reasoning, not just state it</text>
+      <polygon points="40,420 45,424 40,428 35,424" fill="#B3132B"/>
+      <text x="54" y="428">Hold your own when the meeting speeds up</text>
+      <polygon points="40,444 45,448 40,452 35,448" fill="#B3132B"/>
+      <text x="54" y="452">Swap safe, simple phrasing for language with weight</text>
+    </g>
+
+    <line x1="38" y1="478" x2="362" y2="478" stroke="#B3132B" stroke-width="2"/>
+
+    <text x="38" y="502" fill="#8A8D92" font-size="11">
+      <tspan x="38" dy="0">The Concept method is a psycholinguistically grounded</tspan>
+      <tspan x="38" dy="17">approach to English communication by Pedro Gigollotti Netto,</tspan>
+      <tspan x="38" dy="17">for anyone who needs to be understood when it counts.</tspan>
+    </text>
+
+    <text x="38" y="566" fill="#7C7F84" font-size="10" letter-spacing="2">CONCEPT</text>
+    <text x="38" y="581" fill="#5E6166" font-size="8" letter-spacing="3">MIND YOUR FUTURE</text>
+  </g>
+</svg>
