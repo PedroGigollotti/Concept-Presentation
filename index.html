@@ -85,6 +85,7 @@
   /* The big instrument's needle: JS-controlled, no ambient ticking */
   .needle-instrument{
     transform-origin:200px 200px;
+    transform:scale(1.3);
     transition:transform .85s cubic-bezier(.22,1,.36,1);
   }
   @media (prefers-reduced-motion:reduce){ .needle-instrument{transition:none;} }
@@ -1476,16 +1477,16 @@ function pickLang(lang){
   enterSite(lang);
 }
 
-var TICK_ANGLES = { en: 0, pt: 180, it: 270 };
+var TICK_ROTATIONS = { en: -45, pt: -225, it: -135 };
 var needleEl = document.getElementById('introNeedle');
 var reduceMotionMQ = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var tickChosen = false;
 
 function chooseLang(lang, tickEl){
-  if (tickChosen || gateUsed || !lang || !(lang in TICK_ANGLES)) return;
+  if (tickChosen || gateUsed || !lang || !(lang in TICK_ROTATIONS)) return;
   tickChosen = true;
   if (tickEl) tickEl.classList.add('chosen');
-  if (needleEl) needleEl.style.transform = 'rotate(' + (TICK_ANGLES[lang] - 45) + 'deg)';
+  if (needleEl) needleEl.style.transform = 'rotate(' + TICK_ROTATIONS[lang] + 'deg) scale(1.3)';
   window.setTimeout(function(){ pickLang(lang); }, reduceMotionMQ ? 120 : 700);
 }
 
