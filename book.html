@@ -46,8 +46,10 @@
     border:1px solid rgba(231,232,234,0.14);
     box-shadow:0 10px 26px rgba(0,0,0,.55);
     transition:transform .35s cubic-bezier(.25,1,.25,1), box-shadow .35s ease;
+    cursor:zoom-in;
   }
   .cover-real:hover{transform:scale(1.055);box-shadow:0 16px 38px rgba(0,0,0,.65);z-index:2;position:relative;}
+  .cover-real:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
   .cover-real img{width:100%;height:100%;display:block;object-fit:cover;}
 
   /* placeholder mock cover, used until real art exists */
@@ -57,8 +59,10 @@
     padding:14px 14px 12px;overflow:hidden;display:flex;flex-direction:column;position:relative;
     box-shadow:0 10px 26px rgba(0,0,0,.55);
     transition:transform .35s cubic-bezier(.25,1,.25,1), box-shadow .35s ease;
+    cursor:zoom-in;
   }
   .cover-mock:hover{transform:scale(1.055);box-shadow:0 16px 38px rgba(0,0,0,.65);z-index:2;}
+  .cover-mock:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
   .cover-mock.front .top{display:flex;justify-content:space-between;align-items:flex-start;}
   .cover-mock .badge{text-align:right;line-height:1;}
   .cover-mock .badge .lbl{font-size:5px;letter-spacing:0.16em;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:2px;}
@@ -87,6 +91,30 @@
     color:var(--muted);
   }
   a:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+
+  /* ===== ZOOM LIGHTBOX ===== */
+  #lightbox{
+    position:fixed;inset:0;background:rgba(6,6,7,0.92);
+    display:flex;align-items:center;justify-content:center;padding:56px 24px;
+    opacity:0;visibility:hidden;transition:opacity .28s ease;z-index:500;
+  }
+  #lightbox.open{opacity:1;visibility:visible;}
+  #lightbox .lb-inner{position:relative;max-width:min(84vw,480px);max-height:80vh;}
+  #lightbox .lb-inner img{
+    display:block;width:100%;height:auto;max-height:80vh;object-fit:contain;
+    border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6);
+  }
+  #lightbox .lb-mockwrap{width:168px;height:244px;transform:scale(2.35);transform-origin:center;margin:104px auto;}
+  #lightbox .lb-close{
+    position:absolute;top:-46px;right:0;width:34px;height:34px;border-radius:50%;
+    background:none;border:1px solid var(--line);color:var(--platinum);
+    font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:border-color .2s ease,color .2s ease;
+  }
+  #lightbox .lb-close:hover,#lightbox .lb-close:focus-visible{border-color:var(--red);color:var(--red);outline:none;}
+  @media (max-width:640px){
+    #lightbox .lb-mockwrap{transform:scale(1.7);margin:70px auto;}
+  }
 
   footer{margin-top:88px;padding-top:22px;border-top:1px solid var(--line);
     font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);
@@ -134,6 +162,13 @@
     <span>Concept &middot; Mind Your Future</span>
     <span><a href="index.html">Back to Concept</a></span>
   </footer>
+
+  <div id="lightbox" aria-hidden="true">
+    <div class="lb-inner">
+      <button class="lb-close" id="lbClose" type="button" aria-label="Close zoomed cover">&times;</button>
+      <div id="lbContent"></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -236,7 +271,7 @@ const CS_BOOKS = [
    ══════════════════════════════════════════════════════════════════ */
 
 function mockFront(b){
-  return '<div class="cover-mock front">'
+  return '<div class="cover-mock front zoomable" tabindex="0" role="button" aria-label="Zoom cover, ' + b.title + '">'
     + '<div class="inprod">Cover in production</div>'
     + '<div class="top"><span></span>'
       + '<span class="badge"><span class="lbl">CEFR Level</span>'
@@ -253,10 +288,10 @@ function mockFront(b){
 
 function covers(b){
   const front = b.realCover
-    ? '<div class="cover-real"><img src="' + b.realCover + '" alt="' + b.title + ' front cover, ' + b.level + '"></div>'
+    ? '<div class="cover-real zoomable" tabindex="0" role="button" aria-label="Zoom cover, ' + b.title + '"><img src="' + b.realCover + '" alt="' + b.title + ' front cover, ' + b.level + '"></div>'
     : mockFront(b);
   const back = b.realBack
-    ? '<div class="cover-real"><img src="' + b.realBack + '" alt="' + b.title + ' back cover, ' + b.level + '"></div>'
+    ? '<div class="cover-real zoomable" tabindex="0" role="button" aria-label="Zoom back cover, ' + b.title + '"><img src="' + b.realBack + '" alt="' + b.title + ' back cover, ' + b.level + '"></div>'
     : "";
   return front + back;
 }
@@ -278,6 +313,66 @@ function card(b){
 
 document.getElementById("pep-shelf").innerHTML = PEP_BOOKS.map(card).join("");
 document.getElementById("cs-shelf").innerHTML = CS_BOOKS.map(card).join("");
+
+/* ---- Zoom lightbox: click or Enter/Space on any cover to read it up close ---- */
+(function(){
+  const lb = document.getElementById("lightbox");
+  const lbContent = document.getElementById("lbContent");
+  const lbClose = document.getElementById("lbClose");
+  let lastTrigger = null;
+
+  function openFor(trigger){
+    lastTrigger = trigger;
+    lbContent.innerHTML = "";
+    const img = trigger.querySelector("img");
+    if (img){
+      const big = document.createElement("img");
+      big.src = img.src;
+      big.alt = img.alt;
+      lbContent.appendChild(big);
+    } else {
+      const clone = trigger.cloneNode(true);
+      clone.removeAttribute("tabindex");
+      clone.removeAttribute("role");
+      clone.classList.remove("zoomable");
+      const wrap = document.createElement("div");
+      wrap.className = "lb-mockwrap";
+      wrap.appendChild(clone);
+      lbContent.appendChild(wrap);
+    }
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden", "false");
+    lbClose.focus();
+    document.addEventListener("keydown", onKeydown);
+  }
+
+  function close(){
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden", "true");
+    document.removeEventListener("keydown", onKeydown);
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  function onKeydown(e){
+    if (e.key === "Escape") close();
+  }
+
+  document.addEventListener("click", function(e){
+    const trigger = e.target.closest(".zoomable");
+    if (trigger){ openFor(trigger); return; }
+    if (e.target === lb){ close(); }
+  });
+
+  document.addEventListener("keydown", function(e){
+    const trigger = e.target.closest && e.target.closest(".zoomable");
+    if (trigger && (e.key === "Enter" || e.key === " " || e.key === "Spacebar")){
+      e.preventDefault();
+      openFor(trigger);
+    }
+  });
+
+  lbClose.addEventListener("click", close);
+})();
 </script>
 </body>
 </html>
