@@ -42,15 +42,23 @@
   .covers{flex:0 0 auto;display:flex;gap:12px;align-items:flex-start;}
 
   /* real cover art, native 440x640 (svg) or scanned png, scaled down */
-  .cover-real{width:168px;height:244px;border-radius:6px;overflow:hidden;display:block;}
+  .cover-real{width:168px;height:244px;border-radius:6px;overflow:hidden;display:block;
+    border:1px solid rgba(231,232,234,0.14);
+    box-shadow:0 10px 26px rgba(0,0,0,.55);
+    transition:transform .35s cubic-bezier(.25,1,.25,1), box-shadow .35s ease;
+  }
+  .cover-real:hover{transform:scale(1.055);box-shadow:0 16px 38px rgba(0,0,0,.65);z-index:2;position:relative;}
   .cover-real img{width:100%;height:100%;display:block;object-fit:cover;}
 
   /* placeholder mock cover, used until real art exists */
   .cover-mock{
     width:168px;height:244px;
-    background:var(--black);border:1px solid var(--line);border-radius:6px;
+    background:var(--black);border:1px solid rgba(231,232,234,0.14);border-radius:6px;
     padding:14px 14px 12px;overflow:hidden;display:flex;flex-direction:column;position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,.55);
+    transition:transform .35s cubic-bezier(.25,1,.25,1), box-shadow .35s ease;
   }
+  .cover-mock:hover{transform:scale(1.055);box-shadow:0 16px 38px rgba(0,0,0,.65);z-index:2;}
   .cover-mock.front .top{display:flex;justify-content:space-between;align-items:flex-start;}
   .cover-mock .badge{text-align:right;line-height:1;}
   .cover-mock .badge .lbl{font-size:5px;letter-spacing:0.16em;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:2px;}
