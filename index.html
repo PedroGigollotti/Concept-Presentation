@@ -7,7 +7,7 @@
   <meta name="description" content="Corporate English coaching from Pedro Gigollotti: register, pragmatics, and timing under pressure, for professionals who already know English but still lose the room.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://foContact ments.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
     /* High-end palette */
@@ -58,21 +58,21 @@
   .intro-ring.r2{animation-delay:2.1s;}
   @keyframes ringPulse{0%{opacity:.65;transform:scale(.8);}100%{opacity:0;transform:scale(1.5);}}
 
-  /* NEW LOGO SVG STYLING */
-  .intro-logo{
-    width:70vw;max-width:340px;height:auto;opacity:0;overflow:visible;
-    transform:scale(.55) rotate(-20deg);
-    animation:logoIn 1.7s cubic-bezier(.22,1,.36,1) forwards .15s;
-    position:relative;z-index:2;
-    filter:drop-shadow(0 0 35px rgba(227,47,46,.35));
+  /* INTERACTIVE INSTRUMENT (the gauge IS the language picker) */
+  .instrument-wrap{
+    width:min(78vw,62vh);max-width:480px;margin:0 auto;position:relative;z-index:2;
+    opacity:0;transform:scale(.55) rotate(-8deg);
+    animation:instrumentIn 1.4s cubic-bezier(.22,1,.36,1) forwards .15s;
+    filter:drop-shadow(0 0 35px rgba(227,47,46,.28));
   }
-  @keyframes logoIn{
-    0%{opacity:0;transform:scale(.55) rotate(-20deg);}
+  @keyframes instrumentIn{
+    0%{opacity:0;transform:scale(.55) rotate(-8deg);}
     60%{opacity:1;}
     100%{opacity:1;transform:scale(1) rotate(0);}
   }
-  
-  /* TICKING ANIMATION FOR THE LOGO NEEDLE */
+  .instrument-svg{width:100%;height:auto;display:block;overflow:visible;}
+
+  /* TICKING ANIMATION FOR THE LOGO NEEDLE (used on the small marks sitewide) */
   .needle {
     transform-origin: 200px 200px;
     animation: tickTock 60s steps(60) infinite;
@@ -82,42 +82,36 @@
     to { transform: rotate(360deg); }
   }
 
-  /* NEW LOGO TYPOGRAPHY (Tighter spacing) */
-  .intro-word{margin-top:12px;color:var(--red);font-size:18px;font-weight:600;letter-spacing:12px;opacity:0;
-    animation:fadeUp .9s ease forwards 1.5s;position:relative;z-index:2; padding-left:12px;}
+  /* The big instrument's needle: JS-controlled, no ambient ticking */
+  .needle-instrument{
+    transform-origin:200px 200px;
+    transition:transform .85s cubic-bezier(.22,1,.36,1);
+  }
+  @media (prefers-reduced-motion:reduce){ .needle-instrument{transition:none;} }
+
+  .tick{cursor:pointer;outline:none;-webkit-tap-highlight-color:rgba(227,47,46,.3);touch-action:manipulation;}
+  .tick line{stroke:#8A8F98;transition:stroke .25s ease;}
+  .tick .flag-fade{transition:transform .3s cubic-bezier(.22,1,.36,1),filter .3s ease;
+    transform-origin:0px 0px;filter:saturate(.75);pointer-events:none;}
+  .tick .hit{pointer-events:all;}
+  .tick:hover line,.tick:focus-visible line,.tick.chosen line{stroke:var(--red);}
+  .tick:hover .flag-fade,.tick:focus-visible .flag-fade,.tick.chosen .flag-fade{
+    transform:scale(1.14);filter:saturate(1);}
+  @media (prefers-reduced-motion:reduce){ .tick .flag-fade{transition:none;} }
+
+  /* LOGO TYPOGRAPHY (Tighter spacing) */
+  .intro-word{margin-top:20px;color:var(--red);font-size:18px;font-weight:600;letter-spacing:12px;opacity:0;
+    animation:fadeUp .9s ease forwards 1.55s;position:relative;z-index:2;}
   .intro-tag{margin-top:2px;color:var(--silver);font-size:11.5px;letter-spacing:5px;opacity:0;
-    animation:fadeUp .9s ease forwards 1.75s;position:relative;z-index:2; padding-left:5px;}
+    animation:fadeUp .9s ease forwards 1.75s;position:relative;z-index:2;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 
-  .lang-block{margin-top:58px;opacity:0;animation:fadeUp 1s ease forwards 2.1s;
-    position:relative;z-index:999;text-align:center;width:100%;pointer-events:auto;}
-  .lang-prompt{color:#6E727A;font-size:10.5px;letter-spacing:2.5px;margin-bottom:22px;line-height:1.9;}
-  .lang-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:0 -8px;}
-  .lang-row > .lang-btn{margin:0 8px 16px;}
-  @supports (gap:1px){ .lang-row{margin:0;} .lang-row > .lang-btn{margin:0;} }
-  
-  .lang-btn{
-    position:relative; z-index:1000; pointer-events:auto;
-    width:128px;padding:24px 12px 18px;background:var(--panel);
-    border:1px solid var(--line-dark);border-radius:20px;
-    cursor:pointer;color:#fff;font-family:var(--sans);
-    display:flex;flex-direction:column;align-items:center;gap:11px;
-    -webkit-tap-highlight-color:rgba(227,47,46,.3);touch-action:manipulation;
-    transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s ease,background .3s ease;
-  }
-  .lang-btn:hover,.lang-btn:focus-visible,.lang-btn:active{
-    transform:translateY(-6px);border-color:var(--red);background:#111;outline:none;
-  }
-  .lang-btn .flag{width:44px;height:44px;border-radius:50%;overflow:hidden;pointer-events:none;}
-  .lang-btn .flag svg{width:100%;height:100%;display:block;}
-  .lang-btn .code{font-weight:600;font-size:15px;letter-spacing:1px;pointer-events:none;}
-  .lang-btn .name{font-size:11px;color:#8A8F98;pointer-events:none;}
+  .instrument-hint{margin-top:20px;color:#6E727A;font-size:11px;letter-spacing:1.5px;text-align:center;
+    opacity:0;animation:fadeUp .9s ease forwards 1.95s;position:relative;z-index:2;}
+
   @media (max-width:420px){
-    .lang-row{gap:10px;}
-    .lang-btn{width:94px;padding:18px 8px 14px;border-radius:16px;}
-    .lang-btn .flag{width:36px;height:36px;}
-    .intro-logo{width:65vw;}
-    .lang-block{margin-top:44px;}
+    .instrument-wrap{width:min(84vw,58vh);max-width:340px;}
+    .instrument-hint{font-size:10px;}
   }
 
   /* ===== NAV ===== */
@@ -130,10 +124,20 @@
   #nav .brand:hover svg{transform:rotate(-10deg) scale(1.1);}
   #nav .wordmark{color:var(--red);font-weight:600;font-size:15px;letter-spacing:4px;}
   .nav-right{display:flex;align-items:center;gap:12px;z-index:105;}
+  .nav-link{color:var(--silver);font-family:var(--sans);font-weight:600;font-size:13px;
+    text-decoration:none;letter-spacing:.5px;opacity:.85;transition:opacity .22s ease;}
+  .nav-link:hover,.nav-link:focus-visible{opacity:1;color:var(--red);}
   .lang-switch{display:flex;gap:3px;background:rgba(255,255,255,.07);border-radius:999px;padding:4px;z-index:110;position:relative;}
   .lang-switch button{background:none;border:none;color:var(--silver);font-family:var(--sans);
     font-weight:600;font-size:11px;padding:7px 11px;border-radius:999px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:6px;
     -webkit-tap-highlight-color:rgba(227,47,46,.3);touch-action:manipulation;transition:all .22s ease;position:relative;z-index:120;}
+  .lang-switch .flag-chip{
+    width:15px;height:15px;border-radius:50%;overflow:hidden;flex:0 0 auto;display:block;
+    -webkit-mask-image:radial-gradient(circle, #000 55%, transparent 100%);
+    mask-image:radial-gradient(circle, #000 55%, transparent 100%);
+  }
+  .lang-switch .flag-chip svg{width:100%;height:100%;display:block;}
   .lang-switch button.active{background:var(--red);color:#fff;}
   #nav .cta{background:var(--red);color:#fff;border:none;border-radius:999px;padding:10px 20px;
     font-family:var(--sans);font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;
@@ -181,7 +185,7 @@
   .reveal-scale.visible{opacity:1;transform:scale(1);}
   @media (prefers-reduced-motion:reduce){
     .reveal,.reveal-left,.reveal-scale{opacity:1!important;transform:none!important;transition:none;}
-    .intro-logo,.intro-word,.intro-tag,.lang-block{animation-duration:.01s!important;opacity:1!important;transform:none!important;}
+    .instrument-wrap,.intro-word,.intro-tag,.instrument-hint{animation-duration:.01s!important;opacity:1!important;transform:none!important;}
     .intro-ring{display:none;}
   }
 
@@ -345,34 +349,58 @@
   <div class="intro-ring"></div>
   <div class="intro-ring r2"></div>
   <div class="intro-inner">
-  <svg class="intro-logo" role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-    <path d="M 281.3 118.7 A 115 115 0 1 0 281.3 281.3" stroke="#E4E6EA" stroke-width="16" stroke-linecap="round" fill="none"/>
-    <g class="needle">
-      <polygon points="196,204 283,117 288,122 204,196" fill="#E32F2E"/>
-      <circle cx="200" cy="200" r="13" fill="#E4E6EA"/>
-      <circle cx="200" cy="200" r="4" fill="#E32F2E"/>
-    </g>
-  </svg>
+  <div class="instrument-wrap">
+    <svg class="instrument-svg" viewBox="0 0 400 400" role="img" aria-label="Choose your language: English, Português, or Italiano" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="flagFadeGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="45%" stop-color="#fff" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <mask id="flagFade" maskUnits="userSpaceOnUse" x="-24" y="-24" width="48" height="48">
+          <circle cx="0" cy="0" r="24" fill="url(#flagFadeGrad)"/>
+        </mask>
+      </defs>
+
+      <path d="M299.0,101.0 A140,140 0 1 0 299.0,299.0" stroke="#E4E6EA" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+      <g class="tick" data-lang="en" tabindex="0" role="button" aria-label="English">
+        <line x1="200" y1="72" x2="200" y2="48" stroke-width="4" stroke-linecap="round"/>
+        <g transform="translate(200,40)">
+          <g class="flag-fade" mask="url(#flagFade)">
+            <svg x="-22" y="-22" width="44" height="44" viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg>
+          </g>
+        </g>
+        <circle class="hit" cx="200" cy="40" r="32" fill="transparent" pointer-events="all"/>
+      </g>
+      <g class="tick" data-lang="pt" tabindex="0" role="button" aria-label="Português">
+        <line x1="200" y1="328" x2="200" y2="352" stroke-width="4" stroke-linecap="round"/>
+        <g transform="translate(200,360)">
+          <g class="flag-fade" mask="url(#flagFade)">
+            <svg x="-22" y="-22" width="44" height="44" viewBox="0 0 60 60"><rect width="60" height="60" fill="#009B3A"/><path d="M30 8L54 30 30 52 6 30z" fill="#FEDF00"/><circle cx="30" cy="30" r="10" fill="#002776"/></svg>
+          </g>
+        </g>
+        <circle class="hit" cx="200" cy="360" r="32" fill="transparent" pointer-events="all"/>
+      </g>
+      <g class="tick" data-lang="it" tabindex="0" role="button" aria-label="Italiano">
+        <line x1="72" y1="200" x2="48" y2="200" stroke-width="4" stroke-linecap="round"/>
+        <g transform="translate(40,200)">
+          <g class="flag-fade" mask="url(#flagFade)">
+            <svg x="-22" y="-22" width="44" height="44" viewBox="0 0 60 60"><rect width="20" height="60" fill="#009246"/><rect x="20" width="20" height="60" fill="#fff"/><rect x="40" width="20" height="60" fill="#CE2B37"/></svg>
+          </g>
+        </g>
+        <circle class="hit" cx="40" cy="200" r="32" fill="transparent" pointer-events="all"/>
+      </g>
+
+      <g class="needle-instrument" id="introNeedle">
+        <polygon points="196,204 283,117 288,122 204,196" fill="#E32F2E"/>
+        <circle cx="200" cy="200" r="13" fill="#E4E6EA"/>
+        <circle cx="200" cy="200" r="4" fill="#E32F2E"/>
+      </g>
+    </svg>
+  </div>
   <div class="intro-word">CONCEPT</div>
   <div class="intro-tag">MIND YOUR FUTURE</div>
-
-  <div class="lang-block">
-    <div class="lang-prompt">Choose your language · Escolha o idioma · Scegli la lingua</div>
-    <div class="lang-row">
-      <button class="lang-btn" type="button" data-lang="en" aria-label="English">
-        <span class="flag"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg></span>
-        <span class="code">EN</span><span class="name">English</span>
-      </button>
-      <button class="lang-btn" type="button" data-lang="pt" aria-label="Português">
-        <span class="flag"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#009B3A"/><path d="M30 8L54 30 30 52 6 30z" fill="#FEDF00"/><circle cx="30" cy="30" r="10" fill="#002776"/></svg></span>
-        <span class="code">PT</span><span class="name">Português</span>
-      </button>
-      <button class="lang-btn" type="button" data-lang="it" aria-label="Italiano">
-        <span class="flag"><svg viewBox="0 0 60 60"><rect width="20" height="60" fill="#009246"/><rect x="20" width="20" height="60" fill="#fff"/><rect x="40" width="20" height="60" fill="#CE2B37"/></svg></span>
-        <span class="code">IT</span><span class="name">Italiano</span>
-      </button>
-    </div>
-  </div>
+  <div class="instrument-hint">Move the needle to your language</div>
   </div>
 </div>
 
@@ -390,10 +418,11 @@
     <span class="wordmark">CONCEPT</span>
   </div>
   <div class="nav-right">
+    <a class="nav-link" id="navAbout" href="about.html">About</a>
     <div class="lang-switch" id="langSwitch">
-      <button type="button" data-lang="en">EN</button>
-      <button type="button" data-lang="pt">PT</button>
-      <button type="button" data-lang="it">IT</button>
+      <button type="button" data-lang="en"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg></span>EN</button>
+      <button type="button" data-lang="pt"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#009B3A"/><path d="M30 8L54 30 30 52 6 30z" fill="#FEDF00"/><circle cx="30" cy="30" r="10" fill="#002776"/></svg></span>PT</button>
+      <button type="button" data-lang="it"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="20" height="60" fill="#009246"/><rect x="20" width="20" height="60" fill="#fff"/><rect x="40" width="20" height="60" fill="#CE2B37"/></svg></span>IT</button>
     </div>
     <button class="cta" id="navCta" type="button"></button>
   </div>
@@ -659,7 +688,8 @@
 <script>
 window.I18N = {
   en: {
-    nav_cta: "Contact me",
+    nav_cta: "Talk to me",
+    nav_about: "About",
     hero_market: "SÃO PAULO · ROME · MILANO",
     hero_h1_a: "Your team speaks English.",
     hero_h1_b: "Do they",
@@ -774,7 +804,7 @@ window.I18N = {
     contact_h2_em: "for your team",
     contact_h2_b: ".",
     contact_lede: "Tell me the team, the goal, and the deadline. I'll come back with a proposal, not a brochure. Programs run online, in person, or blended, for individuals or full departments.",
-    contact_cta: "Contact me",
+    contact_cta: "Talk to me",
     contact_copied: "Email address copied to your clipboard",
     contact_or: "Or write to me directly:",
     contact_name: "Pedro Gigollotti · Teacher & Academic Director",
@@ -819,6 +849,7 @@ window.I18N = {
 
   pt: {
     nav_cta: "Falar comigo",
+    nav_about: "Sobre",
     hero_market: "SÃO PAULO · ROMA · MILÃO",
     hero_h1_a: "Sua equipe fala inglês.",
     hero_h1_b: "Mas eles",
@@ -978,6 +1009,7 @@ window.I18N = {
 
   it: {
     nav_cta: "Contattami",
+    nav_about: "Chi sono",
     hero_market: "SAN PAOLO · ROMA · MILANO",
     hero_h1_a: "Il tuo team parla inglese.",
     hero_h1_b: "Ma riesce a",
@@ -1160,7 +1192,8 @@ function mailHref(){
          "&body=" + encodeURIComponent(d.mail_body);
 }
 function svgMark(yes){
-  return '<svg viewBox="0 0 512 512"><path d="' + (yes ? ICON_CHECK : ICON_X) + '"/></svg>';
+  var fillAttr = yes ? ' style="fill:#0A0B0D"' : '';
+  return '<svg viewBox="0 0 512 512"' + fillAttr + '><path d="' + (yes ? ICON_CHECK : ICON_X) + '"/></svg>';
 }
 
 function buildLadder(){
@@ -1196,7 +1229,7 @@ function buildWhy(){
     for(var c2=0;c2<3;c2++){
       var yes = MARKS[c2][r] === 1;
       cells += '<div class="cell '+(c2===2?'cc':'')+'">' +
-               '<div class="mark" style="background:'+(yes?'#E32F2E':'#C7C9CD')+';">' +
+               '<div class="mark" style="background:'+(yes?'#E4E6EA':'#C7C9CD')+';">' +
                svgMark(yes) + '</div></div>';
     }
     row.innerHTML = cells;
@@ -1281,6 +1314,12 @@ function applyLang(lang){
   document.getElementById('navCta').textContent = t('nav_cta');
   document.getElementById('contactCta').textContent = t('contact_cta');
   document.getElementById('startCta').textContent = t('start_cta');
+
+  var navAbout = document.getElementById('navAbout');
+  if(navAbout){
+    navAbout.textContent = t('nav_about');
+    navAbout.setAttribute('href', 'about.html?lang=' + lang);
+  }
   
   var el = document.getElementById('emailLink');
   el.textContent = EMAIL;
@@ -1405,16 +1444,38 @@ function pickLang(lang){
   enterSite(lang);
 }
 
-var gateBtns = document.querySelectorAll('#intro .lang-btn');
-for (var i = 0; i < gateBtns.length; i++) {
-  gateBtns[i].addEventListener('click', function(e) {
-    e.preventDefault();
-    pickLang(this.getAttribute('data-lang'));
-  });
-  gateBtns[i].addEventListener('touchend', function(e) {
-    e.preventDefault();
-    pickLang(this.getAttribute('data-lang'));
-  });
+var TICK_ANGLES = { en: 0, pt: 180, it: 270 };
+var needleEl = document.getElementById('introNeedle');
+var reduceMotionMQ = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var tickChosen = false;
+
+function chooseLang(lang, tickEl){
+  if (tickChosen || gateUsed || !lang || !(lang in TICK_ANGLES)) return;
+  tickChosen = true;
+  if (tickEl) tickEl.classList.add('chosen');
+  if (needleEl) needleEl.style.transform = 'rotate(' + (TICK_ANGLES[lang] - 45) + 'deg)';
+  window.setTimeout(function(){ pickLang(lang); }, reduceMotionMQ ? 120 : 700);
+}
+
+var tickEls = document.querySelectorAll('#intro .tick');
+for (var i = 0; i < tickEls.length; i++) {
+  (function(el){
+    var lang = el.getAttribute('data-lang');
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      chooseLang(lang, el);
+    });
+    el.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      chooseLang(lang, el);
+    });
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        chooseLang(lang, el);
+      }
+    });
+  })(tickEls[i]);
 }
 
 var sw = document.querySelectorAll('#langSwitch button');
