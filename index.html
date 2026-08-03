@@ -419,6 +419,7 @@
   </div>
   <div class="nav-right">
     <a class="nav-link" id="navAbout" href="about.html">About</a>
+    <a class="nav-link" id="navBook" href="book.html">Book</a>
     <div class="lang-switch" id="langSwitch">
       <button type="button" data-lang="en"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg></span>EN</button>
       <button type="button" data-lang="pt"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#009B3A"/><path d="M30 8L54 30 30 52 6 30z" fill="#FEDF00"/><circle cx="30" cy="30" r="10" fill="#002776"/></svg></span>PT</button>
@@ -534,6 +535,18 @@
         <div class="qm">&ldquo;</div><p data-t="q6"></p>
         <div class="who" data-t="q6_n"></div><div class="role" data-t="q6_r"></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOOK TEASER ===== -->
+<section id="bookteaser" class="bg-black section-pad">
+  <div class="wrap">
+    <p class="kicker reveal" data-t="book_kicker"></p>
+    <h2 class="headline reveal d1" style="color:#fff;"><span data-t="book_h2_a"></span><i data-t="book_h2_em"></i><span data-t="book_h2_b"></span></h2>
+    <p class="lede on-dark reveal d2" data-t="book_lede"></p>
+    <div class="reveal d3" style="margin-top:34px;">
+      <a class="btn btn-outline" href="book.html" data-t="book_cta"></a>
     </div>
   </div>
 </section>
@@ -690,6 +703,11 @@ window.I18N = {
   en: {
     nav_cta: "Talk to me",
     nav_about: "About",
+    nav_book: "Books",
+    book_kicker: "THE BOOK SERIES",
+    book_h2_a: "The method, ", book_h2_em: "in print", book_h2_b: ".",
+    book_lede: "Professional English Practice and Calibrated Speech put the same register and pragmatics work into a page you can read on your own time, structured by CEFR level, from your first sentence to full command.",
+    book_cta: "See the books",
     hero_market: "SÃO PAULO · ROME · MILANO",
     hero_h1_a: "Your team speaks English.",
     hero_h1_b: "Do they",
@@ -850,6 +868,11 @@ window.I18N = {
   pt: {
     nav_cta: "Falar comigo",
     nav_about: "Sobre",
+    nav_book: "Livros",
+    book_kicker: "A SÉRIE DE LIVROS",
+    book_h2_a: "O método, ", book_h2_em: "no papel", book_h2_b: ".",
+    book_lede: "Professional English Practice e Calibrated Speech trazem o mesmo trabalho de registro e pragmática para uma leitura no seu próprio ritmo, organizada por nível do CEFR, da primeira frase ao domínio completo.",
+    book_cta: "Ver os livros",
     hero_market: "SÃO PAULO · ROMA · MILÃO",
     hero_h1_a: "Sua equipe fala inglês.",
     hero_h1_b: "Mas eles",
@@ -1010,6 +1033,11 @@ window.I18N = {
   it: {
     nav_cta: "Contattami",
     nav_about: "Chi sono",
+    nav_book: "Libri",
+    book_kicker: "LA COLLANA DI LIBRI",
+    book_h2_a: "Il metodo, ", book_h2_em: "su carta", book_h2_b: ".",
+    book_lede: "Professional English Practice e Calibrated Speech portano lo stesso lavoro su registro e pragmatica in una lettura al tuo ritmo, organizzata per livello CEFR, dalla prima frase alla piena padronanza.",
+    book_cta: "Vedi i libri",
     hero_market: "SAN PAOLO · ROMA · MILANO",
     hero_h1_a: "Il tuo team parla inglese.",
     hero_h1_b: "Ma riesce a",
@@ -1319,6 +1347,10 @@ function applyLang(lang){
   if(navAbout){
     navAbout.textContent = t('nav_about');
     navAbout.setAttribute('href', 'about.html?lang=' + lang);
+  }
+  var navBook = document.getElementById('navBook');
+  if(navBook){
+    navBook.textContent = t('nav_book');
   }
   
   var el = document.getElementById('emailLink');
