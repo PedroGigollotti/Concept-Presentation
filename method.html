@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Method, Live · Concept · Pedro Gigollotti</title>
+<meta name="description" content="Run Pedro Gigollotti's English communication method on yourself. Six short interactive demonstrations of register and pragmatics under pressure. About 6 minutes, nothing to install.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -34,6 +35,9 @@
   #nav .back{color:#8A8F98;font-size:12px;letter-spacing:1px;font-weight:600;}
   #nav .brand:hover .back{color:#fff;}
   .nav-right{display:flex;align-items:center;gap:12px;}
+  .nav-link{color:var(--white);opacity:.75;font-family:var(--sans);font-weight:600;font-size:13px;
+    text-decoration:none;letter-spacing:.5px;transition:opacity .22s ease;}
+  .nav-link:hover,.nav-link:focus-visible{opacity:1;color:var(--red);}
   .lang-switch{display:flex;gap:3px;background:rgba(255,255,255,.09);border-radius:999px;padding:4px;}
   .lang-switch button{background:none;border:none;color:#9AA0A8;font-weight:600;font-size:11px;
     padding:7px 11px;border-radius:999px;cursor:pointer;transition:all .22s ease;}
@@ -228,6 +232,8 @@
     <span class="back" data-t="back"></span>
   </a>
   <div class="nav-right">
+    <a class="nav-link" id="navAbout" href="about.html">About</a>
+    <a class="nav-link" href="book.html">Books</a>
     <div class="lang-switch" id="langSwitch">
       <button type="button" data-lang="en">EN</button>
       <button type="button" data-lang="pt">PT</button>
@@ -495,7 +501,7 @@ var D3_Q = {q:"We're not going to agree ___ the price today.", a:"on", b:"with",
 /* ============ I18N ============ */
 var I18N = {
 en:{
-  back:"BACK TO CONCEPT", nav_cta:"Book the call",
+  back:"BACK TO CONCEPT", nav_cta:"Book the call", nav_about:"About",
   hero_kicker:"THE METHOD, LIVE",
   hero_h1_a:"Don't read the method.", hero_h1_em:"Run it", hero_h1_b:"on yourself.",
   hero_lede:"This page is not a description of how I teach. It is a compressed version of an actual lesson, with you as the student. Six short demonstrations. Nothing to install, nothing to submit, no data leaves your browser.",
@@ -632,7 +638,7 @@ en:{
 },
 
 pt:{
-  back:"VOLTAR AO INÍCIO", nav_cta:"Agendar a conversa",
+  back:"VOLTAR AO INÍCIO", nav_cta:"Agendar a conversa", nav_about:"Sobre",
   hero_kicker:"O MÉTODO, NA PRÁTICA",
   hero_h1_a:"Não leia sobre o método.", hero_h1_em:"Teste-o", hero_h1_b:"em você mesmo.",
   hero_lede:"Esta página não descreve como eu ensino. Ela é uma versão condensada de uma aula real, com você no lugar do aluno. Seis demonstrações curtas. Nada para instalar, nada para enviar, nenhum dado sai do seu navegador.",
@@ -675,7 +681,7 @@ pt:{
     "Ou somos amigos, ou não somos."
   ],
   reg_verdict:[
-    "Gramaticalmente impecável. Juridicamente blindado. Em algum lugar um advogado sentiu um calorzinho no peito. Você também acabou de transformar um fornecedor em parte contrária, e não há nada de errado na frase, que é exatamente o motivo pelo qual ninguém nunca vai te avisar que havia.",
+    "Gramaticalmente impecável. Juridicamente blindada. Em algum lugar um advogado sentiu um calorzinho no peito. Você também acabou de transformar um fornecedor em parte contrária, e não há nada de errado na frase, que é exatamente o motivo pelo qual ninguém nunca vai te avisar que havia.",
     "Correto, seguro e mais ou menos tão caloroso quanto um arquivo de aço. Perfeito com um estranho. Caro demais com um cliente que você quer manter por mais três anos. Você segurou o preço e pagou numa moeda que nem sabia que tinha.",
     "É aqui. Recusa sem nunca dizer a palavra não, mantém sua autoridade intacta e entrega ao Marco um eixo novinho de negociação que não te custa nada. É o registro que quase ninguém alcança em outro idioma sob pressão, e é a razão inteira pela qual eu tenho emprego.",
     "Simpático. E você piscou. O \u201cI'm afraid\u201d mais aquele \u201cthough?\u201d cheio de esperança acabaram de avisar que a porta continua aberta. Ele vai empurrar de novo, e agora você tem o privilégio de segurar a mesma linha duas vezes, o que é aproximadamente duas vezes mais difícil.",
@@ -769,7 +775,7 @@ pt:{
 },
 
 it:{
-  back:"TORNA ALLA HOME", nav_cta:"Prenota la call",
+  back:"TORNA ALLA HOME", nav_cta:"Prenota la call", nav_about:"Chi sono",
   hero_kicker:"IL METODO, DAL VIVO",
   hero_h1_a:"Non leggere il metodo.", hero_h1_em:"Provalo", hero_h1_b:"su di te.",
   hero_lede:"Questa pagina non descrive come insegno. È una versione compressa di una lezione vera, con te al posto dello studente. Sei brevi dimostrazioni. Niente da installare, niente da inviare, nessun dato esce dal tuo browser.",
@@ -964,6 +970,11 @@ function applyLang(l){
     if(typeof v === "string") els[i].textContent = v;
   }
   document.getElementById("homeLink").setAttribute("href","index.html?lang="+l);
+  var navAbout = document.getElementById("navAbout");
+  if(navAbout){
+    navAbout.textContent = T("nav_about");
+    navAbout.setAttribute("href", "about.html?lang="+l);
+  }
   
   // Translating the buttons that might not have data-t attributes naturally
   var navCta = document.getElementById("navCta");
