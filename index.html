@@ -31,9 +31,14 @@
     width:100%;height:100%;
     z-index:1000;background:#000;
     overflow-y:auto;-webkit-overflow-scrolling:touch;
-    transition:opacity .9s ease, visibility .9s ease;
+    transition:transform 1.05s cubic-bezier(.7,0,.2,1), opacity .55s ease .45s, visibility 0s linear 1.05s;
   }
-  #intro.done{opacity:0;visibility:hidden;pointer-events:none;}
+  /* Curtain lifts away, revealing the hero cascading in beneath it */
+  #intro.done{transform:translateY(-100%);opacity:0;visibility:hidden;pointer-events:none;}
+  @media (prefers-reduced-motion:reduce){
+    #intro{transition:opacity .4s ease, visibility .4s ease;}
+    #intro.done{transform:none;}
+  }
   .intro-inner{
     position:relative;z-index:3;
     min-height:100%;
@@ -113,6 +118,42 @@
   @media (max-width:420px){
     .instrument-wrap{width:min(84vw,58vh);max-width:340px;}
     .instrument-hint{font-size:10px;}
+  }
+
+  /* ===== TYPOGRAPHIC INTRO ===== */
+  #snap-text-container{
+    position:absolute;top:0;left:0;right:0;bottom:0;z-index:4;
+    display:flex;align-items:center;justify-content:center;
+    padding:0 24px;pointer-events:none;
+  }
+  .snap-word{
+    font-family:var(--sans);font-weight:600;
+    color:var(--silver);
+    font-size:clamp(46px,13vw,150px);
+    letter-spacing:-.03em;line-height:1;text-align:center;
+    will-change:transform,opacity,filter;
+  }
+  .snap-word.serif-red{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    color:var(--red);letter-spacing:-.01em;
+  }
+  .snap-in{animation:snapIn .6s cubic-bezier(.16,1,.3,1) forwards;}
+  @keyframes snapIn{
+    0%{opacity:0;transform:scale(1.22);filter:blur(16px);}
+    100%{opacity:1;transform:scale(1);filter:blur(0);}
+  }
+  .snap-out{animation:snapOut .5s cubic-bezier(.7,0,.84,0) forwards;}
+  @keyframes snapOut{
+    0%{opacity:1;transform:scale(1);filter:blur(0);}
+    100%{opacity:0;transform:scale(.85);filter:blur(10px);}
+  }
+  .snap-blur{animation:snapBlur 1.05s cubic-bezier(.22,1,.36,1) forwards;}
+  @keyframes snapBlur{
+    0%{opacity:1;transform:scale(1);filter:blur(0);}
+    100%{opacity:0;transform:scale(1.55);filter:blur(34px);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .snap-in,.snap-out,.snap-blur{animation-duration:.01ms;}
   }
 
   /* ===== NAV ===== */
@@ -340,6 +381,38 @@
     gap:14px;font-size:11.5px;color:#7E838C;}
   .footrow .fl{display:flex;align-items:center;gap:11px;}
   .footrow svg{height:24px;width:auto;overflow:visible;}
+  /* ===== COMBO: typographic prelude -> language cascade ===== */
+  .snap-word.serif-white{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--silver);letter-spacing:-.01em;}
+  #intro{transition:transform 1.05s cubic-bezier(.7,0,.2,1), opacity .55s ease .45s, visibility 0s linear 1.05s, background .55s ease;}
+  #intro.tint-pt{background:#04140b;}
+  #intro.tint-it{background:#160607;}
+  .cascade-wrap{position:absolute;inset:0;z-index:6;display:flex;align-items:stretch;opacity:0;visibility:hidden;transition:opacity .7s ease;}
+  .cascade-wrap.show{opacity:1;visibility:visible;}
+  .cascade-left{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 6vw;}
+  .cascade-brand{color:var(--red);font-weight:600;letter-spacing:12px;font-size:20px;}
+  .cascade-tag{color:var(--silver);letter-spacing:5px;font-size:12px;margin-top:8px;opacity:.7;}
+  .cascade-hint{color:#6E727A;font-size:11px;letter-spacing:2px;margin-top:34px;text-transform:uppercase;}
+  .cascade-right{flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 6vw;border-left:1px solid var(--line-dark);}
+  .lang-choice{display:flex;align-items:center;gap:22px;background:none;border:none;text-align:left;color:var(--silver);font-family:var(--serif);font-style:italic;font-size:clamp(38px,5.6vw,70px);line-height:1.14;cursor:pointer;padding:6px 0;opacity:0;transform:translateX(34px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1),color .25s ease;-webkit-tap-highlight-color:rgba(227,47,46,.3);}
+  .lang-choice.in{opacity:1;transform:translateX(0);}
+  .lang-choice:hover,.lang-choice:focus-visible{color:#fff;outline:none;}
+  .lang-choice.chosen{color:#fff;transform:scale(1.05);transition:transform .5s cubic-bezier(.22,1,.36,1),color .3s ease;}
+  .lc-flag{width:40px;height:40px;border-radius:50%;overflow:hidden;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;filter:saturate(.9);transition:filter .25s ease,transform .25s ease;
+    -webkit-mask-image:radial-gradient(circle,#000 60%,transparent 100%);mask-image:radial-gradient(circle,#000 60%,transparent 100%);}
+  .lang-choice:hover .lc-flag{filter:saturate(1.05);transform:scale(1.08);}
+  .lc-flag svg{width:100%;height:100%;display:block;}
+  @media (max-width:760px){
+    .cascade-wrap{flex-direction:column;}
+    .cascade-left{flex:0 0 auto;padding-top:11vh;}
+    .cascade-right{border-left:none;border-top:1px solid var(--line-dark);padding-bottom:11vh;gap:2px;}
+    .lc-flag{width:32px;height:32px;}
+    .lang-choice{gap:16px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    #intro{transition:opacity .35s ease, visibility .35s ease, background .35s ease;}
+    #intro.done{transform:none;}
+    .lang-choice{transition:opacity .2s ease,color .2s ease;transform:none;}
+  }
 </style>
 </head>
 <body class="locked">
@@ -349,59 +422,18 @@
   <div class="intro-glow"></div>
   <div class="intro-ring"></div>
   <div class="intro-ring r2"></div>
-  <div class="intro-inner">
-  <div class="instrument-wrap">
-    <svg class="instrument-svg" viewBox="0 0 400 400" role="img" aria-label="Choose your language: English, Português, or Italiano" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="flagFadeGrad" cx="50%" cy="50%" r="50%">
-          <stop offset="45%" stop-color="#fff" stop-opacity="1"/>
-          <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-        </radialGradient>
-        <mask id="flagFade" maskUnits="userSpaceOnUse" x="-24" y="-24" width="48" height="48">
-          <circle cx="0" cy="0" r="24" fill="url(#flagFadeGrad)"/>
-        </mask>
-      </defs>
-
-      <path d="M299.0,101.0 A140,140 0 1 0 299.0,299.0" stroke="#E4E6EA" stroke-width="8" stroke-linecap="round" fill="none"/>
-
-      <g class="tick" data-lang="en" tabindex="0" role="button" aria-label="English">
-        <line x1="200" y1="72" x2="200" y2="48" stroke-width="4" stroke-linecap="round"/>
-        <g transform="translate(200,40)">
-          <g class="flag-fade" mask="url(#flagFade)">
-            <svg x="-22" y="-22" width="44" height="44" viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg>
-          </g>
-        </g>
-        <circle class="hit" cx="200" cy="40" r="32" fill="transparent" pointer-events="all"/>
-      </g>
-      <g class="tick" data-lang="pt" tabindex="0" role="button" aria-label="Português">
-        <line x1="200" y1="328" x2="200" y2="352" stroke-width="4" stroke-linecap="round"/>
-        <g transform="translate(200,360)">
-          <g class="flag-fade" mask="url(#flagFade)">
-            <svg x="-22" y="-22" width="44" height="44" viewBox="0 0 60 60"><rect width="60" height="60" fill="#009B3A"/><path d="M30 8L54 30 30 52 6 30z" fill="#FEDF00"/><circle cx="30" cy="30" r="10" fill="#002776"/></svg>
-          </g>
-        </g>
-        <circle class="hit" cx="200" cy="360" r="32" fill="transparent" pointer-events="all"/>
-      </g>
-      <g class="tick" data-lang="it" tabindex="0" role="button" aria-label="Italiano">
-        <line x1="72" y1="200" x2="48" y2="200" stroke-width="4" stroke-linecap="round"/>
-        <g transform="translate(40,200)">
-          <g class="flag-fade" mask="url(#flagFade)">
-            <svg x="-22" y="-22" width="44" height="44" viewBox="0 0 60 60"><rect width="20" height="60" fill="#009246"/><rect x="20" width="20" height="60" fill="#fff"/><rect x="40" width="20" height="60" fill="#CE2B37"/></svg>
-          </g>
-        </g>
-        <circle class="hit" cx="40" cy="200" r="32" fill="transparent" pointer-events="all"/>
-      </g>
-
-      <g class="needle-instrument" id="introNeedle">
-        <polygon points="196,204 283,117 288,122 204,196" fill="#E32F2E"/>
-        <circle cx="200" cy="200" r="13" fill="#E4E6EA"/>
-        <circle cx="200" cy="200" r="4" fill="#E32F2E"/>
-      </g>
-    </svg>
-  </div>
-  <div class="intro-word">CONCEPT</div>
-  <div class="intro-tag">MIND YOUR FUTURE</div>
-  <div class="instrument-hint">Move the needle to your language</div>
+  <div id="snap-text-container" aria-hidden="true"></div>
+  <div class="cascade-wrap" id="cascadeStage">
+    <div class="cascade-left">
+      <div class="cascade-brand">CONCEPT</div>
+      <div class="cascade-tag">MIND YOUR FUTURE</div>
+      <div class="cascade-hint">Choose your language</div>
+    </div>
+    <div class="cascade-right">
+      <button type="button" class="lang-choice" data-lang="en" data-tint="en"><span class="lc-flag"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg></span><span class="lc-label">English</span></button>
+      <button type="button" class="lang-choice" data-lang="pt" data-tint="pt"><span class="lc-flag"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#009B3A"/><path d="M30 8L54 30 30 52 6 30z" fill="#FEDF00"/><circle cx="30" cy="30" r="10" fill="#002776"/></svg></span><span class="lc-label">Portugu&ecirc;s</span></button>
+      <button type="button" class="lang-choice" data-lang="it" data-tint="it"><span class="lc-flag"><svg viewBox="0 0 60 60"><rect width="20" height="60" fill="#009246"/><rect x="20" width="20" height="60" fill="#fff"/><rect x="40" width="20" height="60" fill="#CE2B37"/></svg></span><span class="lc-label">Italiano</span></button>
+    </div>
   </div>
 </div>
 
@@ -1521,7 +1553,7 @@ for(var s=0; s<sw.length; s++){
   })(sw[s]);
 }
 
-// Smart URL check: skips language gate if coming from the method page
+// Smart URL check
 var urlParams = new URLSearchParams(window.location.search);
 var langParam = urlParams.get('lang');
 if(langParam && window.I18N[langParam]) {
@@ -1529,7 +1561,466 @@ if(langParam && window.I18N[langParam]) {
   enterSite(langParam);
 } else {
   applyLang('en');
+  const intro = document.getElementById('intro');
+  const container = document.getElementById('snap-text-container');
+  const stage = document.getElementById('cascadeStage');
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function revealSite(lang){
+    if (gateUsed) return;
+    gateUsed = true;
+    if (lang) applyLang(lang);
+    intro.classList.add('done');
+    document.body.classList.remove('locked');
+    window.scrollTo(0,0);
+    observeAll(true);
+  }
+
+  function startCascade(){
+    stage.classList.add('show');
+    setTimeout(function(){ container.innerHTML = ''; }, 650);
+    var choices = Array.prototype.slice.call(stage.querySelectorAll('.lang-choice'));
+    choices.forEach(function(c,i){ setTimeout(function(){ c.classList.add('in'); }, 140 + i*130); });
+    choices.forEach(function(c){
+      c.addEventListener('mouseenter', function(){ intro.classList.remove('tint-pt','tint-it'); var t=c.getAttribute('data-tint'); if(t==='pt') intro.classList.add('tint-pt'); if(t==='it') intro.classList.add('tint-it'); });
+      c.addEventListener('mouseleave', function(){ intro.classList.remove('tint-pt','tint-it'); });
+      c.addEventListener('click', function(){ c.classList.add('chosen'); choices.forEach(function(o){ if(o!==c) o.style.opacity=0; }); intro.classList.remove('tint-pt','tint-it'); setTimeout(function(){ revealSite(c.getAttribute('data-lang')); }, 400); });
+    });
+  }
+
+  if (reduceMotion) {
+    startCascade();
+  } else {
+    var words = [
+      { text: "Grammar.", cls: "serif-white" },
+      { text: "Vocabulary.", cls: "serif-white" },
+      { text: "Register.", cls: "serif-red" }
+    ];
+    var GAP = 950, HOLD = 620, delay = 260;
+    words.forEach(function(w, i){
+      setTimeout(function(){
+        container.innerHTML = '<div class="snap-word ' + w.cls + ' snap-in">' + w.text + '</div>';
+        if (i < words.length - 1) {
+          setTimeout(function(){ var el = container.firstChild; if(el){ el.classList.remove('snap-in'); el.classList.add('snap-out'); } }, HOLD);
+        } else {
+          setTimeout(function(){ var el = container.firstChild; if(el){ el.classList.remove('snap-in'); el.classList.add('snap-blur'); } setTimeout(startCascade, 520); }, 720);
+        }
+      }, delay);
+      delay += GAP;
+    });
+  }
 }
 </script>
-</body>
-</html>
+<script>
+var EMAIL = "pedro.gigollotti@me.com";
+var CODES = ["A1","A2","B1","B2","C1","C2"];
+var LADDER_BG = ["#EDEFF3","#C9CEDA","#1D2A4A","#7A1F1F","#B22424","#E32F2E"];
+var LADDER_FG = ["#000","#000","#fff","#fff","#fff","#fff"];
+var ICON_CHECK = "M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z";
+var ICON_X = "M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z";
+
+// Binary only: yes or no. No ambiguous middle state.
+var MARKS = [
+  [0,0,0,0,0,0,0],   // self-study apps
+  [0,0,1,0,0,0,0],   // language schools
+  [1,1,1,1,1,1,1]    // working with me
+];
+
+var currentLang = "en";
+function t(k){ return window.I18N[currentLang][k]; }
+function mailHref(){
+  var d = window.I18N[currentLang];
+  return "mailto:" + EMAIL + "?subject=" + encodeURIComponent(d.mail_subject) +
+         "&body=" + encodeURIComponent(d.mail_body);
+}
+function svgMark(yes){
+  var fillAttr = yes ? ' style="fill:#0A0B0D"' : '';
+  return '<svg viewBox="0 0 512 512"' + fillAttr + '><path d="' + (yes ? ICON_CHECK : ICON_X) + '"/></svg>';
+}
+
+function buildLadder(){
+  var d = window.I18N[currentLang], el = document.getElementById('ladder');
+  el.innerHTML = "";
+  for(var i=0;i<6;i++){
+    var r = document.createElement('div');
+    r.className = 'rung reveal-scale';
+    r.style.background = LADDER_BG[i];
+    r.style.color = LADDER_FG[i];
+    r.style.transitionDelay = (i*0.06)+'s';
+    r.innerHTML = '<div class="code">'+CODES[i]+'</div><div class="lbl">'+d.lv[i]+'</div>';
+    el.appendChild(r);
+  }
+}
+
+function buildWhy(){
+  var d = window.I18N[currentLang], root = document.getElementById('whyTable');
+  root.innerHTML = "";
+  var head = document.createElement('div');
+  head.className = 'why-row head';
+  var h = '<div></div>';
+  for(var c=0;c<3;c++){
+    h += '<div class="'+(c===2?'cc':'')+'" style="text-align:center;padding:20px 8px;">' +
+         '<div class="why-col-title">'+d.why_cols[c]+'</div></div>';
+  }
+  head.innerHTML = h;
+  root.appendChild(head);
+  for(var r=0;r<d.why_rows.length;r++){
+    var row = document.createElement('div');
+    row.className = 'why-row';
+    var cells = '<div class="rowlabel">'+d.why_rows[r]+'</div>';
+    for(var c2=0;c2<3;c2++){
+      var yes = MARKS[c2][r] === 1;
+      cells += '<div class="cell '+(c2===2?'cc':'')+'">' +
+               '<div class="mark" style="background:'+(yes?'#E4E6EA':'#C7C9CD')+';">' +
+               svgMark(yes) + '</div></div>';
+    }
+    row.innerHTML = cells;
+    root.appendChild(row);
+  }
+}
+
+function buildPills(){
+  var d = window.I18N[currentLang], el = document.getElementById('pillRow');
+  el.innerHTML = "";
+  for(var i=0;i<d.c_pills.length;i++){
+    var p = document.createElement('div');
+    p.className = 'pill';
+    p.textContent = d.c_pills[i];
+    el.appendChild(p);
+  }
+}
+
+/* ---- Charts drawn as inline SVG. No external library, so they always render. ---- */
+function buildCharts(){
+  var d = window.I18N[currentLang];
+
+  // Chart 1: progress line, fixed calendar vs progress-based
+  var W=440, H=230, PL=34, PR=12, PT=12, PB=30;
+  var fixed=[1,1.8,2.6,3.4,4.2,5], mine=[1.3,2.6,3.7,4.6,5.4,6], maxY=6.5;
+  var xs=function(i){ return PL + i*((W-PL-PR)/(fixed.length-1)); };
+  var ys=function(v){ return H-PB - (v/maxY)*(H-PT-PB); };
+  var g='';
+  for(var y=0;y<=6;y+=2){
+    g += '<line x1="'+PL+'" y1="'+ys(y)+'" x2="'+(W-PR)+'" y2="'+ys(y)+'" stroke="#262626" stroke-width="1"/>' +
+         '<text class="clabel" x="'+(PL-8)+'" y="'+(ys(y)+4)+'" text-anchor="end">'+y+'</text>';
+  }
+  function poly(arr){ var p=''; for(var i=0;i<arr.length;i++){ p += (i?' L':'M')+xs(i)+','+ys(arr[i]); } return p; }
+  var dots='';
+  for(var i=0;i<mine.length;i++){
+    dots += '<circle class="cdot" cx="'+xs(i)+'" cy="'+ys(mine[i])+'" r="4" fill="#E32F2E" style="animation-delay:'+(0.9+i*0.08)+'s"/>';
+    g += '<text class="clabel" x="'+xs(i)+'" y="'+(H-PB+18)+'" text-anchor="middle">'+d.chart1_labels[i]+'</text>';
+  }
+  document.getElementById('chart1').innerHTML =
+    '<div class="chart-title">'+d.chart1_title+'</div><div class="chart-sub">'+d.chart1_sub+'</div>' +
+    '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+d.chart1_title+'">' + g +
+      '<path class="cline" d="'+poly(fixed)+'" stroke="#5A5F68"/>' +
+      '<path class="cline" d="'+poly(mine)+'" stroke="#E32F2E" style="animation-delay:.25s"/>' + dots +
+    '</svg>' +
+    '<div class="clegend">' +
+      '<span><i style="background:#5A5F68"></i>'+d.chart1_s1+'</span>' +
+      '<span><i style="background:#E32F2E"></i>'+d.chart1_s2+'</span>' +
+    '</div>';
+
+  // Chart 2: points per skill
+  var vals=[3,3,2,2], BW=440, BH=230, bPL=30, bPB=34, bPT=22;
+  var barW=52, gap=(BW-bPL-16-vals.length*barW)/(vals.length-1);
+  var maxV=3.4;
+  var g2='';
+  for(var k=0;k<=3;k++){
+    var yy = BH-bPB - (k/maxV)*(BH-bPT-bPB);
+    g2 += '<line x1="'+bPL+'" y1="'+yy+'" x2="'+(BW-8)+'" y2="'+yy+'" stroke="#262626" stroke-width="1"/>' +
+          '<text class="clabel" x="'+(bPL-8)+'" y="'+(yy+4)+'" text-anchor="end">'+k+'</text>';
+  }
+  for(var b=0;b<vals.length;b++){
+    var bx = bPL + 8 + b*(barW+gap);
+    var bh = (vals[b]/maxV)*(BH-bPT-bPB);
+    var by = BH-bPB-bh;
+    var col = (b<2) ? '#E32F2E' : '#5A5F68';
+    g2 += '<rect class="cbar" x="'+bx+'" y="'+by+'" width="'+barW+'" height="'+bh+'" rx="7" fill="'+col+'" style="animation-delay:'+(b*0.1)+'s"/>' +
+          '<text class="cvalue" x="'+(bx+barW/2)+'" y="'+(by-8)+'" text-anchor="middle" style="animation-delay:'+(0.5+b*0.1)+'s">'+vals[b]+'</text>' +
+          '<text class="clabel" x="'+(bx+barW/2)+'" y="'+(BH-bPB+18)+'" text-anchor="middle">'+d.chart2_labels[b]+'</text>';
+  }
+  document.getElementById('chart2').innerHTML =
+    '<div class="chart-title">'+d.chart2_title+'</div><div class="chart-sub">'+d.chart2_sub+'</div>' +
+    '<svg viewBox="0 0 '+BW+' '+BH+'" role="img" aria-label="'+d.chart2_title+'">'+g2+'</svg>';
+}
+
+function applyLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  var els = document.querySelectorAll('[data-t]');
+  for(var i=0;i<els.length;i++){
+    var v = window.I18N[lang][els[i].getAttribute('data-t')];
+    if(typeof v === 'string') els[i].textContent = v;
+  }
+  document.getElementById('navCta').textContent = t('nav_cta');
+  document.getElementById('contactCta').textContent = t('contact_cta');
+  document.getElementById('startCta').textContent = t('start_cta');
+
+  var navAbout = document.getElementById('navAbout');
+  if(navAbout){
+    navAbout.textContent = t('nav_about');
+    navAbout.setAttribute('href', 'about.html?lang=' + lang);
+  }
+  var navBook = document.getElementById('navBook');
+  if(navBook){
+    navBook.textContent = t('nav_book');
+  }
+  
+  var el = document.getElementById('emailLink');
+  el.textContent = EMAIL;
+  el.setAttribute('href', mailHref());
+  
+  // Link to the method page carrying the language param
+  var hCta = document.getElementById('heroCta1');
+  if(hCta) {
+    hCta.textContent = t('hero_cta1');
+    hCta.setAttribute('href', 'method.html?lang=' + lang);
+  }
+  var mCta = document.getElementById('methodCta2');
+  if(mCta) {
+    mCta.textContent = t('hero_cta1');
+    mCta.setAttribute('href', 'method.html?lang=' + lang);
+  }
+
+  var ctrs = document.querySelectorAll('.counter');
+  for(var n=0;n<ctrs.length;n++){
+    ctrs[n].textContent = ctrs[n].getAttribute('data-target');
+    delete ctrs[n].dataset.done;
+  }
+
+  buildLadder(); buildWhy(); buildPills(); buildCharts();
+
+  var btns = document.querySelectorAll('#langSwitch button');
+  for(var b=0;b<btns.length;b++){
+    btns[b].className = (btns[b].getAttribute('data-lang')===lang) ? 'active' : '';
+  }
+  
+  observeAll(true);
+}
+
+var observer = null;
+function observeAll(forceRefresh = false){
+  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale');
+  if(!('IntersectionObserver' in window)){
+    for(var i=0;i<els.length;i++) els[i].classList.add('visible');
+    return;
+  }
+  if(forceRefresh && observer){
+    observer.disconnect();
+    observer = null;
+  }
+  if(!observer){
+    observer = new IntersectionObserver(function(entries){
+      for(var i=0;i<entries.length;i++){
+        if(entries[i].isIntersecting){
+          entries[i].target.classList.add('visible');
+          var c = entries[i].target.querySelector ? entries[i].target.querySelector('.counter') : null;
+          if(c) runCounter(c);
+        }
+      }
+    }, {threshold:0.05});
+  }
+  for(var j=0;j<els.length;j++) observer.observe(els[j]);
+}
+
+function runCounter(el){
+  if(!el || el.dataset.done) return;
+  el.dataset.done = "1";
+  var target = parseInt(el.getAttribute('data-target'),10);
+  if(isNaN(target)) return;
+  var start = null;
+  function step(ts){
+    if(!start) start = ts;
+    var p = Math.min((ts-start)/1300, 1);
+    el.textContent = Math.round((1-Math.pow(1-p,3))*target);
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function copyEmail(){
+  var toast = document.getElementById('copyToast');
+  function done(){
+    toast.textContent = t('contact_copied');
+    toast.classList.add('show');
+    setTimeout(function(){ toast.classList.remove('show'); }, 2800);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(EMAIL).then(done, function(){ fallbackCopy(done); });
+  } else {
+    fallbackCopy(done);
+  }
+  try { window.location.href = mailHref(); } catch(e){}
+}
+function fallbackCopy(done){
+  try{
+    var ta = document.createElement('textarea');
+    ta.value = EMAIL; ta.setAttribute('readonly','');
+    ta.style.cssText = 'position:absolute;left:-9999px;';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    done();
+  }catch(e){}
+}
+document.getElementById('contactCta').addEventListener('click', copyEmail);
+document.getElementById('startCta').addEventListener('click', copyEmail);
+document.getElementById('navCta').addEventListener('click', function(){
+  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+});
+
+window.addEventListener('scroll', function(){
+  var nav = document.getElementById('nav');
+  if(window.scrollY > 40){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+});
+
+function enterSite(lang){
+  applyLang(lang);
+  document.getElementById('intro').classList.add('done');
+  document.body.classList.remove('locked');
+  window.scrollTo(0,0);
+  setTimeout(function(){ observeAll(true); }, 400);
+}
+
+var gateUsed = false;
+function pickLang(lang){
+  if(gateUsed || !lang) return;
+  gateUsed = true;
+  enterSite(lang);
+}
+
+var TICK_ROTATIONS = { en: -45, pt: -225, it: -135 };
+var needleEl = document.getElementById('introNeedle');
+var reduceMotionMQ = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var tickChosen = false;
+
+function chooseLang(lang, tickEl){
+  if (tickChosen || gateUsed || !lang || !(lang in TICK_ROTATIONS)) return;
+  tickChosen = true;
+  if (tickEl) tickEl.classList.add('chosen');
+  if (needleEl) needleEl.style.transform = 'rotate(' + TICK_ROTATIONS[lang] + 'deg) scale(1.3)';
+  window.setTimeout(function(){ pickLang(lang); }, reduceMotionMQ ? 120 : 700);
+}
+
+var tickEls = document.querySelectorAll('#intro .tick');
+for (var i = 0; i < tickEls.length; i++) {
+  (function(el){
+    var lang = el.getAttribute('data-lang');
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      chooseLang(lang, el);
+    });
+    el.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      chooseLang(lang, el);
+    });
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        chooseLang(lang, el);
+      }
+    });
+  })(tickEls[i]);
+}
+
+var sw = document.querySelectorAll('#langSwitch button');
+for(var s=0; s<sw.length; s++){
+  (function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      applyLang(btn.getAttribute('data-lang'));
+    });
+  })(sw[s]);
+}
+
+// Smart URL check
+var urlParams = new URLSearchParams(window.location.search);
+var langParam = urlParams.get('lang');
+
+if(langParam && window.I18N[langParam]) {
+  gateUsed = true;
+  enterSite(langParam);
+} else {
+  // Default to English, then run the Typographic Intro (Grammar / Vocabulary / Register)
+  applyLang('en');
+
+  const intro = document.getElementById('intro');
+  const container = document.getElementById('snap-text-container');
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Lift the curtain: reveal the hero cascading in beneath the intro.
+  function revealSite(){
+    if (gateUsed) return;
+    gateUsed = true;
+    intro.classList.add('done');
+    document.body.classList.remove('locked');
+    window.scrollTo(0,0);
+    observeAll(true);
+  }
+
+  function endIntro(){
+    container.innerHTML = '';
+    revealSite();
+    teardownSkip();
+  }
+  function onIntroKey(e){
+    if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') endIntro();
+  }
+  function teardownSkip(){
+    window.removeEventListener('keydown', onIntroKey);
+    intro.removeEventListener('click', endIntro);
+    window.removeEventListener('wheel', endIntro);
+    window.removeEventListener('touchstart', endIntro);
+  }
+
+  // Returning this session, or reduced-motion users, go straight to the site.
+  var alreadySeen = false;
+  try { alreadySeen = sessionStorage.getItem('conceptIntroSeen') === '1'; } catch(e){}
+
+  if (reduceMotion || alreadySeen) {
+    revealSite();
+  } else {
+    try { sessionStorage.setItem('conceptIntroSeen', '1'); } catch(e){}
+
+    // Tap / scroll / any key skips the rest of the sequence.
+    window.addEventListener('keydown', onIntroKey);
+    intro.addEventListener('click', endIntro);
+    window.addEventListener('wheel', endIntro, { passive: true });
+    window.addEventListener('touchstart', endIntro, { passive: true });
+
+    const words = [
+      { text: "Grammar.", class: "" },
+      { text: "Vocabulary.", class: "" },
+      { text: "Register.", class: "serif-red" }
+    ];
+
+    const GAP = 950;   // time between each word appearing
+    const HOLD = 620;  // how long the first two words stay before fading
+    let delay = 260;   // initial pause before starting
+
+    words.forEach((w, i) => {
+      setTimeout(() => {
+        if (gateUsed) return; // user skipped
+        container.innerHTML = `<div class="snap-word ${w.class} snap-in">${w.text}</div>`;
+
+        if (i < words.length - 1) {
+          // Snap the first two words out to black
+          setTimeout(() => {
+            const el = container.firstChild;
+            if (el) { el.classList.remove('snap-in'); el.classList.add('snap-out'); }
+          }, HOLD);
+        } else {
+          // "Register." blurs and rides up with the curtain as the hero reveals
+          setTimeout(() => {
+            const el = container.firstChild;
+            if (el) { el.classList.remove('snap-in'); el.classList.add('snap-blur'); }
+            revealSite();
+            teardownSkip();
+          }, 720);
+        }
+      }, delay);
+      delay += GAP;
+    });
+  }
+}
