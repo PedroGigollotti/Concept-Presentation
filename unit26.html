@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#FAFAF7">
+<title>Unit 26 · Phrasal Verbs · Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0B0D; --navy:#1F5570; --navy-dark:#123A4E; --white:#fff;
+    --paper:#FAFAF7; --panel:#F1F2ED; --panel-2:#E9EAE3;
+    --red:#B3132B; --red-hi:#8E0F22; --green:#1E7A44; --green-bg:#E7F4EB;
+    --gray:#6B6F76; --gray-dark:#33363B;
+    --line:#DCDDD6;
+    --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+    --serif:'Instrument Serif',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:light;background:var(--paper);}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  em,i{font-family:var(--serif);font-style:italic;color:var(--navy);}
+
+  #nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:12px 32px;background:var(--white);border-bottom:1px solid var(--line);}
+  #nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--gray-dark);text-decoration:none;}
+  #nav .brand img{height:30px;width:30px;}
+  #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
+  #nav .brand:hover .word{color:var(--red-hi);}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+
+  .print-head{display:none;}
+  @media print{
+    .print-head{display:flex;align-items:center;justify-content:space-between;
+      padding-bottom:14px;margin-bottom:26px;border-bottom:1px solid #ccc;}
+    .print-head{padding-bottom:20px;margin-bottom:32px;}
+    .print-head img{height:78px;}
+    .print-head .pline{font-size:12.5px;letter-spacing:2.5px;color:#555;text-transform:uppercase;}
+  }
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 100px;}
+
+  /* GATE */
+  #gate{max-width:420px;margin:80px auto;text-align:center;padding:0 24px;}
+  #gate h1{font-family:var(--serif);font-weight:400;font-size:30px;margin-bottom:10px;color:var(--ink);}
+  #gate p{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:26px;}
+  #gate input{width:100%;background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:14px 16px;border-radius:10px;font-size:16px;letter-spacing:2px;text-align:center;margin-bottom:14px;}
+  #gate input:focus{outline:none;border-color:var(--navy);}
+  #gate button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:14px;font-weight:600;font-size:14.5px;cursor:pointer;}
+  #gate button:hover{background:var(--red-hi);}
+  #gateError{color:var(--red);font-size:13px;margin-top:12px;min-height:16px;}
+
+  #content{display:none;}
+
+  h2.sec{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,34px);margin:56px 0 4px;letter-spacing:-.01em;color:var(--ink);}
+  .sec-kicker{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--navy);margin:0 0 8px;}
+  .goal{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:22px;font-style:italic;}
+
+  .dialogue{background:var(--panel);border-radius:14px;padding:24px 26px;margin:18px 0;border:1px solid var(--line);}
+  .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
+  .dialogue p:last-child{margin-bottom:0;}
+  .dialogue b{color:var(--navy);}
+
+  .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
+  .body-copy b{color:var(--ink);}
+  .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
+  .callout b{color:var(--navy);}
+
+  .diagram{margin:26px 0;text-align:center;}
+  .diagram img{max-width:100%;border-radius:10px;border:1px solid var(--line);}
+  .diagram-cap{font-size:12.5px;color:var(--gray);font-style:italic;margin-top:8px;}
+
+  .ex-block{margin:44px 0;padding-top:28px;border-top:1px solid var(--line);}
+  .ex-label{display:inline-block;background:var(--navy);color:#fff;font-weight:600;font-size:12px;
+    padding:4px 11px;border-radius:6px;margin-bottom:10px;}
+  .ex-title{font-size:19px;font-weight:600;margin:0 0 6px;color:var(--ink);}
+  .ex-instr{color:var(--gray);font-size:14px;margin-bottom:18px;font-style:italic;}
+
+  .q{margin-bottom:16px;}
+  .q-text{font-size:15px;margin-bottom:8px;color:var(--gray-dark);}
+  .q-text .num{color:var(--navy);font-weight:700;margin-right:6px;}
+  .q input[type=text]{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:10px 12px;border-radius:8px;font-size:14.5px;width:260px;max-width:100%;}
+  .q input[type=text]:focus{outline:none;border-color:var(--navy);}
+  .choices{display:flex;flex-wrap:wrap;gap:8px;}
+  .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .choice-btn:hover{border-color:var(--navy);}
+  .choice-btn.picked{border-color:var(--navy);background:var(--panel);}
+  .choice-btn.correct{border-color:var(--green);background:var(--green-bg);color:var(--green);}
+  .choice-btn.wrong{border-color:var(--red);background:#FBE9EB;color:var(--red);}
+  .fb{font-size:13px;margin-top:6px;min-height:16px;font-weight:600;}
+  .fb.ok{color:var(--green);}
+  .fb.bad{color:var(--red);}
+
+  select.match-select{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:8px 10px;border-radius:8px;font-size:13.5px;width:100%;font-family:var(--sans);}
+
+  .check-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);padding:9px 20px;
+    border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;margin-top:6px;font-family:var(--sans);}
+  .check-btn:hover{background:var(--navy);color:#fff;}
+
+  .reveal-btn{background:none;border:1.5px solid var(--line);color:var(--gray);padding:9px 20px;
+    border-radius:999px;font-size:13px;cursor:pointer;font-family:var(--sans);}
+  .reveal-btn:hover{border-color:var(--ink);color:var(--ink);}
+  .key-box{display:none;background:var(--panel);border-radius:10px;padding:16px 18px;margin-top:12px;font-size:14px;color:var(--gray-dark);line-height:1.6;border:1px solid var(--line);}
+  .key-box.shown{display:block;}
+  .key-box b{color:var(--green);}
+
+  .soft-note{font-size:12px;color:var(--gray);margin-top:6px;}
+
+  #scoreBar{position:sticky;bottom:0;background:rgba(250,250,247,.95);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);padding:16px 24px;display:flex;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  #scoreBar .score{font-size:14px;color:var(--gray);}
+  #scoreBar .score b{color:var(--ink);font-size:16px;}
+  .action-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:11px 22px;
+    font-weight:600;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .action-btn:hover{background:var(--red-hi);}
+  .action-btn.outline{background:none;border:1.5px solid var(--line);color:var(--ink);}
+  .action-btn.outline:hover{border-color:var(--ink);}
+
+  @media print{
+    #nav,#scoreBar,.check-btn,.reveal-btn,input,select,.choice-btn{display:none !important;}
+    body{background:#fff;color:#000;}
+    .key-box{display:block !important;}
+    a{color:#000;}
+  }
+
+  .unit-nav{display:flex;justify-content:space-between;gap:12px;margin:50px 0 10px;padding-top:24px;border-top:1px solid var(--line);}
+  .nav-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--sans);
+    font-weight:600;font-size:13.5px;padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);
+    color:var(--ink);transition:border-color .2s ease,color .2s ease;}
+  .nav-btn:hover{border-color:var(--navy);color:var(--navy);}
+  .nav-btn.next{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .nav-btn.next:hover{background:var(--navy-dark);}
+  @media print{.unit-nav{display:none !important;}}
+
+  #privacyModal{position:fixed;inset:0;background:rgba(10,11,13,.55);z-index:200;
+    display:none;align-items:center;justify-content:center;padding:24px;}
+  #privacyModal.shown{display:flex;}
+  #privacyModal .card{background:var(--white);border-radius:16px;max-width:420px;width:100%;
+    padding:28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+  #privacyModal h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 12px;color:var(--ink);}
+  #privacyModal p{font-size:14px;line-height:1.6;color:var(--gray-dark);margin:0 0 20px;}
+  #privacyModal button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:13px;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--sans);}
+  #privacyModal button:hover{background:var(--red-hi);}
+  .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
+  @media print{#privacyModal{display:none !important;}}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <h1>Unit 26</h1>
+  <p>GET across the particles<br>This code unlocks the whole book. Enter it once.</p>
+  <input type="text" id="codeInput" placeholder="ACCESS CODE" maxlength="12" autocomplete="off">
+  <button onclick="tryCode()">Unlock unit</button>
+  <div id="gateError"></div>
+</div>
+
+
+  <div id="privacyModal">
+    <div class="card">
+      <h3>Nothing is saved here</h3>
+      <p>This site doesn't have a login and doesn't store your answers, scores, or progress anywhere. Once you close or refresh the page, this session is gone for good.</p>
+      <p>If you want to keep a record of your work, use the <b>Print / Save as PDF</b> button at the bottom of each unit before you leave.</p>
+      <button onclick="dismissPrivacyModal()">Got it</button>
+    </div>
+  </div>
+
+<div id="content">
+  <nav id="nav">
+    <a class="brand" href="phrasal-verbs.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIyMCAxNzAgNDQwIDI2MCI+CjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjwvc3ZnPgo=" alt="Concept"><span class="word">CONCEPT</span></a>
+    <span class="unit-label">UNIT 26 · GET ACROSS THE PARTICLES</span>
+  </nav>
+
+  <div class="wrap">
+    <div class="print-head">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4ODAgNzYwIj4KCjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjx0ZXh0IHg9IjQ0MCIgeT0iNTYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQ2FybGl0byIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iNDYiIGxldHRlci1zcGFjaW5nPSIyMCIgZmlsbD0iI0IzMTMyQiI+Q09OQ0VQVDwvdGV4dD4KPHRleHQgeD0iNDQwIiB5PSI2MTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDYXJsaXRvIiBmb250LXNpemU9IjIyIiBsZXR0ZXItc3BhY2luZz0iMTEiIGZpbGw9IiM2RTZFNkUiPk1JTkQgWU9VUiBGVVRVUkU8L3RleHQ+Cjwvc3ZnPg==" alt="Concept">
+      <span class="pline">Professional English Practice · Phrasal Verbs</span>
+    </div>
+
+    <h2 class="sec" style="margin-top:44px;">26 · GET across the particles</h2>
+    <p class="goal">Progress and difficulty: how far you make it, and how hard it was.</p>
+
+    <p class="sec-kicker">ACCESS</p>
+    <p class="body-copy">Another prediction clinic. The verb get never changes; only the particle moves. One phrase, <b>get ahead</b>, is never taught here. Predict it from the particle before you read on.</p>
+    <p class="body-copy" style="font-style:italic;color:var(--gray);">A support and operations team in the middle of the month's third outage.</p>
+
+    <div class="dialogue">
+      <p><b>Rosa</b> Third outage this month. We need to <b>get through</b> today without losing the big accounts.</p>
+      <p><b>Tomas</b> We're <b>getting by</b> on the failover, but it won't hold under peak load.</p>
+      <p><b>Rosa</b> Then <b>get around</b> the bottleneck manually while we patch it.</p>
+      <p><b>Tomas</b> On it. Once it's stable, I'll <b>get on with</b> the root-cause writeup.</p>
+      <p><b>Rosa</b> Good. If we fix the caching, we finally <b>get ahead</b> of the incidents instead of chasing them.</p>
+      <p><b>Tomas</b> Agreed. I'll <b>get back to</b> the enterprise clients the moment we're green.</p>
+    </div>
+
+    <p class="sec-kicker" style="margin-top:36px;">ANALYSIS</p>
+    <p class="body-copy">The verb get is the busiest word in English precisely because it is so vague. On its own it just means to come to have, or come to be. Hold it still, and every sharper meaning here, survival, escape, progress, is the particle's doing.</p>
+    <p class="body-copy">Get is about motion toward a state, so its particles are about how far you make it and how hard it was. Get through it (all the way across, survive), get by (just past, barely), get around it (circle the obstacle), get on with it (keep moving), get back to someone (return), get out of it (escape).</p>
+
+    <div class="diagram">
+      <table style="width:100%;border-collapse:collapse;font-size:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden;">
+        <tr style="background:var(--ink);color:#fff;">
+          <th style="text-align:left;padding:12px 14px;font-weight:700;">Particle</th>
+          <th style="text-align:left;padding:12px 14px;font-weight:700;">Phrase</th>
+          <th style="text-align:left;padding:12px 14px;font-weight:700;">Meaning</th>
+        </tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 14px;"><span style="background:var(--navy);color:#fff;padding:3px 10px;border-radius:6px;font-weight:700;">through</span></td><td style="padding:10px 14px;font-weight:700;">get through</td><td style="padding:10px 14px;color:var(--gray);">get past or survive it; finish; reach a person</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 14px;"><span style="background:var(--navy);color:#fff;padding:3px 10px;border-radius:6px;font-weight:700;">by</span></td><td style="padding:10px 14px;font-weight:700;">get by</td><td style="padding:10px 14px;color:var(--gray);">manage with the minimum; scrape along</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 14px;"><span style="background:var(--navy);color:#fff;padding:3px 10px;border-radius:6px;font-weight:700;">around</span></td><td style="padding:10px 14px;font-weight:700;">get around</td><td style="padding:10px 14px;color:var(--gray);">circumvent it; or move about</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 14px;"><span style="background:var(--navy);color:#fff;padding:3px 10px;border-radius:6px;font-weight:700;">on with</span></td><td style="padding:10px 14px;font-weight:700;">get on with</td><td style="padding:10px 14px;color:var(--gray);">continue with it; or relate to a person</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 14px;"><span style="background:var(--navy);color:#fff;padding:3px 10px;border-radius:6px;font-weight:700;">back to</span></td><td style="padding:10px 14px;font-weight:700;">get back to</td><td style="padding:10px 14px;color:var(--gray);">reply later; return to a point</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 14px;"><span style="background:var(--navy);color:#fff;padding:3px 10px;border-radius:6px;font-weight:700;">out of</span></td><td style="padding:10px 14px;font-weight:700;">get out of</td><td style="padding:10px 14px;color:var(--gray);">escape or avoid a duty</td></tr>
+      </table>
+      <p class="diagram-cap">Read down the particle column. You already know each one. Predict the meaning before your eye reaches the third column.</p>
+    </div>
+
+    <div class="callout">
+      <b>Watch out.</b> Get through has three senses: survive the day, finish the work, or reach someone by phone or understanding. And get on has two lives: continue a task, or have a good relationship with a person.
+    </div>
+
+    <div class="callout">
+      <b>American / British English.</b> For relationships, British English says they get on; American English says they get along. This book uses get along for people and get on with for tasks.
+    </div>
+
+    <p class="body-copy">Because get is nearly meaningless alone, it is the clearest proof the method has. Get through and get out of share a verb and could not be further apart: one is survival, the other is escape, and the entire difference is through versus out of.</p>
+
+    <h2 class="sec">ACTIVATION</h2>
+    <p class="goal">Practice top to bottom: predict the particle first, then the strangers, then the discrimination, then the words, then say it out loud.</p>
+
+    <div class="ex-block">
+      <span class="ex-label">A</span>
+      <p class="ex-title">Complete the particle</p>
+      <p class="ex-instr">Complete each with the right particle after get: through, by, around, on with, back to, or out of. The meaning is in brackets.</p>
+      <div id="exA"></div>
+      <button class="check-btn" onclick="checkA()">Check my answers</button>
+    </div>
+
+    <div class="ex-block">
+      <span class="ex-label">B</span>
+      <p class="ex-title">Spot and fix the error</p>
+      <p class="ex-instr">Each sentence has the wrong particle. Rewrite it with the right one.</p>
+      <div id="exB"></div>
+      <button class="check-btn" onclick="checkSoft('exB','keyB')">Check my answers</button>
+      <div class="soft-note">Checks whether the right particle appears in your sentence. Compare against the key.</div>
+      <div class="key-box" id="keyB">
+        <p>1. We're <b>getting by</b> on the failover, but it won't hold at peak.</p>
+        <p>2. Get <b>around</b> the bottleneck manually while we patch it.</p>
+        <p>3. Now it's stable, I'll <b>get on with</b> the root-cause writeup.</p>
+        <p>4. I'll <b>get back to</b> the enterprise clients once we're green.</p>
+        <p>5. No one should <b>get out of</b> the postmortem.</p>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <span class="ex-label">C</span>
+      <p class="ex-title">Rewrite with get plus a particle</p>
+      <p class="ex-instr">Replace the formal verb with get plus the particle that carries the same meaning.</p>
+      <div id="exC"></div>
+      <button class="check-btn" onclick="checkSoft('exC','keyC')">Check my answers</button>
+      <div class="soft-note">Model answers, not the only correct phrasing.</div>
+      <div class="key-box" id="keyC">
+        <p>1. We need to get through today without losing accounts.</p>
+        <p>2. We're getting by on the failover.</p>
+        <p>3. Get around the bottleneck manually.</p>
+        <p>4. I'll get on with the root-cause writeup.</p>
+        <p>5. I'll get back to the clients once we're green.</p>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <span class="ex-label">D</span>
+      <p class="ex-title">Match the halves</p>
+      <p class="ex-instr">Join each get phrase to the ending that fits its particle.</p>
+      <div id="exD"></div>
+      <button class="check-btn" onclick="checkD()">Check my answers</button>
+    </div>
+
+    <div class="ex-block">
+      <span class="ex-label">E</span>
+      <p class="ex-title">Meet a Stranger</p>
+      <p class="ex-instr">These three get phrases are not taught anywhere in this book. Predict each from its particle, then reveal the key.</p>
+      <p class="body-copy">1. "The two teams get along better since the reorg."</p>
+      <p class="body-copy">2. "I couldn't tell what the reviewer was getting at."</p>
+      <p class="body-copy">3. "Nobody gets away with skipping the postmortem."</p>
+      <button class="reveal-btn" onclick="toggleKey('keyE')">Reveal the answers</button>
+      <div class="key-box" id="keyE">
+        <p><b>get along</b> — to manage adequately, or to have a good relationship. Along: onward together.</p>
+        <p><b>get at</b> — to imply, or to reach. At: aiming toward a point.</p>
+        <p><b>get away with</b> — to escape the consequences of something. Away with: carrying it off out of reach.</p>
+      </div>
+    </div>
+
+    <div class="ex-block">
+      <span class="ex-label">F</span>
+      <p class="ex-title">Particle swap</p>
+      <p class="ex-instr">Same verb, three particles, one right answer. Choose the particle the situation needs.</p>
+      <div id="exF"></div>
+      <button class="check-btn" onclick="checkF()">Check my answers</button>
+    </div>
+
+    <div class="ex-block">
+      <span class="ex-label">G</span>
+      <p class="ex-title">Vocabulary: progress and difficulty</p>
+      <p class="ex-instr">Match each expression to its meaning.</p>
+      <div id="exG"></div>
+      <button class="check-btn" onclick="checkG()">Check my answers</button>
+    </div>
+
+    <div class="ex-block">
+      <span class="ex-label">H</span>
+      <p class="ex-title">Vocabulary in context</p>
+      <p class="ex-instr">Complete each sentence with an expression from G.</p>
+      <div id="exH"></div>
+      <button class="check-btn" onclick="checkH()">Check my answers</button>
+    </div>
+
+    <div class="unit-nav">
+      <a class="nav-btn" href="unit25.html">← Unit 25</a>
+      <a class="nav-btn" href="phrasal-verbs.html" style="margin-right:auto;margin-left:10px;">All units</a>
+      <a class="nav-btn next" href="unit27.html">Next: Unit 27 →</a>
+    </div>
+  </div>
+
+  <div id="scoreBar">
+    <div class="score">Auto-graded score: <b id="scoreText">0 / 0</b></div>
+    <div style="display:flex;gap:10px;">
+      <button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== ACCESS CODES (pilot: replace with the real 50 before launch) ===== */
+var VALID_CODES = ["NETTO01","NETTO02","NETTO03","PILOT2026","DEMO1"];
+
+function tryCode(){
+  var v = document.getElementById('codeInput').value.trim().toUpperCase();
+  if(VALID_CODES.indexOf(v) !== -1){
+    try{ localStorage.setItem('cm_pv_access','1'); }catch(e){}
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+    buildAll();
+    maybeShowPrivacyModal();
+  } else {
+    document.getElementById('gateError').textContent = "That code isn't recognized. Check with Pedro if you think this is an error.";
+  }
+}
+document.getElementById('codeInput').addEventListener('keydown', function(e){ if(e.key === 'Enter') tryCode(); });
+
+/* ===== SCORING ===== */
+var totalCorrect = 0, totalGraded = 0;
+function updateScore(){ document.getElementById('scoreText').textContent = totalCorrect + " / " + totalGraded; }
+
+/* ===== A. Find the phrasal verb (soft text check) ===== */
+var A_DATA = [
+  {q:"We need to get ___ today without losing accounts (survive it).", a:"through"},
+  {q:"We're getting ___ on the failover for now (barely managing).", a:"by"},
+  {q:"Get ___ the bottleneck manually (circumvent it).", a:"around"},
+  {q:"I'll get ___ the root-cause writeup (continue with it).", a:"on with"},
+  {q:"I'll get ___ the clients once we're green (reply to them).", a:"back to"},
+  {q:"He tried to get ___ the postmortem, but no luck (escape it).", a:"out of"}
+];
+function buildA(){
+  var el = document.getElementById('exA'); el.innerHTML = '';
+  A_DATA.forEach(function(item, i){
+    var d = document.createElement('div'); d.className = 'q';
+    d.innerHTML = '<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
+      '<input type="text" id="A'+i+'" placeholder="type the phrasal verb, or none"><div class="fb" id="Afb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkA(){
+  var correct = 0;
+  A_DATA.forEach(function(item, i){
+    var v = document.getElementById('A'+i).value.trim().toLowerCase().replace(/\s+/g,' ');
+    var fb = document.getElementById('Afb'+i);
+    if(v === item.a){ fb.textContent = 'Correct.'; fb.className = 'fb ok'; correct++; }
+    else { fb.textContent = 'Not quite. Answer: ' + item.a; fb.className = 'fb bad'; }
+  });
+  registerGrade('A', correct, A_DATA.length);
+}
+var gradedGroups = {};
+function registerGrade(key, correct, total){
+  if(!gradedGroups[key]) totalGraded += total;
+  else totalCorrect -= gradedGroups[key];
+  gradedGroups[key] = correct;
+  totalCorrect += correct;
+  recomputeTotal();
+}
+function recomputeTotal(){
+  var c = 0; for(var k in gradedGroups){ c += gradedGroups[k]; }
+  totalCorrect = c; updateScore();
+}
+
+/* ===== B / C soft self-check (reveal + contains-check) ===== */
+var B_DATA = [
+  {q:"We're getting through on the failover, but it won't hold at peak.", key:"getting by"},
+  {q:"Get through the bottleneck manually while we patch it.", key:"get around"},
+  {q:"Now it's stable, I'll get out of the root-cause writeup.", key:"get on with"},
+  {q:"I'll get on with the enterprise clients once we're green.", key:"get back to"},
+  {q:"No one should get by the postmortem.", key:"get out of"}
+];
+var C_DATA = [
+  "We need to survive today without losing accounts.",
+  "We're barely managing on the failover.",
+  "Circumvent the bottleneck manually.",
+  "I'll continue with the root-cause writeup.",
+  "I'll reply to the clients once we're green."
+];
+function buildB(){
+  var el = document.getElementById('exB'); el.innerHTML = '';
+  B_DATA.forEach(function(item,i){
+    var d = document.createElement('div'); d.className='q';
+    d.innerHTML = '<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
+      '<input type="text" id="B'+i+'" placeholder="rewrite it correctly"><div class="fb" id="Bfb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function buildC(){
+  var el = document.getElementById('exC'); el.innerHTML = '';
+  C_DATA.forEach(function(q,i){
+    var d = document.createElement('div'); d.className='q';
+    d.innerHTML = '<div class="q-text"><span class="num">'+(i+1)+'.</span>'+q+'</div>'+
+      '<input type="text" id="C'+i+'" placeholder="your rewrite"><div class="fb" id="Cfb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkSoft(blockId, keyId){
+  if(blockId === 'exB'){
+    var correct = 0;
+    B_DATA.forEach(function(item,i){
+      var v = document.getElementById('B'+i).value.toLowerCase();
+      var fb = document.getElementById('Bfb'+i);
+      if(v.indexOf(item.key) !== -1){ fb.textContent='Contains the right particle.'; fb.className='fb ok'; correct++; }
+      else { fb.textContent='Compare with the key below.'; fb.className='fb bad'; }
+    });
+    registerGrade('B', correct, B_DATA.length);
+  }
+  document.getElementById(keyId).classList.add('shown');
+}
+function toggleKey(id){ document.getElementById(id).classList.toggle('shown'); }
+
+/* ===== D. Match the halves ===== */
+var D_ITEMS = ["We need to get through","We're getting by","Get around","I'll get on with","I'll get back to"];
+var D_MEAN = ["today without losing the big accounts.","on the failover, but it won't hold at peak.","the bottleneck manually while we patch it.","the root-cause writeup once it's stable.","the clients the moment we're green."];
+var D_CORRECT = [0,1,2,3,4];
+function buildD(){
+  var el = document.getElementById('exD'); el.innerHTML = '';
+  D_ITEMS.forEach(function(term,i){
+    var d = document.createElement('div'); d.className='q';
+    var opts = '<option value="">choose a meaning</option>';
+    D_MEAN.forEach(function(m,j){ opts += '<option value="'+j+'">'+m+'</option>'; });
+    d.innerHTML = '<div class="q-text"><span class="num">'+(i+1)+'.</span>'+term+'</div>'+
+      '<select class="match-select" id="D'+i+'">'+opts+'</select><div class="fb" id="Dfb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkD(){
+  var correct = 0;
+  D_ITEMS.forEach(function(term,i){
+    var v = document.getElementById('D'+i).value;
+    var fb = document.getElementById('Dfb'+i);
+    if(v !== "" && parseInt(v) === D_CORRECT[i]){ fb.textContent='Correct.'; fb.className='fb ok'; correct++; }
+    else { fb.textContent='Answer: '+D_MEAN[D_CORRECT[i]]; fb.className='fb bad'; }
+  });
+  registerGrade('D', correct, D_ITEMS.length);
+}
+
+/* ===== F. Particle swap (multiple choice) ===== */
+var F_DATA = [
+  {q:"We'll ___ the crunch if we pace ourselves.", opts:["get through","get by","get out of"], correct:0},
+  {q:"They're ___ on a skeleton crew.", opts:["getting by","getting on","getting around"], correct:0},
+  {q:"Let's ___ the approval bottleneck for now.", opts:["get around","get through","get on"], correct:0},
+  {q:"He keeps trying to ___ the on-call rotation.", opts:["get out of","get through","get by"], correct:0}
+];
+function buildF(){
+  var el = document.getElementById('exF'); el.innerHTML = '';
+  F_DATA.forEach(function(item,i){
+    var d = document.createElement('div'); d.className='q';
+    var html = '<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div><div class="choices" id="F'+i+'">';
+    item.opts.forEach(function(opt,j){
+      html += '<button type="button" class="choice-btn" onclick="pickF('+i+','+j+')">'+opt+'</button>';
+    });
+    html += '</div><div class="fb" id="Ffb'+i+'"></div>';
+    d.innerHTML = html; el.appendChild(d);
+  });
+}
+function pickF(i,j){
+  var group = document.getElementById('F'+i);
+  var btns = group.querySelectorAll('.choice-btn');
+  btns.forEach(function(b,k){
+    b.classList.remove('picked');
+    if(k===j) b.classList.add('picked');
+  });
+  F_DATA[i]._picked = j;
+  document.getElementById('Ffb'+i).textContent = '';
+  document.getElementById('Ffb'+i).className = 'fb';
+}
+function checkF(){
+  var correct = 0;
+  F_DATA.forEach(function(item,i){
+    var group = document.getElementById('F'+i);
+    var btns = group.querySelectorAll('.choice-btn');
+    var fb = document.getElementById('Ffb'+i);
+    var picked = item._picked;
+    btns.forEach(function(b,k){ b.classList.remove('correct','wrong'); });
+    if(picked === undefined){
+      fb.textContent = 'Choose an option first.'; fb.className = 'fb bad';
+      return;
+    }
+    if(picked === item.correct){
+      btns[picked].classList.add('correct'); fb.textContent = 'Correct.'; fb.className = 'fb ok'; correct++;
+    } else {
+      btns[picked].classList.add('wrong'); btns[item.correct].classList.add('correct');
+      fb.textContent = 'The right answer is highlighted.'; fb.className = 'fb bad';
+    }
+  });
+  registerGrade('F', correct, F_DATA.length);
+}
+
+/* ===== G. Vocabulary matching ===== */
+var G_TERMS = ["make headway","an uphill battle","get-up-and-go","a getaway","hit a wall","gain traction"];
+var G_MEAN = ["make noticeable progress","a hard, prolonged struggle","energy and initiative","a quick escape from routine","reach a point where you can't go on","start to make real progress"];
+function buildG(){
+  var el = document.getElementById('exG'); el.innerHTML = '';
+  G_TERMS.forEach(function(term,i){
+    var d = document.createElement('div'); d.className='q';
+    var opts = '<option value="">choose a meaning</option>';
+    G_MEAN.forEach(function(m,j){ opts += '<option value="'+j+'">'+m+'</option>'; });
+    d.innerHTML = '<div class="q-text"><span class="num">'+(i+1)+'.</span>'+term+'</div>'+
+      '<select class="match-select" id="G'+i+'">'+opts+'</select><div class="fb" id="Gfb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkG(){
+  var correct = 0;
+  G_TERMS.forEach(function(term,i){
+    var v = document.getElementById('G'+i).value;
+    var fb = document.getElementById('Gfb'+i);
+    if(v !== "" && parseInt(v) === i){ fb.textContent='Correct.'; fb.className='fb ok'; correct++; }
+    else { fb.textContent='Answer: '+G_MEAN[i]; fb.className='fb bad'; }
+  });
+  registerGrade('G', correct, G_TERMS.length);
+}
+
+/* ===== H. Vocabulary in context (fill from list) ===== */
+var H_DATA = [
+  {q:"After two stalled weeks, we're finally ___ on the migration.", a:"making headway"},
+  {q:"Getting the legacy data clean has been ___ from day one.", a:"an uphill battle"},
+  {q:"The new lead has real ___; things move when she's on.", a:"get-up-and-go"},
+  {q:"We booked a long weekend as a ___ before the launch crunch.", a:"getaway"},
+  {q:"I ___ on the caching bug and had to ask for help.", a:"hit a wall"},
+  {q:"Once we simplified onboarding, adoption started to ___.", a:"gain traction"}
+];
+function buildH(){
+  var el = document.getElementById('exH'); el.innerHTML = '';
+  var bank = '<p class="soft-note" style="margin-bottom:14px;">Word bank: make headway, an uphill battle, get-up-and-go, a getaway, hit a wall, gain traction</p>';
+  el.innerHTML = bank;
+  H_DATA.forEach(function(item,i){
+    var d = document.createElement('div'); d.className='q';
+    d.innerHTML = '<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
+      '<input type="text" id="H'+i+'" placeholder="fill the gap"><div class="fb" id="Hfb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkH(){
+  var correct = 0;
+  H_DATA.forEach(function(item,i){
+    var v = document.getElementById('H'+i).value.trim().toLowerCase();
+    var fb = document.getElementById('Hfb'+i);
+    if(v === item.a){ fb.textContent='Correct.'; fb.className='fb ok'; correct++; }
+    else { fb.textContent='Answer: '+item.a; fb.className='fb bad'; }
+  });
+  registerGrade('H', correct, H_DATA.length);
+}
+
+function buildAll(){
+  buildA(); buildB(); buildC(); buildD(); buildF(); buildG(); buildH();
+  updateScore();
+}
+(function(){
+  try{
+    if(localStorage.getItem('cm_pv_access') === '1'){
+      document.getElementById('gate').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+      buildAll();
+    maybeShowPrivacyModal();
+    }
+  }catch(e){}
+})();
+
+function dismissPrivacyModal(){
+  document.getElementById('privacyModal').classList.remove('shown');
+  try{ localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
+}
+function maybeShowPrivacyModal(){
+  try{
+    if(localStorage.getItem('cm_pv_privacy_seen') !== '1'){
+      document.getElementById('privacyModal').classList.add('shown');
+    }
+  }catch(e){}
+}
+</script>
+
+</body>
+</html>
