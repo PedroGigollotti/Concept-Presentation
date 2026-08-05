@@ -92,6 +92,10 @@
   }
   a:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
 
+  .companion-cta{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--red);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:11px 20px;border-radius:999px;transition:background .2s ease,transform .2s ease;}
+  .companion-cta:hover{background:#8E0F22;transform:translateY(-2px);}
+  .companion-cta:focus-visible{outline:2px solid var(--platinum);outline-offset:3px;}
+
   /* ===== ZOOM LIGHTBOX ===== */
   #lightbox{
     position:fixed;inset:0;background:rgba(6,6,7,0.92);
@@ -237,6 +241,8 @@ const PEP_BOOKS = [
     subtitle: "English Communication for Professionals",
     hook: "It's not <i>only</i> a phrasal verb list.",
     realCover: "PEP_PhrasalVerbs_Front_Cover.png", realBack: "PEP_PhrasalVerbs_Back_Cover.png",
+    companionUrl: "phrasal-verbs.html",
+    companionLabel: "Try the interactive units — free",
     pedagogical: "Organized by particle rather than topic: the same handful of particles, like up, out, and off, recur across dozens of verbs with a traceable core meaning, so recognition transfers instead of resetting with every new verb.",
     commercial: "Every other phrasal verb book hands you an endless list and asks you to memorize it. The list never ends, so learners give up and reach for the stiff Latinate word instead. This book does the opposite: you learn twenty particles, not two thousand verbs, and the meaning falls out of the particle. You stop recalling. You start predicting.",
     whatsinside: ["Read the particle and predict a verb you've never seen", "Choose the phrasal verb a native would use, not the Latinate one", "Catch phrasal verbs in fast speech instead of missing them", "Turn twenty particles into hundreds of verbs you can deploy"]
@@ -310,6 +316,7 @@ function card(b){
       + '<p class="muted">' + b.commercial + '</p>'
       + '<ul class="whatsinside">' + items + '</ul>'
       + '<span class="get">Coming soon on Amazon</span>'
+    + (b.companionUrl ? '<div><a class="companion-cta" href="' + b.companionUrl + '">' + b.companionLabel + ' &rarr;</a></div>' : '')
     + '</div></article>';
 }
 
