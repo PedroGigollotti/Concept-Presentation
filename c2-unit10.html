@@ -1,0 +1,820 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light only"><meta name="theme-color" content="#FAFAF7"><title>Unit 10 · C2 · Concept</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><style>
+  :root{
+    --ink:#0A0B0D; --navy:#1F5570; --navy-dark:#123A4E; --white:#fff;
+    --paper:#FAFAF7; --panel:#F1F2ED; --panel-2:#E9EAE3;
+    --red:#B3132B; --red-hi:#8E0F22; --green:#1E7A44; --green-bg:#E7F4EB;
+    --gray:#6B6F76; --gray-dark:#33363B;
+    --line:#DCDDD6;
+    --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+    --serif:'Instrument Serif',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:light;background:var(--paper);}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  em,i{font-family:var(--serif);font-style:italic;color:var(--navy);}
+  #nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:12px 32px;background:var(--white);border-bottom:1px solid var(--line);}
+  #nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--gray-dark);}
+  #nav .brand img{height:30px;width:30px;}
+  #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
+  #nav .brand:hover .word{color:var(--red-hi);}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  .print-head{display:none;}
+  @media print{
+    .print-head{display:flex;align-items:center;justify-content:space-between;
+      padding-bottom:20px;margin-bottom:32px;border-bottom:1px solid #ccc;}
+    .print-head img{height:78px;}
+    .print-head .pline{font-size:12.5px;letter-spacing:2.5px;color:#555;text-transform:uppercase;}
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 100px;}
+  /* GATE */
+  #gate{max-width:420px;margin:80px auto;text-align:center;padding:0 24px;}
+  #gate h1{font-family:var(--serif);font-weight:400;font-size:30px;margin-bottom:10px;color:var(--ink);}
+  #gate p{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:26px;}
+  #gate input{width:100%;background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:14px 16px;border-radius:10px;font-size:16px;letter-spacing:2px;text-align:center;margin-bottom:14px;}
+  #gate input:focus{outline:none;border-color:var(--navy);}
+  #gate button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:14px;font-weight:600;font-size:14.5px;cursor:pointer;}
+  #gate button:hover{background:var(--red-hi);}
+  #gateError{color:var(--red);font-size:13px;margin-top:12px;min-height:16px;}
+  #content{display:none;}
+  h2.sec{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,34px);margin:56px 0 4px;letter-spacing:-.01em;color:var(--ink);}
+  .sec-kicker{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--navy);margin:0 0 8px;}
+  .goal{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:22px;font-style:italic;}
+  .dialogue{background:var(--panel);border-radius:14px;padding:24px 26px;margin:18px 0;border:1px solid var(--line);}
+  .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
+  .dialogue p:last-child{margin-bottom:0;}
+  .dialogue b{color:var(--navy);}
+  .dialogue .who{color:var(--ink);font-weight:600;}
+  .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
+  .body-copy b{color:var(--ink);}
+  .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
+  .callout b{color:var(--navy);}
+  .callout p{margin:0 0 12px;}
+  .callout p:last-child{margin-bottom:0;}
+  /* SPLIT CARD */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+  @media (max-width:640px){.split{grid-template-columns:1fr;}}
+  .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+  .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+  .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+  .card-col dt:first-child{margin-top:0;}
+  .card-col dd{margin:2px 0 0;}
+  .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+  .moves{margin:16px 0 0;padding:0;list-style:none;}
+  .moves li{font-size:15px;line-height:1.6;color:var(--gray-dark);padding:8px 0;border-bottom:1px dashed var(--line);}
+  .moves li:last-child{border-bottom:none;}
+  .moves .slot{color:var(--navy);font-weight:600;}
+  .diagram{margin:26px 0;text-align:center;}
+  .diagram svg{max-width:100%;height:auto;}
+  .diagram-cap{font-size:12.5px;color:var(--gray);font-style:italic;margin-top:16px;line-height:1.5;}
+  .ex-block{margin:44px 0;padding-top:28px;border-top:1px solid var(--line);}
+  .ex-label{display:inline-block;background:var(--navy);color:#fff;font-weight:600;font-size:12px;
+    padding:4px 11px;border-radius:6px;margin-bottom:10px;}
+  .ex-title{font-size:19px;font-weight:600;margin:0 0 6px;color:var(--ink);}
+  .ex-instr{color:var(--gray);font-size:14px;margin-bottom:18px;font-style:italic;}
+  .q{margin-bottom:16px;}
+  .q-text{font-size:15px;margin-bottom:8px;color:var(--gray-dark);line-height:1.55;}
+  .q-text .num{color:var(--navy);font-weight:700;margin-right:6px;}
+  .q input[type=text]{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
+  .q input[type=text]:focus{outline:none;border-color:var(--navy);}
+  .q input.wide{width:100%;}
+  .choices{display:flex;flex-wrap:wrap;gap:8px;}
+  .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .choice-btn:hover{border-color:var(--navy);}
+  .choice-btn.picked{border-color:var(--navy);background:var(--panel);}
+  .choice-btn.correct{border-color:var(--green);background:var(--green-bg);color:var(--green);}
+  .choice-btn.wrong{border-color:var(--red);background:#FBE9EB;color:var(--red);}
+  .fb{font-size:13px;margin-top:6px;min-height:16px;font-weight:600;line-height:1.5;}
+  .fb.ok{color:var(--green);}
+  .fb.bad{color:var(--red);}
+  select.match-select{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:8px 10px;border-radius:8px;font-size:13.5px;width:100%;font-family:var(--sans);}
+  .check-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);padding:9px 20px;
+    border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;margin-top:6px;font-family:var(--sans);}
+  .check-btn:hover{background:var(--navy);color:#fff;}
+  .reveal-btn{background:none;border:1.5px solid var(--line);color:var(--gray);padding:9px 20px;
+    border-radius:999px;font-size:13px;cursor:pointer;font-family:var(--sans);}
+  .reveal-btn:hover{border-color:var(--ink);color:var(--ink);}
+  .key-box{display:none;background:var(--panel);border-radius:10px;padding:16px 18px;margin-top:12px;font-size:14px;color:var(--gray-dark);line-height:1.7;border:1px solid var(--line);}
+  .key-box.shown{display:block;}
+  .key-box b{color:var(--green);}
+  .soft-note{font-size:12px;color:var(--gray);margin-top:6px;}
+  .task-box{background:var(--panel);border-radius:12px;padding:20px 22px;border:1px solid var(--line);
+    font-size:15px;line-height:1.7;color:var(--gray-dark);}
+  .task-box p{margin:0 0 14px;}
+  .task-box p:last-child{margin-bottom:0;}
+  .task-box b{color:var(--ink);}
+  #scoreBar{position:sticky;bottom:0;background:rgba(250,250,247,.95);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);padding:16px 24px;display:flex;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  #scoreBar .score{font-size:14px;color:var(--gray);}
+  #scoreBar .score b{color:var(--ink);font-size:16px;}
+  .action-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:11px 22px;
+    font-weight:600;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .action-btn:hover{background:var(--red-hi);}
+  .action-btn.outline{background:none;border:1.5px solid var(--line);color:var(--ink);}
+  .action-btn.outline:hover{border-color:var(--ink);}
+  @media print{
+    #nav,#scoreBar,.check-btn,.reveal-btn,input,select,.choice-btn{display:none !important;}
+    body{background:#fff;color:#000;}
+    .key-box{display:block !important;}
+    a{color:#000;}
+  }
+  .unit-nav{display:flex;justify-content:space-between;gap:12px;margin:50px 0 10px;padding-top:24px;border-top:1px solid var(--line);}
+  .nav-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--sans);
+    font-weight:600;font-size:13.5px;padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);
+    color:var(--ink);transition:border-color .2s ease,color .2s ease;}
+  .nav-btn:hover{border-color:var(--navy);color:var(--navy);}
+  .nav-btn.next{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .nav-btn.next:hover{background:var(--navy-dark);}
+  @media print{.unit-nav{display:none !important;}}
+  #privacyModal{position:fixed;inset:0;background:rgba(10,11,13,.55);z-index:200;
+    display:none;align-items:center;justify-content:center;padding:24px;}
+  #privacyModal.shown{display:flex;}
+  #privacyModal .card{background:var(--white);border-radius:16px;max-width:420px;width:100%;
+    padding:28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+  #privacyModal h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 12px;color:var(--ink);}
+  #privacyModal p{font-size:14px;line-height:1.6;color:var(--gray-dark);margin:0 0 20px;}
+  #privacyModal button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:13px;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--sans);}
+  #privacyModal button:hover{background:var(--red-hi);}
+  .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
+  @media print{#privacyModal{display:none !important;}}
+
+  /* ===== Over to you: the production section ===== */
+  .prod-step{margin:0 0 34px;}
+  .prod-step:last-child{margin-bottom:0;}
+  .prod-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1.4px;
+    text-transform:uppercase;color:var(--navy);margin:0 0 6px;}
+  .prod-lead{font-size:14.5px;line-height:1.65;color:var(--gray-dark);margin:0 0 14px;}
+  .prod-extend{border-top:1px solid var(--line);padding-top:22px;}
+
+  /* timed challenge */
+  .tc-intro p{font-size:14.5px;line-height:1.65;color:var(--gray-dark);margin:0 0 14px;}
+  .tc-stage{background:var(--panel);border-radius:12px;padding:20px 22px;}
+  .tc-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+  .tc-count{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1.4px;
+    text-transform:uppercase;color:var(--gray);}
+  .tc-clock{font-family:var(--serif);font-size:30px;line-height:1;color:var(--navy);
+    font-variant-numeric:tabular-nums;}
+  .tc-clock.low{color:var(--red);}
+  .tc-prompt{font-family:var(--serif);font-size:19px;line-height:1.45;color:var(--ink);margin:0 0 14px;}
+  .tc-stage textarea{width:100%;box-sizing:border-box;font-family:var(--sans);font-size:15px;
+    line-height:1.5;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;
+    background:var(--white);color:var(--ink);resize:vertical;}
+  .tc-stage textarea:focus{outline:none;border-color:var(--navy);}
+  .tc-stage textarea:disabled{background:#F4F4F0;color:var(--gray-dark);}
+  .tc-model{display:none;}
+  .tc-model.shown{display:block;margin-top:14px;padding:12px 14px;background:var(--white);
+    border-left:3px solid var(--navy);border-radius:0 8px 8px 0;font-size:15px;
+    line-height:1.6;color:var(--ink);}
+  .tc-label{display:block;font-family:var(--sans);font-size:10.5px;font-weight:600;
+    letter-spacing:1.4px;text-transform:uppercase;color:var(--navy);margin-bottom:5px;}
+  .tc-done{font-size:15px;line-height:1.65;color:var(--ink);margin:0;}
+  @media print{.tc-stage,.tc-intro button{display:none !important;}}
+
+  /* voice capture */
+  .rec-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;}
+  .rec-btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
+    border:none;border-radius:999px;padding:11px 22px;font-family:var(--sans);font-weight:600;
+    font-size:13.5px;cursor:pointer;}
+  .rec-btn:hover{background:var(--navy-dark);}
+  .rec-btn.live{background:var(--red);}
+  .rec-btn.live:hover{background:var(--red-hi);}
+  .rec-state{font-family:var(--sans);font-size:12.5px;color:var(--gray);}
+  .rec-clear{display:inline-flex;align-items:center;background:none;border:1.5px solid var(--line);
+    border-radius:999px;padding:9px 18px;font-family:var(--sans);font-size:12.5px;
+    color:var(--gray-dark);cursor:pointer;}
+  .rec-clear:hover{border-color:var(--red);color:var(--red);}
+  #recAudio{width:100%;max-width:420px;margin-bottom:10px;}
+  .rec-note{font-size:12.5px;line-height:1.6;color:var(--gray);margin:0;}
+  @media print{.rec-row,#recAudio{display:none !important;}}
+</style></head><body>
+
+<div id="gate">
+  <h1>Unit 10</h1>
+  <p>Cleft sentences<br>This code unlocks every book in the series. Enter it once.</p>
+  <input type="text" id="codeInput" placeholder="ACCESS CODE" maxlength="12" autocomplete="off">
+  <button onclick="tryCode()">Unlock unit</button>
+  <div id="gateError"></div>
+</div>
+
+<div id="privacyModal">
+  <div class="card">
+    <h3>Nothing is saved here</h3>
+    <p>This site doesn't have a login and doesn't store your answers, scores, or progress anywhere. Once you close or refresh the page, this session is gone for good.</p>
+    <p>That includes anything you record. Audio from the <b>Say it</b> exercise stays inside this browser tab, is never uploaded, is never written to your device, and is discarded the moment you close or refresh the page. Your browser will ask permission before the microphone is used, and nothing happens unless you press Record.</p>
+    <p>If you want to keep a record of your work, use the <b>Print / Save as PDF</b> button at the bottom of each unit before you leave.</p>
+    <button onclick="dismissPrivacyModal()">Got it</button>
+  </div>
+</div>
+
+<div id="content">
+  <nav id="nav">
+    <a class="brand" href="c2.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIyMCAxNzAgNDQwIDI2MCI+CjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjwvc3ZnPgo=" alt="Concept"><span class="word">CONCEPT</span></a>
+    <span class="unit-label">UNIT 10 · CLEFT SENTENCES</span>
+  </nav>
+
+  <div class="wrap">
+    <div class="print-head">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4ODAgNzYwIj4KCjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjx0ZXh0IHg9IjQ0MCIgeT0iNTYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQ2FybGl0byIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iNDYiIGxldHRlci1zcGFjaW5nPSIyMCIgZmlsbD0iI0IzMTMyQiI+Q09OQ0VQVDwvdGV4dD4KPHRleHQgeD0iNDQwIiB5PSI2MTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDYXJsaXRvIiBmb250LXNpemU9IjIyIiBsZXR0ZXItc3BhY2luZz0iMTEiIGZpbGw9IiM2RTZFNkUiPk1JTkQgWU9VUiBGVVRVUkU8L3RleHQ+Cjwvc3ZnPg==" alt="Concept">
+      <span class="pline">Professional English Practice · C2 · Emphasis and Word Order</span>
+    </div>
+
+    <h2 class="sec" style="margin-top:44px;">10 · Cleft sentences</h2>
+    <p class="goal">Steering emphasis across a paragraph.</p>
+
+    <p class="sec-kicker">ACCESS</p>
+    <p class="body-copy"><b>Goal.</b> Read the deal review and notice the clefts in bold. Each one splits the sentence to spotlight one element. You are spotting the pattern here, not producing it yet.</p>
+    <div class="dialogue">
+      <p><span class="who">Diego</span> Why did we lose the renewal?</p>
+      <p><span class="who">Hana</span> <b>It was the pricing, not the coverage,</b> that scared them off.</p>
+      <p><span class="who">Will</span> <b>What they actually wanted was</b> a simpler tier.</p>
+      <p><span class="who">Diego</span> So we over-engineered it.</p>
+      <p><span class="who">Hana</span> <b>All they asked for was</b> three options, and we gave them nine.</p>
+      <p><span class="who">Will</span> <b>What surprised me was</b> how little the features mattered to them.</p>
+    </div>
+
+    <p class="sec-kicker" style="margin-top:44px;">ANALYSIS</p>
+    <p class="body-copy"><b>Goal.</b> Learn the it-cleft, the wh-cleft, and the all-cleft, and how each steers the reader's focus. By the end you should be able to cleft a sentence to place the emphasis exactly.</p>
+
+    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
+    <p class="body-copy">A cleft sentence splits one sentence into two parts so you can shine a light on a single element. English gives you three main shapes. The &#8220;it&#8221; cleft, <i>&#8220;It was the pricing that lost us the deal,&#8221;</i> puts one element in the spotlight and pushes everything else into the background, which is perfect for correcting a wrong idea (&#8220;It was the pricing, not the product...&#8221;). The &#8220;what&#8221; cleft, <i>&#8220;What we need is a clearer brief,&#8221;</i> starts with a &#8220;what&#8221; clause and delays the important part until after &#8220;is,&#8221; so the reader reaches your point already prepared for it. The &#8220;all&#8221; cleft, <i>&#8220;All we changed was the headline,&#8221;</i> narrows the focus to one thing and quietly makes it sound small. In every case you are <b>choosing where the reader's attention lands,</b> and steering it on purpose.</p>
+    <div class="split">
+      <div class="card-col">
+        <h4>The it-cleft</h4>
+        <dl><dt>Form</dt><dd>It + be + focused element + that / who + the rest</dd><dt>Meaning</dt><dd>splits the sentence to spotlight one element and background everything else</dd><dt>Use it to</dt><dd>single out the one thing that matters, or correct a wrong assumption</dd></dl>
+        <div class="eg">It was the pricing, not the product, that lost us the deal.</div>
+      </div>
+      <div class="card-col">
+        <h4>The &#8220;what&#8221; cleft</h4>
+        <dl><dt>Form</dt><dd>What + clause + be + focused element</dd><dt>Meaning</dt><dd>fronts a &#8220;what&#8221; clause and puts the new or important part after &#8220;be&#8221;</dd><dt>Use it to</dt><dd>build up to the point, or frame what you are about to say</dd></dl>
+        <div class="eg">What we need is a clearer brief. / What surprised me was the cost.</div>
+      </div>
+      <div class="card-col">
+        <h4>The all-cleft (and reversed wh-cleft)</h4>
+        <dl><dt>Form</dt><dd>All (that) + clause + be + X; or X + be + what / all ...</dd><dt>Meaning</dt><dd>narrows focus to a single thing, often to minimize; or reverses to front the focus</dd><dt>Use it to</dt><dd>downplay (&#8220;all we did was...&#8221;) or place the focus first</dd></dl>
+        <div class="eg">All we changed was the headline. / A clearer brief is what we need.</div>
+      </div>
+    </div>
+    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
+    <div class="callout">
+      <p><b>Agree the relative verb with the focus.</b> In an it-cleft, &#8220;it is / it was&#8221; stays singular, but the relative verb agrees with the focused noun: &#8220;It is the numbers that show the gap,&#8221; not &#8220;that shows.&#8221;</p>
+      <p><b>Don't over-cleft.</b> Clefting every sentence flattens the emphasis; one cleft in a paragraph steers attention, five compete. Spotlight everything and you spotlight nothing.</p>
+    </div>
+    <div class="callout">
+      <p><b>American / British English.</b></p>
+      <p><b>Who vs that for people.</b> &#8220;It was Marco who signed&#8221; is standard in both; American English also readily allows &#8220;It was Marco that signed.&#8221; This book uses &#8220;who&#8221; for people and &#8220;that&#8221; for things.</p>
+      <p><b>Reduced &#8220;what&#8221; clefts.</b> Casual American speech drops the frame (&#8220;Thing is, we're late&#8221;); formal writing in both varieties keeps the full cleft. This book uses the full form.</p>
+    </div>
+    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
+    <p class="body-copy">Same content, one thing spotlighted. Keep the frame; change only the slot and the situation.</p>
+    <ul class="moves">
+      <li><b>It was</b> <span class="slot">[the pricing / the timing]</span> <b>that lost us the deal.</b></li>
+      <li><b>What we need is</b> <span class="slot">[a clearer brief / more time]</span><b>.</b></li>
+      <li><b>All we changed was</b> <span class="slot">[the headline / one line]</span><b>.</b></li>
+      <li><b>It wasn't the product but</b> <span class="slot">[the price / the timing]</span> <b>that hurt us.</b></li>
+      <li><b>What surprised me was</b> <span class="slot">[the cost / the speed]</span><b>.</b></li>
+    </ul>
+    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Where each move sits</h3>
+    <div class="diagram">
+      <svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The same fact written first as a flat statement and then as an it-cleft that spotlights the pricing">
+        <defs>
+          <marker id="fa" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#B3132B"/>
+          </marker>
+        </defs>
+
+        <text x="30" y="38" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Plain</text>
+        <text x="30" y="58" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">one flat sentence, emphasis spread evenly</text>
+        <rect x="30" y="78" width="640" height="30" rx="6" fill="#EFEFEA" stroke="#DCDDD6"/>
+        <text x="350" y="98" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" fill="#33363B">The pricing lost us the deal.</text>
+
+        <line x1="350" y1="134" x2="350" y2="174" stroke="#B3132B" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#fa)"/>
+        <text x="374" y="156" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#B3132B">the sentence splits in two</text>
+
+        <text x="30" y="214" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Cleft</text>
+        <text x="30" y="234" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">“it was ... that” splits the sentence and spotlights one part</text>
+        <rect x="30" y="254" width="640" height="30" rx="6" fill="#1F5570"/>
+        <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">It was the pricing, not the product, that lost us the deal.</text>
+
+        <text x="350" y="318" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#33363B">Same fact, sharper focus. The cleft spotlights the one thing that mattered.</text>
+      </svg>
+      <p class="diagram-cap">Same fact, sharper focus. The cleft splits the sentence to spotlight the one thing that mattered.</p>
+    </div>
+    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
+    <p class="body-copy">Here is why clefts are worth the extra words. A plain sentence spreads its emphasis evenly, so the reader has to guess which part you most want them to hold on to. <b>A cleft removes the guesswork:</b> it separates the one element you care about and frames it, so <i>&#8220;It was the tone that caused the problem&#8221;</i> cannot be misread, where <i>&#8220;The tone caused the problem&#8221;</i> might slip past. The &#8220;what&#8221; cleft adds a second gift: by opening with &#8220;What we need is,&#8221; you make the reader wait for the point, and a point they waited for lands harder than one that simply arrived. This is why a single cleft can steer a whole paragraph. The cost is that the effect is limited: spotlight everything and you spotlight nothing, so cleft the one sentence that carries the paragraph and leave the rest in plain order.</p>
+
+    <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
+    <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the clefts, fix the misfires, steer the focus, use the words, then use it live.</p>
+
+    <div class="ex-block">
+      <span class="ex-label">A</span>
+      <p class="ex-title">Complete the form</p>
+      <p class="ex-instr">Complete each cleft with the right words.</p>
+      <div id="exA"></div>
+      <button class="check-btn" onclick="checkA()">Check my answers</button>
+    </div>
+    <div class="ex-block">
+      <span class="ex-label">B</span>
+      <p class="ex-title">Spot and fix the error</p>
+      <p class="ex-instr">Each line has a broken cleft. Rewrite it correctly.</p>
+      <div id="exB"></div>
+      <button class="check-btn" onclick="checkB()">Check my answers</button>
+      <p class="soft-note">This checks whether the corrected form appears in your sentence, not full punctuation. Check your wording against the key.</p>
+    </div>
+    <div class="ex-block">
+      <span class="ex-label">C</span>
+      <p class="ex-title">Rewrite as a cleft</p>
+      <p class="ex-instr">Rewrite each sentence as a cleft that spotlights the idea in brackets.</p>
+      <div id="exC"></div>
+      <button class="check-btn" onclick="checkC()">Check my answers</button>
+      <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
+    </div>
+    <div class="ex-block">
+      <span class="ex-label">D</span>
+      <p class="ex-title">Match the halves</p>
+      <p class="ex-instr">Match each cleft opener to its focus.</p>
+      <div id="exD"></div>
+      <button class="check-btn" onclick="checkD()">Check my answers</button>
+    </div>
+    <div class="ex-block">
+      <span class="ex-label">E</span>
+      <p class="ex-title">Steer the focus</p>
+      <p class="ex-instr">Rewrite each flat sentence as a cleft that puts the emphasis where the bracket says.</p>
+      <div id="exE"></div>
+      <button class="check-btn" onclick="checkE()">Check my answers</button>
+      <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
+    </div>
+    <div class="ex-block">
+      <span class="ex-label">F</span>
+      <p class="ex-title">Vocabulary: focusing and framing phrases</p>
+      <p class="ex-instr">Match each expression to its meaning.</p>
+      <div id="exF"></div>
+      <button class="check-btn" onclick="checkF()">Check my answers</button>
+    </div>
+    <div class="ex-block">
+      <span class="ex-label">G</span>
+      <p class="ex-title">Vocabulary in context</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <div id="exG"></div>
+      <button class="check-btn" onclick="checkG()">Check my answers</button>
+    </div>
+    <div class="ex-block">
+      <span class="ex-label">H</span>
+      <p class="ex-title">Over to you</p>
+      <p class="ex-instr">Not graded, and not meant to be. This is where the grammar stops being a rule you know and becomes a sentence you actually say.</p>
+      <div class="prod-step">
+        <p class="prod-label">1 &middot; Under pressure</p>
+        <p class="prod-lead">A cleft is how you stop one fact getting lost in a sentence full of other facts. Forty seconds each.</p>
+        <div id="timedH"></div>
+      </div>
+      <div class="prod-step">
+        <p class="prod-label">2 &middot; Say it</p>
+        <p class="prod-lead">A cleft costs extra words, so it has to buy something. What it buys is a pause the listener can hear.</p>
+        <div class="task-box"><p>Record situation 2. Play it back and listen for one thing: is there a small pause before &#8220;honest feedback&#8221;? The whole point of the wh-cleft is that the reader waits. If you rushed straight through it, the structure is there and the effect is not.</p></div>
+        <div id="recBox"></div>
+      </div>
+      <div class="prod-step prod-extend">
+        <p class="prod-label">3 &middot; With a partner, if you have one</p>
+        <div class="task-box">
+          <p>debate a small decision (which tool to adopt, where to hold the offsite). Every time you make a key point, force it into a cleft: &#8220;What matters here is...,&#8221; &#8220;It's the cost, not the features, that...,&#8221; &#8220;All I'm really asking is....&#8221; Your partner listens for whether the cleft actually sharpened the point or just padded it, and calls out the ones that added nothing.</p>
+          <p>Then, take a flat paragraph you wrote recently and rewrite exactly one sentence in it as a cleft, choosing the sentence whose emphasis you most want the reader to catch. Notice that one cleft steers the whole paragraph, where three would cancel each other out.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="unit-nav">
+      <a class="nav-btn" href="c2-unit9.html">&larr; Unit 9</a>
+      <a class="nav-btn" href="c2.html">All units</a>
+      <a class="nav-btn next" href="c2-unit11.html">Next: Unit 11 &rarr;</a>
+    </div>
+  </div>
+
+  <div id="scoreBar">
+    <span class="score">Auto-graded score: <b id="scoreText">0 / 0</b></span>
+    <button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+</div>
+
+<script>
+var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-2388", "AL-5227", "AN-3666", "AO-1929", "AQ-1403", "AR-1212", "AS-8941", "AT-3988", "AU-9614", "AW-1121", "AW-5920", "AY-3957", "AY-8830", "BB-7565", "BI-0990", "BJ-0189", "BJ-2537", "BJ-7138", "BL-1583", "BL-3205", "BL-9902", "BN-2930", "BO-5513", "BQ-9974", "BU-2315", "BU-3356", "BU-4201", "BW-0098", "BY-5952", "BY-8964", "CA-3321", "CA-5707", "CA-7225", "CE-4217", "CE-7673", "CG-8575", "CH-3047", "CM-5599", "CN-0288", "CO-2672", "CO-7250", "CP-0265", "CP-3323", "CQ-7403", "CQ-8469", "CR-3646", "CS-4766", "CU-8380", "CU-8619", "CX-8573", "CX-9951", "CZ-8599", "DB-1837", "DD-7645", "DE-3739", "DE-6860", "DF-6761", "DH-1654", "DH-4587", "DI-3846", "DJ-1666", "DJ-8783", "DJ-9635", "DK-6801", "DR-4798", "DU-0538", "DU-2870", "DU-7191", "DY-1342", "DZ-6215", "EA-5295", "EB-7574", "EI-2870", "EJ-2435", "EJ-7588", "EK-3626", "EL-5403", "EL-7751", "EM-4758", "EN-5720", "EP-8690", "EU-1749", "EU-4668", "EY-0156", "EY-5028", "EY-5771", "EY-8988", "EZ-4901", "EZ-7238", "FA-2480", "FA-3229", "FD-0817", "FD-2307", "FD-2954", "FD-9547", "FF-6110", "FF-8319", "FH-0212", "FI-7378", "FK-4255", "FN-0921", "FN-5013", "FO-3645", "FS-3397", "FU-5114", "FV-4372", "FW-7388", "FX-5735", "FX-8026", "GA-7376", "GC-0379", "GC-0593", "GC-7846", "GD-4624", "GD-8256", "GE-7330", "GG-5258", "GJ-2971", "GJ-8315", "GK-1640", "GK-6237", "GO-2922", "GQ-8518", "GS-0957", "GU-4499", "GX-1422", "GY-4850", "GY-8831", "GZ-1807", "HC-5667", "HD-6398", "HD-6695", "HG-8960", "HI-5126", "HM-0814", "HN-5191", "HR-1799", "HS-0660", "HS-8959", "HT-1159", "HU-6366", "HV-7356", "HX-4184", "HY-8543", "HZ-0868", "HZ-4384", "HZ-4394", "IA-9592", "ID-9262", "IG-2279", "IH-1623", "II-1515", "IL-0808", "IL-2856", "IM-2202", "IN-2853", "IP-2206", "IP-6428", "IS-6888", "IT-7177", "IT-9370", "IU-6890", "IW-7209", "IW-7334", "IX-7882", "IZ-4596", "IZ-5460", "JA-3789", "JA-8127", "JB-4864", "JB-5887", "JB-8392", "JD-3404", "JE-8781", "JG-5409", "JI-6836", "JI-7780", "JJ-1294", "JK-5150", "JL-9806", "JN-9881", "JO-4953", "JP-2813", "JR-6563", "JT-5889", "JU-0546", "KC-4490", "KD-3748", "KF-9500", "KG-2805", "KH-1496", "KM-0226", "KM-6267", "KM-9998", "KN-9232", "KO-2249", "KP-5927", "KQ-1642", "KQ-2174", "KQ-4629", "KS-0562", "KS-2035", "KT-5622", "KX-3719", "KX-5687", "KZ-9069", "LA-3641", "LC-9505", "LF-2835", "LF-3440", "LF-5723", "LG-4259", "LH-0762", "LI-1652", "LJ-4532", "LK-6242", "LM-2637", "LP-6442", "LR-3052", "LR-3190", "LR-3876", "LU-6959", "LY-2430", "LY-8251", "MB-0985", "MC-0432", "MD-5355", "MD-6035", "MF-4039", "MH-8350", "MK-6490", "ML-1094", "ML-6536", "MM-0505", "MM-4633", "MN-6227", "MP-2446", "MU-0263", "MU-1972", "MU-6200", "MV-9345", "MW-3909", "MX-7105", "MZ-7757", "MZ-9673", "NA-6476", "ND-2505", "NE-2445", "NG-4097", "NI-0149", "NI-1933", "NM-4728", "NM-6484", "NQ-0471", "NQ-0763", "NQ-8797", "NS-2836", "NT-1247", "NT-2961", "NT-8096", "NV-2259", "NW-4877", "NX-8284", "OB-2118", "OC-9941", "OD-2269", "OH-9176", "OK-1376", "OL-9223", "OM-3600", "OM-9841", "OO-7410", "OP-0397", "OQ-0089", "OQ-6861", "OS-1295", "OT-0558", "OU-1086", "OZ-3311", "PE-6681", "PF-1393", "PF-5372", "PF-6218", "PI-7454", "PM-5473", "PO-3136", "PO-4375", "PO-6594", "PP-5386", "PW-1775", "PW-8454", "QA-2276", "QB-9637", "QG-4980", "QI-4570", "QI-8762", "QJ-3229", "QK-9389", "QK-9591", "QP-1713", "QP-2800", "QU-3388", "QU-6791", "QV-6067", "QX-4220", "RA-0723", "RA-7714", "RA-9103", "RB-3503", "RC-9055", "RG-8909", "RG-8964", "RG-9044", "RH-0746", "RH-6442", "RN-2614", "RP-8912", "RR-0677", "RS-6858", "RS-6869", "RT-0649", "RT-4827", "RT-9471", "RV-9405", "RW-6355", "RY-1670", "RY-3755", "RY-4569", "SA-4126", "SB-4542", "SC-6853", "SD-6526", "SD-8485", "SH-2111", "SI-6535", "SK-0128", "SK-6149", "SL-2687", "SL-6976", "SL-7928", "SN-9048", "SO-9187", "SQ-1122", "SR-9043", "SR-9835", "ST-1671", "SW-6772", "SX-8305", "SY-5519", "SY-7251", "TB-1236", "TC-3500", "TC-4264", "TD-4528", "TE-3783", "TF-4337", "TF-5946", "TG-4810", "TH-0894", "TL-5384", "TN-6202", "TO-4008", "TO-7503", "TP-3931", "TR-3063", "TV-0181", "TW-7963", "TW-9135", "TY-7002", "UA-5949", "UB-7783", "UB-9445", "UE-0444", "UF-5448", "UG-1507", "UH-0750", "UJ-4353", "UL-1840", "UM-7749", "UN-1590", "UO-0016", "UO-7188", "UQ-0062", "US-3875", "US-5935", "US-6661", "US-7320", "UT-3058", "UT-3191", "UW-5490", "VA-8631", "VB-1375", "VC-0785", "VC-8246", "VC-8661", "VG-3345", "VG-5533", "VG-7188", "VH-6911", "VI-0235", "VJ-9942", "VK-0601", "VK-7802", "VL-5404", "VM-7528", "VN-0611", "VP-6098", "VQ-8570", "VS-1740", "VS-2601", "VS-6960", "VT-6564", "VW-0371", "VX-3419", "VZ-1036", "VZ-1836", "WA-6224", "WB-0446", "WC-4705", "WC-5293", "WC-7126", "WG-1442", "WG-4319", "WG-7876", "WH-7291", "WI-6394", "WL-6650", "WM-1936", "WM-3402", "WM-3514", "WO-4160", "WO-9743", "WP-5457", "WV-1968", "WW-2749", "WY-0407", "XC-0115", "XC-4025", "XC-5579", "XE-5640", "XE-8199", "XE-8990", "XJ-7882", "XL-0683", "XL-1983", "XL-8634", "XO-8511", "XP-7585", "XQ-3502", "XR-5738", "XT-4226", "XU-8893", "XV-2651", "XW-2661", "YA-4779", "YA-6871", "YD-8536", "YF-6161", "YH-6239", "YI-0086", "YI-0777", "YI-3786", "YK-1311", "YK-7066", "YQ-7512", "YU-2273", "YU-9619", "YV-6712", "ZC-0180", "ZD-3923", "ZD-9426", "ZE-9214", "ZF-5917", "ZF-6868", "ZG-1159", "ZG-5395", "ZH-6679", "ZH-9625", "ZK-7397", "ZL-0255", "ZM-4958", "ZN-2112", "ZN-7991", "ZN-9807", "ZO-3469", "ZO-4134", "ZP-7760", "ZQ-4512", "ZQ-5687", "ZU-2853", "ZU-9981", "ZV-9981", "ZW-7998", "ZY-0638", "ZZ-2645"];
+
+/* ===== SERIES-WIDE UNLOCK =====
+   'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
+   honored so students who already entered a code never have to enter it again. */
+function isUnlocked(){
+  try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
+  catch(e){ return false; }
+}
+function grantAccess(){
+  try{ localStorage.setItem('cm_access','1'); localStorage.setItem('cm_pv_access','1'); }catch(e){}
+}
+function privacySeen(){
+  try{ return localStorage.getItem('cm_privacy_seen')==='1' || localStorage.getItem('cm_pv_privacy_seen')==='1'; }
+  catch(e){ return true; }
+}
+function markPrivacySeen(){
+  try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
+}
+function tryCode(){
+  var v = document.getElementById('codeInput').value.trim().toUpperCase();
+  if(VALID_CODES.indexOf(v) !== -1){
+    grantAccess();
+    document.getElementById('gate').style.display='none';
+    document.getElementById('content').style.display='block';
+    buildAll();
+    maybeShowPrivacyModal();
+  } else {
+    document.getElementById('gateError').textContent = "That code isn't recognized. Check with Pedro if you think this is an error.";
+  }
+}
+document.getElementById('codeInput').addEventListener('keydown', function(e){ if(e.key==='Enter') tryCode(); });
+function dismissPrivacyModal(){
+  document.getElementById('privacyModal').classList.remove('shown');
+  markPrivacySeen();
+}
+function maybeShowPrivacyModal(){
+  if(!privacySeen()){ document.getElementById('privacyModal').classList.add('shown'); }
+}
+
+/* ===== SCORING =====
+   Re-checking a section replaces its previous score instead of adding to it. */
+var gradedGroups = {}, groupTotals = {}, totalCorrect = 0, totalGraded = 0;
+function registerGrade(key, correct, total){
+  groupTotals[key] = total;
+  gradedGroups[key] = correct;
+  var c = 0, t = 0;
+  for(var k in gradedGroups){ c += gradedGroups[k]; t += groupTotals[k]; }
+  totalCorrect = c; totalGraded = t;
+  updateScore();
+}
+function updateScore(){ document.getElementById('scoreText').textContent = totalCorrect + " / " + totalGraded; }
+
+/* ===== MATCHING HELPERS ===== */
+function norm(s){
+  return s.toLowerCase()
+    .replace(/[\u2018\u2019]/g,"'")
+    .replace(/[\u201C\u201D]/g,'"')
+    .replace(/[.,!?;:]+$/,'')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+function contains(hay, needle){ return norm(hay).indexOf(norm(needle)) !== -1; }
+
+/* Canonical form for verb-form answers. Expands contractions, drops a leading or
+   intervening subject, flattens slash notation. "I've worked", "'ve worked" and
+   "have worked" all pass; a wrong tense still fails. */
+function canon(s){
+  var x = norm(s);
+  var pairs = [
+    [/\bi've\b/g,"i have"], [/\bwe've\b/g,"we have"], [/\bthey've\b/g,"they have"],
+    [/\byou've\b/g,"you have"], [/\bhe's\b/g,"he has"], [/\bshe's\b/g,"she has"],
+    [/\bit's\b/g,"it has"], [/\bwe'd\b/g,"we had"], [/\bi'd\b/g,"i had"],
+    [/\bthey'd\b/g,"they had"], [/\bshe'd\b/g,"she had"], [/\bhe'd\b/g,"he had"],
+    [/\bwe'll\b/g,"we will"], [/\bi'll\b/g,"i will"], [/\bthey'll\b/g,"they will"],
+    [/\bshe'll\b/g,"she will"], [/\bhe'll\b/g,"he will"], [/\bit'll\b/g,"it will"],
+    [/\bwe're\b/g,"we are"], [/\bthey're\b/g,"they are"], [/\bi'm\b/g,"i am"],
+    [/\bhaven't\b/g,"have not"], [/\bhasn't\b/g,"has not"], [/\bhadn't\b/g,"had not"],
+    [/\bdidn't\b/g,"did not"], [/\bwon't\b/g,"will not"],
+    [/^'ve\b/,"have"], [/^'s\b/,"has"], [/^'d\b/,"had"], [/^'ll\b/,"will"]
+  ];
+  for(var i=0;i<pairs.length;i++){ x = x.replace(pairs[i][0], pairs[i][1]); }
+  x = x.replace(/\s*\/\s*/g,' ').replace(/\.{2,}/g,' ');
+  x = x.replace(/^(i|you|we|they|he|she|it|the system|the team|the client|the batch|the line|quality|nobody)\s+/,'');
+  x = x.replace(/\b(did|do|does|have|has|had|will|would)\s+(i|you|we|they|he|she|it)\s+/,'$1 ');
+  return x.replace(/\s+/g,' ').trim();
+}
+function matchesForm(v, list){
+  return list.some(function(a){ return canon(v) === canon(a); });
+}
+function matchesLoose(v, list){
+  return list.some(function(a){
+    return norm(v).replace(/^(a|an|the)\s+/,'').replace(/-/g,' ')
+        === norm(a).replace(/^(a|an|the)\s+/,'').replace(/-/g,' ');
+  });
+}
+
+/* ===== EXERCISE BUILDERS ===== */
+function buildForm(L, data, ph){
+  var el = document.getElementById('ex'+L); el.innerHTML='';
+  data.forEach(function(item,i){
+    var d=document.createElement('div'); d.className='q';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
+      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkForm(L, data){
+  var c=0;
+  data.forEach(function(item,i){
+    var v=document.getElementById(L+i).value;
+    var fb=document.getElementById(L+'fb'+i);
+    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+  });
+  registerGrade(L,c,data.length);
+}
+
+function buildRewrite(L, data, ph){
+  var el=document.getElementById('ex'+L); el.innerHTML='';
+  data.forEach(function(item,i){
+    var n = item.note ? ' <i style="color:var(--gray);">'+item.note+'</i>' : '';
+    var d=document.createElement('div'); d.className='q';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+n+'</div>'+
+      '<input type="text" class="wide" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkRewrite(L, data){
+  var c=0;
+  data.forEach(function(item,i){
+    var v=document.getElementById(L+i).value;
+    var fb=document.getElementById(L+'fb'+i);
+    var hit=item.keys.some(function(k){ return contains(v,k); });
+    /* "reject" blocks answers that left the original error in place */
+    if(hit && item.reject){
+      hit = !item.reject.some(function(r){ return contains(v,r); });
+    }
+    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
+  });
+  registerGrade(L,c,data.length);
+}
+
+function buildMatch(L, openers, endings, bold){
+  var el=document.getElementById('ex'+L); el.innerHTML='';
+  openers.forEach(function(op,i){
+    var opts='<option value="">choose one</option>';
+    endings.forEach(function(e){ opts+='<option value="'+e.id+'">'+e.id+'. '+e.t+'</option>'; });
+    var label = bold ? '<b>'+op+'</b>' : op;
+    var d=document.createElement('div'); d.className='q';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+label+'</div>'+
+      '<select class="match-select" id="'+L+i+'">'+opts+'</select><div class="fb" id="'+L+'fb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkMatch(L, endings, key){
+  var c=0;
+  key.forEach(function(k,i){
+    var v=document.getElementById(L+i).value;
+    var fb=document.getElementById(L+'fb'+i);
+    var txt=''; endings.forEach(function(e){ if(e.id===k) txt=e.t; });
+    if(v===k){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+k+'. '+txt; fb.className='fb bad'; }
+  });
+  registerGrade(L,c,key.length);
+}
+
+var CHOICE_PICKED = {};
+function buildChoice(L, data, opts){
+  var el=document.getElementById('ex'+L); el.innerHTML='';
+  CHOICE_PICKED[L] = {};
+  data.forEach(function(item,i){
+    var btns='';
+    opts.forEach(function(o,oi){
+      btns+='<button class="choice-btn" id="'+L+i+'b'+oi+'" onclick="pickChoice(\''+L+'\','+i+','+oi+')">'+o.label+'</button>';
+    });
+    var d=document.createElement('div'); d.className='q';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
+      '<div class="choices">'+btns+'</div><div class="fb" id="'+L+'fb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function pickChoice(L, i, oi){
+  var data = window[L+'_DATA'], opts = window[L+'_OPTS'];
+  CHOICE_PICKED[L][i] = oi;
+  opts.forEach(function(o,j){ document.getElementById(L+i+'b'+j).className='choice-btn'; });
+  var fb=document.getElementById(L+'fb'+i);
+  var correct = data[i].a;
+  if(oi === correct){
+    document.getElementById(L+i+'b'+oi).className='choice-btn correct';
+    fb.textContent='Correct. '+data[i].note; fb.className='fb ok';
+  } else {
+    document.getElementById(L+i+'b'+oi).className='choice-btn wrong';
+    document.getElementById(L+i+'b'+correct).className='choice-btn correct';
+    fb.textContent='Not quite. '+data[i].note; fb.className='fb bad';
+  }
+  var c=0;
+  data.forEach(function(it,j){ if(CHOICE_PICKED[L][j] === it.a) c++; });
+  registerGrade(L, c, data.length);
+}
+
+function buildGap(L, data, bank){
+  var el=document.getElementById('ex'+L);
+  el.innerHTML='<p class="soft-note" style="margin-bottom:14px;">Word bank: '+bank.join(', ')+'</p>';
+  data.forEach(function(item,i){
+    var d=document.createElement('div'); d.className='q';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
+      '<input type="text" id="'+L+i+'" placeholder="fill the gap"><div class="fb" id="'+L+'fb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkGap(L, data){
+  var c=0;
+  data.forEach(function(item,i){
+    var v=document.getElementById(L+i).value;
+    var fb=document.getElementById(L+'fb'+i);
+    if(matchesLoose(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+  });
+  registerGrade(L,c,data.length);
+}
+
+/* ===== UNDER PRESSURE: the timed challenge =====
+   The Triple A cycle defines Activation as production under time constraint.
+   Retrieval against a clock is what builds automaticity; an untimed text box
+   builds recognition. Nothing is graded here, because production is not a
+   right-or-wrong item; the clock and the model answer are the feedback. */
+var TIMED = {};
+
+function buildTimed(L, data, seconds){
+  TIMED[L] = {i:-1, secs:seconds, timer:null, data:data};
+  var el = document.getElementById('timed'+L);
+  el.innerHTML =
+    '<div class="tc-intro" id="tc'+L+'intro">' +
+      '<p>Four situations, ' + seconds + ' seconds each. Type your line before the clock runs out. ' +
+      'The model appears when time is up, not before.</p>' +
+      '<button class="check-btn" onclick="timedStart(\'' + L + '\')">Start the clock</button>' +
+    '</div>' +
+    '<div class="tc-stage" id="tc'+L+'stage" style="display:none;">' +
+      '<div class="tc-head"><span class="tc-count" id="tc'+L+'n"></span>' +
+      '<span class="tc-clock" id="tc'+L+'clock">' + seconds + '</span></div>' +
+      '<p class="tc-prompt" id="tc'+L+'prompt"></p>' +
+      '<textarea id="tc'+L+'input" rows="2" placeholder="say it, then type it"></textarea>' +
+      '<div class="tc-model" id="tc'+L+'model"></div>' +
+      '<button class="check-btn" id="tc'+L+'btn" onclick="timedNext(\'' + L + '\')">Next</button>' +
+    '</div>';
+}
+
+function timedStart(L){
+  document.getElementById('tc'+L+'intro').style.display='none';
+  document.getElementById('tc'+L+'stage').style.display='block';
+  timedNext(L);
+}
+
+function timedNext(L){
+  var S = TIMED[L];
+  if(S.timer){ clearInterval(S.timer); S.timer=null; }
+  S.i++;
+  if(S.i >= S.data.length){
+    document.getElementById('tc'+L+'stage').innerHTML =
+      '<p class="tc-done">That is the whole set. Read your four lines back aloud, ' +
+      'then record the best one below.</p>';
+    return;
+  }
+  var item = S.data[S.i];
+  document.getElementById('tc'+L+'n').textContent = (S.i+1) + ' of ' + S.data.length;
+  document.getElementById('tc'+L+'prompt').innerHTML = item.q;
+  var input = document.getElementById('tc'+L+'input');
+  input.value=''; input.disabled=false; input.focus();
+  document.getElementById('tc'+L+'model').className='tc-model';
+  document.getElementById('tc'+L+'model').innerHTML='';
+  var btn = document.getElementById('tc'+L+'btn');
+  btn.textContent = 'I have it, show the model';
+  btn.onclick = function(){ timedReveal(L); };
+
+  var left = S.secs;
+  var clock = document.getElementById('tc'+L+'clock');
+  clock.textContent = left; clock.className='tc-clock';
+  S.timer = setInterval(function(){
+    left--;
+    clock.textContent = left;
+    if(left <= 5){ clock.className='tc-clock low'; }
+    if(left <= 0){ timedReveal(L); }
+  }, 1000);
+}
+
+function timedReveal(L){
+  var S = TIMED[L];
+  if(S.timer){ clearInterval(S.timer); S.timer=null; }
+  var item = S.data[S.i];
+  document.getElementById('tc'+L+'input').disabled = true;
+  var m = document.getElementById('tc'+L+'model');
+  m.className = 'tc-model shown';
+  m.innerHTML = '<span class="tc-label">One way to say it</span>' + item.model;
+  var btn = document.getElementById('tc'+L+'btn');
+  btn.textContent = (S.i+1 >= S.data.length) ? 'Finish' : 'Next situation';
+  btn.onclick = function(){ timedNext(L); };
+}
+
+/* ===== SAY IT: voice capture =====
+   Held in memory in this tab only, never uploaded and never written to disk,
+   which is the same promise the privacy notice makes about answers. Closing
+   or refreshing the page discards it. */
+var REC = {chunks:[], recorder:null, stream:null, url:null};
+
+function recSupported(){
+  return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+}
+
+function recInit(id){
+  var el = document.getElementById(id);
+  if(!recSupported()){
+    el.innerHTML = '<p class="rec-note">This browser will not record audio. ' +
+      'Say the line aloud twice anyway: the speaking is the exercise, the recording only ' +
+      'lets you hear what you sound like.</p>';
+    return;
+  }
+  el.innerHTML =
+    '<div class="rec-row">' +
+      '<button class="rec-btn" id="recBtn" onclick="recToggle()">Record</button>' +
+      '<span class="rec-state" id="recState">not recording</span>' +
+      '<button class="rec-clear" id="recClear" onclick="recClear()" style="display:none;">Discard</button>' +
+    '</div>' +
+    '<audio id="recAudio" controls style="display:none;"></audio>' +
+    '<p class="rec-note">Your recording stays in this browser tab. It is never uploaded, ' +
+    'and it is gone the moment you close or refresh the page.</p>';
+}
+
+function recToggle(){
+  if(REC.recorder && REC.recorder.state === 'recording'){ recStop(); return; }
+  navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+    REC.stream = stream;
+    REC.chunks = [];
+    REC.recorder = new MediaRecorder(stream);
+    REC.recorder.ondataavailable = function(e){ if(e.data.size) REC.chunks.push(e.data); };
+    REC.recorder.onstop = function(){
+      var blob = new Blob(REC.chunks, {type: REC.recorder.mimeType || 'audio/webm'});
+      if(REC.url) URL.revokeObjectURL(REC.url);
+      REC.url = URL.createObjectURL(blob);
+      var a = document.getElementById('recAudio');
+      a.src = REC.url; a.style.display = 'block';
+      document.getElementById('recClear').style.display = 'inline-flex';
+      REC.stream.getTracks().forEach(function(t){ t.stop(); });
+    };
+    REC.recorder.start();
+    document.getElementById('recBtn').textContent = 'Stop';
+    document.getElementById('recBtn').className = 'rec-btn live';
+    document.getElementById('recState').textContent = 'recording';
+  }).catch(function(){
+    document.getElementById('recState').textContent =
+      'microphone not available, so say it aloud instead';
+  });
+}
+
+function recStop(){
+  if(REC.recorder && REC.recorder.state === 'recording'){ REC.recorder.stop(); }
+  document.getElementById('recBtn').textContent = 'Record again';
+  document.getElementById('recBtn').className = 'rec-btn';
+  document.getElementById('recState').textContent = 'ready to play back';
+}
+
+function recClear(){
+  var a = document.getElementById('recAudio');
+  a.pause(); a.removeAttribute('src'); a.load(); a.style.display='none';
+  if(REC.url){ URL.revokeObjectURL(REC.url); REC.url = null; }
+  REC.chunks = [];
+  document.getElementById('recClear').style.display='none';
+  document.getElementById('recState').textContent = 'not recording';
+  document.getElementById('recBtn').textContent = 'Record';
+}
+
+
+var A_DATA = [{"q": "______ was the timing ______ killed the launch.", "a": ["It that", "It / that"]}, {"q": "______ we need ______ a clearer brief.", "a": ["What is", "What / is"]}, {"q": "______ we changed ______ the headline.", "a": ["All was", "All / was"]}, {"q": "______ was Marco ______ flagged the risk first.", "a": ["It who", "It / who"]}, {"q": "______ surprised everyone ______ the cost.", "a": ["What was", "What / was"]}, {"q": "A shorter deadline ______ what we ended up with.", "a": ["is"]}];
+function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
+function checkA(){ checkForm("A", A_DATA); }
+var B_DATA = [{"q": "It were the numbers that mattered.", "keys": ["it was the numbers"], "reject": ["it were the"], "full": "It was the numbers that mattered."}, {"q": "What we need are a clearer brief.", "keys": ["what we need is"], "reject": ["we need are"], "full": "What we need is a clearer brief."}, {"q": "It was Sam which called.", "keys": ["sam who called"], "reject": ["sam which"], "full": "It was Sam who called."}, {"q": "All we did were change the headline.", "keys": ["all we did was change"], "reject": ["did were change"], "full": "All we did was change the headline."}, {"q": "The thing that lost the deal it was the price.", "keys": ["it was the price that lost"], "reject": ["the deal it was"], "full": "It was the price that lost the deal."}];
+function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
+function checkB(){ checkRewrite("B", B_DATA); }
+var C_DATA = [{"q": "The delay hurt us most.", "note": "[spotlight: the delay]", "keys": ["it was the delay that"], "reject": ["the delay hurt us"], "full": "It was the delay that hurt us most."}, {"q": "We need more time.", "note": "[spotlight: more time]", "keys": ["what we need is"], "reject": ["we need more time"], "full": "What we need is more time."}, {"q": "Marco found the bug.", "note": "[spotlight: Marco]", "keys": ["it was marco who"], "reject": ["marco found the bug"], "full": "It was Marco who found the bug."}, {"q": "We only changed the title.", "note": "[minimize the change]", "keys": ["all we changed was"], "reject": ["we only changed"], "full": "All we changed was the title."}, {"q": "The cost surprised me.", "note": "[build up to: the cost]", "keys": ["what surprised me was"], "reject": ["the cost surprised me"], "full": "What surprised me was the cost."}];
+function buildC(){ buildRewrite("C", C_DATA, "cleft it"); }
+function checkC(){ checkRewrite("C", C_DATA); }
+var D_OPENERS = ["It was not the product", "What the team needs", "All I'm asking for", "It was the review", "What went wrong"];
+var D_ENDINGS = [{"id": "a", "t": "is one more week."}, {"id": "b", "t": "but the price that lost the deal."}, {"id": "c", "t": "was a gap in the brief."}, {"id": "d", "t": "is a clearer set of priorities."}, {"id": "e", "t": "that caught the error."}];
+var D_KEY = ["b", "d", "a", "e", "c"];
+function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
+function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
+var E_DATA = [{"q": "Sam approved the budget.", "note": "[emphasize: Sam]", "keys": ["it was sam who"], "reject": ["sam approved the budget"], "full": "It was Sam who approved the budget."}, {"q": "We want honest feedback.", "note": "[build up to: honest feedback]", "keys": ["what we want is"], "reject": ["we want honest feedback"], "full": "What we want is honest feedback."}, {"q": "We only missed one deadline.", "note": "[minimize]", "keys": ["all we missed was"], "reject": ["we only missed"], "full": "All we missed was one deadline."}, {"q": "The tone of the email caused the problem.", "note": "[emphasize: the tone]", "keys": ["it was the tone"], "reject": ["the tone of the email caused"], "full": "It was the tone of the email that caused the problem."}];
+function buildE(){ buildRewrite("E", E_DATA, "steer the focus"); }
+function checkE(){ checkRewrite("E", E_DATA); }
+var F_OPENERS = ["the point is", "what it comes down to", "the bottom line", "when all is said and done", "the crux of it", "at its core"];
+var F_ENDINGS = [{"id": "a", "t": "the most important conclusion"}, {"id": "b", "t": "the central, decisive part"}, {"id": "c", "t": "the key thing is"}, {"id": "d", "t": "in its most essential nature"}, {"id": "e", "t": "the essential factor is"}, {"id": "f", "t": "ultimately; in the end"}];
+var F_KEY = ["c", "e", "a", "f", "b", "d"];
+function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
+function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
+var G_DATA = [{"q": "______, we can't ship without QA sign-off.", "a": ["The point is"]}, {"q": "______ is trust, plain and simple.", "a": ["What it comes down to"]}, {"q": "______: we're over budget and behind schedule.", "a": ["The bottom line"]}, {"q": "______, the client just wants the thing to work.", "a": ["When all is said and done"]}, {"q": "______ is that no one actually owned the decision.", "a": ["The crux of it"]}, {"q": "______, this is a communication problem, not a technical one.", "a": ["At its core"]}];
+function buildG(){ buildGap("G", G_DATA, ["the point is", "what it comes down to", "the bottom line", "when all is said and done", "the crux of it", "at its core"]); }
+function checkG(){ checkGap("G", G_DATA); }
+var H_TIMED = [{"q": "Sam approved the budget, and people think it was someone else. Correct that.", "model": "It was Sam who approved the budget."}, {"q": "What the team actually wants is honest feedback. Build up to it.", "model": "What we want is honest feedback."}, {"q": "You missed one deadline. Make it sound like the small thing it is.", "model": "All we missed was one deadline."}, {"q": "The tone of the email caused the problem, not its content.", "model": "It was the tone of the email, not the content, that caused the problem."}];
+function buildHTimed(){ buildTimed("H", H_TIMED, 40); }
+
+function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildHTimed(); recInit('recBox'); updateScore(); }
+
+(function(){
+  if(isUnlocked()){
+    document.getElementById('gate').style.display='none';
+    document.getElementById('content').style.display='block';
+    buildAll();
+    maybeShowPrivacyModal();
+  }
+})();
+</script>
+</body></html>
