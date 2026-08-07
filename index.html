@@ -451,7 +451,8 @@
     <span class="wordmark">CONCEPT</span>
   </div>
   <div class="nav-right">
-    <a class="nav-link" id="navAbout" href="about.html">About</a>
+    <a class="nav-link" id="navMethod" href="method.html">Method</a>
+          <a class="nav-link" id="navAbout" href="about.html">About</a>
     <a class="nav-link" id="navBook" href="book.html">Book</a>
     <div class="lang-switch" id="langSwitch">
       <button type="button" data-lang="en"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg></span>EN</button>
@@ -735,7 +736,7 @@
 window.I18N = {
   en: {
     nav_cta: "Talk to me",
-    nav_about: "About",
+    nav_method: "Method", nav_about: "About",
     nav_book: "Books",
     book_kicker: "THE BOOK SERIES",
     book_h2_a: "The method, ", book_h2_em: "in print", book_h2_b: ".",
@@ -900,7 +901,7 @@ window.I18N = {
 
   pt: {
     nav_cta: "Falar comigo",
-    nav_about: "Sobre",
+    nav_method: "Método", nav_about: "Sobre",
     nav_book: "Livros",
     book_kicker: "A SÉRIE DE LIVROS",
     book_h2_a: "O método, ", book_h2_em: "no papel", book_h2_b: ".",
@@ -1065,7 +1066,7 @@ window.I18N = {
 
   it: {
     nav_cta: "Contattami",
-    nav_about: "Chi sono",
+    nav_method: "Metodo", nav_about: "Chi sono",
     nav_book: "Libri",
     book_kicker: "LA COLLANA DI LIBRI",
     book_h2_a: "Il metodo, ", book_h2_em: "su carta", book_h2_b: ".",
@@ -1376,7 +1377,10 @@ function applyLang(lang){
   document.getElementById('contactCta').textContent = t('contact_cta');
   document.getElementById('startCta').textContent = t('start_cta');
 
-  var navAbout = document.getElementById('navAbout');
+  var navMethod = document.getElementById('navMethod');
+        if(navMethod){ navMethod.textContent = t('nav_method');
+          navMethod.setAttribute('href', 'method.html?lang=' + lang); }
+        var navAbout = document.getElementById('navAbout');
   if(navAbout){
     navAbout.textContent = t('nav_about');
     navAbout.setAttribute('href', 'about.html?lang=' + lang);
@@ -1566,6 +1570,20 @@ if(langParam && window.I18N[langParam]) {
     });
   }
 }
+</script>
+<script>
+/* Start every visit at the intro.
+   Without this, a page restored from the back/forward cache reopens exactly as
+   the student left it: intro dismissed, scrolled partway down. */
+if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+window.addEventListener('pageshow', function (e) {
+  if (!e.persisted) return;              // only on a bfcache restore
+  var intro = document.getElementById('intro');
+  if (!intro) return;
+  intro.classList.remove('done');        // show the intro again
+  document.body.classList.add('locked'); // and stop the page scrolling behind it
+  window.scrollTo(0, 0);
+});
 </script>
 </body>
 </html>
