@@ -77,6 +77,29 @@
   #privacyModal button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
     padding:13px;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--sans);}
   #privacyModal button:hover{background:var(--red-hi);}
+  .front{margin:44px 0 10px;border-top:1px solid var(--line);padding-top:34px;}
+  .front-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;
+    background:none;border:none;padding:0;cursor:pointer;font-family:var(--sans);text-align:left;}
+  .front-toggle .lbl{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--navy);text-transform:uppercase;}
+  .front-toggle .chev{font-size:18px;color:var(--gray);line-height:1;transition:transform .2s ease;}
+  .front.open .chev{transform:rotate(180deg);}
+  .front-body{display:none;padding-top:16px;}
+  .front.open .front-body{display:block;}
+  .front-body p{font-size:15.5px;line-height:1.75;color:var(--gray-dark);margin:0 0 16px;}
+  .front-body p:last-child{margin-bottom:0;}
+  .front-body p b{color:var(--ink);}
+  .front-body h4{font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);margin:26px 0 10px;}
+  .front-body .claim{background:var(--panel);border-left:3px solid var(--navy);padding:16px 18px;
+    border-radius:0 10px 10px 0;margin:18px 0;font-family:var(--serif);font-size:17px;color:var(--ink);line-height:1.5;}
+  .front-body ul{margin:0 0 16px;padding:0;list-style:none;}
+  .front-body ul li{font-size:15px;line-height:1.6;color:var(--gray-dark);padding:7px 0;border-bottom:1px dashed var(--line);}
+  .front-body ul li:last-child{border-bottom:none;}
+  .front-body ol{margin:0 0 16px;padding-left:20px;}
+  .front-body ol li{font-size:15.5px;line-height:1.7;color:var(--gray-dark);margin-bottom:12px;}
+  .front-body ol li b{color:var(--ink);}
+  .sig{font-family:var(--serif);font-size:19px;color:var(--ink);margin-top:22px;line-height:1.4;}
+  .sig span{display:block;font-family:var(--sans);font-size:12.5px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--gray);margin-top:6px;}
 </style>
 </head>
 <body>
@@ -111,6 +134,94 @@
       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4ODAgNzYwIj4KCjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjx0ZXh0IHg9IjQ0MCIgeT0iNTYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQ2FybGl0byIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iNDYiIGxldHRlci1zcGFjaW5nPSIyMCIgZmlsbD0iI0IzMTMyQiI+Q09OQ0VQVDwvdGV4dD4KPHRleHQgeD0iNDQwIiB5PSI2MTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDYXJsaXRvIiBmb250LXNpemU9IjIyIiBsZXR0ZXItc3BhY2luZz0iMTEiIGZpbGw9IiM2RTZFNkUiPk1JTkQgWU9VUiBGVVRVUkU8L3RleHQ+Cjwvc3ZnPg==" alt="Concept · Mind Your Future">
       <h1 class="title">Professional English Practice: Phrasal Verbs</h1>
       <p>32 units, organized by particle. Study the Access and Analysis sections, then work through the interactive exercises. Pick up wherever you like.</p>
+    </div>
+
+    <!-- PREFACE -->
+    <div class="front open" id="frontPreface">
+      <button class="front-toggle" onclick="toggleFront('frontPreface')">
+        <span class="lbl">Preface</span><span class="chev">&#9662;</span>
+      </button>
+      <div class="front-body">
+        <p>Welcome to the book that stops the list.</p>
+        <p>You already know what a phrasal verb is. You have almost certainly been handed a list of them, told to learn it, and found that the next conversation used forty others. That experience is why so many capable professionals speak excellent English and still steer around phrasal verbs, reaching for the longer, safer, more formal word instead.</p>
+        <p>This book was written for that moment of hesitation. It will not hand you another list. It will hand you a system.</p>
+        <p>What follows is the third book in Professional English Practice. Like the C1 and C2 books before it, it is built for the whole workplace: the junior developer in a standup, the analyst on a client call, the lead running a retro. The scenes are real, the language is current, and every unit ends with you producing something out loud, not just recognizing it on a page.</p>
+        <p>A word about who this is for. If you already speak good professional English and still catch yourself choosing the longer word, this book is aimed squarely at you. If you are earlier in the journey and phrasal verbs simply frighten you, it works too, because the system does not assume you have memorized anything first. What it assumes is that you are willing to guess out loud and be wrong occasionally, which is a smaller price than it sounds.</p>
+        <p>You will notice quickly that the units are not organized by topic. There is no chapter on money and no chapter on travel. The organizing unit is the particle, the small word at the end, and the reason for that is the whole argument of the next section.</p>
+        <p><b>How each unit runs.</b> Every unit follows the same four-part cycle. <b>Access:</b> a real workplace scene, where you notice the pattern and predict an untaught verb before anything is explained. <b>Analysis:</b> the Particle Wheel, where the sense came from, the errors to avoid, and the American and British divergences. <b>Activation:</b> a full exercise bank, from mechanical accuracy through to speaking it live. <b>Answers:</b> in this interactive edition the key is built into each exercise, so press Check my answers and the correct form appears beside anything you missed. Use it after you commit, not while you are deciding. For Meet a Stranger in particular, write your guess down first: the gap between your prediction and the real meaning is the most useful information in the book, and it disappears if you peek.</p>
+        <p><b>Do not skip the speaking.</b> Phrasal verbs are a spoken phenomenon before they are a written one. They carry stress on the particle rather than the verb, and they behave differently in the mouth than on the page. If you work through the exercises in silence and skip the final task, you will finish this book able to understand phrasal verbs and no more likely to say one than when you started.</p>
+        <p><b>Before you start.</b> This book is written in American English throughout, and where British usage genuinely diverges, and with particles it diverges often, a labeled note names the British form so you recognize it when you meet it. The units cover roughly five hundred high-frequency phrasal verbs of professional English. That is not all of them, and it is not meant to be. It is the set that earns its place, taught in a way that reaches the rest.</p>
+        <p>Read the next section before you begin. It is short, and it explains why this book is put together the way it is. Once you see the idea, you will not be able to unsee it, and phrasal verbs will start looking less like a wall and more like a door.</p>
+        <p>Welcome. Let us begin.</p>
+      </div>
+    </div>
+
+    <!-- THE METHOD -->
+    <div class="front" id="frontMethod">
+      <button class="front-toggle" onclick="toggleFront('frontMethod')">
+        <span class="lbl">The method</span><span class="chev">&#9662;</span>
+      </button>
+      <div class="front-body">
+        <p><i>Read this once, carefully. Everything else in the book follows from it.</i></p>
+
+        <h4>The problem with the list</h4>
+        <p>Open almost any phrasal verb course and you will find the same architecture. The verbs are sorted alphabetically, or by topic: money, health, travel, work. Each one is presented as a fixed item with a fixed meaning. Give up means to quit. Look up means to search for. Bring up means to mention. Learn the pair, move to the next pair, repeat.</p>
+        <p>There is nothing wrong with any single entry. The problem is the arithmetic. English has thousands of phrasal verbs in active use, and the common verbs combine with the common particles in almost every direction. A learner working through a list is running a race with no finish line, and most learners eventually do the sensible thing and stop running. They avoid phrasal verbs, they use the Latinate single word instead, and their English becomes correct, formal, and slightly foreign.</p>
+        <p>That avoidance is the actual problem. This book is designed to end it.</p>
+
+        <h4>The inversion</h4>
+        <p>Here is the premise, and it inverts how competing books are organized:</p>
+        <div class="claim">The particle carries the meaning. Teach the particle first, and the verbs fall out of it.</div>
+        <p>A phrasal verb has two moving parts, and courses traditionally treat the whole thing as one indivisible lump. But the particle is not decoration and it is not random. Up, out, off, on, in, down, back, over: each of these has a small, describable network of meanings that it contributes to every verb it attaches to. Those meanings started out spatial and physical, and then extended, in patterned and predictable ways, into the abstract.</p>
+        <p>So instead of meeting two thousand verbs, you meet about twenty particles. Twenty is a number a human being can actually hold.</p>
+
+        <h4>One idea in six costumes</h4>
+        <p>Take <b>out</b>. One of its jobs is emergence: something moves from hidden to visible, from inside to outside, from private to public. Hold that single idea and look at what happens:</p>
+        <ul>
+          <li><b>find out</b>, and the information comes into view</li>
+          <li><b>turn out</b>, and the real outcome becomes visible</li>
+          <li><b>point out</b>, and you make others see something they missed</li>
+          <li><b>speak out</b>, and a private objection becomes public</li>
+          <li><b>come out</b>, and what was concealed is now known</li>
+          <li><b>break out</b>, and something contained escapes into the open</li>
+        </ul>
+        <p>Those are not six vocabulary items. That is one idea wearing six costumes. Learn the idea and you have the six, plus the ones nobody taught you.</p>
+
+        <h4>Prediction, not recall</h4>
+        <p>This is the shift that matters, and it is worth naming precisely. A learner working from a list is doing recall: they meet a phrasal verb and search memory for whether it is stored. If it is not stored, they are stuck.</p>
+        <p>A learner working from particles is doing prediction: they meet a phrasal verb, recognize the verb, recognize what that particle usually does, and construct a meaning on the spot. Sometimes they land exactly on it. Often they land close enough that context finishes the job. Either way they are not stuck, and they are not silent.</p>
+        <p>Prediction also runs in the other direction. When you want to say something and the phrasal verb does not arrive, knowing what the particle does lets you reach for it deliberately. You want the sense of pressing forward against resistance, so <b>push through</b> arrives. You want the sense of postponing without cancelling, so <b>put off</b> arrives. The particle is a handle.</p>
+
+        <h4>The three mechanics</h4>
+        <p>Every unit in this book runs on these three. They are what makes the method a method and not a nice idea.</p>
+        <ol>
+          <li><b>Predict before you are told.</b> Every opening scene contains at least one phrasal verb this book has not taught you. Before any meaning is given, you are asked what the particle suggests. You will be right more often than you expect, and being wrong is informative, not embarrassing.</li>
+          <li><b>The Particle Wheel.</b> Each particle unit centers on a single diagram. The literal, physical sense sits at the hub. Its metaphorical extensions radiate outward as labeled spokes, each carrying the verbs that live on it. The wheels accumulate as you work through the book, and by the end you are holding a map of the system rather than a pile of entries.</li>
+          <li><b>Meet a Stranger.</b> A fixed exercise in every unit. You are shown real phrasal verbs, in context, that this book has never taught, and you decode them from the particle before checking. No other phrasal verb course tests whether you can handle the ones it did not cover. That is the promise of this method, so this book puts it on the page and lets you check it for yourself.</li>
+        </ol>
+
+        <h4>What this book claims, and what it does not</h4>
+        <p>The claim is testable and specific. A learner who finishes this book can decode a phrasal verb they have never seen, from the particle, at well above chance. Not perfectly. Well above chance, and far better than a learner who memorized lists.</p>
+        <p>The book does not claim that every phrasal verb is transparent. A minority are genuinely opaque, and no amount of reasoning about particles will get you to their meaning. Those have to be learned as items, the old way. This book says so plainly, and flags them as they arise, rather than pretending the system covers everything.</p>
+        <p>That honesty is deliberate. A method that admits its own edges is one you can trust at the center.</p>
+      </div>
+    </div>
+
+    <!-- FOUNDER'S LETTER -->
+    <div class="front" id="frontLetter">
+      <button class="front-toggle" onclick="toggleFront('frontLetter')">
+        <span class="lbl">A letter from the founder</span><span class="chev">&#9662;</span>
+      </button>
+      <div class="front-body">
+        <p>Dear reader,</p>
+        <p>I have been teaching English to working professionals for a long time, and phrasal verbs were the part of the job I dreaded. Not because they are hard to explain. Because the standard way of explaining them does not work, and everyone in the room knows it. You hand out a list, the students copy it down, and three weeks later they still say postpone instead of put off, because postpone was learned once and put off was learned as one of four hundred equally unmemorable pairs.</p>
+        <p>The change happened almost by accident. In one lesson, instead of teaching a set of verbs, I spent the hour on the word <b>up</b>. Just up. What it does to a verb, where its meanings come from, why finishing something and increasing something and confronting someone all end up sharing a particle. The students left that lesson guessing at phrasal verbs they had never been taught, and guessing well.</p>
+        <p>I did it again the next month with <b>out</b>. Then <b>off</b>. The pattern held every time. Learners who had spent years avoiding phrasal verbs started reaching for them, and, more tellingly, started asking about ones I had not covered. They had stopped waiting to be given the answer. They had started predicting it.</p>
+        <p>This book is that lesson, thirty-two times over, built properly. It is the book I wanted when I was handing out lists and watching them fail. If it does its job, you will finish it not with five hundred phrasal verbs stored in memory, but with a system that keeps working long after the last page.</p>
+        <p>That is the difference, and it is the whole reason this book exists.</p>
+        <p>Thank you for reading it. Now go and guess at something.</p>
+        <div class="sig">Pedro Gigollotti Netto<span>Founder, The Concept Method</span></div>
+      </div>
     </div>
 
     <div class="part-block">
@@ -304,6 +415,7 @@ document.getElementById('codeInput').addEventListener('keydown', function(e){ if
   }catch(e){}
 })();
 
+function toggleFront(id){ document.getElementById(id).classList.toggle('open'); }
 function dismissPrivacyModal(){
   document.getElementById('privacyModal').classList.remove('shown');
   try{ localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
