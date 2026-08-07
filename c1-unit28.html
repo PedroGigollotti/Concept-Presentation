@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -582,8 +587,8 @@ var E_DATA = [{"q": "The claim got delayed.", "note": "[formal incident report r
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["a snag", "to fall through the cracks", "to get back on track", "a hiccup", "to smooth things over", "a workaround"];
-var F_ENDINGS = [{"id": "a", "t": "a small, unexpected problem or complication"}, {"id": "b", "t": "to be overlooked or missed due to a process gap"}, {"id": "c", "t": "to return to normal progress after a disruption"}, {"id": "d", "t": "a minor, temporary setback"}, {"id": "e", "t": "to resolve tension or fix a small problem diplomatically"}, {"id": "f", "t": "a temporary solution that avoids a bigger problem"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "to resolve tension or fix a small problem diplomatically"}, {"id": "b", "t": "a minor, temporary setback"}, {"id": "c", "t": "to be overlooked or missed due to a process gap"}, {"id": "d", "t": "a small, unexpected problem or complication"}, {"id": "e", "t": "a temporary solution that avoids a bigger problem"}, {"id": "f", "t": "to return to normal progress after a disruption"}];
+var F_KEY = ["d", "c", "f", "b", "a", "e"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "We hit a ______ with the shipping vendor.", "a": ["snag"]}, {"q": "That request must have ______ during the handoff.", "a": ["fallen through the cracks"]}, {"q": "We're back to normal now, we got things ______.", "a": ["back on track"]}, {"q": "There was a small ______ with the deployment, nothing serious.", "a": ["hiccup"]}, {"q": "I called the client to ______ after the delay.", "a": ["smooth things over"]}, {"q": "We used a ______ until the real fix ships.", "a": ["workaround"]}];

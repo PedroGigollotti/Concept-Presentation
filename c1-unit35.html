@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -577,8 +582,8 @@ var E_DATA = [{"q": "We did a big mistake on the estimate.", "keys": ["made a bi
 function buildE(){ buildRewrite("E", E_DATA, "correct it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to strike a balance", "to raise a concern", "to reach a consensus", "to meet a deadline", "to bear the cost", "to draw a conclusion"];
-var F_ENDINGS = [{"id": "a", "t": "to find a fair middle point between two demands"}, {"id": "b", "t": "to formally mention a worry or issue"}, {"id": "c", "t": "to arrive at a shared agreement among a group"}, {"id": "d", "t": "to finish something by the required date"}, {"id": "e", "t": "to be responsible for paying an expense"}, {"id": "f", "t": "to form a final judgment based on evidence"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "to arrive at a shared agreement among a group"}, {"id": "b", "t": "to form a final judgment based on evidence"}, {"id": "c", "t": "to be responsible for paying an expense"}, {"id": "d", "t": "to find a fair middle point between two demands"}, {"id": "e", "t": "to finish something by the required date"}, {"id": "f", "t": "to formally mention a worry or issue"}];
+var F_KEY = ["d", "f", "a", "e", "c", "b"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "We need to ______ between speed and quality.", "a": ["strike a balance"]}, {"q": "I want to ______ about the current staffing level.", "a": ["raise a concern"]}, {"q": "It took a while, but the team managed to ______.", "a": ["reach a consensus"]}, {"q": "We're on track to ______ this time.", "a": ["meet the deadline"]}, {"q": "The vendor agreed to ______ of the repair.", "a": ["bear the cost"]}, {"q": "It's too early to ______ from just one data point.", "a": ["draw a conclusion"]}];

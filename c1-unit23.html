@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -579,8 +584,8 @@ var E_DATA = [{"q": "He escalated the ticket. I escalated the ticket too.", "key
 function buildE(){ buildRewrite("E", E_DATA, "trim it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to cut to the chase", "in a nutshell", "to spare the details", "redundant", "to streamline", "word for word"];
-var F_ENDINGS = [{"id": "a", "t": "to get straight to the main point"}, {"id": "b", "t": "summarized briefly, in short"}, {"id": "c", "t": "to leave out unnecessary specifics"}, {"id": "d", "t": "unnecessary because it repeats something already said"}, {"id": "e", "t": "to make a process more efficient by removing extra steps"}, {"id": "f", "t": "exactly as originally said, without change"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "exactly as originally said, without change"}, {"id": "b", "t": "to leave out unnecessary specifics"}, {"id": "c", "t": "summarized briefly, in short"}, {"id": "d", "t": "to make a process more efficient by removing extra steps"}, {"id": "e", "t": "to get straight to the main point"}, {"id": "f", "t": "unnecessary because it repeats something already said"}];
+var F_KEY = ["e", "c", "b", "f", "d", "a"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______, what's the actual ask?", "a": ["cut to the chase"]}, {"q": "______, we're behind schedule and need help.", "a": ["In a nutshell"]}, {"q": "I'll ______ and just tell you the outcome.", "a": ["spare the details"]}, {"q": "That second slide feels ______ with the first.", "a": ["redundant"]}, {"q": "We ______ the process by cutting two approval steps.", "a": ["streamlined"]}, {"q": "She repeated the instructions ______.", "a": ["word for word"]}];

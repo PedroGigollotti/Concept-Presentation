@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -581,8 +586,8 @@ var E_DATA = [{"q": "She sent the invoice to the client, which was late.", "keys
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["a key account", "a repeat client", "the point of contact", "a long-standing relationship", "a red flag", "to be in good standing"];
-var F_ENDINGS = [{"id": "a", "t": "a client that matters a great deal to the business"}, {"id": "b", "t": "a client who has bought or signed more than once"}, {"id": "c", "t": "the specific person to reach out to at a company"}, {"id": "d", "t": "a relationship that has lasted many years"}, {"id": "e", "t": "a warning sign that something may be wrong"}, {"id": "f", "t": "to have a clean, trouble-free record with someone"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "a relationship that has lasted many years"}, {"id": "b", "t": "a warning sign that something may be wrong"}, {"id": "c", "t": "a client that matters a great deal to the business"}, {"id": "d", "t": "to have a clean, trouble-free record with someone"}, {"id": "e", "t": "the specific person to reach out to at a company"}, {"id": "f", "t": "a client who has bought or signed more than once"}];
+var F_KEY = ["c", "f", "e", "a", "b", "d"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Losing that client would hurt, they're a ______.", "a": ["key account"]}, {"q": "He's been a ______ for five years now.", "a": ["repeat client"]}, {"q": "Send it to Priya, she's the ______ on their side.", "a": ["point of contact"]}, {"q": "We've had a ______ with that vendor since the company started.", "a": ["long-standing relationship"]}, {"q": "The missed payment was a ______ for the finance team.", "a": ["red flag"]}, {"q": "As long as we're ______, renewal should be simple.", "a": ["in good standing"]}];

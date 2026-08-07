@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -591,8 +596,8 @@ var E_DATA = [{"q": "Few clients renewed, which is a great result.", "note": "[f
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["a sizable chunk", "few and far between", "across the board", "an outlier", "the lion's share", "a drop in the bucket"];
-var F_ENDINGS = [{"id": "a", "t": "a substantial portion of a larger whole"}, {"id": "b", "t": "very rare, occurring infrequently"}, {"id": "c", "t": "affecting or applying to everything, without exception"}, {"id": "d", "t": "a case that doesn't fit the general pattern"}, {"id": "e", "t": "the largest portion or share of something"}, {"id": "f", "t": "a small amount, insignificant compared to the whole"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "affecting or applying to everything, without exception"}, {"id": "b", "t": "the largest portion or share of something"}, {"id": "c", "t": "very rare, occurring infrequently"}, {"id": "d", "t": "a substantial portion of a larger whole"}, {"id": "e", "t": "a small amount, insignificant compared to the whole"}, {"id": "f", "t": "a case that doesn't fit the general pattern"}];
+var F_KEY = ["d", "c", "a", "f", "b", "e"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "That single client, at that size, is more of an ______.", "a": ["outlier"]}, {"q": "Cases like this used to be ______, now they're common.", "a": ["few and far between"]}, {"q": "Revenue is up ______, every region reported growth.", "a": ["across the board"]}, {"q": "This new segment takes ______ of the revenue now.", "a": ["the lion's share"]}, {"q": "That refund is a ______ compared to total revenue.", "a": ["drop in the bucket"]}, {"q": "We're seeing a ______ of accounts affected, worth investigating.", "a": ["sizable chunk"]}];

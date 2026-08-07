@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -575,16 +580,16 @@ var C_DATA = [{"q": "We swapped the sensor. Quality had not reviewed it yet.", "
 function buildC(){ buildRewrite("C", C_DATA, "combine them into one sentence"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["We'd already fixed the fault", "The outage started", "She hadn't seen the alert", "Once the fix had gone out", "They'd tested the line twice"];
-var D_ENDINGS = [{"id": "a", "t": "before the client even noticed."}, {"id": "b", "t": "right after the risky swap."}, {"id": "c", "t": "because her phone was on silent."}, {"id": "d", "t": "the errors stopped within minutes."}, {"id": "e", "t": "before it ever reached production."}];
-var D_KEY = ["a", "b", "c", "d", "e"];
+var D_ENDINGS = [{"id": "a", "t": "because her phone was on silent."}, {"id": "b", "t": "before it ever reached production."}, {"id": "c", "t": "right after the risky swap."}, {"id": "d", "t": "before the client even noticed."}, {"id": "e", "t": "the errors stopped within minutes."}];
+var D_KEY = ["d", "c", "a", "e", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The batch failed. We had skipped the quality check.", "keys": ["because we'd skipped", "because we had skipped"], "full": "The batch failed because we'd skipped the quality check."}, {"q": "We found the leak. Someone had disabled the monitor last week.", "keys": ["after someone had disabled"], "full": "We found the leak after someone had disabled the monitor last week."}, {"q": "The client signed off. We had already shipped a sample batch.", "keys": ["after we'd already shipped", "after we had already shipped", "after we'd shipped", "after we had shipped"], "full": "The client signed off after we'd already shipped a sample batch."}, {"q": "The team missed the weekly target. The scope had grown midweek.", "keys": ["because the scope had grown"], "full": "The team missed the weekly target because the scope had grown midweek."}];
 function buildE(){ buildRewrite("E", E_DATA, "rewrite as one sentence"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["root cause", "a near miss", "a blind spot", "to backtrack", "a lessons-learned doc", "to get ahead of it"];
-var F_ENDINGS = [{"id": "a", "t": "the real underlying reason something went wrong"}, {"id": "b", "t": "an incident that almost happened but didn't"}, {"id": "c", "t": "something the team consistently fails to notice"}, {"id": "d", "t": "to retrace steps to find where things went wrong"}, {"id": "e", "t": "a written record of what to change next time"}, {"id": "f", "t": "to act before a small problem becomes a big one"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "something the team consistently fails to notice"}, {"id": "b", "t": "to act before a small problem becomes a big one"}, {"id": "c", "t": "a written record of what to change next time"}, {"id": "d", "t": "an incident that almost happened but didn't"}, {"id": "e", "t": "to retrace steps to find where things went wrong"}, {"id": "f", "t": "the real underlying reason something went wrong"}];
+var F_KEY = ["f", "d", "a", "e", "c", "b"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______ before it turns into an outage.", "a": ["get ahead of it"]}, {"q": "The ______ was a miscalibrated sensor, not the operator.", "a": ["root cause"]}, {"q": "We had a ______ last week that we should still write up.", "a": ["near miss"]}, {"q": "Testing the backup line was clearly a ______ for this team.", "a": ["blind spot"]}, {"q": "We had to ______ to figure out when the settings had changed.", "a": ["backtrack"]}, {"q": "I'll circulate the ______ after this meeting.", "a": ["lessons-learned doc"]}];

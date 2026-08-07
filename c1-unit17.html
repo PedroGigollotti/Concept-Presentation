@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -590,8 +595,8 @@ var F_DATA = [{"q": "You're wrong.", "note": "[acknowledge the point first, then
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to play devil's advocate", "to agree to disagree", "a counterpoint", "to push back diplomatically", "to stand your ground", "a valid concern"];
-var G_ENDINGS = [{"id": "a", "t": "to argue an opposing view on purpose, to test an idea"}, {"id": "b", "t": "to accept that two people won't reach the same conclusion"}, {"id": "c", "t": "an argument or fact offered in opposition"}, {"id": "d", "t": "to disagree politely but clearly"}, {"id": "e", "t": "to maintain your position under pressure"}, {"id": "f", "t": "a concern with real merit, worth addressing"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "a concern with real merit, worth addressing"}, {"id": "b", "t": "an argument or fact offered in opposition"}, {"id": "c", "t": "to disagree politely but clearly"}, {"id": "d", "t": "to maintain your position under pressure"}, {"id": "e", "t": "to argue an opposing view on purpose, to test an idea"}, {"id": "f", "t": "to accept that two people won't reach the same conclusion"}];
+var G_KEY = ["e", "f", "b", "c", "d", "a"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "Let me ______ for a second: what if we're wrong?", "a": ["play devil's advocate"]}, {"q": "On this one, I think we'll just have to ______.", "a": ["agree to disagree"]}, {"q": "That's a ______. I don't have a great counter yet.", "a": ["valid concern"]}, {"q": "She managed to ______ without upsetting anyone.", "a": ["push back diplomatically"]}, {"q": "He tends to ______ even when the room disagrees.", "a": ["stand his ground"]}, {"q": "Here's my ______ to that argument.", "a": ["counterpoint"]}];

@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -582,8 +587,8 @@ var E_DATA = [{"q": "I would have a huge backlog every Monday.", "note": "[descr
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["a far cry from", "the new normal", "to settle into a routine", "old habits die hard", "a growing pain", "to find your footing"];
-var F_ENDINGS = [{"id": "a", "t": "very different from how something used to be"}, {"id": "b", "t": "the current standard, once it has been accepted"}, {"id": "c", "t": "to become comfortable with a regular pattern"}, {"id": "d", "t": "it's hard to break behavior you're used to"}, {"id": "e", "t": "a temporary difficulty that comes with change"}, {"id": "f", "t": "to become confident and comfortable in a new role"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "to become confident and comfortable in a new role"}, {"id": "b", "t": "it's hard to break behavior you're used to"}, {"id": "c", "t": "very different from how something used to be"}, {"id": "d", "t": "a temporary difficulty that comes with change"}, {"id": "e", "t": "to become comfortable with a regular pattern"}, {"id": "f", "t": "the current standard, once it has been accepted"}];
+var F_KEY = ["c", "f", "e", "b", "d", "a"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "The new process is ______ how we used to work.", "a": ["a far cry from"]}, {"q": "Weekly releases are ______ around here now.", "a": ["the new normal"]}, {"q": "It took a month, but we finally ______.", "a": ["settled into a routine"]}, {"q": "I keep reverting to the old tool, ______.", "a": ["old habits die hard"]}, {"q": "The slower onboarding is just a ______ of the new system.", "a": ["growing pain"]}, {"q": "Give her time, she's still trying to ______ in the new role.", "a": ["find her footing"]}];

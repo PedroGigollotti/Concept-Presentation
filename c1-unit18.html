@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -597,8 +602,8 @@ var F_DATA = [{"q": "We're certain this will work.", "note": "[only one early da
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to back it up", "a slam dunk", "to stake your reputation on it", "rock solid", "beyond a shadow of a doubt", "to stand behind a claim"];
-var G_ENDINGS = [{"id": "a", "t": "to provide evidence that supports a claim"}, {"id": "b", "t": "something certain to succeed, an easy win"}, {"id": "c", "t": "to risk your credibility on a claim being true"}, {"id": "d", "t": "extremely dependable and well-supported"}, {"id": "e", "t": "with absolutely no uncertainty remaining"}, {"id": "f", "t": "to fully support and defend a claim as your own"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "something certain to succeed, an easy win"}, {"id": "b", "t": "with absolutely no uncertainty remaining"}, {"id": "c", "t": "to fully support and defend a claim as your own"}, {"id": "d", "t": "to provide evidence that supports a claim"}, {"id": "e", "t": "to risk your credibility on a claim being true"}, {"id": "f", "t": "extremely dependable and well-supported"}];
+var G_KEY = ["d", "a", "e", "f", "b", "c"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "It's a bold claim, but I can ______ with the data.", "a": ["back it up"]}, {"q": "Given the numbers, this looks like a ______.", "a": ["slam dunk"]}, {"q": "I'd ______ this recommendation in front of anyone.", "a": ["stand behind"]}, {"q": "The evidence here is ______, nothing shaky about it.", "a": ["rock solid"]}, {"q": "We know this works, ______.", "a": ["beyond a shadow of a doubt"]}, {"q": "I'm willing to ______ this call.", "a": ["stake my reputation on"]}];

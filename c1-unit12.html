@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -585,8 +590,8 @@ var C_DATA = [{"q": "We didn't hire enough people. We are overloaded now.", "key
 function buildC(){ buildRewrite("C", C_DATA, "combine them"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["If we'd documented the process,", "If I were better at delegating,", "If they'd tested on mobile,", "If she weren't so thorough,", "If we'd set expectations early,"];
-var D_ENDINGS = [{"id": "a", "t": "the app wouldn't be crashing now."}, {"id": "b", "t": "I wouldn't have burned out last quarter."}, {"id": "c", "t": "we wouldn't be answering the same questions now."}, {"id": "d", "t": "we would have shipped bugs last release."}, {"id": "e", "t": "the client wouldn't be surprised now."}];
-var D_KEY = ["c", "b", "a", "d", "e"];
+var D_ENDINGS = [{"id": "a", "t": "the client wouldn't be surprised now."}, {"id": "b", "t": "we would have shipped bugs last release."}, {"id": "c", "t": "I wouldn't have burned out last quarter."}, {"id": "d", "t": "the app wouldn't be crashing now."}, {"id": "e", "t": "we wouldn't be answering the same questions now."}];
+var D_KEY = ["e", "c", "d", "b", "a"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The mistake is genuinely one person's, but you need them engaged, not defensive.", "a": 0, "note": "Neutral. Keep them engaged: “Had the timeline been realistic, we wouldn't be scrambling.”"}, {"q": "You are shielding a teammate who slipped.", "a": 0, "note": "Neutral. Remove the agent: “If the brief had been clearer, this wouldn't be happening.”"}, {"q": "You want to own it and model accountability.", "a": 1, "note": "Fault, on yourself: “If I'd spoken up earlier, we might not be here.”"}, {"q": "The whole team dropped it together.", "a": 2, "note": "Shared. Use “we”: “If we'd caught it earlier, we'd be ahead now.”"}];
@@ -596,8 +601,8 @@ var F_DATA = [{"q": "If you had reviewed it, we wouldn't be fixing this now.", "
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["with the benefit of hindsight", "hindsight is 20/20", "water under the bridge", "the writing was on the wall", "it is what it is", "to dodge a bullet"];
-var G_ENDINGS = [{"id": "a", "t": "knowing now what we did not know then"}, {"id": "b", "t": "it is easy to see the right choice after the fact"}, {"id": "c", "t": "a past problem no longer worth revisiting"}, {"id": "d", "t": "the bad outcome was clearly coming"}, {"id": "e", "t": "accept a situation you cannot change"}, {"id": "f", "t": "narrowly avoid a bad outcome"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "the bad outcome was clearly coming"}, {"id": "b", "t": "a past problem no longer worth revisiting"}, {"id": "c", "t": "narrowly avoid a bad outcome"}, {"id": "d", "t": "it is easy to see the right choice after the fact"}, {"id": "e", "t": "knowing now what we did not know then"}, {"id": "f", "t": "accept a situation you cannot change"}];
+var G_KEY = ["e", "d", "b", "a", "f", "c"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "Don't beat yourself up. ______, that call looked right at the time.", "a": ["With the benefit of hindsight"]}, {"q": "We lost the deal, but ______. Let's focus on the next one.", "a": ["it is what it is"]}, {"q": "______ once our biggest client left. We should have seen it coming.", "a": ["The writing was on the wall"]}, {"q": "That's ______ now. There's no point relitigating last quarter.", "a": ["water under the bridge"]}, {"q": "We ______ by not signing that vendor. They went under a month later.", "a": ["dodged a bullet"]}, {"q": "It's easy to criticize the plan now, but ______.", "a": ["hindsight is 20/20"]}];

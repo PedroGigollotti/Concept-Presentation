@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -597,8 +602,8 @@ var F_DATA = [{"q": "Fix the deck by tomorrow.", "note": "[soften slightly, but 
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to float an idea", "a gentle nudge", "to plant a seed", "open to suggestions", "a soft no", "to read the room"];
-var G_ENDINGS = [{"id": "a", "t": "to raise a possibility casually, to test reaction"}, {"id": "b", "t": "a light, non-aggressive reminder or push"}, {"id": "c", "t": "to introduce an idea early so it can grow on someone"}, {"id": "d", "t": "willing to hear alternative approaches"}, {"id": "e", "t": "a polite refusal that avoids a direct rejection"}, {"id": "f", "t": "to sense the mood before saying something"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "to introduce an idea early so it can grow on someone"}, {"id": "b", "t": "a polite refusal that avoids a direct rejection"}, {"id": "c", "t": "willing to hear alternative approaches"}, {"id": "d", "t": "to raise a possibility casually, to test reaction"}, {"id": "e", "t": "to sense the mood before saying something"}, {"id": "f", "t": "a light, non-aggressive reminder or push"}];
+var G_KEY = ["d", "f", "a", "c", "b", "e"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "Let me ______ and see what people think.", "a": ["float an idea"]}, {"q": "Consider this a ______ to finish the draft.", "a": ["gentle nudge"]}, {"q": "I'm just trying to ______ before saying anything.", "a": ["read the room"]}, {"q": "We're ______ if you have a better approach.", "a": ["open to suggestions"]}, {"q": "That sounded like a ______, not a hard no.", "a": ["soft no"]}, {"q": "I mentioned it briefly today, just to ______ before we talk again next week.", "a": ["plant a seed"]}];

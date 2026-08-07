@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -600,8 +605,8 @@ var F_DATA = [{"q": "We need to discuss and resolve the contract terms.", "note"
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to touch base", "to run with", "to zero in on", "to wrap up", "to bounce ideas off", "to home in on"];
-var G_ENDINGS = [{"id": "a", "t": "to make brief contact to check in or update"}, {"id": "b", "t": "to take an idea and proceed with it independently"}, {"id": "c", "t": "to focus precisely on one specific thing"}, {"id": "d", "t": "to finish or conclude something"}, {"id": "e", "t": "to share ideas with someone to get their reaction"}, {"id": "f", "t": "to increasingly and precisely focus on a target"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "to finish or conclude something"}, {"id": "b", "t": "to increasingly and precisely focus on a target"}, {"id": "c", "t": "to share ideas with someone to get their reaction"}, {"id": "d", "t": "to focus precisely on one specific thing"}, {"id": "e", "t": "to take an idea and proceed with it independently"}, {"id": "f", "t": "to make brief contact to check in or update"}];
+var G_KEY = ["f", "e", "d", "a", "c", "b"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "Let's ______ before the meeting to align.", "a": ["touch base"]}, {"q": "I like this direction, go ahead and ______ with it.", "a": ["run"]}, {"q": "We need to ______ the actual root cause here.", "a": ["zero in on"]}, {"q": "Let's ______ this project by Friday.", "a": ["wrap up"]}, {"q": "Can I ______ you before I send this?", "a": ["bounce this off"]}, {"q": "The investigation is starting to ______ one suspect.", "a": ["home in on"]}];

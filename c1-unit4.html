@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -596,8 +601,8 @@ var F_DATA = [{"q": "We will launch Tuesday.", "note": "[make it read as a fixed
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["a moving target", "in the pipeline", "penciled in", "a hard deadline", "best-case scenario", "to hedge your bets"];
-var G_ENDINGS = [{"id": "a", "t": "a goal that keeps changing before it's reached"}, {"id": "b", "t": "currently in progress or planned for later"}, {"id": "c", "t": "tentatively scheduled, not yet confirmed"}, {"id": "d", "t": "a date that cannot be moved"}, {"id": "e", "t": "the most favorable outcome you could realistically expect"}, {"id": "f", "t": "to avoid committing fully to one outcome"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "tentatively scheduled, not yet confirmed"}, {"id": "b", "t": "a date that cannot be moved"}, {"id": "c", "t": "a goal that keeps changing before it's reached"}, {"id": "d", "t": "currently in progress or planned for later"}, {"id": "e", "t": "to avoid committing fully to one outcome"}, {"id": "f", "t": "the most favorable outcome you could realistically expect"}];
+var G_KEY = ["c", "d", "a", "b", "f", "e"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "The launch date is still ______. Nothing's confirmed yet.", "a": ["penciled in"]}, {"q": "In the ______, we hit the number a week early.", "a": ["best-case scenario"]}, {"q": "The scope keeps shifting, it's become a ______.", "a": ["moving target"]}, {"q": "The audit has a ______. We can't push it back.", "a": ["hard deadline"]}, {"q": "There are three features ______ for next quarter.", "a": ["in the pipeline"]}, {"q": "I'll ______ and give you a range instead of one number.", "a": ["hedge my bets", "hedge my bet"]}];

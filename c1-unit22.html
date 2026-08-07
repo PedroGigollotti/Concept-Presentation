@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -576,8 +581,8 @@ var E_DATA = [{"q": "We need a full re-architecture.", "note": "[avoid using all
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["a small ask", "to make the case", "non-negotiable", "the crux of the matter", "to sweeten the deal", "within reason"];
-var F_ENDINGS = [{"id": "a", "t": "a modest, easy-to-grant request"}, {"id": "b", "t": "to present a persuasive argument for something"}, {"id": "c", "t": "not open to compromise or discussion"}, {"id": "d", "t": "the central, most important point of an issue"}, {"id": "e", "t": "to add something to make a request more appealing"}, {"id": "f", "t": "reasonable, not excessive"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "the central, most important point of an issue"}, {"id": "b", "t": "reasonable, not excessive"}, {"id": "c", "t": "to add something to make a request more appealing"}, {"id": "d", "t": "a modest, easy-to-grant request"}, {"id": "e", "t": "to present a persuasive argument for something"}, {"id": "f", "t": "not open to compromise or discussion"}];
+var F_KEY = ["d", "e", "f", "a", "c", "b"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "It's a ______, just one more day.", "a": ["small ask"]}, {"q": "Let me ______ for why this matters.", "a": ["make the case"]}, {"q": "The deadline is ______ this time.", "a": ["non-negotiable"]}, {"q": "Budget is really the ______ here.", "a": ["crux of the matter"]}, {"q": "We could ______ by offering a discount.", "a": ["sweeten the deal"]}, {"q": "I'm happy to help, ______.", "a": ["within reason"]}];

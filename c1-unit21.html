@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -585,8 +590,8 @@ var E_DATA = [{"q": "Marketing drove the increase, not pricing.", "note": "[corr
 function buildE(){ buildRewrite("E", E_DATA, "rewrite as a correction"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to give credit where it's due", "the driving force", "a red herring", "to set the record straight", "the deciding factor", "to take ownership of"];
-var F_ENDINGS = [{"id": "a", "t": "to properly acknowledge who or what deserves recognition"}, {"id": "b", "t": "the main cause pushing something forward"}, {"id": "c", "t": "a misleading clue that distracts from the real cause"}, {"id": "d", "t": "to correct a mistaken account of what happened"}, {"id": "e", "t": "the single factor that determines the outcome"}, {"id": "f", "t": "to accept responsibility for something"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "the main cause pushing something forward"}, {"id": "b", "t": "to correct a mistaken account of what happened"}, {"id": "c", "t": "to properly acknowledge who or what deserves recognition"}, {"id": "d", "t": "the single factor that determines the outcome"}, {"id": "e", "t": "to accept responsibility for something"}, {"id": "f", "t": "a misleading clue that distracts from the real cause"}];
+var F_KEY = ["c", "a", "f", "b", "d", "e"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______. It was Priya who caught this first.", "a": ["set the record straight"]}, {"q": "Pricing was clearly the ______ behind the increase.", "a": ["driving force"]}, {"q": "The marketing theory turned out to be a ______.", "a": ["red herring"]}, {"q": "I want to ______ about who really found the bug.", "a": ["give credit where it's due"]}, {"q": "Retention is going to be the ______ this quarter.", "a": ["deciding factor"]}, {"q": "She was quick to ______ the mistake.", "a": ["take ownership of"]}];

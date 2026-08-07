@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -583,8 +588,8 @@ var E_DATA = [{"q": "She said the deal was on track.", "note": "[it's still true
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["as of this writing", "subject to change", "the latest word", "stale information", "to bring someone up to speed", "a moving picture"];
-var F_ENDINGS = [{"id": "a", "t": "true at the specific moment this was written"}, {"id": "b", "t": "possibly no longer accurate by the time it's read"}, {"id": "c", "t": "the most recent update available"}, {"id": "d", "t": "information that is outdated and may no longer be accurate"}, {"id": "e", "t": "to update someone with the most current information"}, {"id": "f", "t": "a situation that keeps changing over time"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "information that is outdated and may no longer be accurate"}, {"id": "b", "t": "the most recent update available"}, {"id": "c", "t": "a situation that keeps changing over time"}, {"id": "d", "t": "to update someone with the most current information"}, {"id": "e", "t": "true at the specific moment this was written"}, {"id": "f", "t": "possibly no longer accurate by the time it's read"}];
+var F_KEY = ["e", "f", "b", "a", "d", "c"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "______, the numbers are still holding.", "a": ["As of this writing"]}, {"q": "This estimate is ______, so don't treat it as final.", "a": ["subject to change"]}, {"q": "The ______ from finance is that we're on track.", "a": ["latest word"]}, {"q": "That report is ______, it's from two months ago.", "a": ["stale"]}, {"q": "Let me ______ before the meeting starts.", "a": ["bring you up to speed"]}, {"q": "This whole situation is a ______, it changes daily.", "a": ["moving picture"]}];

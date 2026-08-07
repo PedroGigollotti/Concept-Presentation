@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -595,8 +600,8 @@ var F_DATA = [{"q": "They're ignoring us.", "note": "[soften into a loose possib
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to read between the lines", "a safe bet", "to jump to conclusions", "circumstantial evidence", "the benefit of the doubt", "a gut feeling"];
-var G_ENDINGS = [{"id": "a", "t": "to infer meaning that isn't stated directly"}, {"id": "b", "t": "a conclusion that is very likely correct"}, {"id": "c", "t": "to decide something too quickly, without enough evidence"}, {"id": "d", "t": "indirect evidence that suggests but doesn't prove something"}, {"id": "e", "t": "assuming good intent when evidence is unclear"}, {"id": "f", "t": "an instinct not fully backed by hard evidence"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "indirect evidence that suggests but doesn't prove something"}, {"id": "b", "t": "assuming good intent when evidence is unclear"}, {"id": "c", "t": "an instinct not fully backed by hard evidence"}, {"id": "d", "t": "a conclusion that is very likely correct"}, {"id": "e", "t": "to infer meaning that isn't stated directly"}, {"id": "f", "t": "to decide something too quickly, without enough evidence"}];
+var G_KEY = ["e", "d", "f", "a", "b", "c"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "I have a ______ that they're stalling on purpose.", "a": ["gut feeling"]}, {"q": "It's a ______ that they'll renew, given the history.", "a": ["safe bet"]}, {"q": "Let's not ______. We don't have the full picture.", "a": ["jump to conclusions"]}, {"q": "It's mostly ______, nothing we could prove in writing.", "a": ["circumstantial evidence"]}, {"q": "I'll give them the ______ for now.", "a": ["benefit of the doubt"]}, {"q": "You have to ______ with a client who never says no directly.", "a": ["read between the lines"]}];

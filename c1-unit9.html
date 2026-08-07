@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -595,8 +600,8 @@ var F_DATA = [{"q": "We're a bit behind the leader.", "note": "[make the gap sou
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["a game changer", "head and shoulders above", "a marginal gain", "closing the gap", "a wide margin", "neck and neck"];
-var G_ENDINGS = [{"id": "a", "t": "something that dramatically changes the situation"}, {"id": "b", "t": "clearly and significantly better than the rest"}, {"id": "c", "t": "a small, incremental improvement"}, {"id": "d", "t": "reducing the difference between two competitors"}, {"id": "e", "t": "a large, decisive difference between two things"}, {"id": "f", "t": "very closely matched, almost tied"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "a large, decisive difference between two things"}, {"id": "b", "t": "something that dramatically changes the situation"}, {"id": "c", "t": "very closely matched, almost tied"}, {"id": "d", "t": "clearly and significantly better than the rest"}, {"id": "e", "t": "a small, incremental improvement"}, {"id": "f", "t": "reducing the difference between two competitors"}];
+var G_KEY = ["b", "d", "e", "f", "a", "c"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "The new feature was a genuine ______ for retention.", "a": ["game changer"]}, {"q": "They're ______ the rest of the market this quarter.", "a": ["head and shoulders above"]}, {"q": "It's only a ______, but every bit helps.", "a": ["marginal gain"]}, {"q": "We've been ______ on delivery speed all year.", "a": ["closing the gap"]}, {"q": "We won the deal by a ______.", "a": ["wide margin"]}, {"q": "The two finalists were ______ until the very end.", "a": ["neck and neck"]}];
