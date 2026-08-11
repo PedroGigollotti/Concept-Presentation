@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Books | Concept</title>
-<meta name="description" content="The Concept Method book series: Professional English Practice, books 1 through 5, and Calibrated Speech, pronunciation manuals for Brazilian and Italian speakers.">
+<meta name="description" content="The Concept Method book series: Professional English Practice, books 1 through 5, and Calibrated Speech, a pronunciation manual for Brazilian speakers.">
 <style>
   :root{
     --red:#B3132B;
@@ -180,7 +180,7 @@
   <section class="collection">
     <div class="collection-head">
       <h2>Calibrated Speech</h2>
-      <p class="sub">Pronunciation manuals sequenced A1 to C2, one edition per first language, built on two yardsticks: being understood, and being taken seriously.</p>
+      <p class="sub">A pronunciation manual sequenced A1 to C2, built on two yardsticks: being understood, and being taken seriously.</p>
     </div>
     <div class="collection-rule"></div>
     <div id="cs-shelf"></div>
@@ -204,9 +204,9 @@
    Netto: everything tagged [DRAFT] is copy pulled or paraphrased from
    the real manuscripts you sent, tightened for a back-of-book length.
    Edit freely, the layout doesn't care about text length within reason.
-   Real cover art (Books 1 and 2) is embedded directly from your files;
-   Books 3-5 and both Calibrated Speech editions use the placeholder
-   mock cover until real art exists for them.
+   Real cover art (Books 1 and 2, and Calibrated Speech) is embedded
+   directly from your files; Books 3-5 use the placeholder mock cover
+   until real art exists for them.
    ══════════════════════════════════════════════════════════════════ */
 
 const PEP_BOOKS = [
@@ -282,20 +282,11 @@ const CS_BOOKS = [
     title: "Calibrated Speech",
     subtitle: "American English for Brazilian Speakers",
     hook: "Sound the way you want <i>to be heard</i>.",
-    realCover: null, realBack: null,
+    realCover: "PEP_CalibratedSpeech_Front_Cover.png", realBack: "PEP_CalibratedSpeech_Back_Cover.png",
+    companionUrl: "calibrated-speech/contents.html",
+    companionLabel: "Students: access the interactive units",
     pedagogical: "A level-by-level pronunciation manual sequenced A1 to C2, built on two yardsticks, intelligibility and credibility. Moves from the sounds that break meaning, th, clean final consonants, ship versus sheep, through rhythm and the American R, to the melody and register control that read as credible to American listeners.",
     commercial: "For Brazilian Portuguese speakers whose message lands, but whose accent still shapes how seriously they're taken in the room.",
-    whatsinside: ["Sound-by-sound sequencing, A1 to C2", "Diagnostic passage and a fastest-fixes cheat sheet", "Full practice sets with a complete answer key"]
-  },
-  {
-    seriesLabel: "Calibrated Speech",
-    level: "A1-C2",
-    title: "Calibrated Speech",
-    subtitle: "American English for Italian Speakers",
-    hook: "Sound the way you want <i>to be heard</i>.",
-    realCover: null, realBack: null,
-    pedagogical: "A level-by-level pronunciation manual sequenced A1 to C2, built on two yardsticks, intelligibility and credibility. Moves from the sounds that break meaning, the voiced th, the breathed h, ship versus sheep, through Italian-specific targets like taming the rolled R and narrowing a wide pitch range, to the register control that reads as credible to American listeners.",
-    commercial: "For Italian speakers whose message lands, but whose accent still shapes how seriously they're taken in the room.",
     whatsinside: ["Sound-by-sound sequencing, A1 to C2", "Diagnostic passage and a fastest-fixes cheat sheet", "Full practice sets with a complete answer key"]
   }
 ];
