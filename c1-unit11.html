@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -576,7 +571,7 @@ function checkGap(L, data){
 var A_DATA = [{"q": "We simplified onboarding ______ users activate faster.", "a": ["so that"]}, {"q": "______ the bug affected all users, we treated it as urgent.", "a": ["Since"]}, {"q": "The fix was ______ effective that support tickets dropped overnight.", "a": ["so"]}, {"q": "It was ______ a small change that nobody needed retraining.", "a": ["such"]}, {"q": "We added the retry logic ______ requests wouldn't fail silently.", "a": ["so that"]}, {"q": "______ the client flagged the issue first, we prioritized it.", "a": ["Since"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "We redesigned it so users activate faster, so activation rose.", "keys": ["and activation rose"], "full": "We redesigned it so that users activate faster, and activation rose."}, {"q": "It was such simple that nobody needed training.", "keys": ["so simple that"], "reject": ["such simple"], "full": "It was so simple that nobody needed training."}, {"q": "The flow is so much simpler, users activate faster now.", "keys": ["so much simpler that"], "full": "The flow is so much simpler that users activate faster now."}, {"q": "As the bug affected all users, meaning while it happened, we escalated it.", "keys": ["since the bug affected all users"], "full": "Since the bug affected all users, we escalated it."}, {"q": "It was so a small change that nobody noticed.", "keys": ["such a small change"], "reject": ["so a small"], "full": "It was such a small change that nobody noticed."}];
+var B_DATA = [{"q": "We redesigned it so users activate faster, so activation rose.", "keys": ["and activation rose"], "full": "We redesigned it so that users activate faster, and activation rose."}, {"q": "It was such simple that nobody needed training.", "keys": ["so simple that"], "reject": ["such simple"], "full": "It was so simple that nobody needed training."}, {"q": "The flow is so much simpler, users activate faster now.", "keys": ["so much simpler that"], "full": "The flow is so much simpler that users activate faster now."}, {"q": "As the bug affected all users.", "keys": ["since the bug affected all users"], "full": "Since the bug affected all users, we escalated it."}, {"q": "It was so a small change that nobody noticed.", "keys": ["such a small change"], "reject": ["so a small"], "full": "It was such a small change that nobody noticed."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "Reason: drop-off was high. Purpose: we redesigned onboarding.", "keys": ["since drop-off was high"], "full": "Since drop-off was high, we redesigned onboarding."}, {"q": "Reason: the client complained. Result: we prioritized the fix.", "keys": ["since the client complained"], "full": "Since the client complained, we prioritized the fix."}, {"q": "Purpose: we wanted fewer errors. Result: we added validation.", "keys": ["so that we'd have fewer errors", "so that we would have fewer errors", "validation so that"], "full": "We added validation so that we'd have fewer errors."}, {"q": "Reason: the deadline moved up. Result: we cut scope.", "keys": ["since the deadline moved up"], "full": "Since the deadline moved up, we cut scope."}, {"q": "Purpose: we wanted faster load times. Result: we cached the data.", "keys": ["so that load times would improve", "cached the data so that"], "full": "We cached the data so that load times would improve."}];
@@ -591,8 +586,8 @@ var E_DATA = [{"q": "We changed the flow, users activate faster now.", "note": "
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["the rationale", "a knock-on effect", "the driving factor", "to justify a decision", "a trade-off", "the bottom line"];
-var F_ENDINGS = [{"id": "a", "t": "giving up one thing to gain another"}, {"id": "b", "t": "the essential final point, cutting through detail"}, {"id": "c", "t": "to give solid reasons that support a choice"}, {"id": "d", "t": "a secondary consequence caused by an earlier change"}, {"id": "e", "t": "the reasoning behind a decision"}, {"id": "f", "t": "the main cause pushing a decision forward"}];
-var F_KEY = ["e", "d", "f", "c", "a", "b"];
+var F_ENDINGS = [{"id": "a", "t": "the reasoning behind a decision"}, {"id": "b", "t": "a secondary consequence caused by an earlier change"}, {"id": "c", "t": "the main cause pushing a decision forward"}, {"id": "d", "t": "to give solid reasons that support a choice"}, {"id": "e", "t": "giving up one thing to gain another"}, {"id": "f", "t": "the essential final point, cutting through detail"}];
+var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "The ______ for the redesign was clear once we saw the drop-off data.", "a": ["rationale"]}, {"q": "Slower builds were a ______ of the new pipeline.", "a": ["knock-on effect"]}, {"q": "Cost was the ______ behind postponing the launch.", "a": ["driving factor"]}, {"q": "We had to ______ the extra spend to finance.", "a": ["justify"]}, {"q": "Faster releases came with a ______: less time for manual testing.", "a": ["trade-off"]}, {"q": "The ______ is that activation is up twelve percent.", "a": ["bottom line"]}];

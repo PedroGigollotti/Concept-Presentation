@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -244,7 +239,7 @@
         <text x="30" y="60" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">used to / would: closed, finished, no longer true</text>
 
         <line x1="30" y1="112" x2="640" y2="112" stroke="#6B6F76" stroke-width="1.5" marker-end="url(#arr6)"/>
-        <rect x="99" y="98" width="194" height="28" rx="6" fill="#B3132B"/>
+        <rect x="120" y="98" width="152" height="28" rx="6" fill="#B3132B"/>
         <text x="196" y="117" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff">we used to ship monthly</text>
         <line x1="272" y1="112" x2="470" y2="112" stroke="#DCDDD6" stroke-width="7" stroke-dasharray="4 7" stroke-linecap="round"/>
         <line x1="530" y1="90" x2="530" y2="134" stroke="#0A0B0D" stroke-width="2"/>
@@ -254,7 +249,7 @@
         <text x="30" y="216" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">The new normal</text>
         <text x="30" y="236" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">be / get used to: how familiar it feels now</text>
 
-        <rect x="352" y="256" width="236" height="28" rx="6" fill="#1F5570"/>
+        <rect x="380" y="256" width="180" height="28" rx="6" fill="#1F5570"/>
         <text x="470" y="275" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff">we&#8217;re used to shipping weekly</text>
         <path d="M 470 252 L 470 196 L 560 196 L 560 126" fill="none" stroke="#1F5570" stroke-width="1.5" stroke-dasharray="5 4"/>
         <text x="366" y="192" text-anchor="end" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#1F5570">this describes now, not the past</text>
@@ -587,8 +582,8 @@ var E_DATA = [{"q": "I would have a huge backlog every Monday.", "note": "[descr
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["a far cry from", "the new normal", "to settle into a routine", "old habits die hard", "a growing pain", "to find your footing"];
-var F_ENDINGS = [{"id": "a", "t": "to become confident and comfortable in a new role"}, {"id": "b", "t": "it's hard to break behavior you're used to"}, {"id": "c", "t": "very different from how something used to be"}, {"id": "d", "t": "a temporary difficulty that comes with change"}, {"id": "e", "t": "to become comfortable with a regular pattern"}, {"id": "f", "t": "the current standard, once it has been accepted"}];
-var F_KEY = ["c", "f", "e", "b", "d", "a"];
+var F_ENDINGS = [{"id": "a", "t": "very different from how something used to be"}, {"id": "b", "t": "the current standard, once it has been accepted"}, {"id": "c", "t": "to become comfortable with a regular pattern"}, {"id": "d", "t": "it's hard to break behavior you're used to"}, {"id": "e", "t": "a temporary difficulty that comes with change"}, {"id": "f", "t": "to become confident and comfortable in a new role"}];
+var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "The new process is ______ how we used to work.", "a": ["a far cry from"]}, {"q": "Weekly releases are ______ around here now.", "a": ["the new normal"]}, {"q": "It took a month, but we finally ______.", "a": ["settled into a routine"]}, {"q": "I keep reverting to the old tool, ______.", "a": ["old habits die hard"]}, {"q": "The slower onboarding is just a ______ of the new system.", "a": ["growing pain"]}, {"q": "Give her time, she's still trying to ______ in the new role.", "a": ["find her footing"]}];

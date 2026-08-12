@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -587,7 +582,7 @@ function checkGap(L, data){
 var A_DATA = [{"q": "We ______ (hash) the details yesterday.", "a": ["hashed out"]}, {"q": "I need to ______ (flesh) the budget section.", "a": ["flesh out"]}, {"q": "We're ______ (wait) legal to sign off.", "a": ["waiting on"]}, {"q": "I'll ______ (follow) that this afternoon.", "a": ["follow up on"]}, {"q": "Let's ______ (circle) the pricing next week.", "a": ["circle back on"]}, {"q": "Can you ______ (flesh) that idea a bit more?", "a": ["flesh out"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "We hashed up the details over an hour, using the wrong particle for this idiom.", "keys": ["hashed out the details"], "reject": ["hashed up"], "full": "We hashed out the details over an hour."}, {"q": "I need to flesh in the budget section more, again using the wrong particle.", "keys": ["flesh out the budget section"], "reject": ["flesh in"], "full": "I need to flesh out the budget section more."}, {"q": "We're waiting for legal to sign off, using the wrong preposition for this idiom.", "keys": ["waiting on legal"], "reject": ["waiting for legal"], "full": "We're waiting on legal to sign off."}, {"q": "I'll follow that up this afternoon, dropping the required second preposition.", "keys": ["follow up on that"], "reject": ["follow that up"], "full": "I'll follow up on that this afternoon."}, {"q": "Let's circle the pricing back next week, wrong word order for this idiom.", "keys": ["circle back on the pricing"], "reject": ["circle the pricing back"], "full": "Let's circle back on the pricing next week."}];
+var B_DATA = [{"q": "We hashed up the details over an hour.", "keys": ["hashed out the details"], "reject": ["hashed up"], "full": "We hashed out the details over an hour."}, {"q": "I need to flesh in the budget section more.", "keys": ["flesh out the budget section"], "reject": ["flesh in"], "full": "I need to flesh out the budget section more."}, {"q": "We're waiting for legal to sign off.", "keys": ["waiting on legal"], "reject": ["waiting for legal"], "full": "We're waiting on legal to sign off."}, {"q": "I'll follow that up this afternoon.", "keys": ["follow up on that"], "reject": ["follow that up"], "full": "I'll follow up on that this afternoon."}, {"q": "Let's circle the pricing back next week.", "keys": ["circle back on the pricing"], "reject": ["circle the pricing back"], "full": "Let's circle back on the pricing next week."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "We discussed and resolved the details yesterday.", "keys": ["hashed out the details"], "reject": ["discussed and resolved"], "full": "We hashed out the details yesterday."}, {"q": "I need to add more detail to the budget section.", "keys": ["flesh out the budget section"], "reject": ["add more detail"], "full": "I need to flesh out the budget section."}, {"q": "We are awaiting legal's approval.", "keys": ["waiting on legal"], "reject": ["awaiting"], "full": "We're waiting on legal."}, {"q": "I will pursue that matter further this afternoon.", "keys": ["follow up on that"], "reject": ["pursue that matter"], "full": "I'll follow up on that this afternoon."}, {"q": "Let's revisit the pricing next week.", "keys": ["circle back on the pricing"], "reject": ["revisit the pricing"], "full": "Let's circle back on the pricing next week."}];
@@ -605,8 +600,8 @@ var F_DATA = [{"q": "We need to discuss and resolve the contract terms.", "note"
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to touch base", "to run with", "to zero in on", "to wrap up", "to bounce ideas off", "to home in on"];
-var G_ENDINGS = [{"id": "a", "t": "to finish or conclude something"}, {"id": "b", "t": "to increasingly and precisely focus on a target"}, {"id": "c", "t": "to share ideas with someone to get their reaction"}, {"id": "d", "t": "to focus precisely on one specific thing"}, {"id": "e", "t": "to take an idea and proceed with it independently"}, {"id": "f", "t": "to make brief contact to check in or update"}];
-var G_KEY = ["f", "e", "d", "a", "c", "b"];
+var G_ENDINGS = [{"id": "a", "t": "to make brief contact to check in or update"}, {"id": "b", "t": "to take an idea and proceed with it independently"}, {"id": "c", "t": "to focus precisely on one specific thing"}, {"id": "d", "t": "to finish or conclude something"}, {"id": "e", "t": "to share ideas with someone to get their reaction"}, {"id": "f", "t": "to increasingly and precisely focus on a target"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "Let's ______ before the meeting to align.", "a": ["touch base"]}, {"q": "I like this direction, go ahead and ______ with it.", "a": ["run"]}, {"q": "We need to ______ the actual root cause here.", "a": ["zero in on"]}, {"q": "Let's ______ this project by Friday.", "a": ["wrap up"]}, {"q": "Can I ______ you before I send this?", "a": ["bounce this off"]}, {"q": "The investigation is starting to ______ one suspect.", "a": ["home in on"]}];

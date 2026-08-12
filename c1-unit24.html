@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -583,8 +578,8 @@ var E_DATA = [{"q": "Retention dropped, churn rose, and engagement fell. This is
 function buildE(){ buildRewrite("E", E_DATA, "make the reference specific"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to circle back to", "the crux of it", "a running theme", "to tie together", "the upshot", "along those lines"];
-var F_ENDINGS = [{"id": "a", "t": "the practical result or conclusion of something"}, {"id": "b", "t": "to return to a topic mentioned earlier"}, {"id": "c", "t": "to connect separate points into one coherent idea"}, {"id": "d", "t": "similar in kind or direction to what was just said"}, {"id": "e", "t": "the central point of a longer discussion"}, {"id": "f", "t": "a pattern that keeps recurring across a discussion"}];
-var F_KEY = ["b", "e", "f", "c", "a", "d"];
+var F_ENDINGS = [{"id": "a", "t": "to return to a topic mentioned earlier"}, {"id": "b", "t": "the central point of a longer discussion"}, {"id": "c", "t": "a pattern that keeps recurring across a discussion"}, {"id": "d", "t": "to connect separate points into one coherent idea"}, {"id": "e", "t": "the practical result or conclusion of something"}, {"id": "f", "t": "similar in kind or direction to what was just said"}];
+var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______ the billing issue once we've covered onboarding.", "a": ["circle back to"]}, {"q": "______ is that retention needs urgent attention.", "a": ["The upshot"]}, {"q": "Missed deadlines have been a ______ this quarter.", "a": ["running theme"]}, {"q": "I want to ______ these three points before we wrap up.", "a": ["tie together"]}, {"q": "The ______ is that we need more headcount.", "a": ["crux of it"]}, {"q": "Something ______ happened last quarter too.", "a": ["along those lines"]}];

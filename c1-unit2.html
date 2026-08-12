@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -584,8 +579,8 @@ var C_DATA = [{"q": "Revenue is growing.", "note": "[frame it as an open, still-
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["We've been testing the new flow", "We've shipped the new flow", "She's been mentoring two juniors", "She's mentored six juniors", "We've been climbing steadily"];
-var D_ENDINGS = [{"id": "a", "t": "since January."}, {"id": "b", "t": "over her time here."}, {"id": "c", "t": "since the launch."}, {"id": "d", "t": "as of this morning."}, {"id": "e", "t": "for two weeks now."}];
-var D_KEY = ["e", "d", "a", "b", "c"];
+var D_ENDINGS = [{"id": "a", "t": "for two weeks now."}, {"id": "b", "t": "as of this morning."}, {"id": "c", "t": "since January."}, {"id": "d", "t": "over her time here."}, {"id": "e", "t": "since the launch."}];
+var D_KEY = ["a", "b", "c", "d", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The number is good but you don't want to promise it will hold.", "a": 0, "note": "Present perfect continuous: “We've been seeing solid growth, and it looks like it's holding.”"}, {"q": "Leadership needs a hard number for the board deck today.", "a": 1, "note": "Present perfect simple: “We've grown revenue by 12 percent this quarter.”"}, {"q": "The fix is real but you don't want to claim total victory yet.", "a": 0, "note": "Still unfolding, guarded: “We've been chipping away at the root cause.”"}, {"q": "You want to signal calm, steady progress without a dramatic number.", "a": 0, "note": "Still unfolding, calm tone: “We've been making steady progress across the board.”"}];
@@ -595,8 +590,8 @@ var F_DATA = [{"q": "We've fixed the bug.", "note": "[make it sound like ongoing
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["gaining traction", "holding steady", "picking up the pace", "losing steam", "turning the corner", "early days"];
-var G_ENDINGS = [{"id": "a", "t": "slowing down after a period of energy"}, {"id": "b", "t": "too soon to draw firm conclusions"}, {"id": "c", "t": "moving past the hardest part toward improvement"}, {"id": "d", "t": "starting to succeed and attract interest"}, {"id": "e", "t": "staying at a consistent level, not dropping"}, {"id": "f", "t": "moving faster than before"}];
-var G_KEY = ["d", "e", "f", "a", "c", "b"];
+var G_ENDINGS = [{"id": "a", "t": "starting to succeed and attract interest"}, {"id": "b", "t": "staying at a consistent level, not dropping"}, {"id": "c", "t": "moving faster than before"}, {"id": "d", "t": "slowing down after a period of energy"}, {"id": "e", "t": "moving past the hardest part toward improvement"}, {"id": "f", "t": "too soon to draw firm conclusions"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "It's ______, but the early signals are promising.", "a": ["early days"]}, {"q": "After a slow start, the campaign is finally ______.", "a": ["gaining traction"]}, {"q": "Retention has ______ for three months now.", "a": ["held steady"]}, {"q": "New sign-ups have really ______ this week.", "a": ["picked up the pace"]}, {"q": "Engagement was ______, but it's recovering now.", "a": ["losing steam"]}, {"q": "I think we've finally ______ on this project.", "a": ["turned the corner"]}];

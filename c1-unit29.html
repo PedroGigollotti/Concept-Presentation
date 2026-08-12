@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -585,8 +580,8 @@ var E_DATA = [{"q": "I finished the redesign.", "note": "[actually the design te
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to hand off", "to loop someone in", "to own a task", "to farm out", "to keep tabs on", "to sign off on"];
-var F_ENDINGS = [{"id": "a", "t": "to include someone in a conversation or process"}, {"id": "b", "t": "to formally approve something"}, {"id": "c", "t": "to delegate work to an outside person or team"}, {"id": "d", "t": "to take full responsibility for a task"}, {"id": "e", "t": "to pass a task or responsibility to someone else"}, {"id": "f", "t": "to monitor progress on something without doing it yourself"}];
-var F_KEY = ["e", "a", "d", "c", "f", "b"];
+var F_ENDINGS = [{"id": "a", "t": "to pass a task or responsibility to someone else"}, {"id": "b", "t": "to include someone in a conversation or process"}, {"id": "c", "t": "to take full responsibility for a task"}, {"id": "d", "t": "to delegate work to an outside person or team"}, {"id": "e", "t": "to monitor progress on something without doing it yourself"}, {"id": "f", "t": "to formally approve something"}];
+var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "I'll ______ this to the design team once the brief is ready.", "a": ["hand this off", "hand off"]}, {"q": "Let's ______ legal before we finalize this.", "a": ["loop in"]}, {"q": "She's agreed to ______ the whole migration.", "a": ["own"]}, {"q": "We usually ______ translation work to an outside vendor.", "a": ["farm out"]}, {"q": "I'll ______ the shipment and let you know if anything slips.", "a": ["keep tabs on"]}, {"q": "The director needs to ______ the final version.", "a": ["sign off on"]}];

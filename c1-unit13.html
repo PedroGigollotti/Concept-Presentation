@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -586,8 +581,8 @@ var E_DATA = [{"q": "If we don't hear back by Friday, we'll proceed anyway.", "n
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["contingent on", "barring any surprises", "subject to approval", "all else being equal", "a precondition", "to hinge on"];
-var F_ENDINGS = [{"id": "a", "t": "a requirement that must be met before something else can happen"}, {"id": "b", "t": "not final until someone signs off"}, {"id": "c", "t": "dependent on something else happening first"}, {"id": "d", "t": "to depend entirely on one key factor"}, {"id": "e", "t": "assuming no other factors change"}, {"id": "f", "t": "assuming nothing unexpected occurs"}];
-var F_KEY = ["c", "f", "b", "e", "a", "d"];
+var F_ENDINGS = [{"id": "a", "t": "dependent on something else happening first"}, {"id": "b", "t": "assuming nothing unexpected occurs"}, {"id": "c", "t": "not final until someone signs off"}, {"id": "d", "t": "assuming no other factors change"}, {"id": "e", "t": "a requirement that must be met before something else can happen"}, {"id": "f", "t": "to depend entirely on one key factor"}];
+var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "The bonus is ______ hitting this quarter's target.", "a": ["contingent on"]}, {"q": "______, we should finish on schedule.", "a": ["Barring any surprises"]}, {"q": "The new hire is ______ from legal.", "a": ["subject to approval"]}, {"q": "______, the two options perform about the same.", "a": ["All else being equal"]}, {"q": "Sign-off is a ______ for the migration to begin.", "a": ["precondition"]}, {"q": "The whole plan seems to ______ one client's decision.", "a": ["hinge on"]}];

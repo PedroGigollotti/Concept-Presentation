@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -601,8 +596,8 @@ var F_DATA = [{"q": "We had a decent quarter.", "note": "[tone this down, keep i
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["a watershed moment", "to raise the bar", "a cautionary tale", "to break new ground", "a red line", "to set a precedent"];
-var G_ENDINGS = [{"id": "a", "t": "to achieve something not done before"}, {"id": "b", "t": "to establish a pattern others will be expected to follow"}, {"id": "c", "t": "to set a new, higher standard for performance"}, {"id": "d", "t": "a turning point that changes what follows"}, {"id": "e", "t": "a story warning others not to repeat a mistake"}, {"id": "f", "t": "a limit that must never be crossed"}];
-var G_KEY = ["d", "c", "e", "a", "f", "b"];
+var G_ENDINGS = [{"id": "a", "t": "a turning point that changes what follows"}, {"id": "b", "t": "to set a new, higher standard for performance"}, {"id": "c", "t": "a story warning others not to repeat a mistake"}, {"id": "d", "t": "to achieve something not done before"}, {"id": "e", "t": "a limit that must never be crossed"}, {"id": "f", "t": "to establish a pattern others will be expected to follow"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "This quarter felt like a genuine ______ for the company.", "a": ["watershed moment"]}, {"q": "The new release really does ______, nobody's shipped this before.", "a": ["break new ground"]}, {"q": "Missing that deadline was a ______ for the whole team.", "a": ["cautionary tale"]}, {"q": "This result is going to ______ for every quarter after it.", "a": ["set a precedent"]}, {"q": "Cutting the safety review is a ______ for us, never again.", "a": ["red line"]}, {"q": "Hitting this number will ______ for future launches.", "a": ["raise the bar"]}];

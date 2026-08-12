@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -594,12 +589,12 @@ function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You want to express mild regret without dwelling on it.", "a": 0, "note": "Mild regret: “I wish we'd caught it sooner, but it's manageable now.”"}, {"q": "You want to push hard for an overdue change.", "a": 1, "note": "Urgent push: “It's high time we fixed this properly, we've delayed too long.”"}, {"q": "You want to state a clear present preference between two options.", "a": 2, "note": "Clear preference: “I'd rather we slowed down than ship something broken.”"}, {"q": "You want to express deep regret about a real missed opportunity.", "a": 3, "note": "Deep regret: “If only we'd tested this before the client saw it.”"}];
 var E_OPTS = [{"label": "Mild regret"}, {"label": "Urgent push"}, {"label": "Clear preference"}, {"label": "Deep regret"}];
 function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
-var F_DATA = [{"q": "We should have tested this.", "note": "[rewrite as a wish about the past]", "keys": ["i wish we'd tested", "i wish we had tested"], "full": "I wish we'd tested this."}, {"q": "We need to slow down now.", "note": "[rewrite as a would rather preference]", "keys": ["i'd rather we slowed down", "i would rather we slowed down"], "full": "I'd rather we slowed down now."}, {"q": "This is overdue.", "note": "[rewrite using it's high time]", "keys": ["high time we addressed"], "full": "It's high time we addressed this."}, {"q": "I don't have enough time.", "note": "[rewrite as a present wish]", "keys": ["i wish i had more time"], "full": "I wish I had more time."}];
+var F_DATA = [{"q": "We should have tested this.", "note": "[rewrite as a wish about the past]", "keys": ["i wish we'd tested", "i wish we had tested"], "full": "I wish we'd tested this."}, {"q": "We need to slow down now.", "note": "[rewrite as a would rather preference]", "keys": ["i'd rather we slowed down", "i would rather we slowed down"], "full": "I'd rather we slowed down now."}, {"q": "This is overdue.", "note": "[rewrite using it's high time]", "keys": ["high time we addressed"], "full": "It's high time we addressed this."}, {"q": "We are short on budget.", "note": "[rewrite as a present wish]", "keys": ["i wish we had more budget"], "full": "I wish we had more budget."}];
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["hindsight is 20/20", "a missed opportunity", "overdue", "to course-correct", "a lesson learned", "better late than never"];
-var G_ENDINGS = [{"id": "a", "t": "something that should have happened already"}, {"id": "b", "t": "doing something late is still better than not at all"}, {"id": "c", "t": "a good chance that was not taken at the time"}, {"id": "d", "t": "it's easy to see the right choice after the fact"}, {"id": "e", "t": "to adjust direction after realizing a mistake"}, {"id": "f", "t": "something valuable understood only after a mistake"}];
-var G_KEY = ["d", "c", "a", "e", "f", "b"];
+var G_ENDINGS = [{"id": "a", "t": "it's easy to see the right choice after the fact"}, {"id": "b", "t": "a good chance that was not taken at the time"}, {"id": "c", "t": "something that should have happened already"}, {"id": "d", "t": "to adjust direction after realizing a mistake"}, {"id": "e", "t": "something valuable understood only after a mistake"}, {"id": "f", "t": "doing something late is still better than not at all"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "This fix is ______. We should have done it months ago.", "a": ["overdue"]}, {"q": "Skipping the review was a ______.", "a": ["missed opportunity"]}, {"q": "______, that call looked right at the time.", "a": ["Hindsight is 20/20"]}, {"q": "We need to ______ before this gets worse.", "a": ["course-correct"]}, {"q": "It's a ______, next time we'll test earlier.", "a": ["lesson learned"]}, {"q": "The fix landed late, but ______.", "a": ["better late than never"]}];

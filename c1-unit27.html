@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -594,8 +589,8 @@ var F_DATA = [{"q": "Our CFO confirmed the numbers.", "note": "[name the source 
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["off the record", "on background", "a leak", "an official line", "to go public", "to stonewall"];
-var G_ENDINGS = [{"id": "a", "t": "to deliberately refuse to give information or cooperate"}, {"id": "b", "t": "to release information publicly for the first time"}, {"id": "c", "t": "the approved, sanctioned public statement of a position"}, {"id": "d", "t": "said informally and not for attribution or publication"}, {"id": "e", "t": "information shared for context but not for direct quotation"}, {"id": "f", "t": "confidential information disclosed without authorization"}];
-var G_KEY = ["d", "e", "f", "c", "b", "a"];
+var G_ENDINGS = [{"id": "a", "t": "said informally and not for attribution or publication"}, {"id": "b", "t": "information shared for context but not for direct quotation"}, {"id": "c", "t": "confidential information disclosed without authorization"}, {"id": "d", "t": "the approved, sanctioned public statement of a position"}, {"id": "e", "t": "to release information publicly for the first time"}, {"id": "f", "t": "to deliberately refuse to give information or cooperate"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "She told me ______, so I can't quote her directly.", "a": ["off the record"]}, {"q": "The information was shared ______, just for context.", "a": ["on background"]}, {"q": "There's been a ______ about the merger talks.", "a": ["leak"]}, {"q": "The company's ______ is that no decision has been made.", "a": ["official line"]}, {"q": "They plan to ______ with the announcement next week.", "a": ["go public"]}, {"q": "Legal advised us to ______ until we have more facts.", "a": ["stonewall"]}];

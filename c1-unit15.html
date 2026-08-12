@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -598,12 +593,12 @@ function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You have solid data and want to sound confident but not absolute.", "a": 0, "note": "Confident, hedged: “This should hold up fine under normal conditions.”"}, {"q": "You have only a rough impression, not hard evidence.", "a": 1, "note": "Rough impression: “It seems to be a dosage issue, though I can't be sure yet.”"}, {"q": "You want to scope a claim so it doesn't sound universal.", "a": 2, "note": "Scoped claim: “This is largely a dosage issue, as far as we can tell.”"}, {"q": "You need to say something useful despite real uncertainty.", "a": 0, "note": "Useful under uncertainty: “The data suggests a trend, though it's still early.”"}];
 var E_OPTS = [{"label": "Confident, hedged"}, {"label": "Rough impression"}, {"label": "Scoped claim"}];
 function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
-var F_DATA = [{"q": "This will definitely respond well.", "note": "[soften into a likely, not certain, outcome]", "keys": ["should respond well"], "reject": ["definitely"], "full": "This should respond well."}, {"q": "It might possibly maybe work.", "note": "[remove the over-hedging, commit to one clear hedge]", "keys": ["might not work as expected", "might not work"], "reject": ["possibly maybe"], "full": "It might not work as expected."}, {"q": "This is a dosage issue.", "note": "[scope it to “mostly,” leaving room for other causes]", "keys": ["largely a dosage issue"], "full": "This is largely a dosage issue."}, {"q": "The trial failed.", "note": "[only use if you're not sure; otherwise leave unhedged as a plain fact]", "keys": ["seems to have failed"], "full": "The trial seems to have failed."}];
+var F_DATA = [{"q": "This will definitely respond well.", "note": "[soften into a likely, not certain, outcome]", "keys": ["should respond well"], "reject": ["definitely"], "full": "This should respond well."}, {"q": "It might possibly maybe work.", "note": "[remove the over-hedging, commit to one clear hedge]", "keys": ["might not work as expected", "might not work"], "reject": ["possibly maybe"], "full": "It might not work as expected."}, {"q": "The side effect is dose-related.", "note": "[scope it to “mostly,” leaving room for other causes]", "keys": ["largely dose-related"], "full": "The side effect is largely dose-related."}, {"q": "The trial failed.", "note": "[only use if you're not sure; otherwise leave unhedged as a plain fact]", "keys": ["seems to have failed"], "full": "The trial seems to have failed."}];
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["as far as I can tell", "by and large", "a rough estimate", "give or take", "early indications", "on the whole"];
-var G_ENDINGS = [{"id": "a", "t": "the first, preliminary signs of a result"}, {"id": "b", "t": "an approximate figure, not exact"}, {"id": "c", "t": "based on what I currently know, though I could be wrong"}, {"id": "d", "t": "considering everything together, overall"}, {"id": "e", "t": "mostly, in general, with some exceptions"}, {"id": "f", "t": "approximately, with some margin of error"}];
-var G_KEY = ["c", "e", "b", "f", "a", "d"];
+var G_ENDINGS = [{"id": "a", "t": "based on what I currently know, though I could be wrong"}, {"id": "b", "t": "mostly, in general, with some exceptions"}, {"id": "c", "t": "an approximate figure, not exact"}, {"id": "d", "t": "approximately, with some margin of error"}, {"id": "e", "t": "the first, preliminary signs of a result"}, {"id": "f", "t": "considering everything together, overall"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "______, this should be a quick fix.", "a": ["As far as I can tell"]}, {"q": "______ are promising, but it's early.", "a": ["Early indications"]}, {"q": "It'll take three weeks, ______ a few days.", "a": ["give or take"]}, {"q": "______, the plan is sound.", "a": ["By and large"]}, {"q": "That's just a ______, not a final number.", "a": ["rough estimate"]}, {"q": "______, this is the right call, this fix should work.", "a": ["On the whole"]}];

@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -202,28 +197,40 @@
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
     <p class="body-copy">Present perfect and past simple both talk about the past, but they file it differently. The past simple drops an event into finished time: a moment that is over and cut off from now. The present perfect keeps the event tied to the present, because the time frame is still open or the result still stands. That split is why the status update lives on this contrast. "I sent the report" files it under done. "I've sent the report" says it is done and it is in your inbox now, ready for what you do next.</p>
+
     <div class="split">
       <div class="card-col">
         <h4>Past simple</h4>
-        <dl><dt>Form</dt><dd>verb + -ed, or the irregular past form</dd><dt>Meaning</dt><dd>a finished action in finished time, disconnected from now</dd><dt>Use it to</dt><dd>report what happened at a specific past moment</dd></dl>
+        <dl>
+          <dt>Form</dt><dd>verb + -ed, or the irregular past form</dd>
+          <dt>Meaning</dt><dd>a finished action in finished time, disconnected from now</dd>
+          <dt>Use it to</dt><dd>report what happened at a specific past moment</dd>
+        </dl>
         <div class="eg">We shipped the update on Tuesday.</div>
       </div>
       <div class="card-col">
         <h4>Present perfect</h4>
-        <dl><dt>Form</dt><dd>have or has + past participle</dd><dt>Meaning</dt><dd>a past action whose time is still open or whose result still stands</dd><dt>Use it to</dt><dd>connect a past action to the present situation</dd></dl>
+        <dl>
+          <dt>Form</dt><dd>have or has + past participle</dd>
+          <dt>Meaning</dt><dd>a past action whose time is still open or whose result still stands</dd>
+          <dt>Use it to</dt><dd>connect a past action to the present situation</dd>
+        </dl>
         <div class="eg">We've shipped the update, so it's live now.</div>
       </div>
     </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
       <p><b>Keep finished-time markers off the present perfect.</b> Words that pin an event to a dead moment (yesterday, last Monday, at 9, in 2023) force the past simple. Write "I called them yesterday," never "I've called them yesterday."</p>
       <p><b>Don't seal a live result in the past simple.</b> "I fixed it" reports a past event; "I've fixed it" says the fix is in place now. When the result is the point, reach for the present perfect.</p>
     </div>
+
     <div class="callout">
       <p><b>American / British English.</b></p>
       <p><b>Just, already, yet.</b> British English keeps these with the present perfect: "I've just sent it." American English often allows the past simple too: "I just sent it." This book uses the present perfect, which is correct on both sides of the Atlantic.</p>
       <p><b>Past participle of get.</b> American "we've gotten sign-off"; British "we've got sign-off." This book uses "gotten."</p>
     </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Ready-made status-update lines. The highlighted slot changes; the tense sets how live the news sounds.</p>
     <ul class="moves">
@@ -233,9 +240,10 @@
       <li>So far this quarter, we've <span class="slot">[closed / settled]</span> the case.</li>
       <li>I've just <span class="slot">[filed / sent]</span> it.</li>
     </ul>
-    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Where each move sits</h3>
+
+    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:36px 0 10px;">Where each move sits</h3>
     <div class="diagram">
-<svg viewBox="0 0 700 322" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline showing past simple as a closed event with a gap before now, and present perfect as a band reaching up to now">
+      <svg viewBox="0 0 700 322" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline showing past simple as a closed event with a gap before now, and present perfect as a band reaching up to now">
         <defs>
           <marker id="arrH" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
             <path d="M0,0 L9,4.5 L0,9 z" fill="#6B6F76"/>
@@ -269,12 +277,14 @@
       </svg>
       <p class="diagram-cap">The past simple drops an event into finished time, with a gap before now. The present perfect reaches up to now, so the result still stands.</p>
     </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
     <p class="body-copy">Under the pressure of a standup, you have no spare attention to build a tense from a rule. So store two ready frames instead. "We did it at a past time" is your closed frame; "We've done it" is your live frame. Once those are automatic, the rule stops mattering and the real choice surfaces: are you filing this away, or putting it on the table for what happens next?</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the form accurately, then control the tone, then use the words, then say it for real.</p>
 
+    <!-- A -->
     <div class="ex-block">
       <span class="ex-label">A</span>
       <p class="ex-title">Complete the form</p>
@@ -282,6 +292,8 @@
       <div id="exA"></div>
       <button class="check-btn" onclick="checkA()">Check my answers</button>
     </div>
+
+    <!-- B -->
     <div class="ex-block">
       <span class="ex-label">B</span>
       <p class="ex-title">Spot and fix the error</p>
@@ -290,6 +302,8 @@
       <button class="check-btn" onclick="checkB()">Check my answers</button>
       <p class="soft-note">This checks whether the corrected form appears in your sentence, not full punctuation. Check your wording against the key.</p>
     </div>
+
+    <!-- C -->
     <div class="ex-block">
       <span class="ex-label">C</span>
       <p class="ex-title">Rewrite as a live update</p>
@@ -298,6 +312,8 @@
       <button class="check-btn" onclick="checkC()">Check my answers</button>
       <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
     </div>
+
+    <!-- D -->
     <div class="ex-block">
       <span class="ex-label">D</span>
       <p class="ex-title">Match the halves</p>
@@ -305,12 +321,16 @@
       <div id="exD"></div>
       <button class="check-btn" onclick="checkD()">Check my answers</button>
     </div>
+
+    <!-- E -->
     <div class="ex-block">
       <span class="ex-label">E</span>
       <p class="ex-title">Choose the framing</p>
       <p class="ex-instr">For each aim, choose the framing the moment needs: closed and done, or live and current.</p>
       <div id="exE"></div>
     </div>
+
+    <!-- F -->
     <div class="ex-block">
       <span class="ex-label">F</span>
       <p class="ex-title">Reframe the report</p>
@@ -319,6 +339,8 @@
       <button class="check-btn" onclick="checkF()">Check my answers</button>
       <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
     </div>
+
+    <!-- G -->
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary: status-update expressions</p>
@@ -326,6 +348,8 @@
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
+
+    <!-- H -->
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
@@ -333,6 +357,8 @@
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
+
+    <!-- I -->
     <div class="ex-block">
       <span class="ex-label">I</span>
       <p class="ex-title">Over to you</p>
@@ -357,11 +383,10 @@
 </div>
 
 <script>
-var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-2388", "AL-5227", "AN-3666", "AO-1929", "AQ-1403", "AR-1212", "AS-8941", "AT-3988", "AU-9614", "AW-1121", "AW-5920", "AY-3957", "AY-8830", "BB-7565", "BI-0990", "BJ-0189", "BJ-2537", "BJ-7138", "BL-1583", "BL-3205", "BL-9902", "BN-2930", "BO-5513", "BQ-9974", "BU-2315", "BU-3356", "BU-4201", "BW-0098", "BY-5952", "BY-8964", "CA-3321", "CA-5707", "CA-7225", "CE-4217", "CE-7673", "CG-8575", "CH-3047", "CM-5599", "CN-0288", "CO-2672", "CO-7250", "CP-0265", "CP-3323", "CQ-7403", "CQ-8469", "CR-3646", "CS-4766", "CU-8380", "CU-8619", "CX-8573", "CX-9951", "CZ-8599", "DB-1837", "DD-7645", "DE-3739", "DE-6860", "DF-6761", "DH-1654", "DH-4587", "DI-3846", "DJ-1666", "DJ-8783", "DJ-9635", "DK-6801", "DR-4798", "DU-0538", "DU-2870", "DU-7191", "DY-1342", "DZ-6215", "EA-5295", "EB-7574", "EI-2870", "EJ-2435", "EJ-7588", "EK-3626", "EL-5403", "EL-7751", "EM-4758", "EN-5720", "EP-8690", "EU-1749", "EU-4668", "EY-0156", "EY-5028", "EY-5771", "EY-8988", "EZ-4901", "EZ-7238", "FA-2480", "FA-3229", "FD-0817", "FD-2307", "FD-2954", "FD-9547", "FF-6110", "FF-8319", "FH-0212", "FI-7378", "FK-4255", "FN-0921", "FN-5013", "FO-3645", "FS-3397", "FU-5114", "FV-4372", "FW-7388", "FX-5735", "FX-8026", "GA-7376", "GC-0379", "GC-0593", "GC-7846", "GD-4624", "GD-8256", "GE-7330", "GG-5258", "GJ-2971", "GJ-8315", "GK-1640", "GK-6237", "GO-2922", "GQ-8518", "GS-0957", "GU-4499", "GX-1422", "GY-4850", "GY-8831", "GZ-1807", "HC-5667", "HD-6398", "HD-6695", "HG-8960", "HI-5126", "HM-0814", "HN-5191", "HR-1799", "HS-0660", "HS-8959", "HT-1159", "HU-6366", "HV-7356", "HX-4184", "HY-8543", "HZ-0868", "HZ-4384", "HZ-4394", "IA-9592", "ID-9262", "IG-2279", "IH-1623", "II-1515", "IL-0808", "IL-2856", "IM-2202", "IN-2853", "IP-2206", "IP-6428", "IS-6888", "IT-7177", "IT-9370", "IU-6890", "IW-7209", "IW-7334", "IX-7882", "IZ-4596", "IZ-5460", "JA-3789", "JA-8127", "JB-4864", "JB-5887", "JB-8392", "JD-3404", "JE-8781", "JG-5409", "JI-6836", "JI-7780", "JJ-1294", "JK-5150", "JL-9806", "JN-9881", "JO-4953", "JP-2813", "JR-6563", "JT-5889", "JU-0546", "KC-4490", "KD-3748", "KF-9500", "KG-2805", "KH-1496", "KM-0226", "KM-6267", "KM-9998", "KN-9232", "KO-2249", "KP-5927", "KQ-1642", "KQ-2174", "KQ-4629", "KS-0562", "KS-2035", "KT-5622", "KX-3719", "KX-5687", "KZ-9069", "LA-3641", "LC-9505", "LF-2835", "LF-3440", "LF-5723", "LG-4259", "LH-0762", "LI-1652", "LJ-4532", "LK-6242", "LM-2637", "LP-6442", "LR-3052", "LR-3190", "LR-3876", "LU-6959", "LY-2430", "LY-8251", "MB-0985", "MC-0432", "MD-5355", "MD-6035", "MF-4039", "MH-8350", "MK-6490", "ML-1094", "ML-6536", "MM-0505", "MM-4633", "MN-6227", "MP-2446", "MU-0263", "MU-1972", "MU-6200", "MV-9345", "MW-3909", "MX-7105", "MZ-7757", "MZ-9673", "NA-6476", "ND-2505", "NE-2445", "NG-4097", "NI-0149", "NI-1933", "NM-4728", "NM-6484", "NQ-0471", "NQ-0763", "NQ-8797", "NS-2836", "NT-1247", "NT-2961", "NT-8096", "NV-2259", "NW-4877", "NX-8284", "OB-2118", "OC-9941", "OD-2269", "OH-9176", "OK-1376", "OL-9223", "OM-3600", "OM-9841", "OO-7410", "OP-0397", "OQ-0089", "OQ-6861", "OS-1295", "OT-0558", "OU-1086", "OZ-3311", "PE-6681", "PF-1393", "PF-5372", "PF-6218", "PI-7454", "PM-5473", "PO-3136", "PO-4375", "PO-6594", "PP-5386", "PW-1775", "PW-8454", "QA-2276", "QB-9637", "QG-4980", "QI-4570", "QI-8762", "QJ-3229", "QK-9389", "QK-9591", "QP-1713", "QP-2800", "QU-3388", "QU-6791", "QV-6067", "QX-4220", "RA-0723", "RA-7714", "RA-9103", "RB-3503", "RC-9055", "RG-8909", "RG-8964", "RG-9044", "RH-0746", "RH-6442", "RN-2614", "RP-8912", "RR-0677", "RS-6858", "RS-6869", "RT-0649", "RT-4827", "RT-9471", "RV-9405", "RW-6355", "RY-1670", "RY-3755", "RY-4569", "SA-4126", "SB-4542", "SC-6853", "SD-6526", "SD-8485", "SH-2111", "SI-6535", "SK-0128", "SK-6149", "SL-2687", "SL-6976", "SL-7928", "SN-9048", "SO-9187", "SQ-1122", "SR-9043", "SR-9835", "ST-1671", "SW-6772", "SX-8305", "SY-5519", "SY-7251", "TB-1236", "TC-3500", "TC-4264", "TD-4528", "TE-3783", "TF-4337", "TF-5946", "TG-4810", "TH-0894", "TL-5384", "TN-6202", "TO-4008", "TO-7503", "TP-3931", "TR-3063", "TV-0181", "TW-7963", "TW-9135", "TY-7002", "UA-5949", "UB-7783", "UB-9445", "UE-0444", "UF-5448", "UG-1507", "UH-0750", "UJ-4353", "UL-1840", "UM-7749", "UN-1590", "UO-0016", "UO-7188", "UQ-0062", "US-3875", "US-5935", "US-6661", "US-7320", "UT-3058", "UT-3191", "UW-5490", "VA-8631", "VB-1375", "VC-0785", "VC-8246", "VC-8661", "VG-3345", "VG-5533", "VG-7188", "VH-6911", "VI-0235", "VJ-9942", "VK-0601", "VK-7802", "VL-5404", "VM-7528", "VN-0611", "VP-6098", "VQ-8570", "VS-1740", "VS-2601", "VS-6960", "VT-6564", "VW-0371", "VX-3419", "VZ-1036", "VZ-1836", "WA-6224", "WB-0446", "WC-4705", "WC-5293", "WC-7126", "WG-1442", "WG-4319", "WG-7876", "WH-7291", "WI-6394", "WL-6650", "WM-1936", "WM-3402", "WM-3514", "WO-4160", "WO-9743", "WP-5457", "WV-1968", "WW-2749", "WY-0407", "XC-0115", "XC-4025", "XC-5579", "XE-5640", "XE-8199", "XE-8990", "XJ-7882", "XL-0683", "XL-1983", "XL-8634", "XO-8511", "XP-7585", "XQ-3502", "XR-5738", "XT-4226", "XU-8893", "XV-2651", "XW-2661", "YA-4779", "YA-6871", "YD-8536", "YF-6161", "YH-6239", "YI-0086", "YI-0777", "YI-3786", "YK-1311", "YK-7066", "YQ-7512", "YU-2273", "YU-9619", "YV-6712", "ZC-0180", "ZD-3923", "ZD-9426", "ZE-9214", "ZF-5917", "ZF-6868", "ZG-1159", "ZG-5395", "ZH-6679", "ZH-9625", "ZK-7397", "ZL-0255", "ZM-4958", "ZN-2112", "ZN-7991", "ZN-9807", "ZO-3469", "ZO-4134", "ZP-7760", "ZQ-4512", "ZQ-5687", "ZU-2853", "ZU-9981", "ZV-9981", "ZW-7998", "ZY-0638", "ZZ-2645"];
+/* ===== ACCESS CODES (shared across the whole series) ===== */
+var VALID_CODES = ["AB-6567","AD-1652","AF-3892","AF-6525","AH-6558","AK-2388","AL-5227","AN-3666","AO-1929","AQ-1403","AR-1212","AS-8941","AT-3988","AU-9614","AW-1121","AW-5920","AY-3957","AY-8830","BB-7565","BI-0990","BJ-0189","BJ-2537","BJ-7138","BL-1583","BL-3205","BL-9902","BN-2930","BO-5513","BQ-9974","BU-2315","BU-3356","BU-4201","BW-0098","BY-5952","BY-8964","CA-3321","CA-5707","CA-7225","CE-4217","CE-7673","CG-8575","CH-3047","CM-5599","CN-0288","CO-2672","CO-7250","CP-0265","CP-3323","CQ-7403","CQ-8469","CR-3646","CS-4766","CU-8380","CU-8619","CX-8573","CX-9951","CZ-8599","DB-1837","DD-7645","DE-3739","DE-6860","DF-6761","DH-1654","DH-4587","DI-3846","DJ-1666","DJ-8783","DJ-9635","DK-6801","DR-4798","DU-0538","DU-2870","DU-7191","DY-1342","DZ-6215","EA-5295","EB-7574","EI-2870","EJ-2435","EJ-7588","EK-3626","EL-5403","EL-7751","EM-4758","EN-5720","EP-8690","EU-1749","EU-4668","EY-0156","EY-5028","EY-5771","EY-8988","EZ-4901","EZ-7238","FA-2480","FA-3229","FD-0817","FD-2307","FD-2954","FD-9547","FF-6110","FF-8319","FH-0212","FI-7378","FK-4255","FN-0921","FN-5013","FO-3645","FS-3397","FU-5114","FV-4372","FW-7388","FX-5735","FX-8026","GA-7376","GC-0379","GC-0593","GC-7846","GD-4624","GD-8256","GE-7330","GG-5258","GJ-2971","GJ-8315","GK-1640","GK-6237","GO-2922","GQ-8518","GS-0957","GU-4499","GX-1422","GY-4850","GY-8831","GZ-1807","HC-5667","HD-6398","HD-6695","HG-8960","HI-5126","HM-0814","HN-5191","HR-1799","HS-0660","HS-8959","HT-1159","HU-6366","HV-7356","HX-4184","HY-8543","HZ-0868","HZ-4384","HZ-4394","IA-9592","ID-9262","IG-2279","IH-1623","II-1515","IL-0808","IL-2856","IM-2202","IN-2853","IP-2206","IP-6428","IS-6888","IT-7177","IT-9370","IU-6890","IW-7209","IW-7334","IX-7882","IZ-4596","IZ-5460","JA-3789","JA-8127","JB-4864","JB-5887","JB-8392","JD-3404","JE-8781","JG-5409","JI-6836","JI-7780","JJ-1294","JK-5150","JL-9806","JN-9881","JO-4953","JP-2813","JR-6563","JT-5889","JU-0546","KC-4490","KD-3748","KF-9500","KG-2805","KH-1496","KM-0226","KM-6267","KM-9998","KN-9232","KO-2249","KP-5927","KQ-1642","KQ-2174","KQ-4629","KS-0562","KS-2035","KT-5622","KX-3719","KX-5687","KZ-9069","LA-3641","LC-9505","LF-2835","LF-3440","LF-5723","LG-4259","LH-0762","LI-1652","LJ-4532","LK-6242","LM-2637","LP-6442","LR-3052","LR-3190","LR-3876","LU-6959","LY-2430","LY-8251","MB-0985","MC-0432","MD-5355","MD-6035","MF-4039","MH-8350","MK-6490","ML-1094","ML-6536","MM-0505","MM-4633","MN-6227","MP-2446","MU-0263","MU-1972","MU-6200","MV-9345","MW-3909","MX-7105","MZ-7757","MZ-9673","NA-6476","ND-2505","NE-2445","NG-4097","NI-0149","NI-1933","NM-4728","NM-6484","NQ-0471","NQ-0763","NQ-8797","NS-2836","NT-1247","NT-2961","NT-8096","NV-2259","NW-4877","NX-8284","OB-2118","OC-9941","OD-2269","OH-9176","OK-1376","OL-9223","OM-3600","OM-9841","OO-7410","OP-0397","OQ-0089","OQ-6861","OS-1295","OT-0558","OU-1086","OZ-3311","PE-6681","PF-1393","PF-5372","PF-6218","PI-7454","PM-5473","PO-3136","PO-4375","PO-6594","PP-5386","PW-1775","PW-8454","QA-2276","QB-9637","QG-4980","QI-4570","QI-8762","QJ-3229","QK-9389","QK-9591","QP-1713","QP-2800","QU-3388","QU-6791","QV-6067","QX-4220","RA-0723","RA-7714","RA-9103","RB-3503","RC-9055","RG-8909","RG-8964","RG-9044","RH-0746","RH-6442","RN-2614","RP-8912","RR-0677","RS-6858","RS-6869","RT-0649","RT-4827","RT-9471","RV-9405","RW-6355","RY-1670","RY-3755","RY-4569","SA-4126","SB-4542","SC-6853","SD-6526","SD-8485","SH-2111","SI-6535","SK-0128","SK-6149","SL-2687","SL-6976","SL-7928","SN-9048","SO-9187","SQ-1122","SR-9043","SR-9835","ST-1671","SW-6772","SX-8305","SY-5519","SY-7251","TB-1236","TC-3500","TC-4264","TD-4528","TE-3783","TF-4337","TF-5946","TG-4810","TH-0894","TL-5384","TN-6202","TO-4008","TO-7503","TP-3931","TR-3063","TV-0181","TW-7963","TW-9135","TY-7002","UA-5949","UB-7783","UB-9445","UE-0444","UF-5448","UG-1507","UH-0750","UJ-4353","UL-1840","UM-7749","UN-1590","UO-0016","UO-7188","UQ-0062","US-3875","US-5935","US-6661","US-7320","UT-3058","UT-3191","UW-5490","VA-8631","VB-1375","VC-0785","VC-8246","VC-8661","VG-3345","VG-5533","VG-7188","VH-6911","VI-0235","VJ-9942","VK-0601","VK-7802","VL-5404","VM-7528","VN-0611","VP-6098","VQ-8570","VS-1740","VS-2601","VS-6960","VT-6564","VW-0371","VX-3419","VZ-1036","VZ-1836","WA-6224","WB-0446","WC-4705","WC-5293","WC-7126","WG-1442","WG-4319","WG-7876","WH-7291","WI-6394","WL-6650","WM-1936","WM-3402","WM-3514","WO-4160","WO-9743","WP-5457","WV-1968","WW-2749","WY-0407","XC-0115","XC-4025","XC-5579","XE-5640","XE-8199","XE-8990","XJ-7882","XL-0683","XL-1983","XL-8634","XO-8511","XP-7585","XQ-3502","XR-5738","XT-4226","XU-8893","XV-2651","XW-2661","YA-4779","YA-6871","YD-8536","YF-6161","YH-6239","YI-0086","YI-0777","YI-3786","YK-1311","YK-7066","YQ-7512","YU-2273","YU-9619","YV-6712","ZC-0180","ZD-3923","ZD-9426","ZE-9214","ZF-5917","ZF-6868","ZG-1159","ZG-5395","ZH-6679","ZH-9625","ZK-7397","ZL-0255","ZM-4958","ZN-2112","ZN-7991","ZN-9807","ZO-3469","ZO-4134","ZP-7760","ZQ-4512","ZQ-5687","ZU-2853","ZU-9981","ZV-9981","ZW-7998","ZY-0638","ZZ-2645"];
 
-/* ===== SERIES-WIDE UNLOCK =====
-   'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
-   honored so students who already entered a code never have to enter it again. */
+/* Series-wide unlock, with the legacy phrasal-verbs key honored. */
 function isUnlocked(){
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -397,8 +422,7 @@ function maybeShowPrivacyModal(){
   if(!privacySeen()){ document.getElementById('privacyModal').classList.add('shown'); }
 }
 
-/* ===== SCORING =====
-   Re-checking a section replaces its previous score instead of adding to it. */
+/* ===== SCORING ===== */
 var gradedGroups = {}, groupTotals = {}, totalCorrect = 0, totalGraded = 0;
 function registerGrade(key, correct, total){
   groupTotals[key] = total;
@@ -410,7 +434,7 @@ function registerGrade(key, correct, total){
 }
 function updateScore(){ document.getElementById('scoreText').textContent = totalCorrect + " / " + totalGraded; }
 
-/* ===== MATCHING HELPERS ===== */
+/* Normalizer: lowercase, straighten quotes, strip end punctuation, collapse spaces. */
 function norm(s){
   return s.toLowerCase()
     .replace(/[\u2018\u2019]/g,"'")
@@ -422,195 +446,302 @@ function norm(s){
 function contains(hay, needle){ return norm(hay).indexOf(norm(needle)) !== -1; }
 
 /* Canonical form for verb-form answers. Expands contractions, drops a leading or
-   intervening subject, flattens slash notation. "I've worked", "'ve worked" and
-   "have worked" all pass; a wrong tense still fails. */
+   intervening subject, and flattens the slash notation, so "I've worked",
+   "'ve worked" and "have worked" all count, while a wrong tense still fails. */
 function canon(s){
   var x = norm(s);
   var pairs = [
     [/\bi've\b/g,"i have"], [/\bwe've\b/g,"we have"], [/\bthey've\b/g,"they have"],
     [/\byou've\b/g,"you have"], [/\bhe's\b/g,"he has"], [/\bshe's\b/g,"she has"],
-    [/\bit's\b/g,"it has"], [/\bwe'd\b/g,"we had"], [/\bi'd\b/g,"i had"],
-    [/\bthey'd\b/g,"they had"], [/\bshe'd\b/g,"she had"], [/\bhe'd\b/g,"he had"],
-    [/\bwe'll\b/g,"we will"], [/\bi'll\b/g,"i will"], [/\bthey'll\b/g,"they will"],
-    [/\bshe'll\b/g,"she will"], [/\bhe'll\b/g,"he will"], [/\bit'll\b/g,"it will"],
-    [/\bwe're\b/g,"we are"], [/\bthey're\b/g,"they are"], [/\bi'm\b/g,"i am"],
-    [/\bhaven't\b/g,"have not"], [/\bhasn't\b/g,"has not"], [/\bhadn't\b/g,"had not"],
-    [/\bdidn't\b/g,"did not"], [/\bwon't\b/g,"will not"],
-    [/^'ve\b/,"have"], [/^'s\b/,"has"], [/^'d\b/,"had"], [/^'ll\b/,"will"]
+    [/\bit's\b/g,"it has"], [/\bhaven't\b/g,"have not"], [/\bhasn't\b/g,"has not"],
+    [/\bdidn't\b/g,"did not"], [/^'ve\b/,"have"], [/^'s\b/,"has"]
   ];
   for(var i=0;i<pairs.length;i++){ x = x.replace(pairs[i][0], pairs[i][1]); }
   x = x.replace(/\s*\/\s*/g,' ').replace(/\.{2,}/g,' ');
-  x = x.replace(/^(i|you|we|they|he|she|it|the system|the team|the client|the batch|the line|quality|nobody)\s+/,'');
+  x = x.replace(/^(i|you|we|they|he|she|it|the system|the team|the client)\s+/,'');
   x = x.replace(/\b(did|do|does|have|has|had|will|would)\s+(i|you|we|they|he|she|it)\s+/,'$1 ');
   return x.replace(/\s+/g,' ').trim();
 }
 function matchesForm(v, list){
   return list.some(function(a){ return canon(v) === canon(a); });
 }
-function matchesLoose(v, list){
-  return list.some(function(a){
-    return norm(v).replace(/^(a|an|the)\s+/,'').replace(/-/g,' ')
-        === norm(a).replace(/^(a|an|the)\s+/,'').replace(/-/g,' ');
-  });
-}
 
-/* ===== EXERCISE BUILDERS ===== */
-function buildForm(L, data, ph){
-  var el = document.getElementById('ex'+L); el.innerHTML='';
-  data.forEach(function(item,i){
+/* ===== A. Complete the form ===== */
+var A_DATA = [
+  {q:"We ______ (finish) the audit last week.", a:["finished"]},
+  {q:"I ______ (work) here since the merger.", a:["have worked","'ve worked","i have worked"]},
+  {q:"The system ______ (fail) at 2 a.m.", a:["failed"]},
+  {q:"She ______ (close) more deals than anyone so far this quarter.", a:["has closed","'s closed"]},
+  {q:"When ______ you ______ (join) the team?", a:["did / join","did join","did you join"]},
+  {q:"We ______ (not / hear) from them for two weeks now.", a:["haven't heard","have not heard"]}
+];
+function buildA(){
+  var el = document.getElementById('exA'); el.innerHTML='';
+  A_DATA.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      '<input type="text" id="A'+i+'" placeholder="type the verb form"><div class="fb" id="Afb'+i+'"></div>';
     el.appendChild(d);
   });
 }
-function checkForm(L, data){
+function checkA(){
   var c=0;
-  data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
-    var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+  A_DATA.forEach(function(item,i){
+    var v=document.getElementById('A'+i).value;
+    var fb=document.getElementById('Afb'+i);
+    var ok=matchesForm(v, item.a);
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
   });
-  registerGrade(L,c,data.length);
+  registerGrade('A',c,A_DATA.length);
 }
 
-function buildRewrite(L, data, ph){
-  var el=document.getElementById('ex'+L); el.innerHTML='';
-  data.forEach(function(item,i){
-    var n = item.note ? ' <i style="color:var(--gray);">'+item.note+'</i>' : '';
+/* ===== B. Spot and fix the error ===== */
+var B_DATA = [
+  {q:"I've sent the contract last Tuesday.", key:"i sent the contract", full:"I sent the contract last Tuesday."},
+  {q:"When have you filed the motion?", key:"when did you file", full:"When did you file the motion?"},
+  {q:"We have shipped it two days ago.", key:"we shipped it", full:"We shipped it two days ago."},
+  {q:"I know her since the last offsite.", key:"known her since", full:"I have known her since the last offsite."},
+  {q:"We work together for three years now.", key:"worked together for", full:"We have worked together for three years now."}
+];
+function buildB(){
+  var el=document.getElementById('exB'); el.innerHTML='';
+  B_DATA.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
-    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+n+'</div>'+
-      '<input type="text" class="wide" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
+      '<input type="text" class="wide" id="B'+i+'" placeholder="rewrite it correctly"><div class="fb" id="Bfb'+i+'"></div>';
     el.appendChild(d);
   });
 }
-function checkRewrite(L, data){
+function checkB(){
   var c=0;
-  data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
-    var fb=document.getElementById(L+'fb'+i);
-    var hit=item.keys.some(function(k){ return contains(v,k); });
-    /* "reject" blocks answers that left the original error in place */
-    if(hit && item.reject){
-      hit = !item.reject.some(function(r){ return contains(v,r); });
-    }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+  B_DATA.forEach(function(item,i){
+    var v=document.getElementById('B'+i).value;
+    var fb=document.getElementById('Bfb'+i);
+    if(contains(v,item.key)){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
-  registerGrade(L,c,data.length);
+  registerGrade('B',c,B_DATA.length);
 }
 
-function buildMatch(L, openers, endings, bold){
-  var el=document.getElementById('ex'+L); el.innerHTML='';
-  openers.forEach(function(op,i){
-    var opts='<option value="">choose one</option>';
-    endings.forEach(function(e){ opts+='<option value="'+e.id+'">'+e.id+'. '+e.t+'</option>'; });
-    var label = bold ? '<b>'+op+'</b>' : op;
+/* ===== C. Rewrite as a live update ===== */
+var C_DATA = [
+  {q:"I fixed the bug yesterday.", key:"i've fixed the bug", alt:"i have fixed the bug", full:"I've fixed the bug."},
+  {q:"We hit the target last month.", key:"we've hit the target", alt:"we have hit the target", full:"We've hit the target."},
+  {q:"The client approved the budget on Monday.", key:"has approved the budget", alt:"client has approved", full:"The client has approved the budget."},
+  {q:"I sent you the file this morning.", key:"i've sent you the file", alt:"i have sent you the file", full:"I've sent you the file."},
+  {q:"We resolved all the blockers on Friday.", key:"we've resolved all the blockers", alt:"we have resolved all the blockers", full:"We've resolved all the blockers."}
+];
+function buildC(){
+  var el=document.getElementById('exC'); el.innerHTML='';
+  C_DATA.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
-    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+label+'</div>'+
-      '<select class="match-select" id="'+L+i+'">'+opts+'</select><div class="fb" id="'+L+'fb'+i+'"></div>';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
+      '<input type="text" class="wide" id="C'+i+'" placeholder="rewrite as a live update"><div class="fb" id="Cfb'+i+'"></div>';
     el.appendChild(d);
   });
 }
-function checkMatch(L, endings, key){
+function checkC(){
   var c=0;
-  key.forEach(function(k,i){
-    var v=document.getElementById(L+i).value;
-    var fb=document.getElementById(L+'fb'+i);
-    var txt=''; endings.forEach(function(e){ if(e.id===k) txt=e.t; });
+  C_DATA.forEach(function(item,i){
+    var v=document.getElementById('C'+i).value;
+    var fb=document.getElementById('Cfb'+i);
+    if(contains(v,item.key)||contains(v,item.alt)){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Model answer: '+item.full; fb.className='fb bad'; }
+  });
+  registerGrade('C',c,C_DATA.length);
+}
+
+/* ===== D. Match the halves ===== */
+var D_OPENERS = [
+  "We've onboarded five hires",
+  "We onboarded the contractor",
+  "I've led this squad",
+  "I led the case review",
+  "Revenue has climbed"
+];
+var D_ENDINGS = [
+  {id:"a", t:"since January."},
+  {id:"b", t:"on his first day."},
+  {id:"c", t:"so far this year."},
+  {id:"d", t:"every month this quarter."},
+  {id:"e", t:"two quarters ago."}
+];
+var D_KEY = ["c","b","a","e","d"];
+function buildD(){
+  var el=document.getElementById('exD'); el.innerHTML='';
+  D_OPENERS.forEach(function(op,i){
+    var opts='<option value="">choose an ending</option>';
+    D_ENDINGS.forEach(function(e){ opts+='<option value="'+e.id+'">'+e.id+'. '+e.t+'</option>'; });
+    var d=document.createElement('div'); d.className='q';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+op+'</div>'+
+      '<select class="match-select" id="D'+i+'">'+opts+'</select><div class="fb" id="Dfb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkD(){
+  var c=0;
+  D_KEY.forEach(function(k,i){
+    var v=document.getElementById('D'+i).value;
+    var fb=document.getElementById('Dfb'+i);
+    var txt='';
+    D_ENDINGS.forEach(function(e){ if(e.id===k) txt=e.t; });
     if(v===k){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+k+'. '+txt; fb.className='fb bad'; }
   });
-  registerGrade(L,c,key.length);
+  registerGrade('D',c,D_KEY.length);
 }
 
-var CHOICE_PICKED = {};
-function buildChoice(L, data, opts){
-  var el=document.getElementById('ex'+L); el.innerHTML='';
-  CHOICE_PICKED[L] = {};
-  data.forEach(function(item,i){
-    var btns='';
-    opts.forEach(function(o,oi){
-      btns+='<button class="choice-btn" id="'+L+i+'b'+oi+'" onclick="pickChoice(\''+L+'\','+i+','+oi+')">'+o.label+'</button>';
-    });
+/* ===== E. Choose the framing ===== */
+var E_DATA = [
+  {q:"The crisis is over and you want it to read as closed, not something still hanging over the team.",
+   a:"Closed", note:"Past simple: \u201cWe fixed it last night; it's handled.\u201d"},
+  {q:"The fix is fresh and you want the room to feel it still bears on today's plan.",
+   a:"Live", note:"Present perfect: \u201cWe've fixed it, so we're clear to roll out.\u201d"},
+  {q:"You are giving a running count in a period that is not over yet.",
+   a:"Live", note:"Present perfect, open period: \u201cWe've closed twelve tickets so far this week.\u201d"},
+  {q:"You are logging a milestone at a specific past date for the record.",
+   a:"Closed", note:"Past simple, on the record: \u201cWe launched on March 3.\u201d"}
+];
+function buildE(){
+  var el=document.getElementById('exE'); el.innerHTML='';
+  E_DATA.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<div class="choices">'+btns+'</div><div class="fb" id="'+L+'fb'+i+'"></div>';
+      '<div class="choices">'+
+        '<button class="choice-btn" id="E'+i+'closed" onclick="pickE('+i+',\'Closed\')">Closed and done</button>'+
+        '<button class="choice-btn" id="E'+i+'live" onclick="pickE('+i+',\'Live\')">Live and current</button>'+
+      '</div><div class="fb" id="Efb'+i+'"></div>';
     el.appendChild(d);
   });
 }
-function pickChoice(L, i, oi){
-  var data = window[L+'_DATA'], opts = window[L+'_OPTS'];
-  CHOICE_PICKED[L][i] = oi;
-  opts.forEach(function(o,j){ document.getElementById(L+i+'b'+j).className='choice-btn'; });
-  var fb=document.getElementById(L+'fb'+i);
-  var correct = data[i].a;
-  if(oi === correct){
-    document.getElementById(L+i+'b'+oi).className='choice-btn correct';
-    fb.textContent='Correct. '+data[i].note; fb.className='fb ok';
+var E_PICKED = {};
+function pickE(i, choice){
+  E_PICKED[i]=choice;
+  var item=E_DATA[i];
+  var bc=document.getElementById('E'+i+'closed'), bl=document.getElementById('E'+i+'live');
+  bc.className='choice-btn'; bl.className='choice-btn';
+  var picked = (choice==='Closed') ? bc : bl;
+  var other  = (choice==='Closed') ? bl : bc;
+  var fb=document.getElementById('Efb'+i);
+  if(choice===item.a){
+    picked.className='choice-btn correct';
+    fb.textContent='Correct. '+item.note; fb.className='fb ok';
   } else {
-    document.getElementById(L+i+'b'+oi).className='choice-btn wrong';
-    document.getElementById(L+i+'b'+correct).className='choice-btn correct';
-    fb.textContent='Not quite. '+data[i].note; fb.className='fb bad';
+    picked.className='choice-btn wrong';
+    other.className='choice-btn correct';
+    fb.textContent='Not quite. '+item.note; fb.className='fb bad';
   }
   var c=0;
-  data.forEach(function(it,j){ if(CHOICE_PICKED[L][j] === it.a) c++; });
-  registerGrade(L, c, data.length);
+  E_DATA.forEach(function(it,j){ if(E_PICKED[j]===it.a) c++; });
+  registerGrade('E', c, E_DATA.length);
 }
 
-function buildGap(L, data, bank){
-  var el=document.getElementById('ex'+L);
-  el.innerHTML='<p class="soft-note" style="margin-bottom:14px;">Word bank: '+bank.join(', ')+'</p>';
-  data.forEach(function(item,i){
+/* ===== F. Reframe the report ===== */
+var F_DATA = [
+  {q:"We fixed the filing error on Tuesday.", note:"[make it read as live and still relevant now]",
+   key:"we've fixed the filing error", alt:"we have fixed the filing error", full:"We've fixed the filing error."},
+  {q:"We've missed two deadlines.", note:"[make it a closed fact tied to last quarter, not an ongoing pattern]",
+   key:"missed two deadlines last quarter", alt:"we missed two deadlines", full:"We missed two deadlines last quarter."},
+  {q:"I've sent three follow-ups.", note:"[make it a closed count for a campaign that is over]",
+   key:"i sent three follow-ups", alt:"sent three follow-ups during", full:"I sent three follow-ups during the campaign."},
+  {q:"The team delivered on time.", note:"[make it read as a current, standing achievement]",
+   key:"team has delivered on time", alt:"has delivered on time", full:"The team has delivered on time every cycle this quarter."}
+];
+function buildF(){
+  var el=document.getElementById('exF'); el.innerHTML='';
+  F_DATA.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
-    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="fill the gap"><div class="fb" id="'+L+'fb'+i+'"></div>';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+
+      ' <i style="color:var(--gray);">'+item.note+'</i></div>'+
+      '<input type="text" class="wide" id="F'+i+'" placeholder="rewrite it"><div class="fb" id="Ffb'+i+'"></div>';
     el.appendChild(d);
   });
 }
-function checkGap(L, data){
+function checkF(){
   var c=0;
-  data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
-    var fb=document.getElementById(L+'fb'+i);
-    if(matchesLoose(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+  F_DATA.forEach(function(item,i){
+    var v=document.getElementById('F'+i).value;
+    var fb=document.getElementById('Ffb'+i);
+    if(contains(v,item.key)||contains(v,item.alt)){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Model answer: '+item.full; fb.className='fb bad'; }
   });
-  registerGrade(L,c,data.length);
+  registerGrade('F',c,F_DATA.length);
 }
 
+/* ===== G. Vocabulary matching ===== */
+var G_ITEMS = ["on track","up to speed","in the loop","a heads-up","circle back","on the same page"];
+var G_MEANINGS = [
+  {id:"a", t:"progressing as planned toward the goal"},
+  {id:"b", t:"fully informed and current on a situation"},
+  {id:"c", t:"kept informed and included"},
+  {id:"d", t:"an early warning or advance notice"},
+  {id:"e", t:"return to something later"},
+  {id:"f", t:"in agreement, sharing one understanding"}
+];
+var G_KEY = ["a","b","c","d","e","f"];
+function buildG(){
+  var el=document.getElementById('exG'); el.innerHTML='';
+  G_ITEMS.forEach(function(it,i){
+    var opts='<option value="">choose a meaning</option>';
+    G_MEANINGS.forEach(function(m){ opts+='<option value="'+m.id+'">'+m.id+'. '+m.t+'</option>'; });
+    var d=document.createElement('div'); d.className='q';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span><b>'+it+'</b></div>'+
+      '<select class="match-select" id="G'+i+'">'+opts+'</select><div class="fb" id="Gfb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkG(){
+  var c=0;
+  G_KEY.forEach(function(k,i){
+    var v=document.getElementById('G'+i).value;
+    var fb=document.getElementById('Gfb'+i);
+    var txt='';
+    G_MEANINGS.forEach(function(m){ if(m.id===k) txt=m.t; });
+    if(v===k){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+k+'. '+txt; fb.className='fb bad'; }
+  });
+  registerGrade('G',c,G_KEY.length);
+}
 
-var A_DATA = [{"q": "We ______ (finish) the audit last week.", "a": ["finished"]}, {"q": "I ______ (work) here since the merger.", "a": ["have worked", "'ve worked", "i have worked"]}, {"q": "The system ______ (fail) at 2 a.m.", "a": ["failed"]}, {"q": "She ______ (close) more deals than anyone so far this quarter.", "a": ["has closed", "'s closed"]}, {"q": "When ______ you ______ (join) the team?", "a": ["did / join", "did join", "did you join"]}, {"q": "We ______ (not / hear) from them for two weeks now.", "a": ["haven't heard", "have not heard"]}];
-function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
-function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "I've sent the contract last Tuesday.", "full": "I sent the contract last Tuesday.", "keys": ["i sent the contract"]}, {"q": "When have you filed the motion?", "full": "When did you file the motion?", "keys": ["when did you file"]}, {"q": "We have shipped it two days ago.", "full": "We shipped it two days ago.", "keys": ["we shipped it"]}, {"q": "I know her since the last offsite.", "full": "I have known her since the last offsite.", "keys": ["known her since"]}, {"q": "We work together for three years now.", "full": "We have worked together for three years now.", "keys": ["worked together for"]}];
-function buildB(){ buildRewrite("B", B_DATA, "rewrite it"); }
-function checkB(){ checkRewrite("B", B_DATA); }
-var C_DATA = [{"q": "I fixed the bug yesterday.", "full": "I've fixed the bug.", "keys": ["i've fixed the bug", "i have fixed the bug"]}, {"q": "We hit the target last month.", "full": "We've hit the target.", "keys": ["we've hit the target", "we have hit the target"]}, {"q": "The client approved the budget on Monday.", "full": "The client has approved the budget.", "keys": ["has approved the budget", "client has approved"]}, {"q": "I sent you the file this morning.", "full": "I've sent you the file.", "keys": ["i've sent you the file", "i have sent you the file"]}, {"q": "We resolved all the blockers on Friday.", "full": "We've resolved all the blockers.", "keys": ["we've resolved all the blockers", "we have resolved all the blockers"]}];
-function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
-function checkC(){ checkRewrite("C", C_DATA); }
-var D_OPENERS = ["We've onboarded five hires", "We onboarded the contractor", "I've led this squad", "I led the case review", "Revenue has climbed"];
-var D_ENDINGS = [{"id": "a", "t": "since January."}, {"id": "b", "t": "on his first day."}, {"id": "c", "t": "so far this year."}, {"id": "d", "t": "every month this quarter."}, {"id": "e", "t": "two quarters ago."}];
-var D_KEY = ["c", "b", "a", "e", "d"];
-function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
-function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
-var E_DATA = [{"q": "The crisis is over and you want it to read as closed, not something still hanging over the team.", "a": 0, "note": "Past simple: “We fixed it last night; it's handled.”"}, {"q": "The fix is fresh and you want the room to feel it still bears on today's plan.", "a": 1, "note": "Present perfect: “We've fixed it, so we're clear to roll out.”"}, {"q": "You are giving a running count in a period that is not over yet.", "a": 1, "note": "Present perfect, open period: “We've closed twelve tickets so far this week.”"}, {"q": "You are logging a milestone at a specific past date for the record.", "a": 0, "note": "Past simple, on the record: “We launched on March 3.”"}];
-var E_OPTS = [{"label": "Closed and done"}, {"label": "Live and current"}];
-function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
-var F_DATA = [{"q": "We fixed the filing error on Tuesday.", "note": "[make it read as live and still relevant now]", "full": "We've fixed the filing error.", "keys": ["we've fixed the filing error", "we have fixed the filing error"]}, {"q": "We've missed two deadlines.", "note": "[make it a closed fact tied to last quarter, not an ongoing pattern]", "full": "We missed two deadlines last quarter.", "keys": ["missed two deadlines last quarter", "we missed two deadlines"]}, {"q": "I've sent three follow-ups.", "note": "[make it a closed count for a campaign that is over]", "full": "I sent three follow-ups during the campaign.", "keys": ["i sent three follow-ups", "sent three follow-ups during"]}, {"q": "The team delivered on time.", "note": "[make it read as a current, standing achievement]", "full": "The team has delivered on time every cycle this quarter.", "keys": ["team has delivered on time", "has delivered on time"]}];
-function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
-function checkF(){ checkRewrite("F", F_DATA); }
-var G_OPENERS = ["on track", "up to speed", "in the loop", "a heads-up", "circle back", "on the same page"];
-var G_ENDINGS = [{"id": "a", "t": "return to something later"}, {"id": "b", "t": "progressing as planned toward the goal"}, {"id": "c", "t": "an early warning or advance notice"}, {"id": "d", "t": "kept informed and included"}, {"id": "e", "t": "in agreement, sharing one understanding"}, {"id": "f", "t": "fully informed and current on a situation"}];
-var G_KEY = ["b", "f", "d", "c", "a", "e"];
-function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
-function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
-var H_DATA = [{"q": "Can you send the client a ______ before we reschedule?", "a": ["heads-up", "a heads-up", "heads up"]}, {"q": "Let me ______ with you after lunch once I have the numbers.", "a": ["circle back"]}, {"q": "The case review is ______. We should finish by Friday.", "a": ["on track"]}, {"q": "I'll add you to the thread so you stay ______.", "a": ["in the loop"]}, {"q": "Give me five minutes to get ______ on what happened.", "a": ["up to speed"]}, {"q": "Before we commit, let's make sure we're ______.", "a": ["on the same page"]}];
-function buildH(){ buildGap("H", H_DATA, ["on track", "up to speed", "in the loop", "a heads-up", "circle back", "on the same page"]); }
-function checkH(){ checkGap("H", H_DATA); }
+/* ===== H. Vocabulary in context ===== */
+var H_DATA = [
+  {q:"Can you send the client a ______ before we reschedule?", a:["heads-up","a heads-up","heads up"]},
+  {q:"Let me ______ with you after lunch once I have the numbers.", a:["circle back"]},
+  {q:"The case review is ______. We should finish by Friday.", a:["on track"]},
+  {q:"I'll add you to the thread so you stay ______.", a:["in the loop"]},
+  {q:"Give me five minutes to get ______ on what happened.", a:["up to speed"]},
+  {q:"Before we commit, let's make sure we're ______.", a:["on the same page"]}
+];
+function buildH(){
+  var el=document.getElementById('exH');
+  el.innerHTML='<p class="soft-note" style="margin-bottom:14px;">Word bank: on track, up to speed, in the loop, a heads-up, circle back, on the same page</p>';
+  H_DATA.forEach(function(item,i){
+    var d=document.createElement('div'); d.className='q';
+    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
+      '<input type="text" id="H'+i+'" placeholder="fill the gap"><div class="fb" id="Hfb'+i+'"></div>';
+    el.appendChild(d);
+  });
+}
+function checkH(){
+  var c=0;
+  H_DATA.forEach(function(item,i){
+    var v=document.getElementById('H'+i).value;
+    var fb=document.getElementById('Hfb'+i);
+    var ok=item.a.some(function(x){
+      return norm(v).replace(/^(a|an|the)\s+/,'').replace(/-/g,' ')
+          === norm(x).replace(/^(a|an|the)\s+/,'').replace(/-/g,' ');
+    });
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+  });
+  registerGrade('H',c,H_DATA.length);
+}
 
-function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }
+function buildAll(){
+  buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH();
+  updateScore();
+}
 
 (function(){
   if(isUnlocked()){

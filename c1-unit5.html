@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -590,12 +585,12 @@ function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The fix is happening in the next thirty seconds and the room needs to know now.", "a": 0, "note": "Be about to: “We're about to push the fix, thirty seconds out.”"}, {"q": "The migration is real but three weeks away, and you don't want to cause alarm.", "a": 1, "note": "Scheduled, calm tone: “The migration is set to begin in three weeks.”"}, {"q": "You want to announce an official date for a stakeholder update.", "a": 1, "note": "Scheduled, formal: “The rollout is due to complete by the 15th.”"}, {"q": "You're handing off and want the next person to know something is about to happen without you.", "a": 0, "note": "Imminent, handoff: “The review is about to start, I'll let you take it from here.”"}];
 var E_OPTS = [{"label": "Imminent"}, {"label": "Scheduled"}];
 function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
-var F_DATA = [{"q": "We migrate next month.", "note": "[make it read as scheduled, not imminent]", "keys": ["we're set to migrate", "we are set to migrate"], "full": "We're set to migrate next month."}, {"q": "We push the fix.", "note": "[make it read as happening in the next moment]", "keys": ["we're about to push", "we are about to push"], "full": "We're about to push the fix."}, {"q": "The results arrive.", "note": "[make it a dated, official commitment: by Friday]", "keys": ["are due to arrive"], "full": "The results are due to arrive by Friday."}, {"q": "The team starts the review.", "note": "[make it read as starting right now]", "keys": ["is about to start"], "full": "The team is about to start the review."}];
+var F_DATA = [{"q": "We migrate next month.", "note": "[make it read as scheduled, not imminent]", "keys": ["we're set to migrate", "we are set to migrate"], "full": "We're set to migrate next month."}, {"q": "The vendor renews the contract.", "note": "[make it read as happening in the next moment]", "keys": ["the vendor is about to renew", "about to renew"], "full": "The vendor is about to renew the contract."}, {"q": "The results arrive.", "note": "[make it a dated, official commitment: by Friday]", "keys": ["are due to arrive"], "full": "The results are due to arrive by Friday."}, {"q": "The team starts the review.", "note": "[make it read as starting right now]", "keys": ["is about to start"], "full": "The team is about to start the review."}];
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["any minute now", "on the horizon", "in the final stretch", "hot off the press", "just around the corner", "down to the wire"];
-var G_ENDINGS = [{"id": "a", "t": "visible as a future possibility, not yet close"}, {"id": "b", "t": "freshly released or announced"}, {"id": "c", "t": "right up until the last possible moment"}, {"id": "d", "t": "very close in time"}, {"id": "e", "t": "in the last push before something finishes"}, {"id": "f", "t": "expected to happen very soon"}];
-var G_KEY = ["f", "a", "e", "b", "d", "c"];
+var G_ENDINGS = [{"id": "a", "t": "expected to happen very soon"}, {"id": "b", "t": "visible as a future possibility, not yet close"}, {"id": "c", "t": "in the last push before something finishes"}, {"id": "d", "t": "freshly released or announced"}, {"id": "e", "t": "very close in time"}, {"id": "f", "t": "right up until the last possible moment"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "The announcement should land ______.", "a": ["any minute now"]}, {"q": "A major redesign is ______ for next year.", "a": ["on the horizon"]}, {"q": "We're ______ before the deadline, almost there.", "a": ["in the final stretch"]}, {"q": "These numbers are ______, straight from finance.", "a": ["hot off the press"]}, {"q": "The renewal deadline is ______.", "a": ["just around the corner"]}, {"q": "We finished the report ______, right before the meeting.", "a": ["down to the wire"]}];

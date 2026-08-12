@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -569,7 +564,7 @@ function checkGap(L, data){
 var A_DATA = [{"q": "She signed the contract, and I ______ too.", "a": ["did"]}, {"q": "If you'd like to escalate this, please ______ today.", "a": ["do so"]}, {"q": "I need a new badge, can I get ______ from security?", "a": ["one"]}, {"q": "He finished the report early, but she ______.", "a": ["didn't", "did not"]}, {"q": "We should automate this, and probably ______.", "a": ["will"]}, {"q": "Will it renew? I think ______.", "a": ["so"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "She reviewed the contract, and I reviewed the contract too, said twice.", "keys": ["and i did too"], "full": "She reviewed the contract, and I did too."}, {"q": "I do so believe this will work, misusing do so for a state.", "keys": ["i do believe this will work"], "reject": ["i do so believe"], "full": "I do believe this will work."}, {"q": "If you'd like to sign, please does so today.", "keys": ["please do so today"], "reject": ["does so"], "full": "If you'd like to sign, please do so today."}, {"q": "I need a laptop, can I get the one from IT, wrong article.", "keys": ["can i get one from it"], "reject": ["get the one"], "full": "I need a laptop, can I get one from IT?"}, {"q": "He finished early, but she didn't finished.", "keys": ["but she didn't", "but she did not"], "reject": ["didn't finished"], "full": "He finished early, but she didn't."}];
+var B_DATA = [{"q": "She reviewed the contract, and I reviewed the contract too.", "keys": ["and i did too"], "full": "She reviewed the contract, and I did too."}, {"q": "I do so believe this will work.", "keys": ["i do believe this will work"], "reject": ["i do so believe"], "full": "I do believe this will work."}, {"q": "If you'd like to sign, please does so today.", "keys": ["please do so today"], "reject": ["does so"], "full": "If you'd like to sign, please do so today."}, {"q": "I need a laptop, can I get the one from IT.", "keys": ["can i get one from it"], "reject": ["get the one"], "full": "I need a laptop, can I get one from IT?"}, {"q": "He finished early, but she didn't finished.", "keys": ["but she didn't", "but she did not"], "reject": ["didn't finished"], "full": "He finished early, but she didn't."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "Priya reviewed the contract. Marco reviewed the contract too.", "keys": ["marco did too"], "full": "Priya reviewed the contract, and Marco did too."}, {"q": "Please sign off on this. Please sign off by Friday.", "keys": ["sign off on this by friday"], "full": "Please sign off on this by Friday."}, {"q": "I need a badge. Can I get a badge from security?", "keys": ["can i get one from security"], "full": "I need a badge, can I get one from security?"}, {"q": "He finished early. She did not finish early.", "keys": ["but she didn't", "but she did not"], "full": "He finished early, but she didn't."}, {"q": "We should automate this task. We probably will automate this task.", "keys": ["and probably will"], "full": "We should automate this, and probably will."}];
@@ -584,8 +579,8 @@ var E_DATA = [{"q": "He escalated the ticket. I escalated the ticket too.", "key
 function buildE(){ buildRewrite("E", E_DATA, "trim it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to cut to the chase", "in a nutshell", "to spare the details", "redundant", "to streamline", "word for word"];
-var F_ENDINGS = [{"id": "a", "t": "exactly as originally said, without change"}, {"id": "b", "t": "to leave out unnecessary specifics"}, {"id": "c", "t": "summarized briefly, in short"}, {"id": "d", "t": "to make a process more efficient by removing extra steps"}, {"id": "e", "t": "to get straight to the main point"}, {"id": "f", "t": "unnecessary because it repeats something already said"}];
-var F_KEY = ["e", "c", "b", "f", "d", "a"];
+var F_ENDINGS = [{"id": "a", "t": "to get straight to the main point"}, {"id": "b", "t": "summarized briefly, in short"}, {"id": "c", "t": "to leave out unnecessary specifics"}, {"id": "d", "t": "unnecessary because it repeats something already said"}, {"id": "e", "t": "to make a process more efficient by removing extra steps"}, {"id": "f", "t": "exactly as originally said, without change"}];
+var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______, what's the actual ask?", "a": ["cut to the chase"]}, {"q": "______, we're behind schedule and need help.", "a": ["In a nutshell"]}, {"q": "I'll ______ and just tell you the outcome.", "a": ["spare the details"]}, {"q": "That second slide feels ______ with the first.", "a": ["redundant"]}, {"q": "We ______ the process by cutting two approval steps.", "a": ["streamlined"]}, {"q": "She repeated the instructions ______.", "a": ["word for word"]}];

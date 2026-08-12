@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -576,7 +571,7 @@ function checkGap(L, data){
 var A_DATA = [{"q": "I remember ______ (send) the invoice last week. [a memory]", "a": ["sending"]}, {"q": "Did you remember ______ (lock) the door? [a duty]", "a": ["to lock"]}, {"q": "She stopped ______ (smoke) two years ago. [ended entirely]", "a": ["smoking"]}, {"q": "He stopped ______ (check) his phone before the meeting started. [paused to do something else]", "a": ["to check"]}, {"q": "Try ______ (restart) the router. [an experiment]", "a": ["restarting"]}, {"q": "We tried ______ (fix) it for hours, but couldn't. [a difficult attempt]", "a": ["to fix"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "I remember to send it last Tuesday, referring to a past memory.", "keys": ["remember sending it"], "reject": ["remember to send"], "full": "I remember sending it last Tuesday."}, {"q": "Did you remember sending the invoice, meaning as a future duty?", "keys": ["remember to send the invoice"], "reject": ["remember sending"], "full": "Did you remember to send the invoice?"}, {"q": "She stopped to smoke entirely, meaning quitting.", "keys": ["stopped smoking entirely"], "reject": ["stopped to smoke"], "full": "She stopped smoking entirely."}, {"q": "He stopped checking his phone in order to answer a call, meaning a pause for another action.", "keys": ["stopped to answer a call"], "reject": ["stopped checking"], "full": "He stopped to answer a call."}, {"q": "We tried to fix it just to see what would happen, meaning an experiment.", "keys": ["tried fixing it"], "reject": ["tried to fix"], "full": "We tried fixing it just to see what would happen."}];
+var B_DATA = [{"q": "I remember to send it last Tuesday.", "keys": ["remember sending it"], "reject": ["remember to send"], "full": "I remember sending it last Tuesday."}, {"q": "Did you remember sending the invoice?", "keys": ["remember to send the invoice"], "reject": ["remember sending"], "full": "Did you remember to send the invoice?"}, {"q": "She stopped to smoke entirely.", "keys": ["stopped smoking entirely"], "reject": ["stopped to smoke"], "full": "She stopped smoking entirely."}, {"q": "He stopped checking his phone in order to answer a call.", "keys": ["stopped to answer a call"], "reject": ["stopped checking"], "full": "He stopped to answer a call."}, {"q": "We tried to fix it just to see what would happen.", "keys": ["tried fixing it"], "reject": ["tried to fix"], "full": "We tried fixing it just to see what would happen."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "I remember calling the client.", "note": "[rewrite as a duty not yet done]", "keys": ["remember to call the client"], "reject": ["remember calling"], "full": "Did you remember to call the client?"}, {"q": "I stopped checking email.", "note": "[rewrite as pausing one activity to do another]", "keys": ["stopped to check email"], "reject": ["stopped checking"], "full": "I stopped to check email before continuing."}, {"q": "Try to restart the server.", "note": "[rewrite as a casual experiment, not a difficult attempt]", "keys": ["try restarting the server"], "reject": ["try to restart"], "full": "Try restarting the server and see what happens."}, {"q": "She forgot sending the file.", "note": "[rewrite as forgetting a duty, not a memory]", "keys": ["forgot to send the file"], "reject": ["forgot sending"], "full": "She forgot to send the file."}, {"q": "We stopped to smoke.", "note": "[rewrite as quitting entirely]", "keys": ["stopped smoking"], "reject": ["stopped to smoke"], "full": "We stopped smoking for good."}];
@@ -591,8 +586,8 @@ var E_DATA = [{"q": "I remember sending the invoice.", "note": "[switch to: a du
 function buildE(){ buildRewrite("E", E_DATA, "reverse it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to give it a shot", "to kick a habit", "a false start", "to make a habit of", "to break the cycle", "trial and error"];
-var F_ENDINGS = [{"id": "a", "t": "to stop a repeating negative pattern"}, {"id": "b", "t": "to do something regularly enough that it becomes routine"}, {"id": "c", "t": "to attempt something, often casually"}, {"id": "d", "t": "a process of testing different approaches to find what works"}, {"id": "e", "t": "an attempt that fails early and has to restart"}, {"id": "f", "t": "to successfully quit a recurring behavior"}];
-var F_KEY = ["c", "f", "e", "b", "a", "d"];
+var F_ENDINGS = [{"id": "a", "t": "to attempt something, often casually"}, {"id": "b", "t": "to successfully quit a recurring behavior"}, {"id": "c", "t": "an attempt that fails early and has to restart"}, {"id": "d", "t": "to do something regularly enough that it becomes routine"}, {"id": "e", "t": "to stop a repeating negative pattern"}, {"id": "f", "t": "a process of testing different approaches to find what works"}];
+var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______ and see if the new approach works.", "a": ["give it a shot"]}, {"q": "He finally managed to ______ of checking email at midnight.", "a": ["kick the habit"]}, {"q": "Our first attempt was a ______, we had to restart.", "a": ["false start"]}, {"q": "She's starting to ______ following up within a day.", "a": ["make a habit of"]}, {"q": "We need to ______ of missed deadlines somehow.", "a": ["break the cycle"]}, {"q": "It took a lot of ______ to get the process right.", "a": ["trial and error"]}];

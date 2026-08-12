@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -594,12 +589,12 @@ function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You're writing a formal board report about a decision.", "a": 0, "note": "Formal report: “The decision to delay was made following a thorough risk assessment.”"}, {"q": "You're messaging a colleague quickly about the same decision.", "a": 1, "note": "Casual message: “We decided to hold off for now, given the risk.”"}, {"q": "You're summarizing a risk assessment for a formal document.", "a": 0, "note": "Formal summary: “The assessment of the risk is now complete and documented.”"}, {"q": "You're explaining the same risk casually in a meeting.", "a": 1, "note": "Casual explanation: “We looked at the risk and it's actually fine.”"}];
 var E_OPTS = [{"label": "Formal, nominalized"}, {"label": "Casual, plain verbs"}];
 function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
-var F_DATA = [{"q": "We decided to delay.", "note": "[formalize for a report]", "keys": ["the decision to delay"], "reject": ["we decided to delay."], "full": "The decision to delay the launch was made after careful review."}, {"q": "The implementation of the decision regarding the reduction of headcount and the subsequent restructuring proceeded as planned.", "note": "[de-nominalize, simplify for a quick message]", "keys": ["we reduced headcount and restructured"], "full": "We reduced headcount and restructured the department as planned."}, {"q": "We're aware of the gap.", "note": "[formalize for a report]", "keys": ["growing awareness of the gap", "awareness of the gap"], "reject": ["we're aware"], "full": "There is growing awareness of the gap."}, {"q": "The assessment of the risk is now complete.", "note": "[de-nominalize for a casual update]", "keys": ["we finished assessing the risk"], "reject": ["the assessment of"], "full": "We finished assessing the risk."}];
+var F_DATA = [{"q": "We approved the new policy.", "note": "[formalize for a report]", "keys": ["the approval of the new policy"], "reject": ["we decided to delay."], "full": "The approval of the new policy followed a full review."}, {"q": "The implementation of the decision regarding the reduction of headcount and the subsequent restructuring proceeded as planned.", "note": "[de-nominalize, simplify for a quick message]", "keys": ["we reduced headcount and restructured"], "full": "We reduced headcount and restructured the department as planned."}, {"q": "We're aware of the gap.", "note": "[formalize for a report]", "keys": ["growing awareness of the gap", "awareness of the gap"], "reject": ["we're aware"], "full": "There is growing awareness of the gap."}, {"q": "The assessment of the risk is now complete.", "note": "[de-nominalize for a casual update]", "keys": ["we finished assessing the risk"], "reject": ["the assessment of"], "full": "We finished assessing the risk."}];
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["in light of", "with respect to", "to that end", "pursuant to", "for the purposes of", "in the interest of"];
-var G_ENDINGS = [{"id": "a", "t": "in accordance with, following a rule or agreement"}, {"id": "b", "t": "considering, given a certain fact"}, {"id": "c", "t": "regarding, concerning a specific topic"}, {"id": "d", "t": "in order to achieve a stated goal"}, {"id": "e", "t": "for the sake of, to benefit or protect something"}, {"id": "f", "t": "for the specific reason of, in the context of"}];
-var G_KEY = ["b", "c", "d", "a", "f", "e"];
+var G_ENDINGS = [{"id": "a", "t": "considering, given a certain fact"}, {"id": "b", "t": "regarding, concerning a specific topic"}, {"id": "c", "t": "in order to achieve a stated goal"}, {"id": "d", "t": "in accordance with, following a rule or agreement"}, {"id": "e", "t": "for the specific reason of, in the context of"}, {"id": "f", "t": "for the sake of, to benefit or protect something"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "______ the new data, we've revised our estimate.", "a": ["In light of"]}, {"q": "______ the timeline, nothing has changed.", "a": ["With respect to"]}, {"q": "We want better quality control; ______, we're adding a review step.", "a": ["to that end"]}, {"q": "______ the agreement, payment is due within thirty days.", "a": ["Pursuant to"]}, {"q": "______ this report, we'll focus only on Q3.", "a": ["For the purposes of"]}, {"q": "We're pausing the rollout ______ safety.", "a": ["in the interest of"]}];

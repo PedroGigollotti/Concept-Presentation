@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -595,8 +590,8 @@ var F_DATA = [{"q": "She said the delay was fine.", "note": "[make it sound like
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to hold firm", "to back down", "to raise an eyebrow", "to read the temperature", "to soften the blow", "to draw a hard line"];
-var G_ENDINGS = [{"id": "a", "t": "to react with visible skepticism or surprise"}, {"id": "b", "t": "to maintain a position without giving ground"}, {"id": "c", "t": "to make bad news easier to hear"}, {"id": "d", "t": "to state a firm, non-negotiable boundary"}, {"id": "e", "t": "to gauge how tense or calm a conversation is"}, {"id": "f", "t": "to give up a position under pressure"}];
-var G_KEY = ["b", "f", "a", "e", "c", "d"];
+var G_ENDINGS = [{"id": "a", "t": "to maintain a position without giving ground"}, {"id": "b", "t": "to give up a position under pressure"}, {"id": "c", "t": "to react with visible skepticism or surprise"}, {"id": "d", "t": "to gauge how tense or calm a conversation is"}, {"id": "e", "t": "to make bad news easier to hear"}, {"id": "f", "t": "to state a firm, non-negotiable boundary"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "She ______ on the deadline despite the pushback.", "a": ["held firm"]}, {"q": "He ______ once the data made the case clear.", "a": ["backed down"]}, {"q": "I could tell she ______ when we mentioned the delay.", "a": ["raised an eyebrow"]}, {"q": "Before the call, I like to ______ in the room.", "a": ["read the temperature"]}, {"q": "We tried to ______ by offering a small credit.", "a": ["soften the blow"]}, {"q": "Legal decided to ______ on the liability clause.", "a": ["draw a hard line"]}];

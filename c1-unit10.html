@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -589,8 +584,8 @@ var F_DATA = [{"q": "The price is fixed.", "note": "[concede the client's point 
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to give ground", "a sticking point", "a non-starter", "common ground", "to hold the line", "a fair ask"];
-var G_ENDINGS = [{"id": "a", "t": "the specific issue blocking an agreement"}, {"id": "b", "t": "a shared point of agreement between two sides"}, {"id": "c", "t": "to refuse to move further on a position"}, {"id": "d", "t": "to make a concession in a negotiation"}, {"id": "e", "t": "a reasonable request, not excessive"}, {"id": "f", "t": "a proposal that will not be accepted, not worth raising"}];
-var G_KEY = ["d", "a", "f", "b", "c", "e"];
+var G_ENDINGS = [{"id": "a", "t": "to make a concession in a negotiation"}, {"id": "b", "t": "the specific issue blocking an agreement"}, {"id": "c", "t": "a proposal that will not be accepted, not worth raising"}, {"id": "d", "t": "a shared point of agreement between two sides"}, {"id": "e", "t": "to refuse to move further on a position"}, {"id": "f", "t": "a reasonable request, not excessive"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "We found some ______ on the timeline, if nothing else.", "a": ["common ground"]}, {"q": "Price is clearly the ______ in this deal.", "a": ["sticking point"]}, {"q": "A full refund is a ______. We can't offer that.", "a": ["non-starter"]}, {"q": "We're willing to ______ on delivery dates, not on price.", "a": ["give ground"]}, {"q": "On the core terms, we need to ______.", "a": ["hold the line"]}, {"q": "Extending the trial period seems like a ______.", "a": ["fair ask"]}];

@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -261,7 +256,7 @@
         <text x="590" y="118" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="15" fill="#0A0B0D">the vast majority of</text>
         <text x="590" y="140" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="11.5" fill="#6B6F76">nearly all</text>
 
-        <rect x="42" y="172" width="248" height="26" rx="13" fill="#B3132B"/>
+        <rect x="60" y="172" width="212" height="26" rx="13" fill="#B3132B"/>
         <text x="166" y="190" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-weight="600" fill="#ffffff">one word flips the whole reading</text>
         <text x="300" y="190" font-family="Instrument Serif, Georgia, serif" font-size="15" fill="#0A0B0D">few clients renewed</text>
         <text x="472" y="190" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#6B6F76">a disappointment</text>
@@ -581,7 +576,7 @@ function checkGap(L, data){
 var A_DATA = [{"q": "______ (a fair number) of accounts are affected.", "a": ["A fair number"]}, {"q": "______ (a handful) of regions show the pattern.", "a": ["A handful"]}, {"q": "______ (few) of them are high-value clients.", "a": ["Few"]}, {"q": "______ (a few) of them have already renewed.", "a": ["A few"]}, {"q": "______ (neither) of the two markets is affected.", "a": ["Neither"]}, {"q": "The number of complaints ______ (be) rising steadily.", "a": ["is"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "Few clients responded, which is great news, contradicting the near-negative meaning of few.", "keys": ["a few clients responded"], "full": "A few clients responded, which is great news."}, {"q": "Neither of the three markets is affected.", "keys": ["none of the three markets"], "reject": ["neither of the three"], "full": "None of the three markets is affected."}, {"q": "A number of accounts is affected.", "keys": ["a number of accounts are affected"], "reject": ["accounts is affected"], "full": "A number of accounts are affected."}, {"q": "The number of complaints are rising.", "keys": ["the number of complaints is rising"], "reject": ["complaints are rising"], "full": "The number of complaints is rising."}, {"q": "A few of them are high-value clients, meaning almost none, contradicting the meaning of a few.", "keys": ["few of them are high-value"], "reject": ["a few of them are high-value"], "full": "Few of them are high-value clients."}];
+var B_DATA = [{"q": "Few clients responded, which is great news.", "keys": ["a few clients responded"], "full": "A few clients responded, which is great news."}, {"q": "Neither of the three markets is affected.", "keys": ["none of the three markets"], "reject": ["neither of the three"], "full": "None of the three markets is affected."}, {"q": "A number of accounts is affected.", "keys": ["a number of accounts are affected"], "reject": ["accounts is affected"], "full": "A number of accounts are affected."}, {"q": "The number of complaints are rising.", "keys": ["the number of complaints is rising"], "reject": ["complaints are rising"], "full": "The number of complaints is rising."}, {"q": "A few of them are high-value, so the segment is barely worth serving.", "keys": ["few of them are high-value"], "reject": ["a few of them are high-value"], "full": "Few of them are high-value clients."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "Some accounts are affected.", "note": "[moderate, not a majority]", "keys": ["a fair number of accounts"], "reject": ["some accounts"], "full": "A fair number of accounts are affected."}, {"q": "A couple of regions show the pattern.", "note": "[small number]", "keys": ["a handful of regions"], "reject": ["a couple of"], "full": "A handful of regions show the pattern."}, {"q": "Almost none of them are high-value.", "note": "[near-zero]", "keys": ["few of them are high-value"], "reject": ["almost none"], "full": "Few of them are high-value."}, {"q": "A small number of them have renewed.", "note": "[some, a small positive number]", "keys": ["a few of them have renewed"], "reject": ["a small number"], "full": "A few of them have renewed."}, {"q": "Not one of the two biggest markets is affected.", "note": "[use neither]", "keys": ["neither of the two biggest markets"], "reject": ["not one of"], "full": "Neither of the two biggest markets is affected."}];
@@ -596,8 +591,8 @@ var E_DATA = [{"q": "Few clients renewed, which is a great result.", "note": "[f
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["a sizable chunk", "few and far between", "across the board", "an outlier", "the lion's share", "a drop in the bucket"];
-var F_ENDINGS = [{"id": "a", "t": "affecting or applying to everything, without exception"}, {"id": "b", "t": "the largest portion or share of something"}, {"id": "c", "t": "very rare, occurring infrequently"}, {"id": "d", "t": "a substantial portion of a larger whole"}, {"id": "e", "t": "a small amount, insignificant compared to the whole"}, {"id": "f", "t": "a case that doesn't fit the general pattern"}];
-var F_KEY = ["d", "c", "a", "f", "b", "e"];
+var F_ENDINGS = [{"id": "a", "t": "a substantial portion of a larger whole"}, {"id": "b", "t": "very rare, occurring infrequently"}, {"id": "c", "t": "affecting or applying to everything, without exception"}, {"id": "d", "t": "a case that doesn't fit the general pattern"}, {"id": "e", "t": "the largest portion or share of something"}, {"id": "f", "t": "a small amount, insignificant compared to the whole"}];
+var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "That single client, at that size, is more of an ______.", "a": ["outlier"]}, {"q": "Cases like this used to be ______, now they're common.", "a": ["few and far between"]}, {"q": "Revenue is up ______, every region reported growth.", "a": ["across the board"]}, {"q": "This new segment takes ______ of the revenue now.", "a": ["the lion's share"]}, {"q": "That refund is a ______ compared to total revenue.", "a": ["drop in the bucket"]}, {"q": "We're seeing a ______ of accounts affected, worth investigating.", "a": ["sizable chunk"]}];

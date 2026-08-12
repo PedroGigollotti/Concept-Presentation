@@ -19,12 +19,7 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
-  /* At phone width the unit label wraps and runs straight into the CONCEPT
-     wordmark with no gap at all. Give it room, and drop it entirely on the
-     narrowest screens: the unit name is already the page heading two lines
-     below, so the nav is the one place it is not needed. */
-  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -591,12 +586,12 @@ function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You're messaging a close teammate on Slack about a minor change.", "a": 0, "note": "Casual, to a peer: “hey, quick heads up, policy's changing next week.”"}, {"q": "You're emailing a client about a change that might affect their account.", "a": 1, "note": "Client email: “I wanted to flag an upcoming policy change that may affect your account.”"}, {"q": "You're writing a formal memo to the board about a scheduled change.", "a": 2, "note": "Formal memo: “The policy is scheduled to undergo a revision next week.”"}, {"q": "You're following up casually with a peer after the formal memo went out.", "a": 0, "note": "Casual follow-up: “hey, did that memo make sense? Let me know if you have questions.”"}];
 var E_OPTS = [{"label": "Casual, to a peer"}, {"label": "Client email"}, {"label": "Formal memo"}];
 function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
-var F_DATA = [{"q": "The policy is scheduled to undergo a revision next week.", "note": "[rewrite for a casual Slack message to a peer]", "keys": ["policy's changing next week"], "reject": ["scheduled to undergo"], "full": "hey, policy's changing next week, lmk if that's an issue."}, {"q": "hey, policy's changing, lmk if that's a problem.", "note": "[rewrite for a formal board memo]", "keys": ["scheduled to undergo a revision"], "reject": ["lmk"], "full": "Please be advised that the policy is scheduled to undergo a revision; teams should assess any impact."}, {"q": "I wanted to flag that the policy will change next week.", "note": "[rewrite for a casual Slack message]", "keys": ["heads up the policy's changing", "policy's changing next week"], "reject": ["i wanted to flag"], "full": "hey, just a heads up the policy's changing next week."}, {"q": "the meeting's getting pushed a day, no biggie.", "note": "[rewrite for a client email]", "keys": ["i wanted to let you know the meeting will be delayed"], "reject": ["no biggie"], "full": "I wanted to let you know the meeting will be delayed by one day."}];
+var F_DATA = [{"q": "The policy is scheduled to undergo a revision next week.", "note": "[rewrite for a casual Slack message to a peer]", "keys": ["policy's changing next week"], "reject": ["scheduled to undergo"], "full": "hey, policy's changing next week, lmk if that's an issue."}, {"q": "hey, policy's changing, lmk if that's a problem.", "note": "[rewrite for a formal board memo]", "keys": ["scheduled to undergo a revision"], "reject": ["lmk"], "full": "Please be advised that the policy is scheduled to undergo a revision; teams should assess any impact."}, {"q": "I wanted to flag that the policy will change next week.", "note": "[rewrite for a casual Slack message]", "keys": ["heads up the policy's changing", "policy's changing next week"], "reject": ["i wanted to flag"], "full": "hey, just a heads up the policy's changing next week."}, {"q": "heads up, the invoice is going out late.", "note": "[rewrite for a client email]", "keys": ["i wanted to let you know the invoice"], "reject": ["no biggie"], "full": "I wanted to let you know the invoice will go out a little later than planned."}];
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to read the room", "corporate speak", "to dial it down", "water-cooler talk", "to keep it professional", "plain English"];
-var G_ENDINGS = [{"id": "a", "t": "to maintain an appropriately businesslike tone"}, {"id": "b", "t": "to sense what tone is appropriate for the moment"}, {"id": "c", "t": "informal conversation among colleagues, often off-topic"}, {"id": "d", "t": "formal, often vague language typical of official communication"}, {"id": "e", "t": "simple, clear, jargon-free language"}, {"id": "f", "t": "to make something less intense or less casual"}];
-var G_KEY = ["b", "d", "f", "c", "a", "e"];
+var G_ENDINGS = [{"id": "a", "t": "to sense what tone is appropriate for the moment"}, {"id": "b", "t": "formal, often vague language typical of official communication"}, {"id": "c", "t": "to make something less intense or less casual"}, {"id": "d", "t": "informal conversation among colleagues, often off-topic"}, {"id": "e", "t": "to maintain an appropriately businesslike tone"}, {"id": "f", "t": "simple, clear, jargon-free language"}];
+var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "Before that joke, you should ______ first.", "a": ["read the room"]}, {"q": "The memo was full of ______, hard to parse.", "a": ["corporate speak"]}, {"q": "Let's ______ a bit before this reaches the client.", "a": ["dial it down"]}, {"q": "That's more of a ______ topic, not for the meeting.", "a": ["water-cooler"]}, {"q": "Even in a tense moment, try to ______.", "a": ["keep it professional"]}, {"q": "Can we get this in ______, no jargon?", "a": ["plain English"]}];
