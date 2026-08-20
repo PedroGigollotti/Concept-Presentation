@@ -89,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -251,7 +254,7 @@
     <p class="body-copy"><b>Goal.</b> Learn to reformulate at the level of structure, vocabulary, and clarification, while keeping the meaning fixed. By the end you should be able to say one idea three ways.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">Reformulation means saying the same thing in different words, and it is the skill that most defines C2. It lets you unstick a conversation, avoid repeating yourself, soften or sharpen a message, and explain one idea to three different audiences. It works on three levels. You can change the grammar and keep the meaning: active to passive, verb to noun, <i>&#8220;the tool is fast&#8221;</i> to <i>&#8220;the tool is not slow.&#8221;</i> You can change the words: <i>&#8220;a big problem&#8221;</i> becomes <i>&#8220;a significant issue&#8221;</i> or <i>&#8220;a serious setback.&#8221;</i> Or you can restate to make something clearer, using a marker like <i>&#8220;in other words&#8221;</i> or <i>&#8220;put simply.&#8221;</i> The one rule behind all three is that <b>the meaning must stay exactly the same.</b> If the new version quietly changes &#8220;may&#8221; to &#8220;must,&#8221; it is not a paraphrase; it is a different claim.</p>
+    <p class="body-copy">Reformulation means saying the same thing in different words, and it is the skill that most defines C2. It lets you unstick a conversation, avoid repeating yourself, soften or sharpen a message, and explain one idea to three different audiences. It works on three levels. You can change the grammar and keep the meaning: active to passive, verb to noun, <i>the tool is fast</i> to <i>the tool is not slow.</i> You can change the words: <i>a big problem</i> becomes <i>a significant issue</i> or <i>a serious setback.</i> Or you can restate to make something clearer, using a marker like <i>in other words</i> or <i>put simply.</i> The one rule behind all three is that <b>the meaning must stay exactly the same.</b> If the new version quietly changes <em>may</em> to <em>must,</em> it is not a paraphrase; it is a different claim.</p>
     <div class="split">
       <div class="card-col">
         <h4>Structural reformulation</h4>
@@ -271,12 +274,12 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Paraphrase preserves meaning, not just words.</b> Changing &#8220;may&#8221; to &#8220;must,&#8221; or &#8220;some&#8221; to &#8220;most,&#8221; isn't reformulation, it's a different claim. Keep the proposition identical; only the wording changes.</p>
-      <p><b>Don't reformulate into vagueness.</b> Restating a precise term with a fuzzy one (&#8220;a forty-percent drop&#8221; to &#8220;a big fall&#8221;) loses information. Reformulate to clarify or re-tone, not to blur.</p>
+      <p><b>Paraphrase preserves meaning, not just words.</b> Changing <em>may</em> to <em>must,</em> or <em>some</em> to <em>most,</em> isn't reformulation, it's a different claim. Keep the proposition identical; only the wording changes.</p>
+      <p><b>Don't reformulate into vagueness.</b> Restating a precise term with a fuzzy one (<em>a forty-percent drop</em> to <em>a big fall</em>) loses information. Reformulate to clarify or re-tone, not to blur.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>&#8220;That is&#8221; and &#8220;i.e.&#8221;</b> Both varieties use &#8220;i.e.&#8221; and &#8220;e.g.&#8221;; American English puts a comma after (&#8220;i.e.,&#8221;), British often omits it. This book uses the comma.</p>
+      <p><b><em>That is</em> and <em>i.e.</em></b> Both varieties use <em>i.e.</em> and <em>e.g.</em>; American English puts a comma after (<em>i.e.,</em>), British often omits it. This book uses the comma.</p>
       <p><b>Spelling of substitutes.</b> When you swap in a synonym, keep American spelling (analyze, organize, behavior). This book stays American throughout, even mid-paraphrase.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
@@ -300,7 +303,7 @@
         <text x="30" y="38" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Original</text>
         <text x="30" y="58" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">one phrasing, one audience</text>
         <rect x="30" y="78" width="640" height="30" rx="6" fill="#EFEFEA" stroke="#DCDDD6"/>
-        <text x="350" y="98" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" fill="#33363B">We rejected the vendor&#8217;s bid because it was too expensive.</text>
+        <text x="350" y="98" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" fill="#33363B">We rejected the vendor's bid because it was too expensive.</text>
 
         <line x1="350" y1="134" x2="350" y2="174" stroke="#B3132B" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#fa)"/>
         <text x="374" y="156" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#B3132B">the wrapping changes, the point does not</text>
@@ -308,7 +311,7 @@
         <text x="30" y="214" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Reformulated</text>
         <text x="30" y="234" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">restructured, then restated to clarify</text>
         <rect x="30" y="254" width="640" height="52" rx="6" fill="#1F5570"/>
-        <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">The vendor&#8217;s bid was turned down on cost. In other words, it priced</text>
+        <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">The vendor's bid was turned down on cost. In other words, it priced</text>
         <text x="350" y="296" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">itself out.</text>
 
         <text x="350" y="340" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#33363B">Same meaning, new words and shape. Reformulate to re-tone or clarify, never to re-claim.</text>
@@ -316,7 +319,7 @@
       <p class="diagram-cap">Same meaning, new words and shape. Reformulation lets you re-tone or clarify without changing the point.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Here is why this sits at the top of fluency. A speaker who can say something only one way is stuck: if the listener does not understand it, or reacts badly, or has heard it already, there is nowhere to go. A speaker who can reformulate has choices, they can raise the formality for one reader and lower it for another, restate a technical point in plain words, or rephrase a blunt line more gently without backing down. That flexibility is what makes someone sound truly in command of the language. But the skill has a firm limit: <b>reformulation changes the wrapping, never the contents.</b> <i>&#8220;We might miss the deadline&#8221;</i> and <i>&#8220;we'll miss the deadline&#8221;</i> are not two versions of one idea; they are two different predictions. So hold the meaning still, and turn everything else, the grammar, the words, the tone, until you have the version this reader most needs.</p>
+    <p class="body-copy">Here is why this sits at the top of fluency. A speaker who can say something only one way is stuck: if the listener does not understand it, or reacts badly, or has heard it already, there is nowhere to go. A speaker who can reformulate has choices, they can raise the formality for one reader and lower it for another, restate a technical point in plain words, or rephrase a blunt line more gently without backing down. That flexibility is what makes someone sound truly in command of the language. But the skill has a firm limit: <b>reformulation changes the wrapping, never the contents.</b> “We might miss the deadline” and “we'll miss the deadline” are not two versions of one idea; they are two different predictions. So hold the meaning still, and turn everything else, the grammar, the words, the tone, until you have the version this reader most needs.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: reformulate to order, fix the meaning-shifts, restate for an audience, use the words, then use it live.</p>
@@ -386,13 +389,13 @@
       <div class="prod-step">
         <p class="prod-label">2 &middot; Say it</p>
         <p class="prod-lead">Reformulation fails silently: the new version sounds fine and quietly says something else. Reading it back aloud is the cheapest check there is.</p>
-        <div class="task-box"><p>Record situation 2, then say the original aloud straight after: &#8220;We&#8217;re over budget.&#8221; Play the recording back. Listen for one thing: do they mean the same? &#8220;Tracking slightly above the original estimate&#8221; is a softer wrapping. If it also became a smaller number in your head, you have not reformulated, you have understated.</p></div>
+        <div class="task-box"><p>Record situation 2, then say the original aloud straight after: “We're over budget.” Play the recording back. Listen for one thing: do they mean the same? “Tracking slightly above the original estimate” is a softer wrapping. If it also became a smaller number in your head, you have not reformulated, you have understated.</p></div>
         <div id="recBox"></div>
       </div>
       <div class="prod-step prod-extend">
         <p class="prod-label">3 &middot; With a partner, if you have one</p>
         <div class="task-box">
-          <p>one of you states a fact plainly; the other must reformulate it three ways, once by changing the structure (active to passive, verb to noun), once by changing the words (a near-synonym at a different formality), and once with a clarifying marker (&#8220;in other words...&#8221;). The catch: all three must mean exactly the same thing. Your partner challenges any version that quietly changed the claim. Then swap.</p>
+          <p>one of you states a fact plainly; the other must reformulate it three ways, once by changing the structure (active to passive, verb to noun), once by changing the words (a near-synonym at a different formality), and once with a clarifying marker (<em>in other words...</em>). The catch: all three must mean exactly the same thing. Your partner challenges any version that quietly changed the claim. Then swap.</p>
           <p>Then, take one sentence from something you wrote and reformulate it for three different readers, a technical colleague, a nervous client, and a time-pressed executive. Notice that the underlying fact never changes, only the words and the shape you give it.</p>
         </div>
       </div>
@@ -418,6 +421,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -431,6 +435,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -514,18 +546,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -785,7 +857,7 @@ function recClear(){
 }
 
 
-var A_DATA = [{"q": "We rejected the bid.", "note": "[make it passive]", "keys": ["the bid was rejected"], "reject": ["we rejected"], "full": "The bid was rejected."}, {"q": "It's a big problem.", "note": "[more formal]", "keys": ["a significant issue"], "reject": ["big problem"], "full": "It's a significant issue."}, {"q": "The tool is fast.", "note": "[say it with &#8220;not&#8221; + the opposite]", "keys": ["not slow"], "reject": ["is fast"], "full": "The tool is not slow."}, {"q": "The launch failed.", "note": "[nominalize it]", "keys": ["was a failure"], "reject": ["launch failed"], "full": "The launch was a failure."}, {"q": "It's idempotent.", "note": "[add a plain-English restatement]", "keys": ["in other words"], "full": "It's idempotent, in other words, calling it twice does no harm."}, {"q": "Sales dropped a lot.", "note": "[make it sound precise]", "keys": ["fell sharply"], "reject": ["dropped a lot"], "full": "Sales fell sharply."}];
+var A_DATA = [{"q": "We rejected the bid.", "note": "[make it passive]", "keys": ["the bid was rejected"], "reject": ["we rejected"], "full": "The bid was rejected."}, {"q": "It's a big problem.", "note": "[more formal]", "keys": ["a significant issue"], "reject": ["big problem"], "full": "It's a significant issue."}, {"q": "The tool is fast.", "note": "[say it with <em>not</em> + the opposite]", "keys": ["not slow"], "reject": ["is fast"], "full": "The tool is not slow."}, {"q": "The launch failed.", "note": "[nominalize it]", "keys": ["was a failure"], "reject": ["launch failed"], "full": "The launch was a failure."}, {"q": "It's idempotent.", "note": "[add a plain-English restatement]", "keys": ["in other words"], "full": "It's idempotent, in other words, calling it twice does no harm."}, {"q": "Sales dropped a lot.", "note": "[make it sound precise]", "keys": ["fell sharply"], "reject": ["dropped a lot"], "full": "Sales fell sharply."}];
 function buildA(){ buildRewrite("A", A_DATA, "reformulate it"); }
 function checkA(){ checkRewrite("A", A_DATA); }
 var B_DATA = [{"q": "We may ship Friday. In other words, we will ship Friday.", "keys": ["we might ship friday"], "reject": ["we will ship friday"], "full": "We may ship Friday. In other words, we might ship Friday."}, {"q": "Some users complained, that is, most users complained.", "keys": ["a number of users complained"], "reject": ["most users"], "full": "Some users complained, that is, a number of users complained."}, {"q": "A forty-percent drop, or rather, a big fall.", "keys": ["a sharp forty-percent drop"], "reject": ["a big fall"], "full": "A forty-percent drop, or rather, a sharp forty-percent drop."}, {"q": "Put simple, it's broken.", "keys": ["put simply"], "reject": ["put simple"], "full": "Put simply, it's broken."}, {"q": "In the other words, we're late.", "keys": ["in other words, we're late"], "reject": ["in the other words"], "full": "In other words, we're late."}];
@@ -810,7 +882,7 @@ function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "It's idempotent, ______, retrying it is safe.", "a": ["in other words"]}, {"q": "The role is senior, ______, you'll own the roadmap.", "a": ["that is to say"]}, {"q": "______, the plan just isn't working.", "a": ["To put it bluntly"]}, {"q": "______, we doubled, though the exact figure varies.", "a": ["Loosely speaking"]}, {"q": "______: cut costs, keep quality.", "a": ["In a nutshell"]}, {"q": "Rushed launches backfire. Last quarter is a ______.", "a": ["case in point"]}];
 function buildG(){ buildGap("G", G_DATA, ["in other words", "that is to say", "to put it bluntly", "loosely speaking", "in a nutshell", "case in point"]); }
 function checkG(){ checkGap("G", G_DATA); }
-var H_TIMED = [{"q": "Explain to a non-technical stakeholder that the API is idempotent.", "model": "The API is safe to call more than once, nothing breaks if we retry."}, {"q": "Tell a nervous client you are over budget, softened.", "model": "We&#8217;re tracking slightly above the original estimate."}, {"q": "Report that the migration failed, for a blameless postmortem.", "model": "The migration didn&#8217;t complete as planned."}, {"q": "Alert a time-pressed executive that churn is up.", "model": "We&#8217;re losing customers faster than we&#8217;re adding them."}];
+var H_TIMED = [{"q": "Explain to a non-technical stakeholder that the API is idempotent.", "model": "The API is safe to call more than once, nothing breaks if we retry."}, {"q": "Tell a nervous client you are over budget, softened.", "model": "We're tracking slightly above the original estimate."}, {"q": "Report that the migration failed, for a blameless postmortem.", "model": "The migration didn't complete as planned."}, {"q": "Alert a time-pressed executive that churn is up.", "model": "We're losing customers faster than we're adding them."}];
 function buildHTimed(){ buildTimed("H", H_TIMED, 60); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildHTimed(); recInit('recBox'); updateScore(); }

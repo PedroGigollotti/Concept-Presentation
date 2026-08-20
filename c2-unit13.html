@@ -89,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -251,7 +254,7 @@
     <p class="body-copy"><b>Goal.</b> Learn the families of discourse markers, how placement shifts emphasis, and how they hold a long text together. By the end you should be able to signpost an argument precisely.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">Discourse markers are the words that <b>make the logic of a text visible,</b> the <i>&#8220;however,&#8221; &#8220;therefore,&#8221; &#8220;moreover,&#8221; &#8220;on balance&#8221;</i> that tell a reader how one sentence connects to the last. At C2 the skill is no longer knowing what they mean but using the full range accurately and placing them well across a long text. They fall into groups by job: contrast (<i>&#8220;however,&#8221; &#8220;nonetheless,&#8221; &#8220;that said&#8221;</i>), addition (<i>&#8220;moreover,&#8221; &#8220;furthermore&#8221;</i>), result (<i>&#8220;therefore,&#8221; &#8220;consequently&#8221;</i>), and restating (<i>&#8220;in other words,&#8221; &#8220;that is&#8221;</i>). Where you put the marker matters as much as which one you choose: &#8220;However, we disagreed&#8221; sets the whole sentence against the last one, while &#8220;We disagreed, however, on the timing&#8221; narrows the contrast to &#8220;timing.&#8221; Used well, these turn a list of facts into an argument the reader can follow.</p>
+    <p class="body-copy">Discourse markers are the words that <b>make the logic of a text visible,</b> the <i><em>however,</em> <em>therefore,</em> <em>moreover,</em> <em>on balance</em></i> that tell a reader how one sentence connects to the last. At C2 the skill is no longer knowing what they mean but using the full range accurately and placing them well across a long text. They fall into groups by job: contrast (<i><em>however,</em> <em>nonetheless,</em> <em>that said</em></i>), addition (<i><em>moreover,</em> <em>furthermore</em></i>), result (<i><em>therefore,</em> <em>consequently</em></i>), and restating (<i><em>in other words,</em> <em>that is</em></i>). Where you put the marker matters as much as which one you choose: <em>However, we disagreed</em> sets the whole sentence against the last one, while “We disagreed, however, on the timing” narrows the contrast to <em>timing.</em> Used well, these turn a list of facts into an argument the reader can follow.</p>
     <div class="split">
       <div class="card-col">
         <h4>Connective adverbials, by function</h4>
@@ -261,7 +264,7 @@
       <div class="card-col">
         <h4>Placement and punctuation</h4>
         <dl><dt>Form</dt><dd>initial (However, ...), medial (The plan, however, ...), or final; always set off by commas</dd><dt>Meaning</dt><dd>where you place the marker shifts the emphasis and the rhythm</dd><dt>Use it to</dt><dd>control which word the contrast lands on, and vary the rhythm</dd></dl>
-        <div class="eg">However, we disagreed. vs We disagreed, however, on the timing. (medial narrows it to &#8220;timing&#8221;)</div>
+        <div class="eg">However, we disagreed. vs We disagreed, however, on the timing. (medial narrows it to <em>timing</em>)</div>
       </div>
       <div class="card-col">
         <h4>Pairs and long-range links</h4>
@@ -271,13 +274,13 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>&#8220;However&#8221; is not &#8220;but&#8221; with a comma.</b> &#8220;However&#8221; joins sentences, not clauses: &#8220;We tried; however, it failed&#8221; or &#8220;We tried. However, it failed,&#8221; never &#8220;We tried, however it failed.&#8221; Use a period or a semicolon before it.</p>
-      <p><b>Don't signpost what's already clear.</b> A marker on every sentence (&#8220;Moreover... Furthermore... In addition...&#8221;) clutters and condescends. Use them at the joints of the argument, not on every plank.</p>
+      <p><b><em>However</em> is not <em>but</em> with a comma.</b> <em>However</em> joins sentences, not clauses: “We tried; however, it failed” or “We tried. However, it failed,” never “We tried, however it failed.” Use a period or a semicolon before it.</p>
+      <p><b>Don't signpost what's already clear.</b> A marker on every sentence (<em>Moreover... Furthermore... In addition...</em>) clutters and condescends. Use them at the joints of the argument, not on every plank.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>Punctuating &#8220;however.&#8221;</b> Both varieties use a semicolon or period before a sentence-connecting &#8220;however&#8221;; American English is stricter about not using a comma there. This book uses the semicolon or period.</p>
-      <p><b>&#8220;While&#8221; and &#8220;whilst.&#8221;</b> Both varieties use &#8220;while&#8221; and &#8220;whereas&#8221; for contrast; British English also uses &#8220;whilst.&#8221; This book uses &#8220;while&#8221; and &#8220;whereas.&#8221;</p>
+      <p><b>Punctuating <em>however.</em></b> Both varieties use a semicolon or period before a sentence-connecting <em>however</em>; American English is stricter about not using a comma there. This book uses the semicolon or period.</p>
+      <p><b><em>While</em> and <em>whilst.</em></b> Both varieties use <em>while</em> and <em>whereas</em> for contrast; British English also uses <em>whilst.</em> This book uses <em>while</em> and <em>whereas.</em></p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same facts, now connected. Keep the frame; change only the slot and the situation.</p>
@@ -317,7 +320,7 @@
       <p class="diagram-cap">Same four facts, now an argument. The markers make the logic visible instead of leaving the reader to infer it.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Here is why these small words carry so much weight. A reader does not just take in sentences; they <b>build a running picture of how the sentences connect,</b> and if you do not signal the connection, they have to guess it, which is slow and easy to get wrong. A discourse marker does that work for them: the moment they see &#8220;however,&#8221; they know a contrast is coming and get ready for it; &#8220;therefore&#8221; tells them a conclusion follows. Across a long document these signals add up to a clear shape. But the same words, overused, become noise. If every sentence starts with &#8220;moreover&#8221; or &#8220;furthermore,&#8221; they stop meaning anything and start sounding mechanical, and worse, they suggest the reader cannot see obvious links alone. So place them at the real turning points, and let the plain connections stand on their own.</p>
+    <p class="body-copy">Here is why these small words carry so much weight. A reader does not just take in sentences; they <b>build a running picture of how the sentences connect,</b> and if you do not signal the connection, they have to guess it, which is slow and easy to get wrong. A discourse marker does that work for them: the moment they see <em>however,</em> they know a contrast is coming and get ready for it; <em>therefore</em> tells them a conclusion follows. Across a long document these signals add up to a clear shape. But the same words, overused, become noise. If every sentence starts with <em>moreover</em> or <em>furthermore,</em> they stop meaning anything and start sounding mechanical, and worse, they suggest the reader cannot see obvious links alone. So place them at the real turning points, and let the plain connections stand on their own.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: choose the markers, fix the misfires, signpost the logic, use the words, then use it live.</p>
@@ -335,7 +338,7 @@
       <p class="ex-instr">Each line misuses or mispunctuates a marker. Rewrite it correctly.</p>
       <div id="exB"></div>
       <button class="check-btn" onclick="checkB()">Check my answers</button>
-      <p class="soft-note">Punctuation counts in this exercise: a comma before &#8220;however&#8221; is exactly the error being fixed.</p>
+      <p class="soft-note">Punctuation counts in this exercise: a comma before <em>however</em> is exactly the error being fixed.</p>
     </div>
     <div class="ex-block">
       <span class="ex-label">C</span>
@@ -392,7 +395,7 @@
       <div class="prod-step prod-extend">
         <p class="prod-label">3 &middot; With a partner, if you have one</p>
         <div class="task-box">
-          <p>one of you states four disconnected facts about a project, flat and unlinked. The other repeats them back as a coherent mini-argument, inserting discourse markers to show contrast, cause, and conclusion: &#8220;However...,&#8221; &#8220;Consequently...,&#8221; &#8220;On balance....&#8221; Then swap. The test: could a listener now draw the shape of your argument, where before they only had a list?</p>
+          <p>one of you states four disconnected facts about a project, flat and unlinked. The other repeats them back as a coherent mini-argument, inserting discourse markers to show contrast, cause, and conclusion: <em>However...,</em> <em>Consequently...,</em> <em>On balance....</em> Then swap. The test: could a listener now draw the shape of your argument, where before they only had a list?</p>
           <p>Then, take a short, choppy paragraph you wrote recently and add no more than two discourse markers, placed at the real joints of the argument. Resist adding a third. Notice that two well-placed markers do more than five scattered ones.</p>
         </div>
       </div>
@@ -418,6 +421,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -431,6 +435,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -514,18 +546,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -810,7 +882,7 @@ function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Support helps customers; ______, it retains them.", "a": ["by the same token"]}, {"q": "______, the vendor did warn us about the delay.", "a": ["To be fair"]}, {"q": "The plan is sound. ______, it's expensive.", "a": ["That being said"]}, {"q": "We cut onboarding steps; ______, we simplified the docs.", "a": ["in the same vein"]}, {"q": "Sales rose in the east; ______, they fell in the west.", "a": ["conversely"]}, {"q": "It's slow, and buggy ______.", "a": ["for that matter"]}];
 function buildG(){ buildGap("G", G_DATA, ["by the same token", "to be fair", "that being said", "in the same vein", "conversely", "for that matter"]); }
 function checkG(){ checkGap("G", G_DATA); }
-var H_TIMED = [{"q": "The pilot worked but the cost model did not. Give both and mark the contrast.", "model": "The pilot worked; however, the cost model didn&#8217;t hold."}, {"q": "Costs rose sharply, so you cut the scope. Mark the result.", "model": "Costs rose sharply; consequently, we cut the scope."}, {"q": "The data is thin, and the trend is still clear. Concede, then hold your line.", "model": "Admittedly, the data is thin; nonetheless, the trend is clear."}, {"q": "Close a debrief with your weighed verdict on whether to continue.", "model": "On balance, it&#8217;s worth another quarter."}];
+var H_TIMED = [{"q": "The pilot worked but the cost model did not. Give both and mark the contrast.", "model": "The pilot worked; however, the cost model didn't hold."}, {"q": "Costs rose sharply, so you cut the scope. Mark the result.", "model": "Costs rose sharply; consequently, we cut the scope."}, {"q": "The data is thin, and the trend is still clear. Concede, then hold your line.", "model": "Admittedly, the data is thin; nonetheless, the trend is clear."}, {"q": "Close a debrief with your weighed verdict on whether to continue.", "model": "On balance, it's worth another quarter."}];
 function buildHTimed(){ buildTimed("H", H_TIMED, 45); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildHTimed(); recInit('recBox'); updateScore(); }

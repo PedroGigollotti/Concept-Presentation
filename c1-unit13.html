@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -84,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -179,7 +187,7 @@
     </div>
 
     <h2 class="sec" style="margin-top:44px;">13 · Implied and reduced conditionals</h2>
-    <p class="goal">A conditional argument without “if.”</p>
+    <p class="goal">A conditional argument without <em>if.</em></p>
 
     <p class="sec-kicker">ACCESS</p>
     <p class="body-copy"><b>Goal.</b> Read the memo excerpt and notice the moves in bold. You are spotting the pattern here, not producing it yet.</p>
@@ -192,7 +200,7 @@
     </div>
 
     <p class="sec-kicker" style="margin-top:44px;">ANALYSIS</p>
-    <p class="body-copy"><b>Goal.</b> Learn how to make a conditional argument using prepositions and participles instead of "if," for a leaner, more formal register.</p>
+    <p class="body-copy"><b>Goal.</b> Learn how to make a conditional argument using prepositions and participles instead of <em>if,</em> for a leaner, more formal register.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
     <p class="body-copy">Not every condition needs the word <i>if</i>. Formal and professional English often implies a condition through a preposition, a participle, or a stand-alone connector, which reads as tighter and more official than a full if-clause. <i>Without X, Y</i> implies <i>if X does not happen</i>. <i>Given X, Y</i> implies <i>if we accept X as true</i>. <i>Assuming X, Y</i> and <i>Otherwise, Y</i> both point back to an unstated condition the reader is expected to infer.</p>
@@ -200,25 +208,25 @@
       <div class="card-col">
         <h4>Preposition-led conditionals</h4>
         <dl><dt>Form</dt><dd>without / given / with + noun phrase, main clause</dd><dt>Meaning</dt><dd>an implied condition, stated as a fact rather than a full if-clause</dd><dt>Use it to</dt><dd>state a condition compactly, in a formal or official register</dd></dl>
-        <div class="eg">Without their sign-off, we can&#8217;t start the migration. Given their history, that seems unlikely.</div>
+        <div class="eg">Without their sign-off, we can't start the migration. Given their history, that seems unlikely.</div>
       </div>
       <div class="card-col">
         <h4>Assuming / otherwise</h4>
-        <dl><dt>Form</dt><dd>assuming + clause, main clause; main clause. Otherwise, consequence</dd><dt>Meaning</dt><dd>a condition implied rather than stated with "if"</dd><dt>Use it to</dt><dd>reference an unstated condition the reader can infer from context</dd></dl>
-        <div class="eg">Assuming no objections, we start Monday. Otherwise, we&#8217;d be working from an unapproved plan.</div>
+        <dl><dt>Form</dt><dd>assuming + clause, main clause; main clause. Otherwise, consequence</dd><dt>Meaning</dt><dd>a condition implied rather than stated with <em>if</em></dd><dt>Use it to</dt><dd>reference an unstated condition the reader can infer from context</dd></dl>
+        <div class="eg">Assuming no objections, we start Monday. Otherwise, we'd be working from an unapproved plan.</div>
       </div>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Don't stack "if" with these connectors.</b> "If without their sign-off" doubles the conditional marker. Use one or the other: "without their sign-off" alone, or "if they don't sign off."</p>
-      <p><b>Make sure "otherwise" has a clear antecedent.</b> "Otherwise" only works if the condition it reverses was stated or is obvious from context. If it isn't, spell out the condition instead.</p>
+      <p><b>Don't stack <em>if</em> with these connectors.</b> <em>If without their sign-off</em> doubles the conditional marker. Use one or the other: <em>without their sign-off</em> alone, or “if they don't sign off.”</p>
+      <p><b>Make sure <em>otherwise</em> has a clear antecedent.</b> <em>Otherwise</em> only works if the condition it reverses was stated or is obvious from context. If it isn't, spell out the condition instead.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>"Provided that" versus "provided."</b> British formal English often drops "that" after "provided" in contracts: "provided the terms are met." American formal English usually keeps "that": "provided that the terms are met." This book keeps "that."</p>
+      <p><b><em>Provided that</em> versus <em>provided.</em></b> British formal English often drops <em>that</em> after <em>provided</em> in contracts: “provided the terms are met.” American formal English usually keeps <em>that</em>: “provided that the terms are met.” This book keeps <em>that.</em></p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
-    <p class="body-copy">Same implied logic in every line. The highlighted slot changes; no "if" appears anywhere.</p>
+    <p class="body-copy">Same implied logic in every line. The highlighted slot changes; no <em>if</em> appears anywhere.</p>
     <ul class="moves">
       <li>Without <span class="slot">[their sign-off / a firm date]</span>, we can't start.</li>
       <li>Given <span class="slot">[their history / the current data]</span>, that seems unlikely.</li>
@@ -235,30 +243,30 @@
           </marker>
         </defs>
 
-        <text x="30" y="38" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#6B6F76">Stated with &#8220;if&#8221;</text>
+        <text x="30" y="38" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#6B6F76">Stated with <tspan font-style="italic">if</tspan></text>
         <text x="30" y="58" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">a full clause: subject, verb, the lot</text>
 
         <rect x="30" y="82" width="288" height="34" rx="6" fill="#E9EAE3" stroke="#DCDDD6"/>
         <text x="174" y="104" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" fill="#33363B">If they do not sign off,</text>
         <rect x="342" y="82" width="288" height="34" rx="6" fill="#E9EAE3" stroke="#DCDDD6"/>
-        <text x="486" y="104" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" fill="#33363B">we can&#8217;t start the migration.</text>
+        <text x="486" y="104" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" fill="#33363B">we can't start the migration.</text>
 
         <line x1="174" y1="132" x2="174" y2="176" stroke="#B3132B" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr13)"/>
         <text x="196" y="160" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#B3132B">the clause folds into a noun phrase</text>
 
-        <text x="30" y="228" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Implied, no &#8220;if&#8221;</text>
+        <text x="30" y="228" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Implied, no <tspan font-style="italic">if</tspan></text>
         <text x="30" y="248" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">tighter, more official, and the reader recovers the condition</text>
 
         <rect x="30" y="266" width="198" height="34" rx="6" fill="#B3132B"/>
         <text x="129" y="288" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Without their sign-off,</text>
         <rect x="252" y="266" width="288" height="34" rx="6" fill="#1F5570"/>
-        <text x="396" y="288" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">we can&#8217;t start the migration.</text>
+        <text x="396" y="288" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">we can't start the migration.</text>
         <text x="546" y="288" font-family="Instrument Sans, Arial, sans-serif" font-size="11" font-style="italic" fill="#6B6F76">same logic, fewer words</text>
       </svg>
       <p class="diagram-cap">The same condition, restated without the word if, for a tighter and more official register.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Formal documents reward density, and repeating "if" across a paragraph of conditions starts to sound like a checklist rather than an argument. Implied conditionals let you state the same logic in fewer, more official-sounding words: "without X" and "given X" both smuggle a condition into a noun phrase instead of a clause. The trade-off is that the reader has to do a small amount of inference to recover the "if," so these forms work best when the condition is genuinely easy to reconstruct from context, not when the logic is delicate or easy to misread.</p>
+    <p class="body-copy">Formal documents reward density, and repeating <em>if</em> across a paragraph of conditions starts to sound like a checklist rather than an argument. Implied conditionals let you state the same logic in fewer, more official-sounding words: <em>without X</em> and <em>given X</em> both smuggle a condition into a noun phrase instead of a clause. The trade-off is that the reader has to do a small amount of inference to recover the <em>if,</em> so these forms work best when the condition is genuinely easy to reconstruct from context, not when the logic is delicate or easy to misread.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the form accurately, then control the register, then use the words, then say it for real.</p>
@@ -280,8 +288,8 @@
     </div>
     <div class="ex-block">
       <span class="ex-label">C</span>
-      <p class="ex-title">Rewrite without “if”</p>
-      <p class="ex-instr">Rewrite each conditional sentence using an implied form instead of “if.”</p>
+      <p class="ex-title">Rewrite without <em>if</em></p>
+      <p class="ex-instr">Rewrite each conditional sentence using an implied form instead of <em>if.</em></p>
       <div id="exC"></div>
       <button class="check-btn" onclick="checkC()">Check my answers</button>
       <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
@@ -296,7 +304,7 @@
     <div class="ex-block">
       <span class="ex-label">E</span>
       <p class="ex-title">Formalize the condition</p>
-      <p class="ex-instr">Rewrite each line to remove “if” and match the bracketed register.</p>
+      <p class="ex-instr">Rewrite each line to remove <em>if</em> and match the bracketed register.</p>
       <div id="exE"></div>
       <button class="check-btn" onclick="checkE()">Check my answers</button>
       <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
@@ -320,8 +328,8 @@
       <p class="ex-title">Over to you</p>
       <p class="ex-instr">Not graded. This is where the grammar stops being a rule you know and becomes a sentence you actually say.</p>
       <div class="task-box">
-        <p><b>In pairs.</b> Describe a real condition at work using at least two implied conditional forms without saying "if." Your partner reconstructs the missing "if" to check the meaning is still clear.</p>
-        <p><b>Then, on your own.</b> Rewrite two sentences from a recent email to remove "if" using an implied form. Read them aloud and check they still sound natural, not stiff.</p>
+        <p><b>In pairs.</b> Describe a real condition at work using at least two implied conditional forms without saying <em>if.</em> Your partner reconstructs the missing <em>if</em> to check the meaning is still clear.</p>
+        <p><b>Then, on your own.</b> Rewrite two sentences from a recent email to remove <em>if</em> using an implied form. Read them aloud and check they still sound natural, not stiff.</p>
       </div>
     </div>
 
@@ -345,6 +353,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -358,6 +367,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -441,18 +478,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -573,7 +650,7 @@ var C_DATA = [{"q": "If we don't get sign-off, we can't start.", "keys": ["witho
 function buildC(){ buildRewrite("C", C_DATA, "rewrite without if"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Without a signed contract,", "Given the current data,", "Assuming no last-minute changes,", "With one more reviewer,", "Otherwise,"];
-var D_ENDINGS = [{"id": "a", "t": "we'd have to delay the launch."}, {"id": "b", "t": "we can't begin the work."}, {"id": "c", "t": "the trend should hold."}, {"id": "d", "t": "we finish Friday as planned."}, {"id": "e", "t": "we could clear the backlog faster."}];
+var D_ENDINGS = [{"id": "e", "t": "we could clear the backlog faster."}, {"id": "b", "t": "we can't begin the work."}, {"id": "d", "t": "we finish Friday as planned."}, {"id": "c", "t": "the trend should hold."}, {"id": "a", "t": "we'd have to delay the launch."}];
 var D_KEY = ["b", "c", "d", "e", "a"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
@@ -581,7 +658,7 @@ var E_DATA = [{"q": "If we don't hear back by Friday, we'll proceed anyway.", "n
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["contingent on", "barring any surprises", "subject to approval", "all else being equal", "a precondition", "to hinge on"];
-var F_ENDINGS = [{"id": "a", "t": "dependent on something else happening first"}, {"id": "b", "t": "assuming nothing unexpected occurs"}, {"id": "c", "t": "not final until someone signs off"}, {"id": "d", "t": "assuming no other factors change"}, {"id": "e", "t": "a requirement that must be met before something else can happen"}, {"id": "f", "t": "to depend entirely on one key factor"}];
+var F_ENDINGS = [{"id": "c", "t": "not final until someone signs off"}, {"id": "b", "t": "assuming nothing unexpected occurs"}, {"id": "a", "t": "dependent on something else happening first"}, {"id": "f", "t": "to depend entirely on one key factor"}, {"id": "d", "t": "assuming no other factors change"}, {"id": "e", "t": "a requirement that must be met before something else can happen"}];
 var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }

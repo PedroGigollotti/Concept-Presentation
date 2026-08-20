@@ -89,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -251,7 +254,7 @@
     <p class="body-copy"><b>Goal.</b> Learn what triggers inversion, the three families of triggers, and the effect each creates. By the end you should be able to invert for emphasis on purpose.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">Inversion means flipping the subject and the helping verb, and it is one of English's strongest ways to add emphasis. At C2 you <b>use it on purpose, for effect.</b> The trigger is fronting: when you move a negative or limiting word to the front of the clause, the subject and helping verb swap places behind it. Move <i>&#8220;never&#8221;</i> to the front and <i>&#8220;we have seen&#8221;</i> becomes <i>&#8220;have we seen&#8221;:</i> &#8220;Never have we seen demand like this.&#8221; There are three groups of triggers: negatives (<i>&#8220;never,&#8221; &#8220;rarely,&#8221; &#8220;not only,&#8221; &#8220;under no circumstances&#8221;</i>), time words (<i>&#8220;only then,&#8221; &#8220;not until,&#8221; &#8220;no sooner ... than&#8221;</i>), and degree openers (<i>&#8220;so great was...,&#8221; &#8220;such was...&#8221;</i>). Each throws the weight of the sentence onto the fronted word, which sounds forceful and formal, so spend it only where the emphasis is truly earned.</p>
+    <p class="body-copy">Inversion means flipping the subject and the helping verb, and it is one of English's strongest ways to add emphasis. At C2 you <b>use it on purpose, for effect.</b> The trigger is fronting: when you move a negative or limiting word to the front of the clause, the subject and helping verb swap places behind it. Move <i>never</i> to the front and “we have seen” becomes <i><em>have we seen</em>:</i> “Never have we seen demand like this.” There are three groups of triggers: negatives (<i><em>never,</em> <em>rarely,</em> <em>not only,</em> <em>under no circumstances</em></i>), time words (<i><em>only then,</em> <em>not until,</em> <em>no sooner ... than</em></i>), and degree openers (<i><em>so great was...,</em> <em>such was...</em></i>). Each throws the weight of the sentence onto the fronted word, which sounds forceful and formal, so spend it only where the emphasis is truly earned.</p>
     <div class="split">
       <div class="card-col">
         <h4>Negative-adverbial inversion</h4>
@@ -271,12 +274,12 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Invert only after a fronted negative.</b> The inversion is triggered by fronting the adverbial. Without fronting, don't invert: &#8220;We have never seen it,&#8221; not &#8220;We never have seen it.&#8221; A positive adverbial doesn't trigger it either: &#8220;Often we go,&#8221; but &#8220;Rarely do we go.&#8221;</p>
-      <p><b>Supply an auxiliary, adding &#8220;do&#8221; if needed.</b> Inversion needs an auxiliary. If the verb is a plain present or past, insert do / does / did: &#8220;Rarely does he agree,&#8221; never &#8220;Rarely he agrees&#8221; or &#8220;Rarely agrees he.&#8221;</p>
+      <p><b>Invert only after a fronted negative.</b> The inversion is triggered by fronting the adverbial. Without fronting, don't invert: “We have never seen it,” not “We never have seen it.” A positive adverbial doesn't trigger it either: <em>Often we go,</em> but “Rarely do we go.”</p>
+      <p><b>Supply an auxiliary, adding <em>do</em> if needed.</b> Inversion needs an auxiliary. If the verb is a plain present or past, insert do / does / did: “Rarely does he agree,” never <em>Rarely he agrees</em> or <em>Rarely agrees he.</em></p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>&#8220;Nor&#8221; continuation.</b> After a negative statement, both varieties invert with &#8220;nor&#8221; (&#8220;..., nor did they apologize&#8221;); American English also allows &#8220;neither did they.&#8221; This book uses &#8220;nor.&#8221;</p>
+      <p><b><em>Nor</em> continuation.</b> After a negative statement, both varieties invert with <em>nor</em> (<em>..., nor did they apologize</em>); American English also allows <em>neither did they.</em> This book uses <em>nor.</em></p>
       <p><b>Formal in both.</b> Negative-adverbial inversion reads as equally formal in American and British English. It belongs to careful writing and speeches in both, not to casual talk; this is one structure where the varieties fully agree.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
@@ -303,19 +306,19 @@
         <text x="350" y="98" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" fill="#33363B">We have never seen demand quite like this before.</text>
 
         <line x1="350" y1="134" x2="350" y2="174" stroke="#B3132B" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#fa)"/>
-        <text x="374" y="156" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#B3132B">“never” fronts, and the order flips</text>
+        <text x="374" y="156" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#B3132B"><tspan font-style="italic">never</tspan> fronts, and the order flips</text>
 
         <text x="30" y="214" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Inverted</text>
         <text x="30" y="234" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">the negative fronted, subject and auxiliary flipped</text>
         <rect x="30" y="254" width="640" height="30" rx="6" fill="#1F5570"/>
         <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Never have we seen demand quite like this.</text>
 
-        <text x="350" y="318" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#33363B">Same claim, more force. Fronting the negative throws the weight onto “never.”</text>
+        <text x="350" y="318" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#33363B">Same claim, more force. Fronting the negative throws the weight onto <tspan font-style="italic">never.</tspan></text>
       </svg>
-      <p class="diagram-cap">Same claim, more force. Fronting the negative and inverting throws the weight onto &#8220;never.&#8221;</p>
+      <p class="diagram-cap">Same claim, more force. Fronting the negative and inverting throws the weight onto <em>never.</em></p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Here is why the flip works. English word order is usually so fixed that breaking it is itself a signal: the moment a reader meets &#8220;Never have we,&#8221; they know something emphatic is coming before they even reach the point. Fronting the negative also <b>puts the strongest word first, where it hits hardest,</b> and holds back the ordinary subject, which builds a small moment of tension. <i>&#8220;We have never seen this&#8221;</i> states a fact; <i>&#8220;Never have we seen this&#8221;</i> performs it. That is why inversion belongs to speeches and the one line in a report you want remembered. But the same break wears out fast. Invert every second sentence and it stops signaling emphasis and starts sounding overblown, like a speaker who shouts every word. Save it for the moment that matters.</p>
+    <p class="body-copy">Here is why the flip works. English word order is usually so fixed that breaking it is itself a signal: the moment a reader meets <em>Never have we,</em> they know something emphatic is coming before they even reach the point. Fronting the negative also <b>puts the strongest word first, where it hits hardest,</b> and holds back the ordinary subject, which builds a small moment of tension. “We have never seen this” states a fact; “Never have we seen this” performs it. That is why inversion belongs to speeches and the one line in a report you want remembered. But the same break wears out fast. Invert every second sentence and it stops signaling emphasis and starts sounding overblown, like a speaker who shouts every word. Save it for the moment that matters.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the inversions, fix the misfires, add emphasis, use the words, then use it live.</p>
@@ -384,13 +387,13 @@
       <div class="prod-step">
         <p class="prod-label">2 &middot; Say it</p>
         <p class="prod-lead">Inversion is written for the ear. If it does not sound like a speech, it will not read like one either.</p>
-        <div class="task-box"><p>Record situation 1, then say the plain version aloud straight after: &#8220;We&#8217;ve never closed a year this strong.&#8221; Play the recording back. Listen for one thing: did your voice give weight to <b>never</b>? Fronting only earns its formality if the fronted word gets the stress. If it did not, you have written a speech and read it like a memo.</p></div>
+        <div class="task-box"><p>Record situation 1, then say the plain version aloud straight after: “We've never closed a year this strong.” Play the recording back. Listen for one thing: did your voice give weight to <b>never</b>? Fronting only earns its formality if the fronted word gets the stress. If it did not, you have written a speech and read it like a memo.</p></div>
         <div id="recBox"></div>
       </div>
       <div class="prod-step prod-extend">
         <p class="prod-label">3 &middot; With a partner, if you have one</p>
         <div class="task-box">
-          <p>deliver a sixty-second &#8220;rallying&#8221; update on a project win, but every third sentence must use inversion for emphasis: &#8220;Never have we...,&#8221; &#8220;Only after months of work did we...,&#8221; &#8220;So strong was the result that....&#8221; Your partner counts the inversions and flags any that felt forced. Then swap, delivering a warning rather than a win, using &#8220;Under no circumstances...,&#8221; &#8220;Not until...,&#8221; &#8220;At no point....&#8221;</p>
+          <p>deliver a sixty-second <em>rallying</em> update on a project win, but every third sentence must use inversion for emphasis: <em>Never have we...,</em> <em>Only after months of work did we...,</em> <em>So strong was the result that....</em> Your partner counts the inversions and flags any that felt forced. Then swap, delivering a warning rather than a win, using <em>Under no circumstances...,</em> <em>Not until...,</em> <em>At no point....</em></p>
           <p>Then, take three flat sentences from a recent update and rewrite each with inversion. Read the pair aloud and decide honestly whether the inversion added real weight or just sounded theatrical. Keep only the ones that earned it.</p>
         </div>
       </div>
@@ -416,6 +419,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -429,6 +433,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -512,18 +544,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }

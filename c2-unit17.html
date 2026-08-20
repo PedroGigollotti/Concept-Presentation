@@ -89,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -251,7 +254,7 @@
     <p class="body-copy"><b>Goal.</b> Learn the meaning-change verbs and the fixed complementation patterns, and how the complement carries the meaning. By the end you should be able to pick the exact form for the exact shade.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">Many English verbs can be followed by either a to-infinitive or an -ing form, and for a whole set of them <b>the choice changes the meaning,</b> sometimes completely. <i>&#8220;I stopped to check the logs&#8221;</i> means you paused in order to check; <i>&#8220;I stopped checking the logs&#8221;</i> means you gave up checking. <i>&#8220;Remember to send it&#8221;</i> is a task for the future; <i>&#8220;remember sending it&#8221;</i> is a memory of the past. Beyond these meaning-change verbs, there is a wider skill: knowing the fixed pattern each verb takes. &#8220;Suggest&#8221; and &#8220;recommend&#8221; take -ing or a &#8220;that&#8221; clause but never a plain &#8220;to&#8221; (<i>&#8220;suggest meeting,&#8221; not &#8220;suggest to meet&#8221;</i>). These patterns are not logical; you learn them, and getting one slightly wrong is one of the clearest signs of a non-native speaker.</p>
+    <p class="body-copy">Many English verbs can be followed by either a to-infinitive or an -ing form, and for a whole set of them <b>the choice changes the meaning,</b> sometimes completely. “I stopped to check the logs” means you paused in order to check; “I stopped checking the logs” means you gave up checking. <i>Remember to send it</i> is a task for the future; <i>remember sending it</i> is a memory of the past. Beyond these meaning-change verbs, there is a wider skill: knowing the fixed pattern each verb takes. <em>Suggest</em> and <em>recommend</em> take -ing or a <em>that</em> clause but never a plain <em>to</em> (<i><em>suggest meeting,</em> not <em>suggest to meet</em></i>). These patterns are not logical; you learn them, and getting one slightly wrong is one of the clearest signs of a non-native speaker.</p>
     <div class="split">
       <div class="card-col">
         <h4>Meaning-change verbs</h4>
@@ -266,18 +269,18 @@
       <div class="card-col">
         <h4>Fixed complementation patterns</h4>
         <dl><dt>Form</dt><dd>suggest / recommend + -ing or that; advise + object + to; make / let + object + base; help + (to)</dd><dt>Meaning</dt><dd>the pattern is fixed by the verb, and errors sound non-native</dd><dt>Use it to</dt><dd>complement each verb the way it demands</dd></dl>
-        <div class="eg">suggest revising (never &#8220;suggest to revise&#8221;); advised us to wait; made us wait; helped (to) fix it</div>
+        <div class="eg">suggest revising (never <em>suggest to revise</em>); advised us to wait; made us wait; helped (to) fix it</div>
       </div>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Meaning-change verbs are not interchangeable.</b> &#8220;Remember to lock up&#8221; and &#8220;remember locking up&#8221; are different claims; picking the wrong one misinforms. Choose by meaning, not by ear.</p>
-      <p><b>Some verbs never take &#8220;to&#8221; + infinitive.</b> &#8220;Suggest,&#8221; &#8220;recommend,&#8221; &#8220;look forward to,&#8221; and &#8220;be used to&#8221; take -ing or a that-clause, never a bare to-infinitive: &#8220;suggest meeting,&#8221; not &#8220;suggest to meet.&#8221;</p>
+      <p><b>Meaning-change verbs are not interchangeable.</b> <em>Remember to lock up</em> and <em>remember locking up</em> are different claims; picking the wrong one misinforms. Choose by meaning, not by ear.</p>
+      <p><b>Some verbs never take <em>to</em> + infinitive.</b> <em>Suggest,</em> <em>recommend,</em> <em>look forward to,</em> and <em>be used to</em> take -ing or a that-clause, never a bare to-infinitive: <em>suggest meeting,</em> not <em>suggest to meet.</em></p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>&#8220;Help&#8221; + verb.</b> Both varieties allow &#8220;help (to) do&#8221;; American English more often drops the &#8220;to&#8221; (&#8220;helped fix it&#8221;). This book uses the bare form (&#8220;help fix&#8221;).</p>
-      <p><b>&#8220;Go&#8221; + verb.</b> American English says &#8220;go see,&#8221; &#8220;come sit&#8221; (bare); British English uses &#8220;go and see.&#8221; This book uses &#8220;go and see&#8221; in formal writing.</p>
+      <p><b><em>Help</em> + verb.</b> Both varieties allow <em>help (to) do</em>; American English more often drops the <em>to</em> (<em>helped fix it</em>). This book uses the bare form (<em>help fix</em>).</p>
+      <p><b><em>Go</em> + verb.</b> American English says <em>go see,</em> <em>come sit</em> (bare); British English uses <em>go and see.</em> This book uses <em>go and see</em> in formal writing.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same verb, exact shade. Keep the frame; change only the slot and the situation.</p>
@@ -312,10 +315,10 @@
 
         <text x="350" y="318" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#33363B">Same verb, opposite meanings. The complement decides which one you said.</text>
       </svg>
-      <p class="diagram-cap">Same verb, opposite meanings. The complement, &#8220;to&#8221; or &#8220;-ing,&#8221; decides which you mean.</p>
+      <p class="diagram-cap">Same verb, opposite meanings. The complement, <em>to</em> or <em>-ing,</em> decides which you mean.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Here is why this small corner of grammar deserves real attention. Most of the time, the wrong structure just sounds a little off. With the meaning-change verbs, <b>it actually says something false.</b> If you tell a colleague <i>&#8220;remember locking the server room&#8221;</i> when you meant <i>&#8220;remember to lock it,&#8221;</i> you have turned an instruction into a claim about the past, and they may leave it unlocked. So this is about being understood, not about style. The wider patterns work differently: they rarely change the meaning, but they separate fluent from almost-fluent. &#8220;I suggest to reconvene&#8221; is perfectly clear, and clearly non-native, because a native ear expects &#8220;I suggest reconvening.&#8221; There is no rule to work it out from; the verb simply carries its pattern, so you store the pattern with the verb.</p>
+    <p class="body-copy">Here is why this small corner of grammar deserves real attention. Most of the time, the wrong structure just sounds a little off. With the meaning-change verbs, <b>it actually says something false.</b> If you tell a colleague <i>remember locking the server room</i> when you meant <i>remember to lock it,</i> you have turned an instruction into a claim about the past, and they may leave it unlocked. So this is about being understood, not about style. The wider patterns work differently: they rarely change the meaning, but they separate fluent from almost-fluent. <em>I suggest to reconvene</em> is perfectly clear, and clearly non-native, because a native ear expects <em>I suggest reconvening.</em> There is no rule to work it out from; the verb simply carries its pattern, so you store the pattern with the verb.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: choose the complements, fix the misfires, pick the exact form, use the words, then use it live.</p>
@@ -384,14 +387,14 @@
       <div class="prod-step">
         <p class="prod-label">2 &middot; Say it</p>
         <p class="prod-lead">These two forms are almost identical in sound and opposite in meaning, which is precisely why they need saying, not reading.</p>
-        <div class="task-box"><p>Record situations 1 and 2 one after the other. Play them back and listen for one thing: are they clearly different? &#8220;Remember to lock&#8221; and &#8220;remember locking&#8221; differ by one syllable and by an entire meaning. If a listener could mishear one for the other, put more weight on <b>to</b>.</p></div>
+        <div class="task-box"><p>Record situations 1 and 2 one after the other. Play them back and listen for one thing: are they clearly different? <em>Remember to lock</em> and <em>remember locking</em> differ by one syllable and by an entire meaning. If a listener could mishear one for the other, put more weight on <b>to</b>.</p></div>
         <div id="recBox"></div>
       </div>
       <div class="prod-step prod-extend">
         <p class="prod-label">3 &middot; With a partner, if you have one</p>
         <div class="task-box">
-          <p>play &#8220;same verb, two meanings.&#8221; One of you says a verb from the unit (stop, try, remember, mean, go on); the other must make two sentences with it, one with &#8220;to&#8221; and one with &#8220;-ing,&#8221; and explain how the meaning differs. Score a point for each pair that is genuinely distinct and correctly formed. Then swap verbs.</p>
-          <p>Then, find three sentences you wrote recently using &#8220;remember,&#8221; &#8220;try,&#8221; or &#8220;stop,&#8221; and check that you chose the complement that matches your meaning. Rewrite any where the other form would actually have said what you meant.</p>
+          <p>play <em>same verb, two meanings.</em> One of you says a verb from the unit (stop, try, remember, mean, go on); the other must make two sentences with it, one with <em>to</em> and one with <em>-ing,</em> and explain how the meaning differs. Score a point for each pair that is genuinely distinct and correctly formed. Then swap verbs.</p>
+          <p>Then, find three sentences you wrote recently using <em>remember,</em> <em>try,</em> or <em>stop,</em> and check that you chose the complement that matches your meaning. Rewrite any where the other form would actually have said what you meant.</p>
         </div>
       </div>
     </div>
@@ -416,6 +419,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -429,6 +433,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -512,18 +544,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -789,7 +861,7 @@ function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "I suggest to meet on Monday.", "keys": ["suggest meeting"], "reject": ["suggest to meet"], "full": "I suggest meeting on Monday."}, {"q": "Remember locking the door on your way out tonight.", "keys": ["remember to lock"], "reject": ["remember locking"], "full": "Remember to lock the door on your way out tonight."}, {"q": "We look forward to hear from you.", "keys": ["forward to hearing"], "reject": ["forward to hear"], "full": "We look forward to hearing from you."}, {"q": "They advised us waiting for the update.", "keys": ["advised us to wait"], "reject": ["us waiting"], "full": "They advised us to wait for the update."}, {"q": "He made us to leave early.", "keys": ["made us leave"], "reject": ["us to leave"], "full": "He made us leave early."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
-var C_DATA = [{"q": "We fixed it.", "note": "[experiment: fix it by rebooting and see]", "keys": ["tried rebooting"], "reject": ["we fixed it"], "full": "We tried rebooting it."}, {"q": "The role is filled.", "note": "[formal bad news, using &#8220;regret&#8221;]", "keys": ["regret to inform"], "reject": ["regret informing"], "full": "We regret to inform you the role is filled."}, {"q": "He talked for an hour.", "note": "[he continued, using &#8220;go on&#8221;]", "keys": ["went on talking"], "reject": ["went on to talk"], "full": "He went on talking for an hour."}, {"q": "She became CEO.", "note": "[the next step, using &#8220;go on&#8221;]", "keys": ["went on to become"], "reject": ["went on becoming"], "full": "She went on to become CEO."}, {"q": "Cc me on replies.", "note": "[a future task, using &#8220;remember&#8221;]", "keys": ["remember to cc"], "reject": ["remember ccing"], "full": "Please remember to cc me on replies."}];
+var C_DATA = [{"q": "We fixed it.", "note": "[experiment: fix it by rebooting and see]", "keys": ["tried rebooting"], "reject": ["we fixed it"], "full": "We tried rebooting it."}, {"q": "The role is filled.", "note": "[formal bad news, using <em>regret</em>]", "keys": ["regret to inform"], "reject": ["regret informing"], "full": "We regret to inform you the role is filled."}, {"q": "He talked for an hour.", "note": "[he continued, using <em>go on</em>]", "keys": ["went on talking"], "reject": ["went on to talk"], "full": "He went on talking for an hour."}, {"q": "She became CEO.", "note": "[the next step, using <em>go on</em>]", "keys": ["went on to become"], "reject": ["went on becoming"], "full": "She went on to become CEO."}, {"q": "Cc me on replies.", "note": "[a future task, using <em>remember</em>]", "keys": ["remember to cc"], "reject": ["remember ccing"], "full": "Please remember to cc me on replies."}];
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["stop to rest", "stop resting", "try to open it", "try opening it", "remember locking it"];
@@ -808,7 +880,7 @@ function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "I ______ working with the new team.", "a": ["look forward to"]}, {"q": "I finally ______ answering those emails.", "a": ["got around to"]}, {"q": "We ______ shipping a week late.", "a": ["ended up"]}, {"q": "Let's not ______ the decision again.", "a": ["put off"]}, {"q": "It all ______ trust, in the end.", "a": ["comes down to"]}, {"q": "He ______ the mistake right away.", "a": ["owned up to"]}];
 function buildG(){ buildGap("G", G_DATA, ["look forward to", "get around to", "end up (doing)", "put off", "come down to", "own up to"]); }
 function checkG(){ checkGap("G", G_DATA); }
-var H_TIMED = [{"q": "Tell a colleague to lock the server room tonight. [an instruction for the future]", "model": "Remember to lock the server room tonight."}, {"q": "Tell a colleague you recall locking it last night. [a memory of the past]", "model": "I remember locking it last night."}, {"q": "Suggest to your team that you meet on Monday. [use &#8220;suggest&#8221;]", "model": "I suggest meeting on Monday."}, {"q": "Deliver formal bad news that the role has been filled.", "model": "We regret to inform you the role is filled."}];
+var H_TIMED = [{"q": "Tell a colleague to lock the server room tonight. [an instruction for the future]", "model": "Remember to lock the server room tonight."}, {"q": "Tell a colleague you recall locking it last night. [a memory of the past]", "model": "I remember locking it last night."}, {"q": "Suggest to your team that you meet on Monday. [use <em>suggest</em>]", "model": "I suggest meeting on Monday."}, {"q": "Deliver formal bad news that the role has been filled.", "model": "We regret to inform you the role is filled."}];
 function buildHTimed(){ buildTimed("H", H_TIMED, 40); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildHTimed(); recInit('recBox'); updateScore(); }

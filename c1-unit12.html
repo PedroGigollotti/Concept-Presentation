@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -84,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -201,23 +209,23 @@
       <div class="card-col">
         <h4>Past to present</h4>
         <dl><dt>Form</dt><dd>if + past perfect, would + base verb</dd><dt>Meaning</dt><dd>a past action that did not happen, so a present that is not true</dd><dt>Use it to</dt><dd>show how an earlier decision still shapes the present</dd></dl>
-        <div class="eg">If we had locked the scope, we wouldn&#8217;t be slipping now.</div>
+        <div class="eg">If we had locked the scope, we wouldn't be slipping now.</div>
       </div>
       <div class="card-col">
         <h4>Present to past</h4>
         <dl><dt>Form</dt><dd>if + past simple or were, would have + past participle</dd><dt>Meaning</dt><dd>a present condition that is not true, so a past that came out differently</dd><dt>Use it to</dt><dd>explain a past event by a present trait or standing fact</dd></dl>
-        <div class="eg">If I were more cautious, I wouldn&#8217;t have signed it.</div>
+        <div class="eg">If I were more cautious, I wouldn't have signed it.</div>
       </div>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Do not collapse the two times.</b> "If we locked it, we won't slip" mixes the tenses wrongly and marks you as non-native at once.</p>
-      <p><b>Keep "would" out of the if-clause.</b> Write "if we had locked," never "if we would have locked."</p>
+      <p><b>Do not collapse the two times.</b> “If we locked it, we won't slip” mixes the tenses wrongly and marks you as non-native at once.</p>
+      <p><b>Keep <em>would</em> out of the if-clause.</b> Write “if we had locked,” never “if we would have locked.”</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>Subjunctive "were."</b> American English keeps "if I were" in every person; informal British English often allows "if I was." This book uses "were."</p>
-      <p><b>Past participle of "get."</b> American "we would have gotten it done"; British "we would have got it done." This book uses "gotten."</p>
+      <p><b>Subjunctive <em>were.</em></b> American English keeps <em>if I were</em> in every person; informal British English often allows <em>if I was.</em> This book uses <em>were.</em></p>
+      <p><b>Past participle of <em>get.</em></b> American “we would have gotten it done”; British “we would have got it done.” This book uses <em>gotten.</em></p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same grammar in every line. Only the highlighted slot and the subject change.</p>
@@ -243,7 +251,7 @@
         <rect x="30" y="82" width="242" height="34" rx="6" fill="#B3132B"/>
         <text x="151" y="104" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">If we had locked the scope,</text>
         <rect x="404" y="82" width="242" height="34" rx="6" fill="#1F5570"/>
-        <text x="525" y="104" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">we wouldn&#8217;t be slipping now.</text>
+        <text x="525" y="104" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">we wouldn't be slipping now.</text>
         <line x1="280" y1="99" x2="396" y2="99" stroke="#B3132B" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr12)"/>
         <text x="151" y="136" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="11.5" fill="#6B6F76">unreal PAST</text>
         <text x="525" y="136" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="11.5" fill="#6B6F76">untrue PRESENT</text>
@@ -254,7 +262,7 @@
         <rect x="30" y="240" width="242" height="34" rx="6" fill="#1F5570"/>
         <text x="151" y="262" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">If I were more cautious,</text>
         <rect x="404" y="240" width="242" height="34" rx="6" fill="#B3132B"/>
-        <text x="525" y="262" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">I wouldn&#8217;t have signed it.</text>
+        <text x="525" y="262" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">I wouldn't have signed it.</text>
         <line x1="280" y1="257" x2="396" y2="257" stroke="#B3132B" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr12)"/>
         <text x="151" y="294" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="11.5" fill="#6B6F76">untrue PRESENT</text>
         <text x="525" y="294" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="11.5" fill="#6B6F76">unreal PAST</text>
@@ -264,7 +272,7 @@
       <p class="diagram-cap">The grammar is identical. What changes is who the sentence blames: you, me, us, a thing, or no one.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">A mixed conditional makes you hold two unreal times at once: a past that did not happen and the present that therefore does not exist. That is a heavy load, and under pressure most people collapse it into one time and say "if we locked it, we won't slip," which is wrong and sounds wrong. Store the frame whole, "if we had X, we wouldn't be Y," and your attention is free for the harder choice: who the sentence blames. The grammar never changes, yet the small shift from "you" to "we" to an agentless "had the timeline been..." moves the needle from fault to no fault. In a retro, that choice decides whether the team fixes the problem or goes quiet.</p>
+    <p class="body-copy">A mixed conditional makes you hold two unreal times at once: a past that did not happen and the present that therefore does not exist. That is a heavy load, and under pressure most people collapse it into one time and say “if we locked it, we won't slip,” which is wrong and sounds wrong. Store the frame whole, <em>if we had X, we wouldn't be Y,</em> and your attention is free for the harder choice: who the sentence blames. The grammar never changes, yet the small shift from <em>you</em> to <em>we</em> to an agentless <em>had the timeline been...</em> moves the needle from fault to no fault. In a retro, that choice decides whether the team fixes the problem or goes quiet.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice, top to bottom: build the form accurately, then control the tone, then use the words, then say it for real.</p>
@@ -357,6 +365,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -370,6 +379,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -453,18 +490,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -575,7 +652,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "If the team ______ (plan) better, we ______ (not / be) behind now.", "a": ["had planned / wouldn't be", "had planned / would not be"]}, {"q": "If I ______ (be) more organized, I ______ (not / miss) the deadline last week.", "a": ["were / wouldn't have missed", "were / would not have missed"]}, {"q": "We ______ (be) live by now if we ______ (fix) the bug on Monday.", "a": ["would be / had fixed"]}, {"q": "If she ______ (not / quit), she ______ (lead) the project today.", "a": ["hadn't quit / would be leading", "had not quit / would be leading"]}, {"q": "If you ______ (listen) to the feedback, the client ______ (not / be) upset now.", "a": ["had listened / wouldn't be", "had listened / would not be"]}, {"q": "If he ______ (be) a faster writer, he ______ (finish) the report yesterday.", "a": ["were / would have finished"]}];
+var A_DATA = [{"q": "If the team ______ (plan) better, we ______ (not / be) behind now.", "a": [["had planned"], ["wouldn't be", "would not be"]]}, {"q": "If I ______ (be) more organized, I ______ (not / miss) the deadline last week.", "a": [["were"], ["wouldn't have missed", "would not have missed"]]}, {"q": "We ______ (be) live by now if we ______ (fix) the bug on Monday.", "a": [["would be"], ["had fixed"]]}, {"q": "If she ______ (not / quit), she ______ (lead) the project today.", "a": [["hadn't quit", "had not quit"], ["would be leading"]]}, {"q": "If you ______ (listen) to the feedback, the client ______ (not / be) upset now.", "a": [["had listened"], ["wouldn't be", "would not be"]]}, {"q": "If he ______ (be) a faster writer, he ______ (finish) the report yesterday.", "a": [["were"], ["would have finished"]]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "If we would have planned better, we wouldn't be behind now.", "keys": ["if we had planned better"], "reject": ["would have planned"], "full": "If we had planned better, we wouldn't be behind now."}, {"q": "If I was more careful, I wouldn't have made that mistake.", "keys": ["if i were more careful"], "full": "If I were more careful, I wouldn't have made that mistake."}, {"q": "If they had shipped on time, we would celebrating now.", "keys": ["we would be celebrating"], "full": "If they had shipped on time, we would be celebrating now."}, {"q": "Had we test it properly, we wouldn't be firefighting.", "keys": ["had we tested it properly"], "full": "Had we tested it properly, we wouldn't be firefighting."}, {"q": "If he weren't so busy, he would helped us yesterday.", "keys": ["would have helped us"], "full": "If he weren't so busy, he would have helped us yesterday."}];
@@ -585,7 +662,7 @@ var C_DATA = [{"q": "We didn't hire enough people. We are overloaded now.", "key
 function buildC(){ buildRewrite("C", C_DATA, "combine them"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["If we'd documented the process,", "If I were better at delegating,", "If they'd tested on mobile,", "If she weren't so thorough,", "If we'd set expectations early,"];
-var D_ENDINGS = [{"id": "a", "t": "the app wouldn't be crashing now."}, {"id": "b", "t": "I wouldn't have burned out last quarter."}, {"id": "c", "t": "we wouldn't be answering the same questions now."}, {"id": "d", "t": "we would have shipped bugs last release."}, {"id": "e", "t": "the client wouldn't be surprised now."}];
+var D_ENDINGS = [{"id": "c", "t": "we wouldn't be answering the same questions now."}, {"id": "d", "t": "we would have shipped bugs last release."}, {"id": "b", "t": "I wouldn't have burned out last quarter."}, {"id": "a", "t": "the app wouldn't be crashing now."}, {"id": "e", "t": "the client wouldn't be surprised now."}];
 var D_KEY = ["c", "b", "a", "d", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
@@ -596,7 +673,7 @@ var F_DATA = [{"q": "If you had reviewed it, we wouldn't be fixing this now.", "
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["with the benefit of hindsight", "hindsight is 20/20", "water under the bridge", "the writing was on the wall", "it is what it is", "to dodge a bullet"];
-var G_ENDINGS = [{"id": "a", "t": "knowing now what we did not know then"}, {"id": "b", "t": "it is easy to see the right choice after the fact"}, {"id": "c", "t": "a past problem no longer worth revisiting"}, {"id": "d", "t": "the bad outcome was clearly coming"}, {"id": "e", "t": "accept a situation you cannot change"}, {"id": "f", "t": "narrowly avoid a bad outcome"}];
+var G_ENDINGS = [{"id": "a", "t": "knowing now what we did not know then"}, {"id": "f", "t": "narrowly avoid a bad outcome"}, {"id": "b", "t": "it is easy to see the right choice after the fact"}, {"id": "c", "t": "a past problem no longer worth revisiting"}, {"id": "e", "t": "accept a situation you cannot change"}, {"id": "d", "t": "the bad outcome was clearly coming"}];
 var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }

@@ -89,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -252,7 +255,7 @@
     <p class="body-copy"><b>Goal.</b> Learn how ellipsis omits recoverable words and how substitutes stand in for them, across sentences and turns. By the end you should be able to cut repetition without losing meaning.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">Ellipsis and substitution are the two ways English <b>avoids saying the same thing twice,</b> and at C2 they work not just inside a sentence but across turns and paragraphs. Ellipsis simply leaves out words the reader can fill in: <i>&#8220;She can code and design&#8221;</i> drops the repeated &#8220;she can&#8221;; <i>&#8220;I haven't finished, but I will&#8221;</i> leaves the verb understood after &#8220;will.&#8221; Substitution puts a short stand-in where the full phrase would go: <i>&#8220;do&#8221; or &#8220;do so&#8221;</i> for a verb phrase, <i>&#8220;one&#8221; or &#8220;ones&#8221;</i> for a noun, <i>&#8220;so&#8221; or &#8220;not&#8221;</i> for a whole clause. Both save words and connect ideas at the same time, because leaving a gap or a stand-in makes the reader look back to what you already said, which is exactly what ties a text together.</p>
+    <p class="body-copy">Ellipsis and substitution are the two ways English <b>avoids saying the same thing twice,</b> and at C2 they work not just inside a sentence but across turns and paragraphs. Ellipsis simply leaves out words the reader can fill in: “She can code and design” drops the repeated <em>she can</em>; “I haven't finished, but I will” leaves the verb understood after <em>will.</em> Substitution puts a short stand-in where the full phrase would go: <i><em>do</em> or <em>do so</em></i> for a verb phrase, <i><em>one</em> or <em>ones</em></i> for a noun, <i><em>so</em> or <em>not</em></i> for a whole clause. Both save words and connect ideas at the same time, because leaving a gap or a stand-in makes the reader look back to what you already said, which is exactly what ties a text together.</p>
     <div class="split">
       <div class="card-col">
         <h4>Ellipsis: omit repeated words</h4>
@@ -272,13 +275,13 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Ellipsis needs an exact antecedent.</b> You can only omit what the reader can reconstruct precisely, and the forms must match. &#8220;She's taller than me&#8221; works (&#8220;am&#8221; is recoverable); don't ellipt across a change of verb form, where the omitted word wouldn't actually fit.</p>
-      <p><b>&#8220;Do so&#8221; is formal; &#8220;do it&#8221; is neutral.</b> &#8220;Please review it and do so by Friday&#8221; reads formally; in speech, &#8220;do it&#8221; is more natural. &#8220;Do so&#8221; replaces a whole verb phrase, not a noun; keep the register consistent.</p>
+      <p><b>Ellipsis needs an exact antecedent.</b> You can only omit what the reader can reconstruct precisely, and the forms must match. <em>She's taller than me</em> works (<em>am</em> is recoverable); don't ellipt across a change of verb form, where the omitted word wouldn't actually fit.</p>
+      <p><b><em>Do so</em> is formal; <em>do it</em> is neutral.</b> “Please review it and do so by Friday” reads formally; in speech, <em>do it</em> is more natural. <em>Do so</em> replaces a whole verb phrase, not a noun; keep the register consistent.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>&#8220;Have&#8221; vs &#8220;do&#8221; echo.</b> British English: &#8220;Do you have one? Yes, I have.&#8221; American English: &#8220;Yes, I do.&#8221; This book uses &#8220;I do.&#8221;</p>
-      <p><b>Reduced infinitive.</b> Both varieties leave the verb out after &#8220;to&#8221; (&#8220;I'd love to,&#8221; &#8220;You don't have to&#8221;); American English uses it freely. This book uses the reduced form.</p>
+      <p><b><em>Have</em> vs <em>do</em> echo.</b> British English: “Do you have one? Yes, I have.” American English: <em>Yes, I do.</em> This book uses “I do.”</p>
+      <p><b>Reduced infinitive.</b> Both varieties leave the verb out after <em>to</em> (“I'd love to,” “You don't have to”); American English uses it freely. This book uses the reduced form.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same meaning, fewer words. Keep the frame; change only the slot and the situation.</p>
@@ -301,22 +304,22 @@
         <text x="30" y="38" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Repetitive</text>
         <text x="30" y="58" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">the verb phrase repeated in full</text>
         <rect x="30" y="78" width="640" height="30" rx="6" fill="#EFEFEA" stroke="#DCDDD6"/>
-        <text x="350" y="98" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" fill="#33363B">I haven&#8217;t finished the review yet, but I will finish the review by Friday.</text>
+        <text x="350" y="98" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" fill="#33363B">I haven't finished the review yet, but I will finish the review by Friday.</text>
 
         <line x1="350" y1="134" x2="350" y2="174" stroke="#B3132B" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#fa)"/>
         <text x="374" y="156" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#B3132B">the repeated phrase drops out</text>
 
         <text x="30" y="214" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Economical</text>
-        <text x="30" y="234" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">the second verb phrase left implied after “will”</text>
+        <text x="30" y="234" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">the second verb phrase left implied after <tspan font-style="italic">will</tspan></text>
         <rect x="30" y="254" width="640" height="30" rx="6" fill="#1F5570"/>
-        <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">I haven&#8217;t finished the review yet, but I will by Friday.</text>
+        <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">I haven't finished the review yet, but I will by Friday.</text>
 
         <text x="350" y="318" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#33363B">Same meaning, fewer words. Ellipsis drops what the reader can already supply.</text>
       </svg>
       <p class="diagram-cap">Same meaning, fewer words. Ellipsis drops the verb phrase the reader can already supply.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Here is why the missing words help instead of hurting. Every time you drop a phrase or replace it with &#8220;do so&#8221; or &#8220;one,&#8221; you leave a small gap that the reader fills by looking back at what you already said, and that act of looking back is exactly what connection is. So <b>saving words and joining ideas turn out to be the same move.</b> <i>&#8220;They asked us to present, so we did&#8221;</i> is not only shorter than repeating &#8220;we presented&#8221;; the &#8220;did&#8221; points straight back to &#8220;present&#8221; and ties the two clauses together. There is one limit: the thing left out has to be clear and grammatically exact, or the gap traps the reader instead of guiding them. <i>&#8220;She's taller than me&#8221;</i> works because &#8220;am&#8221; is easy to supply; a missing or mismatched word leaves them stuck. Used cleanly, these two tools make writing both shorter and more tightly joined.</p>
+    <p class="body-copy">Here is why the missing words help instead of hurting. Every time you drop a phrase or replace it with <em>do so</em> or <em>one,</em> you leave a small gap that the reader fills by looking back at what you already said, and that act of looking back is exactly what connection is. So <b>saving words and joining ideas turn out to be the same move.</b> “They asked us to present, so we did” is not only shorter than repeating <em>we presented</em>; the <em>did</em> points straight back to <em>present</em> and ties the two clauses together. There is one limit: the thing left out has to be clear and grammatically exact, or the gap traps the reader instead of guiding them. <i>She's taller than me</i> works because <em>am</em> is easy to supply; a missing or mismatched word leaves them stuck. Used cleanly, these two tools make writing both shorter and more tightly joined.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the reduced forms, fix the misfires, cut the repetition, use the words, then use it live.</p>
@@ -392,8 +395,8 @@
       <div class="prod-step prod-extend">
         <p class="prod-label">3 &middot; With a partner, if you have one</p>
         <div class="task-box">
-          <p>hold a rapid question-and-answer about a project (&#8220;Did it ship?&#8221; &#8220;Will they sign?&#8221; &#8220;Can you review it?&#8221;), but every answer must use ellipsis or a substitute, never a full repeated phrase: &#8220;They did,&#8221; &#8220;I hope so,&#8221; &#8220;I'd be happy to.&#8221; If either of you repeats a phrase you could have left out, you lose the round. Then swap roles.</p>
-          <p>Then, take a short exchange or paragraph you wrote recently and cut every repeated phrase you can, replacing it with ellipsis, &#8220;do so,&#8221; &#8220;one,&#8221; &#8220;so,&#8221; or &#8220;not.&#8221; Read it aloud and check that nothing important got lost, only the words the reader could already supply.</p>
+          <p>hold a rapid question-and-answer about a project (“Did it ship?” “Will they sign?” “Can you review it?”), but every answer must use ellipsis or a substitute, never a full repeated phrase: <em>They did,</em> <em>I hope so,</em> <em>I'd be happy to.</em> If either of you repeats a phrase you could have left out, you lose the round. Then swap roles.</p>
+          <p>Then, take a short exchange or paragraph you wrote recently and cut every repeated phrase you can, replacing it with ellipsis, <em>do so,</em> <em>one,</em> <em>so,</em> or <em>not.</em> Read it aloud and check that nothing important got lost, only the words the reader could already supply.</p>
         </div>
       </div>
     </div>
@@ -418,6 +421,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -431,6 +435,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -514,18 +546,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -810,7 +882,7 @@ function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "I'm in favor, and the team feels ______.", "a": ["likewise"]}, {"q": "Great work today. Yesterday too, ______.", "a": ["ditto"]}, {"q": "She's the lead; ______, she signs off.", "a": ["as such"]}, {"q": "Sales drive support, and ______.", "a": ["vice versa"]}, {"q": "We can meet now or later; ______ works for me.", "a": ["either way"]}, {"q": "Are they in? ______, we start Monday.", "a": ["If so"]}];
 function buildG(){ buildGap("G", G_DATA, ["likewise", "ditto", "as such", "vice versa", "either way", "if so"]); }
 function checkG(){ checkGap("G", G_DATA); }
-var H_TIMED = [{"q": "&#8220;Did the vendor confirm?&#8221; Answer, economically.", "model": "They did."}, {"q": "&#8220;Will it be ready by five?&#8221; You are hopeful but not certain.", "model": "I hope so."}, {"q": "&#8220;Can you send the summary round?&#8221; Agree, warmly and briefly.", "model": "Happy to."}, {"q": "You have not reviewed the document, but you will. Say both in one short line.", "model": "I haven&#8217;t reviewed it, but I will."}];
+var H_TIMED = [{"q": "&#8220;Did the vendor confirm?&#8221; Answer, economically.", "model": "They did."}, {"q": "&#8220;Will it be ready by five?&#8221; You are hopeful but not certain.", "model": "I hope so."}, {"q": "&#8220;Can you send the summary round?&#8221; Agree, warmly and briefly.", "model": "Happy to."}, {"q": "You have not reviewed the document, but you will. Say both in one short line.", "model": "I haven't reviewed it, but I will."}];
 function buildHTimed(){ buildTimed("H", H_TIMED, 30); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildHTimed(); recInit('recBox'); updateScore(); }

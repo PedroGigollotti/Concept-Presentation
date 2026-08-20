@@ -89,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -251,7 +254,7 @@
     <p class="body-copy"><b>Goal.</b> Learn how vocabulary, grammar, and directness set register and tone, and how to hold a level or shift it on purpose. By the end you should be able to pitch one message across the whole spectrum.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">Register is how formal or informal you make a message, and tone is the attitude you carry inside that level. Controlling both is the last piece of C2 mastery. Three things set the register. Word choice is the most obvious: English keeps a formal word beside a plain one for almost everything, <i>&#8220;commence&#8221; beside &#8220;start,&#8221; &#8220;purchase&#8221; beside &#8220;buy,&#8221; &#8220;terminate&#8221; beside &#8220;end.&#8221;</i> Grammar backs it up: full forms, the passive, and heavy nouns feel formal; contractions, the active voice, and phrasal verbs feel casual. And directness sets the tone within the level: <i>&#8220;send it by five&#8221;</i> is blunt, <i>&#8220;could you send it by five?&#8221;</i> is polite, <i>&#8220;would you mind sending it by five?&#8221;</i> is very polite. The skill is to <b>set a level on purpose and hold it,</b> or to change it on purpose, so the same message can dress for a contract, an email, or a chat.</p>
+    <p class="body-copy">Register is how formal or informal you make a message, and tone is the attitude you carry inside that level. Controlling both is the last piece of C2 mastery. Three things set the register. Word choice is the most obvious: English keeps a formal word beside a plain one for almost everything, <i><em>commence</em> beside <em>start,</em> <em>purchase</em> beside <em>buy,</em> <em>terminate</em> beside <em>end.</em></i> Grammar backs it up: full forms, the passive, and heavy nouns feel formal; contractions, the active voice, and phrasal verbs feel casual. And directness sets the tone within the level: <i>send it by five</i> is blunt, “could you send it by five?” is polite, “would you mind sending it by five?” is very polite. The skill is to <b>set a level on purpose and hold it,</b> or to change it on purpose, so the same message can dress for a contract, an email, or a chat.</p>
     <div class="split">
       <div class="card-col">
         <h4>Lexical register (word choice)</h4>
@@ -271,13 +274,13 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Keep register consistent across a message.</b> A formal opening that slides into casual grammar (&#8220;We hereby request... anyway just ping me&#8221;) jars. Set a level and hold it, or shift on purpose, not by accident.</p>
+      <p><b>Keep register consistent across a message.</b> A formal opening that slides into casual grammar (“We hereby request... anyway just ping me”) jars. Set a level and hold it, or shift on purpose, not by accident.</p>
       <p><b>Formal isn't automatically better.</b> Over-formal register in a quick team chat reads as cold or pompous; over-casual in a client contract reads as unprofessional. Match the register to the channel and relationship, not to a wish to sound impressive.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>Greetings and sign-offs.</b> British formal letters use &#8220;Dear Sir or Madam ... Yours faithfully&#8221;; American uses &#8220;Dear Sir or Madam ... Sincerely.&#8221; This book uses the American conventions.</p>
-      <p><b>&#8220;Please find attached.&#8221;</b> More common in British business English; American English prefers &#8220;I've attached&#8221; or &#8220;Attached is.&#8221; This book uses the American form.</p>
+      <p><b>Greetings and sign-offs.</b> British formal letters use <em>Dear Sir or Madam ... Yours faithfully</em>; American uses <em>Dear Sir or Madam ... Sincerely.</em> This book uses the American conventions.</p>
+      <p><b><em>Please find attached.</em></b> More common in British business English; American English prefers <em>I've attached</em> or <em>Attached is.</em> This book uses the American form.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same message, chosen register. Keep the frame; change only the slot and the situation.</p>
@@ -307,7 +310,7 @@
         <circle cx="570" cy="101" r="11" fill="#1F5570"/>
 
         <text x="130" y="136" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#B3132B">casual</text>
-        <text x="130" y="160" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="15" fill="#0A0B0D">ping me when it&#8217;s done</text>
+        <text x="130" y="160" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="15" fill="#0A0B0D">ping me when it's done</text>
         <text x="130" y="206" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" fill="#6B6F76">phrasal verb, contraction</text>
         <text x="130" y="230" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#6B6F76">a teammate you know well</text>
 
@@ -329,7 +332,7 @@
       <p class="diagram-cap">One request, the full spectrum. Register is set by word choice, grammar, and how directly you ask.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Here is why register control is the final piece and not a small detail. Every reader reads your register as <b>a message about the relationship:</b> formal language signals distance and respect, informal language signals closeness and ease, and getting the level wrong sends a signal you never meant. Write to an old teammate in contract language and you sound cold, as if you had suddenly turned official on them; open with &#8220;hey, no worries&#8221; to a senior client you have never met and you sound as if you do not grasp the stakes. Neither is a grammar mistake; both are social ones, and they land harder than a misplaced comma. Consistency matters too: a message that starts formal and drifts casual feels unsteady. So set the register on purpose, read the channel and the relationship first, and hold that level from the greeting to the sign-off.</p>
+    <p class="body-copy">Here is why register control is the final piece and not a small detail. Every reader reads your register as <b>a message about the relationship:</b> formal language signals distance and respect, informal language signals closeness and ease, and getting the level wrong sends a signal you never meant. Write to an old teammate in contract language and you sound cold, as if you had suddenly turned official on them; open with <em>hey, no worries</em> to a senior client you have never met and you sound as if you do not grasp the stakes. Neither is a grammar mistake; both are social ones, and they land harder than a misplaced comma. Consistency matters too: a message that starts formal and drifts casual feels unsteady. So set the register on purpose, read the channel and the relationship first, and hold that level from the greeting to the sign-off.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: set the register, fix the clashes, shift the level, use the words, then use it live.</p>
@@ -410,7 +413,7 @@
       <div class="prod-step prod-extend">
         <p class="prod-label">3 &middot; With a partner, if you have one</p>
         <div class="task-box">
-          <p>pick one message, say, &#8220;the deadline moved to Friday,&#8221; and deliver it at three registers: a formal client email, a neutral team email, and a casual chat message. Change the vocabulary (commence / start / kick off), the grammar (full forms vs contractions), and the directness. Your partner ranks the three by formality and flags any word that broke register. Then swap messages.</p>
+          <p>pick one message, say, “the deadline moved to Friday,” and deliver it at three registers: a formal client email, a neutral team email, and a casual chat message. Change the vocabulary (commence / start / kick off), the grammar (full forms vs contractions), and the directness. Your partner ranks the three by formality and flags any word that broke register. Then swap messages.</p>
           <p>Then, take a real message you sent recently and rewrite it one notch more formal and one notch more casual. Read all three aloud. The aim is a dial you control on purpose, so you never sound stiff in a chat or careless in a contract.</p>
         </div>
       </div>
@@ -436,6 +439,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -449,6 +453,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -532,18 +564,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -803,7 +875,7 @@ function recClear(){
 }
 
 
-var A_DATA = [{"q": "We will ______ the audit next week. <i>[formal for &#8220;start&#8221;]</i>", "a": ["commence"]}, {"q": "Please ______ the documents by Friday. <i>[formal for &#8220;send&#8221;]</i>", "a": ["submit"]}, {"q": "Just ______ me when you're done. <i>[casual for &#8220;message&#8221;]</i>", "a": ["ping"]}, {"q": "Could you ______ that with the team? <i>[neutral for &#8220;tell&#8221;]</i>", "a": ["share"]}, {"q": "We would be grateful if you could ______ receipt. <i>[formal for &#8220;confirm&#8221;]</i>", "a": ["acknowledge"]}, {"q": "We'll ______ off the project Monday. <i>[casual for &#8220;start&#8221;]</i>", "a": ["kick"]}];
+var A_DATA = [{"q": "We will ______ the audit next week. <i>[formal for <em>start</em>]</i>", "a": ["commence"]}, {"q": "Please ______ the documents by Friday. <i>[formal for <em>send</em>]</i>", "a": ["submit"]}, {"q": "Just ______ me when you're done. <i>[casual for <em>message</em>]</i>", "a": ["ping"]}, {"q": "Could you ______ that with the team? <i>[neutral for <em>tell</em>]</i>", "a": ["share"]}, {"q": "We would be grateful if you could ______ receipt. <i>[formal for <em>confirm</em>]</i>", "a": ["acknowledge"]}, {"q": "We'll ______ off the project Monday. <i>[casual for <em>start</em>]</i>", "a": ["kick"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "We hereby request the documents, anyway just ping me.", "keys": ["at your convenience"], "reject": ["just ping me"], "full": "We hereby request the documents; kindly send them at your convenience."}, {"q": "Dear Sir, hey, quick one.", "keys": ["i am writing"], "reject": ["hey, quick one"], "full": "Dear Sir: I am writing with a brief query."}, {"q": "Please to send the file.", "keys": ["please send the file"], "reject": ["please to send"], "full": "Please send the file."}, {"q": "Kindly ping me ASAP.", "keys": ["please message me"], "reject": ["kindly ping"], "full": "Please message me as soon as you can."}, {"q": "We utilize it to buy stuff.", "keys": ["make purchases"], "reject": ["buy stuff"], "full": "We use it to make purchases."}];
@@ -831,7 +903,7 @@ function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "______ our agreement, payment is due in thirty days.", "a": ["As per"]}, {"q": "Just a ______: the client moved the call up.", "a": ["heads up"]}, {"q": "Reply ______. There's no rush at all.", "a": ["at your convenience"]}, {"q": "Thanks for the fix. ______!", "a": ["No worries"]}, {"q": "Your feedback is ______.", "a": ["duly noted"]}, {"q": "______, I'd hold the launch a week.", "a": ["For what it's worth"]}];
 function buildH(){ buildGap("H", H_DATA, ["as per", "heads up", "at your convenience", "no worries", "duly noted", "for what it's worth"]); }
 function checkH(){ checkGap("H", H_DATA); }
-var I_TIMED = [{"q": "A legal clause in a signed contract: the supplier must start within ten business days.", "model": "The Supplier shall commence work within ten business days of execution."}, {"q": "A first-contact email to a senior client you have never met.", "model": "Dear Ms. Reyes, I&#8217;m writing to introduce myself and propose a brief call."}, {"q": "A quick reminder to a peer about a shared deadline.", "model": "Quick reminder, the draft&#8217;s due Thursday. Shout if you need anything."}, {"q": "A chat message to a teammate you have known for years.", "model": "Hey, can you ping me when the build&#8217;s green?"}];
+var I_TIMED = [{"q": "A legal clause in a signed contract: the supplier must start within ten business days.", "model": "The Supplier shall commence work within ten business days of execution."}, {"q": "A first-contact email to a senior client you have never met.", "model": "Dear Ms. Reyes, I'm writing to introduce myself and propose a brief call."}, {"q": "A quick reminder to a peer about a shared deadline.", "model": "Quick reminder, the draft's due Thursday. Shout if you need anything."}, {"q": "A chat message to a teammate you have known for years.", "model": "Hey, can you ping me when the build's green?"}];
 function buildITimed(){ buildTimed("I", I_TIMED, 45); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); buildITimed(); recInit('recBox'); updateScore(); }

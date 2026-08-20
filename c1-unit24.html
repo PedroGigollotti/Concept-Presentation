@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -84,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -204,18 +212,18 @@
       </div>
       <div class="card-col">
         <h4>Such / so</h4>
-        <dl><dt>Form</dt><dd>such + noun (a category just described); so (replacing a clause after think/hope/expect)</dd><dt>Meaning</dt><dd>"such" points to a category just established; "so" stands in for a whole preceding clause</dd><dt>Use it to</dt><dd>avoid repeating a category or an entire clause</dd></dl>
-        <div class="eg">We&#8217;ve had complaints about billing. Such issues need quick escalation. Will it renew? I think so.</div>
+        <dl><dt>Form</dt><dd>such + noun (a category just described); so (replacing a clause after think/hope/expect)</dd><dt>Meaning</dt><dd><em>such</em> points to a category just established; <em>so</em> stands in for a whole preceding clause</dd><dt>Use it to</dt><dd>avoid repeating a category or an entire clause</dd></dl>
+        <div class="eg">We've had complaints about billing. Such issues need quick escalation. Will it renew? I think so.</div>
       </div>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Don't let "this/that" dangle across multiple ideas.</b> If more than one idea precedes, the reader can't tell which one "this" means. Add a summarizing noun to be safe: "this drop" rather than a bare "this."</p>
-      <p><b>Don't confuse this "such" with the intensifying "such."</b> "Such issues need escalation" refers back to a category just mentioned. "Such a good idea" is a different, intensifying use. Keep the two apart.</p>
+      <p><b>Don't let <em>this/that</em> dangle across multiple ideas.</b> If more than one idea precedes, the reader can't tell which one <em>this</em> means. Add a summarizing noun to be safe: <em>this drop</em> rather than a bare <em>this.</em></p>
+      <p><b>Don't confuse this <em>such</em> with the intensifying <em>such.</em></b> “Such issues need escalation” refers back to a category just mentioned. <em>Such a good idea</em> is a different, intensifying use. Keep the two apart.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>"I don't suppose so" versus "I don't think so."</b> British English sometimes uses "I don't suppose so" in the same slot where American English uses "I don't think so." This book uses "I don't think so."</p>
+      <p><b>“I don't suppose so” versus “I don't think so.”</b> British English sometimes uses “I don't suppose so” in the same slot where American English uses “I don't think so.” This book uses “I don't think so.”</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same tracking in every line. The highlighted slot changes; the connector always points back to something just said.</p>
@@ -249,13 +257,13 @@
         <rect x="178" y="176" width="316" height="36" rx="8" fill="#7C7F84"/>
         <text x="336" y="199" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">suggests a deeper problem.</text>
 
-        <text x="350" y="252" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#33363B">If two ideas came before it, a bare &#8220;this&#8221; is ambiguous.</text>
-        <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#33363B">Add a summarizing noun: &#8220;this drop,&#8221; &#8220;this pattern,&#8221; &#8220;this decline.&#8221;</text>
+        <text x="350" y="252" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#33363B">If two ideas came before it, a bare <tspan font-style="italic">this</tspan> is ambiguous.</text>
+        <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#33363B">Add a summarizing noun: <tspan font-style="italic">this drop,</tspan> <tspan font-style="italic">this pattern,</tspan> <tspan font-style="italic">this decline.</tspan></text>
       </svg>
       <p class="diagram-cap">This carries the whole previous idea forward without restating it in full.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">A report or a conversation is really a chain of ideas, each one building on the last, and restating each idea in full before commenting on it slows that chain down. "This," "that," "such," and "so" let you point back instead of repeating, which is exactly how a fluent thinker sounds: each sentence clearly builds on the one before it, rather than sitting next to it as an unconnected new fact. The only discipline required is making sure the referent is unambiguous, since a vague "this" is one of the most common sources of confusion in written reports.</p>
+    <p class="body-copy">A report or a conversation is really a chain of ideas, each one building on the last, and restating each idea in full before commenting on it slows that chain down. <em>This,</em> <em>that,</em> <em>such,</em> and <em>so</em> let you point back instead of repeating, which is exactly how a fluent thinker sounds: each sentence clearly builds on the one before it, rather than sitting next to it as an unconnected new fact. The only discipline required is making sure the referent is unambiguous, since a vague <em>this</em> is one of the most common sources of confusion in written reports.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the form accurately, then control the reference, then use the words, then say it for real.</p>
@@ -293,7 +301,7 @@
     <div class="ex-block">
       <span class="ex-label">E</span>
       <p class="ex-title">Fix the vague reference</p>
-      <p class="ex-instr">Rewrite each sentence so “this” or “that” clearly points to one idea, not several.</p>
+      <p class="ex-instr">Rewrite each sentence so <em>this</em> or <em>that</em> clearly points to one idea, not several.</p>
       <div id="exE"></div>
       <button class="check-btn" onclick="checkE()">Check my answers</button>
       <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
@@ -342,6 +350,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -355,6 +364,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -438,18 +475,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -578,7 +655,7 @@ var E_DATA = [{"q": "Retention dropped, churn rose, and engagement fell. This is
 function buildE(){ buildRewrite("E", E_DATA, "make the reference specific"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to circle back to", "the crux of it", "a running theme", "to tie together", "the upshot", "along those lines"];
-var F_ENDINGS = [{"id": "a", "t": "to return to a topic mentioned earlier"}, {"id": "b", "t": "the central point of a longer discussion"}, {"id": "c", "t": "a pattern that keeps recurring across a discussion"}, {"id": "d", "t": "to connect separate points into one coherent idea"}, {"id": "e", "t": "the practical result or conclusion of something"}, {"id": "f", "t": "similar in kind or direction to what was just said"}];
+var F_ENDINGS = [{"id": "c", "t": "a pattern that keeps recurring across a discussion"}, {"id": "f", "t": "similar in kind or direction to what was just said"}, {"id": "b", "t": "the central point of a longer discussion"}, {"id": "e", "t": "the practical result or conclusion of something"}, {"id": "d", "t": "to connect separate points into one coherent idea"}, {"id": "a", "t": "to return to a topic mentioned earlier"}];
 var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }

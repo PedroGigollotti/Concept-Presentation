@@ -34,9 +34,20 @@ the whole defense.
 the `<div class="key-box" id="keyE">` panel, separating a phrasal verb from its
 gloss.
 
-| Location | As published | Approved correction |
-|---|---|---|
-| E, key-box, all 32 units | `<b>hash out</b> — to work through a problem…` | `<b>hash out</b>: to work through a problem…` |
+**This is a pattern, not a table row.** Each unit teaches different phrasal
+verbs, so no single before/after string is literally present in all 32 files
+-- a table row here would be checked (by `check_corrections_drift()`, which
+applies every row in this file against the full 32-unit glob, with no way to
+scope a single row to one file) against 31 files it was never true of. The
+general rule it enforces -- no em dash, anywhere in body copy -- is already
+permanent and file-independent: `check_language()` in verify.py flags any em
+dash on any page, key-box entries included, forever. That check is the actual
+guard here, so this entry is deliberately kept out of table format.
+
+One instance, from unit 1, as a record of what the fix looked like:
+
+    as published:         <b>hash out</b> — to work through a problem…
+    approved correction:  <b>hash out</b>: to work through a problem…
 
 The em dash breaks the house rule, which admits none. A colon reads naturally
 between a term and its gloss and changes no word the learner reads.
@@ -114,3 +125,76 @@ The defect is in the checker, not the book. Logged in `concept-kit/KNOWN_ISSUES.
 
 The script is `tools/fix_phrasal_verbs.py` in the `concept-kit` repository. It is
 idempotent by refusal: run twice, the second run finds zero matches and stops.
+
+---
+
+# The landing page was one revision behind its own book
+
+**18 Aug 2026. One page: `phrasal-verbs.html`.**
+
+## The defect
+
+The correction of 17 Aug moved the 32 unit pages to the series-wide unlock: read
+either `cm_access` or `cm_pv_access`, write both. **The landing page was not
+included.** It read and wrote `cm_pv_access` alone.
+
+So a student who unlocked through C1 or C2, and therefore holds `cm_access`,
+arrived at the Phrasal Verbs contents page and **was asked for a code again**,
+then walked into a unit that let them straight through. The book's front door
+was stricter than the book.
+
+This is a live defect and not a tidy-up. It is exactly the failure the 17 Aug
+correction was written to remove, surviving on the one page that correction did
+not touch.
+
+## The fix
+
+Matched to what the 32 unit pages already do, not invented:
+
+    write   setItem('cm_access','1'); setItem('cm_pv_access','1');
+    read    getItem('cm_access') === '1' || getItem('cm_pv_access') === '1'
+
+## Verified by count, not by assurance
+
+    landing page   writes cm_access 1  writes cm_pv_access 1
+                   reads  cm_access 1  reads  cm_pv_access 1
+    unit pages     identical, and all 32 identical to each other
+    match          true
+
+## The privacy modal had the same defect, and it is fixed too
+
+Found and left in the first pass, then fixed on Pedro's instruction the same
+hour. His reason is the better rule: **leaving it means rediscovering it in
+three weeks and spending ten minutes working out why.**
+
+The landing page wrote and read `cm_pv_privacy_seen` alone, while its unit pages
+write both keys and suppress the modal if **either** has been seen. So a student
+who dismissed "Nothing is saved here" in C1 met it again on this page.
+
+Matched to the units, including the operator, which is `&&` and not `||`:
+
+    write   setItem('cm_privacy_seen','1'); setItem('cm_pv_privacy_seen','1');
+    read    getItem('cm_privacy_seen') !== '1' &&
+            getItem('cm_pv_privacy_seen') !== '1'
+
+### All four keys, verified by count
+
+                        w cm_access  w cm_pv_access  r cm_access  r cm_pv_access
+      landing                1             1             1             1
+      units                  1             1             1             1
+
+                        w privacy   w pv_privacy   r privacy   r pv_privacy
+      landing                1             1             1             1
+      units                  1             1             1             1
+
+      all 32 units identical to each other        TRUE
+      landing matches the units on ALL FOUR KEYS  TRUE
+
+**Nothing outstanding on this page.** The landing page and the book it fronts
+now agree on every storage key they share.
+
+## Why this file exists
+
+These pages have no generator. This record is the only place the correction is
+written down, so a future edit that regenerates or replaces the page has
+something to check itself against.

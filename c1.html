@@ -178,6 +178,7 @@ var VALID_CODES = ["AB-6567","AD-1652","AF-3892","AF-6525","AH-6558","AK-2388","
 /* Series-wide unlock. 'cm_access' is the new shared key; 'cm_pv_access' is the
    legacy phrasal-verbs key, honored so existing students never re-enter a code. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{
     return localStorage.getItem('cm_access') === '1' || localStorage.getItem('cm_pv_access') === '1';
   }catch(e){ return false; }
@@ -198,6 +199,34 @@ function markPrivacySeen(){
     localStorage.setItem('cm_privacy_seen','1');
     localStorage.setItem('cm_pv_privacy_seen','1');
   }catch(e){}
+}
+
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
 }
 
 function tryCode(){

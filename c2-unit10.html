@@ -89,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -251,7 +254,7 @@
     <p class="body-copy"><b>Goal.</b> Learn the it-cleft, the wh-cleft, and the all-cleft, and how each steers the reader's focus. By the end you should be able to cleft a sentence to place the emphasis exactly.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">A cleft sentence splits one sentence into two parts so you can shine a light on a single element. English gives you three main shapes. The &#8220;it&#8221; cleft, <i>&#8220;It was the pricing that lost us the deal,&#8221;</i> puts one element in the spotlight and pushes everything else into the background, which is perfect for correcting a wrong idea (&#8220;It was the pricing, not the product...&#8221;). The &#8220;what&#8221; cleft, <i>&#8220;What we need is a clearer brief,&#8221;</i> starts with a &#8220;what&#8221; clause and delays the important part until after &#8220;is,&#8221; so the reader reaches your point already prepared for it. The &#8220;all&#8221; cleft, <i>&#8220;All we changed was the headline,&#8221;</i> narrows the focus to one thing and quietly makes it sound small. In every case you are <b>choosing where the reader's attention lands,</b> and steering it on purpose.</p>
+    <p class="body-copy">A cleft sentence splits one sentence into two parts so you can shine a light on a single element. English gives you three main shapes. The <em>it</em> cleft, “It was the pricing that lost us the deal,” puts one element in the spotlight and pushes everything else into the background, which is perfect for correcting a wrong idea (<em>It was the pricing, not the product...</em>). The <em>what</em> cleft, <i>What we need is a clearer brief,</i> starts with a <em>what</em> clause and delays the important part until after <em>is,</em> so the reader reaches your point already prepared for it. The <em>all</em> cleft, “All we changed was the headline,” narrows the focus to one thing and quietly makes it sound small. In every case you are <b>choosing where the reader's attention lands,</b> and steering it on purpose.</p>
     <div class="split">
       <div class="card-col">
         <h4>The it-cleft</h4>
@@ -259,25 +262,25 @@
         <div class="eg">It was the pricing, not the product, that lost us the deal.</div>
       </div>
       <div class="card-col">
-        <h4>The &#8220;what&#8221; cleft</h4>
-        <dl><dt>Form</dt><dd>What + clause + be + focused element</dd><dt>Meaning</dt><dd>fronts a &#8220;what&#8221; clause and puts the new or important part after &#8220;be&#8221;</dd><dt>Use it to</dt><dd>build up to the point, or frame what you are about to say</dd></dl>
+        <h4>The <em>what</em> cleft</h4>
+        <dl><dt>Form</dt><dd>What + clause + be + focused element</dd><dt>Meaning</dt><dd>fronts a <em>what</em> clause and puts the new or important part after <em>be</em></dd><dt>Use it to</dt><dd>build up to the point, or frame what you are about to say</dd></dl>
         <div class="eg">What we need is a clearer brief. / What surprised me was the cost.</div>
       </div>
       <div class="card-col">
         <h4>The all-cleft (and reversed wh-cleft)</h4>
-        <dl><dt>Form</dt><dd>All (that) + clause + be + X; or X + be + what / all ...</dd><dt>Meaning</dt><dd>narrows focus to a single thing, often to minimize; or reverses to front the focus</dd><dt>Use it to</dt><dd>downplay (&#8220;all we did was...&#8221;) or place the focus first</dd></dl>
+        <dl><dt>Form</dt><dd>All (that) + clause + be + X; or X + be + what / all ...</dd><dt>Meaning</dt><dd>narrows focus to a single thing, often to minimize; or reverses to front the focus</dd><dt>Use it to</dt><dd>downplay (<em>all we did was...</em>) or place the focus first</dd></dl>
         <div class="eg">All we changed was the headline. / A clearer brief is what we need.</div>
       </div>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Agree the relative verb with the focus.</b> In an it-cleft, &#8220;it is / it was&#8221; stays singular, but the relative verb agrees with the focused noun: &#8220;It is the numbers that show the gap,&#8221; not &#8220;that shows.&#8221;</p>
+      <p><b>Agree the relative verb with the focus.</b> In an it-cleft, <em>it is / it was</em> stays singular, but the relative verb agrees with the focused noun: “It is the numbers that show the gap,” not <em>that shows.</em></p>
       <p><b>Don't over-cleft.</b> Clefting every sentence flattens the emphasis; one cleft in a paragraph steers attention, five compete. Spotlight everything and you spotlight nothing.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>Who vs that for people.</b> &#8220;It was Marco who signed&#8221; is standard in both; American English also readily allows &#8220;It was Marco that signed.&#8221; This book uses &#8220;who&#8221; for people and &#8220;that&#8221; for things.</p>
-      <p><b>Reduced &#8220;what&#8221; clefts.</b> Casual American speech drops the frame (&#8220;Thing is, we're late&#8221;); formal writing in both varieties keeps the full cleft. This book uses the full form.</p>
+      <p><b>Who vs that for people.</b> “It was Marco who signed” is standard in both; American English also readily allows “It was Marco that signed.” This book uses <em>who</em> for people and <em>that</em> for things.</p>
+      <p><b>Reduced <em>what</em> clefts.</b> Casual American speech drops the frame (“Thing is, we're late”); formal writing in both varieties keeps the full cleft. This book uses the full form.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same content, one thing spotlighted. Keep the frame; change only the slot and the situation.</p>
@@ -306,7 +309,7 @@
         <text x="374" y="156" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#B3132B">the sentence splits in two</text>
 
         <text x="30" y="214" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Cleft</text>
-        <text x="30" y="234" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">“it was ... that” splits the sentence and spotlights one part</text>
+        <text x="30" y="234" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76"><tspan font-style="italic">it was ... that</tspan> splits the sentence and spotlights one part</text>
         <rect x="30" y="254" width="640" height="30" rx="6" fill="#1F5570"/>
         <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">It was the pricing, not the product, that lost us the deal.</text>
 
@@ -315,7 +318,7 @@
       <p class="diagram-cap">Same fact, sharper focus. The cleft splits the sentence to spotlight the one thing that mattered.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Here is why clefts are worth the extra words. A plain sentence spreads its emphasis evenly, so the reader has to guess which part you most want them to hold on to. <b>A cleft removes the guesswork:</b> it separates the one element you care about and frames it, so <i>&#8220;It was the tone that caused the problem&#8221;</i> cannot be misread, where <i>&#8220;The tone caused the problem&#8221;</i> might slip past. The &#8220;what&#8221; cleft adds a second gift: by opening with &#8220;What we need is,&#8221; you make the reader wait for the point, and a point they waited for lands harder than one that simply arrived. This is why a single cleft can steer a whole paragraph. The cost is that the effect is limited: spotlight everything and you spotlight nothing, so cleft the one sentence that carries the paragraph and leave the rest in plain order.</p>
+    <p class="body-copy">Here is why clefts are worth the extra words. A plain sentence spreads its emphasis evenly, so the reader has to guess which part you most want them to hold on to. <b>A cleft removes the guesswork:</b> it separates the one element you care about and frames it, so “It was the tone that caused the problem” cannot be misread, where “The tone caused the problem” might slip past. The <em>what</em> cleft adds a second gift: by opening with “What we need is,” you make the reader wait for the point, and a point they waited for lands harder than one that simply arrived. This is why a single cleft can steer a whole paragraph. The cost is that the effect is limited: spotlight everything and you spotlight nothing, so cleft the one sentence that carries the paragraph and leave the rest in plain order.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the clefts, fix the misfires, steer the focus, use the words, then use it live.</p>
@@ -384,13 +387,13 @@
       <div class="prod-step">
         <p class="prod-label">2 &middot; Say it</p>
         <p class="prod-lead">A cleft costs extra words, so it has to buy something. What it buys is a pause the listener can hear.</p>
-        <div class="task-box"><p>Record situation 2. Play it back and listen for one thing: is there a small pause before &#8220;honest feedback&#8221;? The whole point of the wh-cleft is that the reader waits. If you rushed straight through it, the structure is there and the effect is not.</p></div>
+        <div class="task-box"><p>Record situation 2. Play it back and listen for one thing: is there a small pause before <em>honest feedback</em>? The whole point of the wh-cleft is that the reader waits. If you rushed straight through it, the structure is there and the effect is not.</p></div>
         <div id="recBox"></div>
       </div>
       <div class="prod-step prod-extend">
         <p class="prod-label">3 &middot; With a partner, if you have one</p>
         <div class="task-box">
-          <p>debate a small decision (which tool to adopt, where to hold the offsite). Every time you make a key point, force it into a cleft: &#8220;What matters here is...,&#8221; &#8220;It's the cost, not the features, that...,&#8221; &#8220;All I'm really asking is....&#8221; Your partner listens for whether the cleft actually sharpened the point or just padded it, and calls out the ones that added nothing.</p>
+          <p>debate a small decision (which tool to adopt, where to hold the offsite). Every time you make a key point, force it into a cleft: <em>What matters here is...,</em> <em>It's the cost, not the features, that...,</em> <em>All I'm really asking is....</em> Your partner listens for whether the cleft actually sharpened the point or just padded it, and calls out the ones that added nothing.</p>
           <p>Then, take a flat paragraph you wrote recently and rewrite exactly one sentence in it as a cleft, choosing the sentence whose emphasis you most want the reader to catch. Notice that one cleft steers the whole paragraph, where three would cancel each other out.</p>
         </div>
       </div>
@@ -416,6 +419,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -429,6 +433,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -512,18 +544,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -783,7 +855,7 @@ function recClear(){
 }
 
 
-var A_DATA = [{"q": "______ was the timing ______ killed the launch.", "a": ["It that", "It / that"]}, {"q": "______ we need ______ a clearer brief.", "a": ["What is", "What / is"]}, {"q": "______ we changed ______ the headline.", "a": ["All was", "All / was"]}, {"q": "______ was Marco ______ flagged the risk first.", "a": ["It who", "It / who"]}, {"q": "______ surprised everyone ______ the cost.", "a": ["What was", "What / was"]}, {"q": "A shorter deadline ______ what we ended up with.", "a": ["is"]}];
+var A_DATA = [{"q": "______ was the timing ______ killed the launch.", "a": [["It"], ["that"]]}, {"q": "______ we need ______ a clearer brief.", "a": [["What"], ["is"]]}, {"q": "______ we changed ______ the headline.", "a": [["All"], ["was"]]}, {"q": "______ was Marco ______ flagged the risk first.", "a": [["It"], ["who"]]}, {"q": "______ surprised everyone ______ the cost.", "a": [["What"], ["was"]]}, {"q": "A shorter deadline ______ what we ended up with.", "a": ["is"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "It were the numbers that mattered.", "keys": ["it was the numbers"], "reject": ["it were the"], "full": "It was the numbers that mattered."}, {"q": "What we need are a clearer brief.", "keys": ["what we need is"], "reject": ["we need are"], "full": "What we need is a clearer brief."}, {"q": "It was Sam which called.", "keys": ["sam who called"], "reject": ["sam which"], "full": "It was Sam who called."}, {"q": "All we did were change the headline.", "keys": ["all we did was change"], "reject": ["did were change"], "full": "All we did was change the headline."}, {"q": "The thing that lost the deal it was the price.", "keys": ["it was the price that lost"], "reject": ["the deal it was"], "full": "It was the price that lost the deal."}];

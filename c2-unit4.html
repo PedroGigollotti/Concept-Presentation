@@ -89,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -251,7 +254,7 @@
     <p class="body-copy"><b>Goal.</b> Learn how absolute and verbless clauses are built, what they compress, and how to avoid the dangling trap. By the end you should be able to reduce a full clause cleanly.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">An absolute clause and a verbless clause are <b>two ways to say more in fewer words,</b> and both belong to formal writing. An absolute clause is a noun joined to a participle that adds background to the whole sentence and keeps its own subject: <i>&#8220;The meeting over, we left,&#8221; &#8220;The results in, the team celebrated.&#8221;</i> A verbless clause goes further and drops the verb, usually sharing the subject of the main clause: <i>&#8220;Though tired, she finished,&#8221; &#8220;When in doubt, ask.&#8221;</i> The &#8220;with&#8221; opener is the most common version: <i>&#8220;With the deadline coming, we stayed late.&#8221;</i> In each case you take a full clause, a &#8220;because,&#8221; an &#8220;although,&#8221; an &#8220;after,&#8221; and shrink it to a short phrase. The result is shorter and more formal. The one risk, explained next, is leaving the phrase attached to the wrong subject.</p>
+    <p class="body-copy">An absolute clause and a verbless clause are <b>two ways to say more in fewer words,</b> and both belong to formal writing. An absolute clause is a noun joined to a participle that adds background to the whole sentence and keeps its own subject: <i><em>The meeting over, we left,</em> <em>The results in, the team celebrated.</em></i> A verbless clause goes further and drops the verb, usually sharing the subject of the main clause: <i><em>Though tired, she finished,</em> <em>When in doubt, ask.</em></i> The <em>with</em> opener is the most common version: <i>With the deadline coming, we stayed late.</i> In each case you take a full clause, a <em>because,</em> an <em>although,</em> an <em>after,</em> and shrink it to a short phrase. The result is shorter and more formal. The one risk, explained next, is leaving the phrase attached to the wrong subject.</p>
     <div class="split">
       <div class="card-col">
         <h4>The absolute clause</h4>
@@ -259,7 +262,7 @@
         <div class="eg">The vote concluded, the board moved on. (= After the vote had concluded)</div>
       </div>
       <div class="card-col">
-        <h4>The &#8220;with&#8221; absolute</h4>
+        <h4>The <em>with</em> absolute</h4>
         <dl><dt>Form</dt><dd>With + noun phrase + participle / adjective / prepositional phrase, main clause</dd><dt>Meaning</dt><dd>sets a simultaneous circumstance framing the main clause</dd><dt>Use it to</dt><dd>open a sentence with the conditions already in play</dd></dl>
         <div class="eg">With the deadline looming, the team worked through the night.</div>
       </div>
@@ -271,13 +274,13 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Beware the dangling modifier.</b> A verbless or participle clause with no subject borrows the subject of the main clause. &#8220;Walking in, the lights were off&#8221; is wrong, since the lights were not walking. Write &#8220;Walking in, I found the lights off,&#8221; or the absolute &#8220;The lights off, I walked in.&#8221;</p>
-      <p><b>Keep absolutes for the page.</b> &#8220;The meeting over, we left&#8221; is crisp in writing but stiff in speech. In conversation, &#8220;once the meeting was over&#8221; sounds more natural.</p>
+      <p><b>Beware the dangling modifier.</b> A verbless or participle clause with no subject borrows the subject of the main clause. “Walking in, the lights were off” is wrong, since the lights were not walking. Write “Walking in, I found the lights off,” or the absolute “The lights off, I walked in.”</p>
+      <p><b>Keep absolutes for the page.</b> “The meeting over, we left” is crisp in writing but stiff in speech. In conversation, <em>once the meeting was over</em> sounds more natural.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>Collective nouns.</b> American English treats a collective noun as singular (&#8220;The team having finished, it moved on&#8221;); British English often treats it as plural (&#8220;... they moved on&#8221;). This book uses the singular.</p>
-      <p><b>&#8220;While&#8221; vs &#8220;whilst.&#8221;</b> In a verbless concessive opening, British English may use &#8220;whilst&#8221; (&#8220;Whilst useful, ...&#8221;); American English uses &#8220;while.&#8221; This book uses &#8220;while.&#8221;</p>
+      <p><b>Collective nouns.</b> American English treats a collective noun as singular (“The team having finished, it moved on”); British English often treats it as plural (<em>... they moved on</em>). This book uses the singular.</p>
+      <p><b><em>While</em> vs <em>whilst.</em></b> In a verbless concessive opening, British English may use <em>whilst</em> (<em>Whilst useful, ...</em>); American English uses <em>while.</em> This book uses <em>while.</em></p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same background, compressed. Keep the frame; change only the slot and the situation.</p>
@@ -315,7 +318,7 @@
       <p class="diagram-cap">The same idea, compressed. The absolute keeps its own subject and drops the rest.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Here is what these short clauses do for you. A reader takes in a long sentence in pieces, so <b>a short opener can set the scene in a few light words</b> before the main clause does the real work. <i>&#8220;With the servers down, we lost a day&#8221;</i> gets to the point fast, while <i>&#8220;Because the servers were down, we lost a day&#8221;</i> spends extra words on something the reader could already guess. That saving makes the writing feel controlled. But there is one firm rule. A shortened clause with no subject of its own borrows the subject of the main clause, so <i>&#8220;Reviewing the data, errors appeared&#8221;</i> is wrong, because the errors were not reviewing anything. Either give the phrase its own subject (&#8220;the data reviewed&#8221;) or make the main clause's subject the one doing the action.</p>
+    <p class="body-copy">Here is what these short clauses do for you. A reader takes in a long sentence in pieces, so <b>a short opener can set the scene in a few light words</b> before the main clause does the real work. <i>With the servers down, we lost a day</i> gets to the point fast, while “Because the servers were down, we lost a day” spends extra words on something the reader could already guess. That saving makes the writing feel controlled. But there is one firm rule. A shortened clause with no subject of its own borrows the subject of the main clause, so “Reviewing the data, errors appeared” is wrong, because the errors were not reviewing anything. Either give the phrase its own subject (“the data reviewed”) or make the main clause's subject the one doing the action.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the reductions, fix the danglers, tighten wordy openers, use the words, then use it live.</p>
@@ -384,13 +387,13 @@
       <div class="prod-step">
         <p class="prod-label">2 &middot; Say it</p>
         <p class="prod-lead">These are crisp on the page and stiff in the mouth. Knowing which is which is the whole point of saying them aloud.</p>
-        <div class="task-box"><p>Record situation 1 and then say the same thing the way you would to a colleague in the corridor: &#8220;once the meeting was over, everyone left.&#8221; Play both back. Listen for one thing: which one sounds like you? The written form is not wrong, but if it sounds like a narrator, keep it for the page.</p></div>
+        <div class="task-box"><p>Record situation 1 and then say the same thing the way you would to a colleague in the corridor: “once the meeting was over, everyone left.” Play both back. Listen for one thing: which one sounds like you? The written form is not wrong, but if it sounds like a narrator, keep it for the page.</p></div>
         <div id="recBox"></div>
       </div>
       <div class="prod-step prod-extend">
         <p class="prod-label">3 &middot; With a partner, if you have one</p>
         <div class="task-box">
-          <p>describe a project handover to each other. As you speak, open at least four sentences with a reduced clause: &#8220;The audit complete...,&#8221; &#8220;With the client on board...,&#8221; &#8220;Though rushed...,&#8221; &#8220;All things considered....&#8221; Your partner listens for the openings and repeats each one back as a full clause, so you both hear the compression at work.</p>
+          <p>describe a project handover to each other. As you speak, open at least four sentences with a reduced clause: <em>The audit complete...,</em> <em>With the client on board...,</em> <em>Though rushed...,</em> <em>All things considered....</em> Your partner listens for the openings and repeats each one back as a full clause, so you both hear the compression at work.</p>
           <p>Then, take three long sentences from something you wrote this week and tighten each by turning its opening subordinate clause into an absolute or verbless clause. Check that nothing dangles, that every reduced opener truly shares or supplies its own subject.</p>
         </div>
       </div>
@@ -416,6 +419,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -429,6 +433,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -512,18 +544,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -793,7 +865,7 @@ var C_DATA = [{"q": "After the vote had concluded, the board moved on.", "keys":
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it compactly"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["The presentation over,", "With the servers down,", "Though understaffed,", "All things considered,", "Weather permitting,"];
-var D_ENDINGS = [{"id": "a", "t": "no orders could be processed."}, {"id": "b", "t": "we took questions from the floor."}, {"id": "c", "t": "the team still hit the deadline."}, {"id": "d", "t": "the merger was the right call."}, {"id": "e", "t": "the ceremony will be held outdoors."}];
+var D_ENDINGS = [{"id": "c", "t": "the team still hit the deadline."}, {"id": "e", "t": "the ceremony will be held outdoors."}, {"id": "a", "t": "no orders could be processed."}, {"id": "d", "t": "the merger was the right call."}, {"id": "b", "t": "we took questions from the floor."}];
 var D_KEY = ["b", "a", "c", "d", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }

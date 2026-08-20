@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -84,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -206,17 +214,17 @@
       <div class="card-col">
         <h4>Past perfect (the earlier layer)</h4>
         <dl><dt>Form</dt><dd>had + past participle</dd><dt>Meaning</dt><dd>an event that had already finished before the main story line begins</dd><dt>Use it to</dt><dd>step back and mark what happened first, without breaking the order of telling</dd></dl>
-        <div class="eg">We&#8217;d already merged the risky branch the night before.</div>
+        <div class="eg">We'd already merged the risky branch the night before.</div>
       </div>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Don't use the past perfect for the main line.</b> If every clause is in the past perfect, there is no main line left to step back from. Keep the story in the simple past and reserve "had" for the one earlier event.</p>
-      <p><b>Don't leave the order ambiguous when it matters.</b> "The line stopped. We swapped the sensor." leaves the order unclear. If the swap came first and caused the failure, say so: "We'd swapped the sensor. The line stopped."</p>
+      <p><b>Don't use the past perfect for the main line.</b> If every clause is in the past perfect, there is no main line left to step back from. Keep the story in the simple past and reserve <em>had</em> for the one earlier event.</p>
+      <p><b>Don't leave the order ambiguous when it matters.</b> “The line stopped. We swapped the sensor.” leaves the order unclear. If the swap came first and caused the failure, say so: “We'd swapped the sensor. The line stopped.”</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>Past participle of get.</b> American "we'd gotten the sign-off"; British "we'd got the sign-off." This book uses "gotten."</p>
+      <p><b>Past participle of get.</b> American “we'd gotten the sign-off”; British “we'd got the sign-off.” This book uses <em>gotten.</em></p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same two-layer structure in every line. The highlighted slot changes; the past perfect always marks the earlier event.</p>
@@ -242,7 +250,7 @@
         <line x1="30" y1="112" x2="640" y2="112" stroke="#6B6F76" stroke-width="1.5" marker-end="url(#arr3)"/>
         <rect x="250" y="98" width="128" height="28" rx="6" fill="#1F5570"/>
         <text x="314" y="117" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff">the line stopped</text>
-        <rect x="410" y="98" width="152" height="28" rx="6" fill="#1F5570"/>
+        <rect x="388" y="98" width="196" height="28" rx="6" fill="#1F5570"/>
         <text x="486" y="117" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff">we reran the calibration</text>
         <line x1="600" y1="90" x2="600" y2="134" stroke="#0A0B0D" stroke-width="2"/>
         <text x="600" y="152" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-weight="600" fill="#0A0B0D">NOW</text>
@@ -251,16 +259,16 @@
         <text x="30" y="232" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">past perfect, stepping back to what came first</text>
 
         <rect x="380" y="256" width="150" height="28" rx="6" fill="#B3132B"/>
-        <text x="455" y="275" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff">we&#8217;d swapped it</text>
+        <text x="455" y="275" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#ffffff">we'd swapped it</text>
         <path d="M 455 252 L 455 176 L 314 176 L 314 130" fill="none" stroke="#B3132B" stroke-width="1.5" stroke-dasharray="5 4"/>
         <text x="384" y="168" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#B3132B">this had already happened</text>
 
-        <text x="350" y="304" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#33363B">One &#8220;had&#8221; is enough. The rest of the story stays in the simple past.</text>
+        <text x="350" y="304" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#33363B">One <tspan font-style="italic">had</tspan> is enough. The rest of the story stays in the simple past.</text>
       </svg>
       <p class="diagram-cap">The events are the same. The past perfect tells the listener which one came first.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">A retro only works if the room can reconstruct the sequence without asking follow-up questions, and holding a full timeline in your head while you talk is expensive. The past perfect offloads that cost onto the grammar: it marks "this already happened" in a single word, so you can keep the main line moving in simple past and only reach for "had" when you need to step back. Used well, it turns a pile of facts into a story with a cause: something had already gone wrong before the failure everyone noticed.</p>
+    <p class="body-copy">A retro only works if the room can reconstruct the sequence without asking follow-up questions, and holding a full timeline in your head while you talk is expensive. The past perfect offloads that cost onto the grammar: it marks “this already happened” in a single word, so you can keep the main line moving in simple past and only reach for <em>had</em> when you need to step back. Used well, it turns a pile of facts into a story with a cause: something had already gone wrong before the failure everyone noticed.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the form accurately, then control the order, then use the words, then say it for real.</p>
@@ -347,6 +355,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -360,6 +369,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -443,18 +480,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -565,7 +642,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "By the time we noticed the leak, the alarm ______ (already / sound).", "a": ["had already sounded"]}, {"q": "We ______ (shut down) the line after the readings ______ (spike).", "a": ["shut down / had spiked"]}, {"q": "She ______ (join) the shift late because her previous handoff ______ (run) over.", "a": ["joined / had run"]}, {"q": "The team ______ (miss) the deadline because the spec ______ (change) twice.", "a": ["missed / had changed"]}, {"q": "Once quality ______ (sign off), we ______ (release) the batch.", "a": ["had signed off / released"]}, {"q": "They ______ (not / test) the edge case before it ______ (break) on the floor.", "a": ["hadn't tested / broke", "had not tested / broke"]}];
+var A_DATA = [{"q": "By the time we noticed the leak, the alarm ______ (already / sound).", "a": ["had already sounded"]}, {"q": "We ______ (shut down) the line after the readings ______ (spike).", "a": [["shut down"], ["had spiked"]]}, {"q": "She ______ (join) the shift late because her previous handoff ______ (run) over.", "a": [["joined"], ["had run"]]}, {"q": "The team ______ (miss) the deadline because the spec ______ (change) twice.", "a": [["missed"], ["had changed"]]}, {"q": "Once quality ______ (sign off), we ______ (release) the batch.", "a": [["had signed off"], ["released"]]}, {"q": "They ______ (not / test) the edge case before it ______ (break) on the floor.", "a": [["hadn't tested", "had not tested"], ["broke"]]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "By the time we restarted the line, quality finished the inspection.", "keys": ["quality had finished"], "full": "By the time we restarted the line, quality had finished the inspection."}, {"q": "We had shut down the line after the readings had spiked.", "keys": ["we shut down the line"], "full": "We shut down the line after the readings had spiked."}, {"q": "She joined the shift late because her handoff had ran over.", "keys": ["had run over"], "full": "She joined the shift late because her handoff had run over."}, {"q": "The fault had appeared and we fixed it, in that order of telling.", "keys": ["and then we fixed it"], "full": "The fault had appeared, and then we fixed it."}, {"q": "They tested the part before it was shipped it.", "keys": ["before it was shipped"], "reject": ["shipped it"], "full": "They tested the part before it was shipped."}];
@@ -575,7 +652,7 @@ var C_DATA = [{"q": "We swapped the sensor. Quality had not reviewed it yet.", "
 function buildC(){ buildRewrite("C", C_DATA, "combine them into one sentence"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["We'd already fixed the fault", "The outage started", "She hadn't seen the alert", "Once the fix had gone out", "They'd tested the line twice"];
-var D_ENDINGS = [{"id": "a", "t": "before the client even noticed."}, {"id": "b", "t": "right after the risky swap."}, {"id": "c", "t": "because her phone was on silent."}, {"id": "d", "t": "the errors stopped within minutes."}, {"id": "e", "t": "before it ever reached production."}];
+var D_ENDINGS = [{"id": "a", "t": "before the client even noticed."}, {"id": "c", "t": "because her phone was on silent."}, {"id": "e", "t": "before it ever reached production."}, {"id": "b", "t": "right after the risky swap."}, {"id": "d", "t": "the errors stopped within minutes."}];
 var D_KEY = ["a", "b", "c", "d", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
@@ -583,7 +660,7 @@ var E_DATA = [{"q": "The batch failed. We had skipped the quality check.", "keys
 function buildE(){ buildRewrite("E", E_DATA, "rewrite as one sentence"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["root cause", "a near miss", "a blind spot", "to backtrack", "a lessons-learned doc", "to get ahead of it"];
-var F_ENDINGS = [{"id": "a", "t": "the real underlying reason something went wrong"}, {"id": "b", "t": "an incident that almost happened but didn't"}, {"id": "c", "t": "something the team consistently fails to notice"}, {"id": "d", "t": "to retrace steps to find where things went wrong"}, {"id": "e", "t": "a written record of what to change next time"}, {"id": "f", "t": "to act before a small problem becomes a big one"}];
+var F_ENDINGS = [{"id": "b", "t": "an incident that almost happened but didn't"}, {"id": "d", "t": "to retrace steps to find where things went wrong"}, {"id": "a", "t": "the real underlying reason something went wrong"}, {"id": "c", "t": "something the team consistently fails to notice"}, {"id": "f", "t": "to act before a small problem becomes a big one"}, {"id": "e", "t": "a written record of what to change next time"}];
 var F_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }

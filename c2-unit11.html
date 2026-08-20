@@ -89,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -251,7 +254,7 @@
     <p class="body-copy"><b>Goal.</b> Learn how fronting works, when it inverts and when it doesn't, and how it serves both emphasis and cohesion. By the end you should be able to front an element to control what a sentence leads with.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">Fronting means moving a word or phrase that is not the subject to the front of the sentence, and unlike the inversion in the last unit, it usually leaves the subject and verb in their normal order. You front for two reasons: emphasis and connection. For emphasis, you put the part you care about first, where the reader meets it while their attention is freshest: <i>&#8220;That mistake I can forgive; this one I can't.&#8221;</i> For connection, you front the part that links back to the sentence before, so each sentence hooks cleanly onto the last: <i>&#8220;This much we know,&#8221; &#8220;That I can promise.&#8221;</i> One special case, fronting a place or direction, does flip the verb: <i>&#8220;In the middle of the report sits the summary.&#8221;</i> In all of these you are deciding <b>what the sentence leads with,</b> one of the quietest but most powerful controls over how a paragraph reads.</p>
+    <p class="body-copy">Fronting means moving a word or phrase that is not the subject to the front of the sentence, and unlike the inversion in the last unit, it usually leaves the subject and verb in their normal order. You front for two reasons: emphasis and connection. For emphasis, you put the part you care about first, where the reader meets it while their attention is freshest: “That mistake I can forgive; this one I can't.” For connection, you front the part that links back to the sentence before, so each sentence hooks cleanly onto the last: <i><em>This much we know,</em> <em>That I can promise.</em></i> One special case, fronting a place or direction, does flip the verb: “In the middle of the report sits the summary.” In all of these you are deciding <b>what the sentence leads with,</b> one of the quietest but most powerful controls over how a paragraph reads.</p>
     <div class="split">
       <div class="card-col">
         <h4>Object and complement fronting</h4>
@@ -271,13 +274,13 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Fronting an object does not invert.</b> Fronting keeps the normal subject-verb order: &#8220;That report I read,&#8221; not &#8220;That report read I.&#8221; Only fronted negatives (last unit) and locatives with a plain verb invert.</p>
-      <p><b>Don't front what the reader can't yet anchor.</b> Fronting aids cohesion when the fronted element links to something known (&#8220;This we can fix&#8221;). Front a brand-new, heavy phrase and you recreate the front-heavy problem of Unit 5.</p>
+      <p><b>Fronting an object does not invert.</b> Fronting keeps the normal subject-verb order: <em>That report I read,</em> not <em>That report read I.</em> Only fronted negatives (last unit) and locatives with a plain verb invert.</p>
+      <p><b>Don't front what the reader can't yet anchor.</b> Fronting aids cohesion when the fronted element links to something known (“This we can fix”). Front a brand-new, heavy phrase and you recreate the front-heavy problem of Unit 5.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>Agreeing with &#8220;so.&#8221;</b> &#8220;So do I / so am I&#8221; is shared in both varieties; American English also uses &#8220;same here&#8221; informally. This book uses &#8220;so do I.&#8221;</p>
-      <p><b>Comma after a fronted element.</b> American English usually commas a fronted adverbial (&#8220;On Monday, we start&#8221;); with a fronted object, both varieties omit the comma (&#8220;That I can promise&#8221;). This book follows these conventions.</p>
+      <p><b>Agreeing with <em>so.</em></b> “So do I / so am I” is shared in both varieties; American English also uses <em>same here</em> informally. This book uses <em>so do I.</em></p>
+      <p><b>Comma after a fronted element.</b> American English usually commas a fronted adverbial (<em>On Monday, we start</em>); with a fronted object, both varieties omit the comma (“That I can promise”). This book follows these conventions.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same content, re-led. Keep the frame; change only the slot and the situation.</p>
@@ -300,7 +303,7 @@
         <text x="30" y="38" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Neutral order</text>
         <text x="30" y="58" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">subject first, emphasis spread evenly</text>
         <rect x="30" y="78" width="640" height="30" rx="6" fill="#EFEFEA" stroke="#DCDDD6"/>
-        <text x="350" y="98" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" fill="#33363B">We can fix this problem, but I can&#8217;t promise the timeline.</text>
+        <text x="350" y="98" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" fill="#33363B">We can fix this problem, but I can't promise the timeline.</text>
 
         <line x1="350" y1="134" x2="350" y2="174" stroke="#B3132B" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#fa)"/>
         <text x="374" y="156" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#B3132B">the objects move to the front</text>
@@ -308,14 +311,14 @@
         <text x="30" y="214" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Fronted</text>
         <text x="30" y="234" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">the objects lead, for contrast and for the link back</text>
         <rect x="30" y="254" width="640" height="30" rx="6" fill="#1F5570"/>
-        <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">This problem we can fix; the timeline, that I can&#8217;t promise.</text>
+        <text x="350" y="274" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">This problem we can fix; the timeline, that I can't promise.</text>
 
         <text x="350" y="318" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#33363B">Same content, re-weighted. Fronting puts the contrast where the reader feels the pivot.</text>
       </svg>
       <p class="diagram-cap">Same content, re-weighted. Fronting puts the contrasted elements first, where the reader feels the pivot.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Here is the logic, and it rests on two simple facts about reading. First, the front of a sentence is the strongest spot: whatever sits there frames everything after it and gets the most attention, so fronting a word is a way of saying <b>&#8220;start here.&#8221;</b> Second, readers build meaning by linking each sentence to the last, and the smoothest link is to lead with the thing that points back, the &#8220;this,&#8221; the &#8220;that,&#8221; the idea already in play. So <i>&#8220;This we can fix&#8221;</i> does two jobs at once: it stresses &#8220;this&#8221; and it ties the sentence to whatever &#8220;this&#8221; refers to. That is why fronting helps connection as much as emphasis. The limit is the one from Unit 5: front something long and unfamiliar and you strand the reader. So front what is short, known, or pointed, and leave new, heavy material for the end.</p>
+    <p class="body-copy">Here is the logic, and it rests on two simple facts about reading. First, the front of a sentence is the strongest spot: whatever sits there frames everything after it and gets the most attention, so fronting a word is a way of saying <b><em>start here.</em></b> Second, readers build meaning by linking each sentence to the last, and the smoothest link is to lead with the thing that points back, the <em>this,</em> the <em>that,</em> the idea already in play. So “This we can fix” does two jobs at once: it stresses <em>this</em> and it ties the sentence to whatever <em>this</em> refers to. That is why fronting helps connection as much as emphasis. The limit is the one from Unit 5: front something long and unfamiliar and you strand the reader. So front what is short, known, or pointed, and leave new, heavy material for the end.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the fronted forms, fix the misfires, front for effect, use the words, then use it live.</p>
@@ -391,7 +394,7 @@
       <div class="prod-step prod-extend">
         <p class="prod-label">3 &middot; With a partner, if you have one</p>
         <div class="task-box">
-          <p>argue two sides of a small proposal. Whenever you want to stress or contrast a point, front it: &#8220;That I can agree with; this I can't,&#8221; &#8220;The cost we can manage; the timeline worries me.&#8221; Your partner listens for whether the fronting genuinely pivoted the emphasis or just sounded odd for its own sake, and flags the ones that didn't earn it.</p>
+          <p>argue two sides of a small proposal. Whenever you want to stress or contrast a point, front it: “That I can agree with; this I can't,” “The cost we can manage; the timeline worries me.” Your partner listens for whether the fronting genuinely pivoted the emphasis or just sounded odd for its own sake, and flags the ones that didn't earn it.</p>
           <p>Then, take two sentences you would normally write in plain order and front one element in each, once for contrast and once to link back to the sentence before. Read them aloud and keep the version that reads more naturally, not just more unusual.</p>
         </div>
       </div>
@@ -417,6 +420,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -430,6 +434,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -513,18 +545,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -809,7 +881,7 @@ function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "______, we need to agree on the budget.", "a": ["First and foremost"]}, {"q": "The design has flaws. ______, it's a strong start.", "a": ["That aside"]}, {"q": "I'd hold off. ______, we haven't tested it yet.", "a": ["For one thing"]}, {"q": "It's late and over budget. ______, the client changed the scope twice.", "a": ["On top of that"]}, {"q": "______, the pilot proved the concept works.", "a": ["If nothing else"]}, {"q": "We want faster reviews; ______, we're adding a second approver.", "a": ["to that end"]}];
 function buildG(){ buildGap("G", G_DATA, ["first and foremost", "that aside", "for one thing", "on top of that", "if nothing else", "to that end"]); }
 function checkG(){ checkGap("G", G_DATA); }
-var H_TIMED = [{"q": "You can meet the budget but not the timeline. Say both in one line, budget first.", "model": "The budget we can meet; the timeline is the problem."}, {"q": "You agree with one point completely. Lead with the point.", "model": "That I agree with completely."}, {"q": "You handled the first crisis; the second one broke you. Contrast them.", "model": "The first crisis we handled; the second broke us."}, {"q": "You cannot promise a firm date, but you can promise a range.", "model": "A firm date I can&#8217;t promise, but a range I can."}];
+var H_TIMED = [{"q": "You can meet the budget but not the timeline. Say both in one line, budget first.", "model": "The budget we can meet; the timeline is the problem."}, {"q": "You agree with one point completely. Lead with the point.", "model": "That I agree with completely."}, {"q": "You handled the first crisis; the second one broke you. Contrast them.", "model": "The first crisis we handled; the second broke us."}, {"q": "You cannot promise a firm date, but you can promise a range.", "model": "A firm date I can't promise, but a range I can."}];
 function buildHTimed(){ buildTimed("H", H_TIMED, 40); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildHTimed(); recInit('recBox'); updateScore(); }

@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -84,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -200,7 +208,7 @@
       <div class="card-col">
         <h4>Be about to</h4>
         <dl><dt>Form</dt><dd>am, is, or are + about to + base verb</dd><dt>Meaning</dt><dd>an action on the very edge of happening, in the next moment</dd><dt>Use it to</dt><dd>signal something is happening right now, imminently</dd></dl>
-        <div class="eg">We&#8217;re about to push the fix.</div>
+        <div class="eg">We're about to push the fix.</div>
       </div>
       <div class="card-col">
         <h4>Be set to / due to</h4>
@@ -210,12 +218,12 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Don't use "be about to" for something days away.</b> It means the very next moment. "We're about to migrate next month" is wrong; say "We're set to migrate next month."</p>
-      <p><b>Keep "due to" attached to a subject with "be."</b> "Due to land Friday, the report..." is not this structure. Write "The report is due to land Friday."</p>
+      <p><b>Don't use <em>be about to</em> for something days away.</b> It means the very next moment. “We're about to migrate next month” is wrong; say “We're set to migrate next month.”</p>
+      <p><b>Keep <em>due to</em> attached to a subject with <em>be.</em></b> <em>Due to land Friday, the report...</em> is not this structure. Write “The report is due to land Friday.”</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>"Be to" for official directives.</b> British institutional English uses "be to" for formal schedules and directives: "The board is to meet Thursday." American English prefers "is set to" or "is scheduled to" in the same context. This book uses "is set to."</p>
+      <p><b><em>Be to</em> for official directives.</b> British institutional English uses <em>be to</em> for formal schedules and directives: “The board is to meet Thursday.” American English prefers <em>is set to</em> or <em>is scheduled to</em> in the same context. This book uses <em>is set to.</em></p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same signal in every line. The highlighted slot changes; the form sets how close the event is.</p>
@@ -243,12 +251,12 @@
         <circle cx="560" cy="101" r="11" fill="#1F5570"/>
 
         <text x="140" y="136" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#B3132B">seconds away</text>
-        <text x="140" y="160" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="16" fill="#0A0B0D">we&#8217;re about to push it</text>
+        <text x="140" y="160" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="16" fill="#0A0B0D">we're about to push it</text>
         <text x="140" y="182" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" fill="#6B6F76">be about to + base verb</text>
         <text x="140" y="208" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#6B6F76">watch the screen now</text>
 
         <text x="560" y="136" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#1F5570">on the calendar</text>
-        <text x="560" y="160" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="16" fill="#0A0B0D">it&#8217;s set to finish Thursday</text>
+        <text x="560" y="160" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="16" fill="#0A0B0D">it's set to finish Thursday</text>
         <text x="560" y="182" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" fill="#6B6F76">be set to / due to + base verb</text>
         <text x="560" y="208" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#6B6F76">check back later</text>
 
@@ -257,7 +265,7 @@
       <p class="diagram-cap">An action seconds away sits on the left. A dated, official timeline sits on the right.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Under real time pressure, the wrong imminence signal wastes someone's attention: telling a stakeholder something is "about to" happen when it is really days out either alarms them or trains them to stop trusting your urgency words. Store the two frames apart: "about to" for the next few minutes, "set to / due to" for a dated plan. Once the split is automatic, you can calibrate urgency precisely instead of reaching for "soon" and hoping the listener guesses right.</p>
+    <p class="body-copy">Under real time pressure, the wrong imminence signal wastes someone's attention: telling a stakeholder something is <em>about to</em> happen when it is really days out either alarms them or trains them to stop trusting your urgency words. Store the two frames apart: <em>about to</em> for the next few minutes, <em>set to / due to</em> for a dated plan. Once the split is automatic, you can calibrate urgency precisely instead of reaching for <em>soon</em> and hoping the listener guesses right.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the form accurately, then control the urgency, then use the words, then say it for real.</p>
@@ -325,7 +333,7 @@
       <p class="ex-title">Over to you</p>
       <p class="ex-instr">Not graded. This is where the grammar stops being a rule you know and becomes a sentence you actually say.</p>
       <div class="task-box">
-        <p><b>In pairs.</b> Describe two upcoming events at work: one happening in the next few minutes, one on an official future date. Use "about to" for the first and "set to" or "due to" for the second. Your partner checks that the urgency level matches the real timing.</p>
+        <p><b>In pairs.</b> Describe two upcoming events at work: one happening in the next few minutes, one on an official future date. Use <em>about to</em> for the first and <em>set to</em> or <em>due to</em> for the second. Your partner checks that the urgency level matches the real timing.</p>
         <p><b>Then, on your own.</b> Write two lines about your week, one imminent and one scheduled, using both forms. Read them aloud until the timing signal feels automatic.</p>
       </div>
     </div>
@@ -350,6 +358,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -363,6 +372,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -446,18 +483,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -589,7 +666,7 @@ var F_DATA = [{"q": "We migrate next month.", "note": "[make it read as schedule
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["any minute now", "on the horizon", "in the final stretch", "hot off the press", "just around the corner", "down to the wire"];
-var G_ENDINGS = [{"id": "a", "t": "expected to happen very soon"}, {"id": "b", "t": "visible as a future possibility, not yet close"}, {"id": "c", "t": "in the last push before something finishes"}, {"id": "d", "t": "freshly released or announced"}, {"id": "e", "t": "very close in time"}, {"id": "f", "t": "right up until the last possible moment"}];
+var G_ENDINGS = [{"id": "a", "t": "expected to happen very soon"}, {"id": "b", "t": "visible as a future possibility, not yet close"}, {"id": "f", "t": "right up until the last possible moment"}, {"id": "d", "t": "freshly released or announced"}, {"id": "c", "t": "in the last push before something finishes"}, {"id": "e", "t": "very close in time"}];
 var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }

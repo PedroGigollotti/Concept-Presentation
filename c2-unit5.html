@@ -89,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -251,7 +254,7 @@
     <p class="body-copy"><b>Goal.</b> Learn the principles that keep a long sentence clear, putting the heavy part last, ending on the new information, and using a placeholder, and how to apply them. By the end you should be able to repackage a front-heavy sentence.</p>
 
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">At C2 the hard part is no longer building a long sentence but <b>keeping a long one clear.</b> English has strong habits about where information goes, and good writers work with them. Two ideas do most of the work. The first is to put the long, heavy part at the end, so the sentence starts light and the reader is not forced to hold a huge subject in mind before the verb arrives. The second is to put the new or important information last, because the end of a sentence is where the emphasis naturally falls; start instead from what the reader already knows. When a heavy clause insists on being the subject, English gives you a simple fix: begin with <i>&#8220;it&#8221;</i> or <i>&#8220;there&#8221;</i> as a placeholder and move the heavy part to the end, as in <i>&#8220;It is worth noting that...&#8221;</i> Master these and a three-clause sentence stays as clear as a short one.</p>
+    <p class="body-copy">At C2 the hard part is no longer building a long sentence but <b>keeping a long one clear.</b> English has strong habits about where information goes, and good writers work with them. Two ideas do most of the work. The first is to put the long, heavy part at the end, so the sentence starts light and the reader is not forced to hold a huge subject in mind before the verb arrives. The second is to put the new or important information last, because the end of a sentence is where the emphasis naturally falls; start instead from what the reader already knows. When a heavy clause insists on being the subject, English gives you a simple fix: begin with <i>it</i> or <i>there</i> as a placeholder and move the heavy part to the end, as in <i>It is worth noting that...</i> Master these and a three-clause sentence stays as clear as a short one.</p>
     <div class="split">
       <div class="card-col">
         <h4>End-weight</h4>
@@ -261,23 +264,23 @@
       <div class="card-col">
         <h4>End-focus (given before new)</h4>
         <dl><dt>Form</dt><dd>start from information already known; end on the new or important point</dd><dt>Meaning</dt><dd>the end of the sentence carries the emphasis, so old news up front wastes it</dd><dt>Use it to</dt><dd>chain sentences so each picks up where the last left off</dd></dl>
-        <div class="eg">The audit flagged three risks. The most serious of these was a gap in access controls. (given &#8220;these&#8221; first, new point last)</div>
+        <div class="eg">The audit flagged three risks. The most serious of these was a gap in access controls. (given <em>these</em> first, new point last)</div>
       </div>
       <div class="card-col">
-        <h4>Placeholder &#8220;it&#8221; or &#8220;there&#8221;</h4>
+        <h4>Placeholder <em>it</em> or <em>there</em></h4>
         <dl><dt>Form</dt><dd>It / There + verb + ... + the postponed clause or subject</dd><dt>Meaning</dt><dd>holds the subject position with a placeholder and moves the heavy part to the end</dd><dt>Use it to</dt><dd>avoid a long clause or list sitting awkwardly at the front</dd></dl>
-        <div class="eg">It is worth noting that the figures exclude tax. (not &#8220;That the figures exclude tax is worth noting&#8221;)</div>
+        <div class="eg">It is worth noting that the figures exclude tax. (not “That the figures exclude tax is worth noting”)</div>
       </div>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Don't strand a heavy subject up front.</b> &#8220;That the vendor missed three deadlines and ignored two escalations is unacceptable&#8221; is grammatical but front-heavy. Extrapose it: &#8220;It is unacceptable that the vendor missed three deadlines and ignored two escalations.&#8221;</p>
+      <p><b>Don't strand a heavy subject up front.</b> “That the vendor missed three deadlines and ignored two escalations is unacceptable” is grammatical but front-heavy. Extrapose it: <em>It is unacceptable that the vendor missed three deadlines and ignored two escalations.</em></p>
       <p><b>Keep one main clause clearly placed.</b> A long sentence stays readable only if the reader can find the main clause fast. Bury it behind three subordinate clauses and the sentence collapses. Keep the backbone visible.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>The serial (Oxford) comma.</b> In a final list, American English uses the serial comma (&#8220;risks in cost, scope, and timing&#8221;); British house styles often omit it. This book uses the serial comma.</p>
-      <p><b>Comma after a fronted adverbial.</b> American English reliably sets off a fronted clause with a comma (&#8220;Once the data was in, ...&#8221;); British English sometimes drops it after a short one. This book always uses the comma.</p>
+      <p><b>The serial (Oxford) comma.</b> In a final list, American English uses the serial comma (<em>risks in cost, scope, and timing</em>); British house styles often omit it. This book uses the serial comma.</p>
+      <p><b>Comma after a fronted adverbial.</b> American English reliably sets off a fronted clause with a comma (<em>Once the data was in, ...</em>); British English sometimes drops it after a short one. This book always uses the comma.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same content, better order. Keep the frame; change only the slot and the situation.</p>
@@ -307,7 +310,7 @@
         <text x="374" y="178" font-family="Instrument Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#B3132B">the heavy part moves to the end</text>
 
         <text x="30" y="236" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Repacked</text>
-        <text x="30" y="256" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">placeholder “it” up front, the heavy clause at the end</text>
+        <text x="30" y="256" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">placeholder <tspan font-style="italic">it</tspan> up front, the heavy clause at the end</text>
         <rect x="30" y="276" width="640" height="52" rx="6" fill="#1F5570"/>
         <text x="350" y="296" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">It is unacceptable that the vendor missed three deadlines and ignored two</text>
         <text x="350" y="318" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">escalations.</text>
@@ -317,7 +320,7 @@
       <p class="diagram-cap">Same facts, reordered. The heavy clause moves to the end, where English reads it most easily.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">Here is the reason this matters. A reader holds the start of a sentence in mind until the main verb arrives, so a long, complicated subject forces them to carry a heavy load with nothing to attach it to. <i>&#8220;That the vendor missed three deadlines and ignored two escalations is unacceptable&#8221;</i> makes the reader haul the whole clause before the short &#8220;is unacceptable&#8221; pays it off. Flip it to <i>&#8220;It is unacceptable that...&#8221;</i> and the little word &#8220;it&#8221; settles the grammar at once, so the reader can take in the detail as it comes. The same logic explains why you should end on the important point: the last thing you say lands hardest. Put known information first and new information last, and <b>keep heavy parts at the end,</b> and long sentences stop feeling long.</p>
+    <p class="body-copy">Here is the reason this matters. A reader holds the start of a sentence in mind until the main verb arrives, so a long, complicated subject forces them to carry a heavy load with nothing to attach it to. “That the vendor missed three deadlines and ignored two escalations is unacceptable” makes the reader haul the whole clause before the short <em>is unacceptable</em> pays it off. Flip it to <i>It is unacceptable that...</i> and the little word <em>it</em> settles the grammar at once, so the reader can take in the detail as it comes. The same logic explains why you should end on the important point: the last thing you say lands hardest. Put known information first and new information last, and <b>keep heavy parts at the end,</b> and long sentences stop feeling long.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: place the placeholders, fix the front-heavy sentences, repackage for end-weight, use the words, then use it live.</p>
@@ -325,7 +328,7 @@
     <div class="ex-block">
       <span class="ex-label">A</span>
       <p class="ex-title">Complete the form</p>
-      <p class="ex-instr">Complete each sentence with the placeholder subject (&#8220;It&#8221; or &#8220;There&#8221;) that packages it best.</p>
+      <p class="ex-instr">Complete each sentence with the placeholder subject (<em>It</em> or <em>There</em>) that packages it best.</p>
       <div id="exA"></div>
       <button class="check-btn" onclick="checkA()">Check my answers</button>
     </div>
@@ -380,20 +383,20 @@
       <p class="ex-instr">Not graded, and not meant to be. This is where the grammar stops being a rule you know and becomes a sentence you actually say.</p>
       <div class="prod-step">
         <p class="prod-label">1 &middot; Under pressure</p>
-        <p class="prod-lead">Front-heavy sentences happen under time pressure, which is exactly when you need this. Forty-five seconds each. Start with &#8220;it&#8221; and let the heavy part arrive last.</p>
+        <p class="prod-lead">Front-heavy sentences happen under time pressure, which is exactly when you need this. Forty-five seconds each. Start with <em>it</em> and let the heavy part arrive last.</p>
         <div id="timedH"></div>
       </div>
       <div class="prod-step">
         <p class="prod-label">2 &middot; Say it</p>
         <p class="prod-lead">A front-heavy sentence is audible before it is visible: the listener hears you running out of breath before the verb arrives.</p>
-        <div class="task-box"><p>Record situation 1 twice, once in the front-heavy form (&#8220;That the vendor missed three deadlines and ignored two escalations is unacceptable&#8221;) and once repackaged. Play both back. Listen for one thing: where did you have to take a breath? In the repackaged version the breath falls in a natural place. In the other one it does not.</p></div>
+        <div class="task-box"><p>Record situation 1 twice, once in the front-heavy form (“That the vendor missed three deadlines and ignored two escalations is unacceptable”) and once repackaged. Play both back. Listen for one thing: where did you have to take a breath? In the repackaged version the breath falls in a natural place. In the other one it does not.</p></div>
         <div id="recBox"></div>
       </div>
       <div class="prod-step prod-extend">
         <p class="prod-label">3 &middot; With a partner, if you have one</p>
         <div class="task-box">
           <p>take turns giving a sixty-second project update. As you speak, package each point end-first: known information at the front, the new or important part at the end. Your partner flags any sentence that felt front-heavy or where they lost the main clause, and you say it again, repackaged.</p>
-          <p>Then, find one genuinely clumsy long sentence you wrote recently and rewrite it two ways, once using a placeholder &#8220;it,&#8221; and once by splitting it into two clean sentences. Keep whichever reads more clearly aloud.</p>
+          <p>Then, find one genuinely clumsy long sentence you wrote recently and rewrite it two ways, once using a placeholder <em>it,</em> and once by splitting it into two clean sentences. Keep whichever reads more clearly aloud.</p>
         </div>
       </div>
     </div>
@@ -418,6 +421,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -431,6 +435,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -514,18 +546,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -795,7 +867,7 @@ var C_DATA = [{"q": "That the numbers were wrong surprised no one.", "keys": ["i
 function buildC(){ buildRewrite("C", C_DATA, "repackage it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["The audit flagged three risks;", "We interviewed five candidates;", "The budget was approved,", "Two vendors bid on the work;", "The pilot ran for six weeks,"];
-var D_ENDINGS = [{"id": "a", "t": "the strongest by far was the internal one."}, {"id": "b", "t": "after which the results were reviewed by the board."}, {"id": "c", "t": "the most serious was a gap in access controls."}, {"id": "d", "t": "only one of whom had the security clearance we needed."}, {"id": "e", "t": "but only after a long debate over the contingency line."}];
+var D_ENDINGS = [{"id": "e", "t": "but only after a long debate over the contingency line."}, {"id": "b", "t": "after which the results were reviewed by the board."}, {"id": "c", "t": "the most serious was a gap in access controls."}, {"id": "a", "t": "the strongest by far was the internal one."}, {"id": "d", "t": "only one of whom had the security clearance we needed."}];
 var D_KEY = ["c", "d", "e", "a", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }

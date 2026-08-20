@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -84,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -200,7 +208,7 @@
       <div class="card-col">
         <h4>Hedging modals and verbs</h4>
         <dl><dt>Form</dt><dd>should / may + base verb; seem to / appear to / suggest + clause</dd><dt>Meaning</dt><dd>a claim softened to reflect genuine uncertainty</dd><dt>Use it to</dt><dd>state a likely conclusion without overcommitting to it</dd></dl>
-        <div class="eg">It should respond reasonably well. The data suggests we&#8217;ll see limits around the six-month mark.</div>
+        <div class="eg">It should respond reasonably well. The data suggests we'll see limits around the six-month mark.</div>
       </div>
       <div class="card-col">
         <h4>Hedging adverbs</h4>
@@ -210,12 +218,12 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Don't hedge so much that the claim disappears.</b> "It might possibly perhaps scale somewhat" stacks so many hedges that there's no claim left. Pick one hedge and commit to the rest of the sentence.</p>
-      <p><b>Don't hedge a fact that doesn't need it.</b> "The test seems to have failed" is odd if you can just check the log. Reserve hedges for genuine uncertainty, not things you could simply verify.</p>
+      <p><b>Don't hedge so much that the claim disappears.</b> “It might possibly perhaps scale somewhat” stacks so many hedges that there's no claim left. Pick one hedge and commit to the rest of the sentence.</p>
+      <p><b>Don't hedge a fact that doesn't need it.</b> “The test seems to have failed” is odd if you can just check the log. Reserve hedges for genuine uncertainty, not things you could simply verify.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>"Quite" as a hedge.</b> British English uses "quite" as a mild downtoner ("quite good" means "fairly good"). American English often reads "quite good" as stronger, closer to "very good." This book avoids "quite" for hedging and uses "reasonably" or "fairly" instead, to avoid the ambiguity.</p>
+      <p><b><em>Quite</em> as a hedge.</b> British English uses <em>quite</em> as a mild downtoner (<em>quite good</em> means <em>fairly good</em>). American English often reads <em>quite good</em> as stronger, closer to <em>very good.</em> This book avoids <em>quite</em> for hedging and uses <em>reasonably</em> or <em>fairly</em> instead, to avoid the ambiguity.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same softened claim in every line. The highlighted slot changes; the hedge sets exactly how firm the claim is.</p>
@@ -265,7 +273,7 @@
       <p class="diagram-cap">A confident claim sits on the left. A carefully qualified claim sits on the right.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">A claim that turns out to be wrong costs you credibility, and hedging is how careful speakers protect themselves without refusing to answer. Each hedge word does a small, specific job: "should" signals a likely outcome, "seem to" signals an impression rather than a proven fact, and an adverb like "largely" scopes a claim so it isn't read as absolute. Used well, hedging lets you say something useful under real uncertainty, rather than forcing a choice between a risky overclaim and an unhelpful silence.</p>
+    <p class="body-copy">A claim that turns out to be wrong costs you credibility, and hedging is how careful speakers protect themselves without refusing to answer. Each hedge word does a small, specific job: <em>should</em> signals a likely outcome, <em>seem to</em> signals an impression rather than a proven fact, and an adverb like <em>largely</em> scopes a claim so it isn't read as absolute. Used well, hedging lets you say something useful under real uncertainty, rather than forcing a choice between a risky overclaim and an unhelpful silence.</p>
 
     <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
     <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the form accurately, then control how firm the claim is, then use the words, then say it for real.</p>
@@ -358,6 +366,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -371,6 +380,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -454,18 +491,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -582,7 +659,7 @@ function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "It might possibly perhaps respond somewhat under treatment.", "keys": ["should respond reasonably well"], "reject": ["might possibly"], "full": "It should respond reasonably well under normal conditions."}, {"q": "The trial seem to have failed, based on the chart.", "keys": ["seems to have failed"], "full": "The trial seems to have failed, based on the chart."}, {"q": "This should responded well under normal conditions.", "keys": ["should respond well"], "full": "This should respond well under normal conditions."}, {"q": "It suggest that response is improving.", "keys": ["it suggests that"], "full": "It suggests that response is improving."}, {"q": "This is a largely dosage issue.", "keys": ["is largely a dosage issue"], "reject": ["a largely dosage"], "full": "This is largely a dosage issue."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
-var C_DATA = [{"q": "It will respond well.", "note": "[soften to a likely outcome, not a guarantee]", "keys": ["should respond well"], "full": "It should respond well."}, {"q": "Response is improving.", "note": "[attribute this to the data, not a personal opinion]", "keys": ["the data suggests"], "full": "The data suggests response is improving."}, {"q": "This depends on patient history.", "note": "[soften to an impression, not a proven fact]", "keys": ["seems to depend on patient history"], "full": "It seems to depend on patient history."}, {"q": "This is a dosage issue.", "note": "[scope the claim to “mostly,” not absolutely]", "keys": ["largely a dosage issue"], "full": "This is largely a dosage issue."}, {"q": "Response varies by patient.", "note": "[soften to a partial, not total, effect]", "keys": ["to some extent"], "full": "Response varies to some extent by patient."}];
+var C_DATA = [{"q": "It will respond well.", "note": "[soften to a likely outcome, not a guarantee]", "keys": ["should respond well"], "full": "It should respond well."}, {"q": "Response is improving.", "note": "[attribute this to the data, not a personal opinion]", "keys": ["the data suggests"], "full": "The data suggests response is improving."}, {"q": "This depends on patient history.", "note": "[soften to an impression, not a proven fact]", "keys": ["seems to depend on patient history"], "full": "It seems to depend on patient history."}, {"q": "This is a dosage issue.", "note": "[scope the claim to <em>mostly,</em> not absolutely]", "keys": ["largely a dosage issue"], "full": "This is largely a dosage issue."}, {"q": "Response varies by patient.", "note": "[soften to a partial, not total, effect]", "keys": ["to some extent"], "full": "Response varies to some extent by patient."}];
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["This should", "The data suggests", "It seems to", "This is largely", "To some extent, it depends on"];
@@ -593,11 +670,11 @@ function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You have solid data and want to sound confident but not absolute.", "a": 0, "note": "Confident, hedged: “This should hold up fine under normal conditions.”"}, {"q": "You have only a rough impression, not hard evidence.", "a": 1, "note": "Rough impression: “It seems to be a dosage issue, though I can't be sure yet.”"}, {"q": "You want to scope a claim so it doesn't sound universal.", "a": 2, "note": "Scoped claim: “This is largely a dosage issue, as far as we can tell.”"}, {"q": "You need to say something useful despite real uncertainty.", "a": 0, "note": "Useful under uncertainty: “The data suggests a trend, though it's still early.”"}];
 var E_OPTS = [{"label": "Confident, hedged"}, {"label": "Rough impression"}, {"label": "Scoped claim"}];
 function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
-var F_DATA = [{"q": "This will definitely respond well.", "note": "[soften into a likely, not certain, outcome]", "keys": ["should respond well"], "reject": ["definitely"], "full": "This should respond well."}, {"q": "It might possibly maybe work.", "note": "[remove the over-hedging, commit to one clear hedge]", "keys": ["might not work as expected", "might not work"], "reject": ["possibly maybe"], "full": "It might not work as expected."}, {"q": "The side effect is dose-related.", "note": "[scope it to “mostly,” leaving room for other causes]", "keys": ["largely dose-related"], "full": "The side effect is largely dose-related."}, {"q": "The trial failed.", "note": "[only use if you're not sure; otherwise leave unhedged as a plain fact]", "keys": ["seems to have failed"], "full": "The trial seems to have failed."}];
+var F_DATA = [{"q": "This will definitely respond well.", "note": "[soften into a likely, not certain, outcome]", "keys": ["should respond well"], "reject": ["definitely"], "full": "This should respond well."}, {"q": "It might possibly maybe work.", "note": "[remove the over-hedging, commit to one clear hedge]", "keys": ["might not work as expected", "might not work"], "reject": ["possibly maybe"], "full": "It might not work as expected."}, {"q": "The side effect is dose-related.", "note": "[scope it to <em>mostly,</em> leaving room for other causes]", "keys": ["largely dose-related"], "full": "The side effect is largely dose-related."}, {"q": "The trial failed.", "note": "[only use if you're not sure; otherwise leave unhedged as a plain fact]", "keys": ["seems to have failed"], "full": "The trial seems to have failed."}];
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["as far as I can tell", "by and large", "a rough estimate", "give or take", "early indications", "on the whole"];
-var G_ENDINGS = [{"id": "a", "t": "based on what I currently know, though I could be wrong"}, {"id": "b", "t": "mostly, in general, with some exceptions"}, {"id": "c", "t": "an approximate figure, not exact"}, {"id": "d", "t": "approximately, with some margin of error"}, {"id": "e", "t": "the first, preliminary signs of a result"}, {"id": "f", "t": "considering everything together, overall"}];
+var G_ENDINGS = [{"id": "b", "t": "mostly, in general, with some exceptions"}, {"id": "e", "t": "the first, preliminary signs of a result"}, {"id": "a", "t": "based on what I currently know, though I could be wrong"}, {"id": "d", "t": "approximately, with some margin of error"}, {"id": "f", "t": "considering everything together, overall"}, {"id": "c", "t": "an approximate figure, not exact"}];
 var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }

@@ -19,7 +19,12 @@
   #nav .brand img{height:30px;width:30px;}
   #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
   #nav .brand:hover .word{color:var(--red-hi);}
-  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
   .print-head{display:none;}
   @media print{
     .print-head{display:flex;align-items:center;justify-content:space-between;
@@ -84,6 +89,9 @@
     padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
   .q input[type=text]:focus{outline:none;border-color:var(--navy);}
   .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
   .choices{display:flex;flex-wrap:wrap;gap:8px;}
   .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
     padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
@@ -199,23 +207,23 @@
     <div class="split">
       <div class="card-col">
         <h4>Separable phrasal verbs</h4>
-        <dl><dt>Form</dt><dd>verb + particle + object, or verb + object + particle</dd><dt>Meaning</dt><dd>a two-part verb whose meaning isn&#8217;t obvious from its parts, and whose object can often go in either position</dd><dt>Use it to</dt><dd>sound natural discussing everyday work processes</dd></dl>
+        <dl><dt>Form</dt><dd>verb + particle + object, or verb + object + particle</dd><dt>Meaning</dt><dd>a two-part verb whose meaning isn't obvious from its parts, and whose object can often go in either position</dd><dt>Use it to</dt><dd>sound natural discussing everyday work processes</dd></dl>
         <div class="eg">We hashed out the details. I need to flesh out the budget section.</div>
       </div>
       <div class="card-col">
         <h4>Prepositional verbs (inseparable)</h4>
         <dl><dt>Form</dt><dd>verb + preposition + object, object cannot go between them</dd><dt>Meaning</dt><dd>a verb whose meaning depends on a fixed preposition</dd><dt>Use it to</dt><dd>describe waiting, following up, or depending on something in natural, idiomatic English</dd></dl>
-        <div class="eg">We&#8217;re waiting on legal to sign off. I&#8217;ll follow up on that this afternoon.</div>
+        <div class="eg">We're waiting on legal to sign off. I'll follow up on that this afternoon.</div>
       </div>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Don't split an inseparable prepositional verb.</b> "Follow that up on" is wrong; "follow up on" keeps its preposition fixed before the object: "follow up on that."</p>
-      <p><b>Don't confuse similar-looking phrasal verbs.</b> "Flesh out" means to add detail to something thin; "work out" means to solve or succeed. Using one for the other changes the meaning: "I need to flesh out the section" is not the same as "I need to work out the section."</p>
+      <p><b>Don't split an inseparable prepositional verb.</b> <em>Follow that up on</em> is wrong; <em>follow up on</em> keeps its preposition fixed before the object: <em>follow up on that.</em></p>
+      <p><b>Don't confuse similar-looking phrasal verbs.</b> <em>Flesh out</em> means to add detail to something thin; <em>work out</em> means to solve or succeed. Using one for the other changes the meaning: “I need to flesh out the section” is not the same as <em>I need to work out the section.</em></p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
-      <p><b>"Sort out" versus "figure out."</b> British English uses "sort out" very broadly for resolving almost anything ("sort out the budget"). American English tends to prefer "figure out" for working something out mentally and "sort out" more narrowly for organizing or resolving disorder. This book uses "figure out" for problem-solving and reserves "sort out" for its narrower American sense.</p>
+      <p><b><em>Sort out</em> versus <em>figure out.</em></b> British English uses <em>sort out</em> very broadly for resolving almost anything (<em>sort out the budget</em>). American English tends to prefer <em>figure out</em> for working something out mentally and <em>sort out</em> more narrowly for organizing or resolving disorder. This book uses <em>figure out</em> for problem-solving and reserves <em>sort out</em> for its narrower American sense.</p>
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same native-sounding verb in every line. The highlighted slot changes; the particle always stays fixed.</p>
@@ -251,7 +259,7 @@
         <text x="524" y="134" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">flesh out the section</text>
 
         <rect x="34" y="158" width="284" height="34" rx="8" fill="#E9EAE3" stroke="#DCDDD6"/>
-        <text x="176" y="180" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" fill="#33363B">await legal&#8217;s approval</text>
+        <text x="176" y="180" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" fill="#33363B">await legal's approval</text>
         <line x1="330" y1="175" x2="366" y2="175" stroke="#7C7F84" stroke-width="1.5" marker-end="url(#arr32)"/>
         <rect x="382" y="158" width="284" height="34" rx="8" fill="#1F5570"/>
         <text x="524" y="180" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">wait on legal</text>
@@ -263,7 +271,7 @@
         <text x="524" y="226" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">follow up on that</text>
 
         <text x="350" y="270" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#33363B">Red separates and takes an object between the parts. Blue does not:</text>
-        <text x="350" y="290" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#1F5570">&#8220;follow that up on&#8221; is wrong; the preposition stays fixed.</text>
+        <text x="350" y="290" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-style="italic" fill="#1F5570"><tspan font-style="italic">follow that up on</tspan> is wrong; the preposition stays fixed.</text>
       </svg>
       <p class="diagram-cap">The formal, textbook phrase sits on the left. The native, idiomatic verb sits on the right.</p>
     </div>
@@ -361,6 +369,7 @@ var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-23
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
+  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }
@@ -374,6 +383,34 @@ function privacySeen(){
 function markPrivacySeen(){
   try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
 }
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
 function tryCode(){
   var v = document.getElementById('codeInput').value.trim().toUpperCase();
   if(VALID_CODES.indexOf(v) !== -1){
@@ -457,18 +494,58 @@ function buildForm(L, data, ph){
   var el = document.getElementById('ex'+L); el.innerHTML='';
   data.forEach(function(item,i){
     var d=document.createElement('div'); d.className='q';
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var inputs;
+    if(multi){
+      /* Per-blank answer key (item.a is an array of per-blank answer
+         arrays): one input per blank, with the sentence's own fixed
+         word(s) printed between them so the student sees exactly where
+         each answer goes, instead of one box for a multi-word answer
+         with no stated convention for what to type in it. A leading
+         parenthetical right after a blank is a conjugation hint (e.g.
+         "(know)"), not part of the sentence, so it is stripped before
+         display -- the fixed text shown is exactly what the finished
+         sentence says between the blanks, nothing else. Keyed off the
+         answer format, not the blank count in the text, so an item
+         whose key has not been migrated yet still renders the old,
+         single-box way instead of a box count nothing backs. */
+      var segs=item.q.split(/_{3,}/);
+      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
+      for(var k=1;k<item.a.length;k++){
+        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
+        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
+      }
+      inputs='<div class="answer-row">'+row+'</div>';
+    } else {
+      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
+    }
     d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
+      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
     el.appendChild(d);
   });
 }
 function checkForm(L, data){
   var c=0;
   data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
     var fb=document.getElementById(L+'fb'+i);
-    if(matchesForm(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
+    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
+    var ok, shown;
+    if(multi){
+      ok=true;
+      var parts=[];
+      for(var k=0;k<item.a.length;k++){
+        var v=document.getElementById(L+i+'_'+k).value;
+        if(!matchesForm(v,item.a[k])) ok=false;
+        parts.push(item.a[k][0]);
+      }
+      shown=parts.join(' / ');
+    } else {
+      var v=document.getElementById(L+i).value;
+      ok=matchesForm(v,item.a);
+      shown=item.a[0];
+    }
+    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
 }
@@ -600,7 +677,7 @@ var F_DATA = [{"q": "We need to discuss and resolve the contract terms.", "note"
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to touch base", "to run with", "to zero in on", "to wrap up", "to bounce ideas off", "to home in on"];
-var G_ENDINGS = [{"id": "a", "t": "to make brief contact to check in or update"}, {"id": "b", "t": "to take an idea and proceed with it independently"}, {"id": "c", "t": "to focus precisely on one specific thing"}, {"id": "d", "t": "to finish or conclude something"}, {"id": "e", "t": "to share ideas with someone to get their reaction"}, {"id": "f", "t": "to increasingly and precisely focus on a target"}];
+var G_ENDINGS = [{"id": "b", "t": "to take an idea and proceed with it independently"}, {"id": "d", "t": "to finish or conclude something"}, {"id": "a", "t": "to make brief contact to check in or update"}, {"id": "c", "t": "to focus precisely on one specific thing"}, {"id": "e", "t": "to share ideas with someone to get their reaction"}, {"id": "f", "t": "to increasingly and precisely focus on a target"}];
 var G_KEY = ["a", "b", "c", "d", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
