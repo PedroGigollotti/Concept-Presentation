@@ -275,7 +275,8 @@
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
       <p><b>Meaning-change verbs are not interchangeable.</b> <em>Remember to lock up</em> and <em>remember locking up</em> are different claims; picking the wrong one misinforms. Choose by meaning, not by ear.</p>
-      <p><b>Some verbs never take <em>to</em> + infinitive.</b> <em>Suggest,</em> <em>recommend,</em> <em>look forward to,</em> and <em>be used to</em> take -ing or a that-clause, never a bare to-infinitive: <em>suggest meeting,</em> not <em>suggest to meet.</em></p>
+      <p><b><em>Suggest</em> and <em>recommend</em> don't take a bare <em>to</em> + infinitive.</b> They take -ing, a that-clause, or a noun: <em>suggest meeting,</em> <em>suggest that we meet,</em> not <em>suggest to meet.</em> With <em>recommend,</em> British English also allows an object plus an infinitive, <em>recommend you to see someone;</em> American English uses the that-clause.</p>
+      <p><b>In <em>look forward to</em> and <em>be used to,</em> the <em>to</em> is a preposition, not part of an infinitive.</b> A preposition takes -ing: <em>look forward to hearing from you,</em> <em>be used to working late.</em> The -ing looks like the same rule as above and it is not.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
@@ -594,7 +595,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -620,7 +621,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -858,7 +859,7 @@ function recClear(){
 var A_DATA = [{"q": "Remember ______ (send) the invoice; don't forget.", "a": ["to send"]}, {"q": "I remember ______ (send) it last week; it's done.", "a": ["sending"]}, {"q": "She stopped ______ (answer) emails after six. <i>[quit the activity]</i>", "a": ["answering"]}, {"q": "He stopped ______ (grab) a coffee on the way. <i>[paused in order to]</i>", "a": ["to grab"]}, {"q": "We suggest ______ (revise) the deck before Friday.", "a": ["revising"]}, {"q": "This new role will mean ______ (work) some late nights.", "a": ["working"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "I suggest to meet on Monday.", "keys": ["suggest meeting"], "reject": ["suggest to meet"], "full": "I suggest meeting on Monday."}, {"q": "Remember locking the door on your way out tonight.", "keys": ["remember to lock"], "reject": ["remember locking"], "full": "Remember to lock the door on your way out tonight."}, {"q": "We look forward to hear from you.", "keys": ["forward to hearing"], "reject": ["forward to hear"], "full": "We look forward to hearing from you."}, {"q": "They advised us waiting for the update.", "keys": ["advised us to wait"], "reject": ["us waiting"], "full": "They advised us to wait for the update."}, {"q": "He made us to leave early.", "keys": ["made us leave"], "reject": ["us to leave"], "full": "He made us leave early."}];
+var B_DATA = [{"q": "I suggest to meet on Monday.", "keys": ["suggest meeting"], "reject": ["suggest to meet"], "full": "I suggest meeting on Monday."}, {"q": "Remember locking the door on your way out tonight.", "keys": ["remember to lock"], "reject": ["remember locking"], "full": "Remember to lock the door on your way out tonight."}, {"q": "We look forward to hear from you.", "keys": ["forward to hearing"], "full": "We look forward to hearing from you."}, {"q": "I'm used to work late during closing week.", "keys": ["used to working"], "full": "I'm used to working late during closing week."}, {"q": "They advised us waiting for the update.", "keys": ["advised us to wait"], "reject": ["us waiting"], "full": "They advised us to wait for the update."}, {"q": "He made us to leave early.", "keys": ["made us leave"], "reject": ["us to leave"], "full": "He made us leave early."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "We fixed it.", "note": "[experiment: fix it by rebooting and see]", "keys": ["tried rebooting"], "reject": ["we fixed it"], "full": "We tried rebooting it."}, {"q": "The role is filled.", "note": "[formal bad news, using <em>regret</em>]", "keys": ["regret to inform"], "reject": ["regret informing"], "full": "We regret to inform you the role is filled."}, {"q": "He talked for an hour.", "note": "[he continued, using <em>go on</em>]", "keys": ["went on talking"], "reject": ["went on to talk"], "full": "He went on talking for an hour."}, {"q": "She became CEO.", "note": "[the next step, using <em>go on</em>]", "keys": ["went on to become"], "reject": ["went on becoming"], "full": "She went on to become CEO."}, {"q": "Cc me on replies.", "note": "[a future task, using <em>remember</em>]", "keys": ["remember to cc"], "reject": ["remember ccing"], "full": "Please remember to cc me on replies."}];

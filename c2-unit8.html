@@ -614,7 +614,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -640,7 +640,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -885,8 +885,8 @@ var C_DATA = [{"q": "The presentation was excellent.", "keys": ["not bad at all"
 function buildC(){ buildRewrite("C", C_DATA, "understate it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["not bad at all", "less than ideal", "no small feat", "none too pleased", "no picnic"];
-var D_ENDINGS = [{"id": "c", "t": "a major achievement"}, {"id": "d", "t": "quite annoyed"}, {"id": "a", "t": "went fairly badly"}, {"id": "b", "t": "quite good"}, {"id": "e", "t": "genuinely difficult"}];
-var D_KEY = ["b", "a", "c", "d", "e"];
+var D_ENDINGS = [{"id": "a", "t": "a major achievement"}, {"id": "b", "t": "quite annoyed"}, {"id": "c", "t": "went fairly badly"}, {"id": "d", "t": "quite good"}, {"id": "e", "t": "genuinely difficult"}];
+var D_KEY = ["d", "c", "a", "b", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, true); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "Praising a colleague's excellent work without gushing over it.", "a": 0, "note": "Litotes, modest praise: &#8220;That was no small feat, honestly.&#8221;"}, {"q": "Reporting a serious security breach to the board, where clarity matters most.", "a": 1, "note": "Blunt, no understatement: &#8220;This is a serious breach; we need to act today.&#8221; Understatement would mislead."}, {"q": "Keeping your cool while describing a rough quarter to your team.", "a": 2, "note": "Understatement, composed: &#8220;It was less than our finest quarter, but we held on.&#8221;"}, {"q": "Landing a dry, self-deprecating joke about your own mistake.", "a": 3, "note": "Self-deprecating litotes: &#8220;I'll admit that wasn't my proudest moment.&#8221;"}];

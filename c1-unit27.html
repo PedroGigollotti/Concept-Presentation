@@ -533,7 +533,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -559,7 +559,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -666,8 +666,8 @@ var F_DATA = [{"q": "Our CFO confirmed the numbers.", "note": "[name the source 
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["off the record", "on background", "a leak", "an official line", "to go public", "to stonewall"];
-var G_ENDINGS = [{"id": "d", "t": "the approved, sanctioned public statement of a position"}, {"id": "e", "t": "to release information publicly for the first time"}, {"id": "a", "t": "said informally and not for attribution or publication"}, {"id": "c", "t": "confidential information disclosed without authorization"}, {"id": "f", "t": "to deliberately refuse to give information or cooperate"}, {"id": "b", "t": "information shared for context but not for direct quotation"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "the approved, sanctioned public statement of a position"}, {"id": "b", "t": "to release information publicly for the first time"}, {"id": "c", "t": "said informally and not for attribution or publication"}, {"id": "d", "t": "confidential information disclosed without authorization"}, {"id": "e", "t": "to deliberately refuse to give information or cooperate"}, {"id": "f", "t": "information shared for context but not for direct quotation"}];
+var G_KEY = ["c", "f", "d", "a", "b", "e"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "She told me ______, so I can't quote her directly.", "a": ["off the record"]}, {"q": "The information was shared ______, just for context.", "a": ["on background"]}, {"q": "There's been a ______ about the merger talks.", "a": ["leak"]}, {"q": "The company's ______ is that no decision has been made.", "a": ["official line"]}, {"q": "They plan to ______ with the announcement next week.", "a": ["go public"]}, {"q": "Legal advised us to ______ until we have more facts.", "a": ["stonewall"]}];

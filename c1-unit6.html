@@ -225,6 +225,10 @@
       <p><b>American / British English.</b></p>
       <p><b>The negative form.</b> Old-fashioned British English sometimes uses <em>usedn't to,</em> which now reads as dated. American English uses <em>didn't use to.</em> This book uses <em>didn't use to.</em></p>
     </div>
+    <div class="callout">
+      <p><b>Both are correct here.</b> “Used to ship” states the old arrangement and “would ship” recalls the repeated action, which is why it suits a story. No clean count separates them: “would” also carries the conditional, so the corpus cannot compare the two directly. This one is a choice of effect.</p>
+    </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same contrast in every line. The highlighted slot changes; the first half is the old habit, the second is the new normal.</p>
     <ul class="moves">
@@ -320,7 +324,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -529,7 +533,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -555,7 +559,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -641,7 +645,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "We ______ (ship) monthly before the automation project.", "a": ["used to ship"]}, {"q": "She ______ (not / used to / manage) a team this size.", "a": ["didn't use to manage", "did not use to manage"]}, {"q": "After a rough month, I ______ (get used to) the new schedule.", "a": ["got used to"]}, {"q": "We ______ (would / review) every PR by hand, one by one.", "a": ["would review"]}, {"q": "He's finally ______ (be used to) working with the new tool.", "a": ["used to"]}, {"q": "They ______ (used to / have) three separate systems, not one.", "a": ["used to have"]}];
+var A_DATA = [{"q": "We ______ (ship) monthly before the automation project.", "a": ["used to ship", "would ship"], "why": "Both work. Used to ship states the old arrangement. Would ship recalls the repeated action, which is why it suits a story."}, {"q": "She ______ (not / used to / manage) a team this size.", "a": ["didn't use to manage", "did not use to manage"]}, {"q": "After a rough month, I ______ (get used to) the new schedule.", "a": ["got used to"]}, {"q": "We ______ (would / review) every PR by hand, one by one.", "a": ["would review"]}, {"q": "He's finally ______ (be used to) working with the new tool.", "a": ["used to"]}, {"q": "They ______ (used to / have) three separate systems, not one.", "a": ["used to have"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "I would have a much smaller team back then.", "keys": ["i used to have"], "full": "I used to have a much smaller team back then."}, {"q": "I used to working nights, so this schedule is fine.", "keys": ["i'm used to working", "i am used to working"], "full": "I'm used to working nights, so this schedule is fine."}, {"q": "We usedn't to automate anything, if I remember right.", "keys": ["didn't use to automate", "did not use to automate"], "full": "We didn't use to automate anything, if I remember right."}, {"q": "She's used to managed the whole pipeline alone now.", "keys": ["used to managing"], "full": "She's used to managing the whole pipeline alone now."}, {"q": "We would ship monthly, but now it's weekly, which I get used to.", "keys": ["which i've gotten used to", "which i have gotten used to"], "full": "We would ship monthly, but now it's weekly, which I've gotten used to."}];
@@ -659,12 +663,12 @@ var E_DATA = [{"q": "I would have a huge backlog every Monday.", "note": "[descr
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["a far cry from", "the new normal", "to settle into a routine", "old habits die hard", "a growing pain", "to find your footing"];
-var F_ENDINGS = [{"id": "d", "t": "it's hard to break behavior you're used to"}, {"id": "c", "t": "to become comfortable with a regular pattern"}, {"id": "a", "t": "very different from how something used to be"}, {"id": "f", "t": "to become confident and comfortable in a new role"}, {"id": "e", "t": "a temporary difficulty that comes with change"}, {"id": "b", "t": "the current standard, once it has been accepted"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "it's hard to break behavior you're used to"}, {"id": "b", "t": "to become comfortable with a regular pattern"}, {"id": "c", "t": "very different from how something used to be"}, {"id": "d", "t": "to become confident and comfortable in a new role"}, {"id": "e", "t": "a temporary difficulty that comes with change"}, {"id": "f", "t": "the current standard, once it has been accepted"}];
+var F_KEY = ["c", "f", "b", "a", "e", "d"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "The new process is ______ how we used to work.", "a": ["a far cry from"]}, {"q": "Weekly releases are ______ around here now.", "a": ["the new normal"]}, {"q": "It took a month, but we finally ______.", "a": ["settled into a routine"]}, {"q": "I keep reverting to the old tool, ______.", "a": ["old habits die hard"]}, {"q": "The slower onboarding is just a ______ of the new system.", "a": ["growing pain"]}, {"q": "Give her time, she's still trying to ______ in the new role.", "a": ["find her footing"]}];
-function buildG(){ buildGap("G", G_DATA, ["a far cry from", "the new normal", "settle into a routine", "old habits die hard", "a growing pain", "find your footing"]); }
+function buildG(){ buildGap("G", G_DATA, ["a far cry from", "the new normal", "settle into a routine", "old habits die hard", "growing pain", "find your footing"]); }
 function checkG(){ checkGap("G", G_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); updateScore(); }

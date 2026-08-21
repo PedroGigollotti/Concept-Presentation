@@ -274,7 +274,7 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Invert only after a fronted negative.</b> The inversion is triggered by fronting the adverbial. Without fronting, don't invert: “We have never seen it,” not “We never have seen it.” A positive adverbial doesn't trigger it either: <em>Often we go,</em> but “Rarely do we go.”</p>
+      <p><b>At this level, invert only after a fronted negative.</b> The inversion is triggered by fronting the adverbial. Without fronting, don't invert: “We have never seen it,” not “We never have seen it.” A positive adverbial doesn't trigger it either: <em>Often we go,</em> but “Rarely do we go.”</p>
       <p><b>Supply an auxiliary, adding <em>do</em> if needed.</b> Inversion needs an auxiliary. If the verb is a plain present or past, insert do / does / did: “Rarely does he agree,” never <em>Rarely he agrees</em> or <em>Rarely agrees he.</em></p>
     </div>
     <div class="callout">
@@ -594,7 +594,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -620,7 +620,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);

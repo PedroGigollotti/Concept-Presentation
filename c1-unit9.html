@@ -225,6 +225,10 @@
       <p><b>American / British English.</b></p>
       <p><b><em>Nowhere near as</em> versus <em>not nearly as.</em></b> Both varieties use each interchangeably in speech, but American business writing leans on <em>not nearly as</em> in formal contexts, while <em>nowhere near as</em> reads as more conversational on both sides. This book uses <em>nowhere near as</em> for its conversational register and flags the formal alternative here.</p>
     </div>
+    <div class="callout">
+      <p><b>Both are correct here.</b> In edited writing “not nearly as” is about five times more common and reads more formal; “nowhere near as” is rising faster and appears twice as often in dialogue.</p>
+    </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same grading tool in every line. The highlighted slot changes; the intensifier sets exactly how big the gap is.</p>
     <ul class="moves">
@@ -330,7 +334,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -539,7 +543,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -565,7 +569,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -651,7 +655,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "Our churn is ______ lower than last year (use far).", "a": ["far"]}, {"q": "The ______ we test, the ______ we ship (more / faster).", "a": [["more"], ["faster"]]}, {"q": "We're ______ as big as the competition yet (use nowhere near).", "a": ["nowhere near"]}, {"q": "This is ______ the strongest quarter we've had (use by far).", "a": ["by far"]}, {"q": "The ______ the backlog grows, the ______ it is to plan (bigger / harder).", "a": [["bigger"], ["harder"]]}, {"q": "Retention is ______ better than we expected (use far).", "a": ["far"]}];
+var A_DATA = [{"q": "Our churn is ______ lower than last year (far / by far).", "a": ["far"]}, {"q": "The ______ we test, the ______ we ship (more / faster).", "a": [["more"], ["faster"]]}, {"q": "We're ______ as big as the competition yet (nowhere near / not nearly).", "a": ["nowhere near", "not nearly"], "why": "Both work. Nowhere near as reads conversational on both sides of the Atlantic. Not nearly as is the more formal choice in American business writing."}, {"q": "This is ______ the strongest quarter we've had (far / by far).", "a": ["by far"]}, {"q": "The ______ the backlog grows, the ______ it is to plan (bigger / harder).", "a": [["bigger"], ["harder"]]}, {"q": "Retention is ______ better than we expected (far / by far).", "a": ["far"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "Our margins are by far better than theirs.", "keys": ["far better than theirs"], "reject": ["by far better"], "full": "Our margins are far better than theirs."}, {"q": "The more we automate, faster we ship.", "keys": ["the faster we ship"], "full": "The more we automate, the faster we ship."}, {"q": "We're not near as big as the market leader.", "keys": ["nowhere near as big"], "full": "We're nowhere near as big as the market leader."}, {"q": "This quarter is far the best we've had.", "keys": ["by far the best"], "full": "This quarter is by far the best we've had."}, {"q": "The longer we wait, harder this gets.", "keys": ["the harder this gets"], "full": "The longer we wait, the harder this gets."}];
@@ -672,12 +676,12 @@ var F_DATA = [{"q": "We're a bit behind the leader.", "note": "[make the gap sou
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["a game changer", "head and shoulders above", "a marginal gain", "closing the gap", "a wide margin", "neck and neck"];
-var G_ENDINGS = [{"id": "b", "t": "clearly and significantly better than the rest"}, {"id": "d", "t": "reducing the difference between two competitors"}, {"id": "f", "t": "very closely matched, almost tied"}, {"id": "c", "t": "a small, incremental improvement"}, {"id": "a", "t": "something that dramatically changes the situation"}, {"id": "e", "t": "a large, decisive difference between two things"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "clearly and significantly better than the rest"}, {"id": "b", "t": "reducing the difference between two competitors"}, {"id": "c", "t": "very closely matched, almost tied"}, {"id": "d", "t": "a small, incremental improvement"}, {"id": "e", "t": "something that dramatically changes the situation"}, {"id": "f", "t": "a large, decisive difference between two things"}];
+var G_KEY = ["e", "a", "d", "b", "f", "c"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "The new feature was a genuine ______ for retention.", "a": ["game changer"]}, {"q": "They're ______ the rest of the market this quarter.", "a": ["head and shoulders above"]}, {"q": "It's only a ______, but every bit helps.", "a": ["marginal gain"]}, {"q": "We've been ______ on delivery speed all year.", "a": ["closing the gap"]}, {"q": "We won the deal by a ______.", "a": ["wide margin"]}, {"q": "The two finalists were ______ until the very end.", "a": ["neck and neck"]}];
-function buildH(){ buildGap("H", H_DATA, ["a game changer", "head and shoulders above", "a marginal gain", "closing the gap", "a wide margin", "neck and neck"]); }
+function buildH(){ buildGap("H", H_DATA, ["game changer", "head and shoulders above", "marginal gain", "closing the gap", "wide margin", "neck and neck"]); }
 function checkH(){ checkGap("H", H_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }

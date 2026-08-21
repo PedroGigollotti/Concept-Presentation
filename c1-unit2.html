@@ -218,13 +218,17 @@
     </div>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
-      <p><b>Don't put a number on the continuous.</b> “We've been closing five deals” sounds wrong because a count needs a completed whole. Say “We've closed five deals.”</p>
+      <p><b>Don't put a closed count on the continuous.</b> “We've been closing five deals” sounds wrong because a count needs a completed whole. Say “We've closed five deals.”</p>
       <p><b>Don't seal an ongoing situation with the simple.</b> “We've solved the churn problem” claims it is finished. If it is still being worked on, say “We've been solving the churn problem.”</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
       <p><b>Stative verbs in the continuous.</b> Casual American marketing register sometimes stretches stative verbs into the continuous for energy: <em>We're loving this quarter's numbers.</em> Standard and British usage keep these stative: <em>We love this quarter's numbers.</em> This book uses the standard stative form.</p>
     </div>
+    <div class="callout">
+      <p><b>Both are correct here.</b> “We've seen” counts the result and “we've been seeing” keeps the trend open. The continuous is far rarer in print, but it is rising faster than the simple, and it appears twice as often in dialogue as in general writing.</p>
+    </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same aspect choice in every line. The highlighted slot changes; the aspect sets how settled the news sounds.</p>
     <ul class="moves">
@@ -274,7 +278,7 @@
     <div class="ex-block">
       <span class="ex-label">A</span>
       <p class="ex-title">Complete the form</p>
-      <p class="ex-instr">Put each verb into the present perfect continuous or the present perfect simple.</p>
+      <p class="ex-instr">Put each verb into the present perfect continuous or the present perfect simple. Some items take either, and the feedback names the difference.</p>
       <div id="exA"></div>
       <button class="check-btn" onclick="checkA()">Check my answers</button>
     </div>
@@ -297,7 +301,7 @@
     <div class="ex-block">
       <span class="ex-label">D</span>
       <p class="ex-title">Match the halves</p>
-      <p class="ex-instr">Join each opener to the ending that matches its aspect.</p>
+      <p class="ex-instr">Join each opener to the ending that completes it. The aspect narrows the field, and the detail decides which one is left.</p>
       <div id="exD"></div>
       <button class="check-btn" onclick="checkD()">Check my answers</button>
     </div>
@@ -325,7 +329,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the verb form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the verb form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -534,7 +538,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -560,7 +564,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -646,32 +650,32 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "We ______ (see) a steady rise in new accounts all month.", "a": ["have been seeing"]}, {"q": "She ______ (close) four contracts this week.", "a": ["has closed"]}, {"q": "They ______ (work) on the redesign since March.", "a": ["have been working"]}, {"q": "We ______ (already / finish) the first round of interviews.", "a": ["have already finished"]}, {"q": "I ______ (try) to reach the vendor all morning.", "a": ["have been trying"]}, {"q": "The team ______ (hit) every deadline this quarter.", "a": ["has hit"]}];
+var A_DATA = [{"q": "We ______ (see) a steady rise in new accounts all month.", "a": ["have been seeing", "have seen"], "why": "Both work. Have been seeing keeps the rise open and still moving. Have seen counts it as a fact about the month."}, {"q": "She ______ (close) four contracts this week.", "a": ["has closed"]}, {"q": "They ______ (work) on the redesign since March.", "a": ["have been working", "have worked"], "why": "Both work. Have been working puts the activity in progress. Have worked states the accumulated fact."}, {"q": "We ______ (already / finish) the first round of interviews.", "a": ["have already finished"]}, {"q": "I ______ (try) to reach the vendor all morning. <i style=\"color:var(--gray);\">[frame it as still going]</i>", "a": ["have been trying"]}, {"q": "The team ______ (hit) every deadline this quarter.", "a": ["has hit"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "We've been closing three deals this week.", "keys": ["we've closed three deals", "we have closed three deals"], "full": "We've closed three deals this week."}, {"q": "She's solved the ticket queue for two days now.", "keys": ["she's been solving", "she has been solving"], "full": "She's been solving the ticket queue for two days now."}, {"q": "I've been finished the report already.", "keys": ["i've already finished", "i have already finished", "i've finished the report"], "full": "I've already finished the report."}, {"q": "They've been reaching the target every month, so it's confirmed.", "keys": ["they've hit the target", "they have hit the target", "they've reached the target"], "full": "They've hit the target every month, so it's confirmed."}, {"q": "We've seeing better numbers lately.", "keys": ["we've been seeing", "we have been seeing"], "full": "We've been seeing better numbers lately."}];
+var B_DATA = [{"q": "We've been closing three deals this week.", "keys": ["we've closed three deals", "we have closed three deals"], "full": "We've closed three deals this week."}, {"q": "She's solved the ticket queue for two days now.", "keys": ["she's been solving", "she has been solving"], "full": "She's been solving the ticket queue for two days now."}, {"q": "I've been finished the report already.", "keys": ["i've already finished", "i have already finished", "i've finished the report"], "full": "I've already finished the report."}, {"q": "They've been reaching the target every month, so it's confirmed.", "keys": ["they've hit the target", "they have hit the target", "they've reached the target"], "full": "They've reached the target every month, so it's confirmed."}, {"q": "We've seeing better numbers lately.", "keys": ["we've been seeing", "we have been seeing"], "full": "We've been seeing better numbers lately."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
-var C_DATA = [{"q": "Revenue is growing.", "note": "[frame it as an open, still-moving trend]", "keys": ["has been growing", "revenue's been growing"], "full": "Revenue has been growing."}, {"q": "We fixed the onboarding process.", "note": "[frame it as a finished, countable result]", "keys": ["we've fixed the onboarding", "we have fixed the onboarding"], "full": "We've fixed the onboarding process."}, {"q": "The support team is handling more requests.", "note": "[frame it as ongoing]", "keys": ["has been handling"], "full": "The support team has been handling more requests."}, {"q": "We reduced churn by three points.", "note": "[frame it as a settled fact]", "keys": ["we've reduced churn", "we have reduced churn"], "full": "We've reduced churn by three points."}, {"q": "I am following up with the client.", "note": "[frame it as an activity still in progress]", "keys": ["i've been following up", "i have been following up"], "full": "I've been following up with the client."}];
+var C_DATA = [{"q": "Revenue is growing.", "note": "[frame it as an open, still-moving trend]", "keys": ["has been growing", "revenue's been growing"], "full": "Revenue has been growing."}, {"q": "We are fixing the onboarding process.", "note": "[frame it as finished, not still in progress]", "keys": ["we've fixed the onboarding", "we have fixed the onboarding"], "full": "We've fixed the onboarding process."}, {"q": "The support team is handling more requests.", "note": "[frame it as ongoing]", "keys": ["has been handling"], "full": "The support team has been handling more requests."}, {"q": "We are reducing churn.", "note": "[frame it as a settled fact, with the three-point figure]", "keys": ["we've reduced churn", "we have reduced churn"], "full": "We've reduced churn by three points."}, {"q": "I am following up with the client.", "note": "[frame it as an activity still in progress]", "keys": ["i've been following up", "i have been following up"], "full": "I've been following up with the client."}];
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["We've been testing the new flow", "We've shipped the new flow", "She's been mentoring two juniors", "She's mentored six juniors", "We've been climbing steadily"];
-var D_ENDINGS = [{"id": "a", "t": "for two weeks now."}, {"id": "e", "t": "since the launch."}, {"id": "c", "t": "since January."}, {"id": "b", "t": "as of this morning."}, {"id": "d", "t": "over her time here."}];
-var D_KEY = ["a", "b", "c", "d", "e"];
+var D_ENDINGS = [{"id": "a", "t": "and three of them have teams of their own now."}, {"id": "b", "t": "for two weeks and we still haven't found the edge case."}, {"id": "c", "t": "since the launch, about two points a month."}, {"id": "d", "t": "twice now, once in beta and once for real."}, {"id": "e", "t": "since January, and both are already running projects."}];
+var D_KEY = ["b", "d", "e", "a", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
-var E_DATA = [{"q": "The number is good but you don't want to promise it will hold.", "a": 0, "note": "Present perfect continuous: “We've been seeing solid growth, and it looks like it's holding.”"}, {"q": "Leadership needs a hard number for the board deck today.", "a": 1, "note": "Present perfect simple: “We've grown revenue by 12 percent this quarter.”"}, {"q": "The fix is real but you don't want to claim total victory yet.", "a": 0, "note": "Still unfolding, guarded: “We've been chipping away at the root cause.”"}, {"q": "You want to signal calm, steady progress without a dramatic number.", "a": 0, "note": "Still unfolding, calm tone: “We've been making steady progress across the board.”"}];
+var E_DATA = [{"q": "The number is good but you don't want to promise it will hold.", "a": 0, "note": "Present perfect continuous: “We've been seeing solid growth, and it looks like it's holding.”"}, {"q": "Leadership needs a hard number for the board deck today.", "a": 1, "note": "Present perfect simple: “We've grown revenue by 12 percent this quarter.”"}, {"q": "The fix is real but you don't want to claim total victory yet.", "a": 0, "note": "Still unfolding, guarded: “We've been chipping away at the root cause.”"}, {"q": "The audit is closed and you are stating what it found, nothing more.", "a": 1, "note": "Complete count: “We've found three reporting gaps.”"}];
 var E_OPTS = [{"label": "Still unfolding"}, {"label": "Complete count"}];
 function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
 var F_DATA = [{"q": "We've fixed the bug.", "note": "[make it sound like ongoing work, not a closed case]", "keys": ["we've been fixing", "we have been fixing"], "full": "We've been fixing the bug."}, {"q": "We've been growing.", "note": "[make it a firm, countable claim for the board]", "keys": ["we've grown by", "we have grown by", "we've grown"], "full": "We've grown by 15 percent this quarter."}, {"q": "I've called the client twice.", "note": "[make it read as an activity still happening]", "keys": ["i've been calling", "i have been calling"], "full": "I've been calling the client."}, {"q": "We've been onboarding the new hires.", "note": "[make it a completed, reportable fact]", "keys": ["we've onboarded", "we have onboarded"], "full": "We've onboarded the new hires."}];
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["gaining traction", "holding steady", "picking up the pace", "losing steam", "turning the corner", "early days"];
-var G_ENDINGS = [{"id": "a", "t": "starting to succeed and attract interest"}, {"id": "b", "t": "staying at a consistent level, not dropping"}, {"id": "c", "t": "moving faster than before"}, {"id": "f", "t": "too soon to draw firm conclusions"}, {"id": "d", "t": "slowing down after a period of energy"}, {"id": "e", "t": "moving past the hardest part toward improvement"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "starting to succeed and attract interest"}, {"id": "b", "t": "staying at a consistent level, not dropping"}, {"id": "c", "t": "moving faster than before"}, {"id": "d", "t": "too soon to draw firm conclusions"}, {"id": "e", "t": "slowing down after a period of energy"}, {"id": "f", "t": "moving past the hardest part toward improvement"}];
+var G_KEY = ["a", "b", "c", "e", "f", "d"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
-var H_DATA = [{"q": "It's ______, but the early signals are promising.", "a": ["early days"]}, {"q": "After a slow start, the campaign is finally ______.", "a": ["gaining traction"]}, {"q": "Retention has ______ for three months now.", "a": ["held steady"]}, {"q": "New sign-ups have really ______ this week.", "a": ["picked up the pace"]}, {"q": "Engagement was ______, but it's recovering now.", "a": ["losing steam"]}, {"q": "I think we've finally ______ on this project.", "a": ["turned the corner"]}];
+var H_DATA = [{"q": "It's only ______, but the early signals are promising.", "a": ["early days"]}, {"q": "After a slow start, the campaign is finally ______ with the under-30s.", "a": ["gaining traction"]}, {"q": "Retention has ______ for three months now.", "a": ["held steady"]}, {"q": "New sign-ups have really ______ this week.", "a": ["picked up the pace"]}, {"q": "Engagement was ______, but it's recovering now.", "a": ["losing steam"]}, {"q": "I think we've finally ______ on this project. The worst is behind us.", "a": ["turned the corner"]}];
 function buildH(){ buildGap("H", H_DATA, ["gaining traction", "holding steady", "picking up the pace", "losing steam", "turning the corner", "early days"]); }
 function checkH(){ checkGap("H", H_DATA); }
 

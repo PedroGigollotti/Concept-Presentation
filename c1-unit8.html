@@ -225,6 +225,10 @@
       <p><b>American / British English.</b></p>
       <p><b>The comma after an introductory participle.</b> American style consistently adds a comma after an introductory participle phrase. British style sometimes drops it in short phrases. This book always includes the comma.</p>
     </div>
+    <div class="callout">
+      <p><b>Both are correct here.</b> “Reviewing the numbers” runs the two events together; “having reviewed the numbers” marks the review as finished first. No usage figure separates them. This one is a choice of register.</p>
+    </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same compression in every line. The highlighted slot changes; the participle always shares its subject with the main clause.</p>
     <ul class="moves">
@@ -315,7 +319,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -524,7 +528,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -550,7 +554,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -636,7 +640,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "[After we reviewed the numbers], we flagged the anomaly.", "a": ["Reviewing the numbers"]}, {"q": "The proposal, [which was written in a hurry], had a few errors.", "a": ["written in a hurry"]}, {"q": "[Since she was faced with a tight deadline], she asked for help.", "a": ["Faced with a tight deadline"]}, {"q": "The candidates, [who were shortlisted last week], start interviews Monday.", "a": ["shortlisted last week"]}, {"q": "[Having finished the audit], the team took a break.", "a": ["Having finished the audit"]}, {"q": "The email, [which was sent by mistake], caused some confusion.", "a": ["sent by mistake"]}];
+var A_DATA = [{"q": "[After we reviewed the numbers], we flagged the anomaly.", "a": ["Reviewing the numbers", "Having reviewed the numbers"], "why": "Both work. Reviewing the numbers runs the two events together. Having reviewed the numbers marks the review as finished first, which is closer to the original."}, {"q": "The proposal, [which was written in a hurry], had a few errors.", "a": ["written in a hurry"]}, {"q": "[Since she was faced with a tight deadline], she asked for help.", "a": ["Faced with a tight deadline"]}, {"q": "The candidates, [who were shortlisted last week], start interviews Monday.", "a": ["shortlisted last week"]}, {"q": "[After they had finished the audit], the team took a break.", "a": ["Having finished the audit"]}, {"q": "The email, [which was sent by mistake], caused some confusion.", "a": ["sent by mistake"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "Reviewing the data, the spike was obvious to everyone.", "keys": ["we found the spike"], "full": "Reviewing the data, we found the spike was obvious."}, {"q": "The report writing last week is ready to share.", "keys": ["report, written last week", "report written last week"], "full": "The report, written last week, is ready to share."}, {"q": "Having finish the audit, we signed off.", "keys": ["having finished the audit"], "full": "Having finished the audit, we signed off."}, {"q": "Faced by the deadline, we reprioritized the review.", "keys": ["faced with the deadline"], "full": "Faced with the deadline, we reprioritized the review."}, {"q": "The candidates, shortlisting last week, start Monday.", "keys": ["candidates, shortlisted last week"], "full": "The candidates, shortlisted last week, start Monday."}];
@@ -646,16 +650,16 @@ var C_DATA = [{"q": "We checked the logs. We found the root cause.", "keys": ["c
 function buildC(){ buildRewrite("C", C_DATA, "compress into one sentence"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Reviewing the contract,", "Faced with a tight deadline,", "The proposal, rejected twice,", "Having reviewed the numbers,", "The team, racing to finish,"];
-var D_ENDINGS = [{"id": "a", "t": "legal flagged one clause."}, {"id": "c", "t": "finally got approved."}, {"id": "e", "t": "skipped the review this week."}, {"id": "d", "t": "we prioritized the core details."}, {"id": "b", "t": "we sent it Friday."}];
-var D_KEY = ["a", "d", "c", "b", "e"];
+var D_ENDINGS = [{"id": "a", "t": "legal flagged one clause."}, {"id": "b", "t": "finally got approved."}, {"id": "c", "t": "skipped the review this week."}, {"id": "d", "t": "we prioritized the core details."}, {"id": "e", "t": "we sent it Friday."}];
+var D_KEY = ["a", "d", "b", "e", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "Reviewing the proposal, several errors were found.", "keys": ["we found several errors"], "full": "Reviewing the proposal, we found several errors."}, {"q": "Having missed the deadline, the client was unhappy about us.", "keys": ["we upset the client"], "full": "Having missed the deadline, we upset the client."}, {"q": "Racing to finish, the error was never caught.", "keys": ["the team never caught the error"], "full": "Racing to finish, the team never caught the error."}, {"q": "Faced with new data, the plan was changed by the team.", "keys": ["the team changed the plan"], "full": "Faced with new data, the team changed the plan."}];
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["under the gun", "spinning plates", "burning the midnight oil", "in the weeds", "up against it", "running on fumes"];
-var F_ENDINGS = [{"id": "c", "t": "working very late to finish something"}, {"id": "e", "t": "facing a difficult, high-pressure situation"}, {"id": "d", "t": "stuck in low-level detail, losing sight of the bigger picture"}, {"id": "f", "t": "exhausted, running on very little energy left"}, {"id": "b", "t": "juggling many tasks at once, barely keeping up"}, {"id": "a", "t": "under serious time pressure"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "working very late to finish something"}, {"id": "b", "t": "facing a difficult, high-pressure situation"}, {"id": "c", "t": "stuck in low-level detail, losing sight of the bigger picture"}, {"id": "d", "t": "exhausted, running on very little energy left"}, {"id": "e", "t": "juggling many tasks at once, barely keeping up"}, {"id": "f", "t": "under serious time pressure"}];
+var F_KEY = ["f", "e", "a", "c", "b", "d"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "The whole team is ______ this week with three launches at once.", "a": ["spinning plates"]}, {"q": "She's been ______ to finish the proposal on time.", "a": ["burning the midnight oil"]}, {"q": "We're ______ on this deadline, no room to slip.", "a": ["under the gun"]}, {"q": "He's ______ debugging that one edge case. We should pull him out.", "a": ["in the weeds"]}, {"q": "Everyone's ______ after the final push before launch.", "a": ["running on fumes"]}, {"q": "We were really ______ with three deadlines colliding.", "a": ["up against it"]}];

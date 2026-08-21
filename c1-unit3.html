@@ -193,8 +193,8 @@
     <p class="body-copy"><b>Goal.</b> Read the retro and notice the moves in bold. You are spotting the pattern here, not producing it yet.</p>
     <div class="dialogue">
       <p><span class="who">Jordan</span> <i>(plant manager)</i> Walk me through what happened.</p>
-      <p><span class="who">Ana</span> <i>(line supervisor)</i> The line <b>stopped</b> at 2 a.m. <b>We'd already swapped</b> the faulty sensor the night before, so the failure wasn't a surprise.</p>
-      <p><span class="who">Jordan</span> <b>Had</b> quality <b>signed off</b> before that?</p>
+      <p><span class="who">Ana</span> <i>(line supervisor)</i> The production line <b>stopped</b> at 2 a.m. <b>We'd already swapped</b> the faulty sensor the night before, so the failure wasn't a surprise.</p>
+      <p><span class="who">Jordan</span> <b>Had</b> the quality team <b>signed off</b> before that?</p>
       <p><span class="who">Ana</span> No. <b>They hadn't finished</b> the inspection when we swapped it, which is really the root cause.</p>
       <p><span class="who">Jordan</span> So the swap jumped ahead of the process.</p>
       <p><span class="who">Ana</span> Exactly. Once <b>we reran</b> the calibration, everything <b>stabilized</b>.</p>
@@ -229,10 +229,10 @@
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same two-layer structure in every line. The highlighted slot changes; the past perfect always marks the earlier event.</p>
     <ul class="moves">
-      <li>We'd already <span class="slot">[swapped the sensor / replaced the part]</span> before quality weighed in.</li>
-      <li>By the time we noticed, <span class="slot">[the line / the batch]</span> had already failed.</li>
+      <li>We'd already <span class="slot">[swapped the sensor / replaced the part]</span> before the quality team weighed in.</li>
+      <li>By the time we noticed, <span class="slot">[the production line / the batch]</span> had already failed.</li>
       <li>They hadn't <span class="slot">[finished the inspection / reviewed the change]</span> when we swapped it.</li>
-      <li>Once we'd <span class="slot">[recalibrated it / reset the line]</span>, things stabilized.</li>
+      <li>Once we'd <span class="slot">[recalibrated it / reset the production line]</span>, things stabilized.</li>
       <li>Nobody had <span class="slot">[flagged the risk / run the check]</span> beforehand.</li>
     </ul>
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Where each move sits</h3>
@@ -276,7 +276,7 @@
     <div class="ex-block">
       <span class="ex-label">A</span>
       <p class="ex-title">Complete the form</p>
-      <p class="ex-instr">Put each verb into the simple past or the past perfect. Where a sentence has two gaps, type both answers separated by a slash.</p>
+      <p class="ex-instr">Put each verb into the simple past or the past perfect. Where a sentence has two gaps, fill each box separately.</p>
       <div id="exA"></div>
       <button class="check-btn" onclick="checkA()">Check my answers</button>
     </div>
@@ -530,7 +530,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -556,7 +556,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -642,30 +642,30 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "By the time we noticed the leak, the alarm ______ (already / sound).", "a": ["had already sounded"]}, {"q": "We ______ (shut down) the line after the readings ______ (spike).", "a": [["shut down"], ["had spiked"]]}, {"q": "She ______ (join) the shift late because her previous handoff ______ (run) over.", "a": [["joined"], ["had run"]]}, {"q": "The team ______ (miss) the deadline because the spec ______ (change) twice.", "a": [["missed"], ["had changed"]]}, {"q": "Once quality ______ (sign off), we ______ (release) the batch.", "a": [["had signed off"], ["released"]]}, {"q": "They ______ (not / test) the edge case before it ______ (break) on the floor.", "a": [["hadn't tested", "had not tested"], ["broke"]]}];
+var A_DATA = [{"q": "By the time we noticed the leak, the alarm ______ (already / sound).", "a": ["had already sounded"]}, {"q": "We ______ (shut down) the production line after the readings ______ (spike).", "a": [["shut down"], ["had spiked"]]}, {"q": "She ______ (join) the shift late because her previous handoff ______ (run) over.", "a": [["joined"], ["had run"]]}, {"q": "The team ______ (miss) the deadline because the spec ______ (change) twice.", "a": [["missed"], ["had changed"]]}, {"q": "Once the quality team ______ (sign off), we ______ (release) the batch.", "a": [["had signed off"], ["released"]]}, {"q": "They ______ (not / test) the edge case before it ______ (break) on the floor.", "a": [["hadn't tested", "had not tested"], ["broke"]]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "By the time we restarted the line, quality finished the inspection.", "keys": ["quality had finished"], "full": "By the time we restarted the line, quality had finished the inspection."}, {"q": "We had shut down the line after the readings had spiked.", "keys": ["we shut down the line"], "full": "We shut down the line after the readings had spiked."}, {"q": "She joined the shift late because her handoff had ran over.", "keys": ["had run over"], "full": "She joined the shift late because her handoff had run over."}, {"q": "The fault had appeared and we fixed it, in that order of telling.", "keys": ["and then we fixed it"], "full": "The fault had appeared, and then we fixed it."}, {"q": "They tested the part before it was shipped it.", "keys": ["before it was shipped"], "reject": ["shipped it"], "full": "They tested the part before it was shipped."}];
+var B_DATA = [{"q": "By the time we restarted the production line, the quality team finished the inspection.", "keys": ["quality team had finished"], "full": "By the time we restarted the production line, the quality team had finished the inspection."}, {"q": "We had shut down the production line after the readings had spiked.", "keys": ["we shut down the production line"], "full": "We shut down the production line after the readings had spiked."}, {"q": "She joined the shift late because her handoff had ran over.", "keys": ["had run over"], "full": "She joined the shift late because her handoff had run over."}, {"q": "The fault had appeared and we fixed it, in that order of telling.", "keys": ["and then we fixed it"], "full": "The fault had appeared, and then we fixed it."}, {"q": "They tested the part before it was shipped it.", "keys": ["before it was shipped"], "reject": ["shipped it"], "full": "They tested the part before it was shipped."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
-var C_DATA = [{"q": "We swapped the sensor. Quality had not reviewed it yet.", "keys": ["before quality had reviewed", "quality had reviewed it"], "full": "We swapped the sensor before quality had reviewed it."}, {"q": "The machine crashed. Someone had changed the settings an hour earlier.", "keys": ["before the machine crashed"], "full": "Someone had changed the settings an hour before the machine crashed."}, {"q": "We shipped the fix. The root cause was found the day before.", "keys": ["after the root cause had"], "full": "We shipped the fix after the root cause had been found the day before."}, {"q": "The client complained. We had already noticed the issue ourselves.", "keys": ["before the client complained"], "full": "We had already noticed the issue before the client complained."}, {"q": "The team celebrated. They had just closed the hardest order of the quarter.", "keys": ["once they'd closed", "once they had closed", "after they'd closed", "after they had closed"], "full": "They celebrated once they'd closed the hardest order of the quarter."}];
+var C_DATA = [{"q": "We swapped the sensor. The quality team had not reviewed it yet.", "keys": ["before the quality team had reviewed", "quality team had reviewed it"], "full": "We swapped the sensor before the quality team had reviewed it."}, {"q": "The machine crashed. Someone had changed the settings an hour earlier.", "keys": ["before the machine crashed"], "full": "Someone had changed the settings an hour before the machine crashed."}, {"q": "We shipped the fix. The root cause was found the day before.", "keys": ["after the root cause had"], "full": "We shipped the fix after the root cause had been found the day before."}, {"q": "The client complained. We had already noticed the issue ourselves.", "keys": ["before the client complained"], "full": "We had already noticed the issue before the client complained."}, {"q": "The team celebrated. They had just closed the hardest order of the quarter.", "keys": ["once they'd closed", "once they had closed", "after they'd closed", "after they had closed"], "full": "They celebrated once they'd closed the hardest order of the quarter."}];
 function buildC(){ buildRewrite("C", C_DATA, "combine them into one sentence"); }
 function checkC(){ checkRewrite("C", C_DATA); }
-var D_OPENERS = ["We'd already fixed the fault", "The outage started", "She hadn't seen the alert", "Once the fix had gone out", "They'd tested the line twice"];
-var D_ENDINGS = [{"id": "a", "t": "before the client even noticed."}, {"id": "c", "t": "because her phone was on silent."}, {"id": "e", "t": "before it ever reached production."}, {"id": "b", "t": "right after the risky swap."}, {"id": "d", "t": "the errors stopped within minutes."}];
-var D_KEY = ["a", "b", "c", "d", "e"];
+var D_OPENERS = ["We'd already fixed the fault", "The outage started", "She hadn't seen the alert", "Once the fix had gone out", "They'd tested the production line twice"];
+var D_ENDINGS = [{"id": "a", "t": "before the client even noticed."}, {"id": "b", "t": "because her phone was on silent."}, {"id": "c", "t": "before it ever reached production."}, {"id": "d", "t": "right after the risky swap."}, {"id": "e", "t": "the errors stopped within minutes."}];
+var D_KEY = ["a", "d", "b", "e", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The batch failed. We had skipped the quality check.", "keys": ["because we'd skipped", "because we had skipped"], "full": "The batch failed because we'd skipped the quality check."}, {"q": "We found the leak. Someone had disabled the monitor last week.", "keys": ["after someone had disabled"], "full": "We found the leak after someone had disabled the monitor last week."}, {"q": "The client signed off. We had already shipped a sample batch.", "keys": ["after we'd already shipped", "after we had already shipped", "after we'd shipped", "after we had shipped"], "full": "The client signed off after we'd already shipped a sample batch."}, {"q": "The team missed the weekly target. The scope had grown midweek.", "keys": ["because the scope had grown"], "full": "The team missed the weekly target because the scope had grown midweek."}];
 function buildE(){ buildRewrite("E", E_DATA, "rewrite as one sentence"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["root cause", "a near miss", "a blind spot", "to backtrack", "a lessons-learned doc", "to get ahead of it"];
-var F_ENDINGS = [{"id": "b", "t": "an incident that almost happened but didn't"}, {"id": "d", "t": "to retrace steps to find where things went wrong"}, {"id": "a", "t": "the real underlying reason something went wrong"}, {"id": "c", "t": "something the team consistently fails to notice"}, {"id": "f", "t": "to act before a small problem becomes a big one"}, {"id": "e", "t": "a written record of what to change next time"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "an incident that almost happened but didn't"}, {"id": "b", "t": "to retrace steps to find where things went wrong"}, {"id": "c", "t": "the real underlying reason something went wrong"}, {"id": "d", "t": "something the team consistently fails to notice"}, {"id": "e", "t": "to act before a small problem becomes a big one"}, {"id": "f", "t": "a written record of what to change next time"}];
+var F_KEY = ["c", "a", "d", "b", "f", "e"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______ before it turns into an outage.", "a": ["get ahead of it"]}, {"q": "The ______ was a miscalibrated sensor, not the operator.", "a": ["root cause"]}, {"q": "We had a ______ last week that we should still write up.", "a": ["near miss"]}, {"q": "Testing the backup line was clearly a ______ for this team.", "a": ["blind spot"]}, {"q": "We had to ______ to figure out when the settings had changed.", "a": ["backtrack"]}, {"q": "I'll circulate the ______ after this meeting.", "a": ["lessons-learned doc"]}];
-function buildG(){ buildGap("G", G_DATA, ["root cause", "a near miss", "a blind spot", "backtrack", "a lessons-learned doc", "get ahead of it"]); }
+function buildG(){ buildGap("G", G_DATA, ["root cause", "near miss", "blind spot", "backtrack", "lessons-learned doc", "get ahead of it"]); }
 function checkG(){ checkGap("G", G_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); updateScore(); }

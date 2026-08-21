@@ -524,7 +524,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -550,7 +550,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -654,8 +654,8 @@ var E_DATA = [{"q": "We did a big mistake on the estimate.", "keys": ["made a bi
 function buildE(){ buildRewrite("E", E_DATA, "correct it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to strike a balance", "to raise a concern", "to reach a consensus", "to meet a deadline", "to bear the cost", "to draw a conclusion"];
-var F_ENDINGS = [{"id": "d", "t": "to finish something by the required date"}, {"id": "e", "t": "to be responsible for paying an expense"}, {"id": "c", "t": "to arrive at a shared agreement among a group"}, {"id": "b", "t": "to formally mention a worry or issue"}, {"id": "a", "t": "to find a fair middle point between two demands"}, {"id": "f", "t": "to form a final judgment based on evidence"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "to finish something by the required date"}, {"id": "b", "t": "to be responsible for paying an expense"}, {"id": "c", "t": "to arrive at a shared agreement among a group"}, {"id": "d", "t": "to formally mention a worry or issue"}, {"id": "e", "t": "to find a fair middle point between two demands"}, {"id": "f", "t": "to form a final judgment based on evidence"}];
+var F_KEY = ["e", "d", "c", "a", "b", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "We need to ______ between speed and quality.", "a": ["strike a balance"]}, {"q": "I want to ______ about the current staffing level.", "a": ["raise a concern"]}, {"q": "It took a while, but the team managed to ______.", "a": ["reach a consensus"]}, {"q": "We're on track to ______ this time.", "a": ["meet the deadline"]}, {"q": "The vendor agreed to ______ of the repair.", "a": ["bear the cost"]}, {"q": "It's too early to ______ from just one data point.", "a": ["draw a conclusion"]}];

@@ -220,13 +220,17 @@
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
       <p><b>Do not collapse the two times.</b> “If we locked it, we won't slip” mixes the tenses wrongly and marks you as non-native at once.</p>
-      <p><b>Keep <em>would</em> out of the if-clause.</b> Write “if we had locked,” never “if we would have locked.”</p>
+      <p><b>Keep <em>would</em> out of the if-clause.</b> Say “if we had locked,” never “if we would have locked.”</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
       <p><b>Subjunctive <em>were.</em></b> American English keeps <em>if I were</em> in every person; informal British English often allows <em>if I was.</em> This book uses <em>were.</em></p>
       <p><b>Past participle of <em>get.</em></b> American “we would have gotten it done”; British “we would have got it done.” This book uses <em>gotten.</em></p>
     </div>
+    <div class="callout">
+      <p><b>Both are correct here.</b> “If I were” is the traditional subjunctive and reads more careful; “if I was” is what most people say. This book teaches “were” because it is the safer choice in writing and in front of a client, not because the other one is a mistake.</p>
+    </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same grammar in every line. Only the highlighted slot and the subject change.</p>
     <ul class="moves">
@@ -280,7 +284,7 @@
     <div class="ex-block">
       <span class="ex-label">A</span>
       <p class="ex-title">Complete the form</p>
-      <p class="ex-instr">Put each verb into the correct mixed conditional form. Where a sentence has two gaps, type both answers separated by a slash.</p>
+      <p class="ex-instr">Put each verb into the correct mixed conditional form. Where a sentence has two gaps, fill each box separately.</p>
       <div id="exA"></div>
       <button class="check-btn" onclick="checkA()">Check my answers</button>
     </div>
@@ -331,7 +335,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -540,7 +544,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -566,7 +570,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -652,7 +656,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "If the team ______ (plan) better, we ______ (not / be) behind now.", "a": [["had planned"], ["wouldn't be", "would not be"]]}, {"q": "If I ______ (be) more organized, I ______ (not / miss) the deadline last week.", "a": [["were"], ["wouldn't have missed", "would not have missed"]]}, {"q": "We ______ (be) live by now if we ______ (fix) the bug on Monday.", "a": [["would be"], ["had fixed"]]}, {"q": "If she ______ (not / quit), she ______ (lead) the project today.", "a": [["hadn't quit", "had not quit"], ["would be leading"]]}, {"q": "If you ______ (listen) to the feedback, the client ______ (not / be) upset now.", "a": [["had listened"], ["wouldn't be", "would not be"]]}, {"q": "If he ______ (be) a faster writer, he ______ (finish) the report yesterday.", "a": [["were"], ["would have finished"]]}];
+var A_DATA = [{"q": "If the team ______ (plan) better, we ______ (not / be) behind now.", "a": [["had planned"], ["wouldn't be", "would not be"]]}, {"q": "If I ______ (be) more organized, I ______ (not / miss) the deadline last week.", "a": [["were", "was"], ["wouldn't have missed", "would not have missed"]], "why": "Both work. Were is the traditional subjunctive and reads more careful; was is what most people say."}, {"q": "We ______ (be) live by now if we ______ (fix) the bug on Monday.", "a": [["would be"], ["had fixed"]]}, {"q": "If she ______ (not / quit), she ______ (lead) the project today.", "a": [["hadn't quit", "had not quit"], ["would be leading"]]}, {"q": "If you ______ (listen) to the feedback, the client ______ (not / be) upset now..", "a": [["had listened"], ["wouldn't be", "would not be"]]}, {"q": "If he ______ (be) a faster writer, he ______ (finish) the report yesterday.", "a": [["were", "was"], ["would have finished"]], "why": "Both work, for the same reason as item 2."}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "If we would have planned better, we wouldn't be behind now.", "keys": ["if we had planned better"], "reject": ["would have planned"], "full": "If we had planned better, we wouldn't be behind now."}, {"q": "If I was more careful, I wouldn't have made that mistake.", "keys": ["if i were more careful"], "full": "If I were more careful, I wouldn't have made that mistake."}, {"q": "If they had shipped on time, we would celebrating now.", "keys": ["we would be celebrating"], "full": "If they had shipped on time, we would be celebrating now."}, {"q": "Had we test it properly, we wouldn't be firefighting.", "keys": ["had we tested it properly"], "full": "Had we tested it properly, we wouldn't be firefighting."}, {"q": "If he weren't so busy, he would helped us yesterday.", "keys": ["would have helped us"], "full": "If he weren't so busy, he would have helped us yesterday."}];
@@ -662,8 +666,8 @@ var C_DATA = [{"q": "We didn't hire enough people. We are overloaded now.", "key
 function buildC(){ buildRewrite("C", C_DATA, "combine them"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["If we'd documented the process,", "If I were better at delegating,", "If they'd tested on mobile,", "If she weren't so thorough,", "If we'd set expectations early,"];
-var D_ENDINGS = [{"id": "c", "t": "we wouldn't be answering the same questions now."}, {"id": "d", "t": "we would have shipped bugs last release."}, {"id": "b", "t": "I wouldn't have burned out last quarter."}, {"id": "a", "t": "the app wouldn't be crashing now."}, {"id": "e", "t": "the client wouldn't be surprised now."}];
-var D_KEY = ["c", "b", "a", "d", "e"];
+var D_ENDINGS = [{"id": "a", "t": "we wouldn't be answering the same questions now."}, {"id": "b", "t": "we would have shipped bugs last release."}, {"id": "c", "t": "I wouldn't have burned out last quarter."}, {"id": "d", "t": "the app wouldn't be crashing now."}, {"id": "e", "t": "the client wouldn't be surprised now."}];
+var D_KEY = ["a", "c", "d", "b", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The mistake is genuinely one person's, but you need them engaged, not defensive.", "a": 0, "note": "Neutral. Keep them engaged: “Had the timeline been realistic, we wouldn't be scrambling.”"}, {"q": "You are shielding a teammate who slipped.", "a": 0, "note": "Neutral. Remove the agent: “If the brief had been clearer, this wouldn't be happening.”"}, {"q": "You want to own it and model accountability.", "a": 1, "note": "Fault, on yourself: “If I'd spoken up earlier, we might not be here.”"}, {"q": "The whole team dropped it together.", "a": 2, "note": "Shared. Use “we”: “If we'd caught it earlier, we'd be ahead now.”"}];
@@ -673,8 +677,8 @@ var F_DATA = [{"q": "If you had reviewed it, we wouldn't be fixing this now.", "
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["with the benefit of hindsight", "hindsight is 20/20", "water under the bridge", "the writing was on the wall", "it is what it is", "to dodge a bullet"];
-var G_ENDINGS = [{"id": "a", "t": "knowing now what we did not know then"}, {"id": "f", "t": "narrowly avoid a bad outcome"}, {"id": "b", "t": "it is easy to see the right choice after the fact"}, {"id": "c", "t": "a past problem no longer worth revisiting"}, {"id": "e", "t": "accept a situation you cannot change"}, {"id": "d", "t": "the bad outcome was clearly coming"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "knowing now what we did not know then"}, {"id": "b", "t": "narrowly avoid a bad outcome"}, {"id": "c", "t": "it is easy to see the right choice after the fact"}, {"id": "d", "t": "a past problem no longer worth revisiting"}, {"id": "e", "t": "accept a situation you cannot change"}, {"id": "f", "t": "the bad outcome was clearly coming"}];
+var G_KEY = ["a", "c", "d", "f", "e", "b"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "Don't beat yourself up. ______, that call looked right at the time.", "a": ["With the benefit of hindsight"]}, {"q": "We lost the deal, but ______. Let's focus on the next one.", "a": ["it is what it is"]}, {"q": "______ once our biggest client left. We should have seen it coming.", "a": ["The writing was on the wall"]}, {"q": "That's ______ now. There's no point relitigating last quarter.", "a": ["water under the bridge"]}, {"q": "We ______ by not signing that vendor. They went under a month later.", "a": ["dodged a bullet"]}, {"q": "It's easy to criticize the plan now, but ______.", "a": ["hindsight is 20/20"]}];

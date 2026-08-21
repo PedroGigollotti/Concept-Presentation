@@ -225,6 +225,10 @@
       <p><b>American / British English.</b></p>
       <p><b><em>Quite</em> as a hedge.</b> British English uses <em>quite</em> as a mild downtoner (<em>quite good</em> means <em>fairly good</em>). American English often reads <em>quite good</em> as stronger, closer to <em>very good.</em> This book avoids <em>quite</em> for hedging and uses <em>reasonably</em> or <em>fairly</em> instead, to avoid the ambiguity.</p>
     </div>
+    <div class="callout">
+      <p><b>All three are correct here.</b> They hedge the extent, not the certainty. The three run at almost the same frequency in American English, but “largely” and “mainly” read as written forms while “mostly” is the one you also hear.</p>
+    </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same softened claim in every line. The highlighted slot changes; the hedge sets exactly how firm the claim is.</p>
     <ul class="moves">
@@ -332,7 +336,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -541,7 +545,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -567,7 +571,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -653,7 +657,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "This ______ (should) hold up under normal conditions.", "a": ["should hold up"]}, {"q": "The data ______ (suggest) response is improving steadily.", "a": ["suggests"]}, {"q": "It ______ (seem to) depend on the patient profile.", "a": ["seems to depend"]}, {"q": "This is ______ (largely) a dosage issue, as far as we know.", "a": ["largely"]}, {"q": "The results ______ (appear to) support our hypothesis.", "a": ["appear to support"]}, {"q": "To some extent, response ______ (vary) with the patient.", "a": ["varies"]}];
+var A_DATA = [{"q": "This ______ (should) hold up under normal conditions.", "a": ["should hold up"]}, {"q": "The data ______ (suggest) response is improving steadily.", "a": ["suggests", "suggest"], "why": "Both work. Data takes a singular verb in most business writing and a plural verb in scientific and technical registers, where it is still read as a plural noun."}, {"q": "It ______ (seem to) depend on the patient profile.", "a": ["seems to depend"]}, {"q": "This is ______ a dosage issue, as far as we know. (hedge how much, not how sure)", "a": ["largely", "mostly", "mainly"], "why": "Largely, mostly and mainly all work here. They hedge the extent. As far as we know, already in the sentence, is what hedges the certainty."}, {"q": "The results ______ (appear to) support our hypothesis.", "a": ["appear to support"]}, {"q": "To some extent, response ______ (vary) with the patient.", "a": ["varies"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "It might possibly perhaps respond somewhat under treatment.", "keys": ["should respond reasonably well"], "reject": ["might possibly"], "full": "It should respond reasonably well under normal conditions."}, {"q": "The trial seem to have failed, based on the chart.", "keys": ["seems to have failed"], "full": "The trial seems to have failed, based on the chart."}, {"q": "This should responded well under normal conditions.", "keys": ["should respond well"], "full": "This should respond well under normal conditions."}, {"q": "It suggest that response is improving.", "keys": ["it suggests that"], "full": "It suggests that response is improving."}, {"q": "This is a largely dosage issue.", "keys": ["is largely a dosage issue"], "reject": ["a largely dosage"], "full": "This is largely a dosage issue."}];
@@ -674,12 +678,12 @@ var F_DATA = [{"q": "This will definitely respond well.", "note": "[soften into 
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["as far as I can tell", "by and large", "a rough estimate", "give or take", "early indications", "on the whole"];
-var G_ENDINGS = [{"id": "b", "t": "mostly, in general, with some exceptions"}, {"id": "e", "t": "the first, preliminary signs of a result"}, {"id": "a", "t": "based on what I currently know, though I could be wrong"}, {"id": "d", "t": "approximately, with some margin of error"}, {"id": "f", "t": "considering everything together, overall"}, {"id": "c", "t": "an approximate figure, not exact"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "mostly, in general, with some exceptions"}, {"id": "b", "t": "the first, preliminary signs of a result"}, {"id": "c", "t": "based on what I currently know, though I could be wrong"}, {"id": "d", "t": "approximately, with some margin of error"}, {"id": "e", "t": "considering everything together, overall"}, {"id": "f", "t": "an approximate figure, not exact"}];
+var G_KEY = ["c", "a", "f", "d", "b", "e"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "______, this should be a quick fix.", "a": ["As far as I can tell"]}, {"q": "______ are promising, but it's early.", "a": ["Early indications"]}, {"q": "It'll take three weeks, ______ a few days.", "a": ["give or take"]}, {"q": "______, the plan is sound.", "a": ["By and large"]}, {"q": "That's just a ______, not a final number.", "a": ["rough estimate"]}, {"q": "______, this is the right call, this fix should work.", "a": ["On the whole"]}];
-function buildH(){ buildGap("H", H_DATA, ["as far as I can tell", "by and large", "a rough estimate", "give or take", "early indications", "on the whole"]); }
+function buildH(){ buildGap("H", H_DATA, ["as far as I can tell", "by and large", "rough estimate", "give or take", "early indications", "on the whole"]); }
 function checkH(){ checkGap("H", H_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }

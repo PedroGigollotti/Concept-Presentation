@@ -613,7 +613,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -639,7 +639,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -874,10 +874,10 @@ function recClear(){
 }
 
 
-var A_DATA = [{"q": "Sales were ______ (marginal) higher than last month, up half a percent.", "a": ["marginally"]}, {"q": "The new process is ______ (no) slower than the old one.", "a": ["no"]}, {"q": "Costs rose ______ (substantial), by nearly a third.", "a": ["substantially"]}, {"q": "The difference was ______ (so) small ______ to be irrelevant.", "a": [["so"], ["as"]]}, {"q": "The two bids were ______ (nowhere) near as close as we expected.", "a": ["nowhere"]}, {"q": "______ more we tested, ______ fewer bugs shipped.", "a": [["The"], ["the"]]}];
+var A_DATA = [{"q": "Sales were ______ (marginal) higher than last month, up half a percent.", "a": ["marginally"]}, {"q": "The new process is ______ slower than the old one. (state a zero difference in one word)", "a": ["no"]}, {"q": "Costs rose ______ (substantial), by nearly a third.", "a": ["substantially"]}, {"q": "The difference was ______ small ______ to be irrelevant. (use the frame that turns the smallness into the reason)", "a": [["so"], ["as"]]}, {"q": "The two bids were ______ near as close as we expected. (negate the comparison strongly)", "a": ["nowhere"]}, {"q": "______ more we tested, ______ fewer bugs shipped.", "a": [["The"], ["the"]]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "Revenue was more higher than forecast.", "keys": ["revenue was higher than"], "reject": ["more higher"], "full": "Revenue was higher than forecast."}, {"q": "The delay was so slight to be immaterial.", "keys": ["so slight as to be"], "reject": ["so slight to be"], "full": "The delay was so slight as to be immaterial."}, {"q": "Costs were marginally higher, up nearly forty percent.", "keys": ["substantially higher"], "reject": ["marginally higher"], "full": "Costs were substantially higher, up nearly forty percent."}, {"q": "The results were different than the pilot's.", "keys": ["different from"], "reject": ["different than"], "full": "The results were different from the pilot's."}, {"q": "The more we automated, fewer errors we saw.", "keys": ["the fewer errors"], "reject": ["automated, fewer errors"], "full": "The more we automated, the fewer errors we saw."}];
+var B_DATA = [{"q": "Revenue was more higher than forecast.", "keys": ["revenue was higher than"], "reject": ["more higher"], "full": "Revenue was higher than forecast."}, {"q": "The delay was so slight to be immaterial.", "keys": ["so slight as to be"], "reject": ["so slight to be"], "full": "The delay was so slight as to be immaterial."}, {"q": "Costs were marginally higher, up nearly forty percent.", "keys": ["substantially higher"], "reject": ["marginally higher"], "full": "Costs were substantially higher, up nearly forty percent."}, {"q": "The results were different than the pilot's.", "keys": ["different from"], "reject": ["different than"], "full": "The results were different from the pilot's."}, {"q": "The more we automated, fewer errors we saw.", "keys": ["the fewer errors"], "reject": ["automated, fewer errors"], "full": "The more we automated, the fewer errors we saw."}, {"q": "Costs were not higher than budget, so they held steady.", "keys": ["no higher than budget"], "full": "Costs were no higher than budget, so they held steady."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "Revenue went up a bit.", "note": "[under one percent]", "keys": ["marginally higher"], "reject": ["went up a bit"], "full": "Revenue was marginally higher, up less than one percent."}, {"q": "It's way cheaper.", "note": "[about half the price]", "keys": ["half as much"], "reject": ["way cheaper"], "full": "It costs roughly half as much."}, {"q": "There's basically no difference.", "note": "[deny the gap]", "keys": ["no meaningful difference"], "reject": ["basically no difference"], "full": "There is no meaningful difference between them."}, {"q": "The delay didn't really matter.", "note": "[so ... as to]", "keys": ["so slight as to be"], "reject": ["didn't really matter"], "full": "The delay was so slight as to be immaterial."}, {"q": "The more people we added, the slower it got.", "note": "[keep the proportion]", "keys": ["the slower the project"], "reject": ["the slower it got"], "full": "The more people we added, the slower the project ran."}];

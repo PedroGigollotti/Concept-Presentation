@@ -275,7 +275,7 @@
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
     <div class="callout">
       <p><b>No -s, no past, no <em>to.</em></b> The subjunctive is the bare base form: <em>that he be,</em> <em>that she attend,</em> <em>that it not be delayed,</em> never <em>that he is,</em> <em>to be,</em> or <em>was.</em></p>
-      <p><b>Negate with <em>not</em> plus the base verb.</b> Write <em>that he not attend,</em> not “that he doesn't attend” or <em>that he not attends.</em> No <em>do</em> and no ending.</p>
+      <p><b>Negate with <em>not</em> plus the base verb.</b> Say <em>that he not attend,</em> not “that he doesn't attend” or <em>that he not attends.</em> No <em>do</em> and no ending.</p>
     </div>
     <div class="callout">
       <p><b>American / British English.</b></p>
@@ -614,7 +614,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -640,7 +640,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -895,13 +895,13 @@ function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
 var F_DATA = [{"q": "Make sure everyone signs in at reception.", "keys": ["everyone sign in"], "reject": ["everyone signs in"], "full": "It is essential that everyone sign in at reception."}, {"q": "I really think he should apologize.", "keys": ["that he apologize"], "reject": ["he should apologize"], "full": "We recommend that he apologize."}, {"q": "They said the report has to be anonymous.", "keys": ["the report be anonymous"], "reject": ["has to be"], "full": "They require that the report be anonymous."}, {"q": "Please don't let her miss the briefing.", "keys": ["that she not miss", "she not miss the briefing"], "reject": ["don't let her"], "full": "We ask that she not miss the briefing."}];
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it formally"); }
 function checkF(){ checkRewrite("F", F_DATA); }
-var G_OPENERS = ["it is incumbent upon", "we would strongly urge", "in no uncertain terms", "be that as it may", "for the record", "with respect"];
-var G_ENDINGS = [{"id": "a", "t": "even so; despite that"}, {"id": "b", "t": "it is their duty or obligation"}, {"id": "c", "t": "so that it is officially noted"}, {"id": "d", "t": "we recommend firmly"}, {"id": "e", "t": "as a polite lead-in to disagreement"}, {"id": "f", "t": "very clearly and firmly"}];
+var G_OPENERS = ["it is incumbent upon", "we strongly recommend", "in no uncertain terms", "be that as it may", "for the record", "with respect"];
+var G_ENDINGS = [{"id": "a", "t": "even so; despite that"}, {"id": "b", "t": "it is their duty or obligation"}, {"id": "c", "t": "so that it is officially noted"}, {"id": "d", "t": "we advise firmly and formally"}, {"id": "e", "t": "as a polite lead-in to disagreement"}, {"id": "f", "t": "very clearly and firmly"}];
 var G_KEY = ["b", "d", "f", "a", "c", "e"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
-var H_DATA = [{"q": "______ the manager to ensure the team is properly trained.", "a": ["It is incumbent upon"]}, {"q": "We ______ that you reconsider the current timeline.", "a": ["would strongly urge"]}, {"q": "She told them ______ that the behavior had to stop.", "a": ["in no uncertain terms"]}, {"q": "______, the vote will proceed exactly as scheduled.", "a": ["Be that as it may"]}, {"q": "______, I raised this same concern back in March.", "a": ["For the record"]}, {"q": "______, I don't believe the plan is realistic.", "a": ["With respect"]}];
-function buildH(){ buildGap("H", H_DATA, ["it is incumbent upon", "we would strongly urge", "in no uncertain terms", "be that as it may", "for the record", "with respect"]); }
+var H_DATA = [{"q": "______ the manager to ensure the team is properly trained.", "a": ["It is incumbent upon"]}, {"q": "We ______ that you reconsider the current timeline.", "a": ["strongly recommend"]}, {"q": "She told them ______ that the behavior had to stop.", "a": ["in no uncertain terms"]}, {"q": "______, the vote will proceed exactly as scheduled.", "a": ["Be that as it may"]}, {"q": "______, I raised this same concern back in March.", "a": ["For the record"]}, {"q": "______, I don't believe the plan is realistic.", "a": ["With respect"]}];
+function buildH(){ buildGap("H", H_DATA, ["it is incumbent upon", "we strongly recommend", "in no uncertain terms", "be that as it may", "for the record", "with respect"]); }
 function checkH(){ checkGap("H", H_DATA); }
 var I_TIMED = [{"q": "Record a board resolution requiring a policy change with immediate effect.", "model": "The board resolves that the policy be amended with immediate effect."}, {"q": "Write the line in an HR letter making the training compulsory by June 30.", "model": "It is required that each employee complete the training by June 30."}, {"q": "Ask a colleague in chat to double-check one figure.", "model": "Can you double-check that figure?"}, {"q": "Reassure a nervous new hire that asking questions is completely fine.", "model": "Honestly, ask me anything, that's what I'm here for."}];
 function buildITimed(){ buildTimed("I", I_TIMED, 45); }

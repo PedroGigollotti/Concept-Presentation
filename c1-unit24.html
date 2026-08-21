@@ -525,7 +525,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -551,7 +551,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -655,8 +655,8 @@ var E_DATA = [{"q": "Retention dropped, churn rose, and engagement fell. This is
 function buildE(){ buildRewrite("E", E_DATA, "make the reference specific"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to circle back to", "the crux of it", "a running theme", "to tie together", "the upshot", "along those lines"];
-var F_ENDINGS = [{"id": "c", "t": "a pattern that keeps recurring across a discussion"}, {"id": "f", "t": "similar in kind or direction to what was just said"}, {"id": "b", "t": "the central point of a longer discussion"}, {"id": "e", "t": "the practical result or conclusion of something"}, {"id": "d", "t": "to connect separate points into one coherent idea"}, {"id": "a", "t": "to return to a topic mentioned earlier"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "a pattern that keeps recurring across a discussion"}, {"id": "b", "t": "similar in kind or direction to what was just said"}, {"id": "c", "t": "the central point of a longer discussion"}, {"id": "d", "t": "the practical result or conclusion of something"}, {"id": "e", "t": "to connect separate points into one coherent idea"}, {"id": "f", "t": "to return to a topic mentioned earlier"}];
+var F_KEY = ["f", "c", "a", "e", "d", "b"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______ the billing issue once we've covered onboarding.", "a": ["circle back to"]}, {"q": "______ is that retention needs urgent attention.", "a": ["The upshot"]}, {"q": "Missed deadlines have been a ______ this quarter.", "a": ["running theme"]}, {"q": "I want to ______ these three points before we wrap up.", "a": ["tie together"]}, {"q": "The ______ is that we need more headcount.", "a": ["crux of it"]}, {"q": "Something ______ happened last quarter too.", "a": ["along those lines"]}];

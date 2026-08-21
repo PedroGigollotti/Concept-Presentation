@@ -328,7 +328,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -537,7 +537,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -563,7 +563,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -659,8 +659,8 @@ var C_DATA = [{"q": "We didn't test this early enough.", "note": "[past regret]"
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["I wish we'd", "If only we'd", "I'd rather we", "It's high time we", "I wish I"];
-var D_ENDINGS = [{"id": "c", "t": "caught this in the design review."}, {"id": "e", "t": "addressed the test coverage."}, {"id": "b", "t": "started this migration sooner."}, {"id": "a", "t": "had more time before the launch."}, {"id": "d", "t": "paused new features for now."}];
-var D_KEY = ["b", "c", "d", "e", "a"];
+var D_ENDINGS = [{"id": "a", "t": "caught this in the design review."}, {"id": "b", "t": "addressed the test coverage."}, {"id": "c", "t": "started this migration sooner."}, {"id": "d", "t": "had more time before the launch."}, {"id": "e", "t": "paused new features for now."}];
+var D_KEY = ["c", "a", "e", "b", "d"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You want to express mild regret without dwelling on it.", "a": 0, "note": "Mild regret: “I wish we'd caught it sooner, but it's manageable now.”"}, {"q": "You want to push hard for an overdue change.", "a": 1, "note": "Urgent push: “It's high time we fixed this properly, we've delayed too long.”"}, {"q": "You want to state a clear present preference between two options.", "a": 2, "note": "Clear preference: “I'd rather we slowed down than ship something broken.”"}, {"q": "You want to express deep regret about a real missed opportunity.", "a": 3, "note": "Deep regret: “If only we'd tested this before the client saw it.”"}];
@@ -670,12 +670,12 @@ var F_DATA = [{"q": "We should have tested this.", "note": "[rewrite as a wish a
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["hindsight is 20/20", "a missed opportunity", "overdue", "to course-correct", "a lesson learned", "better late than never"];
-var G_ENDINGS = [{"id": "d", "t": "to adjust direction after realizing a mistake"}, {"id": "c", "t": "something that should have happened already"}, {"id": "b", "t": "a good chance that was not taken at the time"}, {"id": "a", "t": "it's easy to see the right choice after the fact"}, {"id": "f", "t": "doing something late is still better than not at all"}, {"id": "e", "t": "something valuable understood only after a mistake"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "to adjust direction after realizing a mistake"}, {"id": "b", "t": "something that should have happened already"}, {"id": "c", "t": "a good chance that was not taken at the time"}, {"id": "d", "t": "it's easy to see the right choice after the fact"}, {"id": "e", "t": "doing something late is still better than not at all"}, {"id": "f", "t": "something valuable understood only after a mistake"}];
+var G_KEY = ["d", "c", "b", "a", "f", "e"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "This fix is ______. We should have done it months ago.", "a": ["overdue"]}, {"q": "Skipping the review was a ______.", "a": ["missed opportunity"]}, {"q": "______, that call looked right at the time.", "a": ["Hindsight is 20/20"]}, {"q": "We need to ______ before this gets worse.", "a": ["course-correct"]}, {"q": "It's a ______, next time we'll test earlier.", "a": ["lesson learned"]}, {"q": "The fix landed late, but ______.", "a": ["better late than never"]}];
-function buildH(){ buildGap("H", H_DATA, ["hindsight is 20/20", "a missed opportunity", "overdue", "course-correct", "a lesson learned", "better late than never"]); }
+function buildH(){ buildGap("H", H_DATA, ["hindsight is 20/20", "missed opportunity", "overdue", "course-correct", "lesson learned", "better late than never"]); }
 function checkH(){ checkGap("H", H_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }

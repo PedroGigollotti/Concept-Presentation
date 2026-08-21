@@ -226,6 +226,10 @@
       <p><b><em>Shall</em> for formal commitments.</b> British formal and legal English keeps <em>shall</em> for first-person commitments: “We shall provide the report by Monday.” American English uses <em>will</em> in nearly all of these contexts. This book uses <em>will.</em></p>
       <p><b>Dropping <em>on</em> before a weekday.</b> American English routinely leaves the preposition out: <em>We're launching Tuesday,</em> <em>The audit finishes Friday,</em> <em>We start Monday.</em> British English keeps it: <em>We're launching on Tuesday.</em> Both are correct, and you will see the bare form throughout this book. Read <em>launching Tuesday</em> and <em>launching on Tuesday</em> as the same thing.</p>
     </div>
+    <div class="callout">
+      <p><b>Both are correct here.</b> “Will have finished” looks back from the deadline at a job already done; “will finish” puts the finishing inside the period. In print the plain future is about twenty times more common, and the future perfect is the more spoken of the two.</p>
+    </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same choice in every line. The highlighted slot changes; <em>will</em> forecasts and the future perfect commits to a deadline.</p>
     <ul class="moves">
@@ -303,7 +307,7 @@
     <div class="ex-block">
       <span class="ex-label">D</span>
       <p class="ex-title">Match the halves</p>
-      <p class="ex-instr">Join each opener to the ending that matches its future form.</p>
+      <p class="ex-instr">Join each opener to the ending that completes it. The future form narrows the field, and the detail decides which one is left.</p>
       <div id="exD"></div>
       <button class="check-btn" onclick="checkD()">Check my answers</button>
     </div>
@@ -331,7 +335,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -540,7 +544,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -566,7 +570,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -652,7 +656,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "By Friday, we ______ (finish) the audit.", "a": ["will have finished"]}, {"q": "I think the market ______ (recover) by next year.", "a": ["will recover", "will have recovered"]}, {"q": "We ______ (launch) the beta next Tuesday, it's already on the calendar.", "a": ["are launching"]}, {"q": "By the time you land, I ______ (send) the updated deck.", "a": ["will have sent"]}, {"q": "She ______ (probably / need) more time to review the contract.", "a": ["will probably need"]}, {"q": "By end of year, the team ______ (onboard) twenty new clients.", "a": ["will have onboarded"]}];
+var A_DATA = [{"q": "By Friday, we ______ (finish) the audit.", "a": ["will have finished", "will finish"], "why": "Both work. Will have finished looks back from Friday at a job already done. Will finish just puts the finishing inside the week."}, {"q": "I think the market ______ (recover) by next year.", "a": ["will recover", "will have recovered"]}, {"q": "We ______ (launch) the beta next Tuesday. It's already on the calendar.", "a": ["are launching"]}, {"q": "By the time you land, I ______ (send) the updated deck.", "a": ["will have sent"]}, {"q": "She ______ (probably / need) more time to review the contract.", "a": ["will probably need"]}, {"q": "By end of year, the team ______ (onboard) twenty new clients.", "a": ["will have onboarded", "will onboard"], "why": "Both work. Will have onboarded counts the twenty as done by then. Will onboard forecasts the work itself."}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "We will launch the beta next Tuesday, it's already confirmed on the calendar.", "keys": ["we're launching", "we are launching"], "full": "We're launching the beta next Tuesday, it's already confirmed on the calendar."}, {"q": "By Friday, we will finish the rebrand.", "keys": ["will have finished"], "full": "By Friday, we will have finished the rebrand."}, {"q": "I think it will has recovered by next year.", "keys": ["will have recovered"], "full": "I think it will have recovered by next year."}, {"q": "By the time you land, I will have send the updated deck.", "keys": ["will have sent"], "full": "By the time you land, I will have sent the updated deck."}, {"q": "We will shipped it by end of quarter.", "keys": ["will have shipped"], "full": "We will have shipped it by end of quarter."}];
@@ -662,7 +666,7 @@ var C_DATA = [{"q": "The numbers improve next quarter.", "note": "[frame it as a
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["We're launching", "We will have shipped", "Revenue will likely", "We're set to", "By the time we regroup, we'll have"];
-var D_ENDINGS = [{"id": "a", "t": "dip slightly before recovering."}, {"id": "b", "t": "the redesign this Friday."}, {"id": "c", "t": "v2 by the end of Q3."}, {"id": "d", "t": "kick off the audit next week."}, {"id": "e", "t": "tested every edge case."}];
+var D_ENDINGS = [{"id": "a", "t": "dip slightly before recovering, maybe two points."}, {"id": "b", "t": "the redesign this Friday at ten."}, {"id": "c", "t": "every open ticket by the end of Q3."}, {"id": "d", "t": "kick off the audit next week."}, {"id": "e", "t": "tested every edge case."}];
 var D_KEY = ["b", "c", "a", "d", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
@@ -673,12 +677,12 @@ var F_DATA = [{"q": "We will launch Tuesday.", "note": "[make it read as a fixed
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["a moving target", "in the pipeline", "penciled in", "a hard deadline", "best-case scenario", "to hedge your bets"];
-var G_ENDINGS = [{"id": "e", "t": "the most favorable outcome you could realistically expect"}, {"id": "d", "t": "a date that cannot be moved"}, {"id": "a", "t": "a goal that keeps changing before it's reached"}, {"id": "b", "t": "currently in progress or planned for later"}, {"id": "f", "t": "to avoid committing fully to one outcome"}, {"id": "c", "t": "tentatively scheduled, not yet confirmed"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "the most favorable outcome you could realistically expect"}, {"id": "b", "t": "a date that cannot be moved"}, {"id": "c", "t": "a goal that keeps changing before it's reached"}, {"id": "d", "t": "currently in progress or planned for later"}, {"id": "e", "t": "to avoid committing fully to one outcome"}, {"id": "f", "t": "tentatively scheduled, not yet confirmed"}];
+var G_KEY = ["c", "d", "f", "b", "a", "e"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "The launch date is still ______. Nothing's confirmed yet.", "a": ["penciled in"]}, {"q": "In the ______, we hit the number a week early.", "a": ["best-case scenario"]}, {"q": "The scope keeps shifting, it's become a ______.", "a": ["moving target"]}, {"q": "The audit has a ______. We can't push it back.", "a": ["hard deadline"]}, {"q": "There are three features ______ for next quarter.", "a": ["in the pipeline"]}, {"q": "I'll ______ and give you a range instead of one number.", "a": ["hedge my bets", "hedge my bet"]}];
-function buildH(){ buildGap("H", H_DATA, ["a moving target", "in the pipeline", "penciled in", "a hard deadline", "best-case scenario", "hedge your bets"]); }
+function buildH(){ buildGap("H", H_DATA, ["moving target", "in the pipeline", "penciled in", "hard deadline", "best-case scenario", "hedge your bets"]); }
 function checkH(){ checkGap("H", H_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }

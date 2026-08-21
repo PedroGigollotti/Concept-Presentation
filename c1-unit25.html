@@ -537,7 +537,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -563,7 +563,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -670,8 +670,8 @@ var F_DATA = [{"q": "We approved the new policy.", "note": "[formalize for a rep
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["in light of", "with respect to", "to that end", "pursuant to", "for the purposes of", "in the interest of"];
-var G_ENDINGS = [{"id": "c", "t": "in order to achieve a stated goal"}, {"id": "e", "t": "for the specific reason of, in the context of"}, {"id": "a", "t": "considering, given a certain fact"}, {"id": "b", "t": "regarding, concerning a specific topic"}, {"id": "d", "t": "in accordance with, following a rule or agreement"}, {"id": "f", "t": "for the sake of, to benefit or protect something"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "in order to achieve a stated goal"}, {"id": "b", "t": "for the specific reason of, in the context of"}, {"id": "c", "t": "considering, given a certain fact"}, {"id": "d", "t": "regarding, concerning a specific topic"}, {"id": "e", "t": "in accordance with, following a rule or agreement"}, {"id": "f", "t": "for the sake of, to benefit or protect something"}];
+var G_KEY = ["c", "d", "a", "e", "b", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "______ the new data, we've revised our estimate.", "a": ["In light of"]}, {"q": "______ the timeline, nothing has changed.", "a": ["With respect to"]}, {"q": "We want better quality control; ______, we're adding a review step.", "a": ["to that end"]}, {"q": "______ the agreement, payment is due within thirty days.", "a": ["Pursuant to"]}, {"q": "______ this report, we'll focus only on Q3.", "a": ["For the purposes of"]}, {"q": "We're pausing the rollout ______ safety.", "a": ["in the interest of"]}];

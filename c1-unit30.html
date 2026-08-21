@@ -530,7 +530,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -556,7 +556,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -660,8 +660,8 @@ var E_DATA = [{"q": "He said the buyer was still interested.", "note": "[it's st
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["as of this writing", "subject to change", "the latest word", "stale information", "to bring someone up to speed", "a moving picture"];
-var F_ENDINGS = [{"id": "a", "t": "true at the specific moment this was written"}, {"id": "c", "t": "the most recent update available"}, {"id": "d", "t": "information that is outdated and may no longer be accurate"}, {"id": "b", "t": "possibly no longer accurate by the time it's read"}, {"id": "f", "t": "a situation that keeps changing over time"}, {"id": "e", "t": "to update someone with the most current information"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "true at the specific moment this was written"}, {"id": "b", "t": "the most recent update available"}, {"id": "c", "t": "information that is outdated and may no longer be accurate"}, {"id": "d", "t": "possibly no longer accurate by the time it's read"}, {"id": "e", "t": "a situation that keeps changing over time"}, {"id": "f", "t": "to update someone with the most current information"}];
+var F_KEY = ["a", "d", "b", "c", "f", "e"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "______, the numbers are still holding.", "a": ["As of this writing"]}, {"q": "This estimate is ______, so don't treat it as final.", "a": ["subject to change"]}, {"q": "The ______ from finance is that we're on track.", "a": ["latest word"]}, {"q": "That report is ______, it's from two months ago.", "a": ["stale"]}, {"q": "Let me ______ before the meeting starts.", "a": ["bring you up to speed"]}, {"q": "This whole situation is a ______, it changes daily.", "a": ["moving picture"]}];

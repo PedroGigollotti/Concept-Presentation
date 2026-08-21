@@ -225,6 +225,10 @@
       <p><b>American / British English.</b></p>
       <p><b><em>That</em> versus <em>which.</em></b> American style guides strictly reserve <em>that</em> for defining clauses and <em>which</em> for non-defining ones. British usage is looser and allows <em>which</em> in defining clauses too. This book follows the stricter American convention.</p>
     </div>
+    <div class="callout">
+      <p><b>Both are correct here.</b> This clause is defining and takes no comma, so “that” is available. “Who” stays the usual choice when the antecedent is a person.</p>
+    </div>
+
     <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
     <p class="body-copy">Same structure in every line. The highlighted slot changes; the comma marks the extra detail as non-essential.</p>
     <ul class="moves">
@@ -274,7 +278,7 @@
     <div class="ex-block">
       <span class="ex-label">A</span>
       <p class="ex-title">Complete the form</p>
-      <p class="ex-instr">Add the correct relative pronoun, with commas where needed.</p>
+      <p class="ex-instr">Add the correct relative pronoun. The commas are already in place where the sentence needs them.</p>
       <div id="exA"></div>
       <button class="check-btn" onclick="checkA()">Check my answers</button>
     </div>
@@ -319,7 +323,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -528,7 +532,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -554,7 +558,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -640,7 +644,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "The client ______ signed last month wants a call this week.", "a": ["who"]}, {"q": "We missed the deadline, ______ was unusual for this team.", "a": ["which"]}, {"q": "The vendor, ______ contract we renegotiated, is on board.", "a": ["whose"]}, {"q": "The report ______ we sent Monday is still under review.", "a": ["which", "that"]}, {"q": "The bug, ______ took days to trace, is finally fixed.", "a": ["which"]}, {"q": "The manager ______ approved the budget is out this week.", "a": ["who"]}];
+var A_DATA = [{"q": "The client ______ signed last month wants a call this week.", "a": ["who", "that"], "why": "Both work. This clause is defining and takes no comma, so that is available. Who is the usual choice for a person."}, {"q": "We missed the deadline, ______ was unusual for this team.", "a": ["which"]}, {"q": "The vendor, ______ contract we renegotiated, is on board.", "a": ["whose"]}, {"q": "The report ______ we sent Monday is still under review.", "a": ["which", "that"]}, {"q": "The bug, ______ took days to trace, is finally fixed.", "a": ["which"]}, {"q": "The manager ______ approved the budget is out this week.", "a": ["who", "that"], "why": "Both work, for the same reason as item 1. Who is the usual choice for a person."}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "The client, that signed last month, wants a call this week.", "keys": ["client, who signed"], "full": "The client, who signed last month, wants a call this week."}, {"q": "We hit the deadline that surprised everyone.", "keys": ["deadline, which surprised"], "full": "We hit the deadline, which surprised everyone."}, {"q": "The vendor who's pricing we renegotiated is on board.", "keys": ["vendor whose pricing"], "full": "The vendor whose pricing we renegotiated is on board."}, {"q": "She sent the report to the client, which was overdue.", "keys": ["sent the client the report"], "full": "She sent the client the report, which was overdue, so it needed a note."}, {"q": "The proposal, that we sent Monday is still under review.", "keys": ["proposal, which we sent monday,"], "full": "The proposal, which we sent Monday, is still under review."}];
@@ -658,12 +662,12 @@ var E_DATA = [{"q": "She sent the invoice to the client, which was late.", "keys
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["a key account", "a repeat client", "the point of contact", "a long-standing relationship", "a red flag", "to be in good standing"];
-var F_ENDINGS = [{"id": "c", "t": "the specific person to reach out to at a company"}, {"id": "d", "t": "a relationship that has lasted many years"}, {"id": "a", "t": "a client that matters a great deal to the business"}, {"id": "e", "t": "a warning sign that something may be wrong"}, {"id": "f", "t": "to have a clean, trouble-free record with someone"}, {"id": "b", "t": "a client who has bought or signed more than once"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "the specific person to reach out to at a company"}, {"id": "b", "t": "a relationship that has lasted many years"}, {"id": "c", "t": "a client that matters a great deal to the business"}, {"id": "d", "t": "a warning sign that something may be wrong"}, {"id": "e", "t": "to have a clean, trouble-free record with someone"}, {"id": "f", "t": "a client who has bought or signed more than once"}];
+var F_KEY = ["c", "f", "a", "b", "d", "e"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Losing that client would hurt, they're a ______.", "a": ["key account"]}, {"q": "He's been a ______ for five years now.", "a": ["repeat client"]}, {"q": "Send it to Priya, she's the ______ on their side.", "a": ["point of contact"]}, {"q": "We've had a ______ with that vendor since the company started.", "a": ["long-standing relationship"]}, {"q": "The missed payment was a ______ for the finance team.", "a": ["red flag"]}, {"q": "As long as we're ______, renewal should be simple.", "a": ["in good standing"]}];
-function buildG(){ buildGap("G", G_DATA, ["a key account", "a repeat client", "the point of contact", "a long-standing relationship", "a red flag", "in good standing"]); }
+function buildG(){ buildGap("G", G_DATA, ["key account", "repeat client", "point of contact", "long-standing relationship", "red flag", "in good standing"]); }
 function checkG(){ checkGap("G", G_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); updateScore(); }

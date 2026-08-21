@@ -527,7 +527,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -553,7 +553,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -657,8 +657,8 @@ var E_DATA = [{"q": "I finished the redesign.", "note": "[actually the design te
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to hand off", "to loop someone in", "to own a task", "to farm out", "to keep tabs on", "to sign off on"];
-var F_ENDINGS = [{"id": "e", "t": "to monitor progress on something without doing it yourself"}, {"id": "c", "t": "to take full responsibility for a task"}, {"id": "a", "t": "to pass a task or responsibility to someone else"}, {"id": "b", "t": "to include someone in a conversation or process"}, {"id": "f", "t": "to formally approve something"}, {"id": "d", "t": "to delegate work to an outside person or team"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "to monitor progress on something without doing it yourself"}, {"id": "b", "t": "to take full responsibility for a task"}, {"id": "c", "t": "to pass a task or responsibility to someone else"}, {"id": "d", "t": "to include someone in a conversation or process"}, {"id": "e", "t": "to formally approve something"}, {"id": "f", "t": "to delegate work to an outside person or team"}];
+var F_KEY = ["c", "d", "b", "f", "a", "e"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "I'll ______ this to the design team once the brief is ready.", "a": ["hand this off", "hand off"]}, {"q": "Let's ______ legal before we finalize this.", "a": ["loop in"]}, {"q": "She's agreed to ______ the whole migration.", "a": ["own"]}, {"q": "We usually ______ translation work to an outside vendor.", "a": ["farm out"]}, {"q": "I'll ______ the shipment and let you know if anything slips.", "a": ["keep tabs on"]}, {"q": "The director needs to ______ the final version.", "a": ["sign off on"]}];

@@ -532,7 +532,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -558,7 +558,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -662,8 +662,8 @@ var E_DATA = [{"q": "Marketing drove the increase, not pricing.", "note": "[corr
 function buildE(){ buildRewrite("E", E_DATA, "rewrite as a correction"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to give credit where it's due", "the driving force", "a red herring", "to set the record straight", "the deciding factor", "to take ownership of"];
-var F_ENDINGS = [{"id": "f", "t": "to accept responsibility for something"}, {"id": "d", "t": "to correct a mistaken account of what happened"}, {"id": "e", "t": "the single factor that determines the outcome"}, {"id": "b", "t": "the main cause pushing something forward"}, {"id": "c", "t": "a misleading clue that distracts from the real cause"}, {"id": "a", "t": "to properly acknowledge who or what deserves recognition"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "to accept responsibility for something"}, {"id": "b", "t": "to correct a mistaken account of what happened"}, {"id": "c", "t": "the single factor that determines the outcome"}, {"id": "d", "t": "the main cause pushing something forward"}, {"id": "e", "t": "a misleading clue that distracts from the real cause"}, {"id": "f", "t": "to properly acknowledge who or what deserves recognition"}];
+var F_KEY = ["f", "d", "e", "b", "c", "a"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______. It was Priya who caught this first.", "a": ["set the record straight"]}, {"q": "Pricing was clearly the ______ behind the increase.", "a": ["driving force"]}, {"q": "The marketing theory turned out to be a ______.", "a": ["red herring"]}, {"q": "I want to ______ about who really found the bug.", "a": ["give credit where it's due"]}, {"q": "Retention is going to be the ______ this quarter.", "a": ["deciding factor"]}, {"q": "She was quick to ______ the mistake.", "a": ["take ownership of"]}];

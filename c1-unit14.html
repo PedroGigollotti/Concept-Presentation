@@ -330,7 +330,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -539,7 +539,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -565,7 +565,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -651,10 +651,10 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "They ______ (must / see) the email already, it's marked read.", "a": ["must have seen"]}, {"q": "She ______ (might / be) stuck in a meeting.", "a": ["might be"]}, {"q": "He ______ (can't / forget), we reminded him twice.", "a": ["can't have forgotten", "cannot have forgotten"]}, {"q": "It ______ (could / be) a pricing concern, hard to say.", "a": ["could be"]}, {"q": "They ______ (may well / wait) on internal sign-off.", "a": ["may well be waiting"]}, {"q": "The server ______ (must / crash) overnight, the logs stop at 3 a.m.", "a": ["must have crashed"]}];
+var A_DATA = [{"q": "They ______ (must / see) the email already. It's marked read.", "a": ["must have seen"]}, {"q": "She ______ (might / be) stuck in a meeting.", "a": ["might be"]}, {"q": "He ______ (can't / forget). We reminded him twice.", "a": ["can't have forgotten", "cannot have forgotten"]}, {"q": "It ______ (could / be) a pricing concern, hard to say.", "a": ["could be"]}, {"q": "They ______ (may well / wait) on internal sign-off right now.", "a": ["may well be waiting"]}, {"q": "The server ______ (must / crash) overnight. The logs stop at 3 a.m.", "a": ["must have crashed"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "They must saw the email already.", "keys": ["must have seen"], "full": "They must have seen the email already."}, {"q": "She mustn't have forgotten, we reminded her twice.", "keys": ["can't have forgotten", "cannot have forgotten"], "reject": ["mustn't have"], "full": "She can't have forgotten, we reminded her twice."}, {"q": "He can't forgot, we followed up twice.", "keys": ["can't have forgotten", "cannot have forgotten"], "full": "He can't have forgotten, we followed up twice."}, {"q": "It could to be a budget issue.", "keys": ["could be a budget issue"], "reject": ["could to be"], "full": "It could be a budget issue."}, {"q": "They must have seeing the note by now.", "keys": ["must have seen the note"], "full": "They must have seen the note by now."}];
+var B_DATA = [{"q": "They must saw the email already.", "keys": ["must have seen"], "full": "They must have seen the email already."}, {"q": "She mustn't have forgotten, we reminded her twice.", "keys": ["can't have forgotten", "cannot have forgotten"], "reject": ["mustn't have"], "full": "She can't have forgotten. We reminded her twice."}, {"q": "He can't forgot, we followed up twice.", "keys": ["can't have forgotten", "cannot have forgotten"], "full": "He can't have forgotten. We followed up twice."}, {"q": "It could to be a budget issue.", "keys": ["could be a budget issue"], "reject": ["could to be"], "full": "It could be a budget issue."}, {"q": "They must have seeing the note by now.", "keys": ["must have seen the note"], "full": "They must have seen the note by now."}];
 function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
 function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "They didn't reply.", "note": "[loose possibility: maybe they're busy]", "keys": ["might just be busy", "might be busy"], "full": "They might just be busy."}, {"q": "They didn't reply.", "note": "[near certainty: they clearly saw it]", "keys": ["must have seen it"], "full": "They must have seen it."}, {"q": "They missed the deadline.", "note": "[ruled out: they can't have forgotten, given the reminders]", "keys": ["can't have forgotten", "cannot have forgotten"], "full": "They can't have forgotten, given the reminders."}, {"q": "The client is quiet.", "note": "[loose possibility: could be budget]", "keys": ["could be a budget issue"], "full": "It could be a budget issue."}, {"q": "The bug appeared overnight.", "note": "[near certainty about the cause]", "keys": ["must have appeared"], "full": "The bug must have appeared overnight because of the deploy."}];
@@ -672,12 +672,12 @@ var F_DATA = [{"q": "They're ignoring us.", "note": "[soften into a loose possib
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to read between the lines", "a safe bet", "to jump to conclusions", "circumstantial evidence", "the benefit of the doubt", "a gut feeling"];
-var G_ENDINGS = [{"id": "b", "t": "a conclusion that is very likely correct"}, {"id": "e", "t": "assuming good intent when evidence is unclear"}, {"id": "d", "t": "indirect evidence that suggests but doesn't prove something"}, {"id": "c", "t": "to decide something too quickly, without enough evidence"}, {"id": "f", "t": "an instinct not fully backed by hard evidence"}, {"id": "a", "t": "to infer meaning that isn't stated directly"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "a conclusion that is very likely correct"}, {"id": "b", "t": "assuming good intent when evidence is unclear"}, {"id": "c", "t": "indirect evidence that suggests but doesn't prove something"}, {"id": "d", "t": "to decide something too quickly, without enough evidence"}, {"id": "e", "t": "an instinct not fully backed by hard evidence"}, {"id": "f", "t": "to infer meaning that isn't stated directly"}];
+var G_KEY = ["f", "a", "d", "c", "b", "e"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "I have a ______ that they're stalling on purpose.", "a": ["gut feeling"]}, {"q": "It's a ______ that they'll renew, given the history.", "a": ["safe bet"]}, {"q": "Let's not ______. We don't have the full picture.", "a": ["jump to conclusions"]}, {"q": "It's mostly ______, nothing we could prove in writing.", "a": ["circumstantial evidence"]}, {"q": "I'll give them the ______ for now.", "a": ["benefit of the doubt"]}, {"q": "You have to ______ with a client who never says no directly.", "a": ["read between the lines"]}];
-function buildH(){ buildGap("H", H_DATA, ["read between the lines", "a safe bet", "jump to conclusions", "circumstantial evidence", "the benefit of the doubt", "a gut feeling"]); }
+function buildH(){ buildGap("H", H_DATA, ["read between the lines", "safe bet", "jump to conclusions", "circumstantial evidence", "benefit of the doubt", "gut feeling"]); }
 function checkH(){ checkGap("H", H_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }

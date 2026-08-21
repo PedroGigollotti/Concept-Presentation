@@ -281,7 +281,7 @@
     <div class="ex-block">
       <span class="ex-label">A</span>
       <p class="ex-title">Complete the form</p>
-      <p class="ex-instr">Complete each sentence with an appropriate booster.</p>
+      <p class="ex-instr">Complete each sentence with a booster from this unit. The sentence decides which kind fits: an adverb, an adjective, or a fixed frame.</p>
       <div id="exA"></div>
       <button class="check-btn" onclick="checkA()">Check my answers</button>
     </div>
@@ -332,7 +332,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -541,7 +541,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -567,7 +567,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -653,7 +653,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "This is ______ (absolutely) the right approach.", "a": ["absolutely"]}, {"q": "We are ______ (certain) the demand exists.", "a": ["certain"]}, {"q": "The results are ______ (unambiguous), no other reading fits.", "a": ["unambiguous"]}, {"q": "This is ______ (by far) our best quarter yet.", "a": ["by far"]}, {"q": "There's ______ (no doubt) that this trend is real.", "a": ["no doubt"]}, {"q": "The evidence ______ (clearly) supports our thesis.", "a": ["clearly"]}];
+var A_DATA = [{"q": "There's ______ that this trend is real.", "a": ["no doubt"]}, {"q": "We are ______ the demand exists.", "a": ["certain", "sure"]}, {"q": "The results are ______. No other reading fits.", "a": ["unambiguous", "conclusive"]}, {"q": "This is ______ our strongest signal to date.", "a": ["by far", "easily"]}, {"q": "This is ______ the right approach.", "a": ["absolutely", "clearly", "definitely"]}, {"q": "The evidence ______ supports our thesis.", "a": ["clearly", "strongly"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "We're quite certain this will work.", "keys": ["we're certain this will work", "we are certain this will work"], "reject": ["quite certain"], "full": "We're certain this will work."}, {"q": "Absolutely, certainly, without a doubt, this is definitely true.", "keys": ["this is definitely true"], "reject": ["without a doubt"], "full": "This is definitely true."}, {"q": "We're certain this will work.", "keys": ["we're hopeful this will work", "we are hopeful this will work"], "reject": ["we're certain", "we are certain"], "full": "We're hopeful this will work, based on one early signal."}, {"q": "This is by far the best, but only compared to itself.", "keys": ["by far the best quarter we've had", "best quarter we've had"], "full": "This is by far the best quarter we've had."}, {"q": "There's no doubt that maybe this works.", "keys": ["no doubt that this works"], "reject": ["that maybe"], "full": "There's no doubt that this works."}];
@@ -670,16 +670,16 @@ function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You have one early data point and want to sound careful, not certain.", "a": 0, "note": "Cautious, honest: “This looks promising, though it's still one data point.”"}, {"q": "You have overwhelming evidence and want to sound fully confident.", "a": 1, "note": "Fully confident: “We are certain the demand is there, the data is unambiguous.”"}, {"q": "You want to make the boldest possible version of a true claim.", "a": 2, "note": "Boldest true claim: “This is by far our strongest signal to date.”"}, {"q": "You need to sound confident to investors, but the evidence is still mixed.", "a": 0, "note": "Confident tone, honest hedge: “We're confident in the direction, though a few signals are still mixed.”"}];
 var E_OPTS = [{"label": "Cautious"}, {"label": "Fully confident"}, {"label": "Boldest true claim"}];
 function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
-var F_DATA = [{"q": "The model is proven at scale.", "note": "[only one early data point exists, dial it back]", "keys": ["looks promising"], "reject": ["we're certain", "we are certain"], "full": "The model looks promising, though it's proven at one scale so far."}, {"q": "This might be a good approach.", "note": "[strong evidence exists, boost it fully]", "keys": ["absolutely a strong approach"], "full": "This is absolutely a strong approach."}, {"q": "The trend is probably real.", "note": "[the data is conclusive, boost it fully]", "keys": ["clearly real"], "reject": ["probably real"], "full": "The trend is clearly real, the data is conclusive."}, {"q": "This is absolutely, certainly, without question the best option.", "note": "[trim the overstacked boosters to one clean one]", "keys": ["by far the best option"], "reject": ["absolutely, certainly"], "full": "This is by far the best option."}];
+var F_DATA = [{"q": "The model is proven at scale.", "note": "[only one early data point exists, dial it back]", "keys": ["looks promising"], "reject": ["we're certain", "we are certain"], "full": "The model looks promising, though it's proven at one scale so far."}, {"q": "This might be a good approach.", "note": "[strong evidence exists, boost it fully]", "keys": ["absolutely a strong approach"], "full": "This is absolutely a strong approach."}, {"q": "The trend is probably real.", "note": "[the data is conclusive, boost it fully]", "keys": ["clearly real"], "reject": ["probably real"], "full": "The trend is clearly real. The data is conclusive."}, {"q": "This is absolutely, certainly, without question the best option.", "note": "[trim the overstacked boosters to one clean one]", "keys": ["by far the best option"], "reject": ["absolutely, certainly"], "full": "This is by far the best option."}];
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to back it up", "a slam dunk", "to stake your reputation on it", "rock solid", "beyond a shadow of a doubt", "to stand behind a claim"];
-var G_ENDINGS = [{"id": "b", "t": "something certain to succeed, an easy win"}, {"id": "e", "t": "with absolutely no uncertainty remaining"}, {"id": "f", "t": "to fully support and defend a claim as your own"}, {"id": "a", "t": "to provide evidence that supports a claim"}, {"id": "c", "t": "to risk your credibility on a claim being true"}, {"id": "d", "t": "extremely dependable and well-supported"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "something certain to succeed, an easy win"}, {"id": "b", "t": "with absolutely no uncertainty remaining"}, {"id": "c", "t": "to fully support and defend a claim as your own"}, {"id": "d", "t": "to provide evidence that supports a claim"}, {"id": "e", "t": "to risk your credibility on a claim being true"}, {"id": "f", "t": "extremely dependable and well-supported"}];
+var G_KEY = ["d", "a", "e", "f", "b", "c"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "It's a bold claim, but I can ______ with the data.", "a": ["back it up"]}, {"q": "Given the numbers, this looks like a ______.", "a": ["slam dunk"]}, {"q": "I'd ______ this recommendation in front of anyone.", "a": ["stand behind"]}, {"q": "The evidence here is ______, nothing shaky about it.", "a": ["rock solid"]}, {"q": "We know this works, ______.", "a": ["beyond a shadow of a doubt"]}, {"q": "I'm willing to ______ this call.", "a": ["stake my reputation on"]}];
-function buildH(){ buildGap("H", H_DATA, ["back it up", "a slam dunk", "stake your reputation on it", "rock solid", "beyond a shadow of a doubt", "stand behind a claim"]); }
+function buildH(){ buildGap("H", H_DATA, ["back it up", "slam dunk", "stake your reputation on it", "rock solid", "beyond a shadow of a doubt", "stand behind a claim"]); }
 function checkH(){ checkGap("H", H_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }

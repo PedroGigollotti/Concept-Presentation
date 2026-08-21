@@ -319,7 +319,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -528,7 +528,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -554,7 +554,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -650,20 +650,20 @@ var C_DATA = [{"q": "If we don't get sign-off, we can't start.", "keys": ["witho
 function buildC(){ buildRewrite("C", C_DATA, "rewrite without if"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Without a signed contract,", "Given the current data,", "Assuming no last-minute changes,", "With one more reviewer,", "Otherwise,"];
-var D_ENDINGS = [{"id": "e", "t": "we could clear the backlog faster."}, {"id": "b", "t": "we can't begin the work."}, {"id": "d", "t": "we finish Friday as planned."}, {"id": "c", "t": "the trend should hold."}, {"id": "a", "t": "we'd have to delay the launch."}];
-var D_KEY = ["b", "c", "d", "e", "a"];
+var D_ENDINGS = [{"id": "a", "t": "we could clear the backlog faster."}, {"id": "b", "t": "we can't begin the work."}, {"id": "c", "t": "we finish Friday as planned."}, {"id": "d", "t": "the trend should hold."}, {"id": "e", "t": "we'd have to delay the launch."}];
+var D_KEY = ["b", "d", "c", "a", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "If we don't hear back by Friday, we'll proceed anyway.", "note": "[formal, no if]", "keys": ["barring a response"], "reject": ["if we"], "full": "Barring a response by Friday, we'll proceed anyway."}, {"q": "If the data holds up, we'll expand the pilot.", "note": "[formal, no if]", "keys": ["subject to the data"], "reject": ["if the data"], "full": "Subject to the data holding up, we'll expand the pilot."}, {"q": "If nothing changes, we ship as planned.", "note": "[formal, no if]", "keys": ["barring any changes"], "reject": ["if nothing"], "full": "Barring any changes, we ship as planned."}, {"q": "If we had the budget, we'd hire two more engineers.", "note": "[formal, no if]", "keys": ["with the budget"], "reject": ["if we had"], "full": "With the budget, we'd hire two more engineers."}];
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["contingent on", "barring any surprises", "subject to approval", "all else being equal", "a precondition", "to hinge on"];
-var F_ENDINGS = [{"id": "c", "t": "not final until someone signs off"}, {"id": "b", "t": "assuming nothing unexpected occurs"}, {"id": "a", "t": "dependent on something else happening first"}, {"id": "f", "t": "to depend entirely on one key factor"}, {"id": "d", "t": "assuming no other factors change"}, {"id": "e", "t": "a requirement that must be met before something else can happen"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "not final until someone signs off"}, {"id": "b", "t": "assuming nothing unexpected occurs"}, {"id": "c", "t": "dependent on something else happening first"}, {"id": "d", "t": "to depend entirely on one key factor"}, {"id": "e", "t": "assuming no other factors change"}, {"id": "f", "t": "a requirement that must be met before something else can happen"}];
+var F_KEY = ["c", "b", "a", "e", "f", "d"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "The bonus is ______ hitting this quarter's target.", "a": ["contingent on"]}, {"q": "______, we should finish on schedule.", "a": ["Barring any surprises"]}, {"q": "The new hire is ______ from legal.", "a": ["subject to approval"]}, {"q": "______, the two options perform about the same.", "a": ["All else being equal"]}, {"q": "Sign-off is a ______ for the migration to begin.", "a": ["precondition"]}, {"q": "The whole plan seems to ______ one client's decision.", "a": ["hinge on"]}];
-function buildG(){ buildGap("G", G_DATA, ["contingent on", "barring any surprises", "subject to approval", "all else being equal", "a precondition", "hinge on"]); }
+function buildG(){ buildGap("G", G_DATA, ["contingent on", "barring any surprises", "subject to approval", "all else being equal", "precondition", "hinge on"]); }
 function checkG(){ checkGap("G", G_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); updateScore(); }

@@ -332,7 +332,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -541,7 +541,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -567,7 +567,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -653,7 +653,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "I ______ (wonder) if we could push the deadline slightly.", "a": ["was wondering"]}, {"q": "It ______ (might / be) worth revisiting the scope.", "a": ["might be"]}, {"q": "I ______ (suggest) we simplify the deck before the review.", "a": ["would suggest", "'d suggest"]}, {"q": "______ it help if I walked you through it?", "a": ["Would"]}, {"q": "I ______ (hope) we could find some middle ground.", "a": ["was hoping"]}, {"q": "______ we start with the summary instead? (use should, American style).", "a": ["Should"]}];
+var A_DATA = [{"q": "I ______ (wonder) if we could push the deadline slightly.", "a": ["was wondering"]}, {"q": "It ______ (might / be) worth revisiting the scope.", "a": ["might be"]}, {"q": "I ______ (suggest) we simplify the deck before the review.", "a": ["would suggest", "'d suggest"]}, {"q": "______ it help if I walked you through it?", "a": ["Would"]}, {"q": "I ______ (hope) we could find some middle ground.", "a": ["was hoping"]}, {"q": "______ we start with the summary instead? <i>[a tentative suggestion; British English would use Shall]</i>.", "a": ["Should"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "I wonder if we could have simplified it.", "keys": ["i was wondering if we could simplify"], "reject": ["could have simplified"], "full": "I was wondering if we could simplify it, meaning right now."}, {"q": "I was wondering if we could to simplify slide four.", "keys": ["could simplify slide four"], "reject": ["could to simplify"], "full": "I was wondering if we could simplify slide four."}, {"q": "It might be worth cut the last chart.", "keys": ["worth cutting the last chart"], "full": "It might be worth cutting the last chart."}, {"q": "Shall we simplify this deck?", "keys": ["should we simplify this deck"], "reject": ["shall we"], "full": "Should we simplify this deck?"}, {"q": "I'd suggest to lead with the summary instead.", "keys": ["suggest leading with the summary"], "reject": ["suggest to lead"], "full": "I'd suggest leading with the summary instead."}];
@@ -674,12 +674,12 @@ var F_DATA = [{"q": "Fix the deck by tomorrow.", "note": "[soften slightly, but 
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to float an idea", "a gentle nudge", "to plant a seed", "open to suggestions", "a soft no", "to read the room"];
-var G_ENDINGS = [{"id": "e", "t": "a polite refusal that avoids a direct rejection"}, {"id": "d", "t": "willing to hear alternative approaches"}, {"id": "a", "t": "to raise a possibility casually, to test reaction"}, {"id": "f", "t": "to sense the mood before saying something"}, {"id": "c", "t": "to introduce an idea early so it can grow on someone"}, {"id": "b", "t": "a light, non-aggressive reminder or push"}];
-var G_KEY = ["a", "b", "c", "d", "e", "f"];
+var G_ENDINGS = [{"id": "a", "t": "a polite refusal that avoids a direct rejection"}, {"id": "b", "t": "willing to hear alternative approaches"}, {"id": "c", "t": "to raise a possibility casually, to test reaction"}, {"id": "d", "t": "to sense the mood before saying something"}, {"id": "e", "t": "to introduce an idea early so it can grow on someone"}, {"id": "f", "t": "a light, non-aggressive reminder or push"}];
+var G_KEY = ["c", "f", "e", "b", "a", "d"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "Let me ______ and see what people think.", "a": ["float an idea"]}, {"q": "Consider this a ______ to finish the draft.", "a": ["gentle nudge"]}, {"q": "I'm just trying to ______ before saying anything.", "a": ["read the room"]}, {"q": "We're ______ if you have a better approach.", "a": ["open to suggestions"]}, {"q": "That sounded like a ______, not a hard no.", "a": ["soft no"]}, {"q": "I mentioned it briefly today, just to ______ before we talk again next week.", "a": ["plant a seed"]}];
-function buildH(){ buildGap("H", H_DATA, ["float an idea", "a gentle nudge", "plant a seed", "open to suggestions", "a soft no", "read the room"]); }
+function buildH(){ buildGap("H", H_DATA, ["float an idea", "gentle nudge", "plant a seed", "open to suggestions", "soft no", "read the room"]); }
 function checkH(){ checkGap("H", H_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }

@@ -526,7 +526,7 @@ function checkForm(L, data){
       ok=matchesForm(v,item.a);
       shown=item.a[0];
     }
-    if(ok){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
+    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -552,7 +552,7 @@ function checkRewrite(L, data){
     if(hit && item.reject){
       hit = !item.reject.some(function(r){ return contains(v,r); });
     }
-    if(hit){ fb.textContent='Correct. '+item.full; fb.className='fb ok'; c++; }
+    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
     else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
   });
   registerGrade(L,c,data.length);
@@ -656,8 +656,8 @@ var E_DATA = [{"q": "He escalated the ticket. I escalated the ticket too.", "key
 function buildE(){ buildRewrite("E", E_DATA, "trim it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["to cut to the chase", "in a nutshell", "to spare the details", "redundant", "to streamline", "word for word"];
-var F_ENDINGS = [{"id": "e", "t": "to make a process more efficient by removing extra steps"}, {"id": "b", "t": "summarized briefly, in short"}, {"id": "d", "t": "unnecessary because it repeats something already said"}, {"id": "c", "t": "to leave out unnecessary specifics"}, {"id": "f", "t": "exactly as originally said, without change"}, {"id": "a", "t": "to get straight to the main point"}];
-var F_KEY = ["a", "b", "c", "d", "e", "f"];
+var F_ENDINGS = [{"id": "a", "t": "to make a process more efficient by removing extra steps"}, {"id": "b", "t": "summarized briefly, in short"}, {"id": "c", "t": "unnecessary because it repeats something already said"}, {"id": "d", "t": "to leave out unnecessary specifics"}, {"id": "e", "t": "exactly as originally said, without change"}, {"id": "f", "t": "to get straight to the main point"}];
+var F_KEY = ["f", "b", "d", "c", "a", "e"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______, what's the actual ask?", "a": ["cut to the chase"]}, {"q": "______, we're behind schedule and need help.", "a": ["In a nutshell"]}, {"q": "I'll ______ and just tell you the outcome.", "a": ["spare the details"]}, {"q": "That second slide feels ______ with the first.", "a": ["redundant"]}, {"q": "We ______ the process by cutting two approval steps.", "a": ["streamlined"]}, {"q": "She repeated the instructions ______.", "a": ["word for word"]}];
