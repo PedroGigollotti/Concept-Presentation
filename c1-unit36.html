@@ -324,7 +324,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -671,7 +671,7 @@ var G_KEY = ["f", "c", "a", "b", "e", "d"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "The new hire really ______ on her first project.", "a": ["hit the ground running"]}, {"q": "The initiative ______ after the initial excitement faded.", "a": ["lost steam"]}, {"q": "Getting this client back on board was an ______.", "a": ["uphill battle"]}, {"q": "After a rocky start, it's been ______ ever since.", "a": ["smooth sailing"]}, {"q": "One more missed deadline and we're ______ with this client.", "a": ["on thin ice"]}, {"q": "The team managed to ______ during a really tough quarter.", "a": ["weather the storm"]}];
-function buildH(){ buildGap("H", H_DATA, ["hit the ground running", "lose steam", "an uphill battle", "smooth sailing", "on thin ice", "weather the storm"]); }
+function buildH(){ buildGap("H", H_DATA, ["hit the ground running", "lose steam", "uphill battle", "smooth sailing", "on thin ice", "weather the storm"]); }
 function checkH(){ checkGap("H", H_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }

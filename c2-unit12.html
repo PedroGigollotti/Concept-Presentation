@@ -371,7 +371,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -865,16 +865,16 @@ var C_DATA = [{"q": "The system failed repeatedly, so customers left.", "keys": 
 function buildC(){ buildRewrite("C", C_DATA, "nominalize it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["comply", "fail", "analyze", "implement", "reliable"];
-var D_ENDINGS = [{"id": "a", "t": "reliability"}, {"id": "b", "t": "compliance"}, {"id": "c", "t": "implementation"}, {"id": "d", "t": "failure"}, {"id": "e", "t": "analysis"}];
-var D_KEY = ["b", "d", "e", "c", "a"];
+var D_ENDINGS = [{"id": "a", "t": "compliance"}, {"id": "b", "t": "implementation"}, {"id": "c", "t": "reliability"}, {"id": "d", "t": "failure"}, {"id": "e", "t": "analysis"}];
+var D_KEY = ["a", "d", "e", "b", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, true); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "Because we responded fast, we kept the client.", "keys": ["our fast response"], "reject": ["because we responded"], "full": "Our fast response kept the client."}, {"q": "The market shifted suddenly, and it caught us off guard.", "keys": ["a sudden market shift"], "reject": ["the market shifted suddenly"], "full": "A sudden market shift caught us off guard."}, {"q": "They failed to disclose it, and that broke trust.", "keys": ["their failure to disclose"], "reject": ["they failed to disclose"], "full": "Their failure to disclose it broke trust."}, {"q": "We rely too much on one vendor, which is risky.", "keys": ["our over-reliance on", "our overreliance on"], "reject": ["we rely too much"], "full": "Our over-reliance on one vendor is a real risk."}];
 function buildE(){ buildRewrite("E", E_DATA, "pack it into a noun phrase"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["in light of", "with a view to", "by virtue of", "in the absence of", "for the purposes of", "in accordance with"];
-var F_ENDINGS = [{"id": "a", "t": "without; when there is no"}, {"id": "b", "t": "considering; because of"}, {"id": "c", "t": "following; in line with"}, {"id": "d", "t": "in order to; aiming at"}, {"id": "e", "t": "in the context of; for the scope of"}, {"id": "f", "t": "because of; through"}];
-var F_KEY = ["b", "d", "f", "a", "e", "c"];
+var F_ENDINGS = [{"id": "a", "t": "in the context of; for the scope of"}, {"id": "b", "t": "following; in line with"}, {"id": "c", "t": "in order to; aiming at"}, {"id": "d", "t": "because of; through"}, {"id": "e", "t": "considering; because of"}, {"id": "f", "t": "without; when there is no"}];
+var F_KEY = ["e", "c", "d", "f", "a", "b"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "______ the new data, we've revised the forecast.", "a": ["In light of"]}, {"q": "We restructured the team ______ improving delivery.", "a": ["with a view to"]}, {"q": "______ its size, the firm effectively sets the market price.", "a": ["By virtue of"]}, {"q": "______ clear guidance, individual teams improvised.", "a": ["In the absence of"]}, {"q": "______ this review, <em>active</em> means used in the last thirty days.", "a": ["For the purposes of"]}, {"q": "All processing is carried out ______ the privacy policy.", "a": ["in accordance with"]}];

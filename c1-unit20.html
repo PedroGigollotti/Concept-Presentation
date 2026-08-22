@@ -662,8 +662,8 @@ var C_DATA = [{"q": "We haven't seen results like this before.", "keys": ["never
 function buildC(){ buildRewrite("C", C_DATA, "rewrite with inversion"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Never have we", "Rarely does a launch", "Not only did we hit the target,", "Under no circumstances should we", "Seldom do we get"];
-var D_ENDINGS = [{"id": "a", "t": "a signal this clear."}, {"id": "b", "t": "seen numbers like this."}, {"id": "c", "t": "go this smoothly."}, {"id": "d", "t": "cut corners here."}, {"id": "e", "t": "but we also beat it."}];
-var D_KEY = ["b", "c", "e", "d", "a"];
+var D_ENDINGS = [{"id": "a", "t": "a signal this clear."}, {"id": "b", "t": "go this smoothly."}, {"id": "c", "t": "cut corners here."}, {"id": "d", "t": "seen numbers like this."}, {"id": "e", "t": "but we also beat it."}];
+var D_KEY = ["d", "b", "e", "c", "a"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "This is a genuinely record-setting result worth celebrating loudly.", "a": 0, "note": "Record result, maximum drama: “Never have we posted numbers like this.”"}, {"q": "This is good news, but routine, not worth over-dramatizing.", "a": 1, "note": "Routine, plain: “We had a solid quarter, nothing out of the ordinary.”"}, {"q": "You want to issue a firm, formal warning against a risky shortcut.", "a": 2, "note": "Formal warning: “Under no circumstances should we cut this corner.”"}, {"q": "You want to stack two escalating points for maximum impact.", "a": 3, "note": "Stacked impact: “Not only did we hit the target, but we also beat it by 20 percent.”"}];

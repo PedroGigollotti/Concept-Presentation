@@ -654,8 +654,8 @@ var C_DATA = [{"q": "The price is higher. Our support is more responsive.", "key
 function buildC(){ buildRewrite("C", C_DATA, "combine them"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Although the price is higher,", "Even though the rollout was rocky,", "While I can't shorten the timeline,", "Granted, it's not a full fix,", "Fair point, but"];
-var D_ENDINGS = [{"id": "a", "t": "the data still supports our approach."}, {"id": "b", "t": "our support is more responsive."}, {"id": "c", "t": "it should help in the meantime."}, {"id": "d", "t": "it's stable now."}, {"id": "e", "t": "I can add more resources."}];
-var D_KEY = ["b", "d", "e", "c", "a"];
+var D_ENDINGS = [{"id": "a", "t": "our support answers in minutes, not days."}, {"id": "b", "t": "it should hold until the rewrite lands."}, {"id": "c", "t": "the data has not moved since we last looked."}, {"id": "d", "t": "I can add two more reviewers."}, {"id": "e", "t": "it's stable now, three weeks running."}];
+var D_KEY = ["a", "e", "d", "b", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The other side has a real point you must acknowledge before pushing back.", "a": 0, "note": "Soft concession first: “I hear you on budget, and I want to find a way to work with that.”"}, {"q": "You need to hold firm on price but soften the overall tone.", "a": 1, "note": "Firm line, brief concession: “Granted, it's more upfront, but the price holds.”"}, {"q": "You want a brief, low-key concession before a firm counterpoint.", "a": 1, "note": "Low-key concession: “Fair point. That said, the timeline stays as is.”"}, {"q": "You're conceding a small thing to protect a much bigger point.", "a": 2, "note": "Small concession, big point held: “I can move the kickoff date, but the scope stays fixed.”"}];
@@ -665,8 +665,8 @@ var F_DATA = [{"q": "The price is fixed.", "note": "[concede the client's point 
 function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to give ground", "a sticking point", "a non-starter", "common ground", "to hold the line", "a fair ask"];
-var G_ENDINGS = [{"id": "a", "t": "to make a concession in a negotiation"}, {"id": "b", "t": "a reasonable request, not excessive"}, {"id": "c", "t": "a proposal that will not be accepted, not worth raising"}, {"id": "d", "t": "the specific issue blocking an agreement"}, {"id": "e", "t": "to refuse to move further on a position"}, {"id": "f", "t": "a shared point of agreement between two sides"}];
-var G_KEY = ["a", "d", "c", "f", "e", "b"];
+var G_ENDINGS = [{"id": "a", "t": "the specific issue blocking an agreement"}, {"id": "b", "t": "to make a concession in a negotiation"}, {"id": "c", "t": "a shared point of agreement between two sides"}, {"id": "d", "t": "a proposal that will not be accepted, not worth raising"}, {"id": "e", "t": "a reasonable request, not excessive"}, {"id": "f", "t": "to refuse to move further on a position"}];
+var G_KEY = ["b", "a", "d", "c", "f", "e"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "We found some ______ on the timeline, if nothing else.", "a": ["common ground"]}, {"q": "Price is clearly the ______ in this deal.", "a": ["sticking point"]}, {"q": "A full refund is a ______. We can't offer that.", "a": ["non-starter"]}, {"q": "We're willing to ______ on delivery dates, not on price.", "a": ["give ground"]}, {"q": "On the core terms, we need to ______.", "a": ["hold the line"]}, {"q": "Extending the trial period seems like a ______.", "a": ["fair ask"]}];

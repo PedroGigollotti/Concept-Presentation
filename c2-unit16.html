@@ -392,7 +392,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -886,8 +886,8 @@ var C_DATA = [{"q": "It is undeniable that the numbers declined.", "keys": ["the
 function buildC(){ buildRewrite("C", C_DATA, "make it casual"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Been there.", "Fair enough.", "You'd think so.", "Makes sense.", "Told you."];
-var D_ENDINGS = [{"id": "a", "t": "means &#8220;that's logical&#8221;"}, {"id": "b", "t": "says &#8220;I've experienced that too&#8221;"}, {"id": "c", "t": "means &#8220;I warned you&#8221;"}, {"id": "d", "t": "signals &#8220;I understand and accept that&#8221;"}, {"id": "e", "t": "implies &#8220;you'd expect it, but no&#8221;"}];
-var D_KEY = ["b", "d", "e", "a", "c"];
+var D_ENDINGS = [{"id": "a", "t": "says &#8220;I've experienced that too&#8221;"}, {"id": "b", "t": "means &#8220;I warned you&#8221;"}, {"id": "c", "t": "means &#8220;that's logical&#8221;"}, {"id": "d", "t": "implies &#8220;you'd expect it, but no&#8221;"}, {"id": "e", "t": "signals &#8220;I understand and accept that&#8221;"}];
+var D_KEY = ["a", "e", "d", "c", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, true); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "A quick chat reply agreeing with a teammate's plan.", "a": 0, "note": "Colloquial: &#8220;Makes sense, let's do it.&#8221;"}, {"q": "A clause in a client contract about delivery.", "a": 1, "note": "Formal: &#8220;Delivery shall be completed within thirty days of signing.&#8221;"}, {"q": "A casual voice note explaining why you're behind.", "a": 0, "note": "Colloquial: &#8220;The thing is, what with the outage and all, I'm a bit behind.&#8221;"}, {"q": "The executive summary of a board report.", "a": 1, "note": "Formal: &#8220;Several issues remain, though overall performance was strong.&#8221;"}];
@@ -897,8 +897,8 @@ var F_DATA = [{"q": "I concur with your assessment.", "keys": ["fair enough"], "
 function buildF(){ buildRewrite("F", F_DATA, "slide it down"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["touch base", "ballpark it", "low-hanging fruit", "get the ball rolling", "on the same page", "run it by"];
-var G_ENDINGS = [{"id": "a", "t": "start something moving"}, {"id": "b", "t": "make brief contact to update"}, {"id": "c", "t": "get their view or sign-off"}, {"id": "d", "t": "give a rough estimate"}, {"id": "e", "t": "in shared agreement"}, {"id": "f", "t": "the easiest wins to grab first"}];
-var G_KEY = ["b", "d", "f", "a", "e", "c"];
+var G_ENDINGS = [{"id": "a", "t": "the easiest wins to grab first"}, {"id": "b", "t": "make brief contact to update"}, {"id": "c", "t": "give a rough estimate"}, {"id": "d", "t": "get their view or sign-off"}, {"id": "e", "t": "in shared agreement"}, {"id": "f", "t": "start something moving"}];
+var G_KEY = ["b", "c", "a", "f", "e", "d"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "Let's ______ Friday to see where things stand.", "a": ["touch base"]}, {"q": "Can you ______ the cost before we commit?", "a": ["ballpark"]}, {"q": "Start with the ______: fix the typos, then the layout.", "a": ["low-hanging fruit"]}, {"q": "Let's ______ with a quick kickoff call.", "a": ["get the ball rolling"]}, {"q": "Good, we're ______ on the priorities.", "a": ["on the same page"]}, {"q": "Let me ______ my manager before I confirm.", "a": ["run it by"]}];

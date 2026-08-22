@@ -373,7 +373,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -867,16 +867,16 @@ var C_DATA = [{"q": "The deadline is unrealistic.", "keys": ["can't realisticall
 function buildC(){ buildRewrite("C", C_DATA, "say it another way"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["It's a significant issue.", "We turned down the bid.", "The tool is not slow.", "Sales fell sharply.", "The plan changed."];
-var D_ENDINGS = [{"id": "a", "t": "The bid was rejected."}, {"id": "b", "t": "It's a major problem."}, {"id": "c", "t": "The tool is fast."}, {"id": "d", "t": "We revised the plan."}, {"id": "e", "t": "There was a steep drop in sales."}];
-var D_KEY = ["b", "a", "c", "e", "d"];
+var D_ENDINGS = [{"id": "a", "t": "The bid was rejected."}, {"id": "b", "t": "The tool is fast."}, {"id": "c", "t": "We revised the plan."}, {"id": "d", "t": "It's a major problem."}, {"id": "e", "t": "There was a steep drop in sales."}];
+var D_KEY = ["d", "a", "b", "e", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, true); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The API is idempotent.", "note": "[for a non-technical stakeholder]", "keys": ["safe to call more than once"], "reject": ["idempotent"], "full": "The API is safe to call more than once, nothing breaks if we retry."}, {"q": "We're over budget.", "note": "[for a nervous client, softened]", "keys": ["slightly above the original estimate"], "reject": ["over budget"], "full": "We're tracking slightly above the original estimate."}, {"q": "The migration failed.", "note": "[for a blameless postmortem]", "keys": ["didn't complete as planned"], "reject": ["failed"], "full": "The migration didn't complete as planned."}, {"q": "Churn is up.", "note": "[for an urgent exec alert]", "keys": ["losing customers faster than"], "reject": ["churn is up"], "full": "We're losing customers faster than we're adding them."}];
 function buildE(){ buildRewrite("E", E_DATA, "restate it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["in other words", "that is to say", "to put it bluntly", "loosely speaking", "in a nutshell", "case in point"];
-var F_ENDINGS = [{"id": "a", "t": "approximately; not precisely"}, {"id": "b", "t": "restating more simply"}, {"id": "c", "t": "a clear example of what I mean"}, {"id": "d", "t": "to clarify what I mean"}, {"id": "e", "t": "summed up very briefly"}, {"id": "f", "t": "stating it directly, without softening"}];
-var F_KEY = ["b", "d", "f", "a", "e", "c"];
+var F_ENDINGS = [{"id": "a", "t": "to clarify what I mean"}, {"id": "b", "t": "approximately; not precisely"}, {"id": "c", "t": "stating it directly, without softening"}, {"id": "d", "t": "a clear example of what I mean"}, {"id": "e", "t": "restating more simply"}, {"id": "f", "t": "summed up very briefly"}];
+var F_KEY = ["e", "a", "c", "b", "f", "d"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "It's idempotent, ______, retrying it is safe.", "a": ["in other words"]}, {"q": "The role is senior, ______, you'll own the roadmap.", "a": ["that is to say"]}, {"q": "______, the plan just isn't working.", "a": ["To put it bluntly"]}, {"q": "______, we doubled, though the exact figure varies.", "a": ["Loosely speaking"]}, {"q": "______: cut costs, keep quality.", "a": ["In a nutshell"]}, {"q": "Rushed launches backfire. Last quarter is a ______.", "a": ["case in point"]}];

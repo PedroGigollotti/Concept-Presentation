@@ -373,7 +373,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -875,8 +875,8 @@ var E_DATA = [{"q": "I'll handle the East region, and Sam will handle the West r
 function buildE(){ buildRewrite("E", E_DATA, "cut it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["likewise", "ditto", "as such", "vice versa", "either way", "if so"];
-var F_ENDINGS = [{"id": "a", "t": "the other way round"}, {"id": "b", "t": "the same applies; me too"}, {"id": "c", "t": "if that is the case"}, {"id": "d", "t": "the same as just said"}, {"id": "e", "t": "in both cases"}, {"id": "f", "t": "in that capacity; therefore"}];
-var F_KEY = ["b", "d", "f", "a", "e", "c"];
+var F_ENDINGS = [{"id": "a", "t": "if that is the case"}, {"id": "b", "t": "the other way round"}, {"id": "c", "t": "in that capacity; therefore"}, {"id": "d", "t": "in both cases"}, {"id": "e", "t": "the same applies; me too"}, {"id": "f", "t": "the same as just said"}];
+var F_KEY = ["e", "f", "c", "b", "d", "a"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "I'm in favor, and the team feels ______.", "a": ["likewise"]}, {"q": "Great work today. Yesterday too, ______.", "a": ["ditto"]}, {"q": "She's the lead; ______, she signs off.", "a": ["as such"]}, {"q": "Sales drive support, and ______.", "a": ["vice versa"]}, {"q": "We can meet now or later; ______ works for me.", "a": ["either way"]}, {"q": "Are they in? ______, we start Monday.", "a": ["If so"]}];

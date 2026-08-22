@@ -390,7 +390,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -884,8 +884,8 @@ var C_DATA = [{"q": "Revenue went up a bit.", "note": "[under one percent]", "ke
 function buildC(){ buildRewrite("C", C_DATA, "make it precise"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["no higher than last year", "marginally higher", "appreciably higher", "nowhere near as high", "several times higher"];
-var D_ENDINGS = [{"id": "a", "t": "a large, clearly noticeable rise"}, {"id": "b", "t": "level with, or below, last year"}, {"id": "c", "t": "a very large multiple of it"}, {"id": "d", "t": "a small but real increase"}, {"id": "e", "t": "far below the comparison point"}];
-var D_KEY = ["b", "d", "a", "e", "c"];
+var D_ENDINGS = [{"id": "a", "t": "a very large multiple of it"}, {"id": "b", "t": "far below the comparison point"}, {"id": "c", "t": "a small but real increase"}, {"id": "d", "t": "a large, clearly noticeable rise"}, {"id": "e", "t": "level with, or below, last year"}];
+var D_KEY = ["e", "c", "d", "b", "a"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, true); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "A one-percent cost rise you must report without alarming the board.", "a": 0, "note": "Downplay honestly: &#8220;Costs were marginally higher, up about one percent.&#8221;"}, {"q": "A genuinely serious forty-percent overrun you must not soften.", "a": 1, "note": "State it plainly: &#8220;Costs were substantially higher, running some forty percent over budget.&#8221;"}, {"q": "A difference so tiny that it should not change the decision at all.", "a": 2, "note": "Dismiss the gap: &#8220;The difference is so slight as to be immaterial.&#8221;"}, {"q": "Two options that are, in truth, almost identical on price.", "a": 3, "note": "Level them: &#8220;On price, the two are all but identical, no more than a rounding error apart.&#8221;"}];

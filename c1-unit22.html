@@ -269,7 +269,7 @@
     <div class="ex-block">
       <span class="ex-label">A</span>
       <p class="ex-title">Complete the form</p>
-      <p class="ex-instr">Complete each sentence with the correct wh-cleft or all-cleft.</p>
+      <p class="ex-instr">Complete each cleft. The second half of the sentence says whether the ask is being given weight or being made small.</p>
       <div id="exA"></div>
       <button class="check-btn" onclick="checkA()">Check my answers</button>
     </div>
@@ -314,7 +314,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -635,7 +635,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "______ we need is more time.", "a": ["What"]}, {"q": "______ we're asking is a short extension.", "a": ["All"]}, {"q": "______ matters most here is quality.", "a": ["What"]}, {"q": "______ it takes is one bad release to lose trust.", "a": ["All"]}, {"q": "______ this comes down to is bandwidth.", "a": ["What"]}, {"q": "______ I want is a clear answer.", "a": ["What"]}];
+var A_DATA = [{"q": "______ we need is two more weeks, and we know that is a lot to ask.", "a": ["What"]}, {"q": "______ we're asking is a two-day extension, nothing more.", "a": ["All"]}, {"q": "______ matters most here is that the client trusts the numbers.", "a": ["What"]}, {"q": "______ it takes is one bad release to lose trust.", "a": ["All"]}, {"q": "______ this comes down to is bandwidth, in the end.", "a": ["What"]}, {"q": "______ we changed was the headline, and nothing else.", "a": ["All"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "What we need it's more time.", "keys": ["what we need is more time"], "reject": ["need it's"], "full": "What we need is more time."}, {"q": "All we asking is a short extension.", "keys": ["all we're asking is", "all we are asking is"], "full": "All we're asking is a short extension."}, {"q": "What it matters most is quality.", "keys": ["what matters most is"], "reject": ["what it matters"], "full": "What matters most is quality."}, {"q": "All it take is one bad release.", "keys": ["all it takes is"], "reject": ["it take is"], "full": "All it takes is one bad release."}, {"q": "What this come down to is bandwidth.", "keys": ["what this comes down to is"], "reject": ["this come down"], "full": "What this comes down to is bandwidth."}];
@@ -645,8 +645,8 @@ var C_DATA = [{"q": "We need more time.", "note": "[wh-cleft]", "keys": ["what w
 function buildC(){ buildRewrite("C", C_DATA, "reframe it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["What we need is", "All we're asking is", "What matters most here is", "All it takes is", "What this comes down to is"];
-var D_ENDINGS = [{"id": "a", "t": "one bad release to lose trust."}, {"id": "b", "t": "more time."}, {"id": "c", "t": "bandwidth."}, {"id": "d", "t": "a two-day extension."}, {"id": "e", "t": "quality, not speed."}];
-var D_KEY = ["b", "d", "e", "a", "c"];
+var D_ENDINGS = [{"id": "a", "t": "another two weeks before the audit."}, {"id": "b", "t": "a two-day extension, nothing more."}, {"id": "c", "t": "just one bad release to lose trust."}, {"id": "d", "t": "whether we can staff it."}, {"id": "e", "t": "that the client trusts the numbers."}];
+var D_KEY = ["a", "b", "e", "c", "d"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "We need a full re-architecture.", "note": "[avoid using all, since the ask is genuinely large]", "keys": ["what we need is a full re-architecture"], "reject": ["all we"], "full": "What we need is a full re-architecture."}, {"q": "We need more support from leadership.", "note": "[reframe as a wh-cleft for weight]", "keys": ["what we need is more support"], "full": "What we need is more support from leadership."}, {"q": "This is a small ask, one extra day.", "note": "[reframe as an all-cleft to sound minimal]", "keys": ["all we're asking is one extra day", "all we are asking is one extra day"], "full": "All we're asking is one extra day."}, {"q": "Budget is the real issue.", "note": "[reframe as a wh-cleft]", "keys": ["what this comes down to is budget"], "full": "What this comes down to is budget."}];
@@ -658,7 +658,7 @@ var F_KEY = ["a", "b", "e", "f", "c", "d"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "It's a ______, just one more day.", "a": ["small ask"]}, {"q": "Let me ______ for why this matters.", "a": ["make the case"]}, {"q": "The deadline is ______ this time.", "a": ["non-negotiable"]}, {"q": "Budget is really the ______ here.", "a": ["crux of the matter"]}, {"q": "We could ______ by offering a discount.", "a": ["sweeten the deal"]}, {"q": "I'm happy to help, ______.", "a": ["within reason"]}];
-function buildG(){ buildGap("G", G_DATA, ["a small ask", "make the case", "non-negotiable", "the crux of the matter", "sweeten the deal", "within reason"]); }
+function buildG(){ buildGap("G", G_DATA, ["small ask", "make the case", "non-negotiable", "crux of the matter", "sweeten the deal", "within reason"]); }
 function checkG(){ checkGap("G", G_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); updateScore(); }

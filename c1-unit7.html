@@ -654,8 +654,8 @@ var C_DATA = [{"q": "The vendor renewed early. The vendor gets a discount.", "ke
 function buildC(){ buildRewrite("C", C_DATA, "combine them"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["The client, who signed early,", "We hit the target, which", "The vendor, whose contract we renewed,", "The proposal, which went out Friday,", "The engineer who found the bug"];
-var D_ENDINGS = [{"id": "a", "t": "is already reviewed by legal."}, {"id": "b", "t": "surprised the whole team."}, {"id": "c", "t": "also handles our other accounts."}, {"id": "d", "t": "got a bonus."}, {"id": "e", "t": "wants a kickoff call next week."}];
-var D_KEY = ["e", "b", "c", "a", "d"];
+var D_ENDINGS = [{"id": "a", "t": "wants a kickoff call before the ink is dry."}, {"id": "b", "t": "also handles our other accounts on the same terms."}, {"id": "c", "t": "got a bonus for it."}, {"id": "d", "t": "is already back from legal."}, {"id": "e", "t": "surprised the whole team."}];
+var D_KEY = ["a", "e", "b", "d", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "She sent the invoice to the client, which was late.", "keys": ["sent the client the invoice"], "full": "She sent the client the invoice, which arrived late."}, {"q": "We renewed the contract with the vendor, which expired in June.", "keys": ["contract, which expired in june, with"], "full": "We renewed the contract, which expired in June, with the vendor."}, {"q": "He gave the deck to the manager, which impressed everyone.", "keys": ["manager, who was impressed"], "full": "He gave the manager, who was impressed, the deck."}, {"q": "They shipped the update to the client, which broke overnight.", "keys": ["client's update"], "full": "They shipped the client's update, which broke overnight."}];

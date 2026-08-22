@@ -329,7 +329,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -660,8 +660,8 @@ var C_DATA = [{"q": "Some accounts are affected.", "note": "[moderate, not a maj
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["A fair number of", "A handful of", "Few of", "A few of", "Neither of the two"];
-var D_ENDINGS = [{"id": "a", "t": "them are high-value clients."}, {"id": "b", "t": "largest markets is affected."}, {"id": "c", "t": "them have already renewed."}, {"id": "d", "t": "regions show the pattern."}, {"id": "e", "t": "accounts are affected."}];
-var D_KEY = ["e", "d", "a", "c", "b"];
+var D_ENDINGS = [{"id": "a", "t": "regions show the pattern, three or four at most."}, {"id": "b", "t": "them are high-value clients, which is the disappointing part."}, {"id": "c", "t": "accounts are affected, more than we'd like."}, {"id": "d", "t": "largest markets is affected."}, {"id": "e", "t": "them have already renewed, which is a good start."}];
+var D_KEY = ["c", "a", "b", "e", "d"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "Few clients renewed, which is a great result.", "note": "[fix: this should sound positive, use a few]", "keys": ["a few clients renewed"], "full": "A few clients renewed, which is a great result."}, {"q": "A fair number of clients renewed, almost all of them.", "note": "[fix: use vast majority instead]", "keys": ["the vast majority of clients renewed"], "reject": ["a fair number"], "full": "The vast majority of clients renewed."}, {"q": "Neither of the three regions is affected.", "note": "[fix: use none, since there are three]", "keys": ["none of the three regions"], "reject": ["neither of the three"], "full": "None of the three regions is affected."}, {"q": "The number of complaints are dropping.", "note": "[fix subject-verb agreement]", "keys": ["the number of complaints is dropping"], "reject": ["complaints are dropping"], "full": "The number of complaints is dropping."}];
@@ -673,7 +673,7 @@ var F_KEY = ["f", "c", "e", "a", "b", "d"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "That single client, at that size, is more of an ______.", "a": ["outlier"]}, {"q": "Cases like this used to be ______, now they're common.", "a": ["few and far between"]}, {"q": "Revenue is up ______, every region reported growth.", "a": ["across the board"]}, {"q": "This new segment takes ______ of the revenue now.", "a": ["the lion's share"]}, {"q": "That refund is a ______ compared to total revenue.", "a": ["drop in the bucket"]}, {"q": "We're seeing a ______ of accounts affected, worth investigating.", "a": ["sizable chunk"]}];
-function buildG(){ buildGap("G", G_DATA, ["a sizable chunk", "few and far between", "across the board", "an outlier", "the lion's share", "a drop in the bucket"]); }
+function buildG(){ buildGap("G", G_DATA, ["sizable chunk", "few and far between", "across the board", "outlier", "the lion's share", "drop in the bucket"]); }
 function checkG(){ checkGap("G", G_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); updateScore(); }

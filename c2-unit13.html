@@ -373,7 +373,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -867,16 +867,16 @@ var C_DATA = [{"q": "The demo impressed them. They didn't sign.", "note": "[cont
 function buildC(){ buildRewrite("C", C_DATA, "join them"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["nonetheless", "consequently", "furthermore", "in other words", "subsequently"];
-var D_ENDINGS = [{"id": "a", "t": "result / effect"}, {"id": "b", "t": "reformulation"}, {"id": "c", "t": "contrast / concession"}, {"id": "d", "t": "addition"}, {"id": "e", "t": "sequence in time"}];
-var D_KEY = ["c", "a", "d", "b", "e"];
+var D_ENDINGS = [{"id": "a", "t": "reformulation"}, {"id": "b", "t": "result / effect"}, {"id": "c", "t": "contrast / concession"}, {"id": "d", "t": "addition"}, {"id": "e", "t": "sequence in time"}];
+var D_KEY = ["c", "b", "d", "a", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, true); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The numbers improved. We're not out of the woods.", "keys": ["that said", "however", "nonetheless"], "full": "The numbers improved; that said, we're not out of the woods."}, {"q": "The vendor was late twice. We're switching suppliers.", "keys": ["consequently", "therefore"], "full": "The vendor was late twice; consequently, we're switching suppliers."}, {"q": "It's a strong candidate. There's one gap.", "keys": ["however", "that said"], "full": "It's a strong candidate; however, there's one gap."}, {"q": "We could build it. We could buy it.", "keys": ["alternatively"], "full": "We could build it; alternatively, we could buy it."}];
 function buildE(){ buildRewrite("E", E_DATA, "signpost it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["by the same token", "to be fair", "that being said", "in the same vein", "conversely", "for that matter"];
-var F_ENDINGS = [{"id": "a", "t": "despite what I just said"}, {"id": "b", "t": "in the opposite way"}, {"id": "c", "t": "for the same reason; similarly"}, {"id": "d", "t": "indeed; and also"}, {"id": "e", "t": "acknowledging the other side"}, {"id": "f", "t": "along the same lines"}];
-var F_KEY = ["c", "e", "a", "f", "b", "d"];
+var F_ENDINGS = [{"id": "a", "t": "along the same lines"}, {"id": "b", "t": "in the opposite way"}, {"id": "c", "t": "despite what I just said"}, {"id": "d", "t": "for the same reason; similarly"}, {"id": "e", "t": "acknowledging the other side"}, {"id": "f", "t": "indeed; and also"}];
+var F_KEY = ["d", "e", "c", "a", "b", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Support helps customers; ______, it retains them.", "a": ["by the same token"]}, {"q": "______, the vendor did warn us about the delay.", "a": ["To be fair"]}, {"q": "The plan is sound. ______, it's expensive.", "a": ["That being said"]}, {"q": "We cut onboarding steps; ______, we simplified the docs.", "a": ["in the same vein"]}, {"q": "Sales rose in the east; ______, they fell in the west.", "a": ["conversely"]}, {"q": "It's slow, and buggy ______.", "a": ["for that matter"]}];

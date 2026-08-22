@@ -661,8 +661,8 @@ var C_DATA = [{"q": "They didn't reply.", "note": "[loose possibility: maybe the
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["They might just be", "They must have", "It could be", "They can't have", "She may well be"];
-var D_ENDINGS = [{"id": "a", "t": "seen the email already."}, {"id": "b", "t": "forgotten, we followed up twice."}, {"id": "c", "t": "waiting on approval."}, {"id": "d", "t": "a timing issue."}, {"id": "e", "t": "busy this week."}];
-var D_KEY = ["e", "a", "d", "b", "c"];
+var D_ENDINGS = [{"id": "a", "t": "waiting on approval from her director."}, {"id": "b", "t": "busy this week, nothing more."}, {"id": "c", "t": "a timing issue."}, {"id": "d", "t": "seen the email already."}, {"id": "e", "t": "forgotten. We followed up twice."}];
+var D_KEY = ["b", "d", "c", "e", "a"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You have no real evidence, just a guess.", "a": 0, "note": "Loose guess: “They might just be swamped this week.”"}, {"q": "You have strong circumstantial evidence pointing one way.", "a": 1, "note": "Near certain: “They must have seen it, the read receipt came through.”"}, {"q": "You want to firmly rule out one explanation.", "a": 2, "note": "Ruled out: “They can't have missed it, we followed up three times.”"}, {"q": "You want to float a possibility without committing to it.", "a": 0, "note": "Open possibility: “It could be timing, could be something else entirely.”"}];

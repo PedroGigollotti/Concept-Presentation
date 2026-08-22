@@ -315,7 +315,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -636,7 +636,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "We need to ______ (make/do) a decision by Friday.", "a": ["make"]}, {"q": "Let's not ______ (make/take) a risk on this one.", "a": ["take"]}, {"q": "That was a costly mistake to ______ (make/do).", "a": ["make"]}, {"q": "We're seeing ______ (heavy/strong) demand this quarter.", "a": ["heavy"]}, {"q": "I need to ______ (have/take) a break before the next call.", "a": ["take"]}, {"q": "She's going to ______ (give/do) a presentation tomorrow.", "a": ["give"]}];
+var A_DATA = [{"q": "We need to ______ (make/do) a decision by Friday.", "a": ["make"]}, {"q": "Let's not ______ (make/take) a risk on this one.", "a": ["take"]}, {"q": "That was a costly mistake to ______ (make/do).", "a": ["make"]}, {"q": "The report rests on ______ (hard/difficult) evidence, not opinion.", "a": ["hard"]}, {"q": "I need to ______ (have/take) a break before the next call.", "a": ["take", "have"], "why": "Both work. Take a break is the American default and about twelve times more common in print; have a break is current British English, and you will hear both."}, {"q": "Someone has to ______ (take/get) responsibility for the miss.", "a": ["take"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "We did a mistake in the estimate.", "keys": ["made a mistake"], "reject": ["did a mistake"], "full": "We made a mistake in the estimate."}, {"q": "Let's not do a risk on this one.", "keys": ["take a risk"], "reject": ["do a risk"], "full": "Let's not take a risk on this one."}, {"q": "We're seeing strong rain this week.", "keys": ["heavy rain"], "reject": ["strong rain"], "full": "We're seeing heavy rain this week."}, {"q": "I need to have a shower before the call.", "keys": ["take a shower"], "reject": ["have a shower"], "full": "I need to take a shower before the call."}, {"q": "She's going to do a presentation tomorrow.", "keys": ["give a presentation"], "reject": ["do a presentation"], "full": "She's going to give a presentation tomorrow."}];
@@ -646,8 +646,8 @@ var C_DATA = [{"q": "We did a decision too quickly.", "keys": ["made a decision"
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["We need to make a", "Let's not take a", "We're seeing heavy", "That was a costly", "Let's take a"];
-var D_ENDINGS = [{"id": "a", "t": "mistake to make."}, {"id": "b", "t": "break before the call."}, {"id": "c", "t": "risk on this one."}, {"id": "d", "t": "decision by Friday."}, {"id": "e", "t": "demand this quarter."}];
-var D_KEY = ["d", "c", "e", "a", "b"];
+var D_ENDINGS = [{"id": "a", "t": "risk that big this late in the quarter."}, {"id": "b", "t": "break, ten minutes, before we start again."}, {"id": "c", "t": "decision by Friday."}, {"id": "d", "t": "traffic on the new endpoints."}, {"id": "e", "t": "mistake to make."}];
+var D_KEY = ["c", "a", "d", "e", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "We did a big mistake on the estimate.", "keys": ["made a big mistake"], "reject": ["did a big mistake"], "full": "We made a big mistake on the estimate."}, {"q": "She's taking a decision about the budget today.", "keys": ["making a decision"], "reject": ["taking a decision"], "full": "She's making a decision about the budget today."}, {"q": "We're having strong rain this week.", "keys": ["heavy rain"], "reject": ["strong rain"], "full": "We're having heavy rain this week."}, {"q": "I need to have a shower before the meeting.", "keys": ["take a shower before the meeting"], "reject": ["have a shower"], "full": "I need to take a shower before the meeting."}];

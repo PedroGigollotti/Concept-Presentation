@@ -650,8 +650,8 @@ var C_DATA = [{"q": "If we don't get sign-off, we can't start.", "keys": ["witho
 function buildC(){ buildRewrite("C", C_DATA, "rewrite without if"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Without a signed contract,", "Given the current data,", "Assuming no last-minute changes,", "With one more reviewer,", "Otherwise,"];
-var D_ENDINGS = [{"id": "a", "t": "we could clear the backlog faster."}, {"id": "b", "t": "we can't begin the work."}, {"id": "c", "t": "we finish Friday as planned."}, {"id": "d", "t": "the trend should hold."}, {"id": "e", "t": "we'd have to delay the launch."}];
-var D_KEY = ["b", "d", "c", "a", "e"];
+var D_ENDINGS = [{"id": "a", "t": "the trend should hold through Q4, on the numbers we have."}, {"id": "b", "t": "we can't begin the work."}, {"id": "c", "t": "we'd have to delay the launch."}, {"id": "d", "t": "we could clear the backlog by Thursday."}, {"id": "e", "t": "we finish Friday, and no one has to move a date."}];
+var D_KEY = ["b", "a", "e", "d", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "If we don't hear back by Friday, we'll proceed anyway.", "note": "[formal, no if]", "keys": ["barring a response"], "reject": ["if we"], "full": "Barring a response by Friday, we'll proceed anyway."}, {"q": "If the data holds up, we'll expand the pilot.", "note": "[formal, no if]", "keys": ["subject to the data"], "reject": ["if the data"], "full": "Subject to the data holding up, we'll expand the pilot."}, {"q": "If nothing changes, we ship as planned.", "note": "[formal, no if]", "keys": ["barring any changes"], "reject": ["if nothing"], "full": "Barring any changes, we ship as planned."}, {"q": "If we had the budget, we'd hire two more engineers.", "note": "[formal, no if]", "keys": ["with the budget"], "reject": ["if we had"], "full": "With the budget, we'd hire two more engineers."}];

@@ -107,3 +107,13 @@ These are patterns, not single strings, so they live in checks and in prose here
 | c1-unit33.html, Exercise A rebuilt: the second half calls the quantifier | ______ (few) of them are high-value clients. | which is the disappointing part |
 | c1-unit15.html, Exercise A item 2, data takes a singular or plural verb | "a": ["suggests"] | "suggests", "suggest" |
 | c1-unit12.html, Exercise A items 2 and 6, were and was both accepted | [["were"] | "were", "was" |
+| c1-unit2.html, Watch out, stative verbs, moved out of the variety box and rewritten | Casual American marketing register sometimes stretches stative verbs | Putting a state in the continuous forces a process onto it |
+| c1-unit35.html, Exercise A item 4, inverted collocation replaced | (heavy/strong) demand this quarter | (hard/difficult) evidence, not opinion |
+| c1-unit35.html, Exercise A item 6, margin too small | (give/do) a presentation tomorrow | (take/get) responsibility for the miss |
+| c1-unit35.html, Exercise A item 5, variety not error | "a": ["take"] | "take", "have" |
+| c1-unit21.html, Exercise A rebuilt: the gap is the focused element | It ______ (be) the pricing change that drove the increase. | It was ______ that drove the increase. |
+| c1-unit22.html, Exercise A rebuilt: the sentence carries the minimizer | ______ we're asking is a short extension. | a two-day extension, nothing more. |
+| c1-unit26.html, Exercise A rebuilt: the bracket gives the tone, never the verb | (acknowledge) the delay | [she named it and gave nothing away] |
+| c1-unit17.html, Exercise D opener, comma splice with however | It's a fair point, however, | It's a fair point. However, |
+| c1-unit33.html, Exercise A rebuilt: the second half calls the quantifier | ______ (few) of them are high-value clients. | which is the disappointing part |
+| c1-unit18.html, Exercise A rebuilt: the slot decides, not the parenthesis | This is ______ (absolutely) the right approach. | There's ______ that this trend is real. |

@@ -663,8 +663,8 @@ var E_DATA = [{"q": "We changed the flow, users activate faster now.", "note": "
 function buildE(){ buildRewrite("E", E_DATA, "rewrite it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["the rationale", "a knock-on effect", "the driving factor", "to justify a decision", "a trade-off", "the bottom line"];
-var F_ENDINGS = [{"id": "a", "t": "the reasoning behind a decision"}, {"id": "b", "t": "a secondary consequence caused by an earlier change"}, {"id": "c", "t": "the main cause pushing a decision forward"}, {"id": "d", "t": "the essential final point, cutting through detail"}, {"id": "e", "t": "to give solid reasons that support a choice"}, {"id": "f", "t": "giving up one thing to gain another"}];
-var F_KEY = ["a", "b", "c", "e", "f", "d"];
+var F_ENDINGS = [{"id": "a", "t": "a secondary consequence caused by an earlier change"}, {"id": "b", "t": "the essential final point, cutting through detail"}, {"id": "c", "t": "giving up one thing to gain another"}, {"id": "d", "t": "the main cause pushing a decision forward"}, {"id": "e", "t": "to give solid reasons that support a choice"}, {"id": "f", "t": "the reasoning behind a decision"}];
+var F_KEY = ["f", "a", "d", "e", "c", "b"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "The ______ for the redesign was clear once we saw the drop-off data.", "a": ["rationale"]}, {"q": "Slower builds were a ______ of the new pipeline.", "a": ["knock-on effect"]}, {"q": "Cost was the ______ behind postponing the launch.", "a": ["driving factor"]}, {"q": "We had to ______ the extra spend to finance.", "a": ["justify"]}, {"q": "Faster releases came with a ______: less time for manual testing.", "a": ["trade-off"]}, {"q": "The ______ is that activation is up twelve percent.", "a": ["bottom line"]}];

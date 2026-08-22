@@ -390,7 +390,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -884,8 +884,8 @@ var C_DATA = [{"q": "She said the figures are accurate.", "note": "[signal doubt
 function buildC(){ buildRewrite("C", C_DATA, "set the stance"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["claims", "concedes", "confirms", "alleges", "maintains"];
-var D_ENDINGS = [{"id": "a", "t": "reluctantly admits it"}, {"id": "b", "t": "doubts it / distances from it"}, {"id": "c", "t": "stands firmly by it"}, {"id": "d", "t": "endorses it as true"}, {"id": "e", "t": "asserts it, unproven, of another"}];
-var D_KEY = ["b", "a", "d", "e", "c"];
+var D_ENDINGS = [{"id": "a", "t": "reluctantly admits it"}, {"id": "b", "t": "stands firmly by it"}, {"id": "c", "t": "doubts it / distances from it"}, {"id": "d", "t": "asserts it, unproven, of another"}, {"id": "e", "t": "endorses it as true"}];
+var D_KEY = ["c", "a", "e", "d", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, true); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "Relaying a vendor's excuse you frankly don't buy.", "a": 0, "note": "Doubting verb: &#8220;The vendor claims the delay was unavoidable.&#8221;"}, {"q": "Reporting your own team's genuine error, taking responsibility.", "a": 1, "note": "Named agent, owned: &#8220;We made an error in the forecast,&#8221; not &#8220;errors were made.&#8221;"}, {"q": "Passing on an unproven accusation you must not endorse.", "a": 2, "note": "Distancing passive: &#8220;It is alleged that the funds were misused.&#8221;"}, {"q": "Confirming a fact you have verified yourself.", "a": 3, "note": "Endorsing verb: &#8220;I can confirm that the figures are accurate.&#8221;"}];
@@ -895,8 +895,8 @@ var F_DATA = [{"q": "The vendor said it wasn't their fault.", "note": "[you're s
 function buildF(){ buildRewrite("F", F_DATA, "shade it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["according to", "on the record", "off the record", "reportedly", "sources say", "so the story goes"];
-var G_ENDINGS = [{"id": "a", "t": "not for attribution"}, {"id": "b", "t": "according to unnamed informants"}, {"id": "c", "t": "as stated by"}, {"id": "d", "t": "as the account has it, with mild doubt"}, {"id": "e", "t": "officially and quotably"}, {"id": "f", "t": "as has been reported"}];
-var G_KEY = ["c", "e", "a", "f", "b", "d"];
+var G_ENDINGS = [{"id": "a", "t": "not for attribution"}, {"id": "b", "t": "as has been reported"}, {"id": "c", "t": "as the account has it, with mild doubt"}, {"id": "d", "t": "according to unnamed informants"}, {"id": "e", "t": "officially and quotably"}, {"id": "f", "t": "as stated by"}];
+var G_KEY = ["f", "e", "a", "b", "d", "c"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "______ the report, revenue fell four percent.", "a": ["According to"]}, {"q": "The CEO said it ______: she stands by the plan.", "a": ["on the record"]}, {"q": "He told me, ______, that layoffs are coming.", "a": ["off the record"]}, {"q": "The deal ______ collapsed over price.", "a": ["reportedly"]}, {"q": "______ the board is split on the merger.", "a": ["Sources say"]}, {"q": "They doubled the budget overnight, ______.", "a": ["so the story goes"]}];

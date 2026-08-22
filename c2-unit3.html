@@ -391,7 +391,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -885,8 +885,8 @@ var C_DATA = [{"q": "The manager wants everyone to arrive on time.", "keys": ["t
 function buildC(){ buildRewrite("C", C_DATA, "rewrite with the subjunctive"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["The auditor insists", "It is vital", "We recommend", "The chair asked", "Company policy requires"];
-var D_ENDINGS = [{"id": "a", "t": "that the role be posted internally first."}, {"id": "b", "t": "that every invoice be approved in writing."}, {"id": "c", "t": "that she not be named in the report."}, {"id": "d", "t": "that no decision be made without a quorum."}, {"id": "e", "t": "that the findings be published in full."}];
-var D_KEY = ["b", "d", "a", "c", "e"];
+var D_ENDINGS = [{"id": "a", "t": "that she not be named in the report."}, {"id": "b", "t": "that the findings be published in full."}, {"id": "c", "t": "that every invoice be approved in writing."}, {"id": "d", "t": "that the role be posted internally first."}, {"id": "e", "t": "that no decision be made without a quorum."}];
+var D_KEY = ["c", "e", "d", "a", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "A board resolution recording a required change to company policy.", "a": 1, "note": "Formal subjunctive: &#8220;The board resolves that the policy be amended with immediate effect.&#8221;"}, {"q": "A quick message to a colleague asking them to double-check a figure.", "a": 0, "note": "Everyday: &#8220;Can you double-check that figure?&#8221; The subjunctive would be overkill."}, {"q": "A formal HR letter setting a mandatory training requirement.", "a": 1, "note": "Formal subjunctive: &#8220;It is required that each employee complete the training by June 30.&#8221;"}, {"q": "Reassuring a nervous new hire that it's completely fine to ask questions.", "a": 0, "note": "Everyday: &#8220;Honestly, ask me anything, that's what I'm here for.&#8221;"}];

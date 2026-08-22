@@ -274,7 +274,7 @@
     <div class="ex-block">
       <span class="ex-label">A</span>
       <p class="ex-title">Complete the form</p>
-      <p class="ex-instr">Complete each sentence with the correct reporting verb.</p>
+      <p class="ex-instr">Complete each sentence with the reporting verb that carries the tone in brackets. The five verbs of this unit are acknowledge, insist, question, warn and concede.</p>
       <div id="exA"></div>
       <button class="check-btn" onclick="checkA()">Check my answers</button>
     </div>
@@ -325,7 +325,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -646,7 +646,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "She ______ (acknowledge) the delay but held her position.", "a": ["acknowledged"]}, {"q": "He ______ (insist) on a firm new date.", "a": ["insisted"]}, {"q": "They ______ (question) whether the estimate was realistic.", "a": ["questioned"]}, {"q": "She ______ (warn) us not to slip again.", "a": ["warned"]}, {"q": "He ______ (concede) that the delay was on us.", "a": ["conceded"]}, {"q": "They ______ (deny) that the contract had been signed.", "a": ["denied"]}];
+var A_DATA = [{"q": "She ______ the delay but held her line. <i style=\"color:var(--gray);\">[she named it and gave nothing away]</i>", "a": ["acknowledged", "admitted"], "why": "Both work. Acknowledge grants the fact; admit concedes a little more, as if it cost something to say."}, {"q": "He ______ on a firm new date. <i style=\"color:var(--gray);\">[he would not let it go]</i>", "a": ["insisted"]}, {"q": "They ______ whether the estimate was realistic. <i style=\"color:var(--gray);\">[they put the doubt in the room]</i>", "a": ["questioned", "doubted"], "why": "Both work. Question puts the doubt on the table as an act; doubt describes the state you are in."}, {"q": "She ______ us not to slip again. <i style=\"color:var(--gray);\">[she told us what not to repeat]</i>", "a": ["warned", "cautioned"], "why": "Both work. Warn is the everyday choice; caution is a notch more formal and a little softer."}, {"q": "He ______ that the delay was on us. <i style=\"color:var(--gray);\">[he gave ground, and it cost him]</i>", "a": ["conceded", "admitted"], "why": "Both work. Concede marks the ground given; admit marks the fact granted."}, {"q": "He ______ that we take another week. <i style=\"color:var(--gray);\">[he would not move, and put it as a demand]</i>", "a": ["insisted"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "She insisted to give us more time.", "keys": ["insisted on giving us more time"], "reject": ["insisted to give"], "full": "She insisted on giving us more time."}, {"q": "He warned that not to slip again.", "keys": ["warned us not to slip"], "reject": ["warned that not"], "full": "He warned us not to slip again."}, {"q": "They questioned that we'd tested enough.", "keys": ["questioned whether we'd tested"], "reject": ["questioned that"], "full": "They questioned whether we'd tested enough."}, {"q": "She acknowledged to the delay.", "keys": ["acknowledged the delay"], "reject": ["acknowledged to"], "full": "She acknowledged the delay."}, {"q": "He conceded to the delay was on us.", "keys": ["conceded that the delay"], "reject": ["conceded to the delay"], "full": "He conceded that the delay was on us."}];
@@ -656,8 +656,8 @@ var C_DATA = [{"q": "“We need a firm date, no more slipping.”", "note": "[in
 function buildC(){ buildRewrite("C", C_DATA, "report it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["She acknowledged", "He insisted on", "They questioned whether", "She warned us not to", "He conceded that"];
-var D_ENDINGS = [{"id": "a", "t": "a firm new date."}, {"id": "b", "t": "the delay was on us."}, {"id": "c", "t": "slip again."}, {"id": "d", "t": "the estimate was realistic."}, {"id": "e", "t": "the delay but held firm."}];
-var D_KEY = ["e", "a", "d", "c", "b"];
+var D_ENDINGS = [{"id": "a", "t": "the delay but held her position."}, {"id": "b", "t": "slip again."}, {"id": "c", "t": "a firm new date."}, {"id": "d", "t": "the delay was on us, and said so in front of the client."}, {"id": "e", "t": "the estimate had been realistic in the first place."}];
+var D_KEY = ["a", "c", "e", "b", "d"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The client was calm and just noted a fact.", "a": 0, "note": "Calm, neutral: “She noted the delay and moved on.”"}, {"q": "The client was firm and non-negotiable.", "a": 1, "note": "Firm, non-negotiable: “She insisted on a firm new date.”"}, {"q": "The client expressed real skepticism.", "a": 2, "note": "Skeptical: “She questioned whether we'd tested this enough.”"}, {"q": "The client gave a stern, cautionary message.", "a": 3, "note": "Stern warning: “She warned us not to let it happen again.”"}];

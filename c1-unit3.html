@@ -321,7 +321,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -652,8 +652,8 @@ var C_DATA = [{"q": "We swapped the sensor. The quality team had not reviewed it
 function buildC(){ buildRewrite("C", C_DATA, "combine them into one sentence"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["We'd already fixed the fault", "The outage started", "She hadn't seen the alert", "Once the fix had gone out", "They'd tested the production line twice"];
-var D_ENDINGS = [{"id": "a", "t": "before the client even noticed."}, {"id": "b", "t": "because her phone was on silent."}, {"id": "c", "t": "before it ever reached production."}, {"id": "d", "t": "right after the risky swap."}, {"id": "e", "t": "the errors stopped within minutes."}];
-var D_KEY = ["a", "d", "b", "e", "c"];
+var D_ENDINGS = [{"id": "a", "t": "before the client even noticed, which is why nobody filed a ticket."}, {"id": "b", "t": "before it ever reached the customer, and still missed it."}, {"id": "c", "t": "the errors stopped within minutes."}, {"id": "d", "t": "right after the risky swap went in."}, {"id": "e", "t": "because her phone was on silent all night."}];
+var D_KEY = ["a", "d", "e", "c", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The batch failed. We had skipped the quality check.", "keys": ["because we'd skipped", "because we had skipped"], "full": "The batch failed because we'd skipped the quality check."}, {"q": "We found the leak. Someone had disabled the monitor last week.", "keys": ["after someone had disabled"], "full": "We found the leak after someone had disabled the monitor last week."}, {"q": "The client signed off. We had already shipped a sample batch.", "keys": ["after we'd already shipped", "after we had already shipped", "after we'd shipped", "after we had shipped"], "full": "The client signed off after we'd already shipped a sample batch."}, {"q": "The team missed the weekly target. The scope had grown midweek.", "keys": ["because the scope had grown"], "full": "The team missed the weekly target because the scope had grown midweek."}];

@@ -392,7 +392,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -897,8 +897,8 @@ var F_DATA = [{"q": "It's definitely a bug.", "note": "[not yet confirmed]", "ke
 function buildF(){ buildRewrite("F", F_DATA, "calibrate it"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["to my knowledge", "by all accounts", "on the face of it", "for all I know", "if anything", "as far as it goes"];
-var G_ENDINGS = [{"id": "a", "t": "judging by appearances alone"}, {"id": "b", "t": "if there is any effect, it is the opposite"}, {"id": "c", "t": "as far as I am aware"}, {"id": "d", "t": "true, but only up to a point"}, {"id": "e", "t": "according to what everyone says"}, {"id": "f", "t": "I genuinely have no information either way"}];
-var G_KEY = ["c", "e", "a", "f", "b", "d"];
+var G_ENDINGS = [{"id": "a", "t": "judging by appearances alone"}, {"id": "b", "t": "according to what everyone says"}, {"id": "c", "t": "I genuinely have no information either way"}, {"id": "d", "t": "as far as I am aware"}, {"id": "e", "t": "if there is any effect, it is the opposite"}, {"id": "f", "t": "true, but only up to a point"}];
+var G_KEY = ["d", "b", "a", "c", "e", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "______, no one has raised an objection to the plan yet.", "a": ["To my knowledge"]}, {"q": "______, the launch was a real success.", "a": ["By all accounts"]}, {"q": "______, the deal looks solid, but I'd still read the fine print.", "a": ["On the face of it"]}, {"q": "______, they could have signed with a rival already.", "a": ["For all I know"]}, {"q": "The change didn't help; ______, it slowed things down.", "a": ["if anything"]}, {"q": "The summary is accurate ______, but it leaves out the risks.", "a": ["as far as it goes"]}];

@@ -278,7 +278,7 @@
     <div class="ex-block">
       <span class="ex-label">A</span>
       <p class="ex-title">Complete the form</p>
-      <p class="ex-instr">Complete each sentence with the correct it-cleft.</p>
+      <p class="ex-instr">Each pair gives a plain sentence and its it-cleft. Put the focused element in the gap. The bracket says which part goes in the spotlight.</p>
       <div id="exA"></div>
       <button class="check-btn" onclick="checkA()">Check my answers</button>
     </div>
@@ -323,7 +323,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -644,7 +644,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "It ______ (be) the pricing change that drove the increase.", "a": ["was"]}, {"q": "It ______ (be) Priya who caught the issue first.", "a": ["was"]}, {"q": "It ______ (not / be) marketing that caused it.", "a": ["wasn't", "was not"]}, {"q": "It's the data, not the opinions, ______ (that/who) should decide this.", "a": ["that"]}, {"q": "It ______ (be) retention that matters most this quarter.", "a": ["is"]}, {"q": "It ______ (be) the support team that flagged the bug.", "a": ["was"]}];
+var A_DATA = [{"q": "The pricing change drove the increase. It was ______ that drove the increase. <i style=\"color:var(--gray);\">[focus the cause]</i>", "a": ["the pricing change"]}, {"q": "Priya caught the issue first. It was Priya ______ caught the issue first. <i style=\"color:var(--gray);\">[the focus is a person]</i>", "a": ["who"]}, {"q": "Marketing didn't cause it. The release did. It wasn't ______ that caused it. <i style=\"color:var(--gray);\">[rule out the wrong cause]</i>", "a": ["marketing"]}, {"q": "The data should decide this, not opinions. It's ______, not opinions, that should decide this. <i style=\"color:var(--gray);\">[focus the evidence]</i>", "a": ["the data"]}, {"q": "Retention matters most this quarter. It is ______ that matters most this quarter. <i style=\"color:var(--gray);\">[focus the metric]</i>", "a": ["retention"]}, {"q": "The support team flagged the bug. It was ______ that flagged the bug. <i style=\"color:var(--gray);\">[focus the actor]</i>", "a": ["the support team"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "It was the pricing who drove the increase.", "keys": ["pricing that drove"], "reject": ["pricing who"], "full": "It was the pricing that drove the increase."}, {"q": "It were Priya who caught the issue.", "keys": ["it was priya"], "reject": ["it were"], "full": "It was Priya who caught the issue."}, {"q": "It wasn't marketing caused it, it was pricing.", "keys": ["marketing that caused it"], "full": "It wasn't marketing that caused it, it was pricing."}, {"q": "It's the data, not the opinions, who should decide this.", "keys": ["opinions, that should decide"], "reject": ["opinions, who"], "full": "It's the data, not the opinions, that should decide this."}, {"q": "It was the support team which flagged the bug first.", "keys": ["support team that flagged"], "reject": ["team which"], "full": "It was the support team that flagged the bug first."}];
@@ -654,8 +654,8 @@ var C_DATA = [{"q": "The pricing change drove the increase.", "note": "[focus: t
 function buildC(){ buildRewrite("C", C_DATA, "rewrite as an it-cleft"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["It was the pricing change", "It was Priya", "It wasn't marketing", "It's the data, not opinions,", "It is retention"];
-var D_ENDINGS = [{"id": "a", "t": "that should decide this."}, {"id": "b", "t": "that drove the increase."}, {"id": "c", "t": "that matters most this quarter."}, {"id": "d", "t": "that caused it."}, {"id": "e", "t": "who caught the issue first."}];
-var D_KEY = ["b", "e", "d", "a", "c"];
+var D_ENDINGS = [{"id": "a", "t": "that drove the increase, once we cut the discount tier."}, {"id": "b", "t": "who caught the issue first, before the alert even fired."}, {"id": "c", "t": "that matters most this quarter, not new signups."}, {"id": "d", "t": "that caused it. It was the release."}, {"id": "e", "t": "that should decide this, and the sample is large enough to trust."}];
+var D_KEY = ["a", "b", "d", "e", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "Marketing drove the increase, not pricing.", "note": "[correct: it was pricing]", "keys": ["it wasn't marketing that", "it was not marketing that"], "full": "It wasn't marketing that drove the increase, it was pricing."}, {"q": "The intern found the bug, not the senior engineer.", "note": "[correct: it was the senior engineer]", "keys": ["it wasn't the intern who", "it was not the intern who"], "full": "It wasn't the intern who found the bug, it was the senior engineer."}, {"q": "Luck explains the win, not preparation.", "note": "[correct: it was preparation]", "keys": ["it wasn't luck that", "it was not luck that"], "full": "It wasn't luck that explains the win, it was preparation."}, {"q": "The client's feedback caused the delay, not our estimate.", "note": "[correct: it was our estimate]", "keys": ["it wasn't the client's feedback that", "it was not the client's feedback that"], "full": "It wasn't the client's feedback that caused the delay, it was our estimate."}];
@@ -667,7 +667,7 @@ var F_KEY = ["f", "d", "e", "b", "c", "a"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______. It was Priya who caught this first.", "a": ["set the record straight"]}, {"q": "Pricing was clearly the ______ behind the increase.", "a": ["driving force"]}, {"q": "The marketing theory turned out to be a ______.", "a": ["red herring"]}, {"q": "I want to ______ about who really found the bug.", "a": ["give credit where it's due"]}, {"q": "Retention is going to be the ______ this quarter.", "a": ["deciding factor"]}, {"q": "She was quick to ______ the mistake.", "a": ["take ownership of"]}];
-function buildG(){ buildGap("G", G_DATA, ["give credit where it's due", "the driving force", "a red herring", "set the record straight", "the deciding factor", "take ownership of"]); }
+function buildG(){ buildGap("G", G_DATA, ["give credit where it's due", "driving force", "red herring", "set the record straight", "deciding factor", "take ownership of"]); }
 function checkG(){ checkGap("G", G_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); updateScore(); }

@@ -391,7 +391,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -885,8 +885,8 @@ var C_DATA = [{"q": "He's stubborn about the deadline.", "note": "[neutral]", "k
 function buildC(){ buildRewrite("C", C_DATA, "reweigh it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["determined", "stubborn", "thrifty", "stingy", "assertive"];
-var D_ENDINGS = [{"id": "a", "t": "negative: won't budge unreasonably"}, {"id": "b", "t": "positive: firmly goal-focused"}, {"id": "c", "t": "negative: mean with money"}, {"id": "d", "t": "positive: admirably careful with money"}, {"id": "e", "t": "neutral-positive: stands up for a position"}];
-var D_KEY = ["b", "a", "d", "c", "e"];
+var D_ENDINGS = [{"id": "a", "t": "neutral-positive: stands up for a position"}, {"id": "b", "t": "positive: firmly goal-focused"}, {"id": "c", "t": "negative: mean with money"}, {"id": "d", "t": "positive: admirably careful with money"}, {"id": "e", "t": "negative: won't budge unreasonably"}];
+var D_KEY = ["b", "e", "d", "c", "a"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, true); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "Praising a colleague who keeps pushing until a problem is solved.", "a": 0, "note": "Positive: &#8220;She's incredibly determined, she doesn't stop until it's fixed.&#8221;"}, {"q": "Criticizing, gently but clearly, someone who won't consider other views.", "a": 1, "note": "Gently critical: &#8220;He can be a little inflexible when others push back.&#8221;"}, {"q": "Describing a careful spender neutrally in a performance review.", "a": 2, "note": "Neutral: &#8220;She's careful and cost-conscious with the budget.&#8221;"}, {"q": "Reframing a bold, high-risk plan positively to win support.", "a": 3, "note": "Positive spin: &#8220;It's an ambitious, high-upside bet.&#8221;"}];
@@ -896,8 +896,8 @@ var F_DATA = [{"q": "The report is skinny on detail.", "note": "[neutral]", "key
 function buildF(){ buildRewrite("F", F_DATA, "swap the word"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["draw a conclusion", "meet a deadline", "raise concerns", "strike a balance", "gain traction", "bear the brunt"];
-var G_ENDINGS = [{"id": "a", "t": "find a fair compromise"}, {"id": "b", "t": "reach a judgment from evidence"}, {"id": "c", "t": "take the worst of something"}, {"id": "d", "t": "finish in time"}, {"id": "e", "t": "start to succeed; catch on"}, {"id": "f", "t": "express worries"}];
-var G_KEY = ["b", "d", "f", "a", "e", "c"];
+var G_ENDINGS = [{"id": "a", "t": "take the worst of something"}, {"id": "b", "t": "express worries"}, {"id": "c", "t": "finish in time"}, {"id": "d", "t": "reach a judgment from evidence"}, {"id": "e", "t": "start to succeed; catch on"}, {"id": "f", "t": "find a fair compromise"}];
+var G_KEY = ["d", "c", "b", "f", "e", "a"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "It's too early to ______ from one data point.", "a": ["draw a conclusion"]}, {"q": "We'll ______ if we start now.", "a": ["meet the deadline"]}, {"q": "Several reviewers ______ about privacy.", "a": ["raised concerns"]}, {"q": "We need to ______ between speed and quality.", "a": ["strike a balance"]}, {"q": "The campaign is finally ______.", "a": ["gaining traction"]}, {"q": "Support ______ of the outage.", "a": ["bore the brunt"]}];

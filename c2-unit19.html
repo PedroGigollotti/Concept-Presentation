@@ -371,7 +371,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -873,12 +873,12 @@ var E_DATA = [{"q": "This is a firm line for us.", "note": "[make it stronger, o
 function buildE(){ buildRewrite("E", E_DATA, "tune it"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["boil the ocean", "peel back the layers", "in the weeds", "the north star", "table stakes", "a paper tiger"];
-var F_ENDINGS = [{"id": "a", "t": "the guiding goal"}, {"id": "b", "t": "attempt something impossibly big"}, {"id": "c", "t": "something that looks threatening but isn't"}, {"id": "d", "t": "examine in progressively more detail"}, {"id": "e", "t": "the minimum needed to compete"}, {"id": "f", "t": "lost in excessive detail"}];
-var F_KEY = ["b", "d", "f", "a", "e", "c"];
+var F_ENDINGS = [{"id": "a", "t": "examine in progressively more detail"}, {"id": "b", "t": "the minimum needed to compete"}, {"id": "c", "t": "lost in excessive detail"}, {"id": "d", "t": "the guiding goal"}, {"id": "e", "t": "something that looks threatening but isn't"}, {"id": "f", "t": "attempt something impossibly big"}];
+var F_KEY = ["f", "a", "c", "d", "b", "e"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's not ______. Pick one market and win it.", "a": ["boil the ocean"]}, {"q": "We need to ______ on why churn rose.", "a": ["peel back the layers"]}, {"q": "I got ______ on formatting and missed the deadline.", "a": ["in the weeds"]}, {"q": "Retention is our ______ this year.", "a": ["north star"]}, {"q": "A working API is ______ now, not a differentiator.", "a": ["table stakes"]}, {"q": "Their lawsuit threat was a ______. Nothing came of it.", "a": ["paper tiger"]}];
-function buildG(){ buildGap("G", G_DATA, ["boil the ocean", "peel back the layers", "in the weeds", "the north star", "table stakes", "a paper tiger"]); }
+function buildG(){ buildGap("G", G_DATA, ["boil the ocean", "peel back the layers", "in the weeds", "north star", "table stakes", "paper tiger"]); }
 function checkG(){ checkGap("G", G_DATA); }
 var H_TIMED = [{"q": "The main obstacle is resolved and the end is in sight. Use one metaphor family, and stay in it.", "model": "We're past the roadblock and the finish line is in sight."}, {"q": "Name the obvious difficult topic that nobody is raising.", "model": "Let's not ignore the elephant in the room."}, {"q": "The new hires need to catch up before you raise expectations.", "model": "Let's get the new hires up to speed before we raise the bar."}, {"q": "This release will make a real, measurable difference.", "model": "This should move the needle."}];
 function buildHTimed(){ buildTimed("H", H_TIMED, 40); }

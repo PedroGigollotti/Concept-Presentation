@@ -391,7 +391,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -896,8 +896,8 @@ var F_DATA = [{"q": "That was an absolute catastrophe!", "keys": ["less than ide
 function buildF(){ buildRewrite("F", F_DATA, "dial it back"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["not exactly a walk in the park", "seen better days", "not my cup of tea", "no spring chicken", "not the sharpest tool", "could be worse"];
-var G_ENDINGS = [{"id": "a", "t": "not young anymore"}, {"id": "b", "t": "quite difficult"}, {"id": "c", "t": "bad, but bearable"}, {"id": "d", "t": "in poor condition now"}, {"id": "e", "t": "not very clever"}, {"id": "f", "t": "not to my taste"}];
-var G_KEY = ["b", "d", "f", "a", "e", "c"];
+var G_ENDINGS = [{"id": "a", "t": "quite difficult"}, {"id": "b", "t": "not very clever"}, {"id": "c", "t": "bad, but bearable"}, {"id": "d", "t": "in poor condition now"}, {"id": "e", "t": "not young anymore"}, {"id": "f", "t": "not to my taste"}];
+var G_KEY = ["a", "d", "f", "e", "b", "c"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "Learning the new system was ______. It took us weeks.", "a": ["not exactly a walk in the park"]}, {"q": "The old office has ______, but it still does the job.", "a": ["seen better days"]}, {"q": "Big networking events are ______, but I go anyway.", "a": ["not my cup of tea"]}, {"q": "He's ______ these days, but he still runs marathons.", "a": ["no spring chicken"]}, {"q": "Let's just say the new hire is ______.", "a": ["not the sharpest tool"]}, {"q": "We lost the pitch, but it ______. We kept the account.", "a": ["could be worse"]}];

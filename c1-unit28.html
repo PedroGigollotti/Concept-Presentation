@@ -320,7 +320,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -651,8 +651,8 @@ var C_DATA = [{"q": "A shipping issue delayed the order.", "note": "[standard pa
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["The claim was", "It got", "The request was", "You'll get", "The report was"];
-var D_ENDINGS = [{"id": "a", "t": "notified the moment it's approved."}, {"id": "b", "t": "delayed by a documentation issue."}, {"id": "c", "t": "reviewed by legal."}, {"id": "d", "t": "approved this morning."}, {"id": "e", "t": "flagged for a manual review."}];
-var D_KEY = ["b", "e", "d", "a", "c"];
+var D_ENDINGS = [{"id": "a", "t": "delayed by a missing signature page on the policyholder's form."}, {"id": "b", "t": "approved this morning, twenty minutes after the requester filed it."}, {"id": "c", "t": "notified the moment it's approved."}, {"id": "d", "t": "flagged for a manual review."}, {"id": "e", "t": "reviewed by legal before it went to the board."}];
+var D_KEY = ["a", "d", "b", "c", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "The claim got delayed.", "note": "[formal incident report register]", "keys": ["the claim was delayed"], "reject": ["got delayed"], "full": "The claim was delayed due to a documentation issue."}, {"q": "The request was approved this morning.", "note": "[casual update to a colleague]", "keys": ["got approved this morning"], "reject": ["was approved"], "full": "Hey, quick note, the request got approved this morning."}, {"q": "It gets seen by the team constantly, in an ongoing sense.", "note": "[fix the awkward get-passive with a standard passive]", "keys": ["it is seen by the team"], "reject": ["gets seen"], "full": "It is seen by the team on an ongoing basis."}, {"q": "The account got updated after the review.", "note": "[formal changelog register]", "keys": ["the account was updated"], "reject": ["got updated"], "full": "The account was updated following the review."}];
@@ -664,7 +664,7 @@ var F_KEY = ["e", "b", "f", "d", "c", "a"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "We hit a ______ with the shipping vendor.", "a": ["snag"]}, {"q": "That request must have ______ during the handoff.", "a": ["fallen through the cracks"]}, {"q": "We're back to normal now, we got things ______.", "a": ["back on track"]}, {"q": "There was a small ______ with the deployment, nothing serious.", "a": ["hiccup"]}, {"q": "I called the client to ______ after the delay.", "a": ["smooth things over"]}, {"q": "We used a ______ until the real fix ships.", "a": ["workaround"]}];
-function buildG(){ buildGap("G", G_DATA, ["a snag", "fall through the cracks", "get back on track", "a hiccup", "smooth things over", "a workaround"]); }
+function buildG(){ buildGap("G", G_DATA, ["snag", "fall through the cracks", "get back on track", "hiccup", "smooth things over", "workaround"]); }
 function checkG(){ checkGap("G", G_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); updateScore(); }

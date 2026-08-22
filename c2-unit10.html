@@ -371,7 +371,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -865,16 +865,16 @@ var C_DATA = [{"q": "The delay hurt us most.", "note": "[spotlight: the delay]",
 function buildC(){ buildRewrite("C", C_DATA, "cleft it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["It was not the product", "What the team needs", "All I'm asking for", "It was the review", "What went wrong"];
-var D_ENDINGS = [{"id": "a", "t": "is one more week."}, {"id": "b", "t": "but the price that lost the deal."}, {"id": "c", "t": "was a gap in the brief."}, {"id": "d", "t": "is a clearer set of priorities."}, {"id": "e", "t": "that caught the error."}];
-var D_KEY = ["b", "d", "a", "e", "c"];
+var D_ENDINGS = [{"id": "a", "t": "is one more week."}, {"id": "b", "t": "was a gap in the brief."}, {"id": "c", "t": "but the price that lost the deal."}, {"id": "d", "t": "is a clearer set of priorities."}, {"id": "e", "t": "that caught the error."}];
+var D_KEY = ["c", "d", "a", "e", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "Sam approved the budget.", "note": "[emphasize: Sam]", "keys": ["it was sam who"], "reject": ["sam approved the budget"], "full": "It was Sam who approved the budget."}, {"q": "We want honest feedback.", "note": "[build up to: honest feedback]", "keys": ["what we want is"], "reject": ["we want honest feedback"], "full": "What we want is honest feedback."}, {"q": "We only missed one deadline.", "note": "[minimize]", "keys": ["all we missed was"], "reject": ["we only missed"], "full": "All we missed was one deadline."}, {"q": "The tone of the email caused the problem.", "note": "[emphasize: the tone]", "keys": ["it was the tone"], "reject": ["the tone of the email caused"], "full": "It was the tone of the email that caused the problem."}];
 function buildE(){ buildRewrite("E", E_DATA, "steer the focus"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["the point is", "what it comes down to", "the bottom line", "when all is said and done", "the crux of it", "at its core"];
-var F_ENDINGS = [{"id": "a", "t": "the most important conclusion"}, {"id": "b", "t": "the central, decisive part"}, {"id": "c", "t": "the key thing is"}, {"id": "d", "t": "in its most essential nature"}, {"id": "e", "t": "the essential factor is"}, {"id": "f", "t": "ultimately; in the end"}];
-var F_KEY = ["c", "e", "a", "f", "b", "d"];
+var F_ENDINGS = [{"id": "a", "t": "in its most essential nature"}, {"id": "b", "t": "the key thing is"}, {"id": "c", "t": "the central, decisive part"}, {"id": "d", "t": "the essential factor is"}, {"id": "e", "t": "ultimately; in the end"}, {"id": "f", "t": "the most important conclusion"}];
+var F_KEY = ["b", "d", "f", "e", "c", "a"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "______, we can't ship without QA sign-off.", "a": ["The point is"]}, {"q": "______ is trust, plain and simple.", "a": ["What it comes down to"]}, {"q": "______: we're over budget and behind schedule.", "a": ["The bottom line"]}, {"q": "______, the client just wants the thing to work.", "a": ["When all is said and done"]}, {"q": "______ is that no one actually owned the decision.", "a": ["The crux of it"]}, {"q": "______, this is a communication problem, not a technical one.", "a": ["At its core"]}];

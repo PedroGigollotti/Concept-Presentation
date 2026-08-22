@@ -650,8 +650,8 @@ var C_DATA = [{"q": "We checked the logs. We found the root cause.", "keys": ["c
 function buildC(){ buildRewrite("C", C_DATA, "compress into one sentence"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Reviewing the contract,", "Faced with a tight deadline,", "The proposal, rejected twice,", "Having reviewed the numbers,", "The team, racing to finish,"];
-var D_ENDINGS = [{"id": "a", "t": "legal flagged one clause."}, {"id": "b", "t": "finally got approved."}, {"id": "c", "t": "skipped the review this week."}, {"id": "d", "t": "we prioritized the core details."}, {"id": "e", "t": "we sent it Friday."}];
-var D_KEY = ["a", "d", "b", "e", "c"];
+var D_ENDINGS = [{"id": "a", "t": "legal flagged one clause on page nine."}, {"id": "b", "t": "we sent it Friday, numbers and all."}, {"id": "c", "t": "finally got approved on the third pass."}, {"id": "d", "t": "skipped the review this week."}, {"id": "e", "t": "we prioritized the core details and let the appendix go."}];
+var D_KEY = ["a", "e", "c", "b", "d"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "Reviewing the proposal, several errors were found.", "keys": ["we found several errors"], "full": "Reviewing the proposal, we found several errors."}, {"q": "Having missed the deadline, the client was unhappy about us.", "keys": ["we upset the client"], "full": "Having missed the deadline, we upset the client."}, {"q": "Racing to finish, the error was never caught.", "keys": ["the team never caught the error"], "full": "Racing to finish, the team never caught the error."}, {"q": "Faced with new data, the plan was changed by the team.", "keys": ["the team changed the plan"], "full": "Faced with new data, the team changed the plan."}];

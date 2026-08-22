@@ -662,9 +662,9 @@ function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "This seems like a good approach.", "keys": ["absolutely the right approach"], "full": "This is absolutely the right approach."}, {"q": "We think the demand might be there.", "keys": ["we are certain the demand", "we're certain the demand"], "full": "We are certain the demand is there."}, {"q": "The data probably supports this.", "keys": ["data clearly supports"], "full": "The data clearly supports this."}, {"q": "This might be our strongest quarter.", "keys": ["by far our strongest quarter"], "full": "This is by far our strongest quarter."}, {"q": "It looks like the trend is real.", "keys": ["no doubt the trend is real"], "full": "There's no doubt the trend is real."}];
 function buildC(){ buildRewrite("C", C_DATA, "boost it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
-var D_OPENERS = ["This is absolutely", "We are certain", "The data is unambiguous", "This is by far", "There's no doubt that"];
-var D_ENDINGS = [{"id": "a", "t": "this is the right call."}, {"id": "b", "t": "the right market for us."}, {"id": "c", "t": "the demand is there."}, {"id": "d", "t": "our strongest signal to date."}, {"id": "e", "t": "on this particular point."}];
-var D_KEY = ["b", "c", "e", "d", "a"];
+var D_OPENERS = ["This is absolutely", "We are certain of", "The data is unambiguous", "This is by far", "There's no doubt that"];
+var D_ENDINGS = [{"id": "a", "t": "this is the right call."}, {"id": "b", "t": "the right market for us."}, {"id": "c", "t": "on this particular point."}, {"id": "d", "t": "our strongest signal to date."}, {"id": "e", "t": "the demand, after three quarters of it."}];
+var D_KEY = ["b", "e", "c", "d", "a"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You have one early data point and want to sound careful, not certain.", "a": 0, "note": "Cautious, honest: “This looks promising, though it's still one data point.”"}, {"q": "You have overwhelming evidence and want to sound fully confident.", "a": 1, "note": "Fully confident: “We are certain the demand is there, the data is unambiguous.”"}, {"q": "You want to make the boldest possible version of a true claim.", "a": 2, "note": "Boldest true claim: “This is by far our strongest signal to date.”"}, {"q": "You need to sound confident to investors, but the evidence is still mixed.", "a": 0, "note": "Confident tone, honest hedge: “We're confident in the direction, though a few signals are still mixed.”"}];

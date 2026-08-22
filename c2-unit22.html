@@ -371,7 +371,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -873,8 +873,8 @@ var E_DATA = [{"q": "A: raise prices. B: hold prices. B used more data.", "keys"
 function buildE(){ buildRewrite("E", E_DATA, "weigh and conclude"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["taken together", "on closer inspection", "broadly speaking", "the weight of evidence", "with the caveat that", "all else being equal"];
-var F_ENDINGS = [{"id": "a", "t": "what most evidence supports"}, {"id": "b", "t": "considering all of it as a whole"}, {"id": "c", "t": "assuming other factors are unchanged"}, {"id": "d", "t": "when examined more carefully"}, {"id": "e", "t": "with the qualification that"}, {"id": "f", "t": "in general terms"}];
-var F_KEY = ["b", "d", "f", "a", "e", "c"];
+var F_ENDINGS = [{"id": "a", "t": "considering all of it as a whole"}, {"id": "b", "t": "what most evidence supports"}, {"id": "c", "t": "assuming other factors are unchanged"}, {"id": "d", "t": "when examined more carefully"}, {"id": "e", "t": "in general terms"}, {"id": "f", "t": "with the qualification that"}];
+var F_KEY = ["a", "d", "e", "b", "f", "c"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "______, the two reports point the same way.", "a": ["Taken together"]}, {"q": "The claim looks strong, but ______ the sample is tiny.", "a": ["on closer inspection"]}, {"q": "______, adoption is rising across regions.", "a": ["Broadly speaking"]}, {"q": "______ favors the second approach.", "a": ["The weight of evidence"]}, {"q": "We'll proceed, ______ the budget is confirmed.", "a": ["with the caveat that"]}, {"q": "______, the cheaper vendor wins.", "a": ["All else being equal"]}];

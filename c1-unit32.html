@@ -335,7 +335,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -666,8 +666,8 @@ var C_DATA = [{"q": "We discussed and resolved the details yesterday.", "keys": 
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["We hashed out", "I need to flesh out", "We're waiting on", "I'll follow up on", "Let's circle back on"];
-var D_ENDINGS = [{"id": "a", "t": "that this afternoon."}, {"id": "b", "t": "legal to sign off."}, {"id": "c", "t": "the budget section."}, {"id": "d", "t": "the pricing next week."}, {"id": "e", "t": "the details yesterday."}];
-var D_KEY = ["e", "c", "b", "a", "d"];
+var D_ENDINGS = [{"id": "a", "t": "the budget section."}, {"id": "b", "t": "legal to sign off."}, {"id": "c", "t": "the details yesterday."}, {"id": "d", "t": "that before I leave today."}, {"id": "e", "t": "the pricing once we all have the numbers."}];
+var D_KEY = ["c", "a", "b", "d", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You're writing a formal report and need the precise, single-word verb.", "a": 0, "note": "Formal report: “We finalized the contract terms after thorough discussion.”"}, {"q": "You're chatting with a colleague about a task in progress.", "a": 1, "note": "Casual chat: “We hashed out the details yesterday.”"}, {"q": "You want to sound natural describing a follow-up you plan to do.", "a": 1, "note": "Natural follow-up: “I'll follow up on that this afternoon.”"}, {"q": "You're describing a detail-adding task casually to your team.", "a": 1, "note": "Casual, detail-adding: “I still need to flesh out this section a bit.”"}];

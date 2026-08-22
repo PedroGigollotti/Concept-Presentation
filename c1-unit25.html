@@ -328,7 +328,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -659,8 +659,8 @@ var C_DATA = [{"q": "We decided to delay the launch.", "keys": ["the decision to
 function buildC(){ buildRewrite("C", C_DATA, "formalize it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["The decision to delay", "Our awareness of the risk", "The implementation of the fix", "There's growing recognition of", "The assessment of the option"];
-var D_ENDINGS = [{"id": "a", "t": "the opportunity ahead."}, {"id": "b", "t": "was made after careful review."}, {"id": "c", "t": "is now complete."}, {"id": "d", "t": "has grown significantly."}, {"id": "e", "t": "took longer than expected."}];
-var D_KEY = ["b", "d", "e", "a", "c"];
+var D_ENDINGS = [{"id": "a", "t": "was made after careful review, and the minutes record it."}, {"id": "b", "t": "is now complete and sits with the board."}, {"id": "c", "t": "has grown significantly since the incident."}, {"id": "d", "t": "took longer than expected, mostly in testing."}, {"id": "e", "t": "the opportunity ahead."}];
+var D_KEY = ["a", "c", "d", "e", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You're writing a formal board report about a decision.", "a": 0, "note": "Formal report: “The decision to delay was made following a thorough risk assessment.”"}, {"q": "You're messaging a colleague quickly about the same decision.", "a": 1, "note": "Casual message: “We decided to hold off for now, given the risk.”"}, {"q": "You're summarizing a risk assessment for a formal document.", "a": 0, "note": "Formal summary: “The assessment of the risk is now complete and documented.”"}, {"q": "You're explaining the same risk casually in a meeting.", "a": 1, "note": "Casual explanation: “We looked at the risk and it's actually fine.”"}];

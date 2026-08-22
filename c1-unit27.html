@@ -324,7 +324,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -655,8 +655,8 @@ var C_DATA = [{"q": "Analysts believe the figures are accurate.", "keys": ["it i
 function buildC(){ buildRewrite("C", C_DATA, "distance the source"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["It is understood that", "The company is believed to be", "It is expected that", "The decision is said to have been", "It is thought that"];
-var D_ENDINGS = [{"id": "a", "t": "reviewing its options."}, {"id": "b", "t": "made at the board level."}, {"id": "c", "t": "talks have stalled."}, {"id": "d", "t": "a statement will follow soon."}, {"id": "e", "t": "the figures are accurate."}];
-var D_KEY = ["e", "a", "d", "b", "c"];
+var D_ENDINGS = [{"id": "a", "t": "the figures are accurate, and the auditors have signed."}, {"id": "b", "t": "talks have stalled, though nobody will say so publicly."}, {"id": "c", "t": "reviewing its options."}, {"id": "d", "t": "made at the board level."}, {"id": "e", "t": "a statement will follow before the market opens."}];
+var D_KEY = ["a", "c", "e", "d", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "You want to name the source directly and confidently.", "a": 0, "note": "Named, confident: “Our CFO confirmed these figures directly.”"}, {"q": "You genuinely don't know the source and want to be careful.", "a": 1, "note": "Genuinely uncertain: “It is understood that talks are ongoing, though details are unclear.”"}, {"q": "You want to sound cautious without committing to a claim.", "a": 2, "note": "Cautious, non-committal: “It is believed that a decision is close.”"}, {"q": "You're deliberately avoiding naming a source you actually know.", "a": 3, "note": "Deliberately vague: “It is said that the board discussed this, though we can't confirm.”"}];
@@ -671,7 +671,7 @@ var G_KEY = ["c", "f", "d", "a", "b", "e"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "She told me ______, so I can't quote her directly.", "a": ["off the record"]}, {"q": "The information was shared ______, just for context.", "a": ["on background"]}, {"q": "There's been a ______ about the merger talks.", "a": ["leak"]}, {"q": "The company's ______ is that no decision has been made.", "a": ["official line"]}, {"q": "They plan to ______ with the announcement next week.", "a": ["go public"]}, {"q": "Legal advised us to ______ until we have more facts.", "a": ["stonewall"]}];
-function buildH(){ buildGap("H", H_DATA, ["off the record", "on background", "a leak", "an official line", "go public", "stonewall"]); }
+function buildH(){ buildGap("H", H_DATA, ["off the record", "on background", "leak", "official line", "go public", "stonewall"]); }
 function checkH(){ checkGap("H", H_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }

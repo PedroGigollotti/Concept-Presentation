@@ -394,7 +394,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -888,8 +888,8 @@ var C_DATA = [{"q": "If we had reviewed the clause, we would have caught it.", "
 function buildC(){ buildRewrite("C", C_DATA, "rewrite without if"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Had we escalated sooner,", "Were the terms to change,", "Should the shipment arrive late,", "Had it not been for the backup,", "Were it not for the penalty clause,"];
-var D_ENDINGS = [{"id": "a", "t": "the data would have been lost."}, {"id": "b", "t": "the carrier will notify you directly."}, {"id": "c", "t": "the outage would not have spread."}, {"id": "d", "t": "we would renegotiate the deadline."}, {"id": "e", "t": "we would need board approval again."}];
-var D_KEY = ["c", "e", "b", "a", "d"];
+var D_ENDINGS = [{"id": "a", "t": "the carrier will notify you directly."}, {"id": "b", "t": "we would need board approval again."}, {"id": "c", "t": "the outage would not have spread."}, {"id": "d", "t": "we would renegotiate the deadline."}, {"id": "e", "t": "the data would have been lost."}];
+var D_KEY = ["c", "b", "a", "e", "d"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "A clause in a contract setting out what happens if the buyer defaults on payment.", "a": 1, "note": "Formal inversion: &#8220;Should the buyer default, the deposit shall be forfeited.&#8221;"}, {"q": "A quick chat message asking a teammate to ping you if the build breaks.", "a": 0, "note": "Everyday &#8220;if&#8221;: &#8220;Ping me if the build breaks.&#8221; The inversion would sound absurd here."}, {"q": "A formal letter offering a client help if they need anything further.", "a": 1, "note": "Formal inversion: &#8220;Should you require anything further, please do not hesitate to contact us.&#8221;"}, {"q": "Reassuring a colleague, casually, that things would have been fine if they had just asked.", "a": 0, "note": "Everyday &#8220;if&#8221;: &#8220;Honestly, if you'd asked, it would have been fine.&#8221;"}];

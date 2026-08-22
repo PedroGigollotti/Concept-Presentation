@@ -371,7 +371,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -865,16 +865,16 @@ var C_DATA = [{"q": "We have rarely faced a tighter deadline.", "keys": ["rarely
 function buildC(){ buildRewrite("C", C_DATA, "invert it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Never before", "Only when the results came in", "Not until the audit", "So sharp was the drop", "Under no circumstances"];
-var D_ENDINGS = [{"id": "a", "t": "did we grasp the full cost."}, {"id": "b", "t": "has the team faced a test like this."}, {"id": "c", "t": "that the board called an emergency meeting."}, {"id": "d", "t": "did we see the pattern clearly."}, {"id": "e", "t": "are staff to discuss the case externally."}];
-var D_KEY = ["b", "d", "a", "c", "e"];
+var D_ENDINGS = [{"id": "a", "t": "that the board called an emergency meeting."}, {"id": "b", "t": "did we grasp the full cost."}, {"id": "c", "t": "are staff to discuss the case externally."}, {"id": "d", "t": "did we see the pattern clearly."}, {"id": "e", "t": "has the team faced a test like this."}];
+var D_KEY = ["e", "d", "b", "a", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "We have never been this close to the goal.", "keys": ["never have we been"], "reject": ["we have never"], "full": "Never have we been this close to the goal."}, {"q": "The demand was so high that the servers crashed.", "keys": ["so high was the demand"], "reject": ["demand was so high"], "full": "So high was the demand that the servers crashed."}, {"q": "They realized the mistake only later.", "keys": ["only later did they"], "reject": ["they realized the mistake"], "full": "Only later did they realize the mistake."}, {"q": "We had hardly started when the power went out.", "keys": ["hardly had we started"], "reject": ["we had hardly started"], "full": "Hardly had we started when the power went out."}];
 function buildE(){ buildRewrite("E", E_DATA, "add the emphasis"); }
 function checkE(){ checkRewrite("E", E_DATA); }
 var F_OPENERS = ["make no mistake", "let there be no doubt", "time and again", "at every turn", "bar none", "hands down"];
-var F_ENDINGS = [{"id": "a", "t": "repeatedly"}, {"id": "b", "t": "without exception"}, {"id": "c", "t": "be certain; I mean this seriously"}, {"id": "d", "t": "by a clear margin; unquestionably"}, {"id": "e", "t": "I state this emphatically"}, {"id": "f", "t": "constantly; at each stage"}];
-var F_KEY = ["c", "e", "a", "f", "b", "d"];
+var F_ENDINGS = [{"id": "a", "t": "constantly; at each stage"}, {"id": "b", "t": "without exception"}, {"id": "c", "t": "be certain; I mean this seriously"}, {"id": "d", "t": "repeatedly"}, {"id": "e", "t": "I state this emphatically"}, {"id": "f", "t": "by a clear margin; unquestionably"}];
+var F_KEY = ["c", "e", "d", "a", "b", "f"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "______: this decision is final.", "a": ["Make no mistake"]}, {"q": "______, she is the strongest candidate we have.", "a": ["Let there be no doubt"]}, {"q": "We warned them ______, and they ignored it every time.", "a": ["time and again"]}, {"q": "The vendor overpromised and underdelivered ______.", "a": ["at every turn"]}, {"q": "It is the best tool for this job, ______.", "a": ["bar none"]}, {"q": "She is the most capable engineer on the team, ______.", "a": ["hands down"]}];

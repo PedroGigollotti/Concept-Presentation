@@ -316,7 +316,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -637,7 +637,7 @@ function checkGap(L, data){
 }
 
 
-var A_DATA = [{"q": "Signups dropped sharply. ______ suggests a deeper issue.", "a": ["This"]}, {"q": "We've had several complaints about delays. ______ issues need quick attention.", "a": ["Such"]}, {"q": "Will the client renew? I think ______.", "a": ["so"]}, {"q": "Engagement fell across every channel. ______ points to a broader trend.", "a": ["That"]}, {"q": "The team missed the deadline again. ______ pattern is worth addressing.", "a": ["This"]}, {"q": "Is the fix stable? I hope ______.", "a": ["so"]}];
+var A_DATA = [{"q": "Signups dropped sharply. ______ suggests a deeper issue.", "a": ["This", "That"], "why": "Both work. This keeps the drop close and current; that holds it at a little more distance. Neither is more correct."}, {"q": "We've had several complaints about delays. ______ issues need quick attention.", "a": ["Such"]}, {"q": "Will the client renew? I think ______.", "a": ["so"]}, {"q": "Engagement fell across every channel. ______ points to a broader trend.", "a": ["That", "This"], "why": "Both work, for the same reason as item 1."}, {"q": "The team missed the deadline again. ______ pattern is worth addressing.", "a": ["This"]}, {"q": "Is the fix stable? I hope ______.", "a": ["so"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "Retention dropped. That suggest a deeper problem.", "keys": ["that suggests a deeper problem"], "reject": ["that suggest a"], "full": "Retention dropped. That suggests a deeper problem."}, {"q": "We've had complaints about billing. Such a issue needs escalation.", "keys": ["such issues need escalation"], "reject": ["such a issue"], "full": "We've had complaints about billing. Such issues need escalation."}, {"q": "Will it renew? I think it.", "keys": ["i think so"], "reject": ["i think it"], "full": "Will it renew? I think so."}, {"q": "Engagement is down. This point to a broader trend.", "keys": ["this points to a broader trend"], "reject": ["this point to"], "full": "Engagement is down. This points to a broader trend."}, {"q": "The client asked for a discount. If it so, loop in finance.", "keys": ["if so, loop in finance"], "reject": ["if it so"], "full": "The client asked for a discount. If so, loop in finance."}];
@@ -647,8 +647,8 @@ var C_DATA = [{"q": "Retention dropped last month. The drop in retention suggest
 function buildC(){ buildRewrite("C", C_DATA, "rewrite the second sentence"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["Retention dropped. This", "We've had billing complaints. Such issues", "Will it renew? I", "Engagement is down. That", "The client asked for a discount. If so,"];
-var D_ENDINGS = [{"id": "a", "t": "think so."}, {"id": "b", "t": "points to a broader trend."}, {"id": "c", "t": "need quick escalation."}, {"id": "d", "t": "let's loop in finance."}, {"id": "e", "t": "suggests a deeper problem."}];
-var D_KEY = ["e", "c", "a", "b", "d"];
+var D_ENDINGS = [{"id": "a", "t": "suggests customers are leaving before they see value."}, {"id": "b", "t": "think so."}, {"id": "c", "t": "need quick escalation."}, {"id": "d", "t": "let's loop in finance."}, {"id": "e", "t": "points to a content problem, not a pricing one."}];
+var D_KEY = ["a", "c", "b", "e", "d"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "Retention dropped, churn rose, and engagement fell. This is concerning.", "note": "[specify what this refers to]", "keys": ["this overall decline"], "full": "Retention dropped, churn rose, and engagement fell. This overall decline is concerning."}, {"q": "We missed the deadline and the client complained. That needs addressing.", "note": "[specify what that refers to]", "keys": ["that combination"], "full": "We missed the deadline and the client complained. That combination needs addressing."}, {"q": "The fix shipped and the metrics improved. This is good news, but let's watch it.", "note": "[specify what this refers to]", "keys": ["this improvement"], "full": "The fix shipped and the metrics improved. This improvement is good news, but let's watch it."}, {"q": "Costs rose and margins fell. That's the real issue this quarter.", "note": "[specify what that refers to]", "keys": ["that squeeze"], "full": "Costs rose and margins fell. That squeeze is the real issue this quarter."}];
@@ -660,7 +660,7 @@ var F_KEY = ["f", "c", "a", "e", "d", "b"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______ the billing issue once we've covered onboarding.", "a": ["circle back to"]}, {"q": "______ is that retention needs urgent attention.", "a": ["The upshot"]}, {"q": "Missed deadlines have been a ______ this quarter.", "a": ["running theme"]}, {"q": "I want to ______ these three points before we wrap up.", "a": ["tie together"]}, {"q": "The ______ is that we need more headcount.", "a": ["crux of it"]}, {"q": "Something ______ happened last quarter too.", "a": ["along those lines"]}];
-function buildG(){ buildGap("G", G_DATA, ["circle back to", "the crux of it", "a running theme", "tie together", "the upshot", "along those lines"]); }
+function buildG(){ buildGap("G", G_DATA, ["circle back to", "crux of it", "running theme", "tie together", "the upshot", "along those lines"]); }
 function checkG(){ checkGap("G", G_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); updateScore(); }

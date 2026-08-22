@@ -324,7 +324,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -668,7 +668,7 @@ var F_KEY = ["b", "f", "d", "e", "a", "c"];
 function buildF(){ buildMatch("F", F_OPENERS, F_ENDINGS, true); }
 function checkF(){ checkMatch("F", F_ENDINGS, F_KEY); }
 var G_DATA = [{"q": "Let's ______ and see if the new approach works.", "a": ["give it a shot"]}, {"q": "He finally managed to ______ of checking email at midnight.", "a": ["kick the habit"]}, {"q": "Our first attempt was a ______, we had to restart.", "a": ["false start"]}, {"q": "She's starting to ______ following up within a day.", "a": ["make a habit of"]}, {"q": "We need to ______ of missed deadlines somehow.", "a": ["break the cycle"]}, {"q": "It took a lot of ______ to get the process right.", "a": ["trial and error"]}];
-function buildG(){ buildGap("G", G_DATA, ["give it a shot", "kick a habit", "a false start", "make a habit of", "break the cycle", "trial and error"]); }
+function buildG(){ buildGap("G", G_DATA, ["give it a shot", "kick a habit", "false start", "make a habit of", "break the cycle", "trial and error"]); }
 function checkG(){ checkGap("G", G_DATA); }
 
 function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); updateScore(); }

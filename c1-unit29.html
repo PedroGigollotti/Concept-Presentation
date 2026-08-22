@@ -318,7 +318,7 @@
     <div class="ex-block">
       <span class="ex-label">G</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from F. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from F. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exG"></div>
       <button class="check-btn" onclick="checkG()">Check my answers</button>
     </div>
@@ -648,9 +648,9 @@ function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "I finished the report myself this morning.", "note": "[it was actually the team]", "keys": ["had the team finish"], "reject": ["i finished the report myself"], "full": "I had the team finish the report this morning."}, {"q": "Legal reviewed it by noon.", "note": "[you arranged this]", "keys": ["got legal to review"], "reject": ["legal reviewed it by noon."], "full": "We got legal to review it by noon."}, {"q": "The deck is being redesigned.", "note": "[you arranged this, no need to name who]", "keys": ["having the deck redesigned"], "reject": ["the deck is being"], "full": "I'm having the deck redesigned."}, {"q": "It will be translated by Friday.", "note": "[you arranged this]", "keys": ["get it translated by friday"], "reject": ["it will be translated"], "full": "We'll get it translated by Friday."}, {"q": "The archive was digitized overnight.", "note": "[you arranged this]", "keys": ["had the archive digitized"], "reject": ["the archive was digitized"], "full": "We had the archive digitized overnight."}];
 function buildC(){ buildRewrite("C", C_DATA, "rewrite it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
-var D_OPENERS = ["I had the team", "We got legal to", "I'm having the deck", "We'll get it", "We had the archive"];
-var D_ENDINGS = [{"id": "a", "t": "translated by Friday."}, {"id": "b", "t": "redesigned before we send it."}, {"id": "c", "t": "digitized overnight."}, {"id": "d", "t": "finish it this morning."}, {"id": "e", "t": "review it by noon."}];
-var D_KEY = ["d", "e", "b", "a", "c"];
+var D_OPENERS = ["I had the team", "We got legal to", "I'm having the deck", "We'll get the contract", "We had the archive"];
+var D_ENDINGS = [{"id": "a", "t": "finish it before standup."}, {"id": "b", "t": "digitized, all forty years of it."}, {"id": "c", "t": "redesigned before the pitch on Monday."}, {"id": "d", "t": "sign off on the indemnity clause."}, {"id": "e", "t": "translated into Portuguese by Friday."}];
+var D_KEY = ["a", "d", "c", "e", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "I finished the redesign.", "note": "[actually the design team did it, arranged by you]", "keys": ["had the design team finish"], "reject": ["i finished the redesign."], "full": "I had the design team finish the redesign."}, {"q": "We reviewed the contract by noon.", "note": "[actually legal did it, arranged by you]", "keys": ["got legal to review the contract"], "reject": ["we reviewed the contract by"], "full": "We got legal to review the contract by noon."}, {"q": "The server was patched.", "note": "[you arranged this, no need to name who]", "keys": ["had the server patched"], "reject": ["the server was patched."], "full": "We had the server patched."}, {"q": "We translated it by Friday.", "note": "[actually a vendor did it, arranged by you]", "keys": ["got a vendor to translate"], "reject": ["we translated it by"], "full": "We got a vendor to translate it by Friday."}];

@@ -391,7 +391,7 @@
     <div class="ex-block">
       <span class="ex-label">H</span>
       <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Change the form where the sentence needs it.</p>
+      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once. Change the form where the sentence needs it.</p>
       <div id="exH"></div>
       <button class="check-btn" onclick="checkH()">Check my answers</button>
     </div>
@@ -885,8 +885,8 @@ var C_DATA = [{"q": "Send me the report.", "note": "[formal]", "keys": ["could y
 function buildC(){ buildRewrite("C", C_DATA, "shift it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["commence", "kick off", "utilize", "terminate", "ping"];
-var D_ENDINGS = [{"id": "a", "t": "casual: begin"}, {"id": "b", "t": "formal: begin"}, {"id": "c", "t": "casual: message someone quickly"}, {"id": "d", "t": "formal: use"}, {"id": "e", "t": "formal: end"}];
-var D_KEY = ["b", "a", "d", "e", "c"];
+var D_ENDINGS = [{"id": "a", "t": "formal: use"}, {"id": "b", "t": "formal: end"}, {"id": "c", "t": "casual: message someone quickly"}, {"id": "d", "t": "casual: begin"}, {"id": "e", "t": "formal: begin"}];
+var D_KEY = ["e", "d", "a", "b", "c"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, true); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "A legal clause in a signed contract.", "a": 0, "note": "Frozen / formal: &#8220;The Supplier shall commence work within ten business days of execution.&#8221;"}, {"q": "A chat message to a teammate you've known for years.", "a": 1, "note": "Casual: &#8220;Hey, can you ping me when the build's green?&#8221;"}, {"q": "A first-contact email to a senior client you've never met.", "a": 2, "note": "Consultative / formal: &#8220;Dear Ms. Reyes, I'm writing to introduce myself and propose a brief call.&#8221;"}, {"q": "A quick reminder to a peer about a shared deadline.", "a": 3, "note": "Neutral: &#8220;Quick reminder, the draft's due Thursday. Shout if you need anything.&#8221;"}];
@@ -896,8 +896,8 @@ var F_DATA = [{"q": "Send it by five.", "note": "[deferential]", "keys": ["would
 function buildF(){ buildRewrite("F", F_DATA, "set the directness"); }
 function checkF(){ checkRewrite("F", F_DATA); }
 var G_OPENERS = ["as per", "heads up", "at your convenience", "no worries", "duly noted", "for what it's worth"];
-var G_ENDINGS = [{"id": "a", "t": "casual: it's fine"}, {"id": "b", "t": "formal: in accordance with"}, {"id": "c", "t": "casual-hedged: offering a minor opinion"}, {"id": "d", "t": "casual: advance warning"}, {"id": "e", "t": "formal: recorded and acknowledged"}, {"id": "f", "t": "formal-polite: whenever suits you"}];
-var G_KEY = ["b", "d", "f", "a", "e", "c"];
+var G_ENDINGS = [{"id": "a", "t": "formal-polite: whenever suits you"}, {"id": "b", "t": "formal: in accordance with"}, {"id": "c", "t": "casual: advance warning"}, {"id": "d", "t": "formal: recorded and acknowledged"}, {"id": "e", "t": "casual: it's fine"}, {"id": "f", "t": "casual-hedged: offering a minor opinion"}];
+var G_KEY = ["b", "c", "a", "e", "d", "f"];
 function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
 function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
 var H_DATA = [{"q": "______ our agreement, payment is due in thirty days.", "a": ["As per"]}, {"q": "Just a ______: the client moved the call up.", "a": ["heads up"]}, {"q": "Reply ______. There's no rush at all.", "a": ["at your convenience"]}, {"q": "Thanks for the fix. ______!", "a": ["No worries"]}, {"q": "Your feedback is ______.", "a": ["duly noted"]}, {"q": "______, I'd hold the launch a week.", "a": ["For what it's worth"]}];
