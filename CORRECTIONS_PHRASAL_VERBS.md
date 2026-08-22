@@ -225,6 +225,63 @@ on the mirror. A machine check is the stronger record of the two.
 Neither defect changes a word a student reads. Both change which answer the
 page marks correct.
 
+## Pedagogical review, units 1 to 10 read, 2026-08-22
+
+| Location | As published | Approved correction |
+|---|---|---|
+| `unit1.html`, exercise A | "One sentence has none" | `Two sentences have none` |
+| `unit2.html`, exercise D | `"separable: also splits, pick it up"` | `"separable: pronoun goes between, as in pick it up"` |
+| `unit3.html`, exercise B title | "Spot and fix the error" | `Write out the blend` |
+| `unit26.html`, exercise G | `"make noticeable progress"` / `"start to make real progress"` | `"move forward against something difficult"` |
+| `unit9.html`, exercise B | `key:"put off"` on item 3, `key:"backed out of"` on item 5 | `key:"launch off"` |
+| `unit15.html`, exercise B | `key:"water down the proposal"`, `key:"tone down the forecast"` | `key:"proposal down"` |
+| `unit17.html`, exercise B | `key:"scale back"` | `key:"rollout back"` |
+| `unit18.html`, exercise B | `key:"hand over"`, `key:"talk over"` | `key:"workstream over"` |
+| `unit21.html`, exercise B | `key:"turn around"`, `key:"pass around"` | `key:"flow around"` |
+| `unit25.html`, exercise B | `key:"put across"` | `key:"numbers across"` |
+
+**Exercise B marked the book's own model answer wrong, in 10 of 160 items.**
+B is graded by substring: the answer passes if it contains `key`. In each of
+these the defective prompt has the wrong particle in the separated word order
+("Let's water the proposal off"), and the printed model answer keeps that order
+and swaps the particle ("Let's water the proposal down"). The graded key had
+been written in the joined order ("water down the proposal"), which the model
+answer does not contain. A learner who copied the answer printed under the
+exercise was marked wrong. Unit 2 teaches that both orders are correct with a
+full noun phrase, so the grader also contradicted the rule the book teaches.
+
+Each key is now the object plus the corrected particle, which appears in the
+printed answer and does not appear in the defective prompt. The tenth,
+`unit9.html` item 5, was different in kind: the grader demanded "backed out of"
+while the printed answer said "backed off the earnout". Those are different
+verbs with different meanings, and the printed answer is the right one.
+
+`check_pv_softkey()` now fails the run on both directions: a graded key absent
+from its own printed model answer, and a graded key already present in the
+prompt, which would pass an answer that changed nothing.
+
+**Exercise A in unit 1 told the learner the wrong number.** "One sentence has
+none; write none" over six items, two of which are keyed "none". A learner who
+believes the instruction stops looking after the first and gets the second
+wrong while doing exactly what they were told. `check_instruction_count()` now
+fails the run when an instruction states a count the data contradicts.
+
+**Unit 3's exercise B was titled "Spot and fix the error"** over items the unit
+itself presents as accurate transcription: "Each phrasal verb is written the
+way it blends in fast speech." The unit teaches that blending is what fluent
+speakers do, and the title called it an error. Swept the other 31 units; it was
+the only title that named an error where the instruction described none.
+
+**Unit 2's exercise D had an ending that depended on reading order.**
+"separable: also splits, pick it up" only makes sense after the other separable
+entry, and the endings are displayed scrambled, so "also" could appear first.
+
+**Unit 26's exercise G did not decide.** "make headway" was keyed to "make
+noticeable progress" and "gain traction" to "start to make real progress".
+Either definition read correctly against either term. They now name what
+separates the two: headway is movement against resistance, traction is other
+people starting to back it.
+
 ## Why this file exists
 
 These pages have no generator. This record is the only place the correction is
