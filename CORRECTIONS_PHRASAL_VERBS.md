@@ -327,6 +327,38 @@ rewriting it:
   negative in "Let's not take on", and *cut down on* takes a preposition that
   *scale down* does not.
 
+## Pedagogical review, units 21 to 32 read, the book closed, 2026-08-22
+
+| Location | As published | Approved correction |
+|---|---|---|
+| `unit21.html`, exercise G | `"suggest rough ideas freely and quickly"` | `"suggest rough ideas out loud, fast and unfiltered"` |
+| `unit22.html`, exercise D | `"the whole vendor list."` | `"the whole vendor list ourselves, not just the flagged rows."` |
+| `unit27.html`, exercise G | `"the final result or conclusion"` | `"the outcome, once everything has played out"` |
+| `unit28.html`, exercise C | "Let's solve a phased plan we can fund." | `"Let's devise a phased plan we can fund."` |
+| `unit31.html`, exercise A | `a:"get on board with"` and `a:"on board with"` | `a:"not get on board with"` |
+
+**Unit 31 keyed two answers in the positive where the meaning needs the
+negative.** "I oppose slipping the date" was keyed *get on board with*, and "I
+disagree with cutting QA" was keyed *on board with*. Getting on board with
+something is agreeing to it. The page contradicted itself twice over: its own
+exercise D reads "Not get on board with", and its American/British callout says
+"This book uses not sold on and not on board with." Grading is an exact string
+match, so the learner had to type the phrase that means the opposite of the
+prompt.
+
+**Unit 28 asked the learner to rewrite a sentence that was not English.**
+"Let's solve a phased plan we can fund." You do not solve a plan. Exercise C
+gives a formal verb to replace with a phrasal verb, so the formal verb has to be
+correct English first. *Devise* is the formal twin of *work out* for a plan, and
+the printed key already read "Let's work out a phased plan we can fund."
+
+**Three more matching exercises did not decide**, and took the same treatment as
+the six before them: name what separates the pair, or add a grammatical lock.
+*Spitball* is talking, *throw spaghetti at the wall* is doing. *The upshot* is
+what it led to, *the bottom line* is what matters more than the rest. And
+*ourselves* cannot follow "I'll dig into", which fixes the vendor-list ending to
+"We need to look into".
+
 ## Why this file exists
 
 These pages have no generator. This record is the only place the correction is
