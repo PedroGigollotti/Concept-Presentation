@@ -282,6 +282,51 @@ Either definition read correctly against either term. They now name what
 separates the two: headway is movement against resistance, traction is other
 people starting to back it.
 
+## Pedagogical review, units 11 to 20 read, 2026-08-22
+
+| Location | As published | Approved correction |
+|---|---|---|
+| `unit7.html`, exercise B | "The committee ruled against the second option" | `The committee ruled off the second option` |
+| `unit7.html`, exercise D | `"the regional workshops to close the gap."` | `"the regional workshops ourselves, to close the gap."` |
+| `unit8.html`, exercise B | "The pilot turned out a success faster than we expected." | `We hand in the revised deck to every regional lead on Friday.` |
+| `unit9.html`, exercise D | `"before the documents were signed."` | `"before the documents were signed, saying his flight was at eight."` |
+| `unit9.html`, exercise G | `"end an effort or a partnership"` | `"give up and stop, with both sides agreeing"` |
+| `unit10.html`, exercise G | `"start fast and productively"` | `"start at full speed from day one"` |
+| `unit11.html`, exercise D | `"the returns backlog until outbound settles."` | `"any more of the returns backlog until outbound settles."` |
+| `unit15.html`, exercise D | `"the travel budget before the review."` | `"on travel before the review."` |
+| `unit15.html`, exercise G | `"set a firm limit you won't cross"` | `"set a firm limit in advance, before the pressure starts"` |
+| `unit16.html`, exercise G | `"fixed and impossible to change"` | `"fixed, and no longer open to change"` |
+
+**Two items were presented as errors that were not errors.** Unit 7 said "The
+committee ruled against the second option and kept the first" under an
+instruction reading "Each sentence has one mistake." *Ruled against* is correct,
+idiomatic English. There was no mistake to find, only a word to swap, which is
+what exercise C of the same unit is for. It is now a wrong particle, *ruled
+off*, which is an error. Unit 8's "The pilot turned out a success" was the same
+shape one step weaker: *turn out* plus a noun phrase without *to be* exists and
+is attested, it is only rare in this register. Replaced with a wrong particle,
+*hand in* where the sense needs *hand out*.
+
+**Six matching exercises did not decide.** In each, two answers swapped places
+and both readings survived. The fix names what separates the pair rather than
+rewriting it:
+
+- unit 9 G, *pull the plug* against *call it quits*: who ends it. A decision
+  from above, or both sides agreeing to stop.
+- unit 10 G, *hit the ground running* against *get the ball rolling*: full speed
+  from day one, or setting something moving for others to carry on.
+- unit 15 G, *draw a line in the sand* against *put your foot down*: a limit set
+  in advance, or a refusal after being pushed.
+- unit 16 G, *set in stone* against *a done deal*: no longer changeable, or
+  settled by agreement.
+- unit 7 D and unit 9 D took grammatical locks instead, because the endings are
+  sentence halves. *ourselves* cannot follow "The plan leaves out", and "saying
+  his flight was at eight" needs a subject that can speak, which "The
+  negotiations" is not.
+- unit 11 D and unit 15 D took the same treatment. *any more* requires the
+  negative in "Let's not take on", and *cut down on* takes a preposition that
+  *scale down* does not.
+
 ## Why this file exists
 
 These pages have no generator. This record is the only place the correction is

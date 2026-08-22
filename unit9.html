@@ -512,7 +512,7 @@ function toggleKey(id){ document.getElementById(id).classList.toggle('shown'); }
 
 /* ===== D. Match the halves ===== */
 var D_ITEMS = ["The board voted to call off","We can't afford to put off","The negotiations broke off","Their lead counsel took off","Let's split off"];
-var D_MEAN = ["the disputed warranties into a side letter.", "the merger after diligence.", "before the documents were signed.", "the moment the buyer left the room.", "the vote for a third time."];
+var D_MEAN = ["the disputed warranties into a side letter.", "the merger after diligence.", "before the documents were signed, saying his flight was at eight.", "the moment the buyer left the room.", "the vote for a third time."];
 var D_CORRECT = [1, 4, 3, 2, 0];
 function buildD(){
   var el = document.getElementById('exD'); el.innerHTML = '';
@@ -590,7 +590,7 @@ function checkF(){
 
 /* ===== G. Vocabulary matching ===== */
 var G_TERMS = ["pull the plug","kick the can down the road","call it quits","put it on ice","a stumbling block","back to the drawing board"];
-var G_MEAN = ["delay a decision instead of making it", "end an effort or a partnership", "pause something indefinitely", "start over after a failure", "the obstacle that holds progress up", "stop something for good"];
+var G_MEAN = ["delay a decision instead of making it", "give up and stop, with both sides agreeing", "pause something indefinitely", "start over after a failure", "the obstacle that holds progress up", "stop it for good, by a decision from above"];
 var G_CORRECT = [5, 0, 1, 2, 4, 3];
 function buildG(){
   var el = document.getElementById('exG'); el.innerHTML = '';

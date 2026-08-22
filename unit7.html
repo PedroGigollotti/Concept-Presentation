@@ -466,7 +466,7 @@ function recomputeTotal(){
 var B_DATA = [
   {q:"You left off my name on the distribution list.", key:"left out"},
   {q:"Can you cut out it before the board sees the draft?", key:"cut it out"},
-  {q:"The committee ruled against the second option and kept the first.", key:"ruled out"},
+  {q:"The committee ruled off the second option and kept the first.", key:"ruled out"},
   {q:"Four regions were leave out of the revised plan.", key:"left out"},
   {q:"She opted out from the pilot in March.", key:"opted out of"}
 ];
@@ -512,7 +512,7 @@ function toggleKey(id){ document.getElementById(id).classList.toggle('shown'); }
 
 /* ===== D. Match the halves ===== */
 var D_ITEMS = ["We cut out","I wouldn't rule out","The plan leaves out","Two partners opted out","Doing nothing shuts out"];
-var D_MEAN = ["before the funding round closed.", "everyone who depends on the program.", "the regional workshops to close the gap.", "four of the six rural regions.", "a smaller version of the same idea."];
+var D_MEAN = ["before the funding round closed.", "everyone who depends on the program.", "the regional workshops ourselves, to close the gap.", "four of the six rural regions, and nobody noticed until March.", "a smaller version of the same idea."];
 var D_CORRECT = [2, 4, 3, 0, 1];
 function buildD(){
   var el = document.getElementById('exD'); el.innerHTML = '';
