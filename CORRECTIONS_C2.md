@@ -34,3 +34,6 @@ check refused them: a row naming `c2-unit20.html` cannot be verified by a glob o
 | c2-unit20.html, Exercise A items 5 and 6, the moves offer both | "a": ["setback"] | "setback", "issue" |
 | c2-unit21.html, Access dialogue, repeated speaker names replaced | Nadia How should we tell | Renata |
 | c2-unit2.html, Dialogue block, speaker name spacing moved into the CSS | font-weight:600;} | font-weight:600;margin-right:7px;} |
+| c2-unit11.html, Exercise A item 6, base sentence changed so the answer does not land on a fixed idiom | Our budget goes there. -> There goes our budget. | In the footnotes lies the answer. |
+| c2-unit17.html, The preposition paragraph moved from Watch out to Analysis, where it explains rather than forbids | Watch out: In look forward to and be used to, the to is a preposition | One more -ing looks like the same rule and is not. |
+| c2-unit21.html, Analysis, three politeness levels now take one verdict | <i>send it by five</i> is blunt | &ldquo;send it by five&rdquo; is blunt |
