@@ -52,7 +52,7 @@
   .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
   .dialogue p:last-child{margin-bottom:0;}
   .dialogue b{color:var(--navy);}
-  .dialogue .who{color:var(--ink);font-weight:600;}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
   .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
   .body-copy b{color:var(--ink);}
   .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
@@ -243,8 +243,8 @@
     <p class="body-copy"><b>Goal.</b> Read the board discussion and notice the subjunctive forms in bold. Each one marks a formal recommendation or a fixed expression. You are spotting the pattern here, not producing it yet.</p>
     <div class="dialogue">
       <p><span class="who">Chair</span> The committee needs a formal recommendation on the leave policy.</p>
-      <p><span class="who">Priya</span> <b>We recommend that the policy be revised</b> to include caregiver leave.</p>
-      <p><span class="who">Marcus</span> And <b>that it take effect</b> next quarter, not next year.</p>
+      <p><span class="who">Priya</span> <i>(policy lead)</i> <b>We recommend that the policy be revised</b> to include caregiver leave.</p>
+      <p><span class="who">Marcus</span> <i>(committee member)</i> And <b>that it take effect</b> next quarter, not next year.</p>
       <p><span class="who">Chair</span> Noted. Legal insists <b>that every change be documented</b> in the minutes.</p>
       <p><span class="who">Priya</span> <b>Be that as it may</b>, we shouldn't delay the vote.</p>
       <p><span class="who">Chair</span> Agreed. <b>Suffice it to say</b>, the board wants this settled today.</p>
@@ -885,8 +885,8 @@ var C_DATA = [{"q": "The manager wants everyone to arrive on time.", "keys": ["t
 function buildC(){ buildRewrite("C", C_DATA, "rewrite with the subjunctive"); }
 function checkC(){ checkRewrite("C", C_DATA); }
 var D_OPENERS = ["The auditor insists", "It is vital", "We recommend", "The chair asked", "Company policy requires"];
-var D_ENDINGS = [{"id": "a", "t": "that she not be named in the report."}, {"id": "b", "t": "that the findings be published in full."}, {"id": "c", "t": "that every invoice be approved in writing."}, {"id": "d", "t": "that the role be posted internally first."}, {"id": "e", "t": "that no decision be made without a quorum."}];
-var D_KEY = ["c", "e", "d", "a", "b"];
+var D_ENDINGS = [{"id": "a", "t": "that every invoice be approved in writing, without exception."}, {"id": "b", "t": "that she not be named in the report she signed off on."}, {"id": "c", "t": "that no decision be made without a quorum in the room."}, {"id": "d", "t": "that the role be posted internally first, before any agency sees it."}, {"id": "e", "t": "that the findings be published in full on the intranet."}];
+var D_KEY = ["a", "c", "d", "b", "e"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
 function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
 var E_DATA = [{"q": "A board resolution recording a required change to company policy.", "a": 1, "note": "Formal subjunctive: &#8220;The board resolves that the policy be amended with immediate effect.&#8221;"}, {"q": "A quick message to a colleague asking them to double-check a figure.", "a": 0, "note": "Everyday: &#8220;Can you double-check that figure?&#8221; The subjunctive would be overkill."}, {"q": "A formal HR letter setting a mandatory training requirement.", "a": 1, "note": "Formal subjunctive: &#8220;It is required that each employee complete the training by June 30.&#8221;"}, {"q": "Reassuring a nervous new hire that it's completely fine to ask questions.", "a": 0, "note": "Everyday: &#8220;Honestly, ask me anything, that's what I'm here for.&#8221;"}];

@@ -52,7 +52,7 @@
   .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
   .dialogue p:last-child{margin-bottom:0;}
   .dialogue b{color:var(--navy);}
-  .dialogue .who{color:var(--ink);font-weight:600;}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
   .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
   .body-copy b{color:var(--ink);}
   .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
@@ -242,12 +242,12 @@
     <p class="sec-kicker">ACCESS</p>
     <p class="body-copy"><b>Goal.</b> Read the performance review and notice the word choices in bold. Each collocation or near-synonym is picked for its exact weight. You are spotting the pattern here, not producing it yet.</p>
     <div class="dialogue">
-      <p><span class="who">Dan</span> How's she doing?</p>
-      <p><span class="who">Priya</span> She's <b>determined</b>, not stubborn. She pushes till it's fixed.</p>
+      <p><span class="who">Dan</span> <i>(department head)</i> How's she doing?</p>
+      <p><span class="who">Farida</span> <i>(line manager)</i> She's <b>determined</b>, not stubborn. She pushes till it's fixed.</p>
       <p><span class="who">Dan</span> And on budget?</p>
-      <p><span class="who">Priya</span> <b>Thrifty</b>, in the good sense. Careful, not stingy.</p>
+      <p><span class="who">Farida</span> <b>Thrifty</b>, in the good sense. Careful, not stingy.</p>
       <p><span class="who">Dan</span> Any flags?</p>
-      <p><span class="who">Priya</span> One <b>minor setback</b> last sprint. We'll <b>make a decision</b> on scope Friday.</p>
+      <p><span class="who">Farida</span> One <b>minor setback</b> last sprint. We'll <b>make a decision</b> on scope Friday.</p>
     </div>
 
     <p class="sec-kicker" style="margin-top:44px;">ANALYSIS</p>
@@ -875,7 +875,7 @@ function recClear(){
 }
 
 
-var A_DATA = [{"q": "Let's ______ a decision by Friday. <i>[make / do]</i>", "a": ["make"]}, {"q": "We had ______ rain all week. <i>[heavy / strong]</i>", "a": ["heavy"]}, {"q": "That outcome is ______ likely. <i>[highly / strongly]</i>", "a": ["highly"]}, {"q": "She's ______, not stubborn. <i>[positive synonym]</i>", "a": ["determined"]}, {"q": "It's a minor ______, not a crisis. <i>[neutral]</i>", "a": ["setback"]}, {"q": "We'll ______ you once it's confirmed. <i>[formal]</i>", "a": ["notify"]}];
+var A_DATA = [{"q": "Let's ______ a decision by Friday. <i>[make / do]</i>", "a": ["make"]}, {"q": "We had ______ rain all week. <i>[heavy / strong]</i>", "a": ["heavy"]}, {"q": "That outcome is ______ likely. <i>[highly / strongly]</i>", "a": ["highly"]}, {"q": "She's ______, not stubborn. <i>[positive synonym]</i>", "a": ["determined"]}, {"q": "It's a minor ______, not a crisis. <i>[neutral]</i>", "a": ["setback", "issue"], "why": "Both work and the moves teach both. Setback says ground was lost; issue is the flatter word and commits to less."}, {"q": "We'll ______ you once it's confirmed. <i>[formal]</i>", "a": ["notify", "inform"], "why": "Both work and the moves teach both. Notify is the procedural word; inform is a shade warmer and no less formal."}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "Let's do a decision today.", "keys": ["make a decision"], "reject": ["do a decision"], "full": "Let's make a decision today."}, {"q": "There was strong rain overnight.", "keys": ["heavy rain"], "reject": ["strong rain"], "full": "There was heavy rain overnight."}, {"q": "It's strongly unlikely to happen.", "keys": ["highly unlikely"], "reject": ["strongly unlikely"], "full": "It's highly unlikely to happen."}, {"q": "We did a mistake in the forecast.", "keys": ["made a mistake"], "reject": ["did a mistake"], "full": "We made a mistake in the forecast."}, {"q": "She gave a strong effort on this.", "keys": ["made a strong effort"], "reject": ["gave a strong effort"], "full": "She made a strong effort on this."}];

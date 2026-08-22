@@ -52,7 +52,7 @@
   .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
   .dialogue p:last-child{margin-bottom:0;}
   .dialogue b{color:var(--navy);}
-  .dialogue .who{color:var(--ink);font-weight:600;}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
   .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
   .body-copy b{color:var(--ink);}
   .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
@@ -242,11 +242,11 @@
     <p class="sec-kicker">ACCESS</p>
     <p class="body-copy"><b>Goal.</b> Read the compliance briefing and notice the reporting choices in bold. Each verb or passive signals a stance toward the claim. You are spotting the pattern here, not producing it yet.</p>
     <div class="dialogue">
-      <p><span class="who">Nadia</span> Where are we on the vendor issue?</p>
-      <p><span class="who">Tom</span> The vendor <b>claims</b> the breach was accidental.</p>
-      <p><span class="who">Ruth</span> But it <b>is alleged that</b> they knew for weeks.</p>
-      <p><span class="who">Nadia</span> And our side?</p>
-      <p><span class="who">Tom</span> We <b>concede that</b> our monitoring had a gap.</p>
+      <p><span class="who">Claudia</span> <i>(general counsel)</i> Where are we on the vendor issue?</p>
+      <p><span class="who">Hugo</span> <i>(security lead)</i> The vendor <b>claims</b> the breach was accidental.</p>
+      <p><span class="who">Ruth</span> <i>(compliance officer)</i> But it <b>is alleged that</b> they knew for weeks.</p>
+      <p><span class="who">Claudia</span> And our side?</p>
+      <p><span class="who">Hugo</span> We <b>concede that</b> our monitoring had a gap.</p>
       <p><span class="who">Ruth</span> Officially, <b>mistakes were made</b>, but internally let's be precise about whose.</p>
     </div>
 
@@ -874,7 +874,7 @@ function recClear(){
 }
 
 
-var A_DATA = [{"q": "She ______ that the site is down. <i>[neutral]</i>", "a": ["says"]}, {"q": "He ______ that the estimate was too low. <i>[reluctant admission]</i>", "a": ["concedes"]}, {"q": "The company ______ the layoffs are temporary. <i>[you doubt it]</i>", "a": ["claims"]}, {"q": "It ______ that funds were misused. <i>[passive, unnamed source]</i>", "a": ["is alleged"]}, {"q": "The vendor ______ to have missed the deadline. <i>[passive, distancing]</i>", "a": ["is believed"]}, {"q": "She ______ that the data is sound. <i>[firmly stands by it]</i>", "a": ["maintains"]}];
+var A_DATA = [{"q": "She ______ that the site is down. <i>[neutral]</i>", "a": ["says"]}, {"q": "He ______ that the estimate was too low. <i>[reluctant admission]</i>", "a": ["concedes", "admits"], "why": "Both work. Concede marks ground given in an argument; admit marks a fact granted, argument or not."}, {"q": "The company ______ the layoffs are temporary. <i>[you doubt it]</i>", "a": ["claims"]}, {"q": "It ______ that funds were misused. <i>[passive, unnamed source]</i>", "a": ["is alleged"]}, {"q": "The vendor ______ to have missed the deadline. <i>[passive, distancing]</i>", "a": ["is believed"]}, {"q": "She ______ that the data is sound. <i>[firmly stands by it]</i>", "a": ["maintains", "insists"], "why": "Both work. Maintain holds the position steadily; insist presses it against resistance."}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "It is alleged funds were misused.", "keys": ["alleged that funds"], "reject": ["alleged funds"], "full": "It is alleged that funds were misused."}, {"q": "The vendor is believed missed the deadline.", "keys": ["believed to have missed"], "reject": ["believed missed"], "full": "The vendor is believed to have missed the deadline."}, {"q": "It was decided to canceling the launch.", "keys": ["decided to cancel"], "reject": ["to canceling"], "full": "It was decided to cancel the launch."}, {"q": "She is said be the project lead.", "keys": ["said to be the project"], "reject": ["said be"], "full": "She is said to be the project lead."}, {"q": "Mistakes was made.", "keys": ["mistakes were made"], "reject": ["mistakes was"], "full": "Mistakes were made."}];

@@ -23,3 +23,14 @@ check refused them: a row naming `c2-unit20.html` cannot be verified by a glob o
 | c2-unit9.html, Watch out, level scope | Invert only after a fronted negative. | At this level, invert only after a fronted negative. |
 | c2-unit11.html, Analysis prose now says it is extending the last unit | One special case, fronting a place or direction, does flip the verb | adding to the fronted negatives of the last unit |
 | c2-unit3.html, Exercise G and H, pompous phrase replaced with data | we would strongly urge | we strongly recommend |
+| c2-unit1.html, Access dialogue, speaker roles added | Ana I need to know today | <i>(engagement lead)</i> |
+| c2-unit1.html, Watch out, understand removed from the resisting list | I am knowing or I am understanding are not | but <em>I am knowing</em> is not. |
+| c2-unit3.html, Exercise D rebuilt with locks | that every invoice be approved in writing. | without exception. |
+| c2-unit5.html, Exercise D item 2, semicolon before a relative clause | We interviewed five candidates; | We interviewed five candidates, |
+| c2-unit10.html, Exercise A item 4, who and that both accepted | "who"]] | "who", "that" |
+| c2-unit13.html, Exercise A items 1, 2, 3, the card teaches both markers | "a": ["However"] | "However", "Nonetheless" |
+| c2-unit15.html, Exercise A items 2 and 6, the card lists both verbs | "a": ["concedes"] | "concedes", "admits" |
+| c2-unit16.html, Exercise A item 3, the card teaches kind of and sort of | "a": ["kind"] | "kind", "sort" |
+| c2-unit20.html, Exercise A items 5 and 6, the moves offer both | "a": ["setback"] | "setback", "issue" |
+| c2-unit21.html, Access dialogue, repeated speaker names replaced | Nadia How should we tell | Renata |
+| c2-unit2.html, Dialogue block, speaker name spacing moved into the CSS | font-weight:600;} | font-weight:600;margin-right:7px;} |

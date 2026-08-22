@@ -52,7 +52,7 @@
   .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
   .dialogue p:last-child{margin-bottom:0;}
   .dialogue b{color:var(--navy);}
-  .dialogue .who{color:var(--ink);font-weight:600;}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
   .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
   .body-copy b{color:var(--ink);}
   .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
@@ -242,9 +242,9 @@
     <p class="sec-kicker">ACCESS</p>
     <p class="body-copy"><b>Goal.</b> Read the deal review and notice the clefts in bold. Each one splits the sentence to spotlight one element. You are spotting the pattern here, not producing it yet.</p>
     <div class="dialogue">
-      <p><span class="who">Diego</span> Why did we lose the renewal?</p>
-      <p><span class="who">Hana</span> <b>It was the pricing, not the coverage,</b> that scared them off.</p>
-      <p><span class="who">Will</span> <b>What they actually wanted was</b> a simpler tier.</p>
+      <p><span class="who">Diego</span> <i>(account director)</i> Why did we lose the renewal?</p>
+      <p><span class="who">Hana</span> <i>(pricing analyst)</i> <b>It was the pricing, not the coverage,</b> that scared them off.</p>
+      <p><span class="who">Will</span> <i>(customer success lead)</i> <b>What they actually wanted was</b> a simpler tier.</p>
       <p><span class="who">Diego</span> So we over-engineered it.</p>
       <p><span class="who">Hana</span> <b>All they asked for was</b> three options, and we gave them nine.</p>
       <p><span class="who">Will</span> <b>What surprised me was</b> how little the features mattered to them.</p>
@@ -855,7 +855,7 @@ function recClear(){
 }
 
 
-var A_DATA = [{"q": "______ was the timing ______ killed the launch.", "a": [["It"], ["that"]]}, {"q": "______ we need ______ a clearer brief.", "a": [["What"], ["is"]]}, {"q": "______ we changed ______ the headline.", "a": [["All"], ["was"]]}, {"q": "______ was Marco ______ flagged the risk first.", "a": [["It"], ["who"]]}, {"q": "______ surprised everyone ______ the cost.", "a": [["What"], ["was"]]}, {"q": "A shorter deadline ______ what we ended up with.", "a": ["is"]}];
+var A_DATA = [{"q": "______ was the timing ______ killed the launch.", "a": [["It"], ["that"]]}, {"q": "______ we need ______ a clearer brief.", "a": [["What"], ["is"]]}, {"q": "______ we changed ______ the headline.", "a": [["All"], ["was"]]}, {"q": "______ was Marco ______ flagged the risk first.", "a": [["It"], ["who", "that"]], "why": "Both work. Who is the usual choice when the focused element is a person; that is available and common in American English."}, {"q": "______ surprised everyone ______ the cost.", "a": [["What"], ["was"]]}, {"q": "A shorter deadline ______ what we ended up with.", "a": ["is"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "It were the numbers that mattered.", "keys": ["it was the numbers"], "reject": ["it were the"], "full": "It was the numbers that mattered."}, {"q": "What we need are a clearer brief.", "keys": ["what we need is"], "reject": ["we need are"], "full": "What we need is a clearer brief."}, {"q": "It was Sam which called.", "keys": ["sam who called"], "reject": ["sam which"], "full": "It was Sam who called."}, {"q": "All we did were change the headline.", "keys": ["all we did was change"], "reject": ["did were change"], "full": "All we did was change the headline."}, {"q": "The thing that lost the deal it was the price.", "keys": ["it was the price that lost"], "reject": ["the deal it was"], "full": "It was the price that lost the deal."}];

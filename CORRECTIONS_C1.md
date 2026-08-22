@@ -117,3 +117,6 @@ These are patterns, not single strings, so they live in checks and in prose here
 | c1-unit17.html, Exercise D opener, comma splice with however | It's a fair point, however, | It's a fair point. However, |
 | c1-unit33.html, Exercise A rebuilt: the second half calls the quantifier | ______ (few) of them are high-value clients. | which is the disappointing part |
 | c1-unit18.html, Exercise A rebuilt: the slot decides, not the parenthesis | This is ______ (absolutely) the right approach. | There's ______ that this trend is real. |
+| c1-unit3.html, Exercise A, the past perfect is optional where a conjunction marks the order | "a": [["shut down"], ["had spiked"]] | "had spiked", "spiked" |
+| c1-unit3.html, Exercise A item 4, rebuilt so the past perfect is required | because the spec ______ (change) twice. | The team missed the deadline. The spec ______ (change) twice that month. |
+| c1-unit35.html, Exercise A item 4, inverted collocation replaced | (heavy/strong) demand | (hard/difficult) evidence |

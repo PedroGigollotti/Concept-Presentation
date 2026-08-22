@@ -52,7 +52,7 @@
   .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
   .dialogue p:last-child{margin-bottom:0;}
   .dialogue b{color:var(--navy);}
-  .dialogue .who{color:var(--ink);font-weight:600;}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
   .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
   .body-copy b{color:var(--ink);}
   .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
@@ -242,9 +242,9 @@
     <p class="sec-kicker">ACCESS</p>
     <p class="body-copy"><b>Goal.</b> Read the strategy debrief and notice the discourse markers in bold. Each one names the logical link between sentences. You are spotting the pattern here, not producing it yet.</p>
     <div class="dialogue">
-      <p><span class="who">Amara</span> Where did the strategy land?</p>
-      <p><span class="who">Cole</span> The pilot worked. <b>However,</b> the cost model didn't hold.</p>
-      <p><span class="who">Ida</span> <b>Consequently,</b> we paused the wider rollout.</p>
+      <p><span class="who">Amara</span> <i>(strategy director)</i> Where did the strategy land?</p>
+      <p><span class="who">Cole</span> <i>(product manager)</i> The pilot worked. <b>However,</b> the cost model didn't hold.</p>
+      <p><span class="who">Ida</span> <i>(program lead)</i> <b>Consequently,</b> we paused the wider rollout.</p>
       <p><span class="who">Amara</span> Fair. Anything in its favor?</p>
       <p><span class="who">Cole</span> <b>Admittedly,</b> the data is thin. <b>Nonetheless,</b> the demand signal is real.</p>
       <p><span class="who">Ida</span> <b>On balance,</b> it's worth another quarter.</p>
@@ -857,7 +857,7 @@ function recClear(){
 }
 
 
-var A_DATA = [{"q": "The pilot worked. ______, the cost model didn't. <i>[contrast]</i>", "a": ["However"]}, {"q": "Costs rose sharply. ______, we cut the scope. <i>[result]</i>", "a": ["Consequently"]}, {"q": "The tool is fast. ______, it's cheap. <i>[addition]</i>", "a": ["Moreover"]}, {"q": "______, the data is thin. But the trend is clear. <i>[concession]</i>", "a": ["Admittedly"]}, {"q": "We shipped v1. ______, we began v2. <i>[sequence]</i>", "a": ["Subsequently"]}, {"q": "______, it's worth the risk. <i>[summary]</i>", "a": ["On balance"]}];
+var A_DATA = [{"q": "The pilot worked. ______, the cost model didn't. <i>[contrast]</i>", "a": ["However", "Nonetheless"], "why": "Both work. However marks the contrast plainly; nonetheless adds that the second fact stands in spite of the first."}, {"q": "Costs rose sharply. ______, we cut the scope. <i>[result]</i>", "a": ["Consequently", "Therefore"], "why": "Both work. Consequently reports a result that followed in the world; therefore draws a conclusion the reader is meant to accept."}, {"q": "The tool is fast. ______, it's cheap. <i>[addition]</i>", "a": ["Moreover", "Furthermore"], "why": "Both work and sit at the same level of formality. Furthermore is the slightly heavier of the two."}, {"q": "______, the data is thin. But the trend is clear. <i>[concession]</i>", "a": ["Admittedly"]}, {"q": "We shipped v1. ______, we began v2. <i>[sequence]</i>", "a": ["Subsequently"]}, {"q": "______, it's worth the risk. <i>[summary]</i>", "a": ["On balance"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "We tried, however it failed.", "keys": ["tried; however,", "tried. however,"], "reject": ["tried, however"], "full": "We tried; however, it failed."}, {"q": "The plan is good, moreover cheap.", "keys": ["good; moreover, it's cheap", "good. moreover, it's cheap"], "reject": ["good, moreover cheap"], "full": "The plan is good; moreover, it's cheap."}, {"q": "Therefore, but we paused the rollout.", "keys": ["therefore, we paused"], "reject": ["therefore, but"], "full": "Therefore, we paused the rollout."}, {"q": "Admittedly the data is thin however the trend is clear.", "keys": ["admittedly, the data is thin; however, the trend"], "reject": ["thin however the"], "full": "Admittedly, the data is thin; however, the trend is clear."}, {"q": "On the one hand it's cheap. On the other side it's slow.", "keys": ["on the other hand"], "reject": ["on the other side"], "full": "On the one hand it's cheap; on the other hand, it's slow."}];

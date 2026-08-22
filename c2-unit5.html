@@ -52,7 +52,7 @@
   .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
   .dialogue p:last-child{margin-bottom:0;}
   .dialogue b{color:var(--navy);}
-  .dialogue .who{color:var(--ink);font-weight:600;}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
   .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
   .body-copy b{color:var(--ink);}
   .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
@@ -242,9 +242,9 @@
     <p class="sec-kicker">ACCESS</p>
     <p class="body-copy"><b>Goal.</b> Read the review meeting and notice the packaging moves in bold. Each one puts the heavy or new part where it reads most easily. You are spotting the pattern here, not producing it yet.</p>
     <div class="dialogue">
-      <p><span class="who">Sofia</span> Let's walk the findings.</p>
-      <p><span class="who">Ken</span> <b>It became clear that</b> the cost model understated overhead.</p>
-      <p><span class="who">Maya</span> <b>There remains one risk</b> we haven't priced: the currency exposure.</p>
+      <p><span class="who">Sofia</span> <i>(engagement partner)</i> Let's walk the findings.</p>
+      <p><span class="who">Ken</span> <i>(financial analyst)</i> <b>It became clear that</b> the cost model understated overhead.</p>
+      <p><span class="who">Maya</span> <i>(risk analyst)</i> <b>There remains one risk</b> we haven't priced: the currency exposure.</p>
       <p><span class="who">Sofia</span> Note it. <b>It is worth flagging that</b> the client hasn't seen these numbers yet.</p>
       <p><span class="who">Ken</span> Of the two gaps, <b>the more urgent is</b> the overhead one.</p>
       <p><span class="who">Sofia</span> Agreed. <b>Once the revised model is in</b>, we present.</p>
@@ -866,7 +866,7 @@ function checkB(){ checkRewrite("B", B_DATA); }
 var C_DATA = [{"q": "That the numbers were wrong surprised no one.", "keys": ["it surprised no one that"], "reject": ["that the numbers were wrong surprised"], "full": "It surprised no one that the numbers were wrong."}, {"q": "To predict the outcome is impossible.", "keys": ["it is impossible to predict"], "reject": ["to predict the outcome is"], "full": "It is impossible to predict the outcome."}, {"q": "Whether the merger closes remains uncertain.", "keys": ["it remains uncertain whether"], "reject": ["whether the merger closes remains"], "full": "It remains uncertain whether the merger closes."}, {"q": "A memo explaining the entire new reimbursement policy in detail was circulated.", "keys": ["a memo was circulated explaining"], "reject": ["in detail was circulated"], "full": "A memo was circulated explaining the entire new reimbursement policy in detail."}, {"q": "That we lost the contract, after months of work, still stings.", "keys": ["it still stings that"], "reject": ["still stings."], "full": "It still stings that we lost the contract after months of work."}];
 function buildC(){ buildRewrite("C", C_DATA, "repackage it"); }
 function checkC(){ checkRewrite("C", C_DATA); }
-var D_OPENERS = ["The audit flagged three risks;", "We interviewed five candidates;", "The budget was approved,", "Two vendors bid on the work;", "The pilot ran for six weeks,"];
+var D_OPENERS = ["The audit flagged three risks;", "We interviewed five candidates,", "The budget was approved,", "Two vendors bid on the work;", "The pilot ran for six weeks,"];
 var D_ENDINGS = [{"id": "a", "t": "but only after a long debate over the contingency line."}, {"id": "b", "t": "after which the results were reviewed by the board."}, {"id": "c", "t": "the most serious was a gap in access controls."}, {"id": "d", "t": "the strongest by far was the internal one."}, {"id": "e", "t": "only one of whom had the security clearance we needed."}];
 var D_KEY = ["c", "e", "a", "d", "b"];
 function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }

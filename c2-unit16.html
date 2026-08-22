@@ -52,7 +52,7 @@
   .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
   .dialogue p:last-child{margin-bottom:0;}
   .dialogue b{color:var(--navy);}
-  .dialogue .who{color:var(--ink);font-weight:600;}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
   .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
   .body-copy b{color:var(--ink);}
   .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
@@ -242,10 +242,10 @@
     <p class="sec-kicker">ACCESS</p>
     <p class="body-copy"><b>Goal.</b> Read the team chat and notice the colloquial grammar in bold. Each one is an informal frame or a reduced form. You are spotting the pattern here, not producing it yet.</p>
     <div class="dialogue">
-      <p><span class="who">Priya</span> Where are we on the deck?</p>
-      <p><span class="who">Jed</span> <b>The thing is,</b> we're kind of behind.</p>
-      <p><span class="who">Mo</span> <b>There's no denying</b> today was rough.</p>
-      <p><span class="who">Priya</span> We're <b>way over</b> on the timeline, huh.</p>
+      <p><span class="who">Meera</span> <i>(team lead)</i> Where are we on the deck?</p>
+      <p><span class="who">Jed</span> <i>(designer)</i> <b>The thing is,</b> we're kind of behind.</p>
+      <p><span class="who">Mo</span> <i>(account manager)</i> <b>There's no denying</b> today was rough.</p>
+      <p><span class="who">Meera</span> We're <b>way over</b> on the timeline, huh.</p>
       <p><span class="who">Jed</span> <b>You'd think</b> the client would give us a day, right?</p>
       <p><span class="who">Mo</span> <b>Fair enough.</b> I'll push for it.</p>
     </div>
@@ -876,7 +876,7 @@ function recClear(){
 }
 
 
-var A_DATA = [{"q": "There's no ______ (deny) the numbers dipped.", "a": ["denying"]}, {"q": "The ______ is, we're out of time.", "a": ["thing"]}, {"q": "It's ______ of a mess right now.", "a": ["kind"]}, {"q": "We're ______ over budget on this one.", "a": ["way"]}, {"q": "You'd think they'd check, ______?", "a": ["right"]}, {"q": "I ______ see your point, honestly.", "a": ["do"]}];
+var A_DATA = [{"q": "There's no ______ (deny) the numbers dipped.", "a": ["denying"]}, {"q": "The ______ is, we're out of time.", "a": ["thing"]}, {"q": "It's ______ of a mess right now.", "a": ["kind", "sort"], "why": "Both work and the card teaches both. Kind of and sort of are interchangeable here; neither is more casual than the other."}, {"q": "We're ______ over budget on this one.", "a": ["way"]}, {"q": "You'd think they'd check, ______?", "a": ["right"]}, {"q": "I ______ see your point, honestly.", "a": ["do"]}];
 function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
 function checkA(){ checkForm("A", A_DATA); }
 var B_DATA = [{"q": "There's no deny it slipped.", "keys": ["no denying it"], "reject": ["no deny it"], "full": "There's no denying it slipped."}, {"q": "We're way cheap than them.", "keys": ["way cheaper than"], "reject": ["way cheap than"], "full": "We're way cheaper than them."}, {"q": "I do saw the issue.", "keys": ["i do see the issue"], "reject": ["do saw"], "full": "I do see the issue."}, {"q": "The thing is that is we're late.", "keys": ["the thing is, we're late"], "reject": ["is that is"], "full": "The thing is, we're late."}, {"q": "It's kind a mess.", "keys": ["kind of a mess"], "reject": ["kind a mess"], "full": "It's kind of a mess."}];
