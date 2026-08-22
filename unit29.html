@@ -538,10 +538,10 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"Let's ___, everyone's here.", opts:["kick off","commence","initiate"], correct:0},
-  {q:"We ___ a bug yesterday.", opts:["ran into","encountered","experienced"], correct:0},
-  {q:"I'll ___ and get back to you.", opts:["go over it","examine it","scrutinize it"], correct:0},
-  {q:"Let's ___ here, we're at time.", opts:["wrap up","conclude","terminate"], correct:0}
+  {q:"Let's ___, everyone's here.", opts:["initiate", "kick off", "commence"], correct:1},
+  {q:"We ___ a bug yesterday.", opts:["encountered", "experienced", "ran into"], correct:2},
+  {q:"I'll ___ and get back to you.", opts:["go over it", "examine it", "scrutinize it"], correct:0},
+  {q:"Let's ___ here, we're at time.", opts:["terminate", "wrap up", "conclude"], correct:1}
 ];
 function buildF(){
   var el = document.getElementById('exF'); el.innerHTML = '';

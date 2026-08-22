@@ -193,6 +193,38 @@ Matched to the units, including the operator, which is `&&` and not `||`:
 **Nothing outstanding on this page.** The landing page and the book it fronts
 now agree on every storage key they share.
 
+## Pedagogical review, 2026-08-22
+
+| Location | As published | Approved correction |
+|---|---|---|
+| `unit1.html`, exercise G | two `var G_CORRECT` lines, `[0, 3, 2, 5, 4, 1]` then `[0, 1, 2, 4, 5, 3]` | `var G_CORRECT = [0, 3, 2, 4, 1, 5];` |
+
+**Exercise G in unit 1 taught three wrong meanings.** The live key attached
+*a blocker* to "capacity to take on work", *bandwidth* to "among your current
+tasks", and *on my plate* to "something stopping your progress". A student who
+answered correctly was marked wrong and shown the wrong definition as the model
+answer. Exercise H on the same page uses all six terms in context and confirms
+the intended senses, so the page contradicted itself. The corrected key agrees
+with H on all six.
+
+The page also declared `G_CORRECT` twice, one line apart, with two different
+and both incorrect keys. JavaScript runs the last assignment, so the first line
+was dead. It is gone, and `check_duplicate_declaration()` now fails the run on
+any repeat.
+
+**The particle-swap answer was the first button in every item in the book.**
+All 128 items in all 32 units stored `correct:0`, and `buildF()` renders the
+options in array order, so the correct answer was always leftmost. The index is
+now spread across the three positions, 43 at option 0, 43 at option 1, 42 at
+option 2. This one has no row in the table above because the table holds
+literal text that must appear in the named file, and the corrected index
+differs in every unit. It is guarded instead by `check_choice_position()`,
+which fails the run on a book that puts every correct answer in one place, and
+on the mirror. A machine check is the stronger record of the two.
+
+Neither defect changes a word a student reads. Both change which answer the
+page marks correct.
+
 ## Why this file exists
 
 These pages have no generator. This record is the only place the correction is

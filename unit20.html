@@ -537,10 +537,10 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"Rather than fight the reorg, three engineers just ___.", opts:["walked away","walked out","walked in"], correct:0},
-  {q:"Let's not ___ the one perk people actually value.", opts:["throw away","throw up","throw in"], correct:0},
-  {q:"We'll ___ at the workload issue over two quarters.", opts:["chip away","chip in","chip off"], correct:0},
-  {q:"Ask me anything about the new policy; ___.", opts:["fire away","fire off","fire up"], correct:0}
+  {q:"Rather than fight the reorg, three engineers just ___.", opts:["walked in", "walked away", "walked out"], correct:1},
+  {q:"Let's not ___ the one perk people actually value.", opts:["throw up", "throw in", "throw away"], correct:2},
+  {q:"We'll ___ at the workload issue over two quarters.", opts:["chip away", "chip in", "chip off"], correct:0},
+  {q:"Ask me anything about the new policy; ___.", opts:["fire up", "fire away", "fire off"], correct:1}
 ];
 function buildF(){
   var el = document.getElementById('exF'); el.innerHTML = '';

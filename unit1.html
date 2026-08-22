@@ -548,10 +548,10 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"Can you ___ the login bug?", opts:["look into","look up","look after"], correct:0},
-  {q:"Let's ___ the standup.", opts:["kick off","kick in","kick back"], correct:0},
-  {q:"I'll ___ with the client tomorrow.", opts:["follow up","follow through","follow on"], correct:0},
-  {q:"Please ___ the draft before we ship.", opts:["look over","look out","look up"], correct:0}
+  {q:"Can you ___ the login bug?", opts:["look into", "look up", "look after"], correct:0},
+  {q:"Let's ___ the standup.", opts:["kick in", "kick off", "kick back"], correct:1},
+  {q:"I'll ___ with the client tomorrow.", opts:["follow on", "follow through", "follow up"], correct:2},
+  {q:"Please ___ the draft before we ship.", opts:["look over", "look out", "look up"], correct:0}
 ];
 function buildF(){
   var el = document.getElementById('exF'); el.innerHTML = '';
@@ -601,8 +601,7 @@ function checkF(){
 /* ===== G. Vocabulary matching ===== */
 var G_TERMS = ["a standup","a blocker","a to-do","a quick win","bandwidth","on my plate"];
 var G_MEAN = ["a short daily status meeting", "capacity to take on work", "a task on your list", "something stopping your progress", "an easy, high-value task", "among your current tasks"];
-var G_CORRECT = [0, 3, 2, 5, 4, 1];
-var G_CORRECT = [0, 1, 2, 4, 5, 3];
+var G_CORRECT = [0, 3, 2, 4, 1, 5];
 function buildG(){
   var el = document.getElementById('exG'); el.innerHTML = '';
   G_TERMS.forEach(function(term,i){
