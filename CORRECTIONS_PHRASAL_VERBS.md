@@ -405,6 +405,61 @@ exists in any repository. `wheel_engine.py` in the Book 3 archive generates the
 every one of these is a one-line edit. On the blocks, none of them is possible
 without rebuilding a generator from the images.
 
+## The 19 panels regenerated, 2026-08-22
+
+The published figures had no generator. `block_engine.py` now exists beside
+`wheel_engine.py` in the Book 3 archive and reads the same PARTICLES table, so
+the wheel and the panel cannot disagree about what a category holds. Every
+constant in it was measured off the published images.
+
+All 19 were regenerated and substituted. Verified against the pages they
+replaced: same canvas, same nine text bands, same four colors, element widths
+within 18px on the longest line and exact on most, minimum 94px of clearance
+between columns. 1.4% to 2.6% of pixels differ inside the glyphs, at identical
+size and position, which is a different DejaVu build and not a layout error.
+
+**Two bugs in the first generated set, caught by comparing against the pages
+they replaced.** The footer has two texts, not one: the first unit of a pair
+introduces the split and the second refers back to it, and using the second for
+both made six panels 58px short. The title drops to a smaller size for a
+two-word label, not for a label over six characters, which had shrunk THROUGH.
+
+**One content regression, caught the same way.** The panels are generated from
+PARTICLES, and PARTICLES carried the wheel's `fall through` in unit 19 where
+the published block already said `cut through`. Regenerating would have put a
+verb the unit never teaches back into the book. PARTICLES was corrected.
+
+| Location | As published | Approved correction |
+|---|---|---|
+| `unit1.html`, exercise F | "Please ___ the draft before we ship." (look over) | `What's ___ the release this week?` |
+| `unit6.html`, exercise F | "We're ___ the work we did last quarter" (building on) | `If something is wrong on the line, ___.` |
+| `unit6.html`, exercise F | "She ___ for the junior engineer" (stood up) | `She ___ the pressure from finance when nobody else would.` |
+| `unit7.html`, exercise F | "She ___ of the partnership" (pulled out) | `Two partners ___ of the deal before the contract was signed.` |
+| `unit9.html`, figure alt | "Cancellation: call off, put off, back off." | `Cancellation: call off, put off, back down.` |
+
+**Four graded items tested a verb the unit had not taught.** Every replacement
+uses a verb the unit does teach: hold up (unit 1's own matching exercise),
+speak up and stand up to (unit 6's dialogue and panel), walk out (unit 7's
+Analysis and panel).
+
+The count that produced these was wrong twice before it was right. The first
+sweep said six, because it stripped the figures' alt text, which is where the
+book lists the panel's vocabulary, and because it did not match inflections.
+Corrected: two verbs the book never teaches, one sense never taught, and one
+taught 29 units after it is tested.
+
+## Open, waiting on Pedro
+
+- unit 8, *turn out* under VISIBILITY. Now correctable: the generator exists.
+- unit 12, *sit on* under SCRUTINY, where the Analysis says watch and the Watch
+  out and the exercises say withhold.
+- unit 12, *push on* under IMPOSITION, measured replacement *dump on*.
+- unit 5, *round up* under COMPLETION. Note that *round off* cannot be used:
+  it is an OFF verb and this is the UP panel. *tie up* is the unit's own.
+- unit 17, *walk back* missing from REVERSAL, which the Analysis names for that
+  sense and the Watch out teaches. `check_figure_vs_analysis()` fails the run on
+  it today, which is the check doing its job on a decision that is not mine.
+
 ## Why this file exists
 
 These pages have no generator. This record is the only place the correction is
