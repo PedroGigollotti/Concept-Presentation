@@ -448,17 +448,44 @@ book lists the panel's vocabulary, and because it did not match inflections.
 Corrected: two verbs the book never teaches, one sense never taught, and one
 taught 29 units after it is tested.
 
+## Six categories corrected and twenty captions rewritten, 2026-08-23
+
+| Panel category | Was | Now | Why |
+|---|---|---|---|
+| unit 5 COMPLETION | round up | `tie up` | round up is gathering, not completing. *round off* is the completion verb but belongs to OFF, and this is the UP panel. tie up is taught in unit 5's own exercise A and matching. |
+| unit 8 VISIBILITY | turn out | `spell out` | all five uses of turn out in unit 8 are result, and the Analysis names only find out and point out for visibility. spell out is visibility, and it is unit 8's own prediction verb. |
+| unit 9 CANCELLATION | back off | `back down` | the Analysis already said "back down from a position". back down from is 3.1 times more common than back off from on en-US-2019. |
+| unit 12 IMPOSITION | push on | `dump on` | push on reads as continuation, the neighbouring unit's category. dump on is 5.1 times more common than foist on beside it, and is imposition only. |
+| unit 12 SCRUTINY | sit on | `check up on` | the Analysis said watch, the Watch out and the exercises said withhold. check up on is watching and nothing else, fiction/general 2.92 so it carries in speech. sit on stays taught in the unit; it is simply not scrutiny. |
+| unit 17 REVERSAL | wind back | `walk back` | the Analysis names walk back for the reversal sense and the Watch out teaches roll back against walk back. wind back is never used in the unit. |
+
+Each correction was made once, in the PARTICLES table, and reaches the panel,
+the alt text and the Analysis prose together. Unit 12's Analysis still named
+*sit on* after the panel changed, and `check_figure_vs_analysis()` failed the
+run until the prose was brought into line, which is the first time that check
+earned its keep on a defect nobody had listed.
+
+**Twenty captions described a figure that is not on the page.** Nineteen said
+hub, spokes, solid and dotted over two-column panels that separate the units by
+color; the twentieth said "height on the ladder" over a horizontal bar. The
+wheels are real and generated, three days before the pages were published, and
+the figure was replaced without the caption following. Four texts now cover the
+nineteen, and none repeats the line the figure already carries inside itself:
+
+- units 5, 7, 9, 11, 13, 15: `The literal sense sits at the top. Everything under it is that same movement applied to something you cannot touch.`
+- units 6, 8, 10, 12, 14, 16: `Nothing about the particle changed since Unit N. Only which half of its map this unit works on.`
+- units 17 to 22: `The literal sense sits at the top, and all four senses under it belong to this unit. This particle does not split across two.`
+- unit 23: `Five small particles, one tight meaning each, and not a family of senses like the big ones.`
+
+`check_caption_vocabulary()` now fails the run on a caption that says wheel,
+spoke, hub, solid or dotted. Ladder is deliberately not on that list: unit 30's
+register table is a ladder and its caption's claim about the bottom rows is true.
+
 ## Open, waiting on Pedro
 
-- unit 8, *turn out* under VISIBILITY. Now correctable: the generator exists.
-- unit 12, *sit on* under SCRUTINY, where the Analysis says watch and the Watch
-  out and the exercises say withhold.
-- unit 12, *push on* under IMPOSITION, measured replacement *dump on*.
-- unit 5, *round up* under COMPLETION. Note that *round off* cannot be used:
-  it is an OFF verb and this is the UP panel. *tie up* is the unit's own.
-- unit 17, *walk back* missing from REVERSAL, which the Analysis names for that
-  sense and the Watch out teaches. `check_figure_vs_analysis()` fails the run on
-  it today, which is the check doing its job on a decision that is not mine.
+- the six vocabulary expressions taught in two units
+- the missing American / British callout in unit 13
+- the 128 particle-swap items that give no explanation
 
 ## Why this file exists
 
