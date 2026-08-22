@@ -359,6 +359,52 @@ what it led to, *the bottom line* is what matters more than the rest. And
 *ourselves* cannot follow "I'll dig into", which fixes the vendor-list ending to
 "We need to look into".
 
+## Captions and categories, 2026-08-22
+
+| Location | As published | Approved correction |
+|---|---|---|
+| `unit1.html`, figure caption | "Only the height on the ladder changes." | `Only the distance from the literal changes.` |
+| `unit9.html`, exercises A and B | `a:"backed off"`, `key:"backed off the"` | `a:"backed down"` |
+
+**Unit 1's caption described a ladder over a horizontal bar.** The figure is a
+left-to-right gradient from LITERAL to FIGURATIVE with no vertical axis and no
+ladder. The sentence keeps its shape and now says what the figure shows.
+
+**Unit 9 said three different things about one verb.** Its Analysis reads "you
+call off an event, or back down from a position." Its figure files *back off*
+under Cancellation. Its exercises keyed *backed off* with a direct object. None
+of the three uses of *back off* in that unit is cancellation.
+
+Measured on Google Books Ngrams, en-US-2019, ten-year average: *back down from*
+1.624e-07 against *back off from* 5.199e-08, so back down from is 3.1 times more
+common in the sense of retreating from a position, and 1.3 times in the past
+tense. "back down on" and "back off the" were measured and excluded, because
+both pick up physical uses and do not answer the same question.
+
+The Analysis was already right. Exercise A now reads "Two directors backed down
+from the earnout terms this morning", exercise B keys "backed down from", and
+the printed model answer follows. **The figure still says back off**, and cannot
+be corrected: the published figures are raster PNGs with no generator anywhere.
+See the note below.
+
+## The three category corrections are blocked on one decision
+
+Three figures carry a verb in the wrong category:
+
+- unit 8, *turn out* under VISIBILITY. All five uses in that unit are result,
+  and the Analysis names only find out and point out for that sense.
+- unit 9, *back off* under CANCELLATION, above.
+- unit 12, *push on* under IMPOSITION, whose commoner reading is continuation,
+  the neighbouring unit's category. Measured replacement: *dump on*, 6.580e-08
+  against *foist on* 1.293e-08 already in that category, 5.1 times more common,
+  fiction/general 1.88 so it carries in speech.
+
+None can be applied. The published figures are PNGs and no generator for them
+exists in any repository. `wheel_engine.py` in the Book 3 archive generates the
+19 Particle Wheels and has all three entries on one line each, so on the wheels
+every one of these is a one-line edit. On the blocks, none of them is possible
+without rebuilding a generator from the images.
+
 ## Why this file exists
 
 These pages have no generator. This record is the only place the correction is
