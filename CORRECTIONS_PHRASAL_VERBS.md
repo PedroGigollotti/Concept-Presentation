@@ -586,6 +586,40 @@ the order that prevents the original mistake. *sleep on* predicts from CONTACT,
 *pile on* from IMPOSITION, so the set still tests three senses the book teaches
 against three verbs it does not.
 
+## The last two callouts, 2026-08-23
+
+| Unit | Was | Now |
+|---|---|---|
+| 13 | no American / British callout at all, the only unit without one | `Americans say in the hospital; the British say in hospital, with no article. The same holds for at the university. This book uses the article.` |
+| 15 | "Scale back is a little more common in the US, scale down in the UK. This book uses scale down" | `Americans shut down a project; British English often says close down. Both are understood on either side, but shut down is far the more common in the US. This book uses shut down.` |
+
+All 32 units now carry the callout.
+
+**Unit 15's old callout taught a contrast that does not exist.** Measured on
+en-US-2019: *scale down the* 3.008e-08 against *scale back the* 3.292e-08, and
+*scaled down* 1.818e-07 against *scaled back* 1.787e-07. A dead heat, both ways.
+The callout claimed scale back was the American side and scale down the British,
+and then declared the British one in an American book.
+
+*downplay* against *play down* was the first replacement proposed and was
+withdrawn before it was applied: downplay appears zero times in unit 15 and play
+down five, so declaring it would have made the callout contradict its own
+exercises, which is unit 14's defect with the sides swapped. *shut down* against
+*close down* is 7.0x and the unit already uses shut down three times, including
+in the Analysis and the Watch out.
+
+The compression the downplay pair teaches, American English collapsing a phrasal
+verb into one word, is worth teaching and belongs in unit 32, which is already
+about the nouns those verbs form. Held for Pedro with the measurement:
+*downplay the* 3.378e-07 against *play down the* 7.176e-08, 4.7x.
+
+**Unit 13's second example was measured before it was written.** "in the
+university" against "in university" is 1.3x, a tie. "at the university" against
+"at university" is 3.6x and is what a British learner actually produces. Worth
+knowing: the article is not a general rule in either direction. Americans DROP
+it in *in class* and *at school*, where British English keeps it, so the callout
+names the two forms rather than claiming a pattern.
+
 ## Open, waiting on Pedro
 
 - the three American / British callouts: units 12, 13 and 14
