@@ -565,10 +565,10 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"Include a cost ___ in the appendix.", opts:["break down", "breakdown", "break-down"], correct:1},
-  {q:"We need executive ___.", opts:["buyin", "buy in", "buy-in"], correct:2},
-  {q:"The March ___ is on track.", opts:["rollout", "roll-out", "roll out"], correct:0},
-  {q:"Voter ___ was record-high.", opts:["turn out", "turnout", "turn-out"], correct:1}
+  {q:"Include a cost ___ in the appendix.", opts:["break down", "breakdown", "break-down"], correct:1, why:"The noun is one word, breakdown. The verb is two, break down. English closes the compound when the phrasal verb becomes a thing."},
+  {q:"We need executive ___.", opts:["buyin", "buy in", "buy-in"], correct:2, why:"The noun is one word, buy-in. The verb is two, buy in. English closes the compound when the phrasal verb becomes a thing."},
+  {q:"The March ___ is on track.", opts:["rollout", "roll-out", "roll out"], correct:0, why:"The noun is one word, rollout. The verb is two, roll out. English closes the compound when the phrasal verb becomes a thing."},
+  {q:"Voter ___ was record-high.", opts:["turn out", "turnout", "turn-out"], correct:1, why:"The noun is one word, turnout. The verb is two, turn out. English closes the compound when the phrasal verb becomes a thing."}
 ];
 function buildF(){
   var el = document.getElementById('exF'); el.innerHTML = '';

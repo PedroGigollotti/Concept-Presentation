@@ -711,6 +711,44 @@ gave out the real reason people were leaving" against *gave away*, which the
 unit's own Watch out defines as accidentally revealing something. *square away*
 now appears only in the scene, where the Access says it does.
 
+## The Particle swap closes: 128 of 128, 2026-08-23
+
+The last 26 needed shapes the particle mould could not give, because those units
+do not organise by particle. Four moulds, and the material for three of them was
+already printed in the book.
+
+**Units 1 to 4 point forward.** The map starts at unit 5, so an explanation
+there cannot name a sense that has not been taught. It names where the sense
+will be: "UP is the particle mapped in Unit 5, where it means toward the top.
+For now the point is that the particle, not the verb, changes the meaning." A
+learner who gets it wrong in unit 1 finds out the thing has a place in the book
+and where.
+
+**Units 24 to 28 repeat what the unit already said.** Each of those units prints
+a gloss for every particle in brackets in exercise A, "(assume control)",
+"(retract it)". The correction now uses those words: "Take back here is
+retracting it. Take up is raising a topic; take over is assuming control." Not
+one new sentence.
+
+**Units 29 to 31 name the register**, which the prompt already tags: "Commence
+is the form a contract takes. Kick off, start belong somewhere else on the same
+ladder."
+
+**Unit 32 is about the written form**: "The noun is one word, breakdown. The
+verb is two, break down. English closes the compound when the phrasal verb
+becomes a thing."
+
+**And a sweep of all 128 for phrasal verbs explaining phrasal verbs.** 44 raw
+hits, and the criterion cuts them to seven. Most are the book's own metaphor,
+where using the particle is the point: "a plan is lifted off the calendar"
+explaining OFF is Pedro's sentence and it works. Five were mine, from the phrase
+"the particle Unit N takes up", which puts an accidental phrasal verb beside the
+particle it is naming, and reads as the thing being explained. It now says "Unit
+N is where UP is mapped". Two were circular: a clause borrowed from another unit
+that contained the answer's own verb, so the explanation said get through means
+you get through. A verb named inside its OWN category's clause is not circular
+and is left alone, since the Analysis explains a sense by its examples.
+
 ## Open, waiting on Pedro
 
 - the three American / British callouts: units 12, 13 and 14

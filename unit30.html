@@ -475,7 +475,7 @@ function recomputeTotal(){
 var B_DATA = [
   {q:"(Slack) I shall commence the deployment forthwith.", key:"kick off"},
   {q:"(Contract) The vendor will sort out any defects within 30 days.", key:"resolve"},
-  {q:"(Chat) Kindly transmit the file at your earliest convenience.", key:"send the file over"},
+  {q:"(Chat) Kindly transmit the file at your earliest convenience.", key:["send the file over","send over the file"], why:"Both orders are right with a full noun phrase, as unit 2 says. Only a pronoun is forced between."},
   {q:"(Policy) Staff must sort out the checklist before each shift.", key:"complete"},
   {q:"(Peer email) I would be grateful if you would ascertain the root cause.", key:"dig into"}
 ];
@@ -552,10 +552,10 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"(Contract) The agreement will ___ on signing.", opts:["kick off", "start", "commence"], correct:2},
+  {q:"(Contract) The agreement will ___ on signing.", opts:["kick off", "start", "commence"], correct:2, why:"Commence is the form a contract takes. kick off, start belong somewhere else on the same ladder."},
   {q:"(Team email) I'll ___ the numbers and send them over.", opts:["go over", "examine", "scrutinize"], correct:0, why:"OVER is across and above, and here attention passes back and forth."},
-  {q:"(Policy) Staff must ___ the safety checklist.", opts:["do", "carry out", "knock out"], correct:1},
-  {q:"(Chat) Can you ___ the client before EOD?", opts:["make contact with", "correspond with", "follow up with"], correct:2}
+  {q:"(Policy) Staff must ___ the safety checklist.", opts:["do", "carry out", "knock out"], correct:1, why:"OUT is away from an enclosure, and Unit 7 is where OUT is mapped."},
+  {q:"(Chat) Can you ___ the client before EOD?", opts:["make contact with", "correspond with", "follow up with"], correct:2, why:"UP is toward the top, and Unit 5 is where UP is mapped."}
 ];
 function buildF(){
   var el = document.getElementById('exF'); el.innerHTML = '';
