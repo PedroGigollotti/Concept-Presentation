@@ -784,6 +784,34 @@ the prompt: unit 10's key is "sign off" for a sentence that already reads "sign
 ___ on the phase", and unit 13's is "sit in" for one that reads "sit ___ on the
 workshop". The book does not break its own rules anywhere else in the keys.
 
+## The silent panel verbs, closed, 2026-08-23
+
+Twenty-two verbs were drawn in a panel and never used by their own unit. All
+twenty-two are resolved: thirteen took a slot from a verb that had four or five,
+seven got an item written by Pedro, one left the panel, and one is a deliberate
+consequence of where its sense lives.
+
+The seven written items, all in exercise C, all replacing a target whose verb
+was better served elsewhere:
+
+| Unit | Verb | The formal prompt |
+|---|---|---|
+| 5 | dried up | Referrals from the regional clinic stopped arriving in March. |
+| 5 | paid up | The sponsor finally released the funds after two reminders. |
+| 10 | burned off | The extra week of float will be gone by the time we pour the foundation. |
+| 18 | spilled over | The delay in the discovery phase pushed into the client handover week. |
+| 18 | smoothed over | Priya spent an hour calming the client after the overrun call. |
+| 19 | carried it through | Rosa started the Halvorsen renegotiation and Ty took it to signature. |
+
+**crash into left unit 22's panel.** The figurative use is real English, but
+forcing a collision into an internal-audit scene costs more than the verb is
+worth, and the precedent is sign off, which left unit 10's panel and is still
+taught. COLLISION carries run into and bump into, which the unit uses.
+
+**sit on stays silent in unit 11 and that is correct.** Its sense lives in
+CONTACT, which is unit 11's category, and unit 12 is the unit that drills it.
+The shared panel shows it in gray there, which is the honest placement.
+
 ## Open, waiting on Pedro
 
 - the three American / British callouts: units 12, 13 and 14
