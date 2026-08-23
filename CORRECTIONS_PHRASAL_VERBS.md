@@ -435,7 +435,16 @@ verb the unit never teaches back into the book. PARTICLES was corrected.
 | `unit6.html`, exercise F | "We're ___ the work we did last quarter" (building on) | `If something is wrong on the line, ___.` |
 | `unit6.html`, exercise F | "She ___ for the junior engineer" (stood up) | `She ___ the pressure from finance when nobody else would.` |
 | `unit7.html`, exercise F | "She ___ of the partnership" (pulled out) | `Two partners ___ of the deal before the contract was signed.` |
-| `unit9.html`, figure alt | "Cancellation: call off, put off, back off." | `Cancellation: call off, put off, back down.` |
+| `unit9.html`, figure alt | "Cancellation: call off, put off, back off." | `Cancellation: call off, put off.` |
+
+**The unit 9 row was corrected twice, and the first correction was on the wrong
+side.** As published the panel said `back off` while the Analysis said `back down`,
+so the panel was changed to agree with the Analysis. Both were then wrong together:
+*back down* is a DOWN verb, its home is unit 15, and unit 9 used it in one place
+only, the Analysis sentence that the panel had just been made to match. The row now
+reads `Cancellation: call off, put off.` and the Analysis lost the clause. Recorded
+in NOTES beside `check_figure_vs_analysis()`, because a check that compares two
+texts goes green the moment one is edited to match the other.
 
 **Four graded items tested a verb the unit had not taught.** Every replacement
 uses a verb the unit does teach: hold up (unit 1's own matching exercise),
@@ -811,6 +820,19 @@ taught. COLLISION carries run into and bump into, which the unit uses.
 **sit on stays silent in unit 11 and that is correct.** Its sense lives in
 CONTACT, which is unit 11's category, and unit 12 is the unit that drills it.
 The shared panel shows it in gray there, which is the honest placement.
+
+## A deliberate loss, so nobody looks for it later, 2026-08-23
+
+Unit 32's American/British callout used to contrast *layoffs* with
+*redundancies*. It was replaced by the compression callout (*downplay* against
+*play it down*), which is anchored in unit 32's own rule: the closed form is the
+noun, the verb stays two words, which is what the exercise F feedback already
+says in as many words. The old callout contrasted two different words and said
+nothing about that rule.
+
+`lay off`, `layoffs`, and `redundancies` appeared nowhere else in the book. Zero
+occurrences outside that callout. They are gone on purpose, not by accident, and
+they do not come back as a second American/British callout in the same unit.
 
 ## Open, waiting on Pedro
 
