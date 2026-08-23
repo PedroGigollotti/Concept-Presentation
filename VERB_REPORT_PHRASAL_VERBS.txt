@@ -1,0 +1,236 @@
+verbos distintos no livro inteiro         285
+  desenhados no painel                    190
+  ensinados e nao desenhados              113
+linhas verbo-por-unidade                  321
+verbos que aparecem em mais de uma unidade 26
+glosas usadas por mais de um verbo          0
+
+========================================================================
+POR PARTICULA
+========================================================================
+
+UP  (toward the top)
+   COMPLETION      u5   wrap up, finish up, tie up, clear up
+   EXHAUSTION      u5   use up, eat up, dry up
+   SETTLING        u5   settle up, square up, pay up
+   CONFRONTATION   u6   speak up, own up, stand up to
+   EMERGENCE       u6   come up, bring up, show up
+   INCREASE        u6   scale up, step up, speed up
+   [off-panel]          ate up (u5), beef up (u6), bring up (u2), bring up (u4), bubble up (u6), come up (u27), draw up (u30), follow up (u1), hold up (u1), look up (u3), pick up (u2), pick up (u3), pick up (u6), pipe up (u6), put up (u2), run up (u1), sew up (u5), true up (u5), wind up (u5), wrap up (u29)
+
+OUT  (away from an enclosure)
+   EXIT            u7   drop out, opt out, walk out
+   REMOVAL         u7   cut out, rule out, leave out
+   EXCLUSION       u7   lock out, shut out, freeze out
+   THOROUGHNESS    u8   sort out, work out, hear out
+   DISTRIBUTION    u8   hand out, roll out, send out
+   VISIBILITY      u8   find out, spell out, point out
+   [off-panel]          bow out (u7), call out (u31), carry out (u4), carry out (u30), clear out (u5), drown out (u3), figure out (u1), fill out (u2), find out (u4), flesh out (u4), hammer out (u4), hash out (u1), ice out (u7), iron out (u2), map out (u4), put out (u8), roll out (u3), run out (u28), set out (u30), single out (u8), sort out (u30), strip out (u7), thrash out (u8), turn out (u8)
+
+OFF  (away from a surface)
+   SEPARATION      u9   break off, cut off, split off
+   DEPARTURE       u9   take off, head off, set off
+   CANCELLATION    u9   call off, put off, back down
+   TRIGGERING      u10  set off, kick off, touch off
+   USING UP        u10  pay off, work off, burn off
+   FINISHING       u10  round off, finish off
+   [off-panel]          call off (u2), call off (u28), hive off (u9), hold off (u5), hold off (u31), kick off (u1), kick off (u29), kick off (u30), put off (u4), put off (u30), rattle off (u3), run off (u9), shave off (u10), sign off (u10), spark off (u10), stave off (u9), trail off (u3), turn off (u2), turn off (u3)
+
+ON  (in contact with a surface)
+   CONTACT         u11  put on, latch on, hold on, sit on
+   CONTINUATION    u11  carry on, move on, press on
+   UNDERTAKING     u11  take on, work on, get on with
+   IMPOSITION      u12  pass on, dump on, foist on
+   RELIANCE        u12  count on, depend on, rely on
+   SCRUTINY        u12  check on, check up on
+   [off-panel]          bank on (u2), embark on (u11), get on (u31), hinge on (u12), pile on (u12), plow on (u11), seize on (u11), sit on (u12), sleep on (u12)
+
+IN  (inside a boundary)
+   ENCLOSURE       u13  fold in, box in, take in
+   INCLUSION       u13  bring in, factor in, build in
+   PARTICIPATION   u13  weigh in, chime in, sit in on
+   SUBMISSION      u14  hand in, turn in, put in
+   ARRIVAL         u14  check in, come in, drop in
+   COLLAPSE        u14  cave in, give in, fall in
+   [off-panel]          close in (u14), hem in (u13), phase in (u13), pitch in (u13), roll in (u14), send in (u14), sit in (u13)
+
+DOWN  (toward the ground)
+   REDUCTION       u15  cut down, scale down, tone down
+   DEFEAT          u15  shut down, turn down, back down
+   SUPPRESSION     u15  play down, water down, hold down
+   RECORDING       u16  write down, note down, take down
+   FIXING          u16  nail down, pin down, lock down
+   SETTLING        u16  settle down, calm down, wind down
+   [off-panel]          break down (u2), chase down (u1), clamp down (u15), climb down (u31), knuckle down (u1), scribble down (u16), settle down (u5), shoot down (u15), simmer down (u16), tie down (u16), whittle down (u15)
+
+BACK  (toward the point of origin)
+   RETURN          u17  get back to, report back, call back
+   REVERSAL        u17  roll back, scale back, walk back
+   RESTRAINT       u17  hold back, keep back, pull back
+   RESISTANCE      u17  push back, answer back, hit back
+   [off-panel]          circle back (u17), cut back (u4), cut back (u7), dial back (u17), get back (u17), get back (u29), push back (u3), push back (u31), walk back (u31)
+
+OVER  (across and above)
+   TRANSFER        u18  hand over, take over, turn over
+   REVIEW          u18  go over, talk over, think over
+   EXCESS          u18  run over, spill over, boil over
+   CONCEALMENT     u18  gloss over, paper over, smooth over
+   [off-panel]          brim over (u18), brush over (u18), go over (u27), go over (u30), goe over (u27), send over (u29), sign over (u18)
+
+THROUGH  (from one end to the other)
+   TRAVERSAL       u19  get through, sit through, push through
+   COMPLETION      u19  see through, follow through, carry through
+   CONNECTION      u19  put through, come through, get through to
+   BREAKTHROUGH    u19  break through, cut through, see through
+   [off-panel]          go through (u27), muddle through (u19), patch through (u19), pull through (u19)
+
+AWAY  (to a distance)
+   REMOVAL         u20  give away, throw away, explain away
+   DEPARTURE       u20  walk away, back away, turn away
+   DISAPPEARANCE   u20  fade away, die away
+   PERSISTENCE     u20  chip away, plug away, fire away
+   [off-panel]          beaver away (u20), sign away (u20), wither away (u20)
+
+AROUND  (in a circle, with no fixed target)
+   AIMLESSNESS     u21  mess around, kick around, hang around
+   CIRCULATION     u21  pass around, ask around, get around
+   AVOIDANCE       u21  work around, talk around, skirt around
+   REORIENTATION   u21  turn around, come around, bring around
+   [off-panel]          dance around (u21), noodle around (u21), shop around (u21)
+
+INTO  (crossing a boundary inward)
+   TRANSITION      u22  turn into, grow into, settle into
+   INVESTIGATION   u22  look into, dig into, delve into
+   PRESSURE        u22  talk into, push into, rope into
+   COLLISION       u22  run into, bump into
+   [off-panel]          coax into (u22), dig into (u30), enter into (u30), look into (u1), morph into (u22), run into (u28), run into (u29), tap into (u22)
+
+MINOR  (the small set that carries formal weight)
+   APART           u23  fall apart, take apart, tell apart
+   TOGETHER        u23  come together, piece together, pull together
+   ASIDE           u23  set aside, brush aside, cast aside
+   FORWARD         u23  put forward, bring forward, look forward to
+   ACROSS          u23  get across, come across, cut across
+
+========================================================================
+POR VERBO
+========================================================================
+
+O MESMO VERBO EM MAIS DE UMA UNIDADE
+
+   back down
+      u9   CANCELLATION     
+      u15  DEFEAT           
+
+   bring up
+      u2   [off-panel]      
+      u4   [off-panel]      raise
+      u6   EMERGENCE        
+
+   call off
+      u2   [off-panel]      
+      u9   CANCELLATION     
+      u28  [off-panel]      
+
+   carry out
+      u4   [off-panel]      conduct
+      u30  [off-panel]      already formal, it keeps
+
+   come across
+      u23  ACROSS           
+      u27  [off-panel]      
+
+   come up
+      u6   EMERGENCE        
+      u27  [off-panel]      
+
+   cut back
+      u4   [off-panel]      reduce
+      u7   [off-panel]      
+
+   dig into
+      u22  INVESTIGATION    
+      u30  [off-panel]      
+
+   find out
+      u4   [off-panel]      discover
+      u8   VISIBILITY       
+
+   get back
+      u17  [off-panel]      
+      u29  [off-panel]      
+
+   go over
+      u18  REVIEW           
+      u27  [off-panel]      
+      u30  [off-panel]      
+
+   hold off
+      u5   [off-panel]      
+      u31  [off-panel]      
+
+   kick off
+      u1   [off-panel]      begin
+      u10  TRIGGERING       
+      u29  [off-panel]      
+      u30  [off-panel]      commence
+
+   look into
+      u1   [off-panel]      investigate
+      u22  INVESTIGATION    
+
+   pick up
+      u2   [off-panel]      separable: pronoun goes between, as in pick it up
+      u3   [off-panel]      
+      u6   [off-panel]      
+
+   push back
+      u3   [off-panel]      delay to a later time
+      u17  RESISTANCE       
+      u31  [off-panel]      
+
+   put off
+      u4   [off-panel]      postpone
+      u9   CANCELLATION     
+      u30  [off-panel]      postpone
+
+   roll out
+      u3   [off-panel]      release in stages
+      u8   DISTRIBUTION     
+
+   run into
+      u22  COLLISION        
+      u28  [off-panel]      
+      u29  [off-panel]      
+
+   set off
+      u9   DEPARTURE        
+      u10  TRIGGERING       
+
+   settle down
+      u5   [off-panel]      
+      u16  SETTLING         
+
+   sit on
+      u11  CONTACT          
+      u12  [off-panel]      
+
+   sort out
+      u8   THOROUGHNESS     
+      u30  [off-panel]      resolve
+
+   turn off
+      u2   [off-panel]      separable: pronoun goes between
+      u3   [off-panel]      deactivate
+
+   walk back
+      u17  REVERSAL         
+      u31  [off-panel]      
+
+   wrap up
+      u5   COMPLETION       
+      u29  [off-panel]      
+
+
+DUAS OU MAIS ENTRADAS COM A MESMA GLOSA
+   nenhuma
