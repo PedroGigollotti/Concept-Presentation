@@ -557,6 +557,35 @@ after getting an item wrong. All 53 now read "sense", which is the word the
 Analysis uses in every unit. `check_caption_vocabulary()` was extended to read
 the answer keys, having read only captions before.
 
+## A defect I introduced, and the check that now catches it, 2026-08-23
+
+Unit 12's panel needed replacements for *push on*, which reads as continuation,
+and *sit on*, which is not scrutiny. I measured frequency, proposed *dump on*
+and *check up on*, and both were already two of the three verbs that unit's own
+Meet a Stranger declares never taught. The instruction went false twice in one
+edit and was published.
+
+The trap had been written into the series standard that same morning, which is
+why units 10 and 20 were left with two examples in a category rather than
+promoting a verb out of the E. Naming it was not the same as checking for it.
+
+`check_panel_vs_stranger()` compares the panel against the E key and fails the
+run on any overlap. Four lines.
+
+The fix keeps the panel corrections, because reverting them would trade a fix
+for the defect it fixed, and replaces the two E items:
+
+| Meet a Stranger, unit 12 | Was | Now |
+|---|---|---|
+| item 1 | dump on | `pile on` |
+| item 3 | check up on | `sleep on` |
+
+*hinge on* is untouched; it never collided. Both replacements were screened
+against the ON panel and against all 32 units BEFORE being measured, which is
+the order that prevents the original mistake. *sleep on* predicts from CONTACT,
+*pile on* from IMPOSITION, so the set still tests three senses the book teaches
+against three verbs it does not.
+
 ## Open, waiting on Pedro
 
 - the three American / British callouts: units 12, 13 and 14
