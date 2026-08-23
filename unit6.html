@@ -589,8 +589,8 @@ function checkF(){
 }
 
 /* ===== G. Vocabulary matching ===== */
-var G_TERMS = ["put it on the table","a red flag","raise the bar","sound the alarm","the elephant in the room","go up the chain"];
-var G_MEAN = ["an obvious problem nobody is willing to name", "take an issue to more senior people", "raise a proposal openly for discussion", "warn people that something serious is developing", "set a higher standard for everyone", "an early sign that something is wrong"];
+var G_TERMS = ["put it on the table","stick your neck out","raise the bar","sound the alarm","the elephant in the room","go up the chain"];
+var G_MEAN = ["an obvious problem nobody is willing to name", "take an issue to more senior people", "raise a proposal openly for discussion", "warn people that something serious is developing", "set a higher standard for everyone", "take a personal risk by being the one who says it"];
 var G_CORRECT = [2, 5, 4, 3, 0, 1];
 function buildG(){
   var el = document.getElementById('exG'); el.innerHTML = '';
@@ -616,7 +616,7 @@ function checkG(){
 
 /* ===== H. Vocabulary in context (fill from list) ===== */
 var H_DATA = [
-  {q:"Three missed shifts in a row is ___.", a:"a red flag"},
+  {q:"Ines ___ in April when nobody else would name the seal tolerance.", a:"stuck her neck out"},
   {q:"Let me ___: what if we ran two long shifts instead of three?", a:"put it on the table"},
   {q:"Nobody has mentioned the staffing gap. It's ___.", a:"the elephant in the room"},
   {q:"Quality started ___ in March, and by April everyone was listening.", a:"sounding the alarm"},

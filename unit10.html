@@ -588,8 +588,8 @@ function checkF(){
 }
 
 /* ===== G. Vocabulary matching ===== */
-var G_TERMS = ["hit the ground running","get the ball rolling","the home stretch","tie up loose ends","a shot in the arm","across the finish line"];
-var G_MEAN = ["start at full speed from day one", "all the way to completion", "set something moving so others can carry it on", "the final phase before completion", "a boost that revives momentum", "finish the small remaining tasks"];
+var G_TERMS = ["hit the ground running","get the ball rolling","get it off the ground","tie up loose ends","a shot in the arm","across the finish line"];
+var G_MEAN = ["start at full speed from day one", "all the way to completion", "set something moving so others can carry it on", "get something started at all, after it has been stuck", "a boost that revives momentum", "finish the small remaining tasks"];
 var G_CORRECT = [0, 2, 3, 5, 4, 1];
 function buildG(){
   var el = document.getElementById('exG'); el.innerHTML = '';
@@ -617,7 +617,7 @@ function checkG(){
 var H_DATA = [
   {q:"The new site manager ___, closing three permits on her first day.", a:"hit the ground running"},
   {q:"To ___ on the redesign, we ran a short kickoff workshop.", a:"get the ball rolling"},
-  {q:"With the roof on, we're in ___.", a:"the home stretch"},
+  {q:"The permits took four months, but we finally ___ in March.", a:"got it off the ground"},
   {q:"Before handover, we need to ___: signage, a few fixtures, the final clean.", a:"tie up loose ends"},
   {q:"The extra crew was ___ the schedule badly needed.", a:"a shot in the arm"},
   {q:"After eighteen months, phase one is finally ___.", a:"across the finish line"}

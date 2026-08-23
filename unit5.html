@@ -590,8 +590,8 @@ function checkF(){
 }
 
 /* ===== G. Vocabulary matching ===== */
-var G_TERMS = ["loose ends","in the can","call it a day","down to the wire","put a bow on it","the home stretch"];
-var G_MEAN = ["stop working for now, having done enough", "finished and ready, with nothing left to do", "continuing right up to the deadline", "the final part of a long effort", "small unfinished details left at the end of a task", "finish something neatly and present it as done"];
+var G_TERMS = ["loose ends","in the can","call it a day","put it to bed","put a bow on it","the home stretch"];
+var G_MEAN = ["stop working for now, having done enough", "finished and ready, with nothing left to do", "close something out for good and stop coming back to it", "the final part of a long effort", "small unfinished details left at the end of a task", "finish something neatly and present it as done"];
 var G_CORRECT = [4, 1, 0, 2, 5, 3];
 function buildG(){
   var el = document.getElementById('exG'); el.innerHTML = '';
@@ -621,7 +621,7 @@ var H_DATA = [
   {q:"There are a few ___ on the consent files, nothing major.", a:"loose ends"},
   {q:"It's seven o'clock. Let's ___ and pick this up tomorrow.", a:"call it a day"},
   {q:"The final report is ___. Nothing left but to send it.", a:"in the can"},
-  {q:"We went ___ on that submission. It landed with nine minutes to spare.", a:"down to the wire"},
+  {q:"Sign the closeout letter and we can ___ for good.", a:"put it to bed"},
   {q:"Add the summary slide and we can ___.", a:"put a bow on it"}
 ];
 function buildH(){

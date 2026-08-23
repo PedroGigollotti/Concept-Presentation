@@ -481,9 +481,47 @@ nineteen, and none repeats the line the figure already carries inside itself:
 spoke, hub, solid or dotted. Ladder is deliberately not on that list: unit 30's
 register table is a ladder and its caption's claim about the bottom rows is true.
 
+## Six vocabulary expressions taught twice, 2026-08-23
+
+224 distinct vocabulary items across the 32 units. Six were taught in two units
+each, with a slightly different gloss in each place. The unit whose theme the
+term actually belongs to keeps it; the other gets a written replacement.
+
+| Unit | Was | Now | Meaning |
+|---|---|---|---|
+| 13 | read the room | `circle back` | come back to a point later, once there is more to go on |
+| 5 | down to the wire | `put it to bed` | close something out for good and stop coming back to it |
+| 10 | the home stretch | `get it off the ground` | get something started at all, after it has been stuck |
+| 8 | the elephant in the room | `come clean` | admit something yourself before it is found out |
+| 8 | a heads-up | `get wind of` | hear about something you were not meant to hear yet |
+| 6 | a red flag | `stick your neck out` | take a personal risk by being the one who says it |
+
+Each meaning was tested against the other five in its own unit before it was
+written, because a vocabulary exercise that does not decide is the matching
+defect in another costume. *put it to bed* had to separate from *in the can*, a
+state, and *put a bow on it*, a presentation. *come clean* had to separate from
+*break the news*, which can be someone else's news, and *blow the whistle*,
+which is about another party. *get wind of* had to separate from *come to
+light*: one is a person hearing, the other is a fact surfacing.
+
+*get it off the ground* is coverage and not only substitution. Unit 10's other
+two openings, *hit the ground running* and *get the ball rolling*, are both
+about speed once a thing has started. Nothing in that unit covered a thing
+getting started at all, and its H sentence says so: "The permits took four
+months, but we finally got it off the ground in March."
+
+**Unit 6 took the rarer of two candidates, on a rule that did not exist before.**
+*force the issue* is 7.6 times more common than *stick your neck out*, and both
+carry in speech. Unit 6's Analysis says "raise an issue in a room and you have
+exposed it, and exposing something exposes you," and none of the other five
+terms carried that personal cost. Coverage beats frequency when the unit's own
+prose promises something no term delivers. Written into the series standard.
+
+*flag it* was available, since *a red flag* left, and is taught in unit 6's own
+American/British callout. It was rejected for overlapping *sound the alarm*.
+
 ## Open, waiting on Pedro
 
-- the six vocabulary expressions taught in two units
 - the missing American / British callout in unit 13
 - the 128 particle-swap items that give no explanation
 

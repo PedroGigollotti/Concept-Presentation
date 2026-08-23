@@ -589,8 +589,8 @@ function checkF(){
 }
 
 /* ===== G. Vocabulary matching ===== */
-var G_TERMS = ["come to light","break the news","the elephant in the room","put it on the record","a heads-up","blow the whistle"];
-var G_MEAN = ["an early, informal warning", "the obvious problem no one will name", "become known after being hidden", "tell someone difficult news first", "report wrongdoing publicly", "state something officially so it counts later"];
+var G_TERMS = ["come to light","break the news","come clean","put it on the record","get wind of","blow the whistle"];
+var G_MEAN = ["hear about something you were not meant to hear yet", "admit something yourself before it is found out", "become known after being hidden", "tell someone difficult news first", "report wrongdoing publicly", "state something officially so it counts later"];
 var G_CORRECT = [2, 3, 1, 5, 0, 4];
 function buildG(){
   var el = document.getElementById('exG'); el.innerHTML = '';
@@ -618,9 +618,9 @@ function checkG(){
 var H_DATA = [
   {q:"The packaging defect only ___ after three months of returns.", a:"came to light"},
   {q:"Someone has to ___ to the directors, and it should be the VP, not an analyst.", a:"break the news"},
-  {q:"Nobody wanted to mention the budget overrun, but it was ___.", a:"the elephant in the room"},
+  {q:"Rather than wait for the audit, the vendor ___ about the second batch.", a:"came clean"},
   {q:"Before we move on, let's ___: we flagged this vendor back in March.", a:"put it on the record"},
-  {q:"Just so you have ___, the directors may ask about the Midwest numbers tomorrow.", a:"a heads-up"},
+  {q:"If the directors ___ the Midwest numbers before Friday, we lose the room.", a:"get wind of"},
   {q:"The analyst who ___ about the vendor was moved to another team within weeks.", a:"blew the whistle"}
 ];
 function buildH(){

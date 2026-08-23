@@ -585,8 +585,8 @@ function checkF(){
 }
 
 /* ===== G. Vocabulary matching ===== */
-var G_TERMS = ["on the same page","get buy-in","bounce ideas around","a seat at the table","put in your two cents","read the room"];
-var G_MEAN = ["offer your opinion, modestly", "in agreement about the plan", "a real role in the decision", "secure genuine support for an idea", "sense the group's mood before speaking", "discuss possibilities informally"];
+var G_TERMS = ["on the same page","get buy-in","bounce ideas around","a seat at the table","put in your two cents","circle back"];
+var G_MEAN = ["offer your opinion, modestly", "in agreement about the plan", "a real role in the decision", "secure genuine support for an idea", "come back to a point later, once there is more to go on", "discuss possibilities informally"];
 var G_CORRECT = [1, 3, 5, 2, 0, 4];
 function buildG(){
   var el = document.getElementById('exG'); el.innerHTML = '';
@@ -617,7 +617,7 @@ var H_DATA = [
   {q:"We spent an hour ___ before anything felt right.", a:"bouncing ideas around"},
   {q:"The students finally have ___ in the curriculum review.", a:"a seat at the table"},
   {q:"Can I ___? I think the timeline is too tight.", a:"put in my two cents"},
-  {q:"She waited, ___, then raised the budget quietly.", a:"reading the room"}
+  {q:"Let's ___ on the lab constraints once scheduling replies.", a:"circle back"}
 ];
 function buildH(){
   var el = document.getElementById('exH'); el.innerHTML = '';
