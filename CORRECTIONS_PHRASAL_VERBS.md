@@ -520,9 +520,46 @@ prose promises something no term delivers. Written into the series standard.
 *flag it* was available, since *a red flag* left, and is taught in unit 6's own
 American/British callout. It was rejected for overlapping *sound the alarm*.
 
+## Two more categories, and 53 spokes in the answer keys, 2026-08-23
+
+| Panel category | Was | Now |
+|---|---|---|
+| unit 10 FINISHING | round off, sign off, finish off | `round off, finish off` |
+| unit 20 REMOVAL | give away, throw away, do away with | `give away, throw away, explain away` |
+| unit 20 DISAPPEARANCE | fade away, die away, explain away | `fade away, die away` |
+
+*sign off* left because all four of unit 10's uses are approval, with *on*, and
+the unit's own Watch out says that without *on* the verb only means finish
+writing, which the unit never uses. The panel was holding the one sense the unit
+does not teach.
+
+*explain away* moved rather than being replaced, and the defect was sharper than
+a wrong label: it was the opposite movement from its neighbours. *fade away* is
+a thing dwindling on its own; *explain away* is a person making it go. REMOVAL
+is "you send something off for good", which is what dismissing a problem with a
+convenient reason is. *do away with* left the panel because the unit never uses
+it.
+
+Neither category gained a third example. In both units the natural candidate was
+already in that unit's Meet a Stranger, which declares its three verbs never
+taught, so promoting one would have made that instruction false. A category with
+two examples teaches; a category with three, one used in another sense, teaches
+less.
+
+In each case the Analysis was the third text and had to follow: unit 10 said
+"you round off, sign off, finish off" and unit 20 said "fade away, explain
+away". `check_figure_vs_analysis()` failed the run until both were corrected.
+
+**53 occurrences of "spoke" in the printed answer keys, across 18 units.** The
+Meet a Stranger keys read "Triggering spoke", "Using-up spoke", "Disappearance
+spoke". Same defect as the twenty captions, in the text a learner reads only
+after getting an item wrong. All 53 now read "sense", which is the word the
+Analysis uses in every unit. `check_caption_vocabulary()` was extended to read
+the answer keys, having read only captions before.
+
 ## Open, waiting on Pedro
 
-- the missing American / British callout in unit 13
+- the three American / British callouts: units 12, 13 and 14
 - the 128 particle-swap items that give no explanation
 
 ## Why this file exists
