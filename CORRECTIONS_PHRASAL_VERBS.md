@@ -749,6 +749,41 @@ that contained the answer's own verb, so the explanation said get through means
 you get through. A verb named inside its OWN category's clause is not circular
 and is left alone, since the Analysis explains a sense by its examples.
 
+## Thirteen silent verbs taught, by swap and not by addition, 2026-08-23
+
+Twenty verbs were drawn in a panel and never used by their own unit. Thirteen
+now appear in an exercise, and not one item was added: in each case a verb with
+four or five slots gave one up to a verb with none.
+
+| Unit | Verb | Took the slot of |
+|---|---|---|
+| 5 | eat up | use up, in exercise A, which keeps B and C |
+| 6 | speed up | step up, in exercise C, which keeps A |
+| 17 | call back | get back to, in exercise C, which keeps A, B and F |
+| 19 | sit through | push through, in C, which keeps A and F |
+| 19 | put through | get through to, in C, which keeps A and B |
+| 20 | back away | walk away, in C, which keeps A and F |
+| 21 | hang around | kick around, in C, which keeps A, B and F |
+| 21 | skirt around | work around, in C, which keeps A, B and F |
+| 22 | settle into | turn into, in C, which keeps A and B |
+| 22 | rope into | talk into, in C, which keeps A, B and F |
+| 23 | tell apart | fall apart, in C, which keeps A, B and F |
+| 23 | piece together | pull together, in C, which keeps A and F |
+| 23 | cast aside | set aside, in C, which keeps A and B |
+
+Exercise C is where almost all of them fit, and the reason is structural: C gives
+a formal sentence and asks for the phrasal verb, so changing which formal verb it
+carries changes the target without changing what the exercise tests. Every
+printed model answer was updated with the prompt.
+
+**And a sweep for other rules the book teaches and breaks.** The separable word
+order was one; seven more taught rules are mechanically checkable against the
+363 answer keys in A and B. Result: 3 raw hits, 0 real. The three were the same
+false positive, a rule test that could not see the preposition already sitting in
+the prompt: unit 10's key is "sign off" for a sentence that already reads "sign
+___ on the phase", and unit 13's is "sit in" for one that reads "sit ___ on the
+workshop". The book does not break its own rules anywhere else in the keys.
+
 ## Open, waiting on Pedro
 
 - the three American / British callouts: units 12, 13 and 14
