@@ -222,7 +222,7 @@
     </div>
 
     <div class="callout">
-      <b>Watch out.</b> See through has two senses: complete a project, or perceive the deception behind a claim. And come through is not get through: come through means deliver as promised or arrive; get through means finish or survive.
+      <b>Watch out.</b> See through has two senses: complete a project, or perceive the deception behind a claim. The word order decides which sense you get. See something through means carry it to the end; see through something means recognize what is false in it. And come through is not get through: come through means deliver as promised or arrive; get through means finish or survive.
     </div>
 
     <div class="callout">
@@ -428,7 +428,15 @@ function checkA(){
   var correct = 0;
   A_DATA.forEach(function(item, i){
     var fb = document.getElementById('Afb'+i);
-    var multi = Array.isArray(item.a);
+    /* item.a is one of three shapes, and the shape tells them apart:
+         array of ARRAYS   one input per blank, each blank with its own list
+         array of STRINGS  one input, and any of them is right
+         a string          one input, one answer
+       item.show, when present, is what the model answer PRINTS. Matching is
+       always lowercased, so without it no model answer could carry a capital:
+       "plain English" had to be keyed and shown as "plain english", and the
+       stress exercise had to ask for capitals and then print none. */
+    var multi = Array.isArray(item.a) && Array.isArray(item.a[0]);
     var ok, shown;
     if(multi){
       ok=true;
@@ -441,11 +449,12 @@ function checkA(){
       shown=parts.join(' / ');
     } else {
       var v = document.getElementById('A'+i).value.trim().toLowerCase().replace(/\s+/g,' ');
-      ok = (v === item.a);
-      shown = item.a;
+      var acc = Array.isArray(item.a) ? item.a : [item.a];
+      ok = acc.indexOf(v) !== -1;
+      shown = item.show || acc[0];
     }
-    if(ok){ fb.textContent = 'Correct.'; fb.className = 'fb ok'; correct++; }
-    else { fb.textContent = 'Not quite. Answer: ' + shown; fb.className = 'fb bad'; }
+    if(ok){ fb.textContent = 'Correct.' + (item.why ? ' ' + item.why : ''); fb.className = 'fb ok'; correct++; }
+    else { fb.textContent = 'Not quite. Answer: ' + shown + (item.why ? ' ' + item.why : ''); fb.className = 'fb bad'; }
   });
   registerGrade('A', correct, A_DATA.length);
 }
@@ -501,7 +510,12 @@ function checkSoft(blockId, keyId){
     B_DATA.forEach(function(item,i){
       var v = document.getElementById('B'+i).value.toLowerCase();
       var fb = document.getElementById('Bfb'+i);
-      if(v.indexOf(item.key) !== -1){ fb.textContent='Contains the right particle.'; fb.className='fb ok'; correct++; }
+      /* item.key may be a list. Where two word orders are both correct, and
+         unit 2 teaches that they are, refusing one of them contradicts the
+         book. item.why names the difference when there is one. */
+      var acc = Array.isArray(item.key) ? item.key : [item.key];
+      var hit = acc.some(function(k){ return v.indexOf(k) !== -1; });
+      if(hit){ fb.textContent='Contains the right particle.' + (item.why ? ' ' + item.why : ''); fb.className='fb ok'; correct++; }
       else { fb.textContent='Compare with the key below.'; fb.className='fb bad'; }
     });
     registerGrade('B', correct, B_DATA.length);
@@ -642,8 +656,10 @@ function checkH(){
   H_DATA.forEach(function(item,i){
     var v = document.getElementById('H'+i).value.trim().toLowerCase();
     var fb = document.getElementById('Hfb'+i);
-    if(v === item.a){ fb.textContent='Correct.'; fb.className='fb ok'; correct++; }
-    else { fb.textContent='Answer: '+item.a; fb.className='fb bad'; }
+    var acc = Array.isArray(item.a) ? item.a : [item.a];
+    var shown = item.show || acc[0];
+    if(acc.indexOf(v) !== -1){ fb.textContent='Correct.' + (item.why ? ' ' + item.why : ''); fb.className='fb ok'; correct++; }
+    else { fb.textContent='Answer: '+shown + (item.why ? ' ' + item.why : ''); fb.className='fb bad'; }
   });
   registerGrade('H', correct, H_DATA.length);
 }

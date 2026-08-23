@@ -659,6 +659,58 @@ verb or by register rather than by particle, units 1 to 4 and 24 to 32, where a
 particle explanation would answer a question the unit is not asking. Both groups
 are held for Pedro, grouped, with a mould proposed per group.
 
+## The engine: the key stops being the display, 2026-08-23
+
+The answer field was doing two jobs, and the matching job is lowercased, so the
+displayed model answer could never carry a capital. Unit 2 printed "plain
+english" for a proper adjective. Unit 3's exercise A asked the learner to write
+the stressed word IN CAPITALS and then showed the answer in lowercase, so the
+instruction and the model answer contradicted each other six times on one page.
+And a single exact string could not accept a second defensible form.
+
+`checkA`, `checkH` and the B branch of `checkSoft` in all 32 pages now read:
+
+- `a` may be a STRING, one answer; a flat ARRAY, any of which is right; or an
+  array of arrays, which is the existing per-blank shape and is untouched
+- `show`, optional, is what the model answer prints
+- `why`, optional, is the note shown on check, the same hook C1 and C2 carry
+
+Applied:
+
+| Unit | Item | Now accepts | Now shows |
+|---|---|---|---|
+| 2 | H2 | (unchanged) | `plain English` |
+| 3 | A1 to A6 | (unchanged) | `OFF`, `UP`, `BACK`, `OUT`, `IN`, `UP` |
+| 1 | A5 | *follow up*, *follow up with* | |
+| 4 | A2 | *reduce*, *decrease*, *curtail* | |
+| 4 | A5 | *review*, *examine* | |
+| 4 | A6 | *establish*, *create*, *arrange* | |
+| 3 | H3 | *talking over each other*, *talking over one another* | |
+| 5 | B4 | *used up all*, *used all the buffer up* | |
+
+Each carries a `why` naming the difference, which is the standing rule: accept
+both when both communicate, and say what separates them. Unit 5's is the one
+that was contradicting the book, not just the learner: unit 2 teaches that both
+word orders are right with a full noun phrase, and unit 5's key refused one.
+
+Verified in the browser on unit 3: OFF and off both pass, the model answer
+prints OFF, and the second form is accepted with its note.
+
+## Two open defects closed, 2026-08-23
+
+**Unit 19 tested a distinction it did not teach.** Exercise B keyed "saw the
+renewal through" against a prompt reading "saw through the renewal", and the
+Watch out named both senses of *see through* without saying that the word order
+is what separates them. The Watch out now says it.
+
+**Unit 20 graded the verb its own Access declares never taught.** Exercise B
+item 5 keyed *square away*, which the Access presents for prediction with the
+sentence "One of them, square away, is never taught in this book." The item is
+replaced with a wrong particle on a verb the unit does teach: "The exit survey
+gave out the real reason people were leaving" against *gave away*, which the
+unit's own Watch out defines as accidentally revealing something. *square away*
+now appears only in the scene, where the Access says it does.
+
 ## Open, waiting on Pedro
 
 - the three American / British callouts: units 12, 13 and 14
