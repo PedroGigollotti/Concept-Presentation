@@ -538,10 +538,10 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"We finally ___ the cause once we saw the returns data.", opts:["worked off", "worked out", "worked on"], correct:1},
-  {q:"Please ___ the decks so everyone has a copy.", opts:["hand in", "hand over", "hand out"], correct:2},
-  {q:"The final cost ___ higher than we told the directors.", opts:["turned out", "turned in", "turned over"], correct:0},
-  {q:"We'll ___ the new system to every store next month.", opts:["roll over", "roll out", "roll back"], correct:1}
+  {q:"We finally ___ the cause once we saw the returns data.", opts:["worked off", "worked out", "worked on"], correct:1, why:"OUT is away from an enclosure, and here out marks a job taken to the end. OFF would be away from a surface; ON would be in contact with a surface."},
+  {q:"Please ___ the decks so everyone has a copy.", opts:["hand in", "hand over", "hand out"], correct:2, why:"OUT is away from an enclosure, and here something moves outward from one center to many. IN would be inside a boundary; OVER would be across and above."},
+  {q:"The final cost ___ higher than we told the directors.", opts:["turned out", "turned in", "turned over"], correct:0, why:"OUT is away from an enclosure, the particle Unit 7 takes up. IN would be inside a boundary; OVER would be across and above."},
+  {q:"We'll ___ the new system to every store next month.", opts:["roll over", "roll out", "roll back"], correct:1, why:"OUT is away from an enclosure, and here something moves outward from one center to many. OVER would be across and above; BACK would be toward the point of origin."}
 ];
 function buildF(){
   var el = document.getElementById('exF'); el.innerHTML = '';
@@ -579,10 +579,13 @@ function checkF(){
       return;
     }
     if(picked === item.correct){
-      btns[picked].classList.add('correct'); fb.textContent = 'Correct.'; fb.className = 'fb ok'; correct++;
+      btns[picked].classList.add('correct');
+      fb.textContent = 'Correct.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb ok'; correct++;
     } else {
       btns[picked].classList.add('wrong'); btns[item.correct].classList.add('correct');
-      fb.textContent = 'The right answer is highlighted.'; fb.className = 'fb bad';
+      fb.textContent = 'The right answer is highlighted.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb bad';
     }
   });
   registerGrade('F', correct, F_DATA.length);

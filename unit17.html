@@ -538,10 +538,10 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"Let's ___ the policy to last year's version.", opts:["roll over", "roll back", "roll out"], correct:1},
-  {q:"We should ___ the sensitive figures, not release them yet.", opts:["hold up", "hold out", "hold back"], correct:2},
-  {q:"Residents will ___ against the rezoning.", opts:["push back", "push on", "push through"], correct:0},
-  {q:"I'll ___ you once I have the numbers.", opts:["get through to", "get back to", "get on with"], correct:1}
+  {q:"Let's ___ the policy to last year's version.", opts:["roll over", "roll back", "roll out"], correct:1, why:"BACK is toward the point of origin, and here you move a situation back toward an earlier state. OVER would be across and above; OUT would be away from an enclosure."},
+  {q:"We should ___ the sensitive figures, not release them yet.", opts:["hold up", "hold out", "hold back"], correct:2, why:"BACK is toward the point of origin, and here you hold something back at the line. UP would be toward the top; OUT would be away from an enclosure."},
+  {q:"Residents will ___ against the rezoning.", opts:["push back", "push on", "push through"], correct:0, why:"BACK is toward the point of origin, and here you send force back the way it came. ON would be in contact with a surface; THROUGH would be from one end to the other."},
+  {q:"I'll ___ you once I have the numbers.", opts:["get through to", "get back to", "get on with"], correct:1, why:"BACK is toward the point of origin, and here you come back to a person or a task. THROUGH would be from one end to the other; ON would be in contact with a surface."}
 ];
 function buildF(){
   var el = document.getElementById('exF'); el.innerHTML = '';
@@ -579,10 +579,13 @@ function checkF(){
       return;
     }
     if(picked === item.correct){
-      btns[picked].classList.add('correct'); fb.textContent = 'Correct.'; fb.className = 'fb ok'; correct++;
+      btns[picked].classList.add('correct');
+      fb.textContent = 'Correct.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb ok'; correct++;
     } else {
       btns[picked].classList.add('wrong'); btns[item.correct].classList.add('correct');
-      fb.textContent = 'The right answer is highlighted.'; fb.className = 'fb bad';
+      fb.textContent = 'The right answer is highlighted.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb bad';
     }
   });
   registerGrade('F', correct, F_DATA.length);

@@ -548,8 +548,8 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"Can you ___ the login bug?", opts:["look into", "look up", "look after"], correct:0},
-  {q:"Let's ___ the standup.", opts:["kick in", "kick off", "kick back"], correct:1},
+  {q:"Can you ___ the login bug?", opts:["look into", "look up", "look after"], correct:0, why:"INTO is crossing a boundary inward, and here you go inside a matter to examine it. UP would be toward the top."},
+  {q:"Let's ___ the standup.", opts:["kick in", "kick off", "kick back"], correct:1, why:"OFF is away from a surface, and here a charge releases. IN would be inside a boundary; BACK would be toward the point of origin."},
   {q:"I'll ___ with the client tomorrow.", opts:["follow on", "follow through", "follow up"], correct:2},
   {q:"What's ___ the release this week?", opts:["holding up", "holding on", "holding out"], correct:0}
 ];
@@ -589,10 +589,13 @@ function checkF(){
       return;
     }
     if(picked === item.correct){
-      btns[picked].classList.add('correct'); fb.textContent = 'Correct.'; fb.className = 'fb ok'; correct++;
+      btns[picked].classList.add('correct');
+      fb.textContent = 'Correct.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb ok'; correct++;
     } else {
       btns[picked].classList.add('wrong'); btns[item.correct].classList.add('correct');
-      fb.textContent = 'The right answer is highlighted.'; fb.className = 'fb bad';
+      fb.textContent = 'The right answer is highlighted.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb bad';
     }
   });
   registerGrade('F', correct, F_DATA.length);

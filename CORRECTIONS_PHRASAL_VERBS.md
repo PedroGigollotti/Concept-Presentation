@@ -620,6 +620,45 @@ knowing: the article is not a general rule in either direction. Americans DROP
 it in *in class* and *at school*, where British English keeps it, so the callout
 names the two forms rather than claiming a pattern.
 
+## The Particle swap explains itself now, 2026-08-23
+
+The exercise told the learner which answer was right and stopped. 128 items, no
+reason given, in the book whose whole claim is that the particle carries the
+meaning. The C1 and C2 engines have carried a per-item explanation since the
+review began; this is Phrasal Verbs reaching them.
+
+`checkF()` in all 32 pages now shows an `item.why` on both a right and a wrong
+answer, the same hook as `checkForm` and `checkRewrite` in the other two books.
+102 of the 128 items carry one.
+
+The explanation is about the PARTICLE, never the verb. A learner told what one
+verb means has learned that verb; a learner told why the particle produces that
+sense can predict the next one. Every line passes one test: swap the verb, keep
+the particle, and the explanation still holds.
+
+> The supplier ___ our credit after the missed payment. (cut off)
+> OFF is away from a surface, and here a part detaches from a whole. OUT would
+> be away from an enclosure; BACK would be toward the point of origin.
+
+> We need to ___ discretionary spend this quarter. (cut down)
+> DOWN is toward the ground, and here a quantity is brought lower. OFF would be
+> away from a surface; OUT would be away from an enclosure.
+
+Same verb, different particle, and nothing in common between the two
+explanations. That is the proof they are not glosses.
+
+Nothing is written by hand. The hub image is the panel's subtitle and the sense
+is the unit's own Analysis clause, so an explanation cannot contradict the page
+it sits on. Where the book carries no clause, the generator reports the item
+rather than inventing one.
+
+**26 items are deliberately without an explanation, in two groups.** Eight
+answers have no particle at all: *look after*, *getting by*, *went under*,
+*commence*, and unit 32's four nouns. Eighteen are in units that organise by
+verb or by register rather than by particle, units 1 to 4 and 24 to 32, where a
+particle explanation would answer a question the unit is not asking. Both groups
+are held for Pedro, grouped, with a mould proposed per group.
+
 ## Open, waiting on Pedro
 
 - the three American / British callouts: units 12, 13 and 14

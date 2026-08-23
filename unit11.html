@@ -538,10 +538,10 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"The crew will ___ despite the storm.", opts:["carry over", "carry on", "carry out"], correct:1},
-  {q:"Let's ___ to the next agenda item.", opts:["move in", "move up", "move on"], correct:2},
-  {q:"We can't ___ more volume this week.", opts:["take on", "take in", "take over"], correct:0},
-  {q:"Please ___ the failing conveyor before shift end.", opts:["work up", "work on", "work out"], correct:1}
+  {q:"The crew will ___ despite the storm.", opts:["carry over", "carry on", "carry out"], correct:1, why:"ON is in contact with a surface, and here the contact keeps moving along a surface. OVER would be across and above; OUT would be away from an enclosure."},
+  {q:"Let's ___ to the next agenda item.", opts:["move in", "move up", "move on"], correct:2, why:"ON is in contact with a surface, and here the contact keeps moving along a surface. IN would be inside a boundary; UP would be toward the top."},
+  {q:"We can't ___ more volume this week.", opts:["take on", "take in", "take over"], correct:0, why:"ON is in contact with a surface, and here you take a task onto yourself and stay on it. IN would be inside a boundary; OVER would be across and above."},
+  {q:"Please ___ the failing conveyor before shift end.", opts:["work up", "work on", "work out"], correct:1, why:"ON is in contact with a surface, and here you take a task onto yourself and stay on it. UP would be toward the top; OUT would be away from an enclosure."}
 ];
 function buildF(){
   var el = document.getElementById('exF'); el.innerHTML = '';
@@ -579,10 +579,13 @@ function checkF(){
       return;
     }
     if(picked === item.correct){
-      btns[picked].classList.add('correct'); fb.textContent = 'Correct.'; fb.className = 'fb ok'; correct++;
+      btns[picked].classList.add('correct');
+      fb.textContent = 'Correct.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb ok'; correct++;
     } else {
       btns[picked].classList.add('wrong'); btns[item.correct].classList.add('correct');
-      fb.textContent = 'The right answer is highlighted.'; fb.className = 'fb bad';
+      fb.textContent = 'The right answer is highlighted.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb bad';
     }
   });
   registerGrade('F', correct, F_DATA.length);

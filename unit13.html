@@ -538,10 +538,10 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"Let's ___ a consultant to run the workshop.", opts:["bring in", "bring on", "bring up"], correct:0},
-  {q:"Can I ___ on the faculty workshop?", opts:["sit on", "sit in", "sit out"], correct:1},
-  {q:"Let's ___ a safeguard before we ship.", opts:["build on", "build up", "build in"], correct:2},
-  {q:"Everyone should ___ before we finalize.", opts:["weigh in", "weigh up", "weigh out"], correct:0}
+  {q:"Let's ___ a consultant to run the workshop.", opts:["bring in", "bring on", "bring up"], correct:0, why:"IN is inside a boundary, and here something new is added to a plan or a group. ON would be in contact with a surface; UP would be toward the top."},
+  {q:"Can I ___ on the faculty workshop?", opts:["sit on", "sit in", "sit out"], correct:1, why:"IN is inside a boundary, and here a person steps into a discussion. ON would be in contact with a surface; OUT would be away from an enclosure."},
+  {q:"Let's ___ a safeguard before we ship.", opts:["build on", "build up", "build in"], correct:2, why:"IN is inside a boundary, and here something new is added to a plan or a group. ON would be in contact with a surface; UP would be toward the top."},
+  {q:"Everyone should ___ before we finalize.", opts:["weigh in", "weigh up", "weigh out"], correct:0, why:"IN is inside a boundary, and here a person steps into a discussion. UP would be toward the top; OUT would be away from an enclosure."}
 ];
 function buildF(){
   var el = document.getElementById('exF'); el.innerHTML = '';
@@ -579,10 +579,13 @@ function checkF(){
       return;
     }
     if(picked === item.correct){
-      btns[picked].classList.add('correct'); fb.textContent = 'Correct.'; fb.className = 'fb ok'; correct++;
+      btns[picked].classList.add('correct');
+      fb.textContent = 'Correct.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb ok'; correct++;
     } else {
       btns[picked].classList.add('wrong'); btns[item.correct].classList.add('correct');
-      fb.textContent = 'The right answer is highlighted.'; fb.className = 'fb bad';
+      fb.textContent = 'The right answer is highlighted.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb bad';
     }
   });
   registerGrade('F', correct, F_DATA.length);

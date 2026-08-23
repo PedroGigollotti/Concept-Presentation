@@ -551,9 +551,9 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"You'll ___ the team when the current lead leaves.", opts:["take on", "take up", "take over"], correct:2},
-  {q:"I don't want to ___ more than I can deliver.", opts:["take on", "take off", "take in"], correct:0},
-  {q:"Let me ___ the details before I respond.", opts:["take out", "take in", "take back"], correct:1},
+  {q:"You'll ___ the team when the current lead leaves.", opts:["take on", "take up", "take over"], correct:2, why:"OVER is across and above, and here control moves across from one hand to another. ON would be in contact with a surface; UP would be toward the top."},
+  {q:"I don't want to ___ more than I can deliver.", opts:["take on", "take off", "take in"], correct:0, why:"ON is in contact with a surface, and here you take a task onto yourself and stay on it. OFF would be away from a surface; IN would be inside a boundary."},
+  {q:"Let me ___ the details before I respond.", opts:["take out", "take in", "take back"], correct:1, why:"IN is inside a boundary, and here something is drawn inside and held. OUT would be away from an enclosure; BACK would be toward the point of origin."},
   {q:"If the facts change, I'll ___ what I said.", opts:["take up", "take over", "take back"], correct:2}
 ];
 function buildF(){
@@ -592,10 +592,13 @@ function checkF(){
       return;
     }
     if(picked === item.correct){
-      btns[picked].classList.add('correct'); fb.textContent = 'Correct.'; fb.className = 'fb ok'; correct++;
+      btns[picked].classList.add('correct');
+      fb.textContent = 'Correct.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb ok'; correct++;
     } else {
       btns[picked].classList.add('wrong'); btns[item.correct].classList.add('correct');
-      fb.textContent = 'The right answer is highlighted.'; fb.className = 'fb bad';
+      fb.textContent = 'The right answer is highlighted.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb bad';
     }
   });
   registerGrade('F', correct, F_DATA.length);

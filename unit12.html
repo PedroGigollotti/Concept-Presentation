@@ -538,10 +538,10 @@ function checkD(){
 
 /* ===== F. Particle swap (multiple choice) ===== */
 var F_DATA = [
-  {q:"We ___ Dana to catch the large errors.", opts:["count in", "count out", "count on"], correct:2},
-  {q:"Please ___ the routine claims to the juniors.", opts:["pass on", "pass over", "pass up"], correct:0},
-  {q:"Compliance will ___ the flagged files this week.", opts:["check in", "check on", "check out"], correct:1},
-  {q:"Let's ___ the payout until the reports arrive.", opts:["sit in", "sit through", "sit on"], correct:2}
+  {q:"We ___ Dana to catch the large errors.", opts:["count in", "count out", "count on"], correct:2, why:"ON is in contact with a surface, and here you put your weight on something and trust it to hold. IN would be inside a boundary; OUT would be away from an enclosure."},
+  {q:"Please ___ the routine claims to the juniors.", opts:["pass on", "pass over", "pass up"], correct:0, why:"ON is in contact with a surface, and here a burden is placed onto someone else. OVER would be across and above; UP would be toward the top."},
+  {q:"Compliance will ___ the flagged files this week.", opts:["check in", "check on", "check out"], correct:1, why:"ON is in contact with a surface, and here attention is pressed onto a thing to keep watch. IN would be inside a boundary; OUT would be away from an enclosure."},
+  {q:"Let's ___ the payout until the reports arrive.", opts:["sit in", "sit through", "sit on"], correct:2, why:"ON is in contact with a surface, and here something makes or keeps its grip. IN would be inside a boundary; THROUGH would be from one end to the other."}
 ];
 function buildF(){
   var el = document.getElementById('exF'); el.innerHTML = '';
@@ -579,10 +579,13 @@ function checkF(){
       return;
     }
     if(picked === item.correct){
-      btns[picked].classList.add('correct'); fb.textContent = 'Correct.'; fb.className = 'fb ok'; correct++;
+      btns[picked].classList.add('correct');
+      fb.textContent = 'Correct.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb ok'; correct++;
     } else {
       btns[picked].classList.add('wrong'); btns[item.correct].classList.add('correct');
-      fb.textContent = 'The right answer is highlighted.'; fb.className = 'fb bad';
+      fb.textContent = 'The right answer is highlighted.' + (item.why ? ' ' + item.why : '');
+      fb.className = 'fb bad';
     }
   });
   registerGrade('F', correct, F_DATA.length);
