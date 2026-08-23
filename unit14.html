@@ -250,7 +250,7 @@
       <button class="check-btn" onclick="checkSoft('exB','keyB')">Check my answers</button>
       <div class="soft-note">Checks whether the right correction appears in your sentence. Compare against the key.</div>
       <div class="key-box" id="keyB">
-        <p>1. I'll <b>hand it in</b> by five thirty.</p>
+        <p>1. I'll <b>turn it in</b> by five thirty.</p>
         <p>2. Did the photos <b>come in</b> from the stringer?</p>
         <p>3. We won't <b>cave in</b> on the facts, no matter who calls.</p>
         <p>4. He <b>gave in to</b> the publisher's demand too quickly.</p>
@@ -389,7 +389,7 @@ function updateScore(){ document.getElementById('scoreText').textContent = total
 /* ===== A. Find the phrasal verb (soft text check) ===== */
 var A_DATA = [
   {q:"Who still hasn't ___ (turn) the council story?", a:"turned in"},
-  {q:"I'll ___ (hand) it by five thirty.", a:"hand in"},
+  {q:"I'll ___ (turn) it in by five thirty.", a:"turn in"},
   {q:"Did the photos ___ (come) from the stringer?", a:"come in"},
   {q:"We don't ___ (cave) on the facts.", a:"cave in"},
   {q:"I'll ___ (put) a records request before I leave.", a:"put in"},
@@ -464,7 +464,7 @@ function recomputeTotal(){
 
 /* ===== B / C soft self-check (reveal + contains-check) ===== */
 var B_DATA = [
-  {q:"I'll hand in it by five thirty.", key:"hand it in"},
+  {q:"I'll turn in it by five thirty.", key:"turn it in"},
   {q:"Did the photos came in from the stringer?", key:"come in"},
   {q:"We won't cave on the facts, no matter who calls.", key:"cave in"},
   {q:"He gave up to the publisher's demand too quickly.", key:"gave in"},
@@ -511,7 +511,7 @@ function checkSoft(blockId, keyId){
 function toggleKey(id){ document.getElementById(id).classList.toggle('shown'); }
 
 /* ===== D. Match the halves ===== */
-var D_ITEMS = ["Who still hasn't turned in","I'll hand it in","Did the photos come in","We don't cave in","I'll put in"];
+var D_ITEMS = ["Who still hasn't turned in","I'll turn it in","Did the photos come in","We don't cave in","I'll put in"];
 var D_MEAN = ["by five thirty, once I confirm the quote.", "a records request before I leave.", "the council story yet?", "from the stringer this morning?", "on the facts, whoever calls."];
 var D_CORRECT = [2, 0, 3, 4, 1];
 function buildD(){
