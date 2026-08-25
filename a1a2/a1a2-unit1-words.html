@@ -192,10 +192,19 @@
   /* CONTROL FIRST, THEN THE NAME. It used to sit AFTER the speaker name, which
      put it at two different x-positions down one dialogue -- 86px after "Ana",
      103px after "Marco" -- so there was no column to aim at. */
-  .audio-line{display:flex;align-items:flex-start;gap:10px;margin:0 0 12px;}
+  .audio-line{display:flex;align-items:flex-start;gap:10px;margin:0 0 12px;
+    flex-wrap:wrap;}
   .audio-line .who{flex:0 0 auto;padding-top:11px;}
   .audio-line .audio-btn{flex:0 0 auto;margin-right:0;}
-  .audio-line .line-text{padding-top:10px;}
+  .audio-line .line-text{padding-top:10px;flex:1 1 200px;}
+  /* ON A NARROW COLUMN THE LINE TAKES THE FULL WIDTH. Control-first is right
+     and it costs 145px of the row, which on a phone left a 180px text column
+     wrapping every line three times. The control and the name keep the first
+     row; the sentence gets its own, full width. Nothing changes above 640px. */
+  @media (max-width:640px){
+    .audio-line{gap:8px 10px;}
+    .audio-line .line-text{flex:1 0 100%;padding-top:2px;}
+  }
   /* ---- the vocabulary bank: its own section, between Access and Analysis.
      Sound first: the meaning is on the card from the start, the spelling is
      revealed on request, so the student meets the word as a sound and checks
@@ -662,4 +671,11 @@ function xpair(k){ xplay(XW[k - 1], XS[k - 1]); }
   }
 })();
 </script>
+<!-- THE CAPTURE BUTTON, 30 Aug 2026. One shared file at the repository
+     root, derived-context, no book baked in. A1/A2 ONLY for now by
+     Netto's ruling; extending it to C1, C2 and Phrasal Verbs is this
+     line and nothing else. Deferred, so it can never delay the page,
+     and it fails silently if it throws. -->
+<script src="../capture.js" defer></script>
+<script src="../frame-signal.js" defer></script>
 </body></html>

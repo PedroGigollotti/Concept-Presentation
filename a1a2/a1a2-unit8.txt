@@ -1,0 +1,240 @@
+========================================================================
+8 · There is / there are
+Saying what is in the room, and what is not.
+========================================================================
+
+   [ Draft. Nothing here is approved. Built from the manuscript's unit 6. The situation is new: a room checked the evening before, so that what is MISSING carries the scene. ]
+
+------------------------------------------------------------------------
+ACCESS
+------------------------------------------------------------------------
+   >>> INVENTED: The scene is mine, from Netto's approved contrast. It is set the EVENING BEFORE so that what is missing still matters: a room checked on the day has nothing at stake.
+
+Goal. A meeting room, checked the evening before. Read and listen at the same time. Listen for “there is”, “there are” and “there is no”.
+Read and listen together. Play a line and read the words at the same time. Play it again. The sound and the word go together.
+Play the whole conversation
+   Bruno Is there water for tomorrow?   [m · u08-ac-is_there_water_for_tomorrow-ba89]
+   Ana There is water. And there are bottles.   [f · u08-ac-there_is_water_and_there_are_b-1d6c]
+   Bruno Is there a screen?   [m · u08-ac-is_there_a_screen-c96b]
+   Ana No. There is no screen.   [f · u08-ac-no_there_is_no_screen-bf56]
+   Bruno And chairs?   [m · u08-ac-and_chairs-b0fd]
+   Ana There are eight chairs. But there is no screen.   [f · u08-ac-there_are_eight_chairs_but_the-e96f]
+One check.
+
+------------------------------------------------------------------------
+VOCABULARY
+------------------------------------------------------------------------
+   >>> INVENTED: The ten bank items are mine. Two of them -- water and coffee -- cannot be counted, which is the half of this unit a picture cannot carry on its own: a jug of coffee is a picture of a jug, and only the sentence beside it says the word takes <em>is</em>.
+
+Goal. What a room has, and what it does not. Look at the picture. Then listen and say it.
+   a screen         There is no screen.   [f · u08-bs-there_is_no_screen-8b78]   [picture: screen.png — alt: a large flat screen on a stand]
+   a board          There is a board.   [f · u08-bs-there_is_a_board-cd01]   [picture: board.png — alt: a plain wall board with a narrow tray under it]
+   a window         There is a window.   [f · u08-bs-there_is_a_window-696a]   [picture: window.png — alt: a single window with a plain frame]
+   a socket         There is a socket.   [f · u08-bs-there_is_a_socket-b4b0]   [picture: socket.png — alt: a wall socket seen straight on]
+   a clock          There is a clock.   [f · u08-bs-there_is_a_clock-015d]   [picture: clock.png — alt: a round wall clock with plain hands]
+   chairs           There are chairs.   [f · u08-bs-there_are_chairs-5561]   [picture: chairs.png — alt: four identical chairs around a table]
+   bottles          There are bottles.   [f · u08-bs-there_are_bottles-57a2]   [picture: bottles.png — alt: three water bottles standing in a row]
+   cups             There are cups.   [f · u08-bs-there_are_cups-72d5]   [picture: cups.png — alt: four cups upside down on a tray]
+   water            There is water.   [f · u08-bs-there_is_water-feac]   [picture: water.png — alt: a jug of water with a handle]
+   coffee           There is coffee.   [f · u08-bs-there_is_coffee-6cd0]   [picture: coffee.png — alt: a glass jug of black coffee on a warm plate]
+
+------------------------------------------------------------------------
+ANALYSIS
+------------------------------------------------------------------------
+Goal. Learn to say what a room has. Then say what it does not have.
+
+THE STRUCTURE
+English puts two words in front: “there is” or “there are”. The choice comes from the thing AFTER it, never from the room. One thing takes “there is”. More than one takes “there are”. Water and coffee take “there is”: there is no number in them.
+   | there is (one thing)  ·  Form: there is + one thing  ·  Meaning: The room has it.  ·  Use it to: name one thing in a room  ·  example: There is a board.
+   | there are (more than one)  ·  Form: there are + more than one  ·  Meaning: The room has several.  ·  Use it to: count what is there  ·  example: There are chairs.
+   | there are no (nothing, more than one)  ·  Form: there are no + more than one  ·  Meaning: The room has none of them.  ·  Use it to: say the room has none of them  ·  example: There are no cups.
+   | there is no (nothing)  ·  Form: there is no + the thing  ·  Meaning: The room does not have it.  ·  Use it to: say what a room does not have  ·  example: There is no screen.
+
+WATCH OUT
+
+   [ Match is or are to the thing after it. Say “There is a chair” for one. Say “There are chairs” for more. Never say “× There is two chairs.” This unit exists for that mistake. Water and coffee take is. Water has no number. Say “There is water,” never “× There are waters.” ]
+
+   [ Two ways to say it. “There is no water” and “There isn't any water” are both correct. Both are ordinary. The first is shorter. The second is the one people say more often. ]
+
+THE MOVES
+Ready-made lines for a room. Change only the words in blue.
+   - There is [a board].
+   - There are [chairs].
+   - There is no [screen].
+   - Is there [water]?
+   - There is [coffee].
+
+LOOK AT WHAT COMES AFTER
+   (figure) The room never chooses. The thing after the words chooses.
+
+WHY THIS WORKS
+In your language one word does this and it never changes. English makes you look at what comes next. Say it wrong and nobody stops you. Say “there is no screen” and somebody brings one. That is the reason to learn it.
+
+------------------------------------------------------------------------
+ACTIVATION
+------------------------------------------------------------------------
+Goal. Now practice. Say what a room has. Say what it does not have. Then check a room of your own.
+   In pairs. Look around the room you are in. Say four things that are there and two that are not: “There is a window. There is no clock.” Then, on your own. Write five true sentences about your own desk. Use “There is” in two. Use “There are” in two. Use “There is no” in one.
+   (figure) The picture shows only loud and quiet. It shows where you stop and how long you take. It does not show your sounds. The same picture can still be the wrong sound.
+One more. This last one is not about this unit. It comes back for something you already know.
+
+------------------------------------------------------------------------
+THE EXERCISES, WITH THEIR ANSWERS
+------------------------------------------------------------------------
+
+A. Is it there?
+   Listen. Is the thing in the room? Write yes or no.
+   1. (heard, not printed) “There is no screen.”
+      -> no
+   2. (heard, not printed) “There are chairs.”
+      -> yes
+   3. (heard, not printed) “There is water.”
+      -> yes
+   4. (heard, not printed) “There is no board.”
+      -> no
+   5. (heard, not printed) “There is a clock.”
+      -> yes
+   6. (heard, not printed) “There are no cups.”
+      -> no
+
+B. Spot and fix the error
+   Each sentence has one mistake. Write it correctly.
+   1. × There have a board.
+      -> There is a board.
+   2. × It has two windows.
+      -> There are two windows.
+   3. × There is chairs.
+      -> There are chairs.
+   4. × There are a screen.
+      -> There is a screen.
+   5. × There is a chairs.
+      -> There is a chair.
+
+C. What is in the room?
+   Write There is, There are, There is no or There are no.
+   1. ______ a board on the wall.
+      -> There is
+   2. ______ eight chairs.
+      -> There are
+   3. ______ screen. The room is dark.
+      -> There is no
+   4. ______ water for the morning.
+      -> There is
+   5. ______ cups. Bring some.
+      -> There are no
+   6. ______ a clock over the door.
+      -> There is
+
+D. Is or are?
+   Look at the thing after the gap. Choose the English.
+   1. ( There is / There are ) two windows.
+      -> There are
+   2. ( There are / There is ) water in the jug.
+      -> There is
+   3. ( There is / There are ) a socket behind the door.
+      -> There is
+   4. ( There are / There is ) eight chairs.
+      -> There are
+   5. ( There is / There are ) coffee for everybody.
+      -> There is
+   6. ( There are / There is ) cups on the tray.
+      -> There are
+   7. ( There is not water. / There is no water. )
+      -> There is no water.
+
+E. What is it?
+   Read the thing. Choose what it is.
+   1. a screen
+      -> b. a big flat thing for a picture
+   2. a board
+      -> e. a wide white thing for writing
+   3. a socket
+      -> d. a hole in the wall for a plug
+   4. a clock
+      -> c. a round thing for the time
+   5. a window
+      -> f. the glass you see the street through
+   6. cups
+      -> a. small things you drink from
+   the endings as the student sees them:
+      a. small things you drink from
+      b. a big flat thing for a picture
+      c. a round thing for the time
+      d. a hole in the wall for a plug
+      e. a wide white thing for writing
+      f. the glass you see the street through
+
+F. Over to you
+   Not graded. Here the grammar stops being a rule. It becomes the way you check a room.
+   In pairs. Look around the room you are in. Say four things that are there and two that are not: There is a window. There is no clock.
+   Then, on your own. Write five true sentences about your own desk. Use There is in two. Use There are in two. Use There is no in one.
+
+G. Listen, say it, then read
+   Listen. Say the line without looking. Record it. Then check the words.
+   Choose a line above.
+   The picture shows only loud and quiet. It shows where you stop and how long you take. It does not show your sounds. The same picture can still be the wrong sound.
+   [Bruno Line 1]
+   [Ana Line 2]
+   [Bruno Line 3]
+   [Ana Line 4]
+   [Bruno Line 5]
+   [Ana Line 6]
+
+H. From units 1 to 7
+   Complete each sentence with a phrase from the box. Use each one once.
+   1. Hello. ______ the new teacher.
+      -> I am
+   2. ______ ready for the meeting?
+      -> Is she
+   3. My extension is ______.
+      -> four oh six
+   4. Ana is here. It is ______.
+      -> her laptop
+   5. Look at the desk. ______.
+      -> They are boxes
+   6. The meeting is at ______, in the morning.
+      -> nine thirty a.m.
+   7. ______ over there are Lena's.
+      -> Those keys
+   8. ______ early today?
+      -> Are you
+
+------------------------------------------------------------------------
+MORE WORDS  (the extended page, a separate page in the book)
+------------------------------------------------------------------------
+The words this unit opens up. Nothing here is in the exercises.
+
+IN A MEETING ROOM
+   a door                     There is one door.
+   a light                    There are four lights.
+   a marker                   There are two markers.
+   a plug                     There is a plug here.
+   a poster                   There is a poster.
+   a remote                   There is a remote.
+   a table                    There is a long table.
+   a trash can                There is a trash can.
+
+THINGS YOU CANNOT COUNT
+   air                        There is fresh air.
+   light                      There is good light.
+   noise                      There is noise outside.
+   paper                      There is paper.
+   room                       There is room for six.
+   sunlight                   There is sunlight.
+   time                       There is time.
+   work                       There is work today.
+
+HOW MANY
+   enough                     There are enough chairs.
+   a few                      There are a few posters.
+   a lot of                   There is a lot of noise.
+   none                       There are none.
+   one                        There is one door.
+   only one                   There is only one door.
+   too many                   There are too many plugs.
+   two                        There are two markers.
+
+========================================================================
+This file is generated by readable.py on every build. Do not edit it:
+edit the unit's own module and rebuild, or the two will disagree about the same unit.
+========================================================================

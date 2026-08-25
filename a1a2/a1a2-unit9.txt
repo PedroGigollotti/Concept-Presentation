@@ -1,0 +1,221 @@
+========================================================================
+9 · Some and any
+Asking whether there is any, and offering some.
+========================================================================
+
+   [ Draft. Nothing here is approved. New to this edition. No manuscript unit behind it: it was written to close a syllabus hole unit 8 exposed. The situation is mine, approved by Netto 30 Aug 2026. ]
+
+------------------------------------------------------------------------
+ACCESS
+------------------------------------------------------------------------
+   >>> INVENTED: The scene is mine, approved by Netto on 30 Aug 2026 from three proposals. It was chosen on the Access question: the other two cost nothing to misunderstand, and this one costs you a coffee.
+
+Goal. The kitchen, before the meeting. Read and listen at the same time. Listen for “some” and “any”.
+Read and listen together. Play a line and read the words at the same time. Play it again. The sound and the word go together.
+Play the whole conversation
+   Ana Is there any coffee?   [f · u09-ac-is_there_any_coffee-12bf]
+   Bruno There is some coffee. Would you like some?   [m · u09-ac-there_is_some_coffee_would_you-e202]
+   Ana Yes, please. Is there any milk?   [f · u09-ac-yes_please_is_there_any_milk-11de]
+   Bruno There isn't any milk. There is some water.   [m · u09-ac-there_isn_t_any_milk_there_is-48ac]
+One check.
+
+------------------------------------------------------------------------
+VOCABULARY
+------------------------------------------------------------------------
+   >>> INVENTED: The ten bank items are mine. Every one is a thing you do not count, or a thing you count in a kitchen, because that is the only place this pair earns its keep at A1.
+
+Goal. The kitchen, and what it has. Look at the picture. Then listen and say it.
+   coffee           There is some coffee.   [f · u09-bs-there_is_some_coffee-93e2]   [picture: coffee.png — alt: a glass jug of black coffee on a warm plate]
+   tea              There is some tea.   [f · u09-bs-there_is_some_tea-77ca]   [picture: tea.png — alt: a tea bag on a saucer beside a cup]
+   milk             There isn't any milk.   [f · u09-bs-there_isn_t_any_milk-9226]   [picture: milk.png — alt: a small empty milk bottle on its side]
+   sugar            There is some sugar.   [f · u09-bs-there_is_some_sugar-27ba]   [picture: sugar.png — alt: an open bowl of white sugar with a small spoon in it]
+   juice            There is some juice.   [f · u09-bs-there_is_some_juice-8025]   [picture: juice.png — alt: a tall carton of juice standing closed]
+   bread            There is some bread.   [f · u09-bs-there_is_some_bread-a7f5]   [picture: bread.png — alt: four slices of bread on a wooden board]
+   cups             There are some cups.   [f · u09-bs-there_are_some_cups-68af]   [picture: cups.png — alt: five cups the right way up in a row]
+   bottles          There are some bottles.   [f · u09-bs-there_are_some_bottles-f145]   [picture: bottles.png — alt: three closed water bottles standing together]
+   spoons           There aren't any spoons.   [f · u09-bs-there_aren_t_any_spoons-5516]   [picture: spoons.png — alt: an empty open drawer with one long slot]
+   napkins          There are some napkins.   [f · u09-bs-there_are_some_napkins-aef7]   [picture: napkins.png — alt: a stack of folded paper napkins]
+
+------------------------------------------------------------------------
+ANALYSIS
+------------------------------------------------------------------------
+Goal. Learn to say there is some. Then learn to ask and to say no.
+
+THE STRUCTURE
+English has two words for an amount it does not count. Say “some” when the answer is yes: “There is some coffee”. Say “any” when you ask: “Is there any coffee?” Say “any” when the answer is no: “There isn't any coffee”. The words never change for one thing or for more than one.
+   | some (yes)  ·  Form: some + the thing  ·  Meaning: There is an amount. You do not count it.  ·  Use it to: say the kitchen has it  ·  example: There is some coffee.
+   | any (asking)  ·  Form: Is there any + the thing?  ·  Meaning: You do not know. It is a question.  ·  Use it to: ask what the kitchen has  ·  example: Is there any milk?
+   | any (no)  ·  Form: isn't any / aren't any + the thing  ·  Meaning: There is none of it.  ·  Use it to: say the kitchen has none  ·  example: There isn't any milk.
+   | some (an offer)  ·  Form: Would you like some + the thing?  ·  Meaning: Not a question about the room. It is a cup, offered.  ·  Use it to: offer somebody something  ·  example: Would you like some coffee?
+
+WATCH OUT
+
+   [ An offer is not a question about the room. “Is there any coffee?” asks about the kitchen. You answer “Yes, there is.” “Would you like some coffee?” offers you a cup. You answer “Yes, please.” Answer the second one with “× Yes, there is”. Nobody pours you a coffee. One negative is enough. Say “There isn't any milk” or “There is no milk.” Never both: “× There isn't no milk.” ]
+
+   [ Two ways to say it. Unit 8 has “There is no milk”. This unit has the other one: “There isn't any milk”. Both are correct. The second one is the one people say in a kitchen. ]
+
+THE MOVES
+Ready-made lines for a kitchen. Change only the words in blue.
+   - Is there any [coffee]?
+   - There is some [milk].
+   - There isn't any [sugar].
+   - Would you like some [tea]?
+   - Yes, please.
+
+YES, ASKING, AND NO
+   (figure) One word for yes. One word for asking and for no.
+
+WHY THIS WORKS
+In your language one word does all three jobs. Often it is not there at all. English splits them. Say the wrong one and nobody stops you. But say “yes, there is” to a man with a coffee pot. He pours nothing.
+
+------------------------------------------------------------------------
+ACTIVATION
+------------------------------------------------------------------------
+Goal. Now practice. Answer an offer. Fix the word. Then say what a kitchen has and has not.
+   In pairs. One of you is in the kitchen. Ask three questions: “Is there any coffee? Is there any milk? Is there any sugar?” The other one answers, and offers you one of them. Then, on your own. Write four true sentences about your own kitchen at work. Use “there is some” in two. Use “there isn't any” in two.
+   (figure) The picture shows only loud and quiet. It shows where you stop and how long you take. It does not show your sounds. The same picture can still be the wrong sound.
+One more. This last one is not about this unit. It comes back for something you already know.
+
+------------------------------------------------------------------------
+THE EXERCISES, WITH THEIR ANSWERS
+------------------------------------------------------------------------
+
+A. What do you answer?
+   Listen. Is the person asking about the kitchen, or offering you something? Write yes, there is or yes, please.
+   1. (heard, not printed) “Would you like some coffee?”
+      -> yes, please
+   2. (heard, not printed) “Is there any water?”
+      -> yes, there is
+   3. (heard, not printed) “Is there any sugar?”
+      -> yes, there is
+   4. (heard, not printed) “Would you like some water?”
+      -> yes, please
+   5. (heard, not printed) “Is there any coffee?”
+      -> yes, there is
+   6. (heard, not printed) “Would you like some sugar?”
+      -> yes, please
+
+B. Spot and fix the error
+   Each sentence has one mistake. Write it correctly.
+   1. × There is any coffee.
+      -> There is some coffee.
+   2. × There isn't some milk.
+      -> There isn't any milk.
+   3. × Yes, there is any.
+      -> Yes, there is some.
+   4. × There aren't some bottles.
+      -> There aren't any bottles.
+   5. × There are any cups.
+      -> There are some cups.
+
+C. Some or any?
+   Write some or any.
+   1. There is ______ coffee in the kitchen.
+      -> some
+   2. There isn't ______ milk today.
+      -> any
+   3. There aren't ______ cups on the tray.
+      -> any
+   4. Would you like ______ water?
+      -> some
+   5. There are ______ bottles in the box.
+      -> some
+   6. There isn't ______ sugar.
+      -> any
+
+D. What is it?
+   Read the word. Choose what it is.
+   1. coffee
+      -> b. a hot black drink
+   2. milk
+      -> f. a white drink, and it is cold
+   3. sugar
+      -> d. a sweet white thing for your coffee
+   4. juice
+      -> e. a cold drink from fruit
+   5. napkins
+      -> c. white paper for your hands
+   6. spoons
+      -> a. small things beside the cups
+   the endings as the student sees them:
+      a. small things beside the cups
+      b. a hot black drink
+      c. white paper for your hands
+      d. a sweet white thing for your coffee
+      e. a cold drink from fruit
+      f. a white drink, and it is cold
+
+E. Over to you
+   Not graded. Here the grammar stops being a rule. It becomes the way you ask for a coffee.
+   In pairs. One of you is in the kitchen. Ask three questions: Is there any coffee? Is there any milk? Is there any sugar? The other one answers, and offers you one of them.
+   Then, on your own. Write four true sentences about your own kitchen at work. Use there is some in two. Use there isn't any in two.
+
+F. Listen, say it, then read
+   Listen. Say the line without looking. Record it. Then check the words.
+   Choose a line above.
+   The picture shows only loud and quiet. It shows where you stop and how long you take. It does not show your sounds. The same picture can still be the wrong sound.
+   [Ana Line 1]
+   [Bruno Line 2]
+   [Ana Line 3]
+   [Bruno Line 4]
+
+G. From units 1 to 8
+   Complete each sentence with a phrase from the box. Use each one once.
+   1. Hello. ______ the new teacher.
+      -> I am
+   2. ______ ready for the meeting?
+      -> Is she
+   3. My extension is ______.
+      -> four oh six
+   4. Ana is here. It is ______.
+      -> her laptop
+   5. Look at the desk. ______.
+      -> They are boxes
+   6. The meeting is at ______, in the morning.
+      -> nine thirty a.m.
+   7. ______ over there are Lena's.
+      -> Those keys
+   8. The room is dark. ______ screen.
+      -> There is no
+   9. ______ early today?
+      -> Are you
+
+------------------------------------------------------------------------
+MORE WORDS  (the extended page, a separate page in the book)
+------------------------------------------------------------------------
+The words this unit opens up. Nothing here is in the exercises.
+
+IN THE KITCHEN
+   a fridge                   There is a fridge here.
+   a jug                      There is a jug of water.
+   a kettle                   There is a kettle on the shelf.
+   a machine                  There is a coffee machine.
+   a mug                      There are some mugs.
+   a shelf                    There is a shelf on the wall.
+   a sink                     There is a sink.
+   a tray                     There is a tray of cups.
+
+FOOD AND DRINK
+   butter                     There is some butter.
+   cake                       Would you like some cake?
+   fruit                      There is some fruit on a plate.
+   honey                      There is some honey.
+   ice                        Would you like some ice?
+   rice                       There is some rice.
+   salt                       There isn't any salt.
+   soup                       There isn't any soup today.
+
+OFFERING AND ANSWERING
+   Anything else?             Anything else?
+   Help yourself.             Help yourself.
+   Here you are.              Here you are.
+   I'm fine, thanks.          I'm fine, thanks.
+   It's for you.              It's for you.
+   Nothing for me.            Nothing for me.
+   One moment.                One moment.
+   Would you like...?         Would you like some tea?
+
+========================================================================
+This file is generated by readable.py on every build. Do not edit it:
+edit the unit's own module and rebuild, or the two will disagree about the same unit.
+========================================================================

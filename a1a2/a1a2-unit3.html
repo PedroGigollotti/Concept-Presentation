@@ -1255,4 +1255,17 @@ function buildAll(){
 })();
 
 </script>
+<!-- THE CAPTURE BUTTON, 30 Aug 2026. One shared file at the repository
+     root, derived-context, no book baked in. A1/A2 ONLY for now by
+     Netto's ruling; extending it to C1, C2 and Phrasal Verbs is this
+     line and nothing else. Deferred, so it can never delay the page,
+     and it fails silently if it throws. -->
+<script src="../capture.js" defer></script>
+<!-- SIGNAL C, 30 Aug 2026. The page tells the Coach that an item was
+     checked, and only after an allowlisted origin has said hello. No
+     parent means no messages at all, which is the ordinary case. It
+     changes no exercise: it watches the feedback lines the checkers
+     already write. A1/A2 only for now, same scope ruling as the
+     capture button. -->
+<script src="../frame-signal.js" defer></script>
 </body></html>

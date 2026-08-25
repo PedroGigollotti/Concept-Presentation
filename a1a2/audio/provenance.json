@@ -4718,5 +4718,25 @@
   "text": "The party is on the weekend.",
   "voice": "f",
   "source": "cut"
+ },
+ "u10-ex-lena_calls_the_client_every_fr-f4a1": {
+  "text": "Lena calls the client every Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-ex-we_finish_at_six-e030": {
+  "text": "We finish at six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-ex-they_study_every_evening-f1b4": {
+  "text": "They study every evening.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-ex-ana_travels_every_month-2ab0": {
+  "text": "Ana travels every month.",
+  "voice": "f",
+  "source": "cut"
  }
 }
