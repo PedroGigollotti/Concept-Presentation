@@ -160,13 +160,42 @@
      read from the published page at build time and not edited here. ---- */
   .split.three{grid-template-columns:repeat(3,1fr);}
   @media (max-width:640px){.split.three{grid-template-columns:1fr;}}
-  .audio-btn{background:none;border:1.5px solid var(--line);color:var(--navy);
-    border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;
-    font-family:var(--sans);cursor:pointer;margin-right:6px;}
+  /* ================= FINDABILITY, 30 Aug 2026 =========================
+     "A CONTROL MUST ANNOUNCE ITSELF AS A CONTROL." Netto, after opening the
+     book on a phone. SERIES_STANDARD 9p.
+
+     ONE CONTROL, ONE SHAPE, ONE POSITION. The pill below is the only thing in
+     this book that plays audio, it carries a play mark and a word, it is at
+     least 44x44, and it is the FIRST thing on its line everywhere.
+
+     WHY THE PLAY MARK IS A ::before AND NOT A CHARACTER IN THE MARKUP: the
+     reading copies and ceiling.py read the markup, and a triangle in the
+     button's text would land in the .txt as a word and in the word count as a
+     word. The x on a wrong form is the opposite case and is deliberately in
+     the markup -- there the mark IS the teaching and the .txt must carry it.
+
+     44px: measured at 375px, between 59 and 70 of about 75 controls per unit
+     were under the minimum touch target. Every one of them is a rule here.
+     NOTHING IS EDITED IN kit_final/unit.css. Three shipped books read that
+     file; these are overrides in the A1/A2 block, which is appended after it. */
+  .audio-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);
+    border-radius:999px;padding:0 14px;min-height:44px;font-size:13px;font-weight:600;
+    font-family:var(--sans);cursor:pointer;margin-right:6px;
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+  .audio-btn::before{content:"\25B6";font-size:.78em;line-height:1;}
+  /* Record, and Check the line, are not play buttons. */
+  #sayRec::before,#sayShow::before{content:none;}
   .audio-btn:hover{border-color:var(--navy);}
   .audio-btn:disabled{color:var(--gray);cursor:default;opacity:.5;}
   .audio-btn.rec-on{background:var(--red);border-color:var(--red);color:#fff;}
   .listen-note{font-size:12.5px;color:var(--gray);line-height:1.65;margin:0 0 18px;}
+  /* CONTROL FIRST, THEN THE NAME. It used to sit AFTER the speaker name, which
+     put it at two different x-positions down one dialogue -- 86px after "Ana",
+     103px after "Marco" -- so there was no column to aim at. */
+  .audio-line{display:flex;align-items:flex-start;gap:10px;margin:0 0 12px;}
+  .audio-line .who{flex:0 0 auto;padding-top:11px;}
+  .audio-line .audio-btn{flex:0 0 auto;margin-right:0;}
+  .audio-line .line-text{padding-top:10px;}
   /* ---- the vocabulary bank: its own section, between Access and Analysis.
      Sound first: the meaning is on the card from the start, the spelling is
      revealed on request, so the student meets the word as a sound and checks
@@ -180,17 +209,32 @@
   @media (max-width:640px){.bank{grid-template-columns:1fr;}}
   .bank-item{display:flex;align-items:center;gap:12px;padding:7px 0;
     border-bottom:1px solid var(--line);}
-  .bank-img{width:72px;height:72px;display:block;}
-  .bank-img-btn{flex:0 0 72px;padding:0;border:1.5px solid var(--line);background:var(--white);
-    border-radius:10px;cursor:pointer;line-height:0;}
-  .bank-img-btn:hover{border-color:var(--navy);}
+  .bank-img{width:100%;height:auto;display:block;}
+  /* THE PICTURE AND ITS LABEL ARE ONE BUTTON. Not two: the clip merge of
+     29 Aug was right, and two identical controls are a question the learner
+     answers by pressing both. What the merge cost was the LABEL, because the
+     control that survived was the picture -- and a picture reads as an
+     illustration. The answer to an unlabelled control is a label. */
+  .bank-play{flex:0 0 76px;display:flex;flex-direction:column;align-items:stretch;
+    padding:0;border:1.5px solid var(--navy);background:var(--white);
+    border-radius:10px;cursor:pointer;overflow:hidden;line-height:0;}
+  .bank-cap{display:flex;align-items:center;justify-content:center;gap:5px;
+    background:var(--navy);color:#fff;font-family:var(--sans);font-size:11px;
+    font-weight:600;padding:6px 0;line-height:1.2;}
+  .bank-cap::before{content:"\25B6";font-size:.85em;}
+  /* A ROW WITH NO PICTURE GETS THE SAME OBJECT IN THE SAME COLUMN. That is
+     what makes unit 3 look like unit 1, ends two kinds of control inside one
+     list in units 2 and 4, and removes the empty bordered spacer that read as
+     a drawing which had failed to load. */
+  .bank-play-flat{border-radius:999px;min-height:44px;}
+  .bank-play-flat .bank-cap{padding:14px 0;border-radius:999px;}
+  .bank-play:hover{opacity:.9;}
   .draft-note{border-left:4px solid #b45309;background:#fff7ed;}
   .status-ok{border-left:4px solid #15803d;background:#f0fdf4;}
   .status-open{border-left:4px solid #6b7280;background:#f8f8f7;}
-  /* The no-picture row keeps the SAME 72px cell, so the two kinds of row line
-     up and the bank still reads as one list. A note mark, not a letter: the
-     illustration style forbids text and the cell is still part of it. */
-  .bank-noimg{display:block;height:72px;border:0;background:none;}
+  /* .bank-noimg IS GONE, 30 Aug 2026. It was an empty bordered cell kept so
+     the two kinds of row would line up; on a phone it read as a drawing that
+     had failed to load. The rows line up because both now carry a control. */
   .listen-q{margin-right:10px;vertical-align:middle;}
   .numset{margin:6px 0 26px;}
   .numset-head{font-family:var(--serif);font-size:19px;margin:18px 0 2px;color:var(--ink);}
@@ -206,25 +250,45 @@
     font-weight:700;color:var(--navy);min-width:1.7em;text-align:right;}
   .numwd{font-size:15px;}
   .numcell:hover{border-color:var(--navy);color:var(--navy);}
-  .numpairs{display:grid;grid-template-columns:auto 1fr auto 1fr auto;gap:6px 14px;
+  /* "The base. Listen once, then say the row." -- and nothing on the screen
+     said listen. The chips ARE the control; now they say so. */
+  .numcell{min-height:44px;border-color:var(--navy);}
+  .numcell::before{content:"\25B6";font-size:.72em;color:var(--navy);line-height:1;}
+  /* CONTROL FIRST. It used to be the fifth column, at the far right of a
+     narrow screen, furthest from the thumb and last in reading order. */
+  .numpairs{display:grid;grid-template-columns:auto auto 1fr auto 1fr;gap:8px 12px;
     align-items:center;max-width:520px;}
   .numpair-head{font-size:12px;letter-spacing:.08em;text-transform:uppercase;
     color:var(--gray);}
-  .numword{font-size:16px;color:var(--ink);padding:4px 0;
-    border-bottom:1px solid var(--line);}
+  /* THE UNDERLINE CAME OFF. A non-control may not carry a control's marks:
+     this one was heavier than the real button's and on the same screen. */
+  .numword{font-size:16px;color:var(--ink);padding:4px 0;}
   .numplay{justify-self:start;}
   .bank-more{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 0;}
   .more-btn{display:inline-block;background:var(--navy);color:var(--white);
     border-radius:999px;padding:10px 20px;font-size:14px;font-weight:600;
     text-decoration:none;letter-spacing:.01em;}
   .more-btn:hover{opacity:.88;}
+  /* ---- the rest of the controls, to the same floor. Six declarations, no
+     markup. IOS SAFARI ZOOMS ANY FOCUSED CONTROL UNDER 16px AND DOES NOT ZOOM
+     BACK: every field and every dropdown in the book did it, in every
+     exercise, and it is the one defect here that a learner meets on the very
+     first tap. ---- */
+  .check-btn{min-height:44px;padding:0 20px;display:inline-flex;align-items:center;}
+  .say-row{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;}
+  .more-btn{min-height:44px;padding:0 20px;display:inline-flex;align-items:center;}
+  .action-btn{min-height:44px;padding:0 22px;display:inline-flex;align-items:center;}
+  .choice-btn{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;}
+  .q input[type=text]{font-size:16px;min-height:44px;}
+  select.match-select{font-size:16px;min-height:44px;}
+  #gate input{font-size:16px;}
   .bank-more-note{font-size:13px;color:var(--gray);flex:1 1 220px;}
-  /* No column at all: the word carries the word-alone clip. */
   .bank-item-flat{padding:9px 0;}
-  .bank-word-btn{background:none;border:0;padding:0;margin:0;font:inherit;
-    font-weight:600;font-size:15px;color:var(--ink);cursor:pointer;
-    text-align:left;display:block;border-bottom:1px dotted var(--line);}
-  .bank-word-btn:hover{color:var(--navy);border-bottom-color:var(--navy);}
+  /* .bank-word-btn IS GONE. The word was the control on picture-less rows and
+     it announced itself with a 1px DOTTED underline in the palest grey in the
+     book, 20px tall -- while .numword, which does nothing at all, carried a
+     SOLID underline in the same grey. The affordance was inverted. The word is
+     a word now, and the control beside it is a control. */
   .bank-body{flex:1 1 auto;min-width:0;}
   .bank-word{font-weight:600;font-size:15px;color:var(--ink);display:block;}
   .bank-fig{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);
@@ -286,6 +350,23 @@
   .xcell{background:var(--white);border:1.5px solid var(--line);border-radius:9px;
     padding:8px 14px;font:inherit;font-size:15px;color:var(--ink);cursor:pointer;}
   .xcell:hover{border-color:var(--navy);color:var(--navy);}
+  /* FINDABILITY, 30 Aug 2026. SERIES_STANDARD 9p: a control must announce
+     itself as a control, and 44x44 is the floor for a thumb. The set cells are
+     buttons and said nothing; the seven-day strip measured 74-113 x 38. */
+  .xcell{min-height:44px;border-color:var(--navy);display:inline-flex;
+    align-items:center;gap:6px;padding:0 14px;}
+  .xcell::before{content:"\25B6";font-size:.72em;color:var(--navy);line-height:1;}
+  /* The extended page builds its own head and does NOT read build_unit's
+     CSS_ADD, so the pill is restated here. One shape in both files, and the
+     duplication is named rather than hidden -- see the report. */
+  .audio-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);
+    border-radius:999px;padding:0 14px;min-height:44px;font-size:13px;font-weight:600;
+    font-family:var(--sans);cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+  .audio-btn::before{content:"\25B6";font-size:.78em;line-height:1;}
+  .xrow .audio-btn{flex:0 0 auto;margin-right:0;}
+  .xgroup-link{min-height:44px;display:inline-flex;align-items:center;padding:0 15px;}
+  #gate input{font-size:16px;}
 </style></head><body>
 
 <div id="gate">
@@ -336,64 +417,64 @@
     <p class="xcount">6 words</p>
     <div class="xrows">
       <div class="xrow">
-        <span class="xbody"><span class="xword">point five <span class="xfig">(0.5)</span></span><span class="xsent">It is nine point five.</span></span>
         <button class="audio-btn" onclick="xpair(12)" title="Listen: point five, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">point five <span class="xfig">(0.5)</span></span><span class="xsent">It is nine point five.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">double <span class="xfig">(x2)</span></span><span class="xsent">It is double.</span></span>
         <button class="audio-btn" onclick="xpair(13)" title="Listen: double, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">double <span class="xfig">(x2)</span></span><span class="xsent">It is double.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a dozen <span class="xfig">(12)</span></span><span class="xsent">It is a dozen.</span></span>
         <button class="audio-btn" onclick="xpair(14)" title="Listen: a dozen, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a dozen <span class="xfig">(12)</span></span><span class="xsent">It is a dozen.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a thousand <span class="xfig">(1,000)</span></span><span class="xsent">It is a thousand.</span></span>
         <button class="audio-btn" onclick="xpair(15)" title="Listen: a thousand, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a thousand <span class="xfig">(1,000)</span></span><span class="xsent">It is a thousand.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a million <span class="xfig">(1,000,000)</span></span><span class="xsent">It is a million.</span></span>
         <button class="audio-btn" onclick="xpair(16)" title="Listen: a million, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a million <span class="xfig">(1,000,000)</span></span><span class="xsent">It is a million.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a billion <span class="xfig">(1,000,000,000)</span></span><span class="xsent">It is a billion.</span></span>
         <button class="audio-btn" onclick="xpair(17)" title="Listen: a billion, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a billion <span class="xfig">(1,000,000,000)</span></span><span class="xsent">It is a billion.</span></span>
       </div>
     </div>
     <h3 class="xhead" id="gmoney-and-measures">Money and measures</h3>
     <p class="xcount">8 words</p>
     <div class="xrows">
       <div class="xrow">
-        <span class="xbody"><span class="xword">a cent <span class="xfig">(1¢)</span></span><span class="xsent">It is a cent.</span></span>
         <button class="audio-btn" onclick="xpair(18)" title="Listen: a cent, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a cent <span class="xfig">(1¢)</span></span><span class="xsent">It is a cent.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a dollar <span class="xfig">($1)</span></span><span class="xsent">It is a dollar.</span></span>
         <button class="audio-btn" onclick="xpair(19)" title="Listen: a dollar, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a dollar <span class="xfig">($1)</span></span><span class="xsent">It is a dollar.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a euro <span class="xfig">(€1)</span></span><span class="xsent">It is a euro.</span></span>
         <button class="audio-btn" onclick="xpair(20)" title="Listen: a euro, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a euro <span class="xfig">(€1)</span></span><span class="xsent">It is a euro.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a gallon <span class="xfig">(1 gal)</span></span><span class="xsent">It is a gallon.</span></span>
         <button class="audio-btn" onclick="xpair(21)" title="Listen: a gallon, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a gallon <span class="xfig">(1 gal)</span></span><span class="xsent">It is a gallon.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a kilo <span class="xfig">(1 kg)</span></span><span class="xsent">It is a kilo.</span></span>
         <button class="audio-btn" onclick="xpair(22)" title="Listen: a kilo, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a kilo <span class="xfig">(1 kg)</span></span><span class="xsent">It is a kilo.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a meter <span class="xfig">(1 m)</span></span><span class="xsent">It is a meter.</span></span>
         <button class="audio-btn" onclick="xpair(23)" title="Listen: a meter, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a meter <span class="xfig">(1 m)</span></span><span class="xsent">It is a meter.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a mile <span class="xfig">(1 mi)</span></span><span class="xsent">It is a mile.</span></span>
         <button class="audio-btn" onclick="xpair(24)" title="Listen: a mile, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a mile <span class="xfig">(1 mi)</span></span><span class="xsent">It is a mile.</span></span>
       </div>
       <div class="xrow">
-        <span class="xbody"><span class="xword">a pound <span class="xfig">(1 lb)</span></span><span class="xsent">It is a pound.</span></span>
         <button class="audio-btn" onclick="xpair(25)" title="Listen: a pound, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">a pound <span class="xfig">(1 lb)</span></span><span class="xsent">It is a pound.</span></span>
       </div>
     </div>
 
