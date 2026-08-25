@@ -403,7 +403,7 @@
     <p class="body-copy"><b>Goal.</b> Look for the words you need. Listen, and say each one. Learn only the words you need.</p>
     <div class="xgroups">
       <a class="xgroup-link" href="#gin-a-meeting-room">In a meeting room</a>
-      <a class="xgroup-link" href="#gthings-you-cannot-count">Things you cannot count</a>
+      <a class="xgroup-link" href="#gwords-with-no-plural-here">Words with no plural here</a>
       <a class="xgroup-link" href="#ghow-many">How many</a>
     </div>
     <h3 class="xhead" id="gin-a-meeting-room">In a meeting room</h3>
@@ -442,7 +442,7 @@
         <span class="xbody"><span class="xword">a trash can</span><span class="xsent">There is a trash can.</span></span>
       </div>
     </div>
-    <h3 class="xhead" id="gthings-you-cannot-count">Things you cannot count</h3>
+    <h3 class="xhead" id="gwords-with-no-plural-here">Words with no plural here</h3>
     <p class="xcount">8 words</p>
     <div class="xrows">
       <div class="xrow">
@@ -450,20 +450,20 @@
         <span class="xbody"><span class="xword">air</span><span class="xsent">There is fresh air.</span></span>
       </div>
       <div class="xrow">
-        <button class="audio-btn" onclick="xpair(10)" title="Listen: light, then the sentence">Listen</button>
-        <span class="xbody"><span class="xword">light</span><span class="xsent">There is good light.</span></span>
-      </div>
-      <div class="xrow">
-        <button class="audio-btn" onclick="xpair(11)" title="Listen: noise, then the sentence">Listen</button>
+        <button class="audio-btn" onclick="xpair(10)" title="Listen: noise, then the sentence">Listen</button>
         <span class="xbody"><span class="xword">noise</span><span class="xsent">There is noise outside.</span></span>
       </div>
       <div class="xrow">
-        <button class="audio-btn" onclick="xpair(12)" title="Listen: paper, then the sentence">Listen</button>
+        <button class="audio-btn" onclick="xpair(11)" title="Listen: paper, then the sentence">Listen</button>
         <span class="xbody"><span class="xword">paper</span><span class="xsent">There is paper.</span></span>
       </div>
       <div class="xrow">
-        <button class="audio-btn" onclick="xpair(13)" title="Listen: room, then the sentence">Listen</button>
-        <span class="xbody"><span class="xword">room</span><span class="xsent">There is room for six.</span></span>
+        <button class="audio-btn" onclick="xpair(12)" title="Listen: room, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">room <span class="xfig">(space)</span></span><span class="xsent">There is room for six.</span></span>
+      </div>
+      <div class="xrow">
+        <button class="audio-btn" onclick="xpair(13)" title="Listen: space, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">space</span><span class="xsent">There is space on the shelf.</span></span>
       </div>
       <div class="xrow">
         <button class="audio-btn" onclick="xpair(14)" title="Listen: sunlight, then the sentence">Listen</button>
@@ -494,16 +494,16 @@
         <span class="xbody"><span class="xword">a lot of</span><span class="xsent">There is a lot of noise.</span></span>
       </div>
       <div class="xrow">
-        <button class="audio-btn" onclick="xpair(20)" title="Listen: none, then the sentence">Listen</button>
-        <span class="xbody"><span class="xword">none</span><span class="xsent">There are none.</span></span>
-      </div>
-      <div class="xrow">
-        <button class="audio-btn" onclick="xpair(21)" title="Listen: one, then the sentence">Listen</button>
+        <button class="audio-btn" onclick="xpair(20)" title="Listen: one, then the sentence">Listen</button>
         <span class="xbody"><span class="xword">one</span><span class="xsent">There is one door.</span></span>
       </div>
       <div class="xrow">
-        <button class="audio-btn" onclick="xpair(22)" title="Listen: only one, then the sentence">Listen</button>
+        <button class="audio-btn" onclick="xpair(21)" title="Listen: only one, then the sentence">Listen</button>
         <span class="xbody"><span class="xword">only one</span><span class="xsent">There is only one door.</span></span>
+      </div>
+      <div class="xrow">
+        <button class="audio-btn" onclick="xpair(22)" title="Listen: several, then the sentence">Listen</button>
+        <span class="xbody"><span class="xword">several</span><span class="xsent">There are several chairs.</span></span>
       </div>
       <div class="xrow">
         <button class="audio-btn" onclick="xpair(23)" title="Listen: too many, then the sentence">Listen</button>
@@ -596,8 +596,8 @@ function maybeShowPrivacyModal(){
 
 
 function buildAll(){}
-var XW = ["u08-xw-a_door-402e", "u08-xw-a_light-6dac", "u08-xw-a_marker-eaf6", "u08-xw-a_plug-5df3", "u08-xw-a_poster-acae", "u08-xw-a_remote-6da4", "u08-xw-a_table-5c10", "u08-xw-a_trash_can-46e6", "u08-xw-air-a6d2", "u08-xw-light-0688", "u08-xw-noise-259c", "u08-xw-paper-f23e", "u08-xw-room-a7d5", "u08-xw-sunlight-95ff", "u08-xw-time-a9e5", "u08-xw-work-39f4", "u08-xw-enough-d2f7", "u08-xw-a_few-a455", "u08-xw-a_lot_of-73cb", "u08-xw-none-986e", "u08-xw-one-6ee7", "u08-xw-only_one-792d", "u08-xw-too_many-4d07", "u08-xw-two-ffa5"];
-var XS = ["u08-xs-there_is_one_door-3c80", "u08-xs-there_are_four_lights-2ff5", "u08-xs-there_are_two_markers-0b76", "u08-xs-there_is_a_plug_here-a5ae", "u08-xs-there_is_a_poster-3a3b", "u08-xs-there_is_a_remote-2cc4", "u08-xs-there_is_a_long_table-4aaf", "u08-xs-there_is_a_trash_can-a1d3", "u08-xs-there_is_fresh_air-0d02", "u08-xs-there_is_good_light-c0fd", "u08-xs-there_is_noise_outside-775b", "u08-xs-there_is_paper-f950", "u08-xs-there_is_room_for_six-2176", "u08-xs-there_is_sunlight-6a01", "u08-xs-there_is_time-7887", "u08-xs-there_is_work_today-f03b", "u08-xs-there_are_enough_chairs-588f", "u08-xs-there_are_a_few_posters-47be", "u08-xs-there_is_a_lot_of_noise-2ab6", "u08-xs-there_are_none-d40e", "u08-xs-there_is_one_door-3c80", "u08-xs-there_is_only_one_door-5212", "u08-xs-there_are_too_many_plugs-ec56", "u08-xs-there_are_two_markers-0b76"];
+var XW = ["u08-xw-a_door-402e", "u08-xw-a_light-6dac", "u08-xw-a_marker-eaf6", "u08-xw-a_plug-5df3", "u08-xw-a_poster-acae", "u08-xw-a_remote-6da4", "u08-xw-a_table-5c10", "u08-xw-a_trash_can-46e6", "u08-xw-air-a6d2", "u08-xw-noise-259c", "u08-xw-paper-f23e", "u08-xw-room-a7d5", "u08-xw-space-a349", "u08-xw-sunlight-95ff", "u08-xw-time-a9e5", "u08-xw-work-39f4", "u08-xw-enough-d2f7", "u08-xw-a_few-a455", "u08-xw-a_lot_of-73cb", "u08-xw-one-6ee7", "u08-xw-only_one-792d", "u08-xw-several-eb50", "u08-xw-too_many-4d07", "u08-xw-two-ffa5"];
+var XS = ["u08-xs-there_is_one_door-3c80", "u08-xs-there_are_four_lights-2ff5", "u08-xs-there_are_two_markers-0b76", "u08-xs-there_is_a_plug_here-a5ae", "u08-xs-there_is_a_poster-3a3b", "u08-xs-there_is_a_remote-2cc4", "u08-xs-there_is_a_long_table-4aaf", "u08-xs-there_is_a_trash_can-a1d3", "u08-xs-there_is_fresh_air-0d02", "u08-xs-there_is_noise_outside-775b", "u08-xs-there_is_paper-f950", "u08-xs-there_is_room_for_six-2176", "u08-xs-there_is_space_on_the_shelf-bc77", "u08-xs-there_is_sunlight-6a01", "u08-xs-there_is_time-7887", "u08-xs-there_is_work_today-f03b", "u08-xs-there_are_enough_chairs-588f", "u08-xs-there_are_a_few_posters-47be", "u08-xs-there_is_a_lot_of_noise-2ab6", "u08-xs-there_is_one_door-3c80", "u08-xs-there_is_only_one_door-5212", "u08-xs-there_are_several_chairs-34ab", "u08-xs-there_are_too_many_plugs-ec56", "u08-xs-there_are_two_markers-0b76"];
 
 var XCLIP = null;
 function xplay(id, next){
@@ -608,7 +608,15 @@ function xplay(id, next){
   var p = XCLIP.play();
   if(p && p.catch){ p.catch(function(){}); }
 }
-function xpair(k){ xplay(XW[k - 1], XS[k - 1]); }
+/* A ROW WITH NO WORD CLIP PLAYS ITS SENTENCE. Unit 7's "a tie" is the
+   only one so far: the engine cannot say that phrase in isolation and no
+   declared reading fixes it, because it is not a reading problem. Same
+   shape as the bank's clip merge -- one clip, and the button still
+   works. */
+function xpair(k){
+  var w = XW[k - 1], s = XS[k - 1];
+  if(w){ xplay(w, s); } else { xplay(s); }
+}
 
 
 (function(){

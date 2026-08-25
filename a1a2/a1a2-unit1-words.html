@@ -660,7 +660,15 @@ function xplay(id, next){
   var p = XCLIP.play();
   if(p && p.catch){ p.catch(function(){}); }
 }
-function xpair(k){ xplay(XW[k - 1], XS[k - 1]); }
+/* A ROW WITH NO WORD CLIP PLAYS ITS SENTENCE. Unit 7's "a tie" is the
+   only one so far: the engine cannot say that phrase in isolation and no
+   declared reading fixes it, because it is not a reading problem. Same
+   shape as the bank's clip merge -- one clip, and the button still
+   works. */
+function xpair(k){
+  var w = XW[k - 1], s = XS[k - 1];
+  if(w){ xplay(w, s); } else { xplay(s); }
+}
 
 
 (function(){

@@ -4738,5 +4738,105 @@
   "text": "Ana travels every month.",
   "voice": "f",
   "source": "cut"
+ },
+ "r01-ex-it_is_an_envelope-d2c5": {
+  "text": "It is an envelope.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-is_she_from_canada-6902": {
+  "text": "Is she from Canada?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-these_gloves_are_marco_s-4657": {
+  "text": "These gloves are Marco's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-he_is_a_driver-e3ac": {
+  "text": "He is a driver.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-there_is_a_clock_on_the_wall-abf4": {
+  "text": "There is a clock on the wall.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-it_is_her_coat-ffd1": {
+  "text": "It is her coat.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-it_is_a_quarter_to_ten-ce81": {
+  "text": "It is a quarter to ten.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-it_is_fifteen_percent-18c9": {
+  "text": "It is fifteen percent.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-the_discount_is_fifteen_percen-0e2a": {
+  "text": "The discount is fifteen percent.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-i_am_a_nurse-287a": {
+  "text": "I am a nurse.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-they_are_desks-13f6": {
+  "text": "They are desks.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-she_is_not_from_canada-5a04": {
+  "text": "She is not from Canada.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-these_headphones_are_marco_s-ea03": {
+  "text": "These headphones are Marco's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-it_is_your_coat-0a45": {
+  "text": "It is your coat.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "r01-ex-it_is_half_past_nine-560d": {
+  "text": "It is half past nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bs-there_is_a_screen-d155": {
+  "text": "There is a screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-xw-space-a349": {
+  "text": "space",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-xs-there_is_space_on_the_shelf-bc77": {
+  "text": "There is space on the shelf.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-xw-several-eb50": {
+  "text": "several",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-xs-there_are_several_chairs-34ab": {
+  "text": "There are several chairs.",
+  "voice": "f",
+  "source": "cut"
  }
 }

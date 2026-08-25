@@ -362,28 +362,28 @@
       <p class="ex-title">Which one?</p>
       <p class="ex-instr">Choose the English.</p>
       <div id="exE"></div>
-      <button class="check-btn" onclick="checkE()">Check my answers</button>
+      <button class="check-btn" onclick="checkE();revealAudio('E',8)">Check my answers</button>
     </div>
     <div class="ex-block">
       <span class="ex-label" data-slot="B">B</span>
       <p class="ex-title">Spot and fix the error</p>
       <p class="ex-instr">Each sentence has one mistake. Write it correctly.</p>
       <div id="exB"></div>
-      <button class="check-btn" onclick="checkB()">Check my answers</button>
+      <button class="check-btn" onclick="checkB();revealAudio('B',7)">Check my answers</button>
     </div>
     <div class="ex-block">
       <span class="ex-label" data-slot="F">C</span>
       <p class="ex-title">What is it?</p>
       <p class="ex-instr">Read the word. Choose what it is.</p>
       <div id="exF"></div>
-      <button class="check-btn" onclick="checkF()">Check my answers</button>
+      <button class="check-btn" onclick="checkF();revealAudio('F',8)">Check my answers</button>
     </div>
     <div class="ex-block">
       <span class="ex-label" data-slot="G">D</span>
       <p class="ex-title">Complete the sentence</p>
       <p class="ex-instr">Complete each sentence with a word from the box. Use each one once.</p>
       <div id="exG"></div>
-      <button class="check-btn" onclick="checkG()">Check my answers</button>
+      <button class="check-btn" onclick="checkG();revealAudio('G',7)">Check my answers</button>
     </div>
     <p class="body-copy" style="margin-top:34px;"><b>That is units 1 to 8.</b> Nothing on this page was new. The next unit adds one word to what you can already say, and then the verbs start.</p>
     <div class="unit-nav">
@@ -736,6 +736,213 @@ function checkExact(L, data){
   registerGrade(L,c,data.length);
 }
 
+/* ===== A1/A2: audio =====
+   TWO PLACES, TWO DIFFERENT RULES, and the difference is the pedagogy.
+
+   ACCESS. The text is visible from the start and every line has its own Listen.
+   The student is RECEIVING here, not producing, and seeing the spelling while
+   hearing the sound is what anchors one to the other. (This reverses an earlier
+   build where the Access text was hidden until its clip had played.)
+
+   EXERCISE I. The other order, because there the student IS producing: hear the
+   model, say it, record it, and only then read the line to check what came out.
+   Sound first, spelling last. That is where the hide-the-text rule now lives.
+
+   EXERCISE CLIPS stay behind the Check button: audio before the answer hands
+   over the answer.
+
+   RECORDING NEVER LEAVES THIS BROWSER. getUserMedia -> MediaRecorder -> an
+   in-memory Blob -> an object URL revoked when the page closes. No upload, no
+   fetch, no localStorage, no IndexedDB, nothing that survives the session.
+   Voice is biometric data under the LGPD and this practice does not hold it. If
+   a future feature needs the audio on a server, that feature does not ship. */
+var CLIP = null;
+function playClip(id, onend){
+  if(CLIP){ CLIP.pause(); CLIP = null; }
+  CLIP = new Audio('audio/' + id + '.mp3');
+  if(onend){ CLIP.addEventListener('ended', onend); }
+  var p = CLIP.play();
+  if(p && p.catch){ p.catch(function(){ if(onend) onend(); }); }
+}
+function playLine(n){ playClip(AC_ID[n - 1]); }
+function playScene(i){
+  var n = (i || 0) + 1;
+  if(n > SCENE_LINES){ return; }
+  playClip(AC_ID[n - 1], function(){ setTimeout(function(){ playScene(n); }, 450); });
+}
+/* Exercise clips appear only after the section has been checked. */
+function revealAudio(L, n){
+  for(var i = 0; i < n; i++){
+    var fb = document.getElementById(L + 'fb' + i);
+    if(!fb || !fb.textContent || fb.querySelector('button')){ continue; }
+    var id = (EX_ID[L] || [])[i];
+    if(!id){ continue; }
+    var b = document.createElement('button');
+    b.className = 'audio-btn';
+    b.textContent = 'Listen';
+    b.onclick = (function(clip){ return function(){ playClip(clip); }; })(id);
+    fb.appendChild(document.createTextNode(' '));
+    fb.appendChild(b);
+  }
+}
+
+/* ===== Exercise I: listen, say it, read =====
+   Calibrated Speech's record-and-compare, same shape: pick a line, hear the
+   model, record yourself, and read the two amplitude envelopes against each
+   other. peaksOf() and the cosine similarity are that book's functions; MODEL
+   peaks come from render.py's peaks(), computed at build time, so the two books
+   measure a waveform the same way. */
+var SAY = null, MY_URL = null, MY_PEAKS = null, REC = null, RECCHUNKS = [];
+function sayStatus(t, win){
+  var el = document.getElementById('sayStatus');
+  el.innerHTML = win ? '<span class="win">' + t + '</span>' : t;
+}
+function pickLine(n){
+  SAY = n; MY_URL = null; MY_PEAKS = null;
+  var rows = document.querySelectorAll('.say-row');
+  for(var i = 0; i < rows.length; i++){ rows[i].className = 'say-row'; }
+  var row = document.getElementById('sayrow' + n);
+  if(row){ row.className = 'say-row on'; }
+  document.getElementById('saySel').innerHTML = 'Line <b>' + n + '</b>. Listen, then say it.';
+  document.getElementById('sayModel').disabled = false;
+  document.getElementById('sayRec').disabled = false;
+  document.getElementById('sayMine').disabled = true;
+  // Checking waits for the model to finish. The written line is not first
+  // exposure any more -- the Access shows it -- but reading it WHILE speaking
+  // turns producing back into decoding, and that is the thing this exercise
+  // exists to stop. Gated on the model, not on having recorded: a student with
+  // no microphone must still be able to reach the line.
+  document.getElementById('sayShow').disabled = true;
+  document.getElementById('sayText').textContent = '';
+  sayStatus('');
+  drawWave();
+  playClip(AC_ID[n - 1], function(){
+    var b = document.getElementById('sayShow');
+    if(b){ b.disabled = false; }
+  });
+}
+function playSel(){
+  if(!SAY){ return; }
+  playClip(AC_ID[SAY - 1], function(){
+    var b = document.getElementById('sayShow');
+    if(b){ b.disabled = false; }
+  });
+}
+/* One button, two clips: the word, then the sentence it lives in. The pause is
+   long enough to hear them as two things and short enough to hear them as one
+   item. */
+function playPair(k){
+  playClip(BANK_W[k - 1], function(){
+    setTimeout(function(){ playClip(BANK_S[k - 1]); }, 420);
+  });
+}
+function showWord(k){
+  var el = document.getElementById('bw' + k);
+  if(el){ el.className = 'bank-word'; }
+}
+function showSel(){
+  if(!SAY){ return; }
+  document.getElementById('sayText').innerHTML = SCENE_TEXT[SAY - 1];
+}
+function wavePath(p, color, w, fill){
+  if(!p || !p.length){ return ''; }
+  var n = p.length, mid = 130, amp = 110, u = '', d = '', i, x, y;
+  for(i = 0; i < n; i++){
+    x = (i / (n - 1)) * 1000; y = Math.max(1, p[i] * amp);
+    u += (i ? 'L' : 'M') + x.toFixed(1) + ',' + (mid - y).toFixed(1);
+  }
+  for(i = n - 1; i >= 0; i--){
+    x = (i / (n - 1)) * 1000; y = Math.max(1, p[i] * amp);
+    d += 'L' + x.toFixed(1) + ',' + (mid + y).toFixed(1);
+  }
+  return '<path d="' + u + d + 'Z" fill="' + (fill || 'none') + '" stroke="' + color +
+         '" stroke-width="' + w + '"/>';
+}
+function drawWave(){
+  var s = '<line x1="0" y1="130" x2="1000" y2="130" stroke="#DCDDD6" stroke-width="1"/>';
+  var model = SAY ? MODEL_PEAKS[AC_ID[SAY - 1]] : null;
+  // The model is gray; the student's own trace is the identity blue. It used
+  // to be red, copied from Calibrated Speech. Red is the correction color
+  // everywhere else in this series and at A1 it reads as "you got it wrong".
+  // The attempt is not an error, it is the attempt.
+  if(model){ s += wavePath(model, '#6B6F76', 1.5, 'rgba(107,111,118,.18)'); }
+  if(MY_PEAKS){ s += wavePath(MY_PEAKS, '#1F5570', 2.5, 'rgba(31,85,112,.22)'); }
+  document.getElementById('wave').innerHTML = s;
+}
+function peaksOf(blob, n){
+  return blob.arrayBuffer().then(function(buf){
+    var ac = new (window.AudioContext || window.webkitAudioContext)();
+    return ac.decodeAudioData(buf).then(function(ab){
+      var d = ab.getChannelData(0), st = Math.floor(d.length / n) || 1, o = [], i, j, m, v;
+      for(i = 0; i < n; i++){
+        m = 0;
+        for(j = i * st; j < (i + 1) * st && j < d.length; j++){
+          v = Math.abs(d[j]); if(v > m){ m = v; }
+        }
+        o.push(m);
+      }
+      var mx = Math.max.apply(null, o) || 1;
+      ac.close();
+      return o.map(function(x){ return +(x / mx).toFixed(3); });
+    });
+  });
+}
+function simShape(a, b){
+  if(!a || !b || !a.length || !b.length){ return 0; }
+  var n = Math.min(a.length, b.length), d = 0, na = 0, nb = 0, i;
+  for(i = 0; i < n; i++){ d += a[i] * b[i]; na += a[i] * a[i]; nb += b[i] * b[i]; }
+  return d / (Math.sqrt(na * nb) || 1);
+}
+function toggleRec(){
+  if(REC && REC.state === 'recording'){ REC.stop(); return; }
+  if(!SAY){ sayStatus('Choose a line first.'); return; }
+  if(!navigator.mediaDevices || !window.MediaRecorder){
+    sayStatus('This browser cannot record. Everything else on the page still works.');
+    return;
+  }
+  navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+    RECCHUNKS = [];
+    REC = new MediaRecorder(stream);
+    REC.ondataavailable = function(e){ if(e.data && e.data.size){ RECCHUNKS.push(e.data); } };
+    REC.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      var blob = new Blob(RECCHUNKS, {type: REC.mimeType || 'audio/mp4'});
+      if(MY_URL){ URL.revokeObjectURL(MY_URL); }
+      MY_URL = URL.createObjectURL(blob);
+      document.getElementById('sayMine').disabled = false;
+      document.getElementById('sayRec').textContent = 'Record';
+      document.getElementById('sayRec').className = 'audio-btn';
+      var model = MODEL_PEAKS[AC_ID[SAY - 1]] || [];
+      peaksOf(blob, model.length || 50).then(function(pk){
+        MY_PEAKS = pk;
+        drawWave();
+        var sc = simShape(model, pk);
+        // The verdict names what was actually compared. "Good match" over a
+        // loudness curve, with no other words, reads as "your pronunciation is
+        // right", which this cannot know.
+        if(sc > 0.85){ sayStatus('Your timing is close to the model.', true); }
+        else { sayStatus('Your timing is different. Listen again and say it once more.'); }
+      }).catch(function(){ sayStatus('Recorded. Play it next to the model.'); });
+    };
+    REC.start();
+    document.getElementById('sayRec').textContent = 'Stop';
+    document.getElementById('sayRec').className = 'audio-btn rec-on';
+    sayStatus('Recording. Say the line once, then press Stop.');
+    setTimeout(function(){ if(REC && REC.state === 'recording'){ REC.stop(); } }, 12000);
+  }).catch(function(){
+    sayStatus('The microphone is blocked. Allow it for this page and reload.');
+  });
+}
+function playMine(){
+  if(!MY_URL){ return; }
+  if(CLIP){ CLIP.pause(); }
+  CLIP = new Audio(MY_URL);
+  CLIP.play();
+}
+window.addEventListener('pagehide', function(){
+  if(MY_URL){ URL.revokeObjectURL(MY_URL); MY_URL = null; }
+});
+
 var E_DATA = [{"q": "It is ( a / an ) envelope.", "options": ["a", "an"], "a": ["an"], "from": 5}, {"q": "( She is / Is she ) from Canada?", "options": ["She is", "Is she"], "a": ["Is she"], "from": 2}, {"q": "( This / These ) gloves are Marco's.", "options": ["This", "These"], "a": ["These"], "from": 7}, {"q": "He ( is / are ) a driver.", "options": ["is", "are"], "a": ["is"], "from": 1}, {"q": "( There is / There are ) a clock on the wall.", "options": ["There is", "There are"], "a": ["There is"], "from": 8}, {"q": "It is ( her / she ) coat.", "options": ["her", "she"], "a": ["her"], "from": 4}, {"q": "It is nine forty-five. It is ( a quarter to / a quarter past ) ten.", "options": ["a quarter to", "a quarter past"], "a": ["a quarter to"], "from": 6}, {"q": "It is 15%. It is ( fifteen / fifty ) percent.", "options": ["fifteen", "fifty"], "a": ["fifteen"], "from": 3}];
 function buildE(){ buildExact("E", E_DATA, "the words"); }
 function checkE(){ checkExact("E", E_DATA); }
@@ -750,6 +957,10 @@ function checkF(){ checkMatch("F", F_MEANINGS, F_KEY); }
 var G_DATA = [{"q": "Ana is not a nurse. She is ______.", "a": ["a doctor"], "from": 1}, {"q": "My neck is cold. Where is ______?", "a": ["a scarf"], "from": 7}, {"q": "I need three ______ of this page.", "a": ["copies"], "from": 5}, {"q": "Is she from ______? She is from Spain.", "a": ["Canada"], "from": 2}, {"q": "It is twelve ______. Lunch is now.", "a": ["noon"], "from": 6}, {"q": "Look at the wall. There is ______.", "a": ["a clock"], "from": 8}, {"q": "The discount is fifteen ______.", "a": ["percent"], "from": 3}];
 function buildG(){ buildGap("G", G_DATA, ["a doctor", "a scarf", "copies", "Canada", "noon", "a clock", "percent"]); }
 function checkG(){ checkGap("G", G_DATA); }
+var EX_ID = {"E": ["r01-ex-it_is_an_envelope-d2c5", "r01-ex-is_she_from_canada-6902", "r01-ex-these_gloves_are_marco_s-4657", "r01-ex-he_is_a_driver-e3ac", "r01-ex-there_is_a_clock_on_the_wall-abf4", "r01-ex-it_is_her_coat-ffd1", "r01-ex-it_is_a_quarter_to_ten-ce81", "r01-ex-it_is_fifteen_percent-18c9"], "B": ["r01-ex-the_discount_is_fifteen_percen-0e2a", "r01-ex-i_am_a_nurse-287a", "r01-ex-they_are_desks-13f6", "r01-ex-she_is_not_from_canada-5a04", "r01-ex-these_headphones_are_marco_s-ea03", "r01-ex-it_is_your_coat-0a45", "r01-ex-it_is_half_past_nine-560d"], "F": [null, null, null, null, null, null, null, null], "G": [null, null, null, null, null, null, null]};
+var AC_ID = [];
+var SCENE_LINES = 0;
+var MODEL_PEAKS = {};
 function buildAll(){ buildE(); buildB(); buildF(); buildG(); }
 if(isUnlocked()){ document.getElementById('gate').style.display='none';
   document.getElementById('content').style.display='block'; buildAll();

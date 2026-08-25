@@ -27,7 +27,7 @@ VOCABULARY
    >>> INVENTED: The ten bank items are mine. Two of them -- water and coffee -- cannot be counted, which is the half of this unit a picture cannot carry on its own: a jug of coffee is a picture of a jug, and only the sentence beside it says the word takes <em>is</em>.
 
 Goal. What a room has, and what it does not. Look at the picture. Then listen and say it.
-   a screen         There is no screen.   [f · u08-bs-there_is_no_screen-8b78]   [picture: screen.png — alt: a large flat screen on a stand]
+   a screen         There is a screen.   [f · u08-bs-there_is_a_screen-d155]   [picture: screen.png — alt: a large flat screen on a stand]
    a board          There is a board.   [f · u08-bs-there_is_a_board-cd01]   [picture: board.png — alt: a plain wall board with a narrow tray under it]
    a window         There is a window.   [f · u08-bs-there_is_a_window-696a]   [picture: window.png — alt: a single window with a plain frame]
    a socket         There is a socket.   [f · u08-bs-there_is_a_socket-b4b0]   [picture: socket.png — alt: a wall socket seen straight on]
@@ -214,12 +214,12 @@ IN A MEETING ROOM
    a table                    There is a long table.
    a trash can                There is a trash can.
 
-THINGS YOU CANNOT COUNT
+WORDS WITH NO PLURAL HERE
    air                        There is fresh air.
-   light                      There is good light.
    noise                      There is noise outside.
    paper                      There is paper.
-   room                       There is room for six.
+   room (space)               There is room for six.
+   space                      There is space on the shelf.
    sunlight                   There is sunlight.
    time                       There is time.
    work                       There is work today.
@@ -228,9 +228,9 @@ HOW MANY
    enough                     There are enough chairs.
    a few                      There are a few posters.
    a lot of                   There is a lot of noise.
-   none                       There are none.
    one                        There is one door.
    only one                   There is only one door.
+   several                    There are several chairs.
    too many                   There are too many plugs.
    two                        There are two markers.
 

@@ -415,7 +415,7 @@
       </div>
       <div class="xrow">
         <button class="audio-btn" onclick="xpair(2)" title="Listen: book, then the sentence">Listen</button>
-        <span class="xbody"><span class="xword">book</span><span class="xsent">She books the room.</span></span>
+        <span class="xbody"><span class="xword">book <span class="xfig">(not the thing you read)</span></span><span class="xsent">She books the room.</span></span>
       </div>
       <div class="xrow">
         <button class="audio-btn" onclick="xpair(3)" title="Listen: check, then the sentence">Listen</button>
@@ -447,7 +447,7 @@
     <div class="xrows">
       <div class="xrow">
         <button class="audio-btn" onclick="xpair(9)" title="Listen: cook, then the sentence">Listen</button>
-        <span class="xbody"><span class="xword">cook</span><span class="xsent">He cooks on Sunday.</span></span>
+        <span class="xbody"><span class="xword">cook <span class="xfig">(not the person)</span></span><span class="xsent">He cooks on Sunday.</span></span>
       </div>
       <div class="xrow">
         <button class="audio-btn" onclick="xpair(10)" title="Listen: drive, then the sentence">Listen</button>
@@ -471,7 +471,7 @@
       </div>
       <div class="xrow">
         <button class="audio-btn" onclick="xpair(15)" title="Listen: watch, then the sentence">Listen</button>
-        <span class="xbody"><span class="xword">watch</span><span class="xsent">They watch a movie.</span></span>
+        <span class="xbody"><span class="xword">watch <span class="xfig">(not the one on your wrist)</span></span><span class="xsent">They watch a movie.</span></span>
       </div>
       <div class="xrow">
         <button class="audio-btn" onclick="xpair(16)" title="Listen: write, then the sentence">Listen</button>
@@ -608,7 +608,15 @@ function xplay(id, next){
   var p = XCLIP.play();
   if(p && p.catch){ p.catch(function(){}); }
 }
-function xpair(k){ xplay(XW[k - 1], XS[k - 1]); }
+/* A ROW WITH NO WORD CLIP PLAYS ITS SENTENCE. Unit 7's "a tie" is the
+   only one so far: the engine cannot say that phrase in isolation and no
+   declared reading fixes it, because it is not a reading problem. Same
+   shape as the bank's clip merge -- one clip, and the button still
+   works. */
+function xpair(k){
+  var w = XW[k - 1], s = XS[k - 1];
+  if(w){ xplay(w, s); } else { xplay(s); }
+}
 
 
 (function(){
