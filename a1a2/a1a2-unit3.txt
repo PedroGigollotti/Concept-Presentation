@@ -76,7 +76,8 @@ Ready-made lines for a number. Change only the words in blue.
    - Sorry, is that [thirteen] or [thirty]?
 
 WHERE THE STRONG PART FALLS
-   (figure) The same sounds, in a different order of strength. The capital letters show where the strong part falls. In the teens it is at the end. In the tens it is at the front.
+The same sounds. The strong part moves.
+   (figure) The tall block is the strong part. In the teens it is at the end. In the tens it is at the front.
 
 WHY THIS WORKS
 Numbers are the trap for a good speaker. The grammar around them is nothing. But a wrong room costs you the meeting. A wrong price costs more than a wrong tense. Two of these are traps for you. “Thirteen” and “thirty” are one strong part apart. Neither Portuguese nor Italian uses stress that way. And an American says a big number in pairs.

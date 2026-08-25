@@ -64,7 +64,8 @@ Ready-made lines for pointing. Change only the words in blue.
    - That is [Ana]'s book.
 
 NEAR OR FAR, ONE OR MORE
-   (figure) Answer the two questions and the word is already chosen. Then the owner takes an “'s”.
+Two questions, and the word is already chosen.
+   (figure) Answer the two questions and the word is already chosen.
 
 WHY THIS WORKS
 A pointing word does two jobs in one short word. “Those” already says not near me, and more than one. On a table of lost property it is the whole message. Get the number wrong. Then the other person looks at the wrong thing.
@@ -98,16 +99,16 @@ A. Near or far?
 
 B. Spot and fix the error
    Each sentence has one mistake. Write it correctly.
-   1. × This gloves are Lena's.
-      -> These gloves are Lena's.
+   1. × This gloves are mine.
+      -> These gloves are mine.
    2. × Those book is Ana's.
       -> That book is Ana's.
    3. × That headphones are Marco's.
       -> Those headphones are Marco's.
    4. × These is my bag.
       -> This is my bag.
-   5. × That are Marco's socks.
-      -> Those are Marco's socks.
+   5. × That are Bruno's socks.
+      -> Those are Bruno's socks.
 
 C. Point at it
    Write this, that, these or those.
@@ -119,9 +120,9 @@ C. Point at it
       -> These
    4. ______ book at the end of the table is Ana's.
       -> That
-   5. ______ towel here is Marco's.
+   5. ______ towel here is Lena's.
       -> This
-   6. ______ headphones over there are Lena's.
+   6. ______ headphones over there are Marco's.
       -> Those
 
 D. One or more?
@@ -136,7 +137,7 @@ D. One or more?
       -> Those
    5. ( This / These ) headphones are Marco's.
       -> These
-   6. ( Those / That ) umbrella is Bruno's.
+   6. ( Those / That ) umbrella is Marco's.
       -> That
 
 E. What is it?

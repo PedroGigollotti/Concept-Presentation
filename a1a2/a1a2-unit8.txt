@@ -64,9 +64,6 @@ Ready-made lines for a room. Change only the words in blue.
    - Is there [water]?
    - There is [coffee].
 
-LOOK AT WHAT COMES AFTER
-   (figure) The room never chooses. The thing after the words chooses.
-
 WHY THIS WORKS
 In your language one word does this and it never changes. English makes you look at what comes next. Say it wrong and nobody stops you. Say “there is no screen” and somebody brings one. That is the reason to learn it.
 

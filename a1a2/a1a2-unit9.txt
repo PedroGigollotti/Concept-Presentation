@@ -62,9 +62,6 @@ Ready-made lines for a kitchen. Change only the words in blue.
    - Would you like some [tea]?
    - Yes, please.
 
-YES, ASKING, AND NO
-   (figure) One word for yes. One word for asking and for no.
-
 WHY THIS WORKS
 In your language one word does all three jobs. Often it is not there at all. English splits them. Say the wrong one and nobody stops you. But say “yes, there is” to a man with a coffee pot. He pours nothing.
 

@@ -64,6 +64,7 @@ Ready-made lines for saying the time. Change only the words in blue.
    - It is [twelve noon].
 
 TWO NINE THIRTIES
+The same number, twice a day. One letter tells them apart.
    (figure) The number is the same in both halves. Only the letters are different.
 
 WHY THIS WORKS

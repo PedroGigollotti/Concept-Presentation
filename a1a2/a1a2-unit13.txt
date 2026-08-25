@@ -1,0 +1,244 @@
+========================================================================
+13 · Present continuous
+What is happening at this moment.
+========================================================================
+
+   [ Draft. Nothing here is approved. Built from the manuscript's unit 10. The situation is new: the manuscript's is two friends on the phone about dinner and rain, and this edition's register is ordinary language in an office. ]
+
+------------------------------------------------------------------------
+ACCESS
+------------------------------------------------------------------------
+   >>> INVENTED: The scene is mine, approved with units 11 and 12 as one block, and rewritten after Netto's note: both halves of the contrast are Lena's, in one turn, because the new starter is the one who does not know either of them.
+
+Goal. Bruno needs a report and Lena tells him when it comes. Read and listen at the same time. Listen for “is writing” against “writes”.
+Read and listen together. Play a line and read the words at the same time. Play it again. The sound and the word go together.
+Play the whole conversation
+   Bruno I need the report for the client.   [m · u13-ac-i_need_the_report_for_the_clie-2e08]
+   Lena Ana is writing it now.   [f · u13-ac-ana_is_writing_it_now-3c2a]
+   Bruno Now? Today?   [m · u13-ac-now_today-ffdd]
+   Lena She writes the reports on Thursday. She is writing this one now.   [f · u13-ac-she_writes_the_reports_on_thur-2556]
+   Bruno So I wait.   [m · u13-ac-so_i_wait-0858]
+   Lena Ten minutes. She is finishing it.   [f · u13-ac-ten_minutes_she_is_finishing_i-e224]
+One check.
+
+------------------------------------------------------------------------
+VOCABULARY
+------------------------------------------------------------------------
+   >>> INVENTED: The eight bank verbs are mine and none of them repeats unit 10's or unit 11's. Seven can be drawn as one person doing one thing at this moment; WAIT gets no drawing, on unit 11's rule: a person standing still is a picture of standing.
+
+Goal. What people are doing at their desks. Look at the picture. Then listen and say it.
+   write            She is writing the report.   [f · u13-bs-she_is_writing_the_report-44e9]   [picture: write.png — alt: a hand writing on a small notepad with a pen]
+   type             He is typing an email.   [f · u13-bs-he_is_typing_an_email-6560]   [picture: type.png — alt: two hands on a keyboard, seen from above]
+   print            She is printing the file.   [f · u13-bs-she_is_printing_the_file-3cfb]   [picture: print.png — alt: a printer with one sheet of paper coming out of the top]
+   make             He is making coffee.   [f · u13-bs-he_is_making_coffee-c5eb]   [picture: make.png — alt: a hand pouring water into a coffee machine]
+   talk             They are talking.   [f · u13-bs-they_are_talking-4768]   [picture: talk.png — alt: two people standing face to face, one hand raised mid-gesture]
+   carry            She is carrying the boxes.   [f · u13-bs-she_is_carrying_the_boxes-0412]   [picture: carry.png — alt: a person holding a stack of two boxes with both arms]
+   look             He is looking at the board.   [f · u13-bs-he_is_looking_at_the_board-c79e]   [picture: look.png — alt: a person turned toward a wall board, seen from behind]
+   wait             He is waiting for the file.   [f · u13-bs-he_is_waiting_for_the_file-8f88]
+
+------------------------------------------------------------------------
+ANALYSIS
+------------------------------------------------------------------------
+Goal. Learn the tense for what is happening now. Then keep it apart from what happens every week.
+
+THE STRUCTURE
+This tense takes two words, not one. First “am”, “is” or “are”. Then the verb with “-ing”: “She is writing”. Unit 10 has the tense for every week. This is the tense for this minute. The two are not the same sentence.
+   | am, is, are + -ing  ·  Form: person + am / is / are + verb-ing  ·  Meaning: It is happening now.  ·  Use it to: say what somebody is doing at this moment  ·  example: She is writing the report.
+   | the negative  ·  Form: person + am / is / are + not + verb-ing  ·  Meaning: It is not happening now.  ·  Use it to: say what is not happening  ·  example: He isn't typing.
+   | the question  ·  Form: Am / Is / Are + person + verb-ing?  ·  Meaning: You are asking about now.  ·  Use it to: ask what somebody is doing  ·  example: What are you doing?
+
+WATCH OUT
+
+   [ Do not drop am, is or are. Say “She is writing.” Never say “× She writing.” The “-ing” word never stands on its own. This unit exists for that mistake. Now, not every week. Say “She is writing it now.” For every week, use unit 10: “She writes the reports on Thursday.” The two say different things about the same person. Watch the spelling. Most verbs just add “-ing”: “work”, “working”. A verb ending in “e” drops it: “make”, “making”; “write”, “writing”. A short verb doubles the last letter: “run”, “running”; “sit”, “sitting”. ]
+
+   [ Two ways to say it. “She is writing” and “She's writing” are both correct. The short one is what people say. The same goes for “is not” and “isn't”. ]
+
+THE MOVES
+Ready-made lines for right now. Change only the words in blue.
+   - Ana is [writing] the report.
+   - I am [waiting] for the file.
+   - What are you [doing]?
+   - They aren't [talking] now.
+   - Is she [printing] it?
+
+EVERY WEEK, OR RIGHT NOW
+One is the whole week. One is this minute.
+   (figure) She writes is every week. She is writing is this minute, and it stops.
+
+WHY THIS WORKS
+Every day somebody asks where a thing is. The answer is a habit or a minute. Say it wrong and nobody stops you. Hear it wrong and you come back on Thursday. The report is ready in ten minutes.
+
+------------------------------------------------------------------------
+ACTIVATION
+------------------------------------------------------------------------
+Goal. Now practice. Hear now against every week. Build the two words. Then say what is happening around you.
+   In pairs. Ask your partner “What are you doing?” and answer with two words: “I am waiting for a file.” Then say what three people near you are doing. Then, on your own. Write four sentences about this minute in your office. Then write the same four about every week, in unit 10's tense.
+   (figure) The picture shows only loud and quiet. It shows where you stop and how long you take. It does not show your sounds. The same picture can still be the wrong sound.
+One more. This last one is not about this unit. It comes back for something you already know.
+
+------------------------------------------------------------------------
+THE EXERCISES, WITH THEIR ANSWERS
+------------------------------------------------------------------------
+
+A. Now, or every week?
+   Listen. Is it happening now, or every week? Write now or every week.
+   1. (heard, not printed) “She is writing the report.”
+      -> now
+   2. (heard, not printed) “She writes the reports.”
+      -> every week
+   3. (heard, not printed) “He is making the coffee.”
+      -> now
+   4. (heard, not printed) “He makes the coffee.”
+      -> every week
+   5. (heard, not printed) “They are talking to the client.”
+      -> now
+   6. (heard, not printed) “She waits for the file.”
+      -> every week
+
+B. Spot and fix the error
+   Each sentence has one mistake. Write it correctly.
+   1. × She working at home today.
+      -> She is working at home today.
+   2. × They is talking to the client.
+      -> They are talking to the client.
+   3. × I am makeing coffee.
+      -> I am making coffee.
+   4. × What you are doing?
+      -> What are you doing?
+   5. × She is print the file.
+      -> She is printing the file.
+
+C. What is happening now
+   Write the verb in brackets with am, is or are and -ing.
+   1. Ana ______ the report now. (write)
+      -> is writing
+   2. I ______ the email. (type)
+      -> am typing
+   3. They ______ to the client. (talk)
+      -> are talking
+   4. He ______ the coffee. (make)
+      -> is making
+   5. We ______ for the file. (wait)
+      -> are waiting
+   6. She ______ the boxes. (carry)
+      -> is carrying
+
+D. Now, or every week?
+   Read the whole sentence. Choose the English.
+   1. Look. She ( writes / is writing ) the report now.
+      -> is writing
+   2. She ( writes / is writing ) the reports on Thursday.
+      -> writes
+   3. Listen. They ( talk / are talking ) in the small room.
+      -> are talking
+   4. He ( makes / is making ) the coffee every morning.
+      -> makes
+   5. I ( wait / am waiting ) for the file now.
+      -> am waiting
+   6. We ( start / are starting ) at nine every day.
+      -> start
+
+E. What is it?
+   Read the verb. Choose what it means.
+   1. write
+      -> b. to put words down, on paper or on a screen
+   2. print
+      -> d. to make a paper copy of something
+   3. carry
+      -> a. to hold something and take it somewhere
+   4. wait
+      -> c. to stay where you are until something happens
+   5. talk
+      -> e. to say things to another person
+   6. make
+      -> f. to put things together and get something new
+   the endings as the student sees them:
+      a. to hold something and take it somewhere
+      b. to put words down, on paper or on a screen
+      c. to stay where you are until something happens
+      d. to make a paper copy of something
+      e. to say things to another person
+      f. to put things together and get something new
+
+F. Over to you
+   Not graded. Here the grammar stops being a rule. It becomes the way you say what is going on around you.
+   In pairs. Ask your partner What are you doing? and answer with two words: I am waiting for a file. Then say what three people near you are doing.
+   Then, on your own. Write four sentences about this minute in your office. Then write the same four about every week, in unit 10's tense.
+
+G. Listen, say it, then read
+   Listen. Say the line without looking. Record it. Then check the words.
+   Choose a line above.
+   The picture shows only loud and quiet. It shows where you stop and how long you take. It does not show your sounds. The same picture can still be the wrong sound.
+   [Bruno Line 1]
+   [Lena Line 2]
+   [Bruno Line 3]
+   [Lena Line 4]
+   [Bruno Line 5]
+   [Lena Line 6]
+
+H. From units 1 to 12
+   Complete each sentence with a phrase from the box. Use each one once.
+   1. Hello. ______ the new teacher.
+      -> I am
+   2. ______ ready for the meeting?
+      -> Is she
+   3. My extension is ______.
+      -> four oh six
+   4. Ana is here. It is ______.
+      -> her laptop
+   5. Look at the desk. ______.
+      -> They are boxes
+   6. The meeting is at ______, in the morning.
+      -> nine thirty a.m.
+   7. ______ over there are Lena's.
+      -> Those keys
+   8. The room is dark. ______ screen.
+      -> There is no
+   9. There is ______ coffee in the kitchen.
+      -> some
+   10. Ana is not here today. She ______ here every day.
+      -> works
+   11. Marco ______ work on Fridays.
+      -> doesn't
+   12. The team ______ on Monday.
+      -> usually meets
+
+------------------------------------------------------------------------
+MORE WORDS  (the extended page, a separate page in the book)
+------------------------------------------------------------------------
+The words this unit opens up. Nothing here is in the exercises.
+
+MORE THINGS PEOPLE ARE DOING
+   finish                     She is finishing the report.
+   hold                       She is holding the file.
+   listen                     He is listening to the call.
+   move                       He is moving the table.
+   put                        She is putting it on the desk.
+   sit                        He is sitting at his desk.
+   stand                      She is standing at the door.
+   take                       He is taking the boxes.
+
+SAYING WHAT YOU ARE DOING
+   I'm in a meeting.          I'm in a meeting.
+   I'm just finishing.        I'm just finishing.
+   I'm looking at it now.     I'm looking at it now.
+   I'm on my way.             I'm on my way.
+   I'm on the phone.          I'm on the phone.
+   I'm with a client.         I'm with a client.
+   Not right now.             Not right now.
+   One moment.                One moment.
+
+SAYING WHEN NOW IS
+   at the moment              She is out at the moment.
+   for now                    That is all for now.
+   just now                   He called just now.
+   right now                  I am reading it right now.
+   still                      She is still writing.
+   this morning               We are busy this morning.
+   this week                  He is in Lisbon this week.
+   today                      She is at home today.
+
+========================================================================
+This file is generated by readable.py on every build. Do not edit it:
+edit the unit's own module and rebuild, or the two will disagree about the same unit.
+========================================================================

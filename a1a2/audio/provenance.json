@@ -4853,5 +4853,1580 @@
   "text": "That umbrella is Bruno's.",
   "voice": "f",
   "source": "cut"
+ },
+ "u07-ex-these_gloves_are_mine-cafa": {
+  "text": "These gloves are mine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ex-those_are_bruno_s_socks-29fb": {
+  "text": "Those are Bruno's socks.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ex-this_towel_here_is_lena_s-0bdc": {
+  "text": "This towel here is Lena's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ex-those_headphones_over_there_ar-b613": {
+  "text": "Those headphones over there are Marco's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ex-that_umbrella_is_marco_s-8e64": {
+  "text": "That umbrella is Marco's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ac-does_ana_work_on_fridays-a443": {
+  "text": "Does Ana work on Fridays?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u11-ac-she_doesn_t_work_on_fridays_ma-34de": {
+  "text": "She doesn't work on Fridays. Marco does.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ac-does_he_read_the_reports-1ce8": {
+  "text": "Does he read the reports?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u11-ac-he_doesn_t_read_them_he_answer-be65": {
+  "text": "He doesn't read them. He answers them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ac-so_i_send_the_file_to_marco-841d": {
+  "text": "So I send the file to Marco.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u11-ac-send_it_to_marco_he_is_here_ev-070a": {
+  "text": "Send it to Marco. He is here every Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-he_sends_the_file-793d": {
+  "text": "He sends the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-she_reads_the_report-6eba": {
+  "text": "She reads the report.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-he_answers_the_phone-67b8": {
+  "text": "He answers the phone.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-she_checks_the_email-2ed2": {
+  "text": "She checks the email.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-he_opens_the_office-3c71": {
+  "text": "He opens the office.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-she_closes_the_door-ff24": {
+  "text": "She closes the door.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-he_brings_the_coffee-50d4": {
+  "text": "He brings the coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-she_uses_the_small_room-6274": {
+  "text": "She uses the small room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-he_needs_the_file-9e41": {
+  "text": "He needs the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-she_knows_the_answer-d1ab": {
+  "text": "She knows the answer.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-how_many-85f0": {
+  "text": "how many",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-how_many_people_work_here-f6c6": {
+  "text": "How many people work here?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-how_often-eb8c": {
+  "text": "how often",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-how_often_do_you_travel-860b": {
+  "text": "How often do you travel?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-what_time-633c": {
+  "text": "what time",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-what_time_does_it_open-5b40": {
+  "text": "What time does it open?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-when-ca1f": {
+  "text": "when",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-when_does_the_meeting_start-5f9e": {
+  "text": "When does the meeting start?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-where-92a4": {
+  "text": "where",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-where_do_you_sit-3841": {
+  "text": "Where do you sit?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-which-6f62": {
+  "text": "which",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-which_room_do_you_use-e952": {
+  "text": "Which room do you use?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-who-6841": {
+  "text": "who",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-who_answers_the_phone-789e": {
+  "text": "Who answers the phone?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-why-e964": {
+  "text": "why",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-why_does_he_need_it-77fb": {
+  "text": "Why does he need it?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-every_day-226a": {
+  "text": "Every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-every_day-6343": {
+  "text": "Every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-i_m_not_sure-5da4": {
+  "text": "I'm not sure.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-i_m_not_sure-70cc": {
+  "text": "I'm not sure.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-i_think_so-b8ad": {
+  "text": "I think so.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-i_think_so-69f9": {
+  "text": "I think so.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-maybe-5561": {
+  "text": "Maybe.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-maybe-a719": {
+  "text": "Maybe.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-not_this_week-c9a7": {
+  "text": "Not this week.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-not_this_week-c30b": {
+  "text": "Not this week.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-not_today-f0e1": {
+  "text": "Not today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-not_today-537e": {
+  "text": "Not today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-of_course-12de": {
+  "text": "Of course.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-of_course-a07e": {
+  "text": "Of course.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-probably-0d29": {
+  "text": "Probably.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-probably-97cf": {
+  "text": "Probably.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-arrive-b35c": {
+  "text": "arrive",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-he_arrives_early-1abb": {
+  "text": "He arrives early.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-collect-dab2": {
+  "text": "collect",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-he_collects_the_post-5b32": {
+  "text": "He collects the post.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-fix-d722": {
+  "text": "fix",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-he_fixes_the_printer-0197": {
+  "text": "He fixes the printer.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-join-5ae6": {
+  "text": "join",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-he_joins_the_call-965c": {
+  "text": "He joins the call.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-leave-50c9": {
+  "text": "leave",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-she_leaves_at_six-da42": {
+  "text": "She leaves at six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-prepare-7524": {
+  "text": "prepare",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-she_prepares_the_room-de6e": {
+  "text": "She prepares the room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-report-586f": {
+  "text": "report",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-she_reports_on_monday-bdab": {
+  "text": "She reports on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xw-share-dfd5": {
+  "text": "share",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-xs-she_shares_the_file-cfdd": {
+  "text": "She shares the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-send_is_to_make_it_go_to_someb-4445": {
+  "text": "Send is to make it go to somebody.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-answer_is_to_say_something_bac-f3ab": {
+  "text": "Answer is to say something back.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-check_is_to_look_at_it_and_see-9c9f": {
+  "text": "Check is to look at it and see if it is right.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-bring_is_to_carry_it_to_somebo-8e0e": {
+  "text": "Bring is to carry it to somebody.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-need_is_to_have_to_have_it-c130": {
+  "text": "Need is to have to have it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-know_is_to_have_it_in_your_hea-1ac3": {
+  "text": "Know is to have it in your head already.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-lz-she_doesn_t_work_on_fridays-2bb9": {
+  "text": "She doesn't work on Fridays.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-lz-he_reads_the_reports-0c04": {
+  "text": "He reads the reports.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-lz-he_doesn_t_answer_the_phone-2af9": {
+  "text": "He doesn't answer the phone.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-lz-she_checks_the_email-2ed2": {
+  "text": "She checks the email.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-lz-she_works_on_fridays-ed0b": {
+  "text": "She works on Fridays.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-lz-he_doesn_t_need_the_file-f379": {
+  "text": "He doesn't need the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-does_she_work_on_fridays-8a74": {
+  "text": "Does she work on Fridays?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-he_doesn_t_read_the_reports-6710": {
+  "text": "He doesn't read the reports.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-does_she_answer_the_phone-de3a": {
+  "text": "Does she answer the phone?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-she_doesn_t_check_the_email-977d": {
+  "text": "She doesn't check the email.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-he_doesn_t_open_the_office-ede7": {
+  "text": "He doesn't open the office.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-ana_doesn_t_work_on_fridays-e45c": {
+  "text": "Ana doesn't work on Fridays.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-i_don_t_need_the_file_today-dd85": {
+  "text": "I don't need the file today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-marco_doesn_t_answer_the_phone-6f3a": {
+  "text": "Marco doesn't answer the phone.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-we_don_t_use_the_small_room-85cd": {
+  "text": "We don't use the small room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-she_doesn_t_bring_the_coffee-5f73": {
+  "text": "She doesn't bring the coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-they_don_t_open_the_office-49fc": {
+  "text": "They don't open the office.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-do_you_need_the_file-b78e": {
+  "text": "Do you need the file?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-he_doesn_t_read_them-88f3": {
+  "text": "He doesn't read them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-does_marco_bring_the_coffee-f192": {
+  "text": "Does Marco bring the coffee?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-they_don_t_use_the_small_room-99b7": {
+  "text": "They don't use the small room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-does_she_know_the_answer-7861": {
+  "text": "Does she know the answer?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-hello_i_am_the_new_teacher-dd6a": {
+  "text": "Hello. I am the new teacher.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-is_she_ready_for_the_meeting-4e9f": {
+  "text": "Is she ready for the meeting?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-my_extension_is_four_oh_six-afad": {
+  "text": "My extension is four oh six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-ana_is_here_it_is_her_laptop-2ade": {
+  "text": "Ana is here. It is her laptop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-look_at_the_desk_they_are_boxe-acce": {
+  "text": "Look at the desk. They are boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-the_meeting_is_at_nine_thirty-aff8": {
+  "text": "The meeting is at nine thirty a.m., in the morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-those_keys_over_there_are_lena-d963": {
+  "text": "Those keys over there are Lena's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-the_room_is_dark_there_is_no_s-5985": {
+  "text": "The room is dark. There is no screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-there_is_some_coffee_in_the_ki-d67c": {
+  "text": "There is some coffee in the kitchen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ex-are_you_early_today-ed2c": {
+  "text": "Are you early today?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ac-how_often_is_the_team_meeting-a90e": {
+  "text": "How often is the team meeting?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u12-ac-we_usually_meet_on_monday_we_n-ad51": {
+  "text": "We usually meet on Monday. We never meet on Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ac-and_the_reports-fea4": {
+  "text": "And the reports?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u12-ac-ana_always_sends_them_on_thurs-6f5a": {
+  "text": "Ana always sends them on Thursday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ac-so_friday_is_quiet-3121": {
+  "text": "So Friday is quiet.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u12-ac-friday_is_always_quiet_nobody-9445": {
+  "text": "Friday is always quiet. Nobody is here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bs-she_is_always_here-7f2f": {
+  "text": "She is always here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bs-he_usually_works_here-ac91": {
+  "text": "He usually works here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bs-she_often_works_late-d840": {
+  "text": "She often works late.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bs-he_sometimes_brings_coffee-f570": {
+  "text": "He sometimes brings coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bs-she_rarely_uses_the_phone-ab05": {
+  "text": "She rarely uses the phone.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bs-he_never_works_on_friday-3304": {
+  "text": "He never works on Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-as_a_rule-1501": {
+  "text": "as a rule",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-as_a_rule_we_start_at_nine-2d54": {
+  "text": "As a rule, we start at nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-at_times-4d17": {
+  "text": "at times",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-at_times_it_is_very_quiet-0ab2": {
+  "text": "At times it is very quiet.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-from_time_to_time-9673": {
+  "text": "from time to time",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-he_travels_from_time_to_time-8fae": {
+  "text": "He travels from time to time.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-hardly_ever-b7ae": {
+  "text": "hardly ever",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-he_hardly_ever_calls-c859": {
+  "text": "He hardly ever calls.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-in_general-4440": {
+  "text": "in general",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-in_general_friday_is_quiet-e277": {
+  "text": "In general, Friday is quiet.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-more_or_less-fa5e": {
+  "text": "more or less",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-it_is_more_or_less_the_same-d7bd": {
+  "text": "It is more or less the same.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-most_days-cdf6": {
+  "text": "most days",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-she_is_here_most_days-5587": {
+  "text": "She is here most days.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-now_and_then-46c4": {
+  "text": "now and then",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-we_meet_now_and_then-7d18": {
+  "text": "We meet now and then.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-busy-06b3": {
+  "text": "busy",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-monday_is_busy-6e39": {
+  "text": "Monday is busy.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-a_change-6c51": {
+  "text": "a change",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-it_is_a_change-b689": {
+  "text": "It is a change.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-different-5e03": {
+  "text": "different",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-today_is_different-2e8c": {
+  "text": "Today is different.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-a_habit-a7e8": {
+  "text": "a habit",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-it_is_a_good_habit-3af7": {
+  "text": "It is a good habit.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-normal-0e28": {
+  "text": "normal",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-it_is_a_normal_week-cf69": {
+  "text": "It is a normal week.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-quiet-f0d8": {
+  "text": "quiet",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-friday_is_quiet-8a2d": {
+  "text": "Friday is quiet.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-a_routine-7947": {
+  "text": "a routine",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-it_is_my_routine-fc65": {
+  "text": "It is my routine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-the_same-436d": {
+  "text": "the same",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-every_week_is_the_same-18e3": {
+  "text": "Every week is the same.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-after_lunch-7f6b": {
+  "text": "after lunch",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-we_meet_after_lunch-2d25": {
+  "text": "We meet after lunch.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-after_that-a803": {
+  "text": "after that",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-after_that_we_meet-83da": {
+  "text": "After that, we meet.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-at_the_end-039d": {
+  "text": "at the end",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-at_the_end_i_send_the_file-9372": {
+  "text": "At the end, I send the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-at_the_start-bc84": {
+  "text": "at the start",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-at_the_start_it_is_quiet-7255": {
+  "text": "At the start, it is quiet.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-before_nine-c5b5": {
+  "text": "before nine",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-i_am_here_before_nine-3ba2": {
+  "text": "I am here before nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-first-7c2d": {
+  "text": "first",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-first_i_check_the_email-2841": {
+  "text": "First, I check the email.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-most_weeks-3e33": {
+  "text": "most weeks",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-most_weeks_are_busy-5757": {
+  "text": "Most weeks are busy.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-then-e453": {
+  "text": "then",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-then_i_call_the_client-5778": {
+  "text": "Then I call the client.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-always_is_every_time_with_noth-e908": {
+  "text": "Always is every time, with nothing left out.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-usually_is_almost_every_time-4dd7": {
+  "text": "Usually is almost every time.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-often_is_a_lot_of_the_time_but-9525": {
+  "text": "Often is a lot of the time, but not all.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-sometimes_is_only_now_and_then-e3dc": {
+  "text": "Sometimes is only now and then.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-rarely_is_a_little_of_the_time-6cf7": {
+  "text": "Rarely is a little of the time.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-never_is_no_time_at_all-fdf1": {
+  "text": "Never is no time at all.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-lz-she_always_works_on_monday-7659": {
+  "text": "She always works on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-lz-he_never_works_on_friday-3304": {
+  "text": "He never works on Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-lz-she_sometimes_works_late-40ae": {
+  "text": "She sometimes works late.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-lz-he_is_always_here_at_nine-3ade": {
+  "text": "He is always here at nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-lz-she_rarely_uses_the_phone-ab05": {
+  "text": "She rarely uses the phone.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-lz-he_never_brings_the_coffee-fc9d": {
+  "text": "He never brings the coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-she_is_usually_late-a91a": {
+  "text": "She is usually late.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-he_never_works_here-620e": {
+  "text": "He never works here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-she_always_works_on_monday-7659": {
+  "text": "She always works on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-we_sometimes_meet-ac6a": {
+  "text": "We sometimes meet.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-he_often_isn_t_here-6563": {
+  "text": "He often isn't here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-she_usually_works_here-b976": {
+  "text": "She usually works here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-he_is_always_late-fe0a": {
+  "text": "He is always late.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-i_never_work_late-bb01": {
+  "text": "I never work late.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-they_sometimes_bring_coffee-02f9": {
+  "text": "They sometimes bring coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-she_is_rarely_in_the_office-5e76": {
+  "text": "She is rarely in the office.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-we_often_meet_in_the_small_roo-fa91": {
+  "text": "We often meet in the small room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-she_usually_works_on_monday-a87c": {
+  "text": "She usually works on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-they_never_meet_on_friday-8dac": {
+  "text": "They never meet on Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-she_is_often_in_the_small_room-fd12": {
+  "text": "She is often in the small room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-i_sometimes_bring_the_coffee-039f": {
+  "text": "I sometimes bring the coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-he_is_rarely_here_at_nine-81e8": {
+  "text": "He is rarely here at nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-hello_i_am_the_new_teacher-dd6a": {
+  "text": "Hello. I am the new teacher.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-is_she_ready_for_the_meeting-4e9f": {
+  "text": "Is she ready for the meeting?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-my_extension_is_four_oh_six-afad": {
+  "text": "My extension is four oh six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-ana_is_here_it_is_her_laptop-2ade": {
+  "text": "Ana is here. It is her laptop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-look_at_the_desk_they_are_boxe-acce": {
+  "text": "Look at the desk. They are boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-the_meeting_is_at_nine_thirty-aff8": {
+  "text": "The meeting is at nine thirty a.m., in the morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-those_keys_over_there_are_lena-d963": {
+  "text": "Those keys over there are Lena's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-the_room_is_dark_there_is_no_s-5985": {
+  "text": "The room is dark. There is no screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-there_is_some_coffee_in_the_ki-d67c": {
+  "text": "There is some coffee in the kitchen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-ana_doesn_t_work_on_fridays-e45c": {
+  "text": "Ana doesn't work on Fridays.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ex-are_you_early_today-ed2c": {
+  "text": "Are you early today?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ac-i_need_the_report_for_the_clie-2e08": {
+  "text": "I need the report for the client.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-ac-ana_is_writing_it_now-3c2a": {
+  "text": "Ana is writing it now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ac-now_today-ffdd": {
+  "text": "Now? Today?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-ac-she_writes_the_reports_on_thur-2556": {
+  "text": "She writes the reports on Thursday. She is writing this one now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ac-so_i_wait-0858": {
+  "text": "So I wait.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-ac-ten_minutes_she_is_finishing_i-e224": {
+  "text": "Ten minutes. She is finishing it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bs-she_is_writing_the_report-44e9": {
+  "text": "She is writing the report.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bs-he_is_typing_an_email-6560": {
+  "text": "He is typing an email.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bs-she_is_printing_the_file-3cfb": {
+  "text": "She is printing the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bs-he_is_making_coffee-c5eb": {
+  "text": "He is making coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bs-they_are_talking-4768": {
+  "text": "They are talking.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bs-she_is_eating_lunch-f238": {
+  "text": "She is eating lunch.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bs-he_is_drinking_water-24eb": {
+  "text": "He is drinking water.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bs-she_is_carrying_the_boxes-0412": {
+  "text": "She is carrying the boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bs-he_is_looking_at_the_board-c79e": {
+  "text": "He is looking at the board.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bs-he_is_waiting_for_the_file-8f88": {
+  "text": "He is waiting for the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-finish-af5a": {
+  "text": "finish",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-she_is_finishing_the_report-b122": {
+  "text": "She is finishing the report.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-hold-658f": {
+  "text": "hold",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-she_is_holding_the_file-b628": {
+  "text": "She is holding the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-listen-7acd": {
+  "text": "listen",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-he_is_listening_to_the_call-cdb1": {
+  "text": "He is listening to the call.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-move-1949": {
+  "text": "move",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-he_is_moving_the_table-e8ce": {
+  "text": "He is moving the table.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-put-86dc": {
+  "text": "put",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-she_is_putting_it_on_the_desk-fa74": {
+  "text": "She is putting it on the desk.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-sit-3576": {
+  "text": "sit",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-he_is_sitting_at_his_desk-d9bd": {
+  "text": "He is sitting at his desk.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-stand-6d56": {
+  "text": "stand",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-she_is_standing_at_the_door-7f34": {
+  "text": "She is standing at the door.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-take-41aa": {
+  "text": "take",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-he_is_taking_the_boxes-2ee4": {
+  "text": "He is taking the boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-i_m_in_a_meeting-8157": {
+  "text": "I'm in a meeting.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-i_m_in_a_meeting-8f0b": {
+  "text": "I'm in a meeting.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-i_m_just_finishing-4c84": {
+  "text": "I'm just finishing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-i_m_just_finishing-9057": {
+  "text": "I'm just finishing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-i_m_looking_at_it_now-810f": {
+  "text": "I'm looking at it now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-i_m_looking_at_it_now-0700": {
+  "text": "I'm looking at it now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-i_m_on_my_way-b3f2": {
+  "text": "I'm on my way.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-i_m_on_my_way-7495": {
+  "text": "I'm on my way.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-i_m_on_the_phone-d4c5": {
+  "text": "I'm on the phone.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-i_m_on_the_phone-64dd": {
+  "text": "I'm on the phone.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-i_m_with_a_client-c2d0": {
+  "text": "I'm with a client.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-i_m_with_a_client-1de3": {
+  "text": "I'm with a client.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-not_right_now-6ce1": {
+  "text": "Not right now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-not_right_now-2b31": {
+  "text": "Not right now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-one_moment-1f64": {
+  "text": "One moment.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-one_moment-a5fc": {
+  "text": "One moment.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-at_the_moment-7b4e": {
+  "text": "at the moment",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-she_is_out_at_the_moment-247c": {
+  "text": "She is out at the moment.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-for_now-924c": {
+  "text": "for now",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-that_is_all_for_now-6893": {
+  "text": "That is all for now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-just_now-e067": {
+  "text": "just now",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-he_called_just_now-3410": {
+  "text": "He called just now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-right_now-53c0": {
+  "text": "right now",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-i_am_reading_it_right_now-fc4e": {
+  "text": "I am reading it right now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-still-56d7": {
+  "text": "still",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-she_is_still_writing-22ba": {
+  "text": "She is still writing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-this_morning-7f2b": {
+  "text": "this morning",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-we_are_busy_this_morning-6069": {
+  "text": "We are busy this morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-this_week-5ac9": {
+  "text": "this week",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-he_is_in_lisbon_this_week-92fa": {
+  "text": "He is in Lisbon this week.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xw-today-5568": {
+  "text": "today",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-xs-she_is_at_home_today-754d": {
+  "text": "She is at home today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-write_is_to_put_words_on_paper-29ea": {
+  "text": "Write is to put words on paper or on a screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-print_is_to_put_words_on_paper-ce5d": {
+  "text": "Print is to put words on paper with a machine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-carry_is_to_hold_something_and-2a8d": {
+  "text": "Carry is to hold something and take it somewhere.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-wait_is_to_stay_where_you_are-24f4": {
+  "text": "Wait is to stay where you are until something happens.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-talk_is_to_say_things_to_anoth-f8ae": {
+  "text": "Talk is to say things to another person.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-make_is_to_put_things_together-d4b2": {
+  "text": "Make is to put things together and get something new.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-lz-she_is_writing_the_report-44e9": {
+  "text": "She is writing the report.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-lz-she_writes_the_reports-e799": {
+  "text": "She writes the reports.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-lz-he_is_making_the_coffee-677e": {
+  "text": "He is making the coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-lz-he_makes_the_coffee-5366": {
+  "text": "He makes the coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-lz-they_are_talking_to_the_client-d7ba": {
+  "text": "They are talking to the client.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-lz-she_waits_for_the_file-c183": {
+  "text": "She waits for the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-she_is_working_at_home_today-eb99": {
+  "text": "She is working at home today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-they_are_talking_to_the_client-d7ba": {
+  "text": "They are talking to the client.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-i_am_making_coffee-1aaa": {
+  "text": "I am making coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-what_are_you_doing-d2d0": {
+  "text": "What are you doing?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-she_is_printing_the_file-3cfb": {
+  "text": "She is printing the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-ana_is_writing_the_report_now-274e": {
+  "text": "Ana is writing the report now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-i_am_typing_the_email-bdc9": {
+  "text": "I am typing the email.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-he_is_making_the_coffee-677e": {
+  "text": "He is making the coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-we_are_waiting_for_the_file-72f8": {
+  "text": "We are waiting for the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-she_is_carrying_the_boxes-0412": {
+  "text": "She is carrying the boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-look_she_is_writing_the_report-5ca4": {
+  "text": "Look. She is writing the report now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-she_writes_the_reports_on_thur-19b4": {
+  "text": "She writes the reports on Thursday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-listen_they_are_talking_in_the-1a0d": {
+  "text": "Listen. They are talking in the small room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-he_makes_the_coffee_every_morn-0089": {
+  "text": "He makes the coffee every morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-i_am_waiting_for_the_file_now-399b": {
+  "text": "I am waiting for the file now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-we_start_at_nine_every_day-ed73": {
+  "text": "We start at nine every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-hello_i_am_the_new_teacher-dd6a": {
+  "text": "Hello. I am the new teacher.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-is_she_ready_for_the_meeting-4e9f": {
+  "text": "Is she ready for the meeting?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-my_extension_is_four_oh_six-afad": {
+  "text": "My extension is four oh six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-ana_is_here_it_is_her_laptop-2ade": {
+  "text": "Ana is here. It is her laptop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-look_at_the_desk_they_are_boxe-acce": {
+  "text": "Look at the desk. They are boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-the_meeting_is_at_nine_thirty-aff8": {
+  "text": "The meeting is at nine thirty a.m., in the morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-those_keys_over_there_are_lena-d963": {
+  "text": "Those keys over there are Lena's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-the_room_is_dark_there_is_no_s-5985": {
+  "text": "The room is dark. There is no screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-there_is_some_coffee_in_the_ki-d67c": {
+  "text": "There is some coffee in the kitchen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-ana_is_not_here_today_she_work-699a": {
+  "text": "Ana is not here today. She works here every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-marco_doesn_t_work_on_fridays-315e": {
+  "text": "Marco doesn't work on Fridays.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-the_team_usually_meets_on_mond-e20e": {
+  "text": "The team usually meets on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xw-once_in_a_while-10f3": {
+  "text": "once in a while",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-xs-he_calls_once_in_a_while-92a2": {
+  "text": "He calls once in a while.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bs-she_closes_the_laptop-04d7": {
+  "text": "She closes the laptop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-write_is_to_put_words_down_on-6cf9": {
+  "text": "Write is to put words down, on paper or on a screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ex-print_is_to_make_a_paper_copy-4799": {
+  "text": "Print is to make a paper copy of something.",
+  "voice": "f",
+  "source": "cut"
  }
 }

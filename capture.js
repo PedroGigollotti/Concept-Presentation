@@ -251,7 +251,11 @@
       'font:600 13.5px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;' +
       'cursor:pointer;display:inline-flex;align-items:center;gap:6px;' +
       '-webkit-tap-highlight-color:transparent;}' +
-      '.cap-btn::before{content:"\\2318";font-size:.95em;line-height:1;}' +
+      /* THE GLYPH IS GONE, 30 Aug 2026. It was U+2318, which is not an emoji
+         and so was far less exposed than the play mark -- but the lesson of
+         that round is that ANY character inside a control is at the mercy of
+         whatever font the device reaches for. The word does the whole job
+         and there is one character less to go wrong. */
       '.cap-btn:active{background:#14344F;color:#fff;}' +
       /* NO BAR ON THE PAGE: float, as the only remaining option. */
       '.cap-float{position:fixed;right:14px;bottom:18px;z-index:2147483000;' +

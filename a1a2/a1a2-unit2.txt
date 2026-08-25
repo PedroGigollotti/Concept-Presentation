@@ -60,7 +60,8 @@ Ready-made lines for checking something. Change only the words in blue.
    - They aren't [ready].
 
 WHAT MOVES, AND WHAT DOES NOT
-   (figure) One sentence, three shapes. Only the order of the first two words changes. “Not” comes after the verb.
+Only the first two words change place.
+   (figure) One sentence, two shapes. The verb moves to the front and nothing else does.
 
 WHY THIS WORKS
 English does not ask a question with your voice alone. It asks with word order. You hear “Is she ready?” The verb is first. So the question is clear at once. One mistake is very common. People keep the statement order and lift the voice: “She is ready?” It sounds unfinished. Move the verb to the front. Then it sounds right.
