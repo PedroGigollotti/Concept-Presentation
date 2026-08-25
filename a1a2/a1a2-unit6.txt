@@ -1,0 +1,208 @@
+========================================================================
+6 · Time, the way it is said
+Saying the hour, and not being twelve hours wrong.
+========================================================================
+
+   [ Draft. Nothing here is approved. New to this edition. Time was inserted at unit 6 in the 23 Aug renumbering. It has no manuscript unit behind it. The situation is Netto's. ]
+
+------------------------------------------------------------------------
+ACCESS
+------------------------------------------------------------------------
+   >>> INVENTED: The scene is Netto's situation, written out. The last line is Marco letting her go home rather than a lecture, because the unit is about a word and not about a person being careless.
+
+Goal. Ana is here for a meeting, twelve hours early. Read and listen at the same time. Listen for “a.m.” and “p.m.”
+Read and listen together. Play a line and read the words at the same time. Play it again. The sound and the word go together.
+Play the whole conversation
+   Ana Hi. I am here for the nine thirty meeting.   [f · u06-ac-hi_i_am_here_for_the_nine_thir-0df0]
+   Marco The meeting is at nine thirty p.m.   [m · u06-ac-the_meeting_is_at_nine_thirty-9b4d]
+   Ana P.m.? But it is nine thirty a.m. now.   [f · u06-ac-p_m_but_it_is_nine_thirty_a_m-0b4a]
+   Marco Yes. It is a late meeting.   [m · u06-ac-yes_it_is_a_late_meeting-8244]
+   Ana So I am twelve hours early.   [f · u06-ac-so_i_am_twelve_hours_early-6fb4]
+   Marco You are. See you tonight.   [m · u06-ac-you_are_see_you_tonight-ecf0]
+One check.
+
+------------------------------------------------------------------------
+VOCABULARY
+------------------------------------------------------------------------
+   >>> INVENTED: The ten bank items are mine. Six of them are clock faces, which is the only thing in this book a drawing can carry about time -- a.m. and p.m. are letters and get no drawing, same rule as unit 3's numbers.
+
+Goal. The words for the parts of a day. Look at the picture. Then listen and say it.
+   in the morning   It is nine a.m. in the morning.   [f · u06-bs-it_is_nine_a_m_in_the_morning-b9b8]   [picture: morning.png — alt: a sun low on one side of an empty office window]
+   in the afternoon It is three p.m. in the afternoon.   [f · u06-bs-it_is_three_p_m_in_the_afterno-4482]   [picture: afternoon.png — alt: a sun high above an empty office window]
+   in the evening   It is seven p.m. in the evening.   [f · u06-bs-it_is_seven_p_m_in_the_evening-b611]   [picture: evening.png — alt: a sun setting behind an empty office window]
+   at night         It is ten p.m. at night.   [f · u06-bs-it_is_ten_p_m_at_night-30d6]   [picture: night.png — alt: a moon and two stars in an empty office window]
+   noon             It is twelve noon.   [f · u06-bs-it_is_twelve_noon-6949]   [picture: noon.png — alt: a clock face with both hands straight up]
+   midnight         It is twelve midnight.   [f · u06-bs-it_is_twelve_midnight-b2cd]   [picture: midnight.png — alt: a clock face with both hands straight down]
+   half past        It is half past nine.   [f · u06-bs-it_is_half_past_nine-560d]   [picture: half-past.png — alt: a clock face with the long hand straight down]
+   a quarter past   It is a quarter past nine.   [f · u06-bs-it_is_a_quarter_past_nine-0ca1]   [picture: quarter-past.png — alt: a clock face with the long hand pointing right]
+   a quarter to     It is a quarter to ten.   [f · u06-bs-it_is_a_quarter_to_ten-ce81]   [picture: quarter-to.png — alt: a clock face with the long hand pointing left]
+   a.m. and p.m.    Nine thirty a.m. is not nine thirty p.m.   [f · u06-bs-nine_thirty_a_m_is_not_nine_th-48b5]
+
+------------------------------------------------------------------------
+ANALYSIS
+------------------------------------------------------------------------
+Goal. Learn to say the hour in English. Then say which half of the day you mean.
+
+THE STRUCTURE
+The English clock has twelve hours, never twenty-four. Say the hour, then the minutes: “nine thirty”. Nine thirty comes twice a day. So English adds “a.m.” for the first half. It adds “p.m.” for the second.
+   | the hour, then the minutes  ·  Form: hour + minutes  ·  Meaning: The time, on a clock of twelve.  ·  Use it to: say any time  ·  example: It is nine thirty.
+   | a.m. and p.m.  ·  Form: time + a.m. or p.m.  ·  Meaning: “A.m.” is the first half of the day. “P.m.” is the second half.  ·  Use it to: say which nine thirty you mean  ·  example: It is nine thirty p.m.
+   | past and to  ·  Form: half past / a quarter past / a quarter to + hour  ·  Meaning: The same time, in the way people say it.  ·  Use it to: sound ordinary  ·  example: It is half past nine.
+
+WATCH OUT
+
+   [ Twelve, not twenty-four. Say “nine thirty p.m.” Never say “twenty-one thirty.” In English the second half of the clock is a letter. It is not a number. Noon and midnight are not twelve a.m. and twelve p.m. Say “twelve noon” and “twelve midnight.” Never say “× twelve a.m.” or “× twelve p.m.” ]
+
+   [ Watch these. “A quarter past nine” is nine fifteen. “A quarter to ten” is nine forty-five. “To” names the NEXT hour. It catches people every day. ]
+
+THE MOVES
+Ready-made lines for saying the time. Change only the words in blue.
+   - It is [nine thirty].
+   - The meeting is at [nine thirty a.m.]
+   - It is half past [nine].
+   - Is it [a.m.] or [p.m.]?
+   - It is [twelve noon].
+
+TWO NINE THIRTIES
+   (figure) The number is the same in both halves. Only the letters are different.
+
+WHY THIS WORKS
+Your clock has twenty-four hours. The English one has twelve. It runs twice. Every hour after noon has a number from your own clock. It also has a letter. Say twenty-one thirty. Nobody is rude about it. They are just not there at nine thirty at night.
+
+------------------------------------------------------------------------
+ACTIVATION
+------------------------------------------------------------------------
+Goal. Now practice. Say the hour. Choose the half of the day. Then fix the clock of twenty-four.
+   In pairs. Say four times out loud. The time now. The time you start. The time you eat. The time you finish. Use “a.m.” or “p.m.” in every one. Then, on your own. Write four true sentences about your own day. Use “half past” in one. Use “a quarter to” in one.
+   (figure) The picture shows only loud and quiet. It shows where you stop and how long you take. It does not show your sounds. The same picture can still be the wrong sound.
+One more. This last one is not about this unit. It comes back for something you already know.
+
+------------------------------------------------------------------------
+THE EXERCISES, WITH THEIR ANSWERS
+------------------------------------------------------------------------
+
+A. Morning or night?
+   Listen. Is it the first half of the day or the second? Write a.m. or p.m.
+   1. 
+      -> p.m.
+   2. 
+      -> a.m.
+   3. 
+      -> p.m.
+   4. 
+      -> p.m.
+   5. 
+      -> a.m.
+   6. 
+      -> p.m.
+
+B. Spot and fix the error
+   Each sentence has one mistake. Write it correctly.
+   1. × It is nine and thirty.
+      -> It is nine thirty.
+   2. × It is the half past nine.
+      -> It is half past nine.
+   3. × It is a quarter past to ten.
+      -> It is a quarter to ten.
+   4. × It is twelve of noon.
+      -> It is twelve noon.
+   5. × It is nine thirty in p.m.
+      -> It is nine thirty p.m.
+
+C. Which half of the day?
+   Write a.m. or p.m.
+   1. It is early in the morning. It is seven fifteen ______.
+      -> a.m.
+   2. It is late in the evening. It is seven fifteen ______.
+      -> p.m.
+   3. It is late in the afternoon. It is four ______.
+      -> p.m.
+   4. It is late at night. It is eleven ______.
+      -> p.m.
+   5. It is late in the morning. It is eleven ______.
+      -> a.m.
+
+D. What is it?
+   Read the time. Choose what it is.
+
+E. Over to you
+   Not graded. Here the grammar stops being a rule. It becomes the way you say when.
+   In pairs. Say four times out loud. The time now. The time you start. The time you eat. The time you finish. Use a.m. or p.m. in every one.
+   Then, on your own. Write four true sentences about your own day. Use half past in one. Use a quarter to in one.
+
+F. Listen, say it, then read
+   Listen. Say the line without looking. Record it. Then check the words.
+   1. noon
+      -> b. twelve, in the middle of the day
+   2. midnight
+      -> f. twelve, in the middle of the night
+   3. half past nine
+      -> e. nine thirty
+   4. a quarter past nine
+      -> a. nine fifteen
+   5. a quarter to ten
+      -> c. nine forty-five
+   6. the evening
+      -> d. the end of the work day
+   the endings as the student sees them:
+      a. nine fifteen
+      b. twelve, in the middle of the day
+      c. nine forty-five
+      d. the end of the work day
+      e. nine thirty
+      f. twelve, in the middle of the night
+
+G. From units 1 to 5
+   Complete each sentence with a phrase from the box. Use each one once.
+   1. Hello. ______ the new teacher.
+      -> I am
+   2. ______ ready for the meeting?
+      -> Is she
+   3. My extension is ______.
+      -> four oh six
+   4. Ana is here. It is ______.
+      -> her laptop
+   5. Look at the desk. ______.
+      -> They are boxes
+   6. ______ early today?
+      -> Are you
+
+------------------------------------------------------------------------
+MORE WORDS  (the extended page, a separate page in the book)
+------------------------------------------------------------------------
+The words this unit opens up. Nothing here is in the exercises.
+
+WHEN THINGS HAPPEN
+   early                      The train is early.
+   late                       My lunch is late.
+   next week                  The holiday is next week.
+   now                        The class is now.
+   soon                       The call is soon.
+   today                      The delivery is today.
+   tomorrow                   My flight is tomorrow.
+   tonight                    Dinner is tonight.
+
+PARTS OF AN HOUR
+   about                      It is about nine.
+   an alarm                   It is an alarm.
+   almost                     It is almost nine.
+   a long day                 It is a long day.
+   a minute                   It is a minute.
+   o'clock                    It is nine o'clock.
+   a second                   It is a second.
+   sharp                      It is nine sharp.
+
+DAYS AROUND TODAY
+   closed                     The kitchen is closed.
+   free                       My afternoon is free.
+   a holiday                  Monday is a holiday.
+   open                       The store is open.
+   this week                  My report is this week.
+   the weekend                The party is on the weekend.
+   a workday                  Saturday is not a workday.
+   yesterday                  The email is from yesterday.
+
+========================================================================
+This file is generated by readable.py on every build. Do not edit it:
+edit unit01.py and rebuild, or the two will disagree about the same unit.
+========================================================================

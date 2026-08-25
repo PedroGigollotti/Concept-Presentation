@@ -1,0 +1,584 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light only"><meta name="theme-color" content="#FAFAF7"><title>Unit 1 · More words · Concept</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><style>
+  :root{
+    --ink:#0A0B0D; --navy:#1F5570; --navy-dark:#123A4E; --white:#fff;
+    --paper:#FAFAF7; --panel:#F1F2ED; --panel-2:#E9EAE3;
+    --red:#B3132B; --red-hi:#8E0F22; --green:#1E7A44; --green-bg:#E7F4EB;
+    --gray:#6B6F76; --gray-dark:#33363B;
+    --line:#DCDDD6;
+    --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+    --serif:'Instrument Serif',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:light;background:var(--paper);}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  em,i{font-family:var(--serif);font-style:italic;color:var(--navy);}
+  #nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:12px 32px;background:var(--white);border-bottom:1px solid var(--line);}
+  #nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--gray-dark);}
+  #nav .brand img{height:30px;width:30px;}
+  #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
+  #nav .brand:hover .word{color:var(--red-hi);}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  .print-head{display:none;}
+  @media print{
+    .print-head{display:flex;align-items:center;justify-content:space-between;
+      padding-bottom:20px;margin-bottom:32px;border-bottom:1px solid #ccc;}
+    .print-head img{height:78px;}
+    .print-head .pline{font-size:12.5px;letter-spacing:2.5px;color:#555;text-transform:uppercase;}
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 100px;}
+  /* GATE */
+  #gate{max-width:420px;margin:80px auto;text-align:center;padding:0 24px;}
+  #gate h1{font-family:var(--serif);font-weight:400;font-size:30px;margin-bottom:10px;color:var(--ink);}
+  #gate p{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:26px;}
+  #gate input{width:100%;background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:14px 16px;border-radius:10px;font-size:16px;letter-spacing:2px;text-align:center;margin-bottom:14px;}
+  #gate input:focus{outline:none;border-color:var(--navy);}
+  #gate button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:14px;font-weight:600;font-size:14.5px;cursor:pointer;}
+  #gate button:hover{background:var(--red-hi);}
+  #gateError{color:var(--red);font-size:13px;margin-top:12px;min-height:16px;}
+  #content{display:none;}
+  h2.sec{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,34px);margin:56px 0 4px;letter-spacing:-.01em;color:var(--ink);}
+  .sec-kicker{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--navy);margin:0 0 8px;}
+  .goal{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:22px;font-style:italic;}
+  .dialogue{background:var(--panel);border-radius:14px;padding:24px 26px;margin:18px 0;border:1px solid var(--line);}
+  .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
+  .dialogue p:last-child{margin-bottom:0;}
+  .dialogue b{color:var(--navy);}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
+  .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
+  .body-copy b{color:var(--ink);}
+  .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
+  .callout b{color:var(--navy);}
+  .callout p{margin:0 0 12px;}
+  .callout p:last-child{margin-bottom:0;}
+  /* SPLIT CARD */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+  @media (max-width:640px){.split{grid-template-columns:1fr;}}
+  .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+  .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+  .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+  .card-col dt:first-child{margin-top:0;}
+  .card-col dd{margin:2px 0 0;}
+  .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+  .moves{margin:16px 0 0;padding:0;list-style:none;}
+  .moves li{font-size:15px;line-height:1.6;color:var(--gray-dark);padding:8px 0;border-bottom:1px dashed var(--line);}
+  .moves li:last-child{border-bottom:none;}
+  .moves .slot{color:var(--navy);font-weight:600;}
+  .diagram{margin:26px 0;text-align:center;}
+  .diagram svg{max-width:100%;height:auto;}
+  .diagram-cap{font-size:12.5px;color:var(--gray);font-style:italic;margin-top:16px;line-height:1.5;}
+  .ex-block{margin:44px 0;padding-top:28px;border-top:1px solid var(--line);}
+  .ex-label{display:inline-block;background:var(--navy);color:#fff;font-weight:600;font-size:12px;
+    padding:4px 11px;border-radius:6px;margin-bottom:10px;}
+  .ex-title{font-size:19px;font-weight:600;margin:0 0 6px;color:var(--ink);}
+  .ex-instr{color:var(--gray);font-size:14px;margin-bottom:18px;font-style:italic;}
+  .q{margin-bottom:16px;}
+  .q-text{font-size:15px;margin-bottom:8px;color:var(--gray-dark);line-height:1.55;}
+  .q-text .num{color:var(--navy);font-weight:700;margin-right:6px;}
+  .q input[type=text]{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
+  .q input[type=text]:focus{outline:none;border-color:var(--navy);}
+  .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
+  .choices{display:flex;flex-wrap:wrap;gap:8px;}
+  .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .choice-btn:hover{border-color:var(--navy);}
+  .choice-btn.picked{border-color:var(--navy);background:var(--panel);}
+  .choice-btn.correct{border-color:var(--green);background:var(--green-bg);color:var(--green);}
+  .choice-btn.wrong{border-color:var(--red);background:#FBE9EB;color:var(--red);}
+  .fb{font-size:13px;margin-top:6px;min-height:16px;font-weight:600;line-height:1.5;}
+  .fb.ok{color:var(--green);}
+  .fb.bad{color:var(--red);}
+  select.match-select{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:8px 10px;border-radius:8px;font-size:13.5px;width:100%;font-family:var(--sans);}
+  .check-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);padding:9px 20px;
+    border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;margin-top:6px;font-family:var(--sans);}
+  .check-btn:hover{background:var(--navy);color:#fff;}
+  .reveal-btn{background:none;border:1.5px solid var(--line);color:var(--gray);padding:9px 20px;
+    border-radius:999px;font-size:13px;cursor:pointer;font-family:var(--sans);}
+  .reveal-btn:hover{border-color:var(--ink);color:var(--ink);}
+  .key-box{display:none;background:var(--panel);border-radius:10px;padding:16px 18px;margin-top:12px;font-size:14px;color:var(--gray-dark);line-height:1.7;border:1px solid var(--line);}
+  .key-box.shown{display:block;}
+  .key-box b{color:var(--green);}
+  .soft-note{font-size:12px;color:var(--gray);margin-top:6px;}
+  .task-box{background:var(--panel);border-radius:12px;padding:20px 22px;border:1px solid var(--line);
+    font-size:15px;line-height:1.7;color:var(--gray-dark);}
+  .task-box p{margin:0 0 14px;}
+  .task-box p:last-child{margin-bottom:0;}
+  .task-box b{color:var(--ink);}
+  #scoreBar{position:sticky;bottom:0;background:rgba(250,250,247,.95);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);padding:16px 24px;display:flex;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  #scoreBar .score{font-size:14px;color:var(--gray);}
+  #scoreBar .score b{color:var(--ink);font-size:16px;}
+  .action-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:11px 22px;
+    font-weight:600;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .action-btn:hover{background:var(--red-hi);}
+  .action-btn.outline{background:none;border:1.5px solid var(--line);color:var(--ink);}
+  .action-btn.outline:hover{border-color:var(--ink);}
+  @media print{
+    #nav,#scoreBar,.check-btn,.reveal-btn,input,select,.choice-btn{display:none !important;}
+    body{background:#fff;color:#000;}
+    .key-box{display:block !important;}
+    a{color:#000;}
+  }
+  .unit-nav{display:flex;justify-content:space-between;gap:12px;margin:50px 0 10px;padding-top:24px;border-top:1px solid var(--line);}
+  .nav-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--sans);
+    font-weight:600;font-size:13.5px;padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);
+    color:var(--ink);transition:border-color .2s ease,color .2s ease;}
+  .nav-btn:hover{border-color:var(--navy);color:var(--navy);}
+  .nav-btn.next{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .nav-btn.next:hover{background:var(--navy-dark);}
+  @media print{.unit-nav{display:none !important;}}
+  #privacyModal{position:fixed;inset:0;background:rgba(10,11,13,.55);z-index:200;
+    display:none;align-items:center;justify-content:center;padding:24px;}
+  #privacyModal.shown{display:flex;}
+  #privacyModal .card{background:var(--white);border-radius:16px;max-width:420px;width:100%;
+    padding:28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+  #privacyModal h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 12px;color:var(--ink);}
+  #privacyModal p{font-size:14px;line-height:1.6;color:var(--gray-dark);margin:0 0 20px;}
+  #privacyModal button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:13px;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--sans);}
+  #privacyModal button:hover{background:var(--red-hi);}
+  .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
+  @media print{#privacyModal{display:none !important;}}
+
+  /* ---- A1/A2 additions. Everything above this line is the C1 stylesheet,
+     read from the published page at build time and not edited here. ---- */
+  .split.three{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:640px){.split.three{grid-template-columns:1fr;}}
+  .audio-btn{background:none;border:1.5px solid var(--line);color:var(--navy);
+    border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;
+    font-family:var(--sans);cursor:pointer;margin-right:6px;}
+  .audio-btn:hover{border-color:var(--navy);}
+  .audio-btn:disabled{color:var(--gray);cursor:default;opacity:.5;}
+  .audio-btn.rec-on{background:var(--red);border-color:var(--red);color:#fff;}
+  .listen-note{font-size:12.5px;color:var(--gray);line-height:1.65;margin:0 0 18px;}
+  /* ---- the vocabulary bank: its own section, between Access and Analysis.
+     Sound first: the meaning is on the card from the start, the spelling is
+     revealed on request, so the student meets the word as a sound and checks
+     the letters afterwards. ---- */
+  /* ---- the bank as ROWS, not cards. Eight items have to be readable as one
+     set, which means all eight on screen at once; eight cards are eight
+     screens. Nothing is hidden here: this is the presentation moment and the
+     learner has nothing to retrieve yet. Hiding is a testing move and it lives
+     in the exercises. ---- */
+  .bank{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin:16px 0 0;}
+  @media (max-width:640px){.bank{grid-template-columns:1fr;}}
+  .bank-item{display:flex;align-items:center;gap:12px;padding:7px 0;
+    border-bottom:1px solid var(--line);}
+  .bank-img{width:72px;height:72px;display:block;}
+  .bank-img-btn{flex:0 0 72px;padding:0;border:1.5px solid var(--line);background:var(--white);
+    border-radius:10px;cursor:pointer;line-height:0;}
+  .bank-img-btn:hover{border-color:var(--navy);}
+  .draft-note{border-left:4px solid #b45309;background:#fff7ed;}
+  .status-ok{border-left:4px solid #15803d;background:#f0fdf4;}
+  .status-open{border-left:4px solid #6b7280;background:#f8f8f7;}
+  /* The no-picture row keeps the SAME 72px cell, so the two kinds of row line
+     up and the bank still reads as one list. A note mark, not a letter: the
+     illustration style forbids text and the cell is still part of it. */
+  .bank-noimg{display:block;height:72px;border:0;background:none;}
+  .listen-q{margin-right:10px;vertical-align:middle;}
+  .numset{margin:6px 0 26px;}
+  .numset-head{font-family:var(--serif);font-size:19px;margin:18px 0 2px;color:var(--ink);}
+  .numset-note{font-size:13px;color:var(--gray);margin:0 0 12px;}
+  .numstrip{display:flex;flex-wrap:wrap;gap:7px;}
+  .numcell{background:var(--white);border:1.5px solid var(--line);border-radius:9px;
+    padding:8px 13px;font:inherit;font-size:15px;color:var(--ink);cursor:pointer;
+    display:inline-flex;align-items:baseline;gap:8px;}
+  /* Tabular figures so the digits line up down the column. */
+  /* inline-block: min-width and text-align are block-only properties and
+     verify.py is right to refuse them on a bare inline. */
+  .numfig{display:inline-block;font-variant-numeric:tabular-nums;
+    font-weight:700;color:var(--navy);min-width:1.7em;text-align:right;}
+  .numwd{font-size:15px;}
+  .numcell:hover{border-color:var(--navy);color:var(--navy);}
+  .numpairs{display:grid;grid-template-columns:auto 1fr auto 1fr auto;gap:6px 14px;
+    align-items:center;max-width:520px;}
+  .numpair-head{font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--gray);}
+  .numword{font-size:16px;color:var(--ink);padding:4px 0;
+    border-bottom:1px solid var(--line);}
+  .numplay{justify-self:start;}
+  .bank-more{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 0;}
+  .more-btn{display:inline-block;background:var(--navy);color:var(--white);
+    border-radius:999px;padding:10px 20px;font-size:14px;font-weight:600;
+    text-decoration:none;letter-spacing:.01em;}
+  .more-btn:hover{opacity:.88;}
+  .bank-more-note{font-size:13px;color:var(--gray);flex:1 1 220px;}
+  /* No column at all: the word carries the word-alone clip. */
+  .bank-item-flat{padding:9px 0;}
+  .bank-word-btn{background:none;border:0;padding:0;margin:0;font:inherit;
+    font-weight:600;font-size:15px;color:var(--ink);cursor:pointer;
+    text-align:left;display:block;border-bottom:1px dotted var(--line);}
+  .bank-word-btn:hover{color:var(--navy);border-bottom-color:var(--navy);}
+  .bank-body{flex:1 1 auto;min-width:0;}
+  .bank-word{font-weight:600;font-size:15px;color:var(--ink);display:block;}
+  .bank-fig{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;}
+  .bank-sent{font-family:var(--serif);font-size:14.5px;color:var(--navy);display:block;
+    line-height:1.35;}
+  @media print{.bank-word{display:inline !important;}}
+  .listen-note b{color:var(--gray-dark);}
+  /* ---- exercise I: listen, say it, read. The record-and-compare component
+     from Calibrated Speech, in this book's tokens. The model's amplitude
+     envelope is gray and the student's own is red, which is that book's
+     convention: red marks what the student produced, the same job it does in
+     the Exercise B key. ---- */
+  .say-rows{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;}
+  .say-row{background:var(--white);border:1.5px solid var(--line);border-radius:999px;
+    padding:8px 15px;font-family:var(--sans);font-size:13.5px;color:var(--ink);cursor:pointer;}
+  .say-row:hover{border-color:var(--navy);}
+  .say-row.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .say-row .who{color:inherit;font-weight:600;margin-right:7px;}
+  .say-panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;}
+  .say-sel{font-size:14.5px;color:var(--gray-dark);margin:0 0 14px;}
+  .say-sel b{color:var(--ink);}
+  .say-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .wave{width:100%;height:auto;display:block;background:var(--white);
+    border:1px solid var(--line);border-radius:10px;}
+  .say-text{font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.45;
+    margin:14px 0 0;min-height:26px;}
+  .say-status{font-size:13px;color:var(--gray);margin:8px 0 0;min-height:18px;line-height:1.5;}
+  .say-status .win{color:var(--green);font-weight:600;}
+  .mic-msg{font-size:12.5px;color:var(--red);line-height:1.6;margin:10px 0 0;min-height:16px;}
+  @media print{
+    .audio-btn,.say-btns,.wave,.say-rows{display:none !important;}
+  }
+
+  .wrong{color:#B3132B;font-weight:600;white-space:nowrap;}
+  .wrong .x{font-weight:700;}
+
+  .xgroups{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 26px;}
+  .xgroup-link{background:var(--white);border:1.5px solid var(--line);border-radius:999px;
+    padding:7px 15px;font-size:13px;color:var(--navy);text-decoration:none;font-weight:600;}
+  .xgroup-link:hover{border-color:var(--navy);}
+  .xhead{font-family:var(--serif);font-weight:400;font-size:22px;margin:34px 0 4px;
+    color:var(--ink);}
+  .xcount{font-size:12.5px;color:var(--gray);margin:0 0 12px;}
+  .xrows{display:grid;grid-template-columns:1fr 1fr;gap:4px 22px;}
+  @media (max-width:640px){.xrows{grid-template-columns:1fr;}}
+  .xrow{display:flex;align-items:center;gap:12px;padding:7px 0;
+    border-bottom:1px solid var(--line);}
+  .xbody{flex:1 1 auto;min-width:0;}
+  .xword{font-weight:600;font-size:15px;color:var(--ink);display:block;}
+  .xsent{font-family:var(--serif);font-size:14.5px;color:var(--navy);display:block;
+    line-height:1.35;}
+  .xfig{display:inline-block;font-variant-numeric:tabular-nums;font-weight:700;
+    color:var(--navy);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',
+    Helvetica,sans-serif;font-size:13.5px;}
+  .xframe{font-family:var(--serif);font-size:16px;color:var(--navy);margin:0 0 12px;}
+  .xset{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:6px;}
+  .xcell{background:var(--white);border:1.5px solid var(--line);border-radius:9px;
+    padding:8px 14px;font:inherit;font-size:15px;color:var(--ink);cursor:pointer;}
+  .xcell:hover{border-color:var(--navy);color:var(--navy);}
+</style></head><body>
+
+<div id="gate">
+  <h1>Unit 1: more words</h1>
+  <p>The words this unit opens up<br>This code unlocks every book in the series. Enter it once.</p>
+  <input type="text" id="codeInput" placeholder="ACCESS CODE" maxlength="12" autocomplete="off">
+  <button onclick="tryCode()">Unlock</button>
+  <div id="gateError"></div>
+</div>
+
+<div id="privacyModal"><div class="card">
+  <h3>Nothing is saved here</h3>
+  <p>This site doesn't have a login and doesn't store your answers, scores, or progress anywhere. Once you close or refresh the page, this session is gone for good.</p>
+  <button onclick="dismissPrivacyModal()">Got it</button>
+</div></div>
+
+<div id="content">
+  <nav id="nav">
+    <a class="brand" href="a1a2.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIyMCAxNzAgNDQwIDI2MCI+CjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjwvc3ZnPgo=" alt="Concept"><span class="word">CONCEPT</span></a>
+    <span class="unit-label">UNIT 1 · MORE WORDS</span>
+  </nav>
+  <div class="wrap">
+    <h2 class="sec" style="margin-top:44px;">More words</h2>
+    <p class="goal">The words this unit opens up. Nothing here is in the exercises.</p>
+    <p class="body-copy"><b>Goal.</b> Look for the words you need. Listen, and say each one. Learn only the words you need.</p>
+    <div class="xgroups">
+      <a class="xgroup-link" href="#gjobs">Jobs</a>
+      <a class="xgroup-link" href="#gpeople-at-work">People at work</a>
+      <a class="xgroup-link" href="#gnationalities-and-countries">Nationalities and countries</a>
+    </div>
+    <h3 class="xhead" id="gjobs">Jobs</h3>
+    <p class="xcount">12 words</p>
+    <div class="xrows">
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a lawyer</span><span class="xsent">He is a lawyer.</span></span>
+        <button class="audio-btn" onclick="xpair(1)" title="Listen: a lawyer, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a researcher</span><span class="xsent">He is a researcher.</span></span>
+        <button class="audio-btn" onclick="xpair(2)" title="Listen: a researcher, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">an assistant</span><span class="xsent">She is an assistant.</span></span>
+        <button class="audio-btn" onclick="xpair(3)" title="Listen: an assistant, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">an analyst</span><span class="xsent">He is an analyst.</span></span>
+        <button class="audio-btn" onclick="xpair(4)" title="Listen: an analyst, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a consultant</span><span class="xsent">She is a consultant.</span></span>
+        <button class="audio-btn" onclick="xpair(5)" title="Listen: a consultant, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">an accountant</span><span class="xsent">She is an accountant.</span></span>
+        <button class="audio-btn" onclick="xpair(6)" title="Listen: an accountant, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">an architect</span><span class="xsent">She is an architect.</span></span>
+        <button class="audio-btn" onclick="xpair(7)" title="Listen: an architect, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a developer</span><span class="xsent">He is a developer.</span></span>
+        <button class="audio-btn" onclick="xpair(8)" title="Listen: a developer, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a receptionist</span><span class="xsent">He is a receptionist.</span></span>
+        <button class="audio-btn" onclick="xpair(9)" title="Listen: a receptionist, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a salesperson</span><span class="xsent">She is a salesperson.</span></span>
+        <button class="audio-btn" onclick="xpair(10)" title="Listen: a salesperson, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a technician</span><span class="xsent">He is a technician.</span></span>
+        <button class="audio-btn" onclick="xpair(11)" title="Listen: a technician, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a translator</span><span class="xsent">She is a translator.</span></span>
+        <button class="audio-btn" onclick="xpair(12)" title="Listen: a translator, then the sentence">Listen</button>
+      </div>
+    </div>
+    <h3 class="xhead" id="gpeople-at-work">People at work</h3>
+    <p class="xcount">10 words</p>
+    <div class="xrows">
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a manager</span><span class="xsent">She is a manager.</span></span>
+        <button class="audio-btn" onclick="xpair(13)" title="Listen: a manager, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">an employee</span><span class="xsent">He is an employee.</span></span>
+        <button class="audio-btn" onclick="xpair(14)" title="Listen: an employee, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a director</span><span class="xsent">He is a director.</span></span>
+        <button class="audio-btn" onclick="xpair(15)" title="Listen: a director, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a candidate</span><span class="xsent">He is a candidate.</span></span>
+        <button class="audio-btn" onclick="xpair(16)" title="Listen: a candidate, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a partner</span><span class="xsent">He is a partner.</span></span>
+        <button class="audio-btn" onclick="xpair(17)" title="Listen: a partner, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a visitor</span><span class="xsent">She is a visitor.</span></span>
+        <button class="audio-btn" onclick="xpair(18)" title="Listen: a visitor, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a supplier</span><span class="xsent">She is a supplier.</span></span>
+        <button class="audio-btn" onclick="xpair(19)" title="Listen: a supplier, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a client</span><span class="xsent">She is a client.</span></span>
+        <button class="audio-btn" onclick="xpair(20)" title="Listen: a client, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">an intern</span><span class="xsent">She is an intern.</span></span>
+        <button class="audio-btn" onclick="xpair(21)" title="Listen: an intern, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">a supervisor</span><span class="xsent">She is a supervisor.</span></span>
+        <button class="audio-btn" onclick="xpair(22)" title="Listen: a supervisor, then the sentence">Listen</button>
+      </div>
+    </div>
+    <h3 class="xhead" id="gnationalities-and-countries">Nationalities and countries</h3>
+    <p class="xcount">15 words</p>
+    <div class="xrows">
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Austria, Austrian</span><span class="xsent">I am from Austria. I am Austrian.</span></span>
+        <button class="audio-btn" onclick="xpair(23)" title="Listen: Austria, Austrian, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Belgium, Belgian</span><span class="xsent">I am from Belgium. I am Belgian.</span></span>
+        <button class="audio-btn" onclick="xpair(24)" title="Listen: Belgium, Belgian, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Brazil, Brazilian</span><span class="xsent">I am from Brazil. I am Brazilian.</span></span>
+        <button class="audio-btn" onclick="xpair(25)" title="Listen: Brazil, Brazilian, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">France, French</span><span class="xsent">I am from France. I am French.</span></span>
+        <button class="audio-btn" onclick="xpair(26)" title="Listen: France, French, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Germany, German</span><span class="xsent">I am from Germany. I am German.</span></span>
+        <button class="audio-btn" onclick="xpair(27)" title="Listen: Germany, German, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Greece, Greek</span><span class="xsent">I am from Greece. I am Greek.</span></span>
+        <button class="audio-btn" onclick="xpair(28)" title="Listen: Greece, Greek, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Ireland, Irish</span><span class="xsent">I am from Ireland. I am Irish.</span></span>
+        <button class="audio-btn" onclick="xpair(29)" title="Listen: Ireland, Irish, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Italy, Italian</span><span class="xsent">I am from Italy. I am Italian.</span></span>
+        <button class="audio-btn" onclick="xpair(30)" title="Listen: Italy, Italian, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">the Netherlands, Dutch</span><span class="xsent">I am from the Netherlands. I am Dutch.</span></span>
+        <button class="audio-btn" onclick="xpair(31)" title="Listen: the Netherlands, Dutch, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Poland, Polish</span><span class="xsent">I am from Poland. I am Polish.</span></span>
+        <button class="audio-btn" onclick="xpair(32)" title="Listen: Poland, Polish, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Portugal, Portuguese</span><span class="xsent">I am from Portugal. I am Portuguese.</span></span>
+        <button class="audio-btn" onclick="xpair(33)" title="Listen: Portugal, Portuguese, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Sweden, Swedish</span><span class="xsent">I am from Sweden. I am Swedish.</span></span>
+        <button class="audio-btn" onclick="xpair(34)" title="Listen: Sweden, Swedish, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">Switzerland, Swiss</span><span class="xsent">I am from Switzerland. I am Swiss.</span></span>
+        <button class="audio-btn" onclick="xpair(35)" title="Listen: Switzerland, Swiss, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">the United Kingdom, British</span><span class="xsent">I am from the United Kingdom. I am British.</span></span>
+        <button class="audio-btn" onclick="xpair(36)" title="Listen: the United Kingdom, British, then the sentence">Listen</button>
+      </div>
+      <div class="xrow">
+        <span class="xbody"><span class="xword">the United States, American</span><span class="xsent">I am from the United States. I am American.</span></span>
+        <button class="audio-btn" onclick="xpair(37)" title="Listen: the United States, American, then the sentence">Listen</button>
+      </div>
+    </div>
+
+    <div class="unit-nav">
+      <a class="nav-btn" href="a1a2-unit1.html">&larr; Back to unit 1</a>
+      <a class="nav-btn" href="a1a2.html">All units</a>
+    </div>
+  </div>
+  <div id="scoreBar">
+    <span class="score">37 words, in 3 groups</span>
+    <button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+</div>
+<script>
+/* ===== ACCESS CODES (shared across the whole series) ===== */
+var VALID_CODES = ["AB-6567","AD-1652","AF-3892","AF-6525","AH-6558","AK-2388","AL-5227","AN-3666","AO-1929","AQ-1403","AR-1212","AS-8941","AT-3988","AU-9614","AW-1121","AW-5920","AY-3957","AY-8830","BB-7565","BI-0990","BJ-0189","BJ-2537","BJ-7138","BL-1583","BL-3205","BL-9902","BN-2930","BO-5513","BQ-9974","BU-2315","BU-3356","BU-4201","BW-0098","BY-5952","BY-8964","CA-3321","CA-5707","CA-7225","CE-4217","CE-7673","CG-8575","CH-3047","CM-5599","CN-0288","CO-2672","CO-7250","CP-0265","CP-3323","CQ-7403","CQ-8469","CR-3646","CS-4766","CU-8380","CU-8619","CX-8573","CX-9951","CZ-8599","DB-1837","DD-7645","DE-3739","DE-6860","DF-6761","DH-1654","DH-4587","DI-3846","DJ-1666","DJ-8783","DJ-9635","DK-6801","DR-4798","DU-0538","DU-2870","DU-7191","DY-1342","DZ-6215","EA-5295","EB-7574","EI-2870","EJ-2435","EJ-7588","EK-3626","EL-5403","EL-7751","EM-4758","EN-5720","EP-8690","EU-1749","EU-4668","EY-0156","EY-5028","EY-5771","EY-8988","EZ-4901","EZ-7238","FA-2480","FA-3229","FD-0817","FD-2307","FD-2954","FD-9547","FF-6110","FF-8319","FH-0212","FI-7378","FK-4255","FN-0921","FN-5013","FO-3645","FS-3397","FU-5114","FV-4372","FW-7388","FX-5735","FX-8026","GA-7376","GC-0379","GC-0593","GC-7846","GD-4624","GD-8256","GE-7330","GG-5258","GJ-2971","GJ-8315","GK-1640","GK-6237","GO-2922","GQ-8518","GS-0957","GU-4499","GX-1422","GY-4850","GY-8831","GZ-1807","HC-5667","HD-6398","HD-6695","HG-8960","HI-5126","HM-0814","HN-5191","HR-1799","HS-0660","HS-8959","HT-1159","HU-6366","HV-7356","HX-4184","HY-8543","HZ-0868","HZ-4384","HZ-4394","IA-9592","ID-9262","IG-2279","IH-1623","II-1515","IL-0808","IL-2856","IM-2202","IN-2853","IP-2206","IP-6428","IS-6888","IT-7177","IT-9370","IU-6890","IW-7209","IW-7334","IX-7882","IZ-4596","IZ-5460","JA-3789","JA-8127","JB-4864","JB-5887","JB-8392","JD-3404","JE-8781","JG-5409","JI-6836","JI-7780","JJ-1294","JK-5150","JL-9806","JN-9881","JO-4953","JP-2813","JR-6563","JT-5889","JU-0546","KC-4490","KD-3748","KF-9500","KG-2805","KH-1496","KM-0226","KM-6267","KM-9998","KN-9232","KO-2249","KP-5927","KQ-1642","KQ-2174","KQ-4629","KS-0562","KS-2035","KT-5622","KX-3719","KX-5687","KZ-9069","LA-3641","LC-9505","LF-2835","LF-3440","LF-5723","LG-4259","LH-0762","LI-1652","LJ-4532","LK-6242","LM-2637","LP-6442","LR-3052","LR-3190","LR-3876","LU-6959","LY-2430","LY-8251","MB-0985","MC-0432","MD-5355","MD-6035","MF-4039","MH-8350","MK-6490","ML-1094","ML-6536","MM-0505","MM-4633","MN-6227","MP-2446","MU-0263","MU-1972","MU-6200","MV-9345","MW-3909","MX-7105","MZ-7757","MZ-9673","NA-6476","ND-2505","NE-2445","NG-4097","NI-0149","NI-1933","NM-4728","NM-6484","NQ-0471","NQ-0763","NQ-8797","NS-2836","NT-1247","NT-2961","NT-8096","NV-2259","NW-4877","NX-8284","OB-2118","OC-9941","OD-2269","OH-9176","OK-1376","OL-9223","OM-3600","OM-9841","OO-7410","OP-0397","OQ-0089","OQ-6861","OS-1295","OT-0558","OU-1086","OZ-3311","PE-6681","PF-1393","PF-5372","PF-6218","PI-7454","PM-5473","PO-3136","PO-4375","PO-6594","PP-5386","PW-1775","PW-8454","QA-2276","QB-9637","QG-4980","QI-4570","QI-8762","QJ-3229","QK-9389","QK-9591","QP-1713","QP-2800","QU-3388","QU-6791","QV-6067","QX-4220","RA-0723","RA-7714","RA-9103","RB-3503","RC-9055","RG-8909","RG-8964","RG-9044","RH-0746","RH-6442","RN-2614","RP-8912","RR-0677","RS-6858","RS-6869","RT-0649","RT-4827","RT-9471","RV-9405","RW-6355","RY-1670","RY-3755","RY-4569","SA-4126","SB-4542","SC-6853","SD-6526","SD-8485","SH-2111","SI-6535","SK-0128","SK-6149","SL-2687","SL-6976","SL-7928","SN-9048","SO-9187","SQ-1122","SR-9043","SR-9835","ST-1671","SW-6772","SX-8305","SY-5519","SY-7251","TB-1236","TC-3500","TC-4264","TD-4528","TE-3783","TF-4337","TF-5946","TG-4810","TH-0894","TL-5384","TN-6202","TO-4008","TO-7503","TP-3931","TR-3063","TV-0181","TW-7963","TW-9135","TY-7002","UA-5949","UB-7783","UB-9445","UE-0444","UF-5448","UG-1507","UH-0750","UJ-4353","UL-1840","UM-7749","UN-1590","UO-0016","UO-7188","UQ-0062","US-3875","US-5935","US-6661","US-7320","UT-3058","UT-3191","UW-5490","VA-8631","VB-1375","VC-0785","VC-8246","VC-8661","VG-3345","VG-5533","VG-7188","VH-6911","VI-0235","VJ-9942","VK-0601","VK-7802","VL-5404","VM-7528","VN-0611","VP-6098","VQ-8570","VS-1740","VS-2601","VS-6960","VT-6564","VW-0371","VX-3419","VZ-1036","VZ-1836","WA-6224","WB-0446","WC-4705","WC-5293","WC-7126","WG-1442","WG-4319","WG-7876","WH-7291","WI-6394","WL-6650","WM-1936","WM-3402","WM-3514","WO-4160","WO-9743","WP-5457","WV-1968","WW-2749","WY-0407","XC-0115","XC-4025","XC-5579","XE-5640","XE-8199","XE-8990","XJ-7882","XL-0683","XL-1983","XL-8634","XO-8511","XP-7585","XQ-3502","XR-5738","XT-4226","XU-8893","XV-2651","XW-2661","YA-4779","YA-6871","YD-8536","YF-6161","YH-6239","YI-0086","YI-0777","YI-3786","YK-1311","YK-7066","YQ-7512","YU-2273","YU-9619","YV-6712","ZC-0180","ZD-3923","ZD-9426","ZE-9214","ZF-5917","ZF-6868","ZG-1159","ZG-5395","ZH-6679","ZH-9625","ZK-7397","ZL-0255","ZM-4958","ZN-2112","ZN-7991","ZN-9807","ZO-3469","ZO-4134","ZP-7760","ZQ-4512","ZQ-5687","ZU-2853","ZU-9981","ZV-9981","ZW-7998","ZY-0638","ZZ-2645"];
+
+/* Series-wide unlock, with the legacy phrasal-verbs key honored. */
+function isUnlocked(){
+  if(framedByApp()){ return true; }
+  try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
+  catch(e){ return false; }
+}
+function grantAccess(){
+  try{ localStorage.setItem('cm_access','1'); localStorage.setItem('cm_pv_access','1'); }catch(e){}
+}
+function privacySeen(){
+  try{ return localStorage.getItem('cm_privacy_seen')==='1' || localStorage.getItem('cm_pv_privacy_seen')==='1'; }
+  catch(e){ return true; }
+}
+function markPrivacySeen(){
+  try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
+}
+/* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
+function tryCode(){
+  var v = document.getElementById('codeInput').value.trim().toUpperCase();
+  if(VALID_CODES.indexOf(v) !== -1){
+    grantAccess();
+    document.getElementById('gate').style.display='none';
+    document.getElementById('content').style.display='block';
+    buildAll();
+    maybeShowPrivacyModal();
+  } else {
+    document.getElementById('gateError').textContent = "That code isn't recognized. Check with Pedro if you think this is an error.";
+  }
+}
+document.getElementById('codeInput').addEventListener('keydown', function(e){ if(e.key==='Enter') tryCode(); });
+function dismissPrivacyModal(){
+  document.getElementById('privacyModal').classList.remove('shown');
+  markPrivacySeen();
+}
+function maybeShowPrivacyModal(){
+  if(!privacySeen()){ document.getElementById('privacyModal').classList.add('shown'); }
+}
+
+
+function buildAll(){}
+var XW = ["u01-xw-a_lawyer-839d", "u01-xw-a_researcher-58a1", "u01-xw-an_assistant-ee92", "u01-xw-an_analyst-d156", "u01-xw-a_consultant-b30d", "u01-xw-an_accountant-d282", "u01-xw-an_architect-688e", "u01-xw-a_developer-8e84", "u01-xw-a_receptionist-64a0", "u01-xw-a_salesperson-9980", "u01-xw-a_technician-777a", "u01-xw-a_translator-458e", "u01-xw-a_manager-b1ec", "u01-xw-an_employee-5eb3", "u01-xw-a_director-5cd1", "u01-xw-a_candidate-111e", "u01-xw-a_partner-1194", "u01-xw-a_visitor-82ad", "u01-xw-a_supplier-f764", "u01-xw-a_client-a4d9", "u01-xw-an_intern-7632", "u01-xw-a_supervisor-545c", "u01-xw-austria_austrian-3b5c", "u01-xw-belgium_belgian-b808", "u01-xw-brazil_brazilian-043e", "u01-xw-france_french-f37f", "u01-xw-germany_german-9f9c", "u01-xw-greece_greek-e826", "u01-xw-ireland_irish-a6e6", "u01-xw-italy_italian-1c98", "u01-xw-the_netherlands_dutch-6603", "u01-xw-poland_polish-c7b7", "u01-xw-portugal_portuguese-3c91", "u01-xw-sweden_swedish-e49b", "u01-xw-switzerland_swiss-6733", "u01-xw-the_united_kingdom_british-51cf", "u01-xw-the_united_states_american-8a49"];
+var XS = ["u01-xs-he_is_a_lawyer-96bb", "u01-xs-he_is_a_researcher-5f23", "u01-xs-she_is_an_assistant-4d81", "u01-xs-he_is_an_analyst-eb3a", "u01-xs-she_is_a_consultant-580f", "u01-xs-she_is_an_accountant-4c35", "u01-xs-she_is_an_architect-45ed", "u01-xs-he_is_a_developer-2979", "u01-xs-he_is_a_receptionist-dca9", "u01-xs-she_is_a_salesperson-27d3", "u01-xs-he_is_a_technician-29aa", "u01-xs-she_is_a_translator-e32e", "u01-xs-she_is_a_manager-4891", "u01-xs-he_is_an_employee-e82d", "u01-xs-he_is_a_director-e91e", "u01-xs-he_is_a_candidate-bb1b", "u01-xs-he_is_a_partner-a256", "u01-xs-she_is_a_visitor-035f", "u01-xs-she_is_a_supplier-1f78", "u01-xs-she_is_a_client-7901", "u01-xs-she_is_an_intern-2952", "u01-xs-she_is_a_supervisor-e153", "u01-xs-i_am_from_austria_i_am_austria-e9eb", "u01-xs-i_am_from_belgium_i_am_belgian-e7e8", "u01-xs-i_am_from_brazil_i_am_brazilia-29ea", "u01-xs-i_am_from_france_i_am_french-8d10", "u01-xs-i_am_from_germany_i_am_german-5910", "u01-xs-i_am_from_greece_i_am_greek-6843", "u01-xs-i_am_from_ireland_i_am_irish-3c79", "u01-xs-i_am_from_italy_i_am_italian-dc60", "u01-xs-i_am_from_the_netherlands_i_am-ceea", "u01-xs-i_am_from_poland_i_am_polish-7f92", "u01-xs-i_am_from_portugal_i_am_portug-2270", "u01-xs-i_am_from_sweden_i_am_swedish-5931", "u01-xs-i_am_from_switzerland_i_am_swi-a5d1", "u01-xs-i_am_from_the_united_kingdom_i-f992", "u01-xs-i_am_from_the_united_states_i-0142"];
+
+var XCLIP = null;
+function xplay(id, next){
+  if(XCLIP){ XCLIP.pause(); }
+  XCLIP = new Audio('audio/' + id + '.mp3');
+  if(next){ XCLIP.addEventListener('ended', function(){
+    setTimeout(function(){ xplay(next); }, 420); }); }
+  var p = XCLIP.play();
+  if(p && p.catch){ p.catch(function(){}); }
+}
+function xpair(k){ xplay(XW[k - 1], XS[k - 1]); }
+
+
+(function(){
+  if(isUnlocked()){
+    document.getElementById('gate').style.display='none';
+    document.getElementById('content').style.display='block';
+    maybeShowPrivacyModal();
+  }
+})();
+</script>
+</body></html>

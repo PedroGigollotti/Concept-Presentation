@@ -1,0 +1,17 @@
+# Retired assets. Recordings and drawings that no page asks for any more.
+# They stay on disk so nothing is lost and so a rename can be undone, and they
+# stay OUT of the repository: 446 clips and 5 drawings are 7.4 MB that nobody
+# can reach, and a repository carries its weight for ever.
+a1a2/audio/_retired/
+a1a2/img/_retired/
+
+# The two frozen variants of the vocabulary bank. The decision they served was
+# taken in August. In a published repository they become pages reachable by
+# direct URL showing discarded versions of the bank, which is worse than not
+# having them. They stay on disk.
+a1a2/variant-image-cards.html
+a1a2/variant-sentence-audio.html
+
+# The loose drawings under a1a2/img/ belong to those two variant pages and to
+# nothing else. No published page references one.
+a1a2/img/*.png
