@@ -182,7 +182,33 @@
     border-radius:999px;padding:0 14px;min-height:44px;font-size:13px;font-weight:600;
     font-family:var(--sans);cursor:pointer;margin-right:6px;
     display:inline-flex;align-items:center;justify-content:center;gap:6px;}
-  .audio-btn::before{content:"\25B6";font-size:.78em;line-height:1;}
+  /* ===== THE PLAY MARK IS AN SVG, NOT A CHARACTER. 30 Aug 2026 =============
+     U+25B6 IS AN EMOJI ON iOS. It has no default text presentation there, so
+     Safari substitutes Apple Color Emoji and draws a small white triangle
+     INSIDE A GREY-BLUE ROUNDED SQUARE -- a second button nested in the button,
+     which is exactly what Netto saw on unit 10's Access. Reproduced here on a
+     Mac by forcing the same font, so it is not a guess about his phone.
+     THE FIRST OPTION -- enlarge it and suppress the frame in CSS -- IS
+     IMPOSSIBLE, and that is a fact about glyphs rather than a preference: the
+     square is part of the emoji font's own artwork, a bitmap, and no CSS
+     property reaches inside a glyph. Enlarging only makes the square bigger.
+     U+FE0E, the text-presentation selector, does work today; it is a hint to
+     font selection, it varies by iOS version, and it would put a second
+     invisible character into every button. Rejected as fragile.
+     AN SVG BACKGROUND ON THE PSEUDO-ELEMENT ends the class: no font is
+     involved, nothing can substitute, and it is still pure CSS, so not one
+     line of markup changes in any of the four places.
+     THE PROPORTION: the mark's height equals the label's font-size. A 13px
+     label gets a 13px mark, an 11px label an 11px mark. That is the same
+     relationship the x on a wrong form has to the words around it -- set at
+     the surrounding size -- so the play triangle is not the only oversized
+     thing on the page. It was 0.78em before, which is why it read as tiny
+     inside a 44px control.
+     THIS IS THE SECOND TIME THIS CHARACTER HAS COST A ROUND. The first was the
+     octal escape that shipped "B6 Listen"; SERIES_STANDARD 9q named the class
+     then -- the layer no check reads -- and this is the same layer. */
+  .audio-btn::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
   /* Record, and Check the line, are not play buttons. */
   #sayRec::before,#sayShow::before{content:none;}
   .audio-btn:hover{border-color:var(--navy);}
@@ -230,7 +256,8 @@
   .bank-cap{display:flex;align-items:center;justify-content:center;gap:5px;
     background:var(--navy);color:#fff;font-family:var(--sans);font-size:11px;
     font-weight:600;padding:6px 0;line-height:1.2;}
-  .bank-cap::before{content:"\25B6";font-size:.85em;}
+  .bank-cap::before{content:"";flex:0 0 auto;width:9px;height:11px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%23ffffff'/%3E%3C/svg%3E");}
   /* A ROW WITH NO PICTURE GETS THE SAME OBJECT IN THE SAME COLUMN. That is
      what makes unit 3 look like unit 1, ends two kinds of control inside one
      list in units 2 and 4, and removes the empty bordered spacer that read as
@@ -262,7 +289,8 @@
   /* "The base. Listen once, then say the row." -- and nothing on the screen
      said listen. The chips ARE the control; now they say so. */
   .numcell{min-height:44px;border-color:var(--navy);}
-  .numcell::before{content:"\25B6";font-size:.72em;color:var(--navy);line-height:1;}
+  .numcell::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
   /* CONTROL FIRST. It used to be the fifth column, at the far right of a
      narrow screen, furthest from the thumb and last in reading order. */
   .numpairs{display:grid;grid-template-columns:auto auto 1fr auto 1fr;gap:8px 12px;
@@ -415,8 +443,8 @@
         <span class="bank-body"><span class="bank-word">gloves</span><span class="bank-sent">These gloves are mine.</span></span>
       </div>
       <div class="bank-item">
-        <button class="bank-play" onclick="playClip(BANK_W[5 - 1])" title="Listen: That planner is Marco's."><img class="bank-img" src="img/u07/planner.png" alt="a small closed appointment book with an elastic band around it"><span class="bank-cap">Listen</span></button>
-        <span class="bank-body"><span class="bank-word">a planner</span><span class="bank-sent">That planner is Marco's.</span></span>
+        <button class="bank-play" onclick="playClip(BANK_W[5 - 1])" title="Listen: That umbrella is Marco's."><img class="bank-img" src="img/u07/umbrella.png" alt="a closed umbrella with a curved handle, standing upright"><span class="bank-cap">Listen</span></button>
+        <span class="bank-body"><span class="bank-word">an umbrella</span><span class="bank-sent">That umbrella is Marco's.</span></span>
       </div>
       <div class="bank-item">
         <button class="bank-play" onclick="playClip(BANK_W[6 - 1])" title="Listen: Those socks are Bruno's."><img class="bank-img" src="img/u07/socks.png" alt="a pair of rolled socks"><span class="bank-cap">Listen</span></button>
@@ -937,9 +965,9 @@ function checkExact(L, data){
 }
 
 var AC_ID = ["u07-ac-marco_is_this_bruno_s_phone-0957", "u07-ac-no_that_is_bruno_s_phone-f90f", "u07-ac-and_these_keys_are_they_lena_s-2b7a", "u07-ac-yes_those_are_lena_s_keys-ed57", "u07-ac-and_this_bag_is_it_lena_s-b743", "u07-ac-that_bag_is_lena_s_this_one_is-7abc"];
-var BANK_W = ["u07-bs-this_scarf_is_lena_s-0080", "u07-bs-that_hat_is_bruno_s-4fa0", "u07-bs-this_book_is_ana_s-1c69", "u07-bs-these_gloves_are_mine-cafa", "u07-bs-that_planner_is_marco_s-97e9", "u07-bs-those_socks_are_bruno_s-6979", "u07-bs-this_towel_is_lena_s-486b", "u07-bs-that_comb_is_ana_s-5a6b", "u07-bs-these_headphones_are_marco_s-ea03", "u07-bs-that_water_bottle_is_bruno_s-32db"];
-var BANK_S = ["u07-bs-this_scarf_is_lena_s-0080", "u07-bs-that_hat_is_bruno_s-4fa0", "u07-bs-this_book_is_ana_s-1c69", "u07-bs-these_gloves_are_mine-cafa", "u07-bs-that_planner_is_marco_s-97e9", "u07-bs-those_socks_are_bruno_s-6979", "u07-bs-this_towel_is_lena_s-486b", "u07-bs-that_comb_is_ana_s-5a6b", "u07-bs-these_headphones_are_marco_s-ea03", "u07-bs-that_water_bottle_is_bruno_s-32db"];
-var EX_ID = {"F": ["u07-ex-a_scarf_is_a_long_thing_for_a-d0f7", "u07-ex-a_comb_is_a_flat_thing_for_you-4ebf", "u07-ex-a_towel_is_a_thing_for_wet_han-be85", "u07-ex-a_planner_is_a_small_book_for-a54f", "u07-ex-a_hat_is_a_thing_for_your_head-2b14", "u07-ex-gloves_is_two_things_for_cold-ab7b"], "A": ["u07-lz-this_is_lena_s_phone-b644", "u07-lz-those_are_bruno_s_socks-29fb", "u07-lz-that_is_lena_s_phone-8340", "u07-lz-these_are_ana_s_gloves-e90a", "u07-lz-that_book_is_marco_s-9dff", "u07-lz-this_scarf_is_marco_s-58db"], "B": ["u07-ex-these_gloves_are_lena_s-d359", "u07-ex-that_book_is_ana_s-46d2", "u07-ex-those_headphones_are_marco_s-c367", "u07-ex-this_is_my_bag-ac5b", "u07-ex-those_are_marco_s_socks-dfcf"], "C": ["u07-ex-this_scarf_here_on_the_table_i-89e7", "u07-ex-those_socks_over_there_are_bru-f9f1", "u07-ex-these_gloves_in_my_hand_are_mi-7321", "u07-ex-that_book_at_the_end_of_the_ta-ed05", "u07-ex-this_towel_here_is_marco_s-2237", "u07-ex-those_headphones_over_there_ar-8e51"], "E": ["u07-ex-these_socks_are_bruno_s-486d", "u07-ex-that_book_is_ana_s-46d2", "u07-ex-this_scarf_is_lena_s-0080", "u07-ex-those_gloves_are_mine-0c23", "u07-ex-these_headphones_are_marco_s-ea03", "u07-ex-that_planner_is_bruno_s-2a0e"], "G": ["u07-ex-hello_i_am_the_new_teacher-dd6a", "u07-ex-is_she_ready_for_the_meeting-4e9f", "u07-ex-my_extension_is_four_oh_six-afad", "u07-ex-ana_is_here_it_is_her_laptop-2ade", "u07-ex-look_at_the_desk_they_are_boxe-acce", "u07-ex-the_meeting_is_at_nine_thirty-aff8", "u07-ex-are_you_early_today-ed2c"]};
+var BANK_W = ["u07-bs-this_scarf_is_lena_s-0080", "u07-bs-that_hat_is_bruno_s-4fa0", "u07-bs-this_book_is_ana_s-1c69", "u07-bs-these_gloves_are_mine-cafa", "u07-bs-that_umbrella_is_marco_s-8e64", "u07-bs-those_socks_are_bruno_s-6979", "u07-bs-this_towel_is_lena_s-486b", "u07-bs-that_comb_is_ana_s-5a6b", "u07-bs-these_headphones_are_marco_s-ea03", "u07-bs-that_water_bottle_is_bruno_s-32db"];
+var BANK_S = ["u07-bs-this_scarf_is_lena_s-0080", "u07-bs-that_hat_is_bruno_s-4fa0", "u07-bs-this_book_is_ana_s-1c69", "u07-bs-these_gloves_are_mine-cafa", "u07-bs-that_umbrella_is_marco_s-8e64", "u07-bs-those_socks_are_bruno_s-6979", "u07-bs-this_towel_is_lena_s-486b", "u07-bs-that_comb_is_ana_s-5a6b", "u07-bs-these_headphones_are_marco_s-ea03", "u07-bs-that_water_bottle_is_bruno_s-32db"];
+var EX_ID = {"F": ["u07-ex-a_scarf_is_a_long_thing_for_a-d0f7", "u07-ex-a_comb_is_a_flat_thing_for_you-4ebf", "u07-ex-a_towel_is_a_thing_for_wet_han-be85", "u07-ex-an_umbrella_is_a_thing_for_the-8988", "u07-ex-a_hat_is_a_thing_for_your_head-2b14", "u07-ex-gloves_is_two_things_for_cold-ab7b"], "A": ["u07-lz-this_is_lena_s_phone-b644", "u07-lz-those_are_bruno_s_socks-29fb", "u07-lz-that_is_lena_s_phone-8340", "u07-lz-these_are_ana_s_gloves-e90a", "u07-lz-that_book_is_marco_s-9dff", "u07-lz-this_scarf_is_marco_s-58db"], "B": ["u07-ex-these_gloves_are_lena_s-d359", "u07-ex-that_book_is_ana_s-46d2", "u07-ex-those_headphones_are_marco_s-c367", "u07-ex-this_is_my_bag-ac5b", "u07-ex-those_are_marco_s_socks-dfcf"], "C": ["u07-ex-this_scarf_here_on_the_table_i-89e7", "u07-ex-those_socks_over_there_are_bru-f9f1", "u07-ex-these_gloves_in_my_hand_are_mi-7321", "u07-ex-that_book_at_the_end_of_the_ta-ed05", "u07-ex-this_towel_here_is_marco_s-2237", "u07-ex-those_headphones_over_there_ar-8e51"], "E": ["u07-ex-these_socks_are_bruno_s-486d", "u07-ex-that_book_is_ana_s-46d2", "u07-ex-this_scarf_is_lena_s-0080", "u07-ex-those_gloves_are_mine-0c23", "u07-ex-these_headphones_are_marco_s-ea03", "u07-ex-that_umbrella_is_bruno_s-90b7"], "G": ["u07-ex-hello_i_am_the_new_teacher-dd6a", "u07-ex-is_she_ready_for_the_meeting-4e9f", "u07-ex-my_extension_is_four_oh_six-afad", "u07-ex-ana_is_here_it_is_her_laptop-2ade", "u07-ex-look_at_the_desk_they_are_boxe-acce", "u07-ex-the_meeting_is_at_nine_thirty-aff8", "u07-ex-are_you_early_today-ed2c"]};
 var SET_ID = [];
 var SCENE_LINES = 6;
 var SCENE_TEXT = ["Marco, is <b>this</b> Bruno's phone?", "No. <b>That</b> is Bruno's phone.", "And <b>these</b> keys? Are they Lena's?", "Yes. <b>Those</b> are Lena's keys.", "And <b>this</b> bag? Is it Lena's?", "<b>That</b> bag is Lena's. <b>This</b> one is mine."];
@@ -1209,13 +1237,13 @@ function buildC(){ buildExact("C", C_DATA, "the word"); }
 function checkC(){ checkExact("C", C_DATA); }
 
 /* ===== D. One or more? ===== */
-var E_DATA = [{"q": "( This / These ) socks are Bruno's.", "options": ["This", "These"], "a": ["These"]}, {"q": "( That / Those ) book is Ana's.", "options": ["That", "Those"], "a": ["That"]}, {"q": "( These / This ) scarf is Lena's.", "options": ["These", "This"], "a": ["This"]}, {"q": "( Those / That ) gloves are mine.", "options": ["Those", "That"], "a": ["Those"]}, {"q": "( This / These ) headphones are Marco's.", "options": ["This", "These"], "a": ["These"]}, {"q": "( Those / That ) planner is Bruno's.", "options": ["Those", "That"], "a": ["That"]}];
+var E_DATA = [{"q": "( This / These ) socks are Bruno's.", "options": ["This", "These"], "a": ["These"]}, {"q": "( That / Those ) book is Ana's.", "options": ["That", "Those"], "a": ["That"]}, {"q": "( These / This ) scarf is Lena's.", "options": ["These", "This"], "a": ["This"]}, {"q": "( Those / That ) gloves are mine.", "options": ["Those", "That"], "a": ["Those"]}, {"q": "( This / These ) headphones are Marco's.", "options": ["This", "These"], "a": ["These"]}, {"q": "( Those / That ) umbrella is Bruno's.", "options": ["Those", "That"], "a": ["That"]}];
 function buildE(){ buildForm("E", E_DATA, "the word"); }
 function checkE(){ checkForm("E", E_DATA); }
 
 /* ===== E. What is it? ===== */
-var F_TERMS = ["a scarf", "a comb", "a towel", "a planner", "a hat", "gloves"];
-var F_MEANINGS = [{"id": "a", "t": "a small book for your appointments"}, {"id": "b", "t": "a long thing for a cold neck"}, {"id": "c", "t": "a thing for wet hands"}, {"id": "d", "t": "a thing for your head"}, {"id": "e", "t": "two things for cold hands"}, {"id": "f", "t": "a flat thing for your hair"}];
+var F_TERMS = ["a scarf", "a comb", "a towel", "an umbrella", "a hat", "gloves"];
+var F_MEANINGS = [{"id": "a", "t": "a thing for the rain"}, {"id": "b", "t": "a long thing for a cold neck"}, {"id": "c", "t": "a thing for wet hands"}, {"id": "d", "t": "a thing for your head"}, {"id": "e", "t": "two things for cold hands"}, {"id": "f", "t": "a flat thing for your hair"}];
 var F_KEY = ["b", "f", "c", "a", "d", "e"];
 function buildF(){ buildMatch("F", F_TERMS, F_MEANINGS, false); }
 function checkF(){ checkMatch("F", F_MEANINGS, F_KEY); }

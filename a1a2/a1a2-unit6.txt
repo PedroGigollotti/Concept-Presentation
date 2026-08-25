@@ -197,7 +197,7 @@ PARTS OF AN HOUR
    a long day                 It is a long day.
    a minute                   It is a minute.
    o'clock                    It is nine o'clock.
-   a second                   It is a second.
+   a second (60 in a minute)  It is a second.
    sharp                      It is nine sharp.
 
 DAYS AROUND TODAY

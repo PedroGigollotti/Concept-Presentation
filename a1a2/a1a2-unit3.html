@@ -182,7 +182,33 @@
     border-radius:999px;padding:0 14px;min-height:44px;font-size:13px;font-weight:600;
     font-family:var(--sans);cursor:pointer;margin-right:6px;
     display:inline-flex;align-items:center;justify-content:center;gap:6px;}
-  .audio-btn::before{content:"\25B6";font-size:.78em;line-height:1;}
+  /* ===== THE PLAY MARK IS AN SVG, NOT A CHARACTER. 30 Aug 2026 =============
+     U+25B6 IS AN EMOJI ON iOS. It has no default text presentation there, so
+     Safari substitutes Apple Color Emoji and draws a small white triangle
+     INSIDE A GREY-BLUE ROUNDED SQUARE -- a second button nested in the button,
+     which is exactly what Netto saw on unit 10's Access. Reproduced here on a
+     Mac by forcing the same font, so it is not a guess about his phone.
+     THE FIRST OPTION -- enlarge it and suppress the frame in CSS -- IS
+     IMPOSSIBLE, and that is a fact about glyphs rather than a preference: the
+     square is part of the emoji font's own artwork, a bitmap, and no CSS
+     property reaches inside a glyph. Enlarging only makes the square bigger.
+     U+FE0E, the text-presentation selector, does work today; it is a hint to
+     font selection, it varies by iOS version, and it would put a second
+     invisible character into every button. Rejected as fragile.
+     AN SVG BACKGROUND ON THE PSEUDO-ELEMENT ends the class: no font is
+     involved, nothing can substitute, and it is still pure CSS, so not one
+     line of markup changes in any of the four places.
+     THE PROPORTION: the mark's height equals the label's font-size. A 13px
+     label gets a 13px mark, an 11px label an 11px mark. That is the same
+     relationship the x on a wrong form has to the words around it -- set at
+     the surrounding size -- so the play triangle is not the only oversized
+     thing on the page. It was 0.78em before, which is why it read as tiny
+     inside a 44px control.
+     THIS IS THE SECOND TIME THIS CHARACTER HAS COST A ROUND. The first was the
+     octal escape that shipped "B6 Listen"; SERIES_STANDARD 9q named the class
+     then -- the layer no check reads -- and this is the same layer. */
+  .audio-btn::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
   /* Record, and Check the line, are not play buttons. */
   #sayRec::before,#sayShow::before{content:none;}
   .audio-btn:hover{border-color:var(--navy);}
@@ -230,7 +256,8 @@
   .bank-cap{display:flex;align-items:center;justify-content:center;gap:5px;
     background:var(--navy);color:#fff;font-family:var(--sans);font-size:11px;
     font-weight:600;padding:6px 0;line-height:1.2;}
-  .bank-cap::before{content:"\25B6";font-size:.85em;}
+  .bank-cap::before{content:"";flex:0 0 auto;width:9px;height:11px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%23ffffff'/%3E%3C/svg%3E");}
   /* A ROW WITH NO PICTURE GETS THE SAME OBJECT IN THE SAME COLUMN. That is
      what makes unit 3 look like unit 1, ends two kinds of control inside one
      list in units 2 and 4, and removes the empty bordered spacer that read as
@@ -262,7 +289,8 @@
   /* "The base. Listen once, then say the row." -- and nothing on the screen
      said listen. The chips ARE the control; now they say so. */
   .numcell{min-height:44px;border-color:var(--navy);}
-  .numcell::before{content:"\25B6";font-size:.72em;color:var(--navy);line-height:1;}
+  .numcell::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
   /* CONTROL FIRST. It used to be the fifth column, at the far right of a
      narrow screen, furthest from the thumb and last in reading order. */
   .numpairs{display:grid;grid-template-columns:auto auto 1fr auto 1fr;gap:8px 12px;

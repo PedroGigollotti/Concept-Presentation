@@ -4838,5 +4838,20 @@
   "text": "There are several chairs.",
   "voice": "f",
   "source": "cut"
+ },
+ "u07-bs-that_umbrella_is_marco_s-8e64": {
+  "text": "That umbrella is Marco's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ex-an_umbrella_is_a_thing_for_the-8988": {
+  "text": "An umbrella is a thing for the rain.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ex-that_umbrella_is_bruno_s-90b7": {
+  "text": "That umbrella is Bruno's.",
+  "voice": "f",
+  "source": "cut"
  }
 }

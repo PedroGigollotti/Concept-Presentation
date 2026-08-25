@@ -205,7 +205,7 @@ The words this unit opens up. Nothing here is in the exercises.
 
 A WEEK AT WORK
    answer                     He answers the phone.
-   book                       She books the room.
+   book (not the thing you read) She books the room.
    check                      I check the email.
    eat                        They eat at one.
    order                      We order lunch.
@@ -214,13 +214,13 @@ A WEEK AT WORK
    send                       She sends the report.
 
 AWAY FROM WORK
-   cook                       He cooks on Sunday.
+   cook (not the person)      He cooks on Sunday.
    drive                      They drive to the coast.
    rest                       She rests on Sunday.
    shop                       He shops on Saturday.
    sing                       He sings badly.
    swim                       She swims every week.
-   watch                      They watch a movie.
+   watch (not the one on your wrist) They watch a movie.
    write                      He writes every report.
 
 HOW OFTEN

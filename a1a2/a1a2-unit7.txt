@@ -31,7 +31,7 @@ Goal. The things people leave behind. Look at the picture. Then listen and say i
    a hat            That hat is Bruno's.   [f · u07-bs-that_hat_is_bruno_s-4fa0]   [picture: hat.png — alt: a soft hat seen from the front]
    a book           This book is Ana's.   [f · u07-bs-this_book_is_ana_s-1c69]   [picture: book.png — alt: one closed book lying flat]
    gloves           These gloves are mine.   [f · u07-bs-these_gloves_are_mine-cafa]   [picture: gloves.png — alt: a pair of gloves side by side]
-   a planner        That planner is Marco's.   [f · u07-bs-that_planner_is_marco_s-97e9]   [picture: planner.png — alt: a small closed appointment book with an elastic band around it]
+   an umbrella      That umbrella is Marco's.   [f · u07-bs-that_umbrella_is_marco_s-8e64]   [picture: umbrella.png — alt: a closed umbrella with a curved handle, standing upright]
    socks            Those socks are Bruno's.   [f · u07-bs-those_socks_are_bruno_s-6979]   [picture: socks.png — alt: a pair of rolled socks]
    a towel          This towel is Lena's.   [f · u07-bs-this_towel_is_lena_s-486b]   [picture: towel.png — alt: a folded towel seen from the front]
    a comb           That comb is Ana's.   [f · u07-bs-that_comb_is_ana_s-5a6b]   [picture: comb.png — alt: a flat comb seen from the side]
@@ -136,7 +136,7 @@ D. One or more?
       -> Those
    5. ( This / These ) headphones are Marco's.
       -> These
-   6. ( Those / That ) planner is Bruno's.
+   6. ( Those / That ) umbrella is Bruno's.
       -> That
 
 E. What is it?
@@ -147,14 +147,14 @@ E. What is it?
       -> f. a flat thing for your hair
    3. a towel
       -> c. a thing for wet hands
-   4. a planner
-      -> a. a small book for your appointments
+   4. an umbrella
+      -> a. a thing for the rain
    5. a hat
       -> d. a thing for your head
    6. gloves
       -> e. two things for cold hands
    the endings as the student sees them:
-      a. a small book for your appointments
+      a. a thing for the rain
       b. a long thing for a cold neck
       c. a thing for wet hands
       d. a thing for your head
