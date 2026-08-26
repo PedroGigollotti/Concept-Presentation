@@ -6428,5 +6428,2055 @@
   "text": "Print is to make a paper copy of something.",
   "voice": "f",
   "source": "cut"
+ },
+ "u14-ac-which_folder_is_for_the_client-0162": {
+  "text": "Which folder is for the client?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u14-ac-the_blue_folder_not_the_black-0b75": {
+  "text": "The blue folder. Not the black one.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ac-two_of_them_are_blue-07d1": {
+  "text": "Two of them are blue.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u14-ac-the_new_one_is_thin_the_old_on-d266": {
+  "text": "The new one is thin. The old one is thick.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ac-so_the_thin_blue_folder-925a": {
+  "text": "So the thin blue folder.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u14-ac-that_is_it-864f": {
+  "text": "That is it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bs-the_box_is_heavy-1cbe": {
+  "text": "The box is heavy.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bs-the_box_is_empty-4de7": {
+  "text": "The box is empty.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bs-the_box_is_full-6440": {
+  "text": "The box is full.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bs-the_cup_is_broken-8742": {
+  "text": "The cup is broken.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bs-the_cup_is_dirty-56f5": {
+  "text": "The cup is dirty.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bs-the_coffee_is_hot-c9fb": {
+  "text": "The coffee is hot.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bs-it_is_a_new_file-d26a": {
+  "text": "It is a new file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bs-it_is_an_old_file-e80e": {
+  "text": "It is an old file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bs-it_is_a_big_room-cf35": {
+  "text": "It is a big room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bs-it_is_a_small_room-a478": {
+  "text": "It is a small room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-the_cup_is_clean-f6b9": {
+  "text": "The cup is clean.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-the_coffee_is_cold-fd6c": {
+  "text": "The coffee is cold.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-the_box_is_light-1b5a": {
+  "text": "The box is light.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_a_long_meeting-82fc": {
+  "text": "It is a long meeting.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_a_narrow_door-ce0f": {
+  "text": "It is a narrow door.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_a_quiet_office-0031": {
+  "text": "It is a quiet office.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_a_short_call-6289": {
+  "text": "It is a short call.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_a_wide_desk-5ba0": {
+  "text": "It is a wide desk.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-she_is_busy_today-7cc6": {
+  "text": "She is busy today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-he_is_careful_with_it-1332": {
+  "text": "He is careful with it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-she_is_early_today-c3a3": {
+  "text": "She is early today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-he_is_free_at_four-0269": {
+  "text": "He is free at four.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-the_train_is_late-af1e": {
+  "text": "The train is late.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-he_is_patient_with_us-d886": {
+  "text": "He is patient with us.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-she_is_polite_to_them-087c": {
+  "text": "She is polite to them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-we_are_ready_now-184d": {
+  "text": "We are ready now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-the_box_is_almost_full-8aeb": {
+  "text": "The box is almost full.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_a_bit_dirty-d0c1": {
+  "text": "It is a bit dirty.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_not_very_clean-1962": {
+  "text": "It is not very clean.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_quite_small-17a9": {
+  "text": "It is quite small.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_really_old-a177": {
+  "text": "It is really old.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_so_heavy-2922": {
+  "text": "It is so heavy.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-the_room_is_too_small-0d72": {
+  "text": "The room is too small.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-xs-it_is_very_heavy-beab": {
+  "text": "It is very heavy.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-heavy_is_hard_to_lift-ba8d": {
+  "text": "Heavy is hard to lift.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-empty_is_with_nothing_inside-e12a": {
+  "text": "Empty is with nothing inside.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-full_is_with_no_room_left_insi-b6d3": {
+  "text": "Full is with no room left inside.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-broken_is_in_pieces_and_it_doe-0061": {
+  "text": "Broken is in pieces, and it does not work.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-dirty_is_not_clean-b240": {
+  "text": "Dirty is not clean.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-hot_is_at_a_high_temperature-0727": {
+  "text": "Hot is at a high temperature.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-lz-take_the_new_file-3e7c": {
+  "text": "Take the new file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-lz-take_the_old_file-8fe9": {
+  "text": "Take the old file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-lz-use_the_big_room-cfca": {
+  "text": "Use the big room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-lz-use_the_small_room-820a": {
+  "text": "Use the small room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-lz-bring_the_empty_box-3c9d": {
+  "text": "Bring the empty box.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-lz-bring_the_full_box-25ca": {
+  "text": "Bring the full box.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-it_is_a_new_file-d26a": {
+  "text": "It is a new file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-they_are_big_rooms-8932": {
+  "text": "They are big rooms.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-we_have_two_small_rooms-5b39": {
+  "text": "We have two small rooms.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-the_box_is_heavy-1cbe": {
+  "text": "The box is heavy.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-it_is_an_old_file-e80e": {
+  "text": "It is an old file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-it_is_a_big_room-cf35": {
+  "text": "It is a big room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-the_hot_coffee_is_ready-cf5c": {
+  "text": "The hot coffee is ready.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-they_are_new_files-4966": {
+  "text": "They are new files.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-it_is_a_broken_cup-82ec": {
+  "text": "It is a broken cup.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-bring_an_empty_box-10c3": {
+  "text": "Bring an empty box.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-it_is_a_small_office-4bc9": {
+  "text": "It is a small office.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-they_are_two_big_rooms-84e7": {
+  "text": "They are two big rooms.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-it_is_an_old_cup-e4fe": {
+  "text": "It is an old cup.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-the_small_room_is_free-a66e": {
+  "text": "The small room is free.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-they_are_dirty_cups-9eac": {
+  "text": "They are dirty cups.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-hello_i_am_the_new_teacher-dd6a": {
+  "text": "Hello. I am the new teacher.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-is_she_ready_for_the_meeting-4e9f": {
+  "text": "Is she ready for the meeting?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-my_extension_is_four_oh_six-afad": {
+  "text": "My extension is four oh six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-ana_is_here_it_is_her_laptop-2ade": {
+  "text": "Ana is here. It is her laptop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-look_at_the_desk_they_are_boxe-acce": {
+  "text": "Look at the desk. They are boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-the_meeting_is_at_nine_thirty-aff8": {
+  "text": "The meeting is at nine thirty a.m., in the morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-those_keys_over_there_are_lena-d963": {
+  "text": "Those keys over there are Lena's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-the_room_is_dark_there_is_no_s-5985": {
+  "text": "The room is dark. There is no screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-there_is_some_coffee_in_the_ki-d67c": {
+  "text": "There is some coffee in the kitchen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-ana_is_not_here_today_she_work-699a": {
+  "text": "Ana is not here today. She works here every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-marco_doesn_t_work_on_fridays-315e": {
+  "text": "Marco doesn't work on Fridays.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-the_team_usually_meets_on_mond-e20e": {
+  "text": "The team usually meets on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ex-do_not_call_her_she_is_writing-87b6": {
+  "text": "Do not call her. She is writing the report.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ac-can_you_open_this_file-7f07": {
+  "text": "Can you open this file?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u15-ac-i_can_open_it_i_can_t_print_it-5523": {
+  "text": "I can open it. I can't print it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ac-why_not-b2fd": {
+  "text": "Why not?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u15-ac-the_printer_can_t_take_this_si-84cc": {
+  "text": "The printer can't take this size.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ac-so_i_send_it_by_email-4100": {
+  "text": "So I send it by email.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u15-ac-you_can_ana_can_print_it_upsta-2ede": {
+  "text": "You can. Ana can print it upstairs.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bs-he_can_drive-1158": {
+  "text": "He can drive.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bs-she_can_lift_the_box-6e1d": {
+  "text": "She can lift the box.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bs-he_can_fix_the_printer-7d6d": {
+  "text": "He can fix the printer.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bs-she_can_draw-6991": {
+  "text": "She can draw.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bs-he_can_cook-170b": {
+  "text": "He can cook.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bs-she_can_swim-2eb7": {
+  "text": "She can swim.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bs-he_can_park_here-cb95": {
+  "text": "He can park here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bs-she_can_lock_the_door-fda6": {
+  "text": "She can lock the door.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bs-he_can_translate_it-0d41": {
+  "text": "He can translate it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bs-she_can_help_you-fed8": {
+  "text": "She can help you.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-could_you_help_me-185e": {
+  "text": "Could you help me?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-do_you_have_time_for_this-fe7d": {
+  "text": "Do you have time for this?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-i_need_a_hand_with_this-6b77": {
+  "text": "I need a hand with this.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-if_you_can_call_her-35fd": {
+  "text": "If you can, call her.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-no_rush_at_all-f94e": {
+  "text": "No rush at all.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-of_course_i_can-fb27": {
+  "text": "Of course I can.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-when_you_have_a_moment_look_at-03b8": {
+  "text": "When you have a moment, look at it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-would_you_mind_waiting-53dc": {
+  "text": "Would you mind waiting?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-another_time_then-6bb4": {
+  "text": "Another time, then.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-ask_ana_about_it-cf8b": {
+  "text": "Ask Ana about it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-i_m_afraid_not-d476": {
+  "text": "I'm afraid not.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-i_wish_i_could_help-6583": {
+  "text": "I wish I could help.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-it_isn_t_possible_today-decc": {
+  "text": "It isn't possible today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-maybe_later_this_week-916a": {
+  "text": "Maybe later this week.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-not_right_now_sorry-bf91": {
+  "text": "Not right now, sorry.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-sorry_about_that-2a9b": {
+  "text": "Sorry about that.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-the_laptop_charges_here-63d1": {
+  "text": "The laptop charges here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-it_connects_to_the_wifi-0671": {
+  "text": "It connects to the wifi.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-copy_the_file_first-906e": {
+  "text": "Copy the file first.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-do_not_record_the_call-8ba2": {
+  "text": "Do not record the call.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-save_your_work_now-816a": {
+  "text": "Save your work now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-it_scans_a_page-14c1": {
+  "text": "It scans a page.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-she_shares_the_screen-049d": {
+  "text": "She shares the screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-xs-it_starts_on_its_own-6806": {
+  "text": "It starts on its own.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-lift_is_to_raise_it_off_the_fl-74c1": {
+  "text": "Lift is to raise it off the floor.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-fix_is_to_make_it_work_again-cb7a": {
+  "text": "Fix is to make it work again.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-park_is_to_leave_a_car_in_a_pl-e08f": {
+  "text": "Park is to leave a car in a place.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-lock_is_to_close_it_with_a_key-f28c": {
+  "text": "Lock is to close it with a key.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-translate_is_to_put_it_in_anot-468c": {
+  "text": "Translate is to put it in another language.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-swim_is_to_move_through_water-5f04": {
+  "text": "Swim is to move through water.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-lz-i_can_print_it-ff67": {
+  "text": "I can print it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-lz-i_can_t_print_it-ebeb": {
+  "text": "I can't print it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-lz-she_can_drive-5c07": {
+  "text": "She can drive.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-lz-she_can_t_drive-2cb5": {
+  "text": "She can't drive.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-lz-he_can_t_fix_the_printer-dcc5": {
+  "text": "He can't fix the printer.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-lz-he_can_lock_the_door-194c": {
+  "text": "He can lock the door.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-she_can_drive-5c07": {
+  "text": "She can drive.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-i_can_help_you-feec": {
+  "text": "I can help you.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-he_cannot_fix_it-e56b": {
+  "text": "He cannot fix it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-can_you_swim-212f": {
+  "text": "Can you swim?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-they_can_t_park_here-0b18": {
+  "text": "They can't park here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-the_printer_is_broken_lena_can-d481": {
+  "text": "The printer is broken. Lena can't fix it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-ana_has_the_key_she_can_lock_t-8821": {
+  "text": "Ana has the key. She can lock the door.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-the_box_is_too_heavy_i_can_t_l-9046": {
+  "text": "The box is too heavy. I can't lift it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-marco_has_a_car_he_can_drive-8473": {
+  "text": "Marco has a car. He can drive .",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-the_room_is_full_we_can_t_park-f6a1": {
+  "text": "The room is full. We can't park here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-bruno_is_free_at_four_he_can_h-2022": {
+  "text": "Bruno is free at four. He can help you.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-he_can_t_fix_it-d0a3": {
+  "text": "He can't fix it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-can_marco_park_here-c6c9": {
+  "text": "Can Marco park here?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-we_cannot_lift_it-a4b2": {
+  "text": "We cannot lift it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-hello_i_am_the_new_teacher-dd6a": {
+  "text": "Hello. I am the new teacher.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-is_she_ready_for_the_meeting-4e9f": {
+  "text": "Is she ready for the meeting?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-my_extension_is_four_oh_six-afad": {
+  "text": "My extension is four oh six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-ana_is_here_it_is_her_laptop-2ade": {
+  "text": "Ana is here. It is her laptop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-look_at_the_desk_they_are_boxe-acce": {
+  "text": "Look at the desk. They are boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-the_meeting_is_at_nine_thirty-aff8": {
+  "text": "The meeting is at nine thirty a.m., in the morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-those_keys_over_there_are_lena-d963": {
+  "text": "Those keys over there are Lena's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-the_room_is_dark_there_is_no_s-5985": {
+  "text": "The room is dark. There is no screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-there_is_some_coffee_in_the_ki-d67c": {
+  "text": "There is some coffee in the kitchen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-ana_is_not_here_today_she_work-699a": {
+  "text": "Ana is not here today. She works here every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-marco_doesn_t_work_on_fridays-315e": {
+  "text": "Marco doesn't work on Fridays.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-the_team_usually_meets_on_mond-e20e": {
+  "text": "The team usually meets on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-do_not_call_her_she_is_writing-87b6": {
+  "text": "Do not call her. She is writing the report.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ex-take_a_new_folder_not_the_old-5200": {
+  "text": "Take a new folder, not the old one.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ac-who_takes_the_client_calls-394c": {
+  "text": "Who takes the client calls?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u16-ac-marco_likes_talking_to_clients-5571": {
+  "text": "Marco likes talking to clients. I hate calling people.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ac-and_the_reports-fea4": {
+  "text": "And the reports?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u16-ac-i_love_writing_reports_marco_h-6104": {
+  "text": "I love writing reports. Marco hates writing them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ac-so_calls_to_marco_reports_to_y-4f82": {
+  "text": "So calls to Marco, reports to you.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u16-ac-exactly-410a": {
+  "text": "Exactly.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-he_hates_filing-682b": {
+  "text": "He hates filing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-she_likes_driving-5a81": {
+  "text": "She likes driving.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-he_hates_cleaning-4a53": {
+  "text": "He hates cleaning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-she_likes_counting-f3ec": {
+  "text": "She likes counting.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-he_likes_packing-e45e": {
+  "text": "He likes packing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-she_hates_waiting-c2b7": {
+  "text": "She hates waiting.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-he_loves_planning-97c1": {
+  "text": "He loves planning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-she_loves_teaching-9a01": {
+  "text": "She loves teaching.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-he_likes_selling-4fc4": {
+  "text": "He likes selling.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-she_hates_travelling-070c": {
+  "text": "She hates travelling.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-either_way_is_fine-60e8": {
+  "text": "Either way is fine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-i_d_rather_do_the_reports-558c": {
+  "text": "I'd rather do the reports.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-i_don_t_mind_waiting-d92a": {
+  "text": "I don't mind waiting.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-i_enjoy_teaching-492a": {
+  "text": "I enjoy teaching.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-i_m_happy_to_help-3a07": {
+  "text": "I'm happy to help.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-i_prefer_working_alone-e2bc": {
+  "text": "I prefer working alone.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-i_can_do_it_if_you_want-ab60": {
+  "text": "I can do it, if you want.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-it_s_not_for_me-16f4": {
+  "text": "It's not for me.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-i_take_a_break_at_four-7642": {
+  "text": "I take a break at four.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-the_deadline_is_friday-87c4": {
+  "text": "The deadline is Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-it_is_part_of_my_duty-9958": {
+  "text": "It is part of my duty.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-he_does_a_lot_of_overtime-af32": {
+  "text": "He does a lot of overtime.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-there_is_a_lot_of_paperwork-b85e": {
+  "text": "There is a lot of paperwork.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-her_name_is_on_the_rota-5f2e": {
+  "text": "Her name is on the rota.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-i_am_on_the_late_shift-fd5b": {
+  "text": "I am on the late shift.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-it_is_a_small_task-1b7f": {
+  "text": "It is a small task.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-i_am_bored_with_filing-dabb": {
+  "text": "I am bored with filing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-i_am_glad_it_is_done-ebe0": {
+  "text": "I am glad it is done.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-he_is_interested_in_it-e6ba": {
+  "text": "He is interested in it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-she_is_keen_to_start-062a": {
+  "text": "She is keen to start.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-he_is_nervous_about_it-621a": {
+  "text": "He is nervous about it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-she_is_proud_of_it-8e5f": {
+  "text": "She is proud of it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-she_is_relaxed_about_it-5342": {
+  "text": "She is relaxed about it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-xs-he_is_tired_today-58e0": {
+  "text": "He is tired today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-filing_is_putting_papers_away-81d8": {
+  "text": "Filing is putting papers away in order.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-packing_is_putting_things_into-69c3": {
+  "text": "Packing is putting things into a box.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-counting_is_saying_how_many_th-0a1f": {
+  "text": "Counting is saying how many there are.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-selling_is_getting_somebody_to-26c8": {
+  "text": "Selling is getting somebody to buy it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-planning_is_deciding_what_happ-1c2f": {
+  "text": "Planning is deciding what happens first.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-cleaning_is_making_a_place_tid-b2e0": {
+  "text": "Cleaning is making a place tidy again.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-lz-she_loves_writing_reports-c64f": {
+  "text": "She loves writing reports.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-lz-she_hates_writing_reports-9931": {
+  "text": "She hates writing reports.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-lz-he_doesn_t_like_filing-c0a5": {
+  "text": "He doesn't like filing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-lz-he_likes_filing-00fb": {
+  "text": "He likes filing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-lz-marco_hates_travelling-d8f2": {
+  "text": "Marco hates travelling.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-lz-marco_doesn_t_like_travelling-cf04": {
+  "text": "Marco doesn't like travelling.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-i_like_driving-0479": {
+  "text": "I like driving.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-she_likes_teaching-c270": {
+  "text": "She likes teaching.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-he_hates_filing-682b": {
+  "text": "He hates filing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-they_love_packing-e658": {
+  "text": "They love packing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-i_don_t_like_cleaning-e829": {
+  "text": "I don't like cleaning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-marco_likes_talking_to_clients-ce3f": {
+  "text": "Marco likes talking to clients.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-lena_loves_writing_reports-af90": {
+  "text": "Lena loves writing reports.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-bruno_hates_waiting_for_the_pr-33b1": {
+  "text": "Bruno hates waiting for the printer.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-i_don_t_like_cleaning_the_offi-7100": {
+  "text": "I don't like cleaning the office.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-ana_loves_teaching_the_new_sta-7ea3": {
+  "text": "Ana loves teaching the new starters.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-we_like_packing_the_boxes-566b": {
+  "text": "We like packing the boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-ana_likes_coffee-7df1": {
+  "text": "Ana likes coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-hello_i_am_the_new_teacher-dd6a": {
+  "text": "Hello. I am the new teacher.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-is_she_ready_for_the_meeting-4e9f": {
+  "text": "Is she ready for the meeting?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-my_extension_is_four_oh_six-afad": {
+  "text": "My extension is four oh six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-ana_is_here_it_is_her_laptop-2ade": {
+  "text": "Ana is here. It is her laptop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-look_at_the_desk_they_are_boxe-acce": {
+  "text": "Look at the desk. They are boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-the_meeting_is_at_nine_thirty-aff8": {
+  "text": "The meeting is at nine thirty a.m., in the morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-those_keys_over_there_are_lena-d963": {
+  "text": "Those keys over there are Lena's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-the_room_is_dark_there_is_no_s-5985": {
+  "text": "The room is dark. There is no screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-there_is_some_coffee_in_the_ki-d67c": {
+  "text": "There is some coffee in the kitchen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-ana_is_not_here_today_she_work-699a": {
+  "text": "Ana is not here today. She works here every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-marco_doesn_t_work_on_fridays-315e": {
+  "text": "Marco doesn't work on Fridays.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-the_team_usually_meets_on_mond-e20e": {
+  "text": "The team usually meets on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-do_not_call_her_she_is_writing-87b6": {
+  "text": "Do not call her. She is writing the report.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-take_a_new_folder_not_the_old-5200": {
+  "text": "Take a new folder, not the old one.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ex-the_file_is_too_big_i_can_t_pr-c479": {
+  "text": "The file is too big. I can't print it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ac-ana_needs_the_file_do_i_send_i-e77f": {
+  "text": "Ana needs the file. Do I send it to her?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u17-ac-send_it_to_me_i_check_it_first-2433": {
+  "text": "Send it to me. I check it first.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ac-and_then-6ae5": {
+  "text": "And then?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u17-ac-i_give_it_to_her_she_sends_it-59cc": {
+  "text": "I give it to her. She sends it to them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ac-to_the_client-17bb": {
+  "text": "To the client?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u17-ac-to_the_client_not_to_us-76ca": {
+  "text": "To the client. Not to us.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bs-i_pay_him_on_friday-59d5": {
+  "text": "I pay him on Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bs-i_show_her_the_file-66e5": {
+  "text": "I show her the file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bs-i_give_it_to_them-0308": {
+  "text": "I give it to them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bs-follow_me-e654": {
+  "text": "Follow me.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bs-push_it_to_the_wall-5e84": {
+  "text": "Push it to the wall.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bs-pull_it_toward_you-af7c": {
+  "text": "Pull it toward you.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bs-he_drops_the_pen-a94a": {
+  "text": "He drops the pen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bs-ask_her_about_it-4d44": {
+  "text": "Ask her about it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bs-tell_them_today-8520": {
+  "text": "Tell them today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bs-thank_him_for_it-1f22": {
+  "text": "Thank him for it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-apart_from_me_nobody_knows-5dae": {
+  "text": "Apart from me, nobody knows.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-send_it_to_marco_as_well-9334": {
+  "text": "Send it to Marco as well.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-between_us_it_is_not_ready-5cc9": {
+  "text": "Between us, it is not ready.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-they_help_each_other-e3eb": {
+  "text": "They help each other.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-use_it_instead_of_the_old_one-6efe": {
+  "text": "Use it instead of the old one.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-i_can_do_it_myself-c34b": {
+  "text": "I can do it myself.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-i_am_here_on_behalf_of_ana-30d9": {
+  "text": "I am here on behalf of Ana.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-bring_it_together_with_the_lis-8b79": {
+  "text": "Bring it together with the list.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-he_is_my_assistant-dab0": {
+  "text": "He is my assistant.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-she_is_a_good_client-c4e6": {
+  "text": "She is a good client.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-she_is_a_colleague-3a65": {
+  "text": "She is a colleague.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-he_is_the_director-3477": {
+  "text": "He is the director.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-he_is_my_manager-6c7d": {
+  "text": "He is my manager.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-she_is_my_partner-1334": {
+  "text": "She is my partner.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-they_are_our_supplier-9f2f": {
+  "text": "They are our supplier.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-there_is_a_visitor_here-b310": {
+  "text": "There is a visitor here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-collect_it_from_us-dfa6": {
+  "text": "Collect it from us.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-copy_me_in_on_it-5a65": {
+  "text": "Copy me in on it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-deliver_it_to_them-8101": {
+  "text": "Deliver it to them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-forward_it_to_the_team-c608": {
+  "text": "Forward it to the team.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-hand_it_to_him-62f7": {
+  "text": "Hand it to him.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-keep_it_for_me-c931": {
+  "text": "Keep it for me.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-pass_it_to_lena-4fd1": {
+  "text": "Pass it to Lena.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-xs-return_it_to_her-9fb8": {
+  "text": "Return it to her.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-pay_is_to_give_somebody_money-95bc": {
+  "text": "Pay is to give somebody money for work.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-show_is_to_let_somebody_see_it-258c": {
+  "text": "Show is to let somebody see it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-follow_is_to_walk_behind_someb-a9fd": {
+  "text": "Follow is to walk behind somebody.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-push_is_to_move_it_away_from_y-4e45": {
+  "text": "Push is to move it away from you.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-pull_is_to_move_it_toward_you-67b7": {
+  "text": "Pull is to move it toward you.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-thank_is_to_say_you_are_gratef-42e9": {
+  "text": "Thank is to say you are grateful.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-lz-ana_is_here_give_it_to_her-680d": {
+  "text": "Ana is here. Give it to her.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-lz-marco_is_here_give_it_to_him-16ca": {
+  "text": "Marco is here. Give it to him.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-lz-the_clients_are_waiting_send_i-0046": {
+  "text": "The clients are waiting. Send it to them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-lz-i_check_it_first_send_it_to_me-cb37": {
+  "text": "I check it first. Send it to me.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-lz-ana_and_marco_are_out_do_not_s-da40": {
+  "text": "Ana and Marco are out. Do not send it to them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-lz-marco_is_at_his_desk_show_it_t-782e": {
+  "text": "Marco is at his desk. Show it to him.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-call_him_today-bcbb": {
+  "text": "Call him today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-it_is_for_us-fd70": {
+  "text": "It is for us.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-send_it_to_them-2d7c": {
+  "text": "Send it to them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-i_call_her_every_day-beb6": {
+  "text": "I call her every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-show_the_file_to_her-368c": {
+  "text": "Show the file to her.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-send_it_to_her-24d5": {
+  "text": "Send it to her.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-show_it_to_them-6bef": {
+  "text": "Show it to them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-the_room_is_for_us-9449": {
+  "text": "The room is for us.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-ask_her_about_it-4d44": {
+  "text": "Ask her about it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-thank_them_for_it-8944": {
+  "text": "Thank them for it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-i_call_him_every_day-38e5": {
+  "text": "I call him every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-they_send_it_on_friday-7069": {
+  "text": "They send it on Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-give_it_to_her-0928": {
+  "text": "Give it to her.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-she_pays_him_on_friday-1929": {
+  "text": "She pays him on Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-hello_i_am_the_new_teacher-dd6a": {
+  "text": "Hello. I am the new teacher.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-is_she_ready_for_the_meeting-4e9f": {
+  "text": "Is she ready for the meeting?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-my_extension_is_four_oh_six-afad": {
+  "text": "My extension is four oh six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-ana_is_here_it_is_her_laptop-2ade": {
+  "text": "Ana is here. It is her laptop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-look_at_the_desk_they_are_boxe-acce": {
+  "text": "Look at the desk. They are boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-the_meeting_is_at_nine_thirty-aff8": {
+  "text": "The meeting is at nine thirty a.m., in the morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-those_keys_over_there_are_lena-d963": {
+  "text": "Those keys over there are Lena's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-the_room_is_dark_there_is_no_s-5985": {
+  "text": "The room is dark. There is no screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-there_is_some_coffee_in_the_ki-d67c": {
+  "text": "There is some coffee in the kitchen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-ana_is_not_here_today_she_work-699a": {
+  "text": "Ana is not here today. She works here every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-marco_doesn_t_work_on_fridays-315e": {
+  "text": "Marco doesn't work on Fridays.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-the_team_usually_meets_on_mond-e20e": {
+  "text": "The team usually meets on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-do_not_call_her_she_is_writing-87b6": {
+  "text": "Do not call her. She is writing the report.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-take_a_new_folder_not_the_old-5200": {
+  "text": "Take a new folder, not the old one.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-the_file_is_too_big_i_can_t_pr-c479": {
+  "text": "The file is too big. I can't print it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ex-give_the_car_to_lena_she_likes-c047": {
+  "text": "Give the car to Lena. She likes driving.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-where_is_the_meeting-f293": {
+  "text": "Where is the meeting?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u18-ac-in_room_four_on_the_second_flo-817a": {
+  "text": "In room four, on the second floor.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-and_what_time-810b": {
+  "text": "And what time?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u18-ac-at_nine_on_monday-6be0": {
+  "text": "At nine, on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-i_am_on_the_bus_now-f835": {
+  "text": "I am on the bus now.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u18-ac-then_you_are_here_in_ten_minut-62ba": {
+  "text": "Then you are here in ten minutes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bs-the_stairs_are_on_the_left-6a1e": {
+  "text": "The stairs are on the left.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bs-the_lift_is_at_the_end-a8da": {
+  "text": "The lift is at the end.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bs-the_kitchen_is_on_this_floor-0703": {
+  "text": "The kitchen is on this floor.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bs-he_is_in_the_corridor-657e": {
+  "text": "He is in the corridor.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bs-my_car_is_in_the_car_park-f05b": {
+  "text": "My car is in the car park.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bs-wait_at_reception-c44f": {
+  "text": "Wait at reception.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bs-the_meeting_is_on_the_roof-180e": {
+  "text": "The meeting is on the roof.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bs-i_am_at_the_bus_stop-1ed1": {
+  "text": "I am at the bus stop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bs-i_am_on_the_train-efd8": {
+  "text": "I am on the train.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bs-i_am_in_the_car-d28b": {
+  "text": "I am in the car.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-the_car_park_is_behind_us-cd72": {
+  "text": "The car park is behind us.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-reception_is_downstairs-41db": {
+  "text": "Reception is downstairs.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-he_is_in_front_of_the_door-23a6": {
+  "text": "He is in front of the door.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-it_is_near_the_station-e2cb": {
+  "text": "It is near the station.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-the_lift_is_next_to_the_stairs-8912": {
+  "text": "The lift is next to the stairs.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-it_is_opposite_reception-a679": {
+  "text": "It is opposite reception.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-she_is_outside_now-d31d": {
+  "text": "She is outside now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-the_kitchen_is_upstairs-8eb1": {
+  "text": "The kitchen is upstairs.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-we_meet_after_lunch-2d25": {
+  "text": "We meet after lunch.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-send_it_before_nine-deba": {
+  "text": "Send it before nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-send_it_by_friday-c71a": {
+  "text": "Send it by Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-do_not_call_during_the_meeting-a7c1": {
+  "text": "Do not call during the meeting.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-it_runs_from_nine_to_five-0399": {
+  "text": "It runs from nine to five.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-i_can_do_it_later-0e85": {
+  "text": "I can do it later.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-she_is_back_soon-0095": {
+  "text": "She is back soon.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-i_am_here_until_six-d05a": {
+  "text": "I am here until six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-she_comes_by_car-a6a4": {
+  "text": "She comes by car.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-there_is_a_short_delay-66cf": {
+  "text": "There is a short delay.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-it_is_a_long_journey-4dc3": {
+  "text": "It is a long journey.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-i_come_on_foot-c78a": {
+  "text": "I come on foot.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-the_train_is_on_time-5f92": {
+  "text": "The train is on time.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-he_gave_me_a_ride-65cc": {
+  "text": "He gave me a ride.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-it_is_the_next_stop-02c3": {
+  "text": "It is the next stop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-xs-there_is_a_lot_of_traffic-6f5c": {
+  "text": "There is a lot of traffic.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_stairs_is_the_steps_you_wa-c8ac": {
+  "text": "The stairs is the steps you walk up.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_lift_is_the_small_room_tha-d06f": {
+  "text": "The lift is the small room that carries you up.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-reception_is_the_desk_you_ask-4255": {
+  "text": "Reception is the desk you ask at when you arrive.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_corridor_is_the_long_narro-14e3": {
+  "text": "The corridor is the long narrow part with doors on it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_car_park_is_the_place_you-8381": {
+  "text": "The car park is the place you leave a car.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_roof_is_the_top_of_the_bui-cc72": {
+  "text": "The roof is the top of the building, outside.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-lz-it_is_on_the_second_floor-d40f": {
+  "text": "It is on the second floor.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-lz-it_is_on_monday-9a4b": {
+  "text": "It is on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-lz-she_is_at_reception-698c": {
+  "text": "She is at reception.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-lz-she_is_here_at_nine-18f9": {
+  "text": "She is here at nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-lz-he_is_in_the_car-b41a": {
+  "text": "He is in the car.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-lz-he_is_here_in_ten_minutes-c652": {
+  "text": "He is here in ten minutes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_meeting_is_today-8f44": {
+  "text": "The meeting is today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-it_is_on_monday-9a4b": {
+  "text": "It is on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-i_am_at_the_bus_stop-1ed1": {
+  "text": "I am at the bus stop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-she_is_here_at_nine-18f9": {
+  "text": "She is here at nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-we_are_in_room_four-1281": {
+  "text": "We are in room four.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_meeting_is_in_room_four-10af": {
+  "text": "The meeting is in room four.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-it_is_on_the_second_floor-d40f": {
+  "text": "It is on the second floor.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-we_start_at_nine-a032": {
+  "text": "We start at nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_team_meets_on_monday-d8db": {
+  "text": "The team meets on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-i_am_on_the_train_now-f3c5": {
+  "text": "I am on the train now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-she_is_here_in_ten_minutes-e4eb": {
+  "text": "She is here in ten minutes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-i_am_in_the_car-d28b": {
+  "text": "I am in the car.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-i_am_on_the_bus-58b7": {
+  "text": "I am on the bus.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-she_calls_in_the_morning-c981": {
+  "text": "She calls in the morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-she_calls_at_night-b790": {
+  "text": "She calls at night.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-he_is_at_the_bus_stop-349e": {
+  "text": "He is at the bus stop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-he_is_in_the_kitchen-312c": {
+  "text": "He is in the kitchen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-hello_i_am_the_new_teacher-dd6a": {
+  "text": "Hello. I am the new teacher.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-is_she_ready_for_the_meeting-4e9f": {
+  "text": "Is she ready for the meeting?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-my_extension_is_four_oh_six-afad": {
+  "text": "My extension is four oh six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-ana_is_here_it_is_her_laptop-2ade": {
+  "text": "Ana is here. It is her laptop.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-look_at_the_desk_they_are_boxe-acce": {
+  "text": "Look at the desk. They are boxes.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_meeting_is_at_nine_thirty-aff8": {
+  "text": "The meeting is at nine thirty a.m., in the morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-those_keys_over_there_are_lena-d963": {
+  "text": "Those keys over there are Lena's.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_room_is_dark_there_is_no_s-5985": {
+  "text": "The room is dark. There is no screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-there_is_some_coffee_in_the_ki-d67c": {
+  "text": "There is some coffee in the kitchen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-ana_is_not_here_today_she_work-699a": {
+  "text": "Ana is not here today. She works here every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-marco_doesn_t_work_on_fridays-315e": {
+  "text": "Marco doesn't work on Fridays.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_team_usually_meets_on_mond-e20e": {
+  "text": "The team usually meets on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-do_not_call_her_she_is_writing-87b6": {
+  "text": "Do not call her. She is writing the report.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-take_a_new_folder_not_the_old-5200": {
+  "text": "Take a new folder, not the old one.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-the_file_is_too_big_i_can_t_pr-c479": {
+  "text": "The file is too big. I can't print it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-give_the_car_to_lena_she_likes-c047": {
+  "text": "Give the car to Lena. She likes driving.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ex-ana_needs_the_file_send_it_to-053d": {
+  "text": "Ana needs the file. Send it to her.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bs-she_hates_traveling-e879": {
+  "text": "She hates traveling.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-lz-marco_hates_traveling-1008": {
+  "text": "Marco hates traveling.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-lz-marco_doesn_t_like_traveling-b251": {
+  "text": "Marco doesn't like traveling.",
+  "voice": "f",
+  "source": "cut"
  }
 }

@@ -1,0 +1,248 @@
+========================================================================
+14 · Adjectives before nouns and after “be”
+Saying which one, and what it is like.
+========================================================================
+
+   [ Draft. Nothing here is approved. Built from the manuscript's unit 11. The situation is new: the manuscript's is two friends describing a cafe, and nothing in it depends on which cafe. ]
+
+------------------------------------------------------------------------
+ACCESS
+------------------------------------------------------------------------
+   >>> INVENTED: The scene is mine, approved with units 15 to 18 as one block. Every noun in it is FOLDER, so the describing word is the only thing that says which one, and a learner who processes nouns carries the wrong file to a client.
+
+Goal. Bruno has to find one folder out of four. Read and listen at the same time. Listen for the word before “folder”.
+Read and listen together. Play a line and read the words at the same time. Play it again. The sound and the word go together.
+Play the whole conversation
+   Bruno Which folder is for the client?   [m · u14-ac-which_folder_is_for_the_client-0162]
+   Lena The blue folder. Not the black one.   [f · u14-ac-the_blue_folder_not_the_black-0b75]
+   Bruno Two of them are blue.   [m · u14-ac-two_of_them_are_blue-07d1]
+   Lena The new one is thin. The old one is thick.   [f · u14-ac-the_new_one_is_thin_the_old_on-d266]
+   Bruno So the thin blue folder.   [m · u14-ac-so_the_thin_blue_folder-925a]
+   Lena That is it.   [f · u14-ac-that_is_it-864f]
+One check.
+
+------------------------------------------------------------------------
+VOCABULARY
+------------------------------------------------------------------------
+   >>> INVENTED: The ten are mine. SIX are drawn and FOUR are not: new, old, big and small. A size or an age is a comparison and one drawing centred on one subject cannot make one. Two boxes side by side leave the learner asking which box the word is about.
+
+Goal. Words for what a thing is like. Look at the picture. Then listen and say it.
+   heavy            The box is heavy.   [f · u14-bs-the_box_is_heavy-1cbe]   [picture: heavy.png — alt: a person leaning back with knees bent, carrying a box with both arms]
+   empty            The box is empty.   [f · u14-bs-the_box_is_empty-4de7]   [picture: empty.png — alt: an open box with nothing at all inside it, seen from above]
+   full             The box is full.   [f · u14-bs-the_box_is_full-6440]   [picture: full.png — alt: an open box packed to the top, with papers standing out of it]
+   broken           The cup is broken.   [f · u14-bs-the_cup_is_broken-8742]   [picture: broken.png — alt: a cup lying in two pieces on a desk]
+   dirty            The cup is dirty.   [f · u14-bs-the_cup_is_dirty-56f5]   [picture: dirty.png — alt: a cup with a dark ring inside it and a stain down one side]
+   hot              The coffee is hot.   [f · u14-bs-the_coffee_is_hot-c9fb]   [picture: hot.png — alt: a cup with three curling lines of steam rising from it]
+   new              It is a new file.   [f · u14-bs-it_is_a_new_file-d26a]
+   old              It is an old file.   [f · u14-bs-it_is_an_old_file-e80e]
+   big              It is a big room.   [f · u14-bs-it_is_a_big_room-cf35]
+   small            It is a small room.   [f · u14-bs-it_is_a_small_room-a478]
+
+------------------------------------------------------------------------
+ANALYSIS
+------------------------------------------------------------------------
+Goal. Learn the words for what a thing is like. Then learn where to put them.
+
+THE STRUCTURE
+English puts the describing word IN FRONT of the thing. Say “a new file”. Your language puts it after. After “is” and “are” it stands on its own: “The file is new”. And it never changes: “one new file”, “two new files”.
+   | before the noun  ·  Form: a / an + word + thing  ·  Meaning: Which one you mean.  ·  Use it to: pick one thing out of several  ·  example: a new file
+   | after is and are  ·  Form: thing + is / are + word  ·  Meaning: What it is like.  ·  Use it to: say something about a thing  ·  example: The file is new.
+   | it never changes  ·  Form: the same word for one and for many  ·  Meaning: No -s, ever.  ·  Use it to: say it about two things  ·  example: two new files
+
+WATCH OUT
+
+   [ Before the thing, not after it. Say “a new file.” Never say “× a file new.” This unit exists for that mistake. It never takes an -s. Say “two big rooms.” Never say “× two bigs rooms.” The thing takes the “-s”. The word in front of it does not. Watch a and an. Unit 5's rule works on the word that comes NEXT. Say “an old file” and “a new file”. The describing word decides it now. ]
+
+   [ Two in a row. You can use two: “a thin blue file”. What it is LIKE comes first and the color comes last. Two is enough at work. ]
+
+THE MOVES
+Ready-made lines for picking one thing out. Change only the words in blue.
+   - It is a [new] file.
+   - The file is [new].
+   - Not the [old] one.
+   - Which [room] is free?
+   - The [small] one.
+
+THE TWO PLACES IT CAN STAND
+The same word, in front of the thing or after “is”.
+   (figure) Both are correct. Neither one ever takes an -s.
+
+WHY THIS WORKS
+At work you almost never name a thing. You pick one out of several. The word in front is how you do it. Say it after and everybody still understands you. Miss it and you carry the wrong file to a client.
+
+------------------------------------------------------------------------
+ACTIVATION
+------------------------------------------------------------------------
+Goal. Now practice. Hear which one. Put the word in its place. Then describe your own desk.
+   In pairs. Point at four things in the room. Describe each one in two ways: “It is a small chair. The chair is small.” Then, on your own. Write five true sentences about your desk. Put the word in front in three. Put it after “is” in two.
+   (figure) The picture shows only loud and quiet. It shows where you stop and how long you take. It does not show your sounds. The same picture can still be the wrong sound.
+One more. This last one is not about this unit. It comes back for something you already know.
+
+------------------------------------------------------------------------
+THE EXERCISES, WITH THEIR ANSWERS
+------------------------------------------------------------------------
+
+A. Which one?
+   Listen. Which one does she mean? Write the word you hear before the thing.
+   1. (heard, not printed) “Take the new file.”
+      -> new
+   2. (heard, not printed) “Take the old file.”
+      -> old
+   3. (heard, not printed) “Use the big room.”
+      -> big
+   4. (heard, not printed) “Use the small room.”
+      -> small
+   5. (heard, not printed) “Bring the empty box.”
+      -> empty
+   6. (heard, not printed) “Bring the full box.”
+      -> full
+
+B. Spot and fix the error
+   Each sentence has one mistake. Write it correctly.
+   1. × It is a file new.
+      -> It is a new file.
+   2. × They are rooms big.
+      -> They are big rooms.
+   3. × We have two smalls rooms.
+      -> We have two small rooms.
+   4. × The box is a heavy.
+      -> The box is heavy.
+   5. × It is a old file.
+      -> It is an old file.
+
+C. Put the word in
+   Write the sentence again with the word in brackets.
+   1. It is a room. (big)
+      -> It is a big room.
+   2. The coffee is ready. (hot)
+      -> The hot coffee is ready.
+   3. They are files. (new)
+      -> They are new files.
+   4. It is a cup. (broken)
+      -> It is a broken cup.
+   5. Bring a box. (empty)
+      -> Bring an empty box.
+   6. It is an office. (small)
+      -> It is a small office.
+
+D. Which order?
+   Choose the English.
+   1. It is ( a new file / a file new ).
+      -> a new file
+   2. They are ( two big rooms / two bigs rooms ).
+      -> two big rooms
+   3. The box ( is heavy / heavy is ).
+      -> is heavy
+   4. It is ( an old cup / a old cup ).
+      -> an old cup
+   5. ( The small room / The room small ) is free.
+      -> The small room
+   6. They are ( dirty cups / cups dirty ).
+      -> dirty cups
+
+E. What is it like?
+   Read the word. Choose what it means.
+   1. heavy
+      -> b. hard to lift
+   2. empty
+      -> c. with nothing inside
+   3. full
+      -> d. with no room left inside
+   4. broken
+      -> a. in pieces, and it does not work
+   5. dirty
+      -> e. not clean
+   6. hot
+      -> f. at a high temperature
+   the endings as the student sees them:
+      a. in pieces, and it does not work
+      b. hard to lift
+      c. with nothing inside
+      d. with no room left inside
+      e. not clean
+      f. at a high temperature
+
+F. Over to you
+   Not graded. Here the grammar stops being a rule. It becomes the way you tell one thing from another.
+   In pairs. Point at four things in the room. Describe each one in two ways: It is a small chair. The chair is small.
+   Then, on your own. Write five true sentences about your desk. Put the word in front in three. Put it after is in two.
+
+G. Listen, say it, then read
+   Listen. Say the line without looking. Record it. Then check the words.
+   Choose a line above.
+   The picture shows only loud and quiet. It shows where you stop and how long you take. It does not show your sounds. The same picture can still be the wrong sound.
+   [Bruno Line 1]
+   [Lena Line 2]
+   [Bruno Line 3]
+   [Lena Line 4]
+   [Bruno Line 5]
+   [Lena Line 6]
+
+H. From units 1 to 13
+   Complete each sentence with a phrase from the box. Use each one once.
+   1. Hello. ______ the new teacher.
+      -> I am
+   2. ______ ready for the meeting?
+      -> Is she
+   3. My extension is ______.
+      -> four oh six
+   4. Ana is here. It is ______.
+      -> her laptop
+   5. Look at the desk. ______.
+      -> They are boxes
+   6. The meeting is at ______, in the morning.
+      -> nine thirty a.m.
+   7. ______ over there are Lena's.
+      -> Those keys
+   8. The room is dark. ______ screen.
+      -> There is no
+   9. There is ______ coffee in the kitchen.
+      -> some
+   10. Ana is not here today. She ______ here every day.
+      -> works
+   11. Marco ______ work on Fridays.
+      -> doesn't
+   12. The team ______ on Monday.
+      -> usually meets
+   13. Do not call her. She ______ the report.
+      -> is writing
+
+------------------------------------------------------------------------
+MORE WORDS  (the extended page, a separate page in the book)
+------------------------------------------------------------------------
+The words this unit opens up. Nothing here is in the exercises.
+
+MORE WORDS FOR A THING
+   clean                      The cup is clean.
+   cold                       The coffee is cold.
+   light                      The box is light.
+   long                       It is a long meeting.
+   narrow                     It is a narrow door.
+   quiet                      It is a quiet office.
+   short                      It is a short call.
+   wide                       It is a wide desk.
+
+WORDS FOR PEOPLE AT WORK
+   busy                       She is busy today.
+   careful                    He is careful with it.
+   early                      She is early today.
+   free                       He is free at four.
+   late                       The train is late.
+   patient                    He is patient with us.
+   polite                     She is polite to them.
+   ready                      We are ready now.
+
+SAYING IT MORE STRONGLY
+   almost                     The box is almost full.
+   a bit                      It is a bit dirty.
+   not very                   It is not very clean.
+   quite                      It is quite small.
+   really                     It is really old.
+   so                         It is so heavy.
+   too                        The room is too small.
+   very                       It is very heavy.
+
+========================================================================
+This file is generated by readable.py on every build. Do not edit it:
+edit the unit's own module and rebuild, or the two will disagree about the same unit.
+========================================================================

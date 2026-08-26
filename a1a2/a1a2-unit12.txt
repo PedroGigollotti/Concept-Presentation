@@ -27,12 +27,12 @@ VOCABULARY
    >>> INVENTED: The bank is SIX items and not ten, because this unit's vocabulary is a closed set and there is no seventh member. THE BANK CARRIES NO DRAWINGS: a frequency adverb has no picture and the scale is the only representation there is, which is the shape the figure draws, and the six separate drawings were DROPPED for exactly that reason: one image cut into six is not six images. RARELY IS IN THE BANK FOR THE COMPLETENESS OF THE SYSTEM AND NOT FOR USE: it is 32 per million against never's 580, and the only one of the six outside the A2 ceiling. Nothing else fills that point in one word. The form learners will actually hear, hardly ever, leads the extended page's first group.
 
 Goal. The words for how often. Look at the picture. Then listen and say it.
-   always           She is always here.   [f · u12-bs-she_is_always_here-7f2f]
-   usually          He usually works here.   [f · u12-bs-he_usually_works_here-ac91]
-   often            She often works late.   [f · u12-bs-she_often_works_late-d840]
-   sometimes        He sometimes brings coffee.   [f · u12-bs-he_sometimes_brings_coffee-f570]
-   rarely           She rarely uses the phone.   [f · u12-bs-she_rarely_uses_the_phone-ab05]
    never            He never works on Friday.   [f · u12-bs-he_never_works_on_friday-3304]
+   rarely           She rarely uses the phone.   [f · u12-bs-she_rarely_uses_the_phone-ab05]
+   sometimes        He sometimes brings coffee.   [f · u12-bs-he_sometimes_brings_coffee-f570]
+   often            She often works late.   [f · u12-bs-she_often_works_late-d840]
+   usually          He usually works here.   [f · u12-bs-he_usually_works_here-ac91]
+   always           She is always here.   [f · u12-bs-she_is_always_here-7f2f]
 
 ------------------------------------------------------------------------
 ANALYSIS
