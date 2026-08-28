@@ -1,0 +1,1372 @@
+{
+ "u01-ac-i_have_to_write_the_note_the_c-fc6c": {
+  "text": "I have to write the note the client will read. How do I put it?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u01-ac-what_actually_happened-c309": {
+  "text": "What actually happened?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-ac-we_were_running_the_final_test-3de0": {
+  "text": "We were running the final test when the server crashed.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u01-ac-send_that_write_we_ran_the_tes-024b": {
+  "text": "Send that. Write “we ran the test and the server crashed” and it sounds like you did it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-ac-and_while_i_was_checking_the_c-7975": {
+  "text": "And while I was checking the cables, the client left.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u01-ac-put_that_in_too_same_shape-7ac9": {
+  "text": "Put that in too. Same shape.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-ac-then_i_found_it_restarted_the-1224": {
+  "text": "Then I found it, restarted the server, and finished alone.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u01-ac-leave_those_three_simple_nothi-b070": {
+  "text": "Leave those three simple. Nothing was happening under them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-the_client_says_we_sent_the_wr-7d56": {
+  "text": "The client says we sent the wrong file.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-did_we_i_opened_the_folder_fou-55a0": {
+  "text": "Did we? I opened the folder, found the file, and sent it.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-by_the_time_you_opened_it_some-26cf": {
+  "text": "By the time you opened it, someone had already replaced it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-so_the_file_was_wrong_before_i-1340": {
+  "text": "So the file was wrong before I saw it.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-right_you_sent_a_version_that-46fb": {
+  "text": "Right. You sent a version that had changed overnight.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-then_this_is_not_a_checking_pr-99fe": {
+  "text": "Then this is not a checking problem. It is a version problem.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-how_did_the_team_work_before_t-6173": {
+  "text": "How did the team work before the merger?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-we_used_to_release_every_frida-548a": {
+  "text": "We used to release every Friday. Now we release twice a day.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-and_who_approved_a_release-130d": {
+  "text": "And who approved a release?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-a_director_would_approve_each-97ec": {
+  "text": "A director would approve each one, and it took a week.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-just_one_person_for_everything-d24c": {
+  "text": "Just one person for everything?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-we_used_to_have_one_director_n-d0c1": {
+  "text": "We used to have one director. Now we have four, and an hour is enough.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u02-ac-i_need_somebody_who_knows_this-1272": {
+  "text": "I need somebody who knows this vendor.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-ac-i_have_worked_with_them_three-6b8c": {
+  "text": "I have worked with them three times. They are reliable.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u02-ac-and_lena_she_was_on_that_accou-a09b": {
+  "text": "And Lena? She was on that account.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-ac-she_worked_with_them_for_two_y-a1da": {
+  "text": "She worked with them for two years, but she moved to sales.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u02-ac-so_you_are_the_one_to_ask-0075": {
+  "text": "So you are the one to ask.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-ac-i_am_i_have_just_sent_them_the-a6d6": {
+  "text": "I am. I have just sent them the new brief.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-the_client_arrives_at_ten_and-cc56": {
+  "text": "The client arrives at ten and I do not know who has what.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-i_am_taking_them_to_the_demo_r-51c0": {
+  "text": "I am taking them to the demo room. It is in the calendar.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-and_the_printed_deck-f2fc": {
+  "text": "And the printed deck?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-nobody_has_done_it_i_ll_print-3e15": {
+  "text": "Nobody has done it. I'll print it now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-are_you_going_to_print_the_app-700f": {
+  "text": "Are you going to print the appendix as well?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-no_we_are_sending_that_by_emai-f351": {
+  "text": "No. We are sending that by email this afternoon.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-the_client_wants_the_report_to-424c": {
+  "text": "The client wants the report today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-i_ll_send_it_as_soon_as_i_get-489e": {
+  "text": "I'll send it as soon as I get the numbers from finance.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-finance_is_often_late-12df": {
+  "text": "Finance is often late.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-then_nothing_moves_until_they-441d": {
+  "text": "Then nothing moves until they answer.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-so_i_should_not_promise_a_time-52f3": {
+  "text": "So I should not promise a time yet.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-not_until_i_have_them_when_the-1649": {
+  "text": "Not until I have them. When they arrive, I'll call you.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u03-ac-the_client_asked_for_the_audit-cde6": {
+  "text": "The client asked for the audit this morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-ac-i_have_been_working_on_it_sinc-1d84": {
+  "text": "I have been working on it since Monday. It is not ready.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u03-ac-since_monday_that_is_four_days-3335": {
+  "text": "Since Monday. That is four days.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-ac-the_data_keeps_changing_i_have-f9e1": {
+  "text": "The data keeps changing. I have been rewriting the summary all week.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u03-ac-so_it_is_still_moving-77cb": {
+  "text": "So it is still moving.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-ac-it_is_give_me_until_friday_and-dfe8": {
+  "text": "It is. Give me until Friday and it will hold.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u09-ac-we_launch_on_thursday_where_ar-ddfc": {
+  "text": "We launch on Thursday. Where are we on people?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-ac-we_have_a_few_testers_three_an-64d9": {
+  "text": "We have a few testers. Three, and they are good.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u09-ac-and_time-5eba": {
+  "text": "And time?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-ac-we_have_little_time_two_days_a-e64f": {
+  "text": "We have little time. Two days, and one of them is a holiday.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u09-ac-so_people_are_fine_and_time_is-7e6e": {
+  "text": "So people are fine and time is the problem.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-ac-that_is_it_enough_testers_not-6774": {
+  "text": "That is it. Enough testers, not enough days.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u10-ac-can_you_take_the_rush_job-60b9": {
+  "text": "Can you take the rush job?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-ac-if_you_give_me_two_people_i_wi-57b0": {
+  "text": "If you give me two people, I will finish by Friday.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u10-ac-i_have_a_few_not_two_full_days-f2ee": {
+  "text": "I have a few. Not two full days of them.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-ac-then_friday_holds_as_long_as_n-dab2": {
+  "text": "Then Friday holds as long as nothing else lands on me.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u10-ac-and_the_client_call-1a27": {
+  "text": "And the client call?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-ac-i_will_move_it_unless_you_need-ed08": {
+  "text": "I will move it unless you need me there. I will prepare notes in case you do.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u11-ac-they_offered_me_the_porto_job-5827": {
+  "text": "They offered me the Porto job.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ac-if_i_were_you_i_would_take_it-b6ee": {
+  "text": "If I were you, I would take it.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u11-ac-it_means_moving_my_whole_team-2ddc": {
+  "text": "It means moving. My whole team is here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ac-if_you_had_a_reason_to_stay_yo-42f6": {
+  "text": "If you had a reason to stay, you would not be asking me.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u11-ac-that_is_not_fair-0a52": {
+  "text": "That is not fair.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ac-it_is_true_though_what_would_y-4116": {
+  "text": "It is true, though. What would you do if the money were the same?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u12-ac-i_wish_this_room_had_a_window-6342": {
+  "text": "I wish this room had a window.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ac-it_is_the_worst_room_on_the_fl-7a6c": {
+  "text": "It is the worst room on the floor.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u12-ac-if_only_we_knew_how_long_we_ar-a957": {
+  "text": "If only we knew how long we are here for.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ac-nobody_has_said_i_wish_somebod-7fd7": {
+  "text": "Nobody has said. I wish somebody would tell us.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u12-ac-ask_nadia_she_likes_you-5b79": {
+  "text": "Ask Nadia. She likes you.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ac-i_wish_that_were_true-0196": {
+  "text": "I wish that were true.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-ac-the_auditor_arrives_at_nine_to-fe00": {
+  "text": "The auditor arrives at nine tomorrow.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ac-do_i_need_to_be_here-5f8c": {
+  "text": "Do I need to be here?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-ac-you_have_to_be_here_it_is_in_t-fea9": {
+  "text": "You have to be here. It is in the contract.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ac-and_the_old_invoices-6098": {
+  "text": "And the old invoices?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-ac-you_ought_to_print_them_and_yo-31f8": {
+  "text": "You ought to print them, and you had better do it tonight.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ac-tonight_then_i_don_t_have_to_c-c27f": {
+  "text": "Tonight? Then I don't have to come in early, at least.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u14-ac-the_call_started_ten_minutes_a-ca56": {
+  "text": "The call started ten minutes ago and their side is still empty.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ac-then_they_must_be_in_the_wrong-85c5": {
+  "text": "Then they must be in the wrong room.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u14-ac-the_link_in_the_invitation_is-0e3a": {
+  "text": "The link in the invitation is the right one.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ac-hmm_they_could_be_on_another_c-e465": {
+  "text": "Hmm. They could be on another call.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u14-ac-their_status_says_available-2a4c": {
+  "text": "Their status says available.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ac-then_it_can_t_be_a_call_somebo-97d1": {
+  "text": "Then it can't be a call. Somebody might be ill.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u15-ac-the_paris_meetings_next_month-41bb": {
+  "text": "The Paris meetings next month are all in French.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u15-ac-i_can_present_in_french_now_i-72e0": {
+  "text": "I can present in French now. I couldn't a year ago.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ac-how_did_you_learn_so_fast-9bf8": {
+  "text": "How did you learn so fast?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u15-ac-i_found_a_good_tutor_so_i_was-9c9a": {
+  "text": "I found a good tutor, so I was able to improve quickly.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ac-so_you_are_ready_for_the_whole-ba39": {
+  "text": "So you are ready for the whole week.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u15-ac-yes_i_ll_be_able_to_handle_the-be65": {
+  "text": "Yes. I 'll be able to handle the meetings on my own.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ac-it_is_my_first_week_and_i_have-ad41": {
+  "text": "It is my first week, and I have a request to submit.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u16-ac-the_request_is_submitted_onlin-b746": {
+  "text": "The request is submitted online, on the portal.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ac-and_after_that-3e44": {
+  "text": "And after that?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u16-ac-it_is_reviewed_by_two_managers-cda5": {
+  "text": "It is reviewed by two managers, and a decision is made within a week.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ac-does_everyone_get_one-9b4c": {
+  "text": "Does everyone get one?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u16-ac-no_last_month_three_requests_w-0f41": {
+  "text": "No. Last month three requests were rejected.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ac-i_still_need_sara_s_half_befor-3c44": {
+  "text": "I still need Sara's half before Friday.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u17-ac-i_spoke_to_her_she_said_she_wa-367c": {
+  "text": "I spoke to her. She said she was swamped this week.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ac-did_she_mention_the_deadline-c7ed": {
+  "text": "Did she mention the deadline?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u17-ac-she_told_me_she_had_finished_h-b144": {
+  "text": "She told me she had finished her part already.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ac-good_anything_else-9464": {
+  "text": "Good. Anything else?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u17-ac-she_said_she_would_send_the_fi-d269": {
+  "text": "She said she would send the files by Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-i_need_to_know_who_is_giving_t-1a08": {
+  "text": "I need to know who is giving the training.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-dr_lee_who_wrote_the_manual_we-b433": {
+  "text": "Dr. Lee, who wrote the manual we use.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u18-ac-the_manual_that_has_the_red_co-46a5": {
+  "text": "The manual that has the red cover?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-that_is_the_one_it_is_the_book-d4d8": {
+  "text": "That is the one. It is the book everyone recommends.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u18-ac-and_the_room-e698": {
+  "text": "And the room?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-room_4_which_is_on_the_third_f-9978": {
+  "text": "Room 4, which is on the third floor.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u19-ac-i_need_to_buy_a_laptop_for_wor-2c17": {
+  "text": "I need to buy a laptop for work.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u19-ac-did_you_see_the_one_on_the_des-5240": {
+  "text": "Did you see the one on the desk in Room 3?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-ac-i_did_but_i_prefer_laptops_wit-bb8f": {
+  "text": "I did. But I prefer laptops with bigger screens.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u19-ac-fair_enough_is_the_budget_appr-30d5": {
+  "text": "Fair enough. Is the budget approved?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-ac-almost_money_is_always_the_pro-4886": {
+  "text": "Almost. Money is always the problem here.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u19-ac-then_send_me_the_quote_and_i_w-b07e": {
+  "text": "Then send me the quote and I will ask.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-ac-the_client_is_asking_about_the-3e76": {
+  "text": "The client is asking about the invoice.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-ac-i_remember_writing_it_but_i_fo-bc03": {
+  "text": "I remember writing it, but I forgot to send it.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u20-ac-want_me_to_do_it_now-c9c3": {
+  "text": "Want me to do it now?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-ac-would_you_i_want_you_to_double-d047": {
+  "text": "Would you? I want you to double-check the amount as well.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u20-ac-fine_have_you_tried_using_the-3561": {
+  "text": "Fine. Have you tried using the new template?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-ac-not_yet_i_keep_meaning_to-0de5": {
+  "text": "Not yet. I keep meaning to.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u21-ac-i_am_deciding_between_the_new-490f": {
+  "text": "I am deciding between the new tool and the old one.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u21-ac-it_is_much_faster_but_not_as_c-e583": {
+  "text": "It is much faster, but not as cheap.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-ac-and_how_long_does_it_take_to_l-49eb": {
+  "text": "And how long does it take to learn?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u21-ac-the_more_you_use_it_the_easier-5ce0": {
+  "text": "The more you use it, the easier it gets.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-ac-so_you_would_switch-6b60": {
+  "text": "So you would switch?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u21-ac-definitely_it_is_a_bit_harder-f8df": {
+  "text": "Definitely. It is a bit harder at first, but far more powerful.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-ac-and_the_client_where_are_we_wi-e595": {
+  "text": "And the client? Where are we with them?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-ac-they_have_already_confirmed_th-d767": {
+  "text": "They have already confirmed the date. They have not sent the contract yet.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-give_me_where_the_migration_is-1ce7": {
+  "text": "Give me where the migration is.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-i_have_moved_about_half_the_da-92fb": {
+  "text": "I have moved about half the data so far.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-you_look_tired-12b9": {
+  "text": "You look tired.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-i_have_been_debugging_since_th-0333": {
+  "text": "I have been debugging since this morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-any_blockers-2c8d": {
+  "text": "Any blockers?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-i_have_found_two_and_i_have_be-657c": {
+  "text": "I have found two, and I have been testing fixes all afternoon.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-does_anyone_still_approve_them-1de5": {
+  "text": "Does anyone still approve them by hand?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-nobody_does_that_any_more_but-cb27": {
+  "text": "Nobody does that any more. But we still check the big ones.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-can_you_promise_anything_by_fr-152f": {
+  "text": "Can you promise anything by Friday?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-by_the_time_we_finish_testing-1b2e": {
+  "text": "By the time we finish testing, it will be Thursday. I'll write it during the review.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u09-ac-did_legal_help-9ac9": {
+  "text": "Did legal help?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-ac-they_gave_us_advice_but_we_hav-1d9a": {
+  "text": "They gave us advice, but we have no information on the license.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u10-ac-and_if_a_form_comes_in_after_s-2479": {
+  "text": "And if a form comes in after six?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-ac-if_it_arrives_after_six_it_goe-f33e": {
+  "text": "If it arrives after six, it goes in the next batch. That is the rule.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-ac-could_you_send_me_the_auditor-022f": {
+  "text": "Could you send me the auditor's list?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-ac-would_you_mind_waiting_until_i-bc1a": {
+  "text": "Would you mind waiting until I have it? It lands at eight.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ac-were_you_surprised-22dd": {
+  "text": "Were you surprised?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u16-ac-no_i_was_given_the_reasons_and-5120": {
+  "text": "No. I was given the reasons, and they were not surprising.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-ac-who_signs_it_off_the_sales_tea-a18a": {
+  "text": "Who signs it off? The sales team?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u19-ac-ana_does_it_is_the_sales_manag-d75d": {
+  "text": "Ana does. It is the sales manager's decision, not a team decision.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-ac-where_is_she_this_week-e174": {
+  "text": "Where is she this week?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u19-ac-in_france_she_is_back_from_the-5132": {
+  "text": "In France. She is back from the Netherlands on Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-ac-does_the_team_handle_it_well-c325": {
+  "text": "Does the team handle it well?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u21-ac-they_work_more_quickly_with_it-b955": {
+  "text": "They work more quickly with it. The old one ran rather badly.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-ac-you_have_met_sara_haven_t_you-cf82": {
+  "text": "You have met Sara, haven't you?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u22-ac-at_the_offsite_she_is_the_new-ce24": {
+  "text": "At the offsite. She is the new designer, isn't she?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-ac-that_is_right_she_used_to_work-7d21": {
+  "text": "That is right. She used to work at a startup, didn't she?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u22-ac-i_think_so_we_should_introduce-aa7e": {
+  "text": "I think so. We should introduce her around, shouldn't we?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-ac-good_idea_let_us_do_it_now_sha-f32f": {
+  "text": "Good idea. Let us do it now, shall we?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u22-ac-you_are_not_busy_until_eleven-03e6": {
+  "text": "You are not busy until eleven, are you?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-ac-i_am_swamped_this_week-e40d": {
+  "text": "I am swamped this week.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u23-ac-so_am_i_completely_buried-1b2a": {
+  "text": "So am I. Completely buried.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-ac-i_have_not_even_started_the_re-a1f3": {
+  "text": "I have not even started the report.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u23-ac-neither_have_i-8070": {
+  "text": "Neither have I.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-ac-i_cannot_make_the_three_o_cloc-0fe5": {
+  "text": "I cannot make the three o'clock, either.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u23-ac-me_neither_let_us_push_it-b1fc": {
+  "text": "Me neither. Let us push it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-ac-i_heard_the_launch_went_well-92d4": {
+  "text": "I heard the launch went well.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u24-ac-it_did_although_we_were_nervou-6b26": {
+  "text": "It did, although we were nervous at first.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-ac-what_made_it_work-f918": {
+  "text": "What made it work?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u24-ac-we_rehearsed_a_lot_so_that_not-16b8": {
+  "text": "We rehearsed a lot so that nothing would go wrong.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-ac-sensible-c3c7": {
+  "text": "Sensible.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u24-ac-the_demo_was_so_smooth_that_th-fa53": {
+  "text": "The demo was so smooth that the client signed the same day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-ac-why_rehearse_at_all_if_you_wer-e3b3": {
+  "text": "Why rehearse at all, if you were ready?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u24-ac-to_catch_the_gaps_early_we_boo-2a53": {
+  "text": "To catch the gaps early. We booked the room for a dry run.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-ac-the_client_called_at_nine_wher-b561": {
+  "text": "The client called at nine. Where were we by then?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-ac-we_had_closed_the_login_bug-e5a9": {
+  "text": "We had closed the login bug.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u25-ac-and_the_export-799d": {
+  "text": "And the export?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-ac-we_had_been_working_on_the_exp-bb95": {
+  "text": "We had been working on the export since seven.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u25-ac-right_and_everybody_looked_wre-2b13": {
+  "text": "Right. And everybody looked wrecked.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-ac-we_had_been_running_on_four_ho-1e82": {
+  "text": "We had been running on four hours of sleep.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u26-ac-can_we_meet_thursday_afternoon-cab2": {
+  "text": "Can we meet Thursday afternoon?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-ac-i_ll_be_presenting_to_the_clie-a42e": {
+  "text": "I'll be presenting to the client then.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u26-ac-friday_morning-f48f": {
+  "text": "Friday morning?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-ac-that_works_by_friday_i_ll_have-0400": {
+  "text": "That works. By Friday I'll have finished the deck.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u26-ac-this_project_has_run_long-89ad": {
+  "text": "This project has run long.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-ac-by_next_month_i_ll_have_been_w-d66a": {
+  "text": "By next month I'll have been working on it for a year.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u27-ac-that_launch_was_rough-4329": {
+  "text": "That launch was rough.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-ac-if_we_had_tested_more_it_would-5f83": {
+  "text": "If we had tested more, it wouldn't have crashed.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u27-ac-and_if_i_had_flagged_the_risk-aa30": {
+  "text": "And if I had flagged the risk, we could have delayed it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-ac-maybe_if_the_client_hadn_t_rus-edc1": {
+  "text": "Maybe. If the client hadn't rushed us, we would have had time.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u27-ac-it_is_done_now-9122": {
+  "text": "It is done now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-ac-it_is_and_we_would_still_be_fi-3f7d": {
+  "text": "It is. And we would still be firefighting if you hadn't stayed late.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u28-ac-how_did_the_interview_go-e5e8": {
+  "text": "How did the interview go?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-ac-badly_i_wish_i_had_prepared_mo-d756": {
+  "text": "Badly. I wish I had prepared more.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u28-ac-what_happened-24a4": {
+  "text": "What happened?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-ac-i_froze_if_only_i_hadn_t_staye-0a47": {
+  "text": "I froze. If only I hadn't stayed up so late.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u28-ac-do_you_want_my_notes_on_it-1669": {
+  "text": "Do you want my notes on it?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-ac-i_d_rather_you_didn_t_honestly-4d30": {
+  "text": "I'd rather you didn't, honestly. Tomorrow, maybe.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u28-ac-the_recruiter_said_the_panel_l-e3d1": {
+  "text": "The recruiter said the panel liked you.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-ac-she_talks_as_if_she_knew_them-d0c0": {
+  "text": "She talks as if she knew them. She does not.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u29-ac-are_we_clear_to_release-0cf4": {
+  "text": "Are we clear to release?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-ac-most_of_the_tests_passed_not_a-e661": {
+  "text": "Most of the tests passed. Not all of them.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u29-ac-which_ones_failed-b8b3": {
+  "text": "Which ones failed?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-ac-every_export_test_broke_none_o-b316": {
+  "text": "Every export test broke. None of the payment ones did.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u29-ac-so_payments_are_safe_and_expor-697d": {
+  "text": "So payments are safe and export is not.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-ac-that_is_it_each_of_the_four_ex-bab7": {
+  "text": "That is it. Each of the four export cases needs a look.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u29-ac-and_the_two_release_notes-324b": {
+  "text": "And the two release notes?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-ac-neither_of_them_is_ready_eithe-9cbb": {
+  "text": "Neither of them is ready. Either one could land first.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u30-ac-the_report_is_gone_from_the_sh-7cd7": {
+  "text": "The report is gone from the shared drive.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u30-ac-somebody_must_have_deleted_it-84a4": {
+  "text": "Somebody must have deleted it. It can't have vanished on its own.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-ac-it_might_have_been_the_sync_jo-90b5": {
+  "text": "It might have been the sync job.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u30-ac-maybe_we_should_have_turned_on-32ad": {
+  "text": "Maybe. We should have turned on version history.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-ac-i_shouldn_t_have_moved_the_fol-28d1": {
+  "text": "I shouldn't have moved the folder. I spent an hour looking for it.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u30-ac-you_needn_t_have_looked_there-3baa": {
+  "text": "You needn't have looked. There is a backup from Friday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-ac-where_are_we_on_the_audit-fde8": {
+  "text": "Where are we on the audit?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-ac-the_documents_have_been_review-9de7": {
+  "text": "The documents have been reviewed. The report is being written now.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u31-ac-when_does_it_go_out-7699": {
+  "text": "When does it go out?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-ac-it_will_be_sent_on_friday_it_m-a512": {
+  "text": "It will be sent on Friday. It must be approved by legal first.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u31-ac-and_last_quarter-4519": {
+  "text": "And last quarter?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-ac-that_one_had_already_been_file-1776": {
+  "text": "That one had already been filed before I joined.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u32-ac-what_is_happening_with_the_mer-c6b6": {
+  "text": "What is happening with the merger?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u32-ac-it_is_rumored_that_they_are_in-8520": {
+  "text": "It is rumored that they are in talks. Nothing is confirmed.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-ac-and_the_c_e_o_is_she_going-5d9f": {
+  "text": "And the CEO? Is she going?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u32-ac-she_is_said_to_be_considering-6847": {
+  "text": "She is said to be considering it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-ac-where_did_you_hear_that-fdca": {
+  "text": "Where did you hear that?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u32-ac-it_is_widely_believed_but_nobo-43d4": {
+  "text": "It is widely believed, but nobody will go on record.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-ac-your_office_looks_completely_d-8c9a": {
+  "text": "Your office looks completely different.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-ac-we_had_it_redesigned_last_mont-dcf3": {
+  "text": "We had it redesigned last month.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u33-ac-did_you_do_the_branding_as_wel-d143": {
+  "text": "Did you do the branding as well?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-ac-we_got_that_done_by_an_agency-9493": {
+  "text": "We got that done by an agency. I wrote the copy myself.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u33-ac-and_the_photographs_on_the_bac-133b": {
+  "text": "And the photographs on the back wall?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-ac-a_friend_took_those_i_had_my_c-b26b": {
+  "text": "A friend took those. I had my camera stolen in the spring.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u34-ac-how_did_the_call_go-592d": {
+  "text": "How did the call go?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-ac-tense_they_asked_why_the_date-bbfc": {
+  "text": "Tense. They asked why the date had moved.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u34-ac-did_you_tell_them-7b6c": {
+  "text": "Did you tell them?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-ac-i_did_then_they_asked_whether-4b15": {
+  "text": "I did. Then they asked whether we could still deliver in June.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u34-ac-and_what_did_you_say-8bbe": {
+  "text": "And what did you say?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-ac-that_i_would_check_could_you_t-5ea1": {
+  "text": "That I would check. Could you tell me where the revised plan is?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u35-ac-what_happened_this_morning-0d08": {
+  "text": "What happened this morning?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-ac-arriving_at_seven_i_found_the-a534": {
+  "text": "Arriving at seven, I found the server room open.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u35-ac-was_anything_taken-4a31": {
+  "text": "Was anything taken?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-ac-having_checked_the_racks_i_cal-b0ab": {
+  "text": "Having checked the racks, I called security.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u35-ac-did_anyone_see_anything-6395": {
+  "text": "Did anyone see anything?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-ac-the_cleaner_saw_somebody_leavi-5e2d": {
+  "text": "The cleaner saw somebody leaving by the back door.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u35-ac-did_you_call_anyone_else-0564": {
+  "text": "Did you call anyone else?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-ac-as_i_was_waiting_for_security-f0e8": {
+  "text": "As I was waiting for security, I called the duty manager.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u36-ac-the_numbers_are_down_this_quar-3d0c": {
+  "text": "The numbers are down this quarter.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-ac-they_are_despite_the_dip_reten-2a16": {
+  "text": "They are. Despite the dip, retention improved.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u36-ac-the_board_will_still_worry-aa91": {
+  "text": "The board will still worry.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-ac-although_the_headline_is_bad_t-6d1c": {
+  "text": "Although the headline is bad, the trend is upward.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u36-ac-and_costs-d0c5": {
+  "text": "And costs?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-ac-sales_fell_whereas_costs_held-2f12": {
+  "text": "Sales fell, whereas costs held. It is early, though.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u37-ac-there_is_a_problem_with_the_in-8090": {
+  "text": "There is a problem with the invoice.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-ac-it_was_mira_who_signed_it_not-a142": {
+  "text": "It was Mira who signed it, not me.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u37-ac-nobody_is_blaming_you_what_we-b6d7": {
+  "text": "Nobody is blaming you. What we need is the original quote.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-ac-i_have_looked_everywhere_never-662a": {
+  "text": "I have looked everywhere. Never have I seen a file vanish like this.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u37-ac-have_you_tried_the_archive-7871": {
+  "text": "Have you tried the archive?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-ac-even_the_archive_copy_is_gone-531e": {
+  "text": "Even the archive copy is gone.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u38-ac-how_did_the_vendor_call_go-b80c": {
+  "text": "How did the vendor call go?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-ac-the_deal_fell_through_they_pul-9e8a": {
+  "text": "The deal fell through. They pulled out on Friday.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u38-ac-did_they_say_why-d414": {
+  "text": "Did they say why?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-ac-they_put_it_down_to_budget_i_a-246c": {
+  "text": "They put it down to budget. I am not taken in.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u38-ac-so_what_now-5c74": {
+  "text": "So what now?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-ac-we_look_into_the_other_two_and-9d42": {
+  "text": "We look into the other two, and write off the six weeks.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u39-ac-when_are_you_in_lisbon-5242": {
+  "text": "When are you in Lisbon?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-ac-in_june_on_the_fourteenth_to_b-0b84": {
+  "text": "In June. On the fourteenth, to be exact.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u39-ac-and_the_meeting-c7b6": {
+  "text": "And the meeting?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-ac-at_nine_at_the_clients_office-fa60": {
+  "text": "At nine, at the client’s office, on the third floor.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u39-ac-where_should_i_wait-8e67": {
+  "text": "Where should I wait?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-ac-in_reception_i_land_at_the_air-9d4d": {
+  "text": "In reception. I land at the airport in the morning.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u39-ac-should_i_send_the_deck_to_you-13f7": {
+  "text": "Should I send the deck to you?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-ac-send_it_to_ana_i_am_presenting-a41c": {
+  "text": "Send it to Ana. I am presenting it for her team.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u39-ac-and_where_do_i_find_the_room_p-d1c5": {
+  "text": "And where do I find the room plan?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-ac-on_the_wall_in_reception_not_o-11ce": {
+  "text": "On the wall in reception, not on the desk.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u40-ac-we_need_to_raise_a_concern_bef-a7db": {
+  "text": "We need to raise a concern before Thursday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-ac-agreed_i_will_make_the_case_in-05b6": {
+  "text": "Agreed. I will make the case in writing.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u40-ac-it_depends_on_how_hard_you_wan-0ba4": {
+  "text": "It depends on how hard you want to push.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-ac-we_should_strike_a_balance_i_a-1bf7": {
+  "text": "We should strike a balance. I am afraid of sounding obstructive.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u40-ac-then_draw_a_distinction_betwee-a087": {
+  "text": "Then draw a distinction between the cost and the timing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-ac-good_a_short_clear_written_not-d5b8": {
+  "text": "Good. A short, clear, written note, and nothing more.",
+  "voice": "m",
+  "source": "cut"
+ }
+}

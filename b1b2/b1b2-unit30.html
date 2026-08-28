@@ -1,0 +1,1010 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light only"><meta name="theme-color" content="#FAFAF7"><title>Unit 30 &middot; Must have, should have, needn't have &middot; Concept</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><style>
+  :root{
+    --ink:#0A0B0D; --navy:#1F5570; --navy-dark:#123A4E; --white:#fff;
+    --paper:#FAFAF7; --panel:#F1F2ED; --panel-2:#E9EAE3;
+    --red:#B3132B; --red-hi:#8E0F22; --green:#1E7A44; --green-bg:#E7F4EB;
+    --gray:#6B6F76; --gray-dark:#33363B;
+    --line:#DCDDD6;
+    --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+    --serif:'Instrument Serif',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:light;background:var(--paper);}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  em,i{font-family:var(--serif);font-style:italic;color:var(--navy);}
+  #nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:12px 32px;background:var(--white);border-bottom:1px solid var(--line);}
+  #nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--gray-dark);}
+  #nav .brand img{height:30px;width:30px;}
+  #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
+  #nav .brand:hover .word{color:var(--red-hi);}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  .print-head{display:none;}
+  @media print{
+    .print-head{display:flex;align-items:center;justify-content:space-between;
+      padding-bottom:20px;margin-bottom:32px;border-bottom:1px solid #ccc;}
+    .print-head img{height:78px;}
+    .print-head .pline{font-size:12.5px;letter-spacing:2.5px;color:#555;text-transform:uppercase;}
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 100px;}
+  /* GATE */
+  #gate{max-width:420px;margin:80px auto;text-align:center;padding:0 24px;}
+  #gate h1{font-family:var(--serif);font-weight:400;font-size:30px;margin-bottom:10px;color:var(--ink);}
+  #gate p{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:26px;}
+  #gate input{width:100%;background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:14px 16px;border-radius:10px;font-size:16px;letter-spacing:2px;text-align:center;margin-bottom:14px;}
+  #gate input:focus{outline:none;border-color:var(--navy);}
+  #gate button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:14px;font-weight:600;font-size:14.5px;cursor:pointer;}
+  #gate button:hover{background:var(--red-hi);}
+  #gateError{color:var(--red);font-size:13px;margin-top:12px;min-height:16px;}
+  #content{display:none;}
+  h2.sec{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,34px);margin:56px 0 4px;letter-spacing:-.01em;color:var(--ink);}
+  .sec-kicker{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--navy);margin:0 0 8px;}
+  .goal{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:22px;font-style:italic;}
+  .dialogue{background:var(--panel);border-radius:14px;padding:24px 26px;margin:18px 0;border:1px solid var(--line);}
+  .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
+  .dialogue p:last-child{margin-bottom:0;}
+  .dialogue b{color:var(--navy);}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
+  .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
+  .body-copy b{color:var(--ink);}
+  .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
+  .callout b{color:var(--navy);}
+  .callout p{margin:0 0 12px;}
+  .callout p:last-child{margin-bottom:0;}
+  /* SPLIT CARD */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+  @media (max-width:640px){.split{grid-template-columns:1fr;}}
+  .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+  .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+  .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+  .card-col dt:first-child{margin-top:0;}
+  .card-col dd{margin:2px 0 0;}
+  .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+  .moves{margin:16px 0 0;padding:0;list-style:none;}
+  .moves li{font-size:15px;line-height:1.6;color:var(--gray-dark);padding:8px 0;border-bottom:1px dashed var(--line);}
+  .moves li:last-child{border-bottom:none;}
+  .moves .slot{color:var(--navy);font-weight:600;}
+  .diagram{margin:26px 0;text-align:center;}
+  .diagram svg{max-width:100%;height:auto;}
+  .diagram-cap{font-size:12.5px;color:var(--gray);font-style:italic;margin-top:16px;line-height:1.5;}
+  .ex-block{margin:44px 0;padding-top:28px;border-top:1px solid var(--line);}
+  .ex-label{display:inline-block;background:var(--navy);color:#fff;font-weight:600;font-size:12px;
+    padding:4px 11px;border-radius:6px;margin-bottom:10px;}
+  .ex-title{font-size:19px;font-weight:600;margin:0 0 6px;color:var(--ink);}
+  .ex-instr{color:var(--gray);font-size:14px;margin-bottom:18px;font-style:italic;}
+  .q{margin-bottom:16px;}
+  .q-text{font-size:15px;margin-bottom:8px;color:var(--gray-dark);line-height:1.55;}
+  .q-text .num{color:var(--navy);font-weight:700;margin-right:6px;}
+  .q input[type=text]{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
+  .q input[type=text]:focus{outline:none;border-color:var(--navy);}
+  .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
+  .choices{display:flex;flex-wrap:wrap;gap:8px;}
+  .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .choice-btn:hover{border-color:var(--navy);}
+  .choice-btn.picked{border-color:var(--navy);background:var(--panel);}
+  .choice-btn.correct{border-color:var(--green);background:var(--green-bg);color:var(--green);}
+  .choice-btn.wrong{border-color:var(--red);background:#FBE9EB;color:var(--red);}
+  .fb{display:block;font-size:13px;margin-top:6px;min-height:16px;font-weight:600;line-height:1.5;}
+  .fb.ok{color:var(--green);}
+  .fb.bad{color:var(--red);}
+  select.match-select{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:8px 10px;border-radius:8px;font-size:13.5px;width:100%;font-family:var(--sans);}
+  .check-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);padding:9px 20px;
+    border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;margin-top:6px;font-family:var(--sans);}
+  .check-btn:hover{background:var(--navy);color:#fff;}
+  .reveal-btn{background:none;border:1.5px solid var(--line);color:var(--gray);padding:9px 20px;
+    border-radius:999px;font-size:13px;cursor:pointer;font-family:var(--sans);}
+  .reveal-btn:hover{border-color:var(--ink);color:var(--ink);}
+  .key-box{display:none;background:var(--panel);border-radius:10px;padding:16px 18px;margin-top:12px;font-size:14px;color:var(--gray-dark);line-height:1.7;border:1px solid var(--line);}
+  .key-box.shown{display:block;}
+  .key-box b{color:var(--green);}
+  .soft-note{font-size:12px;color:var(--gray);margin-top:6px;}
+  .task-box{background:var(--panel);border-radius:12px;padding:20px 22px;border:1px solid var(--line);
+    font-size:15px;line-height:1.7;color:var(--gray-dark);}
+  .task-box p{margin:0 0 14px;}
+  .task-box p:last-child{margin-bottom:0;}
+  .task-box b{color:var(--ink);}
+  #scoreBar{position:sticky;bottom:0;background:rgba(250,250,247,.95);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);padding:16px 24px;display:flex;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  #scoreBar .score{font-size:14px;color:var(--gray);}
+  #scoreBar .score b{color:var(--ink);font-size:16px;}
+  .action-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:11px 22px;
+    font-weight:600;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .action-btn:hover{background:var(--red-hi);}
+  .action-btn.outline{background:none;border:1.5px solid var(--line);color:var(--ink);}
+  .action-btn.outline:hover{border-color:var(--ink);}
+  @media print{
+    #nav,#scoreBar,.check-btn,.reveal-btn,input,select,.choice-btn{display:none !important;}
+    body{background:#fff;color:#000;}
+    .key-box{display:block !important;}
+    a{color:#000;}
+  }
+  .unit-nav{display:flex;justify-content:space-between;gap:12px;margin:50px 0 10px;padding-top:24px;border-top:1px solid var(--line);}
+  .nav-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--sans);
+    font-weight:600;font-size:13.5px;padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);
+    color:var(--ink);transition:border-color .2s ease,color .2s ease;}
+  .nav-btn:hover{border-color:var(--navy);color:var(--navy);}
+  .nav-btn.next{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .nav-btn.next:hover{background:var(--navy-dark);}
+  @media print{.unit-nav{display:none !important;}}
+  #privacyModal{position:fixed;inset:0;background:rgba(10,11,13,.55);z-index:200;
+    display:none;align-items:center;justify-content:center;padding:24px;}
+  #privacyModal.shown{display:flex;}
+  #privacyModal .card{background:var(--white);border-radius:16px;max-width:420px;width:100%;
+    padding:28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+  #privacyModal h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 12px;color:var(--ink);}
+  #privacyModal p{font-size:14px;line-height:1.6;color:var(--gray-dark);margin:0 0 20px;}
+  #privacyModal button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:13px;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--sans);}
+  #privacyModal button:hover{background:var(--red-hi);}
+  .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
+  @media print{#privacyModal{display:none !important;}}
+
+  /* ---- A1/A2 additions. Everything above this line is the C1 stylesheet,
+     read from the published page at build time and not edited here. ---- */
+  .ex-label.named{display:inline-block;width:auto;min-width:0;padding:0 10px;border-radius:11px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
+  .split.three{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:640px){.split.three{grid-template-columns:1fr;}}
+  /* ================= FINDABILITY, 30 Aug 2026 =========================
+     "A CONTROL MUST ANNOUNCE ITSELF AS A CONTROL." Netto, after opening the
+     book on a phone. SERIES_STANDARD 9p.
+
+     ONE CONTROL, ONE SHAPE, ONE POSITION. The pill below is the only thing in
+     this book that plays audio, it carries a play mark and a word, it is at
+     least 44x44, and it is the FIRST thing on its line everywhere.
+
+     WHY THE PLAY MARK IS A ::before AND NOT A CHARACTER IN THE MARKUP: the
+     reading copies and ceiling.py read the markup, and a triangle in the
+     button's text would land in the .txt as a word and in the word count as a
+     word. The x on a wrong form is the opposite case and is deliberately in
+     the markup -- there the mark IS the teaching and the .txt must carry it.
+
+     44px: measured at 375px, between 59 and 70 of about 75 controls per unit
+     were under the minimum touch target. Every one of them is a rule here.
+     NOTHING IS EDITED IN kit_final/unit.css. Three shipped books read that
+     file; these are overrides in the A1/A2 block, which is appended after it. */
+  .audio-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);
+    border-radius:999px;padding:0 14px;min-height:44px;font-size:13px;font-weight:600;
+    font-family:var(--sans);cursor:pointer;margin-right:6px;
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+  /* ===== THE PLAY MARK IS AN SVG, NOT A CHARACTER. 30 Aug 2026 =============
+     U+25B6 IS AN EMOJI ON iOS. It has no default text presentation there, so
+     Safari substitutes Apple Color Emoji and draws a small white triangle
+     INSIDE A GREY-BLUE ROUNDED SQUARE -- a second button nested in the button,
+     which is exactly what Netto saw on unit 10's Access. Reproduced here on a
+     Mac by forcing the same font, so it is not a guess about his phone.
+     THE FIRST OPTION -- enlarge it and suppress the frame in CSS -- IS
+     IMPOSSIBLE, and that is a fact about glyphs rather than a preference: the
+     square is part of the emoji font's own artwork, a bitmap, and no CSS
+     property reaches inside a glyph. Enlarging only makes the square bigger.
+     U+FE0E, the text-presentation selector, does work today; it is a hint to
+     font selection, it varies by iOS version, and it would put a second
+     invisible character into every button. Rejected as fragile.
+     AN SVG BACKGROUND ON THE PSEUDO-ELEMENT ends the class: no font is
+     involved, nothing can substitute, and it is still pure CSS, so not one
+     line of markup changes in any of the four places.
+     THE PROPORTION: the mark's height equals the label's font-size. A 13px
+     label gets a 13px mark, an 11px label an 11px mark. That is the same
+     relationship the x on a wrong form has to the words around it -- set at
+     the surrounding size -- so the play triangle is not the only oversized
+     thing on the page. It was 0.78em before, which is why it read as tiny
+     inside a 44px control.
+     THIS IS THE SECOND TIME THIS CHARACTER HAS COST A ROUND. The first was the
+     octal escape that shipped "B6 Listen"; SERIES_STANDARD 9q named the class
+     then -- the layer no check reads -- and this is the same layer. */
+  .audio-btn::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
+  /* Record, and Check the line, are not play buttons. */
+  #sayRec::before,#sayShow::before{content:none;}
+  .audio-btn:hover{border-color:var(--navy);}
+  .audio-btn:disabled{color:var(--gray);cursor:default;opacity:.5;}
+  .audio-btn.rec-on{background:var(--red);border-color:var(--red);color:#fff;}
+  .listen-note{font-size:12.5px;color:var(--gray);line-height:1.65;margin:0 0 18px;}
+  /* CONTROL FIRST, THEN THE NAME. It used to sit AFTER the speaker name, which
+     put it at two different x-positions down one dialogue -- 86px after "Ana",
+     103px after "Marco" -- so there was no column to aim at. */
+  .audio-line{display:flex;align-items:flex-start;gap:10px;margin:0 0 12px;
+    flex-wrap:wrap;}
+  .audio-line .who{flex:0 0 auto;padding-top:11px;}
+  .audio-line .audio-btn{flex:0 0 auto;margin-right:0;}
+  .audio-line .line-text{padding-top:10px;flex:1 1 200px;}
+  /* ON A NARROW COLUMN THE LINE TAKES THE FULL WIDTH. Control-first is right
+     and it costs 145px of the row, which on a phone left a 180px text column
+     wrapping every line three times. The control and the name keep the first
+     row; the sentence gets its own, full width. Nothing changes above 640px. */
+  @media (max-width:640px){
+    .audio-line{gap:8px 10px;}
+    .audio-line .line-text{flex:1 0 100%;padding-top:2px;}
+  }
+  /* ---- the vocabulary bank: its own section, between Access and Analysis.
+     Sound first: the meaning is on the card from the start, the spelling is
+     revealed on request, so the student meets the word as a sound and checks
+     the letters afterwards. ---- */
+  /* ---- the bank as ROWS, not cards. Eight items have to be readable as one
+     set, which means all eight on screen at once; eight cards are eight
+     screens. Nothing is hidden here: this is the presentation moment and the
+     learner has nothing to retrieve yet. Hiding is a testing move and it lives
+     in the exercises. ---- */
+  .bank{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin:16px 0 0;}
+  @media (max-width:640px){.bank{grid-template-columns:1fr;}}
+  .bank-item{display:flex;align-items:center;gap:12px;padding:7px 0;
+    border-bottom:1px solid var(--line);}
+  .bank-img{width:100%;height:auto;display:block;}
+  /* THE PICTURE AND ITS LABEL ARE ONE BUTTON. Not two: the clip merge of
+     29 Aug was right, and two identical controls are a question the learner
+     answers by pressing both. What the merge cost was the LABEL, because the
+     control that survived was the picture -- and a picture reads as an
+     illustration. The answer to an unlabelled control is a label. */
+  .bank-play{flex:0 0 76px;display:flex;flex-direction:column;align-items:stretch;
+    padding:0;border:1.5px solid var(--navy);background:var(--white);
+    border-radius:10px;cursor:pointer;overflow:hidden;line-height:0;}
+  .bank-cap{display:flex;align-items:center;justify-content:center;gap:5px;
+    background:var(--navy);color:#fff;font-family:var(--sans);font-size:11px;
+    font-weight:600;padding:6px 0;line-height:1.2;}
+  .bank-cap::before{content:"";flex:0 0 auto;width:9px;height:11px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%23ffffff'/%3E%3C/svg%3E");}
+  /* A ROW WITH NO PICTURE GETS THE SAME OBJECT IN THE SAME COLUMN. That is
+     what makes unit 3 look like unit 1, ends two kinds of control inside one
+     list in units 2 and 4, and removes the empty bordered spacer that read as
+     a drawing which had failed to load. */
+  .bank-play-flat{border-radius:999px;min-height:44px;}
+  .bank-play-flat .bank-cap{padding:14px 0;border-radius:999px;}
+  .bank-play:hover{opacity:.9;}
+  .draft-note{border-left:4px solid #b45309;background:#fff7ed;}
+  .status-ok{border-left:4px solid #15803d;background:#f0fdf4;}
+  .status-open{border-left:4px solid #6b7280;background:#f8f8f7;}
+  /* .bank-noimg IS GONE, 30 Aug 2026. It was an empty bordered cell kept so
+     the two kinds of row would line up; on a phone it read as a drawing that
+     had failed to load. The rows line up because both now carry a control. */
+  .listen-q{margin-right:10px;vertical-align:middle;}
+  .numset{margin:6px 0 26px;}
+  .numset-head{font-family:var(--serif);font-size:19px;margin:18px 0 2px;color:var(--ink);}
+  .numset-note{font-size:13px;color:var(--gray);margin:0 0 12px;}
+  .numstrip{display:flex;flex-wrap:wrap;gap:7px;}
+  .numcell{background:var(--white);border:1.5px solid var(--line);border-radius:9px;
+    padding:8px 13px;font:inherit;font-size:15px;color:var(--ink);cursor:pointer;
+    display:inline-flex;align-items:baseline;gap:8px;}
+  /* Tabular figures so the digits line up down the column. */
+  /* inline-block: min-width and text-align are block-only properties and
+     verify.py is right to refuse them on a bare inline. */
+  .numfig{display:inline-block;font-variant-numeric:tabular-nums;
+    font-weight:700;color:var(--navy);min-width:1.7em;text-align:right;}
+  .numwd{font-size:15px;}
+  .numcell:hover{border-color:var(--navy);color:var(--navy);}
+  /* "The base. Listen once, then say the row." -- and nothing on the screen
+     said listen. The chips ARE the control; now they say so. */
+  .numcell{min-height:44px;border-color:var(--navy);}
+  .numcell::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
+  /* CONTROL FIRST. It used to be the fifth column, at the far right of a
+     narrow screen, furthest from the thumb and last in reading order. */
+  .numpairs{display:grid;grid-template-columns:auto auto 1fr auto 1fr;gap:8px 12px;
+    align-items:center;max-width:520px;}
+  .numpair-head{font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--gray);}
+  /* THE UNDERLINE CAME OFF. A non-control may not carry a control's marks:
+     this one was heavier than the real button's and on the same screen. */
+  .numword{font-size:16px;color:var(--ink);padding:4px 0;}
+  .numplay{justify-self:start;}
+  .bank-more{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 0;}
+  .more-btn{display:inline-block;background:var(--navy);color:var(--white);
+    border-radius:999px;padding:10px 20px;font-size:14px;font-weight:600;
+    text-decoration:none;letter-spacing:.01em;}
+  .more-btn:hover{opacity:.88;}
+  /* ---- the rest of the controls, to the same floor. Six declarations, no
+     markup. IOS SAFARI ZOOMS ANY FOCUSED CONTROL UNDER 16px AND DOES NOT ZOOM
+     BACK: every field and every dropdown in the book did it, in every
+     exercise, and it is the one defect here that a learner meets on the very
+     first tap. ---- */
+  .check-btn{min-height:44px;padding:0 20px;display:inline-flex;align-items:center;}
+  .say-row{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;}
+  .more-btn{min-height:44px;padding:0 20px;display:inline-flex;align-items:center;}
+  .action-btn{min-height:44px;padding:0 22px;display:inline-flex;align-items:center;}
+  .choice-btn{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;}
+  .q input[type=text]{font-size:16px;min-height:44px;}
+  select.match-select{font-size:16px;min-height:44px;}
+  #gate input{font-size:16px;}
+  .bank-more-note{font-size:13px;color:var(--gray);flex:1 1 220px;}
+  .bank-item-flat{padding:9px 0;}
+  /* .bank-word-btn IS GONE. The word was the control on picture-less rows and
+     it announced itself with a 1px DOTTED underline in the palest grey in the
+     book, 20px tall -- while .numword, which does nothing at all, carried a
+     SOLID underline in the same grey. The affordance was inverted. The word is
+     a word now, and the control beside it is a control. */
+  .bank-body{flex:1 1 auto;min-width:0;}
+  .bank-word{font-weight:600;font-size:15px;color:var(--ink);display:block;}
+  .bank-fig{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;}
+  .bank-sent{font-family:var(--serif);font-size:14.5px;color:var(--navy);display:block;
+    line-height:1.35;}
+  @media print{.bank-word{display:inline !important;}}
+  .listen-note b{color:var(--gray-dark);}
+  /* ---- exercise I: listen, say it, read. The record-and-compare component
+     from Calibrated Speech, in this book's tokens. The model's amplitude
+     envelope is gray and the student's own is red, which is that book's
+     convention: red marks what the student produced, the same job it does in
+     the Exercise B key. ---- */
+  .say-rows{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;}
+  .say-row{background:var(--white);border:1.5px solid var(--line);border-radius:999px;
+    padding:8px 15px;font-family:var(--sans);font-size:13.5px;color:var(--ink);cursor:pointer;}
+  .say-row:hover{border-color:var(--navy);}
+  .say-row.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .say-row .who{color:inherit;font-weight:600;margin-right:7px;}
+  .say-panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;}
+  .say-sel{font-size:14.5px;color:var(--gray-dark);margin:0 0 14px;}
+  .say-sel b{color:var(--ink);}
+  .say-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .wave{width:100%;height:auto;display:block;background:var(--white);
+    border:1px solid var(--line);border-radius:10px;}
+  .say-text{font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.45;
+    margin:14px 0 0;min-height:26px;}
+  .say-status{font-size:13px;color:var(--gray);margin:8px 0 0;min-height:18px;line-height:1.5;}
+  .say-status .win{color:var(--green);font-weight:600;}
+  .mic-msg{font-size:12.5px;color:var(--red);line-height:1.6;margin:10px 0 0;min-height:16px;}
+  @media print{
+    .audio-btn,.say-btns,.wave,.say-rows{display:none !important;}
+  }
+
+  .wrong{color:#B3132B;font-weight:600;white-space:nowrap;}
+  .wrong .x{font-weight:700;}
+
+  #nav{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#3A3D42;}
+  .brand img{height:30px;width:30px;}
+  .brand .word{font-weight:700;letter-spacing:3px;font-size:13px;}
+  .nav-btn{display:inline-block;border:1px solid var(--navy);color:var(--navy);
+    border-radius:999px;padding:8px 16px;font-size:13px;text-decoration:none;margin-left:8px;}
+  .action-btn{border:none;border-radius:999px;padding:12px 22px;font-weight:600;
+    font-size:14px;cursor:pointer;background:var(--navy);color:#fff;}
+  .action-btn.outline{background:#fff;color:var(--navy);border:1px solid var(--navy);}
+  #gate{max-width:420px;margin:14vh auto;padding:0 24px;text-align:center;}
+  #gate h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;margin:0 0 8px;}
+  #gate p{color:#6B6F76;font-size:14px;line-height:1.6;margin:0 0 22px;}
+  #gate input{width:100%;padding:13px;border:1px solid #DCDDD6;border-radius:10px;box-sizing:border-box;
+    font-size:16px;text-align:center;letter-spacing:2px;text-transform:uppercase;}
+  #gate button{width:100%;margin-top:12px;background:#B3132B;color:#fff;border:none;
+    border-radius:999px;padding:13px;font-weight:600;font-size:14px;cursor:pointer;}
+  #gateError{color:#B3132B;font-size:13px;margin-top:10px;min-height:18px;}
+  #privacyModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);
+    align-items:center;justify-content:center;z-index:99;padding:24px;}
+  #privacyModal.shown{display:flex;}
+  #privacyModal .card{background:#fff;border-radius:16px;max-width:420px;width:100%;padding:28px 26px;}
+  #privacyModal h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:22px;margin:0 0 12px;}
+  #privacyModal p{font-size:14px;line-height:1.6;color:#3A3D42;margin:0 0 20px;}
+  #privacyModal button{width:100%;background:#B3132B;color:#fff;border:none;
+    border-radius:999px;padding:13px;font-weight:600;font-size:14px;cursor:pointer;}
+  .foot{display:flex;gap:10px;align-items:center;justify-content:space-between;
+    margin:46px 0 10px;flex-wrap:wrap;}
+  .print-reminder{font-size:12px;color:#6B6F76;margin-top:6px;text-align:right;}
+  @media print{#privacyModal,#gate,.topbar,.foot,.print-reminder{display:none !important;}}
+
+  
+  .wrap{position:relative;z-index:1;}
+  .listen-note{font-size:13px;letter-spacing:1px;color:var(--navy);font-weight:600;margin:0 0 6px;}
+  .wrong{color:var(--red);text-decoration:line-through;text-decoration-color:rgba(179,19,43,.45);}
+  /* series.css line 365 sets .wrong{white-space:nowrap}. That is CORRECT in a
+     book where .wrong holds a fragment: you do not want "he go" split across
+     two lines, because the learner reads the wrong form as one object.
+     IN THIS BOOK .wrong HOLDS WHOLE SENTENCES. nowrap ran them off the right
+     edge of the phone -- unit 9 pushed the page to 413px and unit 10 to 381px
+     against a 375px screen -- so the learner could not read the END of a
+     string he is being asked to judge. In a book whose fourth rule is about
+     what a printed error may be, half a printed error is the worst version.
+     Wrapping is allowed here. The line-through carries across the break. */
+  .wrong{white-space:normal;}
+  .muted{color:var(--gray);font-weight:400;font-family:var(--serif);font-size:15px;}
+  .hint{color:var(--gray);font-size:13.5px;font-style:italic;}
+  .hint b{color:var(--navy);font-style:normal;}
+  .one-question{background:var(--panel);border:1.5px solid var(--navy);border-radius:14px;
+    padding:20px 22px;margin:24px 0 20px;}
+  .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 10px;}
+  .one-question .oq{font-family:var(--serif);font-size:clamp(21px,3vw,26px);line-height:1.3;margin:0 0 10px;color:var(--ink);}
+  .one-question .oq-note{font-size:14.5px;line-height:1.6;color:var(--gray-dark);margin:0;}
+  .form-box{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 26px;}
+  .form-box .fb-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 10px;}
+  .form-box table{border-collapse:collapse;width:100%;font-size:15px;}
+  .form-box td{padding:7px 0;color:var(--gray-dark);vertical-align:baseline;}
+  .form-box td:nth-child(2){padding-left:18px;white-space:nowrap;}
+  .form-box td.fx{font-family:var(--serif);font-size:16.5px;color:var(--navy);padding-left:18px;text-align:right;}
+  /* THE PHONE IS NOT AN EDGE CASE, IT IS THE READER. Netto, 27 Aug 2026: the
+     books live in the app, so almost all reading is on a phone.
+     The first version hid the example column below 520px to stop the table
+     overflowing. IT DID NOT STOP THE OVERFLOW, and it hid a third of the form
+     box from almost every learner who will ever open the page: the paradigm is
+     one of the four things the explanation must carry, and its examples were
+     rendering nowhere. The row collapses to a block instead, so everything is
+     visible and nothing is wider than the column. */
+  @media (max-width:560px){
+    .form-box table,.form-box tbody,.form-box tr,.form-box td{display:block;width:auto;}
+    .form-box tr{padding:9px 0;border-bottom:1px solid var(--line);}
+    .form-box tr:last-child{border-bottom:none;padding-bottom:0;}
+    .form-box tr:first-child{padding-top:0;}
+    .form-box td{padding:1px 0 !important;text-align:left !important;white-space:normal !important;}
+    .form-box td:first-child{color:var(--gray);font-size:13px;}
+    .form-box td.fx{display:block;font-size:16.5px;padding-top:2px !important;}
+  }
+  .ambr{background:var(--white);border:1.5px solid var(--line);border-left:3px solid var(--red);
+    border-radius:0 12px 12px 0;padding:16px 20px;margin:22px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
+  .ambr .ab-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--red);margin:0 0 10px;}
+  .ambr p{margin:0 0 10px;} .ambr p:last-child{margin-bottom:0;}
+  .ambr b{color:var(--ink);}
+  /* THE FIGURE IS A PICTURE, NOT A PARAGRAPH. Netto, 27 Aug 2026:
+     "deixe no maior tamanho possivel respeitando a visualizacao no celular."
+     The text column keeps its 24px gutter, because about 42 characters a line
+     is where the prose reads best. THE FIGURE DOES NOT HAVE TO OBEY THAT
+     GUTTER. On a phone it steps 8px out on each side and draws at 343 instead
+     of 327. The caption below it stays on the text margin, so the page still
+     has one left edge for everything you read as a sentence.
+     The 340px cap was the other half of the waste. On a 430px phone the
+     column offers 398 and the figure was still taking 340. The cap is now 420,
+     which no phone reaches, so THE SCREEN is the limit and not a number I
+     picked once and stopped looking at. */
+  /* THE DIALOGUE PLAYS. Netto, 27 Aug 2026: "coloque o audio apenas no dialogo."
+     THE WHOLE LINE IS THE CONTROL, not a button beside it. Six 44px buttons in a
+     six-line scene is more furniture than dialogue, and the line is already a
+     target far bigger than any button could be. The dot is the affordance. */
+  .say-line{position:relative;box-sizing:border-box;min-height:44px;
+            padding:9px 0 9px 24px;cursor:pointer;border-radius:6px;}
+  .say-line:focus-visible{outline:2px solid var(--navy);outline-offset:3px;}
+  .say-dot{position:absolute;display:block;left:0;top:15px;width:11px;height:11px;border-radius:50%;
+           border:1.5px solid var(--gray);opacity:.55;}
+  .say-line.playing{background:var(--panel);}
+  .say-line.playing .say-dot{background:var(--navy);border-color:var(--navy);opacity:1;}
+  .scene-btn{margin-top:14px;min-height:44px;padding:0 18px;border-radius:22px;
+             border:1.5px solid var(--line);background:var(--white);color:var(--ink);
+             font:inherit;font-size:14px;cursor:pointer;}
+  .scene-btn:hover{border-color:var(--navy);}
+  .diagram svg{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;}
+  @media (max-width:460px){
+    .diagram svg{width:calc(100% + 16px);max-width:none;margin-left:-8px;margin-right:-8px;}
+  }
+  .check-btn,.reveal-btn,.choice-btn{min-height:44px;}
+  /* series.css line 319 gives .choice-btn display:inline-flex, to centre the
+     label inside a 44px tap target. THAT SILENTLY DELETES A SPACE. A flex
+     container makes each child a flex item, and the leading whitespace of an
+     anonymous text item is stripped, so
+        <em>tell</em> needs a person
+     renders as "tellneeds a person". The space IS in the HTML. Flex eats it.
+     Netto saw it before any check did, and no check I own could have seen it:
+     every one of them reads the SOURCE, where the space is present.
+     The rule is latent in four other button classes for the same reason. A1/A2
+     never tripped it because none of its options carries an inline tag. THIS
+     BOOK IS THE FIRST TO PUT ONE THERE. It has exactly two, both of them in
+     unit 16, and two was enough.
+     inline-block lays the label out as ordinary text and keeps the tap target
+     with padding instead of centring. */
+  .choice-btn{display:inline-block !important;align-items:initial;
+              padding:12px 15px !important;line-height:1.35;}
+  .review-key{margin:56px 0 0;padding:22px 24px;border:1.5px solid var(--navy);border-radius:12px;
+    background:var(--panel);font-size:14px;line-height:1.6;color:var(--gray-dark);}
+  .review-key .rk-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 14px;}
+  .review-key .rk-q{margin:16px 0 6px;color:var(--ink);}
+  .review-key .rk-q:first-of-type{margin-top:0;}
+  .review-key ol.rk{margin:0 0 4px;padding-left:22px;}
+  .review-key ol.rk li{margin:3px 0;}
+  .review-key .rk-alt{color:var(--gray);font-size:13px;}
+  .review-key .rk-match{margin:2px 0 4px;font-variant-numeric:tabular-nums;}
+  .build-note{margin:24px 0 0;padding:22px 24px;border:1.5px dashed var(--red);border-radius:12px;
+    background:#FDF6F7;font-size:13.5px;line-height:1.65;color:var(--gray-dark);}
+  .build-note p{margin:0 0 12px;} .build-note p:last-child{margin-bottom:0;}
+  .build-note b{color:var(--red);}
+</style></head><body><div id="gate">
+  <h1>Unit 30</h1>
+  <p>Must have, should have, needn't have<br>This code unlocks every book in the series. Enter it once.</p>
+  <input type="text" id="codeInput" placeholder="ACCESS CODE" maxlength="12" autocomplete="off">
+  <button onclick="tryCode()">Unlock unit</button>
+  <div id="gateError"></div>
+</div>
+<div id="privacyModal"><div class="card">
+  <h3>Nothing is saved here</h3>
+  <p>This site doesn't have a login and doesn't store your answers, scores, or progress anywhere. Once you close or refresh the page, this session is gone for good.</p>
+  <p>If you want to keep a record of your work, use the Print / Save as PDF button at the bottom of the unit before you leave it.</p>
+  <button onclick="dismissPrivacy()">Got it</button>
+</div></div>
+<div id="content" style="display:none"><div id="nav"><a class="brand" href="b1b2.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIyMCAxNzAgNDQwIDI2MCI+CjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjwvc3ZnPgo=" alt="Concept"><span class="word">CONCEPT</span></a><div><a class="nav-btn" href="b1b2.html">&larr; Back to book</a><a class="nav-btn" href="b1b2.html">All units</a></div>
+</div>
+
+<div class="wrap">
+  <p class="sec-kicker" style="margin-top:36px;">PROFESSIONAL ENGLISH PRACTICE &nbsp;&middot;&nbsp; B2 &nbsp;&middot;&nbsp; MODAL + HAVE + PARTICIPLE</p>
+  <h2 class="sec" style="margin-top:4px;">Must have, should have, needn't have</h2>
+  <p class="goal" style="font-size:16px;">Saying how sure you are, and what should have been done.</p>
+
+  <p class="sec-kicker" style="margin-top:48px;">ACCESS</p>
+  <p class="goal"><b>Goal.</b> Two colleagues try to establish where a file went. Notice the blue forms. All of them are the same shape, and the small word in front changes the job. Just see the pattern here.</p>
+  <div class="dialogue">
+    <p class="say-line" data-a="u30-ac-the_report_is_gone_from_the_sh-7cd7" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Emre</span>The report is gone from the shared drive.</p>
+    <p class="say-line" data-a="u30-ac-somebody_must_have_deleted_it-84a4" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Mei</span>Somebody <b>must have deleted</b> it. It <b>can't have vanished</b> on its own.</p>
+    <p class="say-line" data-a="u30-ac-it_might_have_been_the_sync_jo-90b5" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Emre</span>It <b>might have been</b> the sync job.</p>
+    <p class="say-line" data-a="u30-ac-maybe_we_should_have_turned_on-32ad" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Mei</span>Maybe. We <b>should have turned on</b> version history.</p>
+    <p class="say-line" data-a="u30-ac-i_shouldn_t_have_moved_the_fol-28d1" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Emre</span>I <b>shouldn't have moved</b> the folder. I spent an hour looking for it.</p>
+    <p class="say-line" data-a="u30-ac-you_needn_t_have_looked_there-3baa" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Mei</span>You <b>needn't have looked</b>. There is a backup from Friday.</p>
+    <button class="scene-btn" onclick="playScene()">Play the whole conversation</button>
+  </div>
+  <div class="ex-block" style="border-top:none;padding-top:8px;margin-top:18px;">
+    <p class="listen-note"><b>Check your reading.</b></p>
+    <p class="ex-instr">Three questions about the conversation. Every blue form has the same shape, so read the word in front of it. Answer before you read the explanation.</p>
+    <div id="exR"></div>
+    <button class="check-btn" onclick="checkPick('R',R_DATA,'Yes.','Not that one.')">Check</button>
+    <div class="fb" id="Rscore"></div>
+  </div>
+
+  <p class="sec-kicker" style="margin-top:52px;">VOCABULARY</p>
+  <p class="body-copy">The words for reconstructing what happened, and for saying how much you will vouch for it.</p>
+  <div class="bank">
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">clearly</span><span class="bank-sent">the evidence leaves no room for another reading</span></span></div>
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">reportedly</span><span class="bank-sent">that is what is being said, and you are not vouching for it</span></span></div>
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">piece it together</span><span class="bank-sent">work out what happened from what is left behind</span></span></div>
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">the smoking gun</span><span class="bank-sent">the one piece of evidence that settles it</span></span></div>
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">a false alarm</span><span class="bank-sent">it looked serious and turned out not to be</span></span></div>
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">beside the point</span><span class="bank-sent">true, and it does not affect the question</span></span></div>
+  </div>
+
+  <p class="sec-kicker" style="margin-top:52px;">ANALYSIS</p>
+  <p class="goal"><b>Goal.</b> Learn one form with several settings. By the end, you can say how sure you are about the past, and what should have been done differently.</p>
+
+  <div class="one-question">
+    <p class="oq-label">ONE QUESTION RUNS THIS WHOLE UNIT</p>
+    <p class="oq"><b>Am I saying how sure I am, or what should have been done?</b></p>
+    <p class="oq-note">The shape never changes: a modal, then <em>have</em>, then a participle. Only the modal moves, and it is what decides which of the two jobs you are doing.</p>
+  </div>
+
+  <div class="form-box"><p class="fb-label">THE FORM</p><table>
+    <tr><td>how sure, from the evidence</td><td>must / might / can't <b>have</b> + participle</td><td class="fx">she must have left</td></tr>
+    <tr><td>the right thing, not done</td><td>should / ought to <b>have</b> + participle</td><td class="fx">we should have flagged it</td></tr>
+    <tr><td>the wrong thing, done</td><td>shouldn't <b>have</b> + participle</td><td class="fx">I shouldn't have promised</td></tr>
+    <tr><td>done, and it was not needed</td><td>needn't <b>have</b> + participle</td><td class="fx">you needn't have waited</td></tr>
+  </table></div>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>One form, and the modal is the dial</b></p>
+  <p class="body-copy">Every blue form in that conversation has the same three parts. A modal, then <em>have</em>, then a past participle.</p>
+  <p class="body-copy"><em>Must have deleted. Might have been. Should have turned on. Needn't have looked.</em></p>
+  <p class="body-copy">The shape never moves. The modal in front is the only thing that changes, and it changes the job completely.</p>
+  <p class="body-copy">Two jobs live on this one form. One says how sure you are about what happened. The other says what should have happened and did not.</p>
+  <p class="body-copy">Learn the shape once, then learn the settings. That is the whole unit.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>How sure you are about the past</b></p>
+  <p class="body-copy">You met this scale at unit 14, for the present. Here it is again, one step back.</p>
+  <p class="body-copy"><em>Must have</em> is the top. You are almost certain: the evidence allows nothing else. &ldquo;Somebody must have deleted it.&rdquo;</p>
+  <p class="body-copy"><em>Might have</em>, <em>may have</em> and <em>could have</em> sit in the middle. It is possible and you are not committing. &ldquo;It might have been the sync job.&rdquo;</p>
+  <p class="body-copy"><em>Can't have</em> is the bottom. You are almost certain it did not happen. &ldquo;It can't have vanished on its own.&rdquo;</p>
+  <p class="body-copy">Note which word does the ruling out. It is <em>can't have</em>, and never <em>mustn't have</em>. That word is doing a different job in English.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>The right thing that was not done</b></p>
+  <p class="body-copy">The second job looks backwards at a decision instead of at evidence.</p>
+  <p class="body-copy"><em>Should have</em> and <em>ought to have</em> name the right action that did not happen. &ldquo;We should have turned on version history.&rdquo; They did not.</p>
+  <p class="body-copy"><em>Shouldn't have</em> names the wrong action that did. &ldquo;I shouldn't have moved the folder.&rdquo; He moved it.</p>
+  <p class="body-copy">So the two of them are not opposites of degree. One is about something missing and the other is about something present.</p>
+  <p class="body-copy"><em>Ought to have</em> is the more formal twin of <em>should have</em>, and it keeps its <em>to</em>.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>Done, and it did not need to be</b></p>
+  <p class="body-copy">There is one more setting, and almost nobody teaches it.</p>
+  <p class="body-copy"><em>Needn't have</em> reports something that HAPPENED and turned out to be unnecessary. &ldquo;You needn't have looked.&rdquo; He looked, for an hour.</p>
+  <p class="body-copy">That is what makes it worth learning. It carries a fact and a verdict in three words.</p>
+  <p class="body-copy">Do not confuse it with <em>did not need to</em>, which usually means the thing never happened. &ldquo;I didn't need to look, so I didn't.&rdquo;</p>
+  <p class="body-copy">The difference is real and small: one says you did it for nothing, the other says you were spared it.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>Where the hindsight lands</b></p>
+  <p class="body-copy">This is where the choice becomes yours, and it is the same lesson unit 27 taught about conditionals.</p>
+  <p class="body-copy">The form does not move. The pronoun does, and the pronoun decides who is being criticized.</p>
+  <p class="body-copy">&ldquo;I should have flagged it&rdquo; is an admission. &ldquo;We should have flagged it&rdquo; shares it. &ldquo;You should have flagged it&rdquo; is an accusation.</p>
+  <p class="body-copy"><em>You should have</em> stings more than people expect.</p>
+  <p class="body-copy">The speaker is standing somewhere the other person could not stand at the time.</p>
+  <p class="body-copy">When the blame is not yours to hand out, use <em>we</em>, or put <em>maybe</em> in front. Mei does the first. It costs her nothing and it keeps the room working.</p>
+  <div class="split" style="margin-top:26px;">
+    <div class="card-col"><h4>One form, and the modal is the dial</h4><dl>
+      <dt>The idea</dt><dd>A modal, then <em>have</em>, then a past participle. The shape never changes. The word in front of it decides the job.</dd>
+      <dt>from the scene</dt><dd>must have deleted &middot; might have been &middot; should have turned on</dd>
+      <dt>job one</dt><dd>how sure you are about what happened</dd>
+      <dt>job two</dt><dd>what should have happened, and did not</dd>
+    </dl><div class="eg">Somebody must have deleted it.</div></div>
+    <div class="card-col"><h4>How sure you are about the past</h4><dl>
+      <dt>The idea</dt><dd>Unit 14's scale, one step back. The evidence sets the level and the modal reports it.</dd>
+      <dt>almost certain it happened</dt><dd>she must have left &middot; he must have missed the train</dd>
+      <dt>possible, not committing</dt><dd>it might have been the sync job &middot; they may have forgotten</dd>
+      <dt>almost certain it did not</dt><dd>it can't have vanished &middot; she couldn't have known</dd>
+    </dl><div class="eg">It can't have vanished on its own.</div></div>
+    <div class="card-col"><h4>The right thing that was not done</h4><dl>
+      <dt>The idea</dt><dd>This one looks back at a decision, not at evidence. One names something missing; the other names something that happened.</dd>
+      <dt>the right thing, not done</dt><dd>we should have turned on version history</dd>
+      <dt>the wrong thing, done</dt><dd>I shouldn't have moved the folder</dd>
+      <dt>the formal twin</dt><dd>we ought to have checked the timeline</dd>
+    </dl><div class="eg">We should have flagged it sooner.</div></div>
+    <div class="card-col"><h4>Done, and it did not need to be</h4><dl>
+      <dt>The idea</dt><dd><em>Needn't have</em> reports something that HAPPENED and turned out to be unnecessary. A fact and a verdict in three words.</dd>
+      <dt>from the scene</dt><dd>you needn't have looked, and he looked for an hour</dd>
+      <dt>from your own week</dt><dd>you needn't have waited &middot; we needn't have rushed it</dd>
+      <dt>the one it is not</dt><dd><em>I didn't need to look</em> usually means you never did</dd>
+    </dl><div class="eg">You needn't have looked. There is a backup.</div></div>
+    <div class="card-col"><h4>Where the hindsight lands</h4><dl>
+      <dt>The idea</dt><dd>This part is your choice. The form does not move and the pronoun does, exactly as it did with the conditionals in unit 27.</dd>
+      <dt>an admission</dt><dd>I should have flagged it.</dd>
+      <dt>shared</dt><dd>We should have flagged it.</dd>
+      <dt>an accusation</dt><dd>You should have flagged it.</dd>
+    </dl><div class="eg">Same hindsight. Only one of them costs you the room.</div></div>
+  </div>
+  <div class="callout"><p><b>Watch out</b></p>
+    <p><b>It is <em>have</em> and a participle, every time.</b> Say &ldquo;he must have gone,&rdquo; never &ldquo;<span class='wrong'>he must went</span>&rdquo; and never &ldquo;<span class='wrong'>he must have went</span>.&rdquo; Three parts, and the third is the participle.</p>
+    <p><b>What rules something out is <em>can't have</em>.</b> Say &ldquo;he can't have seen it&rdquo; when you mean it is impossible. You will hear <em>mustn't have</em> used that way, and careful English does not. <em>Mustn't</em> is a prohibition, which you met at unit 13. Rule things out with <em>can't have</em> and the ambiguity never arises.</p>
+    <p><b><em>Needn't have</em> takes the participle directly.</b> Say &ldquo;you needn't have waited,&rdquo; never &ldquo;<span class='wrong'>you needn't have to wait</span>.&rdquo; The <em>to</em> belongs to <em>need to</em>, which is a different verb.</p>
+  </div>
+  <div class="ambr"><p class="ab-label">AMERICAN AND BRITISH ENGLISH</p>
+    <p><b>This is the one place in this unit where the two Englishes part.</b> <em>Needn't have</em> is comfortable British English and rare in American speech.</p>
+    <p>British: <b>You needn't have waited.</b> &middot; <b>We needn't have rushed it.</b></p>
+    <p>American: <b>You didn't need to wait.</b> &middot; <b>We didn't have to rush it.</b></p>
+    <p>There is a cost to the American version, and it is the reason this book teaches the British one first. <em>Didn't need to</em> is ambiguous: it can mean you did it for nothing, or that you never did it at all. <em>Needn't have</em> only ever means the first.</p>
+    <p>The same split shows in ruling things out. British English says <b>can't have known</b>; American English often says <b>couldn't have known</b>. Both are understood everywhere.</p>
+  </div>
+  <p class="body-copy" style="margin-top:26px;"><b>The moves</b></p>
+  <p class="body-copy" style="font-size:14.5px;color:var(--gray);">The frame stays the same. You change only the blue words. The column you pick decides whether you are guessing or judging.</p>
+  <div class="split" style="margin-top:14px;">
+    <div class="card-col"><h4>How sure you are</h4><ul class="moves">
+      <li>Somebody must have <span class="slot">[deleted]</span> it.</li>
+      <li>It might have <span class="slot">[been]</span> the sync job.</li>
+      <li>It can't have <span class="slot">[vanished]</span> on its own.</li>
+    </ul></div>
+    <div class="card-col"><h4>What should have been done</h4><ul class="moves">
+      <li>We should have <span class="slot">[flagged]</span> it sooner.</li>
+      <li>I shouldn't have <span class="slot">[moved]</span> the folder.</li>
+      <li>You needn't have <span class="slot">[looked]</span>.</li>
+    </ul></div>
+  </div>
+  <div class="diagram"><svg viewBox="14 -5 312 170" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="A horizontal certainty bar with three stops inside it, from can't have at the left through might have in the middle to must have at the right.">
+  <defs><marker id="ar30" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+    <path d="M0,0 L9,4.5 L0,9 z" fill="#6B6F76"/></marker></defs>
+  <text x="20" y="16" font-family="Instrument Serif, Georgia, serif" font-size="15" fill="#1F5570">Unit 14's scale, one step back</text>
+  <text x="20" y="32" font-family="Instrument Sans, Arial, sans-serif" font-size="12" fill="#6B6F76">the evidence sets the level; the modal reports it</text>
+  <rect x="24" y="56" width="272" height="30" rx="8" fill="#DCDDD6"/>
+  <circle cx="60" cy="71" r="7" fill="#B3132B"/>
+  <circle cx="160" cy="71" r="7" fill="#6B6F76"/>
+  <circle cx="262" cy="71" r="7" fill="#1F5570"/>
+  <text x="60" y="106" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#B3132B">can't have</text>
+  <text x="160" y="106" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#6B6F76">might have</text>
+  <text x="262" y="106" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1F5570">must have</text>
+  <text x="60" y="124" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="11.5" fill="#6B6F76">sure it did not</text>
+  <text x="160" y="124" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="11.5" fill="#6B6F76">possible</text>
+  <text x="262" y="124" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="11.5" fill="#6B6F76">sure it did</text>
+  <line x1="24" y1="148" x2="296" y2="148" stroke="#6B6F76" stroke-width="1.5" marker-end="url(#ar30)"/>
+  <text x="24" y="164" font-family="Instrument Sans, Arial, sans-serif" font-size="11.5" fill="#0A0B0D">more evidence, more certainty</text>
+</svg>
+    <p class="diagram-cap">The stops sit inside the bar. What moves you along it is evidence, not how you feel.</p>
+  </div>
+  <p class="body-copy" style="margin-top:26px;"><b>Why this works</b></p>
+  <p class="body-copy">Two things happen after anything goes wrong. Somebody works out what happened, and somebody says what should have been done. English gives both of those one shape, which is a piece of luck worth using. The dial in front is what people actually hear. <em>Must have</em> sounds like a fact and is a guess. <em>You should have</em> sounds like advice and lands like blame. Getting the setting right is most of what makes an incident report readable instead of a fight.</p>
+
+  <p class="sec-kicker" style="margin-top:52px;">ACTIVATION</p>
+  <p class="goal"><b>Goal.</b> Now practice. Set the dial. Fix what English does not allow. Reconstruct what happened, then say what should have been done. Then run it on your own week.</p>
+  <div class="ex-block"><span class="ex-label">A</span>
+    <p class="ex-title">Set the dial</p>
+    <p class="ex-instr">Write the missing form. Ask first whether you are saying how sure you are, or what should have been done.</p>
+    <div id="exA"></div>
+    <button class="check-btn" onclick="checkGaps("A",A_DATA)">Check</button>
+    <div class="fb" id="Ascore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">B</span>
+    <p class="ex-title">Spot and fix the error</p>
+    <p class="ex-instr">Each sentence has one mistake. Write it correctly.</p>
+    <div id="exB"></div>
+    <button class="check-btn" onclick="checkRepair("B",B_DATA)">Check</button>
+    <div class="fb" id="Bscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">C</span>
+    <p class="ex-title">Reconstruct it, then judge it</p>
+    <p class="ex-instr">Write one sentence for each situation. The bracket names the setting. One of them names the words it wants as well.</p>
+    <div id="exC"></div>
+    <button class="check-btn" onclick="checkJoin("C",C_DATA,C_RULE)">Check</button>
+    <button class="reveal-btn" onclick="revealKey("C",C_DATA)">Show model answers</button>
+    <div class="fb" id="Cscore"></div>
+    <div class="key-box" id="Ckey"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">D</span>
+    <p class="ex-title">Vocabulary: reconstructing an incident</p>
+    <p class="ex-instr">Match each expression to its meaning.</p>
+    <div id="exD"></div>
+    <button class="check-btn" onclick="checkMatch("D",D_TERMS,D_KEY)">Check</button>
+    <div class="fb" id="Dscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">E</span>
+    <p class="ex-title">Write a sentence</p>
+    <p class="ex-instr">Write ONE sentence with each expression, about your own work, with a modal perfect in it.</p>
+    <div id="exE"></div>
+    <button class="check-btn" onclick="checkWrite("E",E_DATA,E_RULE)">Check</button>
+    <div class="fb" id="Escore"></div>
+    <p class="soft-note">This check looks at three things only: that your expression is there, that the form is there, and that it looks like a sentence. It cannot tell you whether what you wrote is true or natural. The model is there for that.</p>
+  </div>
+  <div class="ex-block"><span class="ex-label">F</span>
+    <p class="ex-title">Over to you</p>
+    <p class="ex-instr">No checking here. This one is yours.</p>
+    <div class="task-box">
+      <p><b>In pairs.</b> One of you describes something that went wrong with no explanation. The other reconstructs it out loud, moving down the scale: <em>must have</em>, then <em>might have</em>, then <em>can't have</em>. Then swap, and say what should have been done, once with <em>you</em> and once with <em>we</em>. Ask which one landed better.</p>
+      <p><b>On your own.</b> Write five sentences about something that went wrong last month. Use <em>must have</em> once, <em>can't have</em> once and <em>needn't have</em> once. Read them aloud and check that a guess still sounds like a guess.</p>
+    </div>
+  </div>
+  </div><div class="foot"><a class="nav-btn" href="b1b2.html">&larr; All units</a><button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button></div><p class="print-reminder">Nothing here is saved. Print before you leave the page.</p></div><script>var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-2388", "AL-5227", "AN-3666", "AO-1929", "AQ-1403", "AR-1212", "AS-8941", "AT-3988", "AU-9614", "AW-1121", "AW-5920", "AY-3957", "AY-8830", "BB-7565", "BI-0990", "BJ-0189", "BJ-2537", "BJ-7138", "BL-1583", "BL-3205", "BL-9902", "BN-2930", "BO-5513", "BQ-9974", "BU-2315", "BU-3356", "BU-4201", "BW-0098", "BY-5952", "BY-8964", "CA-3321", "CA-5707", "CA-7225", "CE-4217", "CE-7673", "CG-8575", "CH-3047", "CM-5599", "CN-0288", "CO-2672", "CO-7250", "CP-0265", "CP-3323", "CQ-7403", "CQ-8469", "CR-3646", "CS-4766", "CU-8380", "CU-8619", "CX-8573", "CX-9951", "CZ-8599", "DB-1837", "DD-7645", "DE-3739", "DE-6860", "DF-6761", "DH-1654", "DH-4587", "DI-3846", "DJ-1666", "DJ-8783", "DJ-9635", "DK-6801", "DR-4798", "DU-0538", "DU-2870", "DU-7191", "DY-1342", "DZ-6215", "EA-5295", "EB-7574", "EI-2870", "EJ-2435", "EJ-7588", "EK-3626", "EL-5403", "EL-7751", "EM-4758", "EN-5720", "EP-8690", "EU-1749", "EU-4668", "EY-0156", "EY-5028", "EY-5771", "EY-8988", "EZ-4901", "EZ-7238", "FA-2480", "FA-3229", "FD-0817", "FD-2307", "FD-2954", "FD-9547", "FF-6110", "FF-8319", "FH-0212", "FI-7378", "FK-4255", "FN-0921", "FN-5013", "FO-3645", "FS-3397", "FU-5114", "FV-4372", "FW-7388", "FX-5735", "FX-8026", "GA-7376", "GC-0379", "GC-0593", "GC-7846", "GD-4624", "GD-8256", "GE-7330", "GG-5258", "GJ-2971", "GJ-8315", "GK-1640", "GK-6237", "GO-2922", "GQ-8518", "GS-0957", "GU-4499", "GX-1422", "GY-4850", "GY-8831", "GZ-1807", "HC-5667", "HD-6398", "HD-6695", "HG-8960", "HI-5126", "HM-0814", "HN-5191", "HR-1799", "HS-0660", "HS-8959", "HT-1159", "HU-6366", "HV-7356", "HX-4184", "HY-8543", "HZ-0868", "HZ-4384", "HZ-4394", "IA-9592", "ID-9262", "IG-2279", "IH-1623", "II-1515", "IL-0808", "IL-2856", "IM-2202", "IN-2853", "IP-2206", "IP-6428", "IS-6888", "IT-7177", "IT-9370", "IU-6890", "IW-7209", "IW-7334", "IX-7882", "IZ-4596", "IZ-5460", "JA-3789", "JA-8127", "JB-4864", "JB-5887", "JB-8392", "JD-3404", "JE-8781", "JG-5409", "JI-6836", "JI-7780", "JJ-1294", "JK-5150", "JL-9806", "JN-9881", "JO-4953", "JP-2813", "JR-6563", "JT-5889", "JU-0546", "KC-4490", "KD-3748", "KF-9500", "KG-2805", "KH-1496", "KM-0226", "KM-6267", "KM-9998", "KN-9232", "KO-2249", "KP-5927", "KQ-1642", "KQ-2174", "KQ-4629", "KS-0562", "KS-2035", "KT-5622", "KX-3719", "KX-5687", "KZ-9069", "LA-3641", "LC-9505", "LF-2835", "LF-3440", "LF-5723", "LG-4259", "LH-0762", "LI-1652", "LJ-4532", "LK-6242", "LM-2637", "LP-6442", "LR-3052", "LR-3190", "LR-3876", "LU-6959", "LY-2430", "LY-8251", "MB-0985", "MC-0432", "MD-5355", "MD-6035", "MF-4039", "MH-8350", "MK-6490", "ML-1094", "ML-6536", "MM-0505", "MM-4633", "MN-6227", "MP-2446", "MU-0263", "MU-1972", "MU-6200", "MV-9345", "MW-3909", "MX-7105", "MZ-7757", "MZ-9673", "NA-6476", "ND-2505", "NE-2445", "NG-4097", "NI-0149", "NI-1933", "NM-4728", "NM-6484", "NQ-0471", "NQ-0763", "NQ-8797", "NS-2836", "NT-1247", "NT-2961", "NT-8096", "NV-2259", "NW-4877", "NX-8284", "OB-2118", "OC-9941", "OD-2269", "OH-9176", "OK-1376", "OL-9223", "OM-3600", "OM-9841", "OO-7410", "OP-0397", "OQ-0089", "OQ-6861", "OS-1295", "OT-0558", "OU-1086", "OZ-3311", "PE-6681", "PF-1393", "PF-5372", "PF-6218", "PI-7454", "PM-5473", "PO-3136", "PO-4375", "PO-6594", "PP-5386", "PW-1775", "PW-8454", "QA-2276", "QB-9637", "QG-4980", "QI-4570", "QI-8762", "QJ-3229", "QK-9389", "QK-9591", "QP-1713", "QP-2800", "QU-3388", "QU-6791", "QV-6067", "QX-4220", "RA-0723", "RA-7714", "RA-9103", "RB-3503", "RC-9055", "RG-8909", "RG-8964", "RG-9044", "RH-0746", "RH-6442", "RN-2614", "RP-8912", "RR-0677", "RS-6858", "RS-6869", "RT-0649", "RT-4827", "RT-9471", "RV-9405", "RW-6355", "RY-1670", "RY-3755", "RY-4569", "SA-4126", "SB-4542", "SC-6853", "SD-6526", "SD-8485", "SH-2111", "SI-6535", "SK-0128", "SK-6149", "SL-2687", "SL-6976", "SL-7928", "SN-9048", "SO-9187", "SQ-1122", "SR-9043", "SR-9835", "ST-1671", "SW-6772", "SX-8305", "SY-5519", "SY-7251", "TB-1236", "TC-3500", "TC-4264", "TD-4528", "TE-3783", "TF-4337", "TF-5946", "TG-4810", "TH-0894", "TL-5384", "TN-6202", "TO-4008", "TO-7503", "TP-3931", "TR-3063", "TV-0181", "TW-7963", "TW-9135", "TY-7002", "UA-5949", "UB-7783", "UB-9445", "UE-0444", "UF-5448", "UG-1507", "UH-0750", "UJ-4353", "UL-1840", "UM-7749", "UN-1590", "UO-0016", "UO-7188", "UQ-0062", "US-3875", "US-5935", "US-6661", "US-7320", "UT-3058", "UT-3191", "UW-5490", "VA-8631", "VB-1375", "VC-0785", "VC-8246", "VC-8661", "VG-3345", "VG-5533", "VG-7188", "VH-6911", "VI-0235", "VJ-9942", "VK-0601", "VK-7802", "VL-5404", "VM-7528", "VN-0611", "VP-6098", "VQ-8570", "VS-1740", "VS-2601", "VS-6960", "VT-6564", "VW-0371", "VX-3419", "VZ-1036", "VZ-1836", "WA-6224", "WB-0446", "WC-4705", "WC-5293", "WC-7126", "WG-1442", "WG-4319", "WG-7876", "WH-7291", "WI-6394", "WL-6650", "WM-1936", "WM-3402", "WM-3514", "WO-4160", "WO-9743", "WP-5457", "WV-1968", "WW-2749", "WY-0407", "XC-0115", "XC-4025", "XC-5579", "XE-5640", "XE-8199", "XE-8990", "XJ-7882", "XL-0683", "XL-1983", "XL-8634", "XO-8511", "XP-7585", "XQ-3502", "XR-5738", "XT-4226", "XU-8893", "XV-2651", "XW-2661", "YA-4779", "YA-6871", "YD-8536", "YF-6161", "YH-6239", "YI-0086", "YI-0777", "YI-3786", "YK-1311", "YK-7066", "YQ-7512", "YU-2273", "YU-9619", "YV-6712", "ZC-0180", "ZD-3923", "ZD-9426", "ZE-9214", "ZF-5917", "ZF-6868", "ZG-1159", "ZG-5395", "ZH-6679", "ZH-9625", "ZK-7397", "ZL-0255", "ZM-4958", "ZN-2112", "ZN-7991", "ZN-9807", "ZO-3469", "ZO-4134", "ZP-7760", "ZQ-4512", "ZQ-5687", "ZU-2853", "ZU-9981", "ZV-9981", "ZW-7998", "ZY-0638", "ZZ-2645"];
+
+/* ADDITIVE ONLY, and copied from C1 so the whole series behaves the same.
+   A direct visitor has window.self === window.top, so this returns false at
+   once and the gate behaves exactly as it always has. It exists because the
+   Coach FRAMES the published page rather than keeping a copy of it, and a
+   student who already unlocked the book in the app must not meet the gate
+   again inside it. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
+/* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
+   before the series had a shared key. Honouring it is what keeps an existing
+   student from being asked for a code they already used. */
+function hasAccess(){
+  if(framedByApp()){ return true; }
+  try{ return localStorage.getItem('cm_access')==='1' ||
+              localStorage.getItem('cm_pv_access')==='1'; }
+  catch(e){ return false; }
+}
+function dismissPrivacy(){
+  document.getElementById('privacyModal').classList.remove('shown');
+  try{ localStorage.setItem('cm_privacy','1'); }catch(e){}
+}
+function maybeShowPrivacyModal(){
+  var seen=false; try{ seen = localStorage.getItem('cm_privacy')==='1'; }catch(e){}
+  if(!seen) document.getElementById('privacyModal').classList.add('shown');
+}
+function openUnit(){
+  document.getElementById('gate').style.display='none';
+  document.getElementById('content').style.display='block';
+  buildAll();
+  maybeShowPrivacyModal();
+}
+function tryCode(){
+  var v = document.getElementById('codeInput').value.trim().toUpperCase();
+  if(VALID_CODES.indexOf(v) !== -1){ grantAccess(); openUnit(); }
+  else { document.getElementById('gateError').textContent =
+    'That code was not recognised. Check it and try again.'; }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(hasAccess()) openUnit();
+  var i=document.getElementById('codeInput');
+  if(i) i.addEventListener('keydown', function(e){ if(e.key==='Enter') tryCode(); });
+});
+
+/* THE SHARED ENGINE. One copy for the book, per-unit data supplied by the
+   module. Unit 1 carried its own copy and that is a second place to be wrong. */
+/* CONTRACTIONS ARE EXPANDED BEFORE COMPARING, so a learner who writes `I've
+   gone` is not marked wrong against a key that says `I have gone`. Netto asked
+   whether the answer key is coherent; it was not. An instrument that fed each
+   item its own model answer in contracted form found 115 correct alternatives
+   refused across the book, almost all of them in the repair exercise.
+
+   `'d` IS DELIBERATELY LEFT ALONE. It expands to both `had` and `would`, so
+   normalising it would make `I'd read more` match a key that reads `I had read
+   more`, and the checker would start accepting the exact error the conditional
+   units exist to prevent. Those items list their alternatives by hand instead. */
+function expand(s){
+ return s.replace(/\bcan't\b/g,'can not').replace(/\bcannot\b/g,'can not')
+         .replace(/\bwon't\b/g,'will not').replace(/\bshan't\b/g,'shall not')
+         .replace(/n't\b/g,' not')
+         .replace(/'ve\b/g,' have').replace(/'ll\b/g,' will')
+         .replace(/'re\b/g,' are').replace(/'m\b/g,' am')
+         .replace(/\s+/g,' ');
+}
+function norm(s){return expand((s||'').toLowerCase().replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[.!?,;]+$/,'').replace(/\s+/g,' ').trim()).trim();}
+function setfb(id,ok,html){var e=document.getElementById(id);e.className='fb '+(ok?'ok':'bad');e.innerHTML=html;}
+function tally(L,c,n){setfb(L+'score',c===n,c+' / '+n+' correct.');}
+var PICK={};
+
+/* MULTIPLE CHOICE, used by the Access check and by the framing exercise. */
+function buildPick(L,data,stack){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var st=stack?' style="flex-direction:column;align-items:stretch;"':'';
+  var bs=stack?' style="text-align:left;border-radius:10px;"':'';
+  var h='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+(stack?'<b>'+it.s+'</b>':it.q)+'</div><div class="choices"'+st+'>';
+  it.o.forEach(function(o,j){h+='<button class="choice-btn"'+bs+' id="'+L+i+'_'+j+'" onclick="pick(\''+L+'\','+i+','+j+')">'+o+'</button>';});
+  h+='</div><div class="fb" id="'+L+'fb'+i+'"></div>';d.innerHTML=h;el.appendChild(d);});}
+function pick(L,i,j){PICK[L+i]=j;
+ var n=document.querySelectorAll('[id^="'+L+i+'_"]');
+ for(var k=0;k<n.length;k++){n[k].className='choice-btn'+(k===j?' picked':'');}}
+function checkPick(L,data,yes,no){var c=0;data.forEach(function(it,i){
+ var p=PICK[L+i],ok=(p===it.a);if(ok)c++;
+ if(p!==undefined)document.getElementById(L+i+'_'+p).className='choice-btn '+(ok?'correct':'wrong');
+ if(!ok)document.getElementById(L+i+'_'+it.a).className='choice-btn correct';
+ setfb(L+'fb'+i,ok,(ok?yes:no)+' '+it.why);});tally(L,c,data.length);}
+
+/* GAP FILL with one or two gaps per item. */
+function buildGaps(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var h='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+it.t+'</div><div class="answer-row">';
+  it.a.forEach(function(_,j){h+='<input type="text" id="'+L+i+'_'+j+'" placeholder="'+(it.a.length>1?(j===0?'first gap':'second gap'):'answer')+'">';});
+  h+='</div><div class="fb" id="'+L+'fb'+i+'"></div>';d.innerHTML=h;el.appendChild(d);});}
+function checkGaps(L,data){var c=0;data.forEach(function(it,i){var ok=true;
+ it.a.forEach(function(alts,j){var v=norm(document.getElementById(L+i+'_'+j).value);
+  if(alts.map(norm).indexOf(v)<0)ok=false;});
+ if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?'Good.':'Not yet. &nbsp;<span class="muted">'+it.a.map(function(x){return x[0];}).join(' &nbsp;/&nbsp; ')+'</span>');});
+ tally(L,c,data.length);}
+
+/* REPAIR. EVERY PRINTED STRING IS ENGLISH THE LANGUAGE NEVER ALLOWS. */
+function buildRepair(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span><span class="wrong">'+it.q+'</span></div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="write it correctly">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkRepair(L,data){var c=0;data.forEach(function(it,i){
+ var v=norm(document.getElementById(L+i).value),ok=it.a.map(norm).indexOf(v)>=0;if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?'Good.':'Not yet. &nbsp;<span class="muted">'+it.a[0]+'</span>');});
+ tally(L,c,data.length);}
+
+/* JOIN. Presence, shape and ORDER, and never truth. `cont` names the verb that
+   must carry the marked form, which is what stops the checker from rewarding
+   the exact analysis the unit exists to prevent. */
+function buildJoin(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var hint=it.start?' <span class="hint">(start with <b>'+it.start+'</b>)</span>':'';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+it.t+hint+'</div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="one sentence">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkJoin(L,data,rule){var c=0;data.forEach(function(it,i){
+ var raw=(document.getElementById(L+i).value||'').trim(),low=raw.toLowerCase(),why='';
+ var first=(low.split(/\s+/)[0]||'').replace(/[^a-z]/g,''),comma=raw.indexOf(',');
+ /* ONE ITEM MAY OVERRIDE THE MARK. The rule is the exercise's, but an item can
+    demand something the others do not -- a word the learner has to SUPPLY
+    rather than copy. Without this the demand has to go into `cont`, which is
+    documented as naming a verb, and a checker whose fields lie is one nobody
+    can maintain. */
+ var mkSrc=it.mark||rule.mark, mkWhy=it.markWhy||rule.markWhy;
+ var markRx=new RegExp(mkSrc.replace('STEM',it.cont||'\\w+'),'i');
+ if(!raw)why='Write one sentence.';
+ else if(it.start&&first!==it.start)why='Start this one with <b>'+it.start+'</b>.';
+ else if(rule.join&&!new RegExp(rule.join,'i').test(low))why=rule.joinWhy;
+ else if(!markRx.test(raw))why=mkWhy;
+ else if(rule.frontWords&&new RegExp('^('+rule.frontWords+')\\b','i').test(low)&&comma<0)
+   why='You started with <b>'+first+'</b>, so the sentence needs a comma in the middle.';
+ else if(rule.before&&new RegExp('^('+rule.before+')\\b','i').test(low)&&!markRx.test(raw.slice(0,comma)))
+   why=rule.beforeWhy;
+ else if(rule.after&&new RegExp('^('+rule.after+')\\b','i').test(low)&&!markRx.test(raw.slice(comma)))
+   why=rule.afterWhy;
+ else if(!/^[A-Z]/.test(raw))why='Start with a capital letter.';
+ else if(!/[.!?]$/.test(raw))why='End it with a full stop.';
+ if(why)setfb(L+'fb'+i,false,why+'<br><span class="muted">One way: '+it.m+'</span>');
+ else{c++;setfb(L+'fb'+i,true,'Good.<br><span class="muted">'+(it.alt?'Also right: '+it.alt:'Another way: '+it.m)+'</span>');}});
+ tally(L,c,data.length);}
+function revealKey(L,data){var k=document.getElementById(L+'key');
+ k.innerHTML='<b>Model answers.</b><br>'+data.map(function(it,i){
+  return (i+1)+'. '+it.m+(it.alt?'<br><span class="muted" style="margin-left:18px;">or: '+it.alt+'</span>':'');}).join('<br>');
+ k.className='key-box shown';}
+
+/* MATCHING. The key is checked at build time, not here: see checks.py. */
+function buildMatch(L,terms,means){var el=document.getElementById('ex'+L);
+ var opts='<option value="">&mdash;</option>'+means.map(function(m){return '<option value="'+m.id+'">'+m.id+'</option>';}).join('');
+ var h='<div class="body-copy" style="margin-bottom:14px;">'+means.map(function(m){return '<b>'+m.id+'.</b> '+m.t;}).join('<br>')+'</div>';
+ terms.forEach(function(t,i){h+='<div class="q"><div class="answer-row"><span class="num" style="color:var(--navy);font-weight:700;">'+(i+1)+'.</span>'+
+  '<span class="fixed-word" style="min-width:130px;"><b>'+t+'</b></span>'+
+  '<select class="match-select" style="width:90px;" id="'+L+i+'">'+opts+'</select>'+
+  '<span class="fb" id="'+L+'fb'+i+'" style="margin:0;display:block;"></span></div></div>';});
+ el.innerHTML=h;}
+function checkMatch(L,terms,key){var c=0;terms.forEach(function(t,i){
+ var ok=document.getElementById(L+i).value===key[i];if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?'&#10003;':'&rarr; '+key[i]);});tally(L,c,terms.length);}
+
+/* THE FREE SENTENCE. Presence, shape and order. Never truth. Model either way.
+
+   `front` HOLDS SUBORDINATE-CLAUSE OPENERS AND NOTHING ELSE. A word belongs
+   there only if a MAIN CLAUSE has to follow it, which is what makes the comma
+   obligatory: while, when, as soon as, until, before, after, once, if, unless,
+   as long as, by the time.
+   IT HAS BEEN FILLED WRONGLY THREE TIMES AND EACH TIME THE CHECKER REFUSED
+   CORRECT ENGLISH:
+     `at first`, `back then`, `in an ideal world`  -- adverbials. They open a
+        sentence and nothing has to follow them, so no comma is required.
+     `if only`  -- opens a WHOLE WISH. "If only this room had a window." is a
+        complete sentence with no second half at all.
+   If you cannot name the main clause that must follow, the word does not go in.
+
+   AN ITEM MAY DECLARE `find`, A REGEX, INSTEAD OF RELYING ON ITS OWN SPELLING.
+   The literal search failed on three of unit 5's own models and one of unit 3's,
+   and in every case the MODEL WAS RIGHT AND THE CHECKER WAS WRONG: a learner
+   writes `falls through`, not `fall through`, and `put the launch off`, not
+   `put off`. A multi-word expression is inflected and separated in real use, and
+   a checker that demands the dictionary form refuses correct English.
+
+   AND `front` IS FOR CLAUSE OPENERS ONLY. `While I was checking, ...` needs the
+   comma. `Back then we used to send it by post` does not, because a short adverb
+   is not a clause. Unit 1 shipped with `at first` on that list and would have
+   refused a correct sentence. */
+function buildWrite(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span><b>'+it.word+'</b></div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="your own sentence">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkWrite(L,data,rule){var c=0;data.forEach(function(it,i){
+ var raw=(document.getElementById(L+i).value||'').trim(),low=raw.toLowerCase(),why='';
+ var front=(rule.front||[]).filter(function(w){return low.indexOf(w)===0;})[0];
+ if(!raw)why='Write a sentence.';
+ else if(!(it.find? new RegExp(it.find,'i').test(raw)
+                 : low.indexOf(it.word.toLowerCase().replace(/^(a|an|the)\s+/,''))>=0))
+   why='I cannot find <b>'+it.word+'</b> in your sentence.';
+ else if(it.must&&!it.must.some(function(m){return new RegExp('\\b'+m+'\\b','i').test(raw);}))
+   why='Use one of these: <b>'+it.must.join(', ')+'</b>.';
+ else if(rule.mark&&!new RegExp(rule.mark,'i').test(raw))why=rule.markWhy;
+ else if(front&&raw.indexOf(',')<0)
+   why='You started with <b>'+front+'</b>, so the sentence needs a comma in the middle.';
+ else if(!/^[A-Z]/.test(raw))why='Start with a capital letter.';
+ else if(!/[.!?]$/.test(raw))why='End it with a full stop.';
+ else if(raw.split(/\s+/).length<(rule.minWords||6))why='Say a little more. '+(rule.minWords||6)+' words at least.';
+ if(why)setfb(L+'fb'+i,false,why+'<br><span class="muted">One way: '+it.model+'</span>');
+ else{c++;setfb(L+'fb'+i,true,'Good.<br><span class="muted">Another way: '+it.model+'</span>');}});
+ tally(L,c,data.length);}
+
+var R_DATA=[{"q": "Does Mei know who deleted the report?", "o": ["yes, she says who it was", "no, she is reasoning from what she can see"], "a": 1, "why": "<em>Somebody must have deleted it</em> is a conclusion, not a fact. All she has is a missing file. The modal is her confidence, and nothing more."}, {"q": "Did Emre look for the folder?", "o": ["yes, for an hour", "no, Mei stopped him first"], "a": 0, "why": "He says so, and Mei's reply confirms it. <em>You needn't have looked</em> always reports something that DID happen and turned out to be unnecessary."}, {"q": "Which line does Mei aim at herself as well?", "o": ["somebody must have deleted it", "we should have turned on version history", "you needn't have looked"], "a": 1, "why": "<em>We should have.</em> The pronoun decides where the hindsight lands, and <em>we</em> puts Mei inside it. <em>You needn't have</em> puts it on Emre."}];
+var A_DATA=[{"t": "The lights are off, so she ______ (leave) already.  (must have / can't have)", "a": [["must have left"]]}, {"t": "He was in Lisbon all week, so he ______ (be) at the meeting.  (can't have / might have)", "a": [["can't have been"]]}, {"t": "It ______ (be) the sync job, but nobody has checked.  (might have / must have)", "a": [["might have been"]]}, {"t": "We ______ (turn on) version history, and we did not.", "a": [["should have turned on", "ought to have turned on"]]}, {"t": "I ______ (move) the folder, and I did.", "a": [["shouldn't have moved", "should not have moved"]]}, {"t": "You ______ (wait) an hour. There was a backup all along.", "a": [["needn't have waited", "need not have waited"]]}];
+var B_DATA=[{"q": "He must went home early.", "a": ["He must have gone home early"]}, {"q": "She should have went to the meeting.", "a": ["She should have gone to the meeting"]}, {"q": "They might have forgot the deadline.", "a": ["They might have forgotten the deadline"]}, {"q": "You needn't have to wait for me.", "a": ["You needn't have waited for me"]}, {"q": "I shouldn't have promise that date.", "a": ["I shouldn't have promised that date"]}];
+var C_DATA=[{"t": "The file is gone. Nobody had access except the team. You are almost certain a person did it.", "cont": "must have", "m": "Somebody must have deleted it."}, {"t": "He was in Lisbon all week. You are ruling him out.", "cont": "can't have", "m": "He can't have been at the meeting."}, {"t": "Version history was off. You are naming the right step nobody took.", "cont": "should have", "m": "We should have turned on version history."}, {"t": "You waited an hour for a reply. There was a backup the whole time.", "cont": "needn't have", "m": "I needn't have waited an hour."}, {"t": "You thought the server was down. It turned out to be nothing serious.", "cont": "must have", "mark": "\\bat first\\b[^.]*\\b(?:must|might|may|could) have\\b|\\b(?:must|might|may|could) have\\b[^.]*\\bat first\\b", "markWhy": "This one wants <b>at first</b>, from unit 1, and a modal of deduction after it.", "m": "At first we thought it must have been the server."}];
+var C_RULE={"join": "", "joinWhy": "", "mark": "\\bSTEM\\b", "markWhy": "Set the dial the situation asks for, then <b>have</b> and a participle.", "frontWords": ""};
+var D_TERMS=["clearly", "reportedly", "piece it together", "the smoking gun", "a false alarm", "beside the point"];
+var D_MEANS=[{"id": "a", "t": "work out what happened from what is left behind"}, {"id": "b", "t": "true, and it does not affect the question"}, {"id": "c", "t": "the evidence leaves no room for another reading"}, {"id": "d", "t": "it looked serious and turned out not to be"}, {"id": "e", "t": "that is what is being said, and you are not vouching for it"}, {"id": "f", "t": "the one piece of evidence that settles it"}];
+var D_KEY=["c", "e", "a", "f", "d", "b"];
+var E_DATA=[{"word": "clearly", "model": "Clearly somebody must have moved it before the backup ran."}, {"word": "reportedly", "model": "Reportedly the sync job failed, though it might have been something else."}, {"word": "piece it together", "model": "We had to piece it together, and we should have kept better logs."}, {"word": "the smoking gun", "model": "The deleted folder was the smoking gun, and I needn't have looked further."}, {"word": "a false alarm", "model": "It was a false alarm, so we needn't have called anybody at all."}];
+var E_RULE={"mark": "\\b(?:must|might|may|could|should|shouldn't|ought to|needn't|can't|couldn't)\\s+(?:not\\s+)?have\\b", "markWhy": "Put a modal perfect in it: a modal, then <b>have</b>, then a participle.", "front": [], "minWords": 8};
+function buildAll(){
+  buildPick("R",R_DATA,false);
+  buildGaps("A",A_DATA);
+  buildRepair("B",B_DATA);
+  buildJoin("C",C_DATA);
+  buildMatch("D",D_TERMS,D_MEANS);
+  buildWrite("E",E_DATA);
+}</script><script>
+/* ONE Audio element for the page. Tapping a line plays it; tapping the line that
+   is already playing stops it. Nothing preloads: a learner on mobile data pays
+   for the line he asked for and for no other. */
+(function(){
+  var el=null, cur=null;
+  function stop(){ if(el){el.pause();} if(cur){cur.classList.remove('playing');} cur=null; }
+  function play(p){
+    if(cur===p){ stop(); return; }
+    stop();
+    if(!el){ el=new Audio(); }
+    el.onended=stop;
+    el.src='audio/'+p.dataset.a+'.mp3';
+    cur=p; p.classList.add('playing');
+    el.play().catch(function(){ stop(); });
+  }
+  document.addEventListener('click',function(e){
+    var p=e.target.closest ? e.target.closest('.say-line') : null; if(p) play(p);
+  });
+  document.addEventListener('keydown',function(e){
+    var a=document.activeElement;
+    if((e.key===' '||e.key==='Enter')&&a&&a.classList&&a.classList.contains('say-line')){
+      e.preventDefault(); play(a);
+    }
+  });
+  window.playScene=function playScene(){
+    var lines=[].slice.call(document.querySelectorAll('.say-line')), i=0;
+    stop();
+    if(!el){ el=new Audio(); }
+    function step(){
+      if(i>=lines.length){ cur=null; el.onended=stop; return; }
+      cur=lines[i]; cur.classList.add('playing');
+      el.src='audio/'+cur.dataset.a+'.mp3';
+      el.play().catch(function(){ cur.classList.remove('playing'); cur=null; el.onended=stop; });
+    }
+    el.onended=function(){ if(cur){cur.classList.remove('playing');} i++; step(); };
+    step();
+  };
+})();
+</script></body></html>
