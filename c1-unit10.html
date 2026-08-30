@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light only"><meta name="theme-color" content="#FAFAF7"><title>Unit 10 · C1 · Concept</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light only"><meta name="theme-color" content="#FAFAF7"><title>Unit 10 &middot; Concession and contrast &middot; Concept</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><style>
   :root{
     --ink:#0A0B0D; --navy:#1F5570; --navy-dark:#123A4E; --white:#fff;
     --paper:#FAFAF7; --panel:#F1F2ED; --panel-2:#E9EAE3;
@@ -99,7 +99,7 @@
   .choice-btn.picked{border-color:var(--navy);background:var(--panel);}
   .choice-btn.correct{border-color:var(--green);background:var(--green-bg);color:var(--green);}
   .choice-btn.wrong{border-color:var(--red);background:#FBE9EB;color:var(--red);}
-  .fb{font-size:13px;margin-top:6px;min-height:16px;font-weight:600;line-height:1.5;}
+  .fb{display:block;font-size:13px;margin-top:6px;min-height:16px;font-weight:600;line-height:1.5;}
   .fb.ok{color:var(--green);}
   .fb.bad{color:var(--red);}
   select.match-select{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
@@ -155,92 +155,489 @@
   #privacyModal button:hover{background:var(--red-hi);}
   .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
   @media print{#privacyModal{display:none !important;}}
-</style></head><body>
 
-<div id="gate">
+  /* ---- A1/A2 additions. Everything above this line is the C1 stylesheet,
+     read from the published page at build time and not edited here. ---- */
+  .ex-label.named{display:inline-block;width:auto;min-width:0;padding:0 10px;border-radius:11px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
+  .split.three{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:640px){.split.three{grid-template-columns:1fr;}}
+  /* ================= FINDABILITY, 30 Aug 2026 =========================
+     "A CONTROL MUST ANNOUNCE ITSELF AS A CONTROL." Netto, after opening the
+     book on a phone. SERIES_STANDARD 9p.
+
+     ONE CONTROL, ONE SHAPE, ONE POSITION. The pill below is the only thing in
+     this book that plays audio, it carries a play mark and a word, it is at
+     least 44x44, and it is the FIRST thing on its line everywhere.
+
+     WHY THE PLAY MARK IS A ::before AND NOT A CHARACTER IN THE MARKUP: the
+     reading copies and ceiling.py read the markup, and a triangle in the
+     button's text would land in the .txt as a word and in the word count as a
+     word. The x on a wrong form is the opposite case and is deliberately in
+     the markup -- there the mark IS the teaching and the .txt must carry it.
+
+     44px: measured at 375px, between 59 and 70 of about 75 controls per unit
+     were under the minimum touch target. Every one of them is a rule here.
+     NOTHING IS EDITED IN kit_final/unit.css. Three shipped books read that
+     file; these are overrides in the A1/A2 block, which is appended after it. */
+  .audio-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);
+    border-radius:999px;padding:0 14px;min-height:44px;font-size:13px;font-weight:600;
+    font-family:var(--sans);cursor:pointer;margin-right:6px;
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+  /* ===== THE PLAY MARK IS AN SVG, NOT A CHARACTER. 30 Aug 2026 =============
+     U+25B6 IS AN EMOJI ON iOS. It has no default text presentation there, so
+     Safari substitutes Apple Color Emoji and draws a small white triangle
+     INSIDE A GREY-BLUE ROUNDED SQUARE -- a second button nested in the button,
+     which is exactly what Netto saw on unit 10's Access. Reproduced here on a
+     Mac by forcing the same font, so it is not a guess about his phone.
+     THE FIRST OPTION -- enlarge it and suppress the frame in CSS -- IS
+     IMPOSSIBLE, and that is a fact about glyphs rather than a preference: the
+     square is part of the emoji font's own artwork, a bitmap, and no CSS
+     property reaches inside a glyph. Enlarging only makes the square bigger.
+     U+FE0E, the text-presentation selector, does work today; it is a hint to
+     font selection, it varies by iOS version, and it would put a second
+     invisible character into every button. Rejected as fragile.
+     AN SVG BACKGROUND ON THE PSEUDO-ELEMENT ends the class: no font is
+     involved, nothing can substitute, and it is still pure CSS, so not one
+     line of markup changes in any of the four places.
+     THE PROPORTION: the mark's height equals the label's font-size. A 13px
+     label gets a 13px mark, an 11px label an 11px mark. That is the same
+     relationship the x on a wrong form has to the words around it -- set at
+     the surrounding size -- so the play triangle is not the only oversized
+     thing on the page. It was 0.78em before, which is why it read as tiny
+     inside a 44px control.
+     THIS IS THE SECOND TIME THIS CHARACTER HAS COST A ROUND. The first was the
+     octal escape that shipped "B6 Listen"; SERIES_STANDARD 9q named the class
+     then -- the layer no check reads -- and this is the same layer. */
+  .audio-btn::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
+  /* Record, and Check the line, are not play buttons. */
+  #sayRec::before,#sayShow::before{content:none;}
+  .audio-btn:hover{border-color:var(--navy);}
+  .audio-btn:disabled{color:var(--gray);cursor:default;opacity:.5;}
+  .audio-btn.rec-on{background:var(--red);border-color:var(--red);color:#fff;}
+  .listen-note{font-size:12.5px;color:var(--gray);line-height:1.65;margin:0 0 18px;}
+  /* CONTROL FIRST, THEN THE NAME. It used to sit AFTER the speaker name, which
+     put it at two different x-positions down one dialogue -- 86px after "Ana",
+     103px after "Marco" -- so there was no column to aim at. */
+  .audio-line{display:flex;align-items:flex-start;gap:10px;margin:0 0 12px;
+    flex-wrap:wrap;}
+  .audio-line .who{flex:0 0 auto;padding-top:11px;}
+  .audio-line .audio-btn{flex:0 0 auto;margin-right:0;}
+  .audio-line .line-text{padding-top:10px;flex:1 1 200px;}
+  /* ON A NARROW COLUMN THE LINE TAKES THE FULL WIDTH. Control-first is right
+     and it costs 145px of the row, which on a phone left a 180px text column
+     wrapping every line three times. The control and the name keep the first
+     row; the sentence gets its own, full width. Nothing changes above 640px. */
+  @media (max-width:640px){
+    .audio-line{gap:8px 10px;}
+    .audio-line .line-text{flex:1 0 100%;padding-top:2px;}
+  }
+  /* ---- the vocabulary bank: its own section, between Access and Analysis.
+     Sound first: the meaning is on the card from the start, the spelling is
+     revealed on request, so the student meets the word as a sound and checks
+     the letters afterwards. ---- */
+  /* ---- the bank as ROWS, not cards. Eight items have to be readable as one
+     set, which means all eight on screen at once; eight cards are eight
+     screens. Nothing is hidden here: this is the presentation moment and the
+     learner has nothing to retrieve yet. Hiding is a testing move and it lives
+     in the exercises. ---- */
+  .bank{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin:16px 0 0;}
+  @media (max-width:640px){.bank{grid-template-columns:1fr;}}
+  .bank-item{display:flex;align-items:center;gap:12px;padding:7px 0;
+    border-bottom:1px solid var(--line);}
+  .bank-img{width:100%;height:auto;display:block;}
+  /* THE PICTURE AND ITS LABEL ARE ONE BUTTON. Not two: the clip merge of
+     29 Aug was right, and two identical controls are a question the learner
+     answers by pressing both. What the merge cost was the LABEL, because the
+     control that survived was the picture -- and a picture reads as an
+     illustration. The answer to an unlabelled control is a label. */
+  .bank-play{flex:0 0 76px;display:flex;flex-direction:column;align-items:stretch;
+    padding:0;border:1.5px solid var(--navy);background:var(--white);
+    border-radius:10px;cursor:pointer;overflow:hidden;line-height:0;}
+  .bank-cap{display:flex;align-items:center;justify-content:center;gap:5px;
+    background:var(--navy);color:#fff;font-family:var(--sans);font-size:11px;
+    font-weight:600;padding:6px 0;line-height:1.2;}
+  .bank-cap::before{content:"";flex:0 0 auto;width:9px;height:11px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%23ffffff'/%3E%3C/svg%3E");}
+  /* A ROW WITH NO PICTURE GETS THE SAME OBJECT IN THE SAME COLUMN. That is
+     what makes unit 3 look like unit 1, ends two kinds of control inside one
+     list in units 2 and 4, and removes the empty bordered spacer that read as
+     a drawing which had failed to load. */
+  .bank-play-flat{border-radius:999px;min-height:44px;}
+  .bank-play-flat .bank-cap{padding:14px 0;border-radius:999px;}
+  .bank-play:hover{opacity:.9;}
+  .draft-note{border-left:4px solid #b45309;background:#fff7ed;}
+  .status-ok{border-left:4px solid #15803d;background:#f0fdf4;}
+  .status-open{border-left:4px solid #6b7280;background:#f8f8f7;}
+  /* .bank-noimg IS GONE, 30 Aug 2026. It was an empty bordered cell kept so
+     the two kinds of row would line up; on a phone it read as a drawing that
+     had failed to load. The rows line up because both now carry a control. */
+  .listen-q{margin-right:10px;vertical-align:middle;}
+  .numset{margin:6px 0 26px;}
+  .numset-head{font-family:var(--serif);font-size:19px;margin:18px 0 2px;color:var(--ink);}
+  .numset-note{font-size:13px;color:var(--gray);margin:0 0 12px;}
+  .numstrip{display:flex;flex-wrap:wrap;gap:7px;}
+  .numcell{background:var(--white);border:1.5px solid var(--line);border-radius:9px;
+    padding:8px 13px;font:inherit;font-size:15px;color:var(--ink);cursor:pointer;
+    display:inline-flex;align-items:baseline;gap:8px;}
+  /* Tabular figures so the digits line up down the column. */
+  /* inline-block: min-width and text-align are block-only properties and
+     verify.py is right to refuse them on a bare inline. */
+  .numfig{display:inline-block;font-variant-numeric:tabular-nums;
+    font-weight:700;color:var(--navy);min-width:1.7em;text-align:right;}
+  .numwd{font-size:15px;}
+  .numcell:hover{border-color:var(--navy);color:var(--navy);}
+  /* "The base. Listen once, then say the row." -- and nothing on the screen
+     said listen. The chips ARE the control; now they say so. */
+  .numcell{min-height:44px;border-color:var(--navy);}
+  .numcell::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
+  /* CONTROL FIRST. It used to be the fifth column, at the far right of a
+     narrow screen, furthest from the thumb and last in reading order. */
+  .numpairs{display:grid;grid-template-columns:auto auto 1fr auto 1fr;gap:8px 12px;
+    align-items:center;max-width:520px;}
+  .numpair-head{font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--gray);}
+  /* THE UNDERLINE CAME OFF. A non-control may not carry a control's marks:
+     this one was heavier than the real button's and on the same screen. */
+  .numword{font-size:16px;color:var(--ink);padding:4px 0;}
+  .numplay{justify-self:start;}
+  .bank-more{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 0;}
+  .more-btn{display:inline-block;background:var(--navy);color:var(--white);
+    border-radius:999px;padding:10px 20px;font-size:14px;font-weight:600;
+    text-decoration:none;letter-spacing:.01em;}
+  .more-btn:hover{opacity:.88;}
+  /* ---- the rest of the controls, to the same floor. Six declarations, no
+     markup. IOS SAFARI ZOOMS ANY FOCUSED CONTROL UNDER 16px AND DOES NOT ZOOM
+     BACK: every field and every dropdown in the book did it, in every
+     exercise, and it is the one defect here that a learner meets on the very
+     first tap. ---- */
+  .check-btn{min-height:44px;padding:0 20px;display:inline-flex;align-items:center;}
+  .say-row{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;}
+  .more-btn{min-height:44px;padding:0 20px;display:inline-flex;align-items:center;}
+  .action-btn{min-height:44px;padding:0 22px;display:inline-flex;align-items:center;}
+  .choice-btn{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;}
+  .q input[type=text]{font-size:16px;min-height:44px;}
+  select.match-select{font-size:16px;min-height:44px;}
+  #gate input{font-size:16px;}
+  .bank-more-note{font-size:13px;color:var(--gray);flex:1 1 220px;}
+  .bank-item-flat{padding:9px 0;}
+  /* .bank-word-btn IS GONE. The word was the control on picture-less rows and
+     it announced itself with a 1px DOTTED underline in the palest grey in the
+     book, 20px tall -- while .numword, which does nothing at all, carried a
+     SOLID underline in the same grey. The affordance was inverted. The word is
+     a word now, and the control beside it is a control. */
+  .bank-body{flex:1 1 auto;min-width:0;}
+  .bank-word{font-weight:600;font-size:15px;color:var(--ink);display:block;}
+  .bank-fig{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;}
+  .bank-sent{font-family:var(--serif);font-size:14.5px;color:var(--navy);display:block;
+    line-height:1.35;}
+  @media print{.bank-word{display:inline !important;}}
+  .listen-note b{color:var(--gray-dark);}
+  /* ---- exercise I: listen, say it, read. The record-and-compare component
+     from Calibrated Speech, in this book's tokens. The model's amplitude
+     envelope is gray and the student's own is red, which is that book's
+     convention: red marks what the student produced, the same job it does in
+     the Exercise B key. ---- */
+  .say-rows{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;}
+  .say-row{background:var(--white);border:1.5px solid var(--line);border-radius:999px;
+    padding:8px 15px;font-family:var(--sans);font-size:13.5px;color:var(--ink);cursor:pointer;}
+  .say-row:hover{border-color:var(--navy);}
+  .say-row.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .say-row .who{color:inherit;font-weight:600;margin-right:7px;}
+  .say-panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;}
+  .say-sel{font-size:14.5px;color:var(--gray-dark);margin:0 0 14px;}
+  .say-sel b{color:var(--ink);}
+  .say-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .wave{width:100%;height:auto;display:block;background:var(--white);
+    border:1px solid var(--line);border-radius:10px;}
+  .say-text{font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.45;
+    margin:14px 0 0;min-height:26px;}
+  .say-status{font-size:13px;color:var(--gray);margin:8px 0 0;min-height:18px;line-height:1.5;}
+  .say-status .win{color:var(--green);font-weight:600;}
+  .mic-msg{font-size:12.5px;color:var(--red);line-height:1.6;margin:10px 0 0;min-height:16px;}
+  @media print{
+    .audio-btn,.say-btns,.wave,.say-rows{display:none !important;}
+  }
+
+  .wrong{color:#B3132B;font-weight:600;white-space:nowrap;}
+  .wrong .x{font-weight:700;}
+
+  #nav{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#3A3D42;}
+  .brand img{height:30px;width:30px;}
+  .brand .word{font-weight:700;letter-spacing:3px;font-size:13px;}
+  .nav-btn{display:inline-block;border:1px solid var(--navy);color:var(--navy);
+    border-radius:999px;padding:8px 16px;font-size:13px;text-decoration:none;margin-left:8px;}
+  .action-btn{border:none;border-radius:999px;padding:12px 22px;font-weight:600;
+    font-size:14px;cursor:pointer;background:var(--navy);color:#fff;}
+  .action-btn.outline{background:#fff;color:var(--navy);border:1px solid var(--navy);}
+  #gate{max-width:420px;margin:14vh auto;padding:0 24px;text-align:center;}
+  #gate h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;margin:0 0 8px;}
+  #gate p{color:#6B6F76;font-size:14px;line-height:1.6;margin:0 0 22px;}
+  #gate input{width:100%;padding:13px;border:1px solid #DCDDD6;border-radius:10px;box-sizing:border-box;
+    font-size:16px;text-align:center;letter-spacing:2px;text-transform:uppercase;}
+  #gate button{width:100%;margin-top:12px;background:#B3132B;color:#fff;border:none;
+    border-radius:999px;padding:13px;font-weight:600;font-size:14px;cursor:pointer;}
+  #gateError{color:#B3132B;font-size:13px;margin-top:10px;min-height:18px;}
+  #privacyModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);
+    align-items:center;justify-content:center;z-index:99;padding:24px;}
+  #privacyModal.shown{display:flex;}
+  #privacyModal .card{background:#fff;border-radius:16px;max-width:420px;width:100%;padding:28px 26px;}
+  #privacyModal h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:22px;margin:0 0 12px;}
+  #privacyModal p{font-size:14px;line-height:1.6;color:#3A3D42;margin:0 0 20px;}
+  #privacyModal button{width:100%;background:#B3132B;color:#fff;border:none;
+    border-radius:999px;padding:13px;font-weight:600;font-size:14px;cursor:pointer;}
+  .foot{display:flex;gap:10px;align-items:center;justify-content:space-between;
+    margin:46px 0 10px;flex-wrap:wrap;}
+  .print-reminder{font-size:12px;color:#6B6F76;margin-top:6px;text-align:right;}
+  .unit-nav{display:flex;gap:10px;flex-wrap:wrap;margin:40px 0 8px;}
+  .unit-nav .next{margin-left:auto;}
+  #scoreBar{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    flex-wrap:wrap;margin:18px 0 10px;padding-top:16px;border-top:1px solid #DCDDD6;}
+  #scoreBar .score{font-size:14px;color:#3A3D42;}
+  .print-head{display:none;align-items:center;gap:10px;margin-bottom:18px;}
+  .print-head img{height:26px;width:26px;}
+  .pline{font-size:12px;letter-spacing:.05em;color:#6B6F76;}
+  @media print{.print-head{display:flex;}}
+  .unit-label{font-size:12px;letter-spacing:.06em;color:#6B6F76;text-transform:uppercase;}
+  @media print{#privacyModal,#gate,.topbar,.foot,.print-reminder,.unit-nav,#scoreBar{display:none !important;}}
+
+  
+  .wrap{position:relative;z-index:1;}
+  .listen-note{font-size:13px;letter-spacing:1px;color:var(--navy);font-weight:600;margin:0 0 6px;}
+  .wrong{color:var(--red);text-decoration:line-through;text-decoration-color:rgba(179,19,43,.45);}
+  /* series.css line 365 sets .wrong{white-space:nowrap}. That is CORRECT in a
+     book where .wrong holds a fragment: you do not want "he go" split across
+     two lines, because the learner reads the wrong form as one object.
+     IN THIS BOOK .wrong HOLDS WHOLE SENTENCES. nowrap ran them off the right
+     edge of the phone -- unit 9 pushed the page to 413px and unit 10 to 381px
+     against a 375px screen -- so the learner could not read the END of a
+     string he is being asked to judge. In a book whose fourth rule is about
+     what a printed error may be, half a printed error is the worst version.
+     Wrapping is allowed here. The line-through carries across the break. */
+  .wrong{white-space:normal;}
+  .muted{color:var(--gray);font-weight:400;font-family:var(--serif);font-size:15px;}
+  .hint{color:var(--gray);font-size:13.5px;font-style:italic;}
+  .hint b{color:var(--navy);font-style:normal;}
+  .one-question{background:var(--panel);border:1.5px solid var(--navy);border-radius:14px;
+    padding:20px 22px;margin:24px 0 20px;}
+  .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 10px;}
+  .one-question .oq{font-family:var(--serif);font-size:clamp(21px,3vw,26px);line-height:1.3;margin:0 0 10px;color:var(--ink);}
+  .one-question .oq-note{font-size:14.5px;line-height:1.6;color:var(--gray-dark);margin:0;}
+  .form-box{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 26px;}
+  .form-box .fb-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 10px;}
+  .form-box table{border-collapse:collapse;width:100%;font-size:15px;}
+  .form-box td{padding:7px 0;color:var(--gray-dark);vertical-align:baseline;}
+  .form-box td:nth-child(2){padding-left:18px;white-space:nowrap;}
+  .form-box td.fx{font-family:var(--serif);font-size:16.5px;color:var(--navy);padding-left:18px;text-align:right;}
+  /* THE PHONE IS NOT AN EDGE CASE, IT IS THE READER. Netto, 27 Aug 2026: the
+     books live in the app, so almost all reading is on a phone.
+     The first version hid the example column below 520px to stop the table
+     overflowing. IT DID NOT STOP THE OVERFLOW, and it hid a third of the form
+     box from almost every learner who will ever open the page: the paradigm is
+     one of the four things the explanation must carry, and its examples were
+     rendering nowhere. The row collapses to a block instead, so everything is
+     visible and nothing is wider than the column. */
+  @media (max-width:560px){
+    .form-box table,.form-box tbody,.form-box tr,.form-box td{display:block;width:auto;}
+    .form-box tr{padding:9px 0;border-bottom:1px solid var(--line);}
+    .form-box tr:last-child{border-bottom:none;padding-bottom:0;}
+    .form-box tr:first-child{padding-top:0;}
+    .form-box td{padding:1px 0 !important;text-align:left !important;white-space:normal !important;}
+    .form-box td:first-child{color:var(--gray);font-size:13px;}
+    .form-box td.fx{display:block;font-size:16.5px;padding-top:2px !important;}
+  }
+  .ambr{background:var(--white);border:1.5px solid var(--line);border-left:3px solid var(--red);
+    border-radius:0 12px 12px 0;padding:16px 20px;margin:22px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
+  .ambr .ab-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--red);margin:0 0 10px;}
+  .ambr p{margin:0 0 10px;} .ambr p:last-child{margin-bottom:0;}
+  .ambr b{color:var(--ink);}
+  /* THE FIGURE IS A PICTURE, NOT A PARAGRAPH. Netto, 27 Aug 2026:
+     "deixe no maior tamanho possivel respeitando a visualizacao no celular."
+     The text column keeps its 24px gutter, because about 42 characters a line
+     is where the prose reads best. THE FIGURE DOES NOT HAVE TO OBEY THAT
+     GUTTER. On a phone it steps 8px out on each side and draws at 343 instead
+     of 327. The caption below it stays on the text margin, so the page still
+     has one left edge for everything you read as a sentence.
+     The 340px cap was the other half of the waste. On a 430px phone the
+     column offers 398 and the figure was still taking 340. The cap is now 420,
+     which no phone reaches, so THE SCREEN is the limit and not a number I
+     picked once and stopped looking at. */
+  /* THE DIALOGUE PLAYS. Netto, 27 Aug 2026: "coloque o audio apenas no dialogo."
+     THE WHOLE LINE IS THE CONTROL, not a button beside it. Six 44px buttons in a
+     six-line scene is more furniture than dialogue, and the line is already a
+     target far bigger than any button could be. The dot is the affordance. */
+  .say-line{position:relative;box-sizing:border-box;min-height:44px;
+            padding:9px 0 9px 24px;cursor:pointer;border-radius:6px;}
+  .say-line:focus-visible{outline:2px solid var(--navy);outline-offset:3px;}
+  .say-dot{position:absolute;display:block;left:0;top:15px;width:11px;height:11px;border-radius:50%;
+           border:1.5px solid var(--gray);opacity:.55;}
+  .say-line.playing{background:var(--panel);}
+  .say-line.playing .say-dot{background:var(--navy);border-color:var(--navy);opacity:1;}
+  .scene-btn{margin-top:14px;min-height:44px;padding:0 18px;border-radius:22px;
+             border:1.5px solid var(--line);background:var(--white);color:var(--ink);
+             font:inherit;font-size:14px;cursor:pointer;}
+  .scene-btn:hover{border-color:var(--navy);}
+  .diagram svg{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;}
+  @media (max-width:460px){
+    .diagram svg{width:calc(100% + 16px);max-width:none;margin-left:-8px;margin-right:-8px;}
+  }
+  .check-btn,.reveal-btn,.choice-btn{min-height:44px;}
+  /* series.css line 319 gives .choice-btn display:inline-flex, to centre the
+     label inside a 44px tap target. THAT SILENTLY DELETES A SPACE. A flex
+     container makes each child a flex item, and the leading whitespace of an
+     anonymous text item is stripped, so
+        <em>tell</em> needs a person
+     renders as "tellneeds a person". The space IS in the HTML. Flex eats it.
+     Netto saw it before any check did, and no check I own could have seen it:
+     every one of them reads the SOURCE, where the space is present.
+     The rule is latent in four other button classes for the same reason. A1/A2
+     never tripped it because none of its options carries an inline tag. THIS
+     BOOK IS THE FIRST TO PUT ONE THERE. It has exactly two, both of them in
+     unit 16, and two was enough.
+     inline-block lays the label out as ordinary text and keeps the tap target
+     with padding instead of centring. */
+  .choice-btn{display:inline-block !important;align-items:initial;
+              padding:12px 15px !important;line-height:1.35;}
+  .review-key{margin:56px 0 0;padding:22px 24px;border:1.5px solid var(--navy);border-radius:12px;
+    background:var(--panel);font-size:14px;line-height:1.6;color:var(--gray-dark);}
+  .review-key .rk-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 14px;}
+  .review-key .rk-q{margin:16px 0 6px;color:var(--ink);}
+  .review-key .rk-q:first-of-type{margin-top:0;}
+  .review-key ol.rk{margin:0 0 4px;padding-left:22px;}
+  .review-key ol.rk li{margin:3px 0;}
+  .review-key .rk-alt{color:var(--gray);font-size:13px;}
+  .review-key .rk-match{margin:2px 0 4px;font-variant-numeric:tabular-nums;}
+  .build-note{margin:24px 0 0;padding:22px 24px;border:1.5px dashed var(--red);border-radius:12px;
+    background:#FDF6F7;font-size:13.5px;line-height:1.65;color:var(--gray-dark);}
+  .build-note p{margin:0 0 12px;} .build-note p:last-child{margin-bottom:0;}
+  .build-note b{color:var(--red);}
+</style></head><body><div id="gate">
   <h1>Unit 10</h1>
   <p>Concession and contrast<br>This code unlocks every book in the series. Enter it once.</p>
   <input type="text" id="codeInput" placeholder="ACCESS CODE" maxlength="12" autocomplete="off">
   <button onclick="tryCode()">Unlock unit</button>
   <div id="gateError"></div>
 </div>
-
-<div id="privacyModal">
-  <div class="card">
-    <h3>Nothing is saved here</h3>
-    <p>This site doesn't have a login and doesn't store your answers, scores, or progress anywhere. Once you close or refresh the page, this session is gone for good.</p>
-    <p>If you want to keep a record of your work, use the <b>Print / Save as PDF</b> button at the bottom of each unit before you leave.</p>
-    <button onclick="dismissPrivacyModal()">Got it</button>
-  </div>
+<div id="privacyModal"><div class="card">
+  <h3>Nothing is saved here</h3>
+  <p>This site doesn't have a login and doesn't store your answers, scores, or progress anywhere. Once you close or refresh the page, this session is gone for good.</p>
+  <p>If you want to keep a record of your work, use the Print / Save as PDF button at the bottom of the unit before you leave it.</p>
+  <button onclick="dismissPrivacy()">Got it</button>
+</div></div>
+<div id="content" style="display:none"><div id="nav"><a class="brand" href="c1.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIyMCAxNzAgNDQwIDI2MCI+CjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjwvc3ZnPgo=" alt="Concept"><span class="word">CONCEPT</span></a><div><a class="nav-btn" href="c1.html">&larr; Back to book</a><a class="nav-btn" href="c1.html">All units</a></div><span class="unit-label">UNIT 10 &middot; CONCESSION AND CONTRAST</span>
 </div>
 
-<div id="content">
-  <nav id="nav">
-    <a class="brand" href="c1.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIyMCAxNzAgNDQwIDI2MCI+CjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjwvc3ZnPgo=" alt="Concept"><span class="word">CONCEPT</span></a>
-    <span class="unit-label">UNIT 10 · CONCESSION AND CONTRAST</span>
-  </nav>
+<div class="wrap"><div class="print-head"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIyMCAxNzAgNDQwIDI2MCI+CjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjwvc3ZnPgo=" alt="Concept"><span class="pline">Professional English Practice &middot; C1 &middot; Concession</span></div>
+  <p class="sec-kicker" style="margin-top:36px;">PROFESSIONAL ENGLISH PRACTICE &nbsp;&middot;&nbsp; C1 &nbsp;&middot;&nbsp; CONCESSION</p>
+  <h2 class="sec" style="margin-top:4px;">10 · Concession and contrast</h2>
+  <p class="goal" style="font-size:16px;"></p>
 
-  <div class="wrap">
-    <div class="print-head">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4ODAgNzYwIj4KCjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjx0ZXh0IHg9IjQ0MCIgeT0iNTYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQ2FybGl0byIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iNDYiIGxldHRlci1zcGFjaW5nPSIyMCIgZmlsbD0iI0IzMTMyQiI+Q09OQ0VQVDwvdGV4dD4KPHRleHQgeD0iNDQwIiB5PSI2MTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDYXJsaXRvIiBmb250LXNpemU9IjIyIiBsZXR0ZXItc3BhY2luZz0iMTEiIGZpbGw9IiM2RTZFNkUiPk1JTkQgWU9VUiBGVVRVUkU8L3RleHQ+Cjwvc3ZnPg==" alt="Concept">
-      <span class="pline">Professional English Practice · C1 · Clause Architecture</span>
-    </div>
+  <p class="sec-kicker" style="margin-top:48px;">ACCESS</p>
+  <p class="goal"><b>Goal.</b> Conceding ground while holding your line.</p>
+  <div class="dialogue">
+    <p><span class="who">Client</span>Your price is higher than the other vendor's.</p>
+    <p><span class="who">Nina</span><i>(account exec)</i> <b>Although</b> our price is higher, our support is far more responsive. <b>Even though</b> the setup takes longer, it saves time later.</p>
+    <p><span class="who">Client</span>That's fair, but budget is tight this year.</p>
+    <p><span class="who">Nina</span>I understand. <b>While</b> I can't move on price, I can extend the contract term. <b>Granted</b>, that's not a full solution, but it should help.</p>
+    <p><span class="who">Client</span>Let's talk about the term, then.</p>
+  </div>
+  <div class="ex-block" style="border-top:none;padding-top:8px;margin-top:18px;">
+    <p class="listen-note"><b>Check your reading.</b></p>
+    <p class="ex-instr">Three questions about the exchange. Answer before you read the explanation.</p>
+    <div id="exR"></div>
+    <button class="check-btn" onclick="checkPick('R',R_DATA,'Yes.','Not that one.')">Check</button>
+    <div class="fb" id="Rscore"></div>
+  </div>
 
-    <h2 class="sec" style="margin-top:44px;">10 · Concession and contrast</h2>
-    <p class="goal">Conceding ground while holding your line.</p>
+  <p class="sec-kicker" style="margin-top:52px;">VOCABULARY</p>
+  <p class="body-copy">The words for granting a point, and for keeping your own.</p>
+  <div class="bank">
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">to give ground</span><span class="bank-sent">to make a concession in a negotiation</span></span></div>
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">a sticking point</span><span class="bank-sent">the specific issue blocking an agreement</span></span></div>
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">a non-starter</span><span class="bank-sent">a proposal that will not be accepted, not worth raising</span></span></div>
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">common ground</span><span class="bank-sent">a shared point of agreement between two sides</span></span></div>
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">to hold the line</span><span class="bank-sent">to refuse to move further on a position</span></span></div>
+    <div class="bank-item bank-item-flat"><span class="bank-body"><span class="bank-word">a fair ask</span><span class="bank-sent">a reasonable request, not excessive</span></span></div>
+  </div>
 
-    <p class="sec-kicker">ACCESS</p>
-    <p class="body-copy"><b>Goal.</b> Read the negotiation and notice the moves in bold. You are spotting the pattern here, not producing it yet.</p>
-    <div class="dialogue">
-      <p><span class="who">Client</span> Your price is higher than the other vendor's.</p>
-      <p><span class="who">Nina</span> <i>(account exec)</i> <b>Although</b> our price is higher, our support is far more responsive. <b>Even though</b> the setup takes longer, it saves time later.</p>
-      <p><span class="who">Client</span> That's fair, but budget is tight this year.</p>
-      <p><span class="who">Nina</span> I understand. <b>While</b> I can't move on price, I can extend the contract term. <b>Granted</b>, that's not a full solution, but it should help.</p>
-      <p><span class="who">Client</span> Let's talk about the term, then.</p>
-    </div>
+  <p class="sec-kicker" style="margin-top:52px;">ANALYSIS</p>
+  <p class="goal"><b>Goal.</b> Learn to grant a point without losing it, so the other side hears that you listened and still knows where you stand.</p>
 
-    <p class="sec-kicker" style="margin-top:44px;">ANALYSIS</p>
-    <p class="body-copy"><b>Goal.</b> Learn how to concede a real point without losing your position, using concession to earn credibility before you hold your line.</p>
+  <div class="one-question">
+    <p class="oq-label">ONE QUESTION RUNS THIS WHOLE UNIT</p>
+    <p class="oq"><b>Which half do I want them to remember?</b></p>
+    <p class="oq-note">Put the concession in the subordinate clause and your position in the main one. The main clause is what survives the conversation.</p>
+  </div>
 
-    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The structure</h3>
-    <p class="body-copy">Conceding a point is not the same as losing the argument. A well-placed concession, marked by <i>although</i>, <i>even though</i>, or <i>granted</i>, signals that you have heard the other side fairly, which earns you room to hold your position in the very next clause. The two halves work as a pair: acknowledge the true thing first, then pivot to the thing you actually want to land.</p>
-    <div class="split">
-      <div class="card-col">
-        <h4>Concession clauses</h4>
-        <dl><dt>Form</dt><dd>although / even though / while + clause, main clause</dd><dt>Meaning</dt><dd>grants a true point before pivoting to your real position</dd><dt>Use it to</dt><dd>acknowledge the other side fairly before holding your line</dd></dl>
-        <div class="eg">Although our price is higher, our support is far more responsive.</div>
-      </div>
-      <div class="card-col">
-        <h4>Granted / admittedly</h4>
-        <dl><dt>Form</dt><dd>Granted, / Admittedly, + clause. + main clause</dd><dt>Meaning</dt><dd>a short, stand-alone admission that softens what follows</dd><dt>Use it to</dt><dd>concede briefly before a firmer follow-up sentence</dd></dl>
-        <div class="eg">Granted, that's not a full solution, but it should help.</div>
-      </div>
-    </div>
-    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Watch out</h3>
-    <div class="callout">
-      <p><b>Don't let the concession swallow your position.</b> If the concession clause is longer and more detailed than your main point, the listener remembers the concession, not your position. Keep the pivot clause strong and specific.</p>
-      <p><b>Don't double up with <em>but.</em></b> “Although the price is higher, but our support is better” uses two contrast markers for one contrast. Drop the <em>but</em>: “Although the price is higher, our support is better.”</p>
-    </div>
-    <div class="callout">
-      <p><b>American / British English.</b></p>
-      <p><b><em>Whilst</em> versus <em>while.</em></b> British English still uses <em>whilst</em> in formal writing as an alternative to <em>while.</em> American English uses only <em>while.</em> This book uses <em>while.</em></p>
-    </div>
-    <div class="callout">
-      <p><b>All three are correct here.</b> “Even though” is the strongest concession, “although” the neutral one, “while” the softest. All three are current in American English. No count ranks them, because “while” is also temporal and the corpus cannot tell the two senses apart.</p>
-    </div>
-
-    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">The moves</h3>
-    <p class="body-copy">Same pairing in every line. The highlighted slot changes; the concession comes first, the held position comes second.</p>
-    <ul class="moves">
-      <li>Although <span class="slot">[the price is higher / the timeline is longer]</span>, the support is far more responsive.</li>
-      <li>Even though <span class="slot">[the setup takes longer / it costs more upfront]</span>, it saves time later.</li>
-      <li>While I can't <span class="slot">[move on price / shorten the timeline]</span>, I can extend the term.</li>
-      <li>Granted, <span class="slot">[that's not a full solution / it's not perfect]</span>, but it should help.</li>
-      <li>Fair point, but <span class="slot">[the data still supports our approach / the numbers tell a different story]</span>.</li>
-    </ul>
-    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Where each move sits</h3>
-    <div class="diagram">
-      <svg viewBox="0 0 700 288" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A two-part sentence: a soft concession on the left and a firmly held position on the right, with the weight on the second half">
+  <div class="form-box"><p class="fb-label">THE FORM</p><table>
+    <tr><td>Concession clauses</td><td>although / even though / while + clause, main clause</td><td class="fx"></td></tr>
+    <tr><td>Granted / admittedly</td><td>Granted, / Admittedly, + clause. + main clause</td><td class="fx">Granted, that's not a full solution, but it should help. Watch out Don't let the concession swallow your position. If the concession clause is longer and more detailed than your main point, the listener remembers the concession, not your position. Keep the pivot clause strong and specific.</td></tr>
+  </table></div>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>A concession is a structure, not a mood</b></p>
+  <p class="body-copy"><b>Although</b>, <b>even though</b>, <b>while</b> and <b>whereas</b> mark the half you are giving away. Whatever is left in the main clause is the half you are keeping.</p>
+  <p class="body-copy"><em>Although our price is higher, our support is far more responsive.</em> The price is conceded. The support is the position.</p>
+  <p class="body-copy">Reverse the clauses and both facts are still true, but the listener leaves with the price. This is the whole of the skill, and it is a decision you make before you open your mouth.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>The test you can run with no book</b></p>
+  <p class="body-copy">Say the sentence, then ask: <b>if they only heard the last clause, would I be happy?</b></p>
+  <p class="body-copy">If the answer is no, the clauses are the wrong way round.</p>
+  <p class="body-copy">There is a mechanical half too. <b>Although</b> and <b>even though</b> take a full clause: <em>although our price is higher</em>. <b>Despite</b> and <b>in spite of</b> take a noun or an -ing form: <em>despite the higher price</em>. &ldquo;<span class='wrong'>Despite our price is higher</span>&rdquo; is not English.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>Conceding early buys you the objection</b></p>
+  <p class="body-copy"><b>Granted</b>, <b>admittedly</b> and <b>to be fair</b> put the weakness on the table before the other side does.</p>
+  <p class="body-copy"><em>Granted, that's not a full solution, but it should help.</em> The client cannot now present that as an objection; it has already been agreed.</p>
+  <p class="body-copy">The cost is real: you have said the thing out loud. Do it for weaknesses they were going to find anyway, not for ones they had not noticed.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>Contrast is not concession</b></p>
+  <p class="body-copy"><b>Whereas</b> and <b>while</b> can set two things side by side without giving anything up: <em>whereas their setup is faster, ours is more thorough</em>.</p>
+  <p class="body-copy"><b>However</b> and <b>nevertheless</b> come after a full stop and turn the argument: <em>The price is higher. However, the support is included.</em></p>
+  <p class="body-copy">Keep them apart in your own writing. A listener reads <em>although</em> as a concession and will wait for what you are keeping; if nothing is kept, the sentence sounds like a retreat.</p>
+  <div class="split" style="margin-top:26px;">
+    <div class="card-col"><h4>The main clause is your position</h4><dl>
+      <dt>The idea</dt><dd>The concession goes in the subordinate clause; the main clause is what the listener keeps.</dd>
+      <dt>from the scene</dt><dd>Although our price is higher, our support is far more responsive.</dd>
+      <dt>reversed, and worse</dt><dd>Our support is responsive, although our price is higher.</dd>
+      <dt>from your own week</dt><dd>Even though the setup takes longer, it saves time later.</dd>
+    </dl><div class="eg">Although our price is higher, our support is far more responsive.</div></div>
+    <div class="card-col"><h4>although or despite</h4><dl>
+      <dt>The idea</dt><dd><em>Although</em> takes a clause; <em>despite</em> takes a noun or an -ing form.</dd>
+      <dt>works</dt><dd>although our price is higher &middot; despite the higher price</dd>
+      <dt>never</dt><dd><span class='wrong'>despite our price is higher</span></dd>
+      <dt>the check</dt><dd>is there a subject and a verb after it?</dd>
+    </dl><div class="eg">Despite the higher price, the support is included.</div></div>
+    <div class="card-col"><h4>Conceding first</h4><dl>
+      <dt>The idea</dt><dd>Naming the weakness before they do removes it as an attack.</dd>
+      <dt>from the scene</dt><dd>Granted, that's not a full solution, but it should help.</dd>
+      <dt>same move</dt><dd>Admittedly, the first release will be narrow.</dd>
+      <dt>the cost</dt><dd>you have said it out loud, so only do it for what they would find</dd>
+    </dl><div class="eg">Granted, that's not a full solution, but it should help.</div></div>
+    <div class="card-col"><h4>Contrast without conceding</h4><dl>
+      <dt>The idea</dt><dd><em>Whereas</em> sets two things side by side; nothing is given up.</dd>
+      <dt>side by side</dt><dd>Whereas their setup is faster, ours is more thorough.</dd>
+      <dt>after a full stop</dt><dd>The price is higher. However, the support is included.</dd>
+      <dt>from your own week</dt><dd>While I can't move on price, I can extend the term.</dd>
+    </dl><div class="eg">While I can't move on price, I can extend the contract term.</div></div>
+  </div>
+  <div class="callout"><p><b>Watch out</b></p>
+    <p><b>Don't let the concession swallow your position.</b> If the <em>although</em> clause is longer and more detailed than the main clause, the listener remembers the concession. Keep the half you are giving away short.</p>
+    <p><b>Despite takes a noun, not a clause.</b> Say <em>despite the higher price</em> or <em>despite being more expensive</em>. &ldquo;<span class='wrong'>Despite our price is higher</span>&rdquo; is not English. If you want a clause, use <em>although</em>.</p>
+  </div>
+  <p class="body-copy" style="margin-top:26px;"><b>The moves</b></p>
+  <p class="body-copy" style="font-size:14.5px;color:var(--gray);">Same pairing in every line. The highlighted slot changes; the concession comes first, the held position comes second.</p>
+  <div class="split" style="margin-top:14px;">
+    <div class="card-col"><h4>Granting the point</h4><ul class="moves">
+      <li>Although our price is <span class="slot">[higher / above theirs]</span>, our support is far more responsive.</li>
+      <li>Even though the setup <span class="slot">[takes longer / runs into a second week]</span>, it saves time later.</li>
+      <li>Granted, that's not a <span class="slot">[full solution / complete answer]</span>, but it should help.</li>
+    </ul></div>
+    <div class="card-col"><h4>Keeping your own</h4><ul class="moves">
+      <li>While I can't <span class="slot">[move on price / change the rate]</span>, I can extend the term.</li>
+      <li>Whereas their setup is faster, ours is more <span class="slot">[thorough / carefully staged]</span>.</li>
+      <li>The price is higher. However, the support is <span class="slot">[included / built into it]</span>.</li>
+    </ul></div>
+  </div>
+  <div class="diagram"><svg viewBox="0 0 700 288" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A two-part sentence: a soft concession on the left and a firmly held position on the right, with the weight on the second half">
         <text x="350" y="40" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#1F5570">Concede first, land second</text>
         <text x="350" y="62" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#6B6F76">the structure keeps your position in the stronger half</text>
 
@@ -261,135 +658,91 @@
         <text x="350" y="236" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#33363B">Keep the second half specific. If the concession is the longer one,</text>
         <text x="350" y="256" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12.5" fill="#33363B">that is the part the room walks away remembering.</text>
       </svg>
-      <p class="diagram-cap">A soft acknowledgment sits on the left. A held position, stated firmly, sits on the right.</p>
-    </div>
-    <h3 style="font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;">Why this works</h3>
-    <p class="body-copy">A negotiation stalls when either side feels unheard, and a concession is the cheapest way to signal that you heard the other person without giving up your position. The grammar does the diplomatic work for you: <em>although X, Y</em> grants X as true and still lets Y stand as your real claim. Once that frame is automatic, you can concede real points all day without ever sounding like you are backing down, because the sentence structure itself keeps your position in the stronger, second half.</p>
+    <p class="diagram-cap">A soft acknowledgment sits on the left. A held position, stated firmly, sits on the right.</p>
+  </div>
+  <p class="body-copy" style="margin-top:26px;"><b>Why this works</b></p>
+  <p class="body-copy">A negotiation stalls when either side feels unheard, and a concession is the cheapest way to signal that you heard the other person without giving up your position. The grammar does the work: whatever sits in the main clause is what the room carries away, so the same two facts can end as a retreat or as a counter-offer depending only on which clause you put them in. That is a decision you make in the half second before you speak, and it is worth practising until it is automatic.</p>
 
-    <p class="sec-kicker" style="margin-top:56px;">ACTIVATION</p>
-    <p class="body-copy"><b>Goal.</b> Now practice top to bottom: build the form accurately, then control how much ground you concede, then use the words, then say it for real.</p>
-
-    <div class="ex-block">
-      <span class="ex-label">A</span>
-      <p class="ex-title">Complete the form</p>
-      <p class="ex-instr">Complete each sentence with a concession or a firm pivot.</p>
-      <div id="exA"></div>
-      <button class="check-btn" onclick="checkA()">Check my answers</button>
-    </div>
-    <div class="ex-block">
-      <span class="ex-label">B</span>
-      <p class="ex-title">Spot and fix the error</p>
-      <p class="ex-instr">Each sentence has one mistake. Rewrite it correctly.</p>
-      <div id="exB"></div>
-      <button class="check-btn" onclick="checkB()">Check my answers</button>
-      <p class="soft-note">This checks whether the corrected form appears in your sentence, not full punctuation. Check your wording against the key.</p>
-    </div>
-    <div class="ex-block">
-      <span class="ex-label">C</span>
-      <p class="ex-title">Concede, then hold your line</p>
-      <p class="ex-instr">Combine each pair into one sentence: concede the first fact, then hold the second as your position.</p>
-      <div id="exC"></div>
-      <button class="check-btn" onclick="checkC()">Check my answers</button>
-      <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
-    </div>
-    <div class="ex-block">
-      <span class="ex-label">D</span>
-      <p class="ex-title">Match the halves</p>
-      <p class="ex-instr">Join each concession to the firm position that follows it.</p>
-      <div id="exD"></div>
-      <button class="check-btn" onclick="checkD()">Check my answers</button>
-    </div>
-    <div class="ex-block">
-      <span class="ex-label">E</span>
-      <p class="ex-title">Choose the framing</p>
-      <p class="ex-instr">Choose the framing that concedes just the right amount for the moment.</p>
-      <div id="exE"></div>
-    </div>
-    <div class="ex-block">
-      <span class="ex-label">F</span>
-      <p class="ex-title">Rebalance the concession</p>
-      <p class="ex-instr">Rewrite each line so it matches the note in brackets.</p>
-      <div id="exF"></div>
-      <button class="check-btn" onclick="checkF()">Check my answers</button>
-      <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
-    </div>
-    <div class="ex-block">
-      <span class="ex-label">G</span>
-      <p class="ex-title">Vocabulary: holding your position in a negotiation</p>
-      <p class="ex-instr">Match each expression to its meaning.</p>
-      <div id="exG"></div>
-      <button class="check-btn" onclick="checkG()">Check my answers</button>
-    </div>
-    <div class="ex-block">
-      <span class="ex-label">H</span>
-      <p class="ex-title">Vocabulary in context</p>
-      <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once.</p>
-      <div id="exH"></div>
-      <button class="check-btn" onclick="checkH()">Check my answers</button>
-    </div>
-    <div class="ex-block">
-      <span class="ex-label">I</span>
-      <p class="ex-title">Over to you</p>
-      <p class="ex-instr">Not graded. This is where the grammar stops being a rule you know and becomes a sentence you actually say.</p>
-      <div class="task-box">
-        <p><b>In pairs.</b> Run a two-minute negotiation over something small (a deadline, a price, a task split). Each person must concede at least one real point and hold at least one firm position, using the structures above. Your partner checks the position never gets lost inside the concession.</p>
-        <p><b>Then, on your own.</b> Write two sentences about a real disagreement at work, conceding a fair point and holding your position. Read them aloud until the balance feels right.</p>
-      </div>
-    </div>
-
-    <div class="unit-nav">
-      <a class="nav-btn" href="c1-unit9.html">&larr; Unit 9</a>
-      <a class="nav-btn" href="c1.html">All units</a>
-      <a class="nav-btn next" href="c1-unit11.html">Next: Unit 11 &rarr;</a>
+  <p class="sec-kicker" style="margin-top:52px;">ACTIVATION</p>
+  <p class="goal"><b>Goal.</b> Now practice top to bottom: build the form accurately, then control how much ground you concede, then use the words, then say it for real.</p>
+  <div class="ex-block"><span class="ex-label">A</span>
+    <p class="ex-title">Complete the form</p>
+    <p class="ex-instr">Complete each sentence with a concession or a firm pivot.</p>
+    <div id="exA"></div>
+    <button class="check-btn" onclick="checkGaps(&quot;A&quot;,A_DATA)">Check</button>
+    <div class="fb" id="Ascore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">B</span>
+    <p class="ex-title">Spot and fix the error</p>
+    <p class="ex-instr">Each sentence has one mistake. Rewrite it correctly.</p>
+    <div id="exB"></div>
+    <button class="check-btn" onclick="checkRepair(&quot;B&quot;,B_DATA)">Check</button>
+    <div class="fb" id="Bscore"></div>
+    <p class="soft-note">This checks whether the corrected form appears in your sentence, not full punctuation. Check your wording against the key.</p>
+    <p class="soft-note">This checks whether the corrected form appears in your sentence, not full punctuation. Check your wording against the key.</p>
+  </div>
+  <div class="ex-block"><span class="ex-label">C</span>
+    <p class="ex-title">Concede, then hold your line</p>
+    <p class="ex-instr">Combine each pair into one sentence: concede the first fact, then hold the second as your position.</p>
+    <div id="exC"></div>
+    <button class="check-btn" onclick="checkRepair(&quot;C&quot;,C_DATA)">Check</button>
+    <div class="fb" id="Cscore"></div>
+    <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
+    <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
+  </div>
+  <div class="ex-block"><span class="ex-label">D</span>
+    <p class="ex-title">Match the halves</p>
+    <p class="ex-instr">Join each concession to the firm position that follows it.</p>
+    <div id="exD"></div>
+    <button class="check-btn" onclick="checkMatch(&quot;D&quot;,D_TERMS,D_KEY)">Check</button>
+    <div class="fb" id="Dscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">E</span>
+    <p class="ex-title">Choose the framing</p>
+    <p class="ex-instr">Choose the framing that concedes just the right amount for the moment.</p>
+    <div id="exE"></div>
+    <button class="check-btn" onclick="checkPick(&quot;E&quot;,E_DATA,&quot;Yes.&quot;,&quot;The other one fits this better.&quot;)">Check</button>
+    <div class="fb" id="Escore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">F</span>
+    <p class="ex-title">Rebalance the concession</p>
+    <p class="ex-instr">Rewrite each line so it matches the note in brackets.</p>
+    <div id="exF"></div>
+    <button class="check-btn" onclick="checkRepair(&quot;F&quot;,F_DATA)">Check</button>
+    <div class="fb" id="Fscore"></div>
+    <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
+    <p class="soft-note">Model answers, not the only correct phrasing. Judge your own sentence against the pattern.</p>
+  </div>
+  <div class="ex-block"><span class="ex-label">G</span>
+    <p class="ex-title">Vocabulary: holding your position in a negotiation</p>
+    <p class="ex-instr">Match each expression to its meaning.</p>
+    <div id="exG"></div>
+    <button class="check-btn" onclick="checkMatch(&quot;G&quot;,G_TERMS,G_KEY)">Check</button>
+    <div class="fb" id="Gscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">H</span>
+    <p class="ex-title">Vocabulary in context</p>
+    <p class="ex-instr">Complete each sentence with an expression from G. Use each expression once.</p>
+    <div id="exH"></div>
+    <button class="check-btn" onclick="checkGaps(&quot;H&quot;,H_DATA)">Check</button>
+    <div class="fb" id="Hscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">I</span>
+    <p class="ex-title">Over to you</p>
+    <p class="ex-instr">Not graded. This is where the grammar stops being a rule you know and becomes a sentence you actually say.</p>
+    <div class="task-box">
+      <p><b>In pairs.</b> Run a two-minute negotiation over something small (a deadline, a price, a task split). Each person must concede at least one real point and hold at least one firm position, using the structures above. Your partner checks the position never gets lost inside the concession.</p>
+      <p><b>Then, on your own.</b> Write two sentences about a real disagreement at work, conceding a fair point and holding your position. Read them aloud until the balance feels right.</p>
     </div>
   </div>
+  </div><div class="unit-nav"><a class="nav-btn" href="c1-unit9.html">&larr; Unit 9</a><a class="nav-btn" href="c1.html">All units</a><a class="nav-btn next" href="c1-unit11.html">Next: Unit 11 &rarr;</a></div><div id="scoreBar"><span class="score">Auto-graded score: <b id="scoreText">0 / 0</b></span><button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button></div><div class="foot"><a class="nav-btn" href="c1.html">&larr; All units</a><button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button></div><p class="print-reminder">Nothing here is saved. Print before you leave the page.</p></div><script>var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-2388", "AL-5227", "AN-3666", "AO-1929", "AQ-1403", "AR-1212", "AS-8941", "AT-3988", "AU-9614", "AW-1121", "AW-5920", "AY-3957", "AY-8830", "BB-7565", "BI-0990", "BJ-0189", "BJ-2537", "BJ-7138", "BL-1583", "BL-3205", "BL-9902", "BN-2930", "BO-5513", "BQ-9974", "BU-2315", "BU-3356", "BU-4201", "BW-0098", "BY-5952", "BY-8964", "CA-3321", "CA-5707", "CA-7225", "CE-4217", "CE-7673", "CG-8575", "CH-3047", "CM-5599", "CN-0288", "CO-2672", "CO-7250", "CP-0265", "CP-3323", "CQ-7403", "CQ-8469", "CR-3646", "CS-4766", "CU-8380", "CU-8619", "CX-8573", "CX-9951", "CZ-8599", "DB-1837", "DD-7645", "DE-3739", "DE-6860", "DF-6761", "DH-1654", "DH-4587", "DI-3846", "DJ-1666", "DJ-8783", "DJ-9635", "DK-6801", "DR-4798", "DU-0538", "DU-2870", "DU-7191", "DY-1342", "DZ-6215", "EA-5295", "EB-7574", "EI-2870", "EJ-2435", "EJ-7588", "EK-3626", "EL-5403", "EL-7751", "EM-4758", "EN-5720", "EP-8690", "EU-1749", "EU-4668", "EY-0156", "EY-5028", "EY-5771", "EY-8988", "EZ-4901", "EZ-7238", "FA-2480", "FA-3229", "FD-0817", "FD-2307", "FD-2954", "FD-9547", "FF-6110", "FF-8319", "FH-0212", "FI-7378", "FK-4255", "FN-0921", "FN-5013", "FO-3645", "FS-3397", "FU-5114", "FV-4372", "FW-7388", "FX-5735", "FX-8026", "GA-7376", "GC-0379", "GC-0593", "GC-7846", "GD-4624", "GD-8256", "GE-7330", "GG-5258", "GJ-2971", "GJ-8315", "GK-1640", "GK-6237", "GO-2922", "GQ-8518", "GS-0957", "GU-4499", "GX-1422", "GY-4850", "GY-8831", "GZ-1807", "HC-5667", "HD-6398", "HD-6695", "HG-8960", "HI-5126", "HM-0814", "HN-5191", "HR-1799", "HS-0660", "HS-8959", "HT-1159", "HU-6366", "HV-7356", "HX-4184", "HY-8543", "HZ-0868", "HZ-4384", "HZ-4394", "IA-9592", "ID-9262", "IG-2279", "IH-1623", "II-1515", "IL-0808", "IL-2856", "IM-2202", "IN-2853", "IP-2206", "IP-6428", "IS-6888", "IT-7177", "IT-9370", "IU-6890", "IW-7209", "IW-7334", "IX-7882", "IZ-4596", "IZ-5460", "JA-3789", "JA-8127", "JB-4864", "JB-5887", "JB-8392", "JD-3404", "JE-8781", "JG-5409", "JI-6836", "JI-7780", "JJ-1294", "JK-5150", "JL-9806", "JN-9881", "JO-4953", "JP-2813", "JR-6563", "JT-5889", "JU-0546", "KC-4490", "KD-3748", "KF-9500", "KG-2805", "KH-1496", "KM-0226", "KM-6267", "KM-9998", "KN-9232", "KO-2249", "KP-5927", "KQ-1642", "KQ-2174", "KQ-4629", "KS-0562", "KS-2035", "KT-5622", "KX-3719", "KX-5687", "KZ-9069", "LA-3641", "LC-9505", "LF-2835", "LF-3440", "LF-5723", "LG-4259", "LH-0762", "LI-1652", "LJ-4532", "LK-6242", "LM-2637", "LP-6442", "LR-3052", "LR-3190", "LR-3876", "LU-6959", "LY-2430", "LY-8251", "MB-0985", "MC-0432", "MD-5355", "MD-6035", "MF-4039", "MH-8350", "MK-6490", "ML-1094", "ML-6536", "MM-0505", "MM-4633", "MN-6227", "MP-2446", "MU-0263", "MU-1972", "MU-6200", "MV-9345", "MW-3909", "MX-7105", "MZ-7757", "MZ-9673", "NA-6476", "ND-2505", "NE-2445", "NG-4097", "NI-0149", "NI-1933", "NM-4728", "NM-6484", "NQ-0471", "NQ-0763", "NQ-8797", "NS-2836", "NT-1247", "NT-2961", "NT-8096", "NV-2259", "NW-4877", "NX-8284", "OB-2118", "OC-9941", "OD-2269", "OH-9176", "OK-1376", "OL-9223", "OM-3600", "OM-9841", "OO-7410", "OP-0397", "OQ-0089", "OQ-6861", "OS-1295", "OT-0558", "OU-1086", "OZ-3311", "PE-6681", "PF-1393", "PF-5372", "PF-6218", "PI-7454", "PM-5473", "PO-3136", "PO-4375", "PO-6594", "PP-5386", "PW-1775", "PW-8454", "QA-2276", "QB-9637", "QG-4980", "QI-4570", "QI-8762", "QJ-3229", "QK-9389", "QK-9591", "QP-1713", "QP-2800", "QU-3388", "QU-6791", "QV-6067", "QX-4220", "RA-0723", "RA-7714", "RA-9103", "RB-3503", "RC-9055", "RG-8909", "RG-8964", "RG-9044", "RH-0746", "RH-6442", "RN-2614", "RP-8912", "RR-0677", "RS-6858", "RS-6869", "RT-0649", "RT-4827", "RT-9471", "RV-9405", "RW-6355", "RY-1670", "RY-3755", "RY-4569", "SA-4126", "SB-4542", "SC-6853", "SD-6526", "SD-8485", "SH-2111", "SI-6535", "SK-0128", "SK-6149", "SL-2687", "SL-6976", "SL-7928", "SN-9048", "SO-9187", "SQ-1122", "SR-9043", "SR-9835", "ST-1671", "SW-6772", "SX-8305", "SY-5519", "SY-7251", "TB-1236", "TC-3500", "TC-4264", "TD-4528", "TE-3783", "TF-4337", "TF-5946", "TG-4810", "TH-0894", "TL-5384", "TN-6202", "TO-4008", "TO-7503", "TP-3931", "TR-3063", "TV-0181", "TW-7963", "TW-9135", "TY-7002", "UA-5949", "UB-7783", "UB-9445", "UE-0444", "UF-5448", "UG-1507", "UH-0750", "UJ-4353", "UL-1840", "UM-7749", "UN-1590", "UO-0016", "UO-7188", "UQ-0062", "US-3875", "US-5935", "US-6661", "US-7320", "UT-3058", "UT-3191", "UW-5490", "VA-8631", "VB-1375", "VC-0785", "VC-8246", "VC-8661", "VG-3345", "VG-5533", "VG-7188", "VH-6911", "VI-0235", "VJ-9942", "VK-0601", "VK-7802", "VL-5404", "VM-7528", "VN-0611", "VP-6098", "VQ-8570", "VS-1740", "VS-2601", "VS-6960", "VT-6564", "VW-0371", "VX-3419", "VZ-1036", "VZ-1836", "WA-6224", "WB-0446", "WC-4705", "WC-5293", "WC-7126", "WG-1442", "WG-4319", "WG-7876", "WH-7291", "WI-6394", "WL-6650", "WM-1936", "WM-3402", "WM-3514", "WO-4160", "WO-9743", "WP-5457", "WV-1968", "WW-2749", "WY-0407", "XC-0115", "XC-4025", "XC-5579", "XE-5640", "XE-8199", "XE-8990", "XJ-7882", "XL-0683", "XL-1983", "XL-8634", "XO-8511", "XP-7585", "XQ-3502", "XR-5738", "XT-4226", "XU-8893", "XV-2651", "XW-2661", "YA-4779", "YA-6871", "YD-8536", "YF-6161", "YH-6239", "YI-0086", "YI-0777", "YI-3786", "YK-1311", "YK-7066", "YQ-7512", "YU-2273", "YU-9619", "YV-6712", "ZC-0180", "ZD-3923", "ZD-9426", "ZE-9214", "ZF-5917", "ZF-6868", "ZG-1159", "ZG-5395", "ZH-6679", "ZH-9625", "ZK-7397", "ZL-0255", "ZM-4958", "ZN-2112", "ZN-7991", "ZN-9807", "ZO-3469", "ZO-4134", "ZP-7760", "ZQ-4512", "ZQ-5687", "ZU-2853", "ZU-9981", "ZV-9981", "ZW-7998", "ZY-0638", "ZZ-2645"];
 
-  <div id="scoreBar">
-    <span class="score">Auto-graded score: <b id="scoreText">0 / 0</b></span>
-    <button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button>
-  </div>
-</div>
-
-<script>
-var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-2388", "AL-5227", "AN-3666", "AO-1929", "AQ-1403", "AR-1212", "AS-8941", "AT-3988", "AU-9614", "AW-1121", "AW-5920", "AY-3957", "AY-8830", "BB-7565", "BI-0990", "BJ-0189", "BJ-2537", "BJ-7138", "BL-1583", "BL-3205", "BL-9902", "BN-2930", "BO-5513", "BQ-9974", "BU-2315", "BU-3356", "BU-4201", "BW-0098", "BY-5952", "BY-8964", "CA-3321", "CA-5707", "CA-7225", "CE-4217", "CE-7673", "CG-8575", "CH-3047", "CM-5599", "CN-0288", "CO-2672", "CO-7250", "CP-0265", "CP-3323", "CQ-7403", "CQ-8469", "CR-3646", "CS-4766", "CU-8380", "CU-8619", "CX-8573", "CX-9951", "CZ-8599", "DB-1837", "DD-7645", "DE-3739", "DE-6860", "DF-6761", "DH-1654", "DH-4587", "DI-3846", "DJ-1666", "DJ-8783", "DJ-9635", "DK-6801", "DR-4798", "DU-0538", "DU-2870", "DU-7191", "DY-1342", "DZ-6215", "EA-5295", "EB-7574", "EI-2870", "EJ-2435", "EJ-7588", "EK-3626", "EL-5403", "EL-7751", "EM-4758", "EN-5720", "EP-8690", "EU-1749", "EU-4668", "EY-0156", "EY-5028", "EY-5771", "EY-8988", "EZ-4901", "EZ-7238", "FA-2480", "FA-3229", "FD-0817", "FD-2307", "FD-2954", "FD-9547", "FF-6110", "FF-8319", "FH-0212", "FI-7378", "FK-4255", "FN-0921", "FN-5013", "FO-3645", "FS-3397", "FU-5114", "FV-4372", "FW-7388", "FX-5735", "FX-8026", "GA-7376", "GC-0379", "GC-0593", "GC-7846", "GD-4624", "GD-8256", "GE-7330", "GG-5258", "GJ-2971", "GJ-8315", "GK-1640", "GK-6237", "GO-2922", "GQ-8518", "GS-0957", "GU-4499", "GX-1422", "GY-4850", "GY-8831", "GZ-1807", "HC-5667", "HD-6398", "HD-6695", "HG-8960", "HI-5126", "HM-0814", "HN-5191", "HR-1799", "HS-0660", "HS-8959", "HT-1159", "HU-6366", "HV-7356", "HX-4184", "HY-8543", "HZ-0868", "HZ-4384", "HZ-4394", "IA-9592", "ID-9262", "IG-2279", "IH-1623", "II-1515", "IL-0808", "IL-2856", "IM-2202", "IN-2853", "IP-2206", "IP-6428", "IS-6888", "IT-7177", "IT-9370", "IU-6890", "IW-7209", "IW-7334", "IX-7882", "IZ-4596", "IZ-5460", "JA-3789", "JA-8127", "JB-4864", "JB-5887", "JB-8392", "JD-3404", "JE-8781", "JG-5409", "JI-6836", "JI-7780", "JJ-1294", "JK-5150", "JL-9806", "JN-9881", "JO-4953", "JP-2813", "JR-6563", "JT-5889", "JU-0546", "KC-4490", "KD-3748", "KF-9500", "KG-2805", "KH-1496", "KM-0226", "KM-6267", "KM-9998", "KN-9232", "KO-2249", "KP-5927", "KQ-1642", "KQ-2174", "KQ-4629", "KS-0562", "KS-2035", "KT-5622", "KX-3719", "KX-5687", "KZ-9069", "LA-3641", "LC-9505", "LF-2835", "LF-3440", "LF-5723", "LG-4259", "LH-0762", "LI-1652", "LJ-4532", "LK-6242", "LM-2637", "LP-6442", "LR-3052", "LR-3190", "LR-3876", "LU-6959", "LY-2430", "LY-8251", "MB-0985", "MC-0432", "MD-5355", "MD-6035", "MF-4039", "MH-8350", "MK-6490", "ML-1094", "ML-6536", "MM-0505", "MM-4633", "MN-6227", "MP-2446", "MU-0263", "MU-1972", "MU-6200", "MV-9345", "MW-3909", "MX-7105", "MZ-7757", "MZ-9673", "NA-6476", "ND-2505", "NE-2445", "NG-4097", "NI-0149", "NI-1933", "NM-4728", "NM-6484", "NQ-0471", "NQ-0763", "NQ-8797", "NS-2836", "NT-1247", "NT-2961", "NT-8096", "NV-2259", "NW-4877", "NX-8284", "OB-2118", "OC-9941", "OD-2269", "OH-9176", "OK-1376", "OL-9223", "OM-3600", "OM-9841", "OO-7410", "OP-0397", "OQ-0089", "OQ-6861", "OS-1295", "OT-0558", "OU-1086", "OZ-3311", "PE-6681", "PF-1393", "PF-5372", "PF-6218", "PI-7454", "PM-5473", "PO-3136", "PO-4375", "PO-6594", "PP-5386", "PW-1775", "PW-8454", "QA-2276", "QB-9637", "QG-4980", "QI-4570", "QI-8762", "QJ-3229", "QK-9389", "QK-9591", "QP-1713", "QP-2800", "QU-3388", "QU-6791", "QV-6067", "QX-4220", "RA-0723", "RA-7714", "RA-9103", "RB-3503", "RC-9055", "RG-8909", "RG-8964", "RG-9044", "RH-0746", "RH-6442", "RN-2614", "RP-8912", "RR-0677", "RS-6858", "RS-6869", "RT-0649", "RT-4827", "RT-9471", "RV-9405", "RW-6355", "RY-1670", "RY-3755", "RY-4569", "SA-4126", "SB-4542", "SC-6853", "SD-6526", "SD-8485", "SH-2111", "SI-6535", "SK-0128", "SK-6149", "SL-2687", "SL-6976", "SL-7928", "SN-9048", "SO-9187", "SQ-1122", "SR-9043", "SR-9835", "ST-1671", "SW-6772", "SX-8305", "SY-5519", "SY-7251", "TB-1236", "TC-3500", "TC-4264", "TD-4528", "TE-3783", "TF-4337", "TF-5946", "TG-4810", "TH-0894", "TL-5384", "TN-6202", "TO-4008", "TO-7503", "TP-3931", "TR-3063", "TV-0181", "TW-7963", "TW-9135", "TY-7002", "UA-5949", "UB-7783", "UB-9445", "UE-0444", "UF-5448", "UG-1507", "UH-0750", "UJ-4353", "UL-1840", "UM-7749", "UN-1590", "UO-0016", "UO-7188", "UQ-0062", "US-3875", "US-5935", "US-6661", "US-7320", "UT-3058", "UT-3191", "UW-5490", "VA-8631", "VB-1375", "VC-0785", "VC-8246", "VC-8661", "VG-3345", "VG-5533", "VG-7188", "VH-6911", "VI-0235", "VJ-9942", "VK-0601", "VK-7802", "VL-5404", "VM-7528", "VN-0611", "VP-6098", "VQ-8570", "VS-1740", "VS-2601", "VS-6960", "VT-6564", "VW-0371", "VX-3419", "VZ-1036", "VZ-1836", "WA-6224", "WB-0446", "WC-4705", "WC-5293", "WC-7126", "WG-1442", "WG-4319", "WG-7876", "WH-7291", "WI-6394", "WL-6650", "WM-1936", "WM-3402", "WM-3514", "WO-4160", "WO-9743", "WP-5457", "WV-1968", "WW-2749", "WY-0407", "XC-0115", "XC-4025", "XC-5579", "XE-5640", "XE-8199", "XE-8990", "XJ-7882", "XL-0683", "XL-1983", "XL-8634", "XO-8511", "XP-7585", "XQ-3502", "XR-5738", "XT-4226", "XU-8893", "XV-2651", "XW-2661", "YA-4779", "YA-6871", "YD-8536", "YF-6161", "YH-6239", "YI-0086", "YI-0777", "YI-3786", "YK-1311", "YK-7066", "YQ-7512", "YU-2273", "YU-9619", "YV-6712", "ZC-0180", "ZD-3923", "ZD-9426", "ZE-9214", "ZF-5917", "ZF-6868", "ZG-1159", "ZG-5395", "ZH-6679", "ZH-9625", "ZK-7397", "ZL-0255", "ZM-4958", "ZN-2112", "ZN-7991", "ZN-9807", "ZO-3469", "ZO-4134", "ZP-7760", "ZQ-4512", "ZQ-5687", "ZU-2853", "ZU-9981", "ZV-9981", "ZW-7998", "ZY-0638", "ZZ-2645"];
-
-/* ===== SERIES-WIDE UNLOCK =====
-   'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
-   honored so students who already entered a code never have to enter it again. */
-function isUnlocked(){
-  if(framedByApp()){ return true; }
-  try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
-  catch(e){ return false; }
-}
-function grantAccess(){
-  try{ localStorage.setItem('cm_access','1'); localStorage.setItem('cm_pv_access','1'); }catch(e){}
-}
-function privacySeen(){
-  try{ return localStorage.getItem('cm_privacy_seen')==='1' || localStorage.getItem('cm_pv_privacy_seen')==='1'; }
-  catch(e){ return true; }
-}
-function markPrivacySeen(){
-  try{ localStorage.setItem('cm_privacy_seen','1'); localStorage.setItem('cm_pv_privacy_seen','1'); }catch(e){}
-}
-/* ---- framed by The Concept Coach -------------------------------------------
-   Inside the app this page is a THIRD-PARTY frame, served from
-   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
-   third-party storage outright, so the unlock flag can never be written and the
-   gate would ask for a code again on every single unit. When the app is the
-   framer the page is already behind the app's own password: protect it once,
-   not twice.
-
-   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
-   coach.theconceptmethod.com is the final address, registered and not yet
-   connected. If only the first were listed here, the day that domain is
-   connected all 138 gated pages would start asking for codes again and nobody
-   would remember why.
-
-   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
-   concept-coach.pages.dev.example.com would match the prefix.
-
-   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
-   returns false immediately and the gate behaves exactly as it always has. */
+/* ADDITIVE ONLY, and copied from C1 so the whole series behaves the same.
+   A direct visitor has window.self === window.top, so this returns false at
+   once and the gate behaves exactly as it always has. It exists because the
+   Coach FRAMES the published page rather than keeping a copy of it, and a
+   student who already unlocked the book in the app must not meet the gate
+   again inside it. */
 function framedByApp(){
   try{
     if(window.self === window.top){ return false; }
@@ -398,290 +751,290 @@ function framedByApp(){
            r.indexOf('https://coach.theconceptmethod.com/') === 0;
   }catch(e){ return false; }
 }
-
-function tryCode(){
-  var v = document.getElementById('codeInput').value.trim().toUpperCase();
-  if(VALID_CODES.indexOf(v) !== -1){
-    grantAccess();
-    document.getElementById('gate').style.display='none';
-    document.getElementById('content').style.display='block';
-    buildAll();
-    maybeShowPrivacyModal();
-  } else {
-    document.getElementById('gateError').textContent = "That code isn't recognized. Check with Pedro if you think this is an error.";
-  }
+function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
+/* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
+   before the series had a shared key. Honouring it is what keeps an existing
+   student from being asked for a code they already used. */
+function hasAccess(){
+  if(framedByApp()){ return true; }
+  try{ return localStorage.getItem('cm_access')==='1' ||
+              localStorage.getItem('cm_pv_access')==='1'; }
+  catch(e){ return false; }
 }
-document.getElementById('codeInput').addEventListener('keydown', function(e){ if(e.key==='Enter') tryCode(); });
-function dismissPrivacyModal(){
+function dismissPrivacy(){
   document.getElementById('privacyModal').classList.remove('shown');
-  markPrivacySeen();
+  try{ localStorage.setItem('cm_privacy','1'); }catch(e){}
 }
 function maybeShowPrivacyModal(){
-  if(!privacySeen()){ document.getElementById('privacyModal').classList.add('shown'); }
+  var seen=false; try{ seen = localStorage.getItem('cm_privacy')==='1'; }catch(e){}
+  if(!seen) document.getElementById('privacyModal').classList.add('shown');
 }
+function openUnit(){
+  document.getElementById('gate').style.display='none';
+  document.getElementById('content').style.display='block';
+  buildAll();
+  maybeShowPrivacyModal();
+}
+function tryCode(){
+  var v = document.getElementById('codeInput').value.trim().toUpperCase();
+  if(VALID_CODES.indexOf(v) !== -1){ grantAccess(); openUnit(); }
+  else { document.getElementById('gateError').textContent =
+    'That code was not recognised. Check it and try again.'; }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(hasAccess()) openUnit();
+  var i=document.getElementById('codeInput');
+  if(i) i.addEventListener('keydown', function(e){ if(e.key==='Enter') tryCode(); });
+});
 
-/* ===== SCORING =====
-   Re-checking a section replaces its previous score instead of adding to it. */
-var gradedGroups = {}, groupTotals = {}, totalCorrect = 0, totalGraded = 0;
-function registerGrade(key, correct, total){
-  groupTotals[key] = total;
-  gradedGroups[key] = correct;
-  var c = 0, t = 0;
-  for(var k in gradedGroups){ c += gradedGroups[k]; t += groupTotals[k]; }
-  totalCorrect = c; totalGraded = t;
-  updateScore();
-}
-function updateScore(){ document.getElementById('scoreText').textContent = totalCorrect + " / " + totalGraded; }
+/* THE SHARED ENGINE. One copy for the book, per-unit data supplied by the
+   module. Unit 1 carried its own copy and that is a second place to be wrong. */
+/* CONTRACTIONS ARE EXPANDED BEFORE COMPARING, so a learner who writes `I've
+   gone` is not marked wrong against a key that says `I have gone`. Netto asked
+   whether the answer key is coherent; it was not. An instrument that fed each
+   item its own model answer in contracted form found 115 correct alternatives
+   refused across the book, almost all of them in the repair exercise.
 
-/* ===== MATCHING HELPERS ===== */
-function norm(s){
-  return s.toLowerCase()
-    .replace(/[\u2018\u2019]/g,"'")
-    .replace(/[\u201C\u201D]/g,'"')
-    .replace(/[.,!?;:]+$/,'')
-    .replace(/\s+/g,' ')
-    .trim();
+   `'d` IS DELIBERATELY LEFT ALONE. It expands to both `had` and `would`, so
+   normalising it would make `I'd read more` match a key that reads `I had read
+   more`, and the checker would start accepting the exact error the conditional
+   units exist to prevent. Those items list their alternatives by hand instead. */
+function expand(s){
+ return s.replace(/\bcan't\b/g,'can not').replace(/\bcannot\b/g,'can not')
+         .replace(/\bwon't\b/g,'will not').replace(/\bshan't\b/g,'shall not')
+         .replace(/n't\b/g,' not')
+         .replace(/'ve\b/g,' have').replace(/'ll\b/g,' will')
+         .replace(/'re\b/g,' are').replace(/'m\b/g,' am')
+         .replace(/\s+/g,' ');
 }
-function contains(hay, needle){ return norm(hay).indexOf(norm(needle)) !== -1; }
+function norm(s){return expand((s||'').toLowerCase().replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[.!?,;]+$/,'').replace(/\s+/g,' ').trim()).trim();}
+function setfb(id,ok,html){var e=document.getElementById(id);e.className='fb '+(ok?'ok':'bad');e.innerHTML=html;}
+/* The per-exercise line, and the running total when the page carries a score
+   bar. GRADED is keyed by exercise, so checking the same one twice replaces its
+   contribution instead of adding to it. A page with no scoreText is untouched. */
+var GRADED={},GTOTAL={};
+function tally(L,c,n){setfb(L+'score',c===n,c+' / '+n+' correct.');
+ GRADED[L]=c;GTOTAL[L]=n;
+ var e=document.getElementById('scoreText');
+ if(e){var a=0,b=0;for(var k in GRADED){a+=GRADED[k];b+=GTOTAL[k];}e.textContent=a+' / '+b;}}
+var PICK={};
 
-/* Canonical form for verb-form answers. Expands contractions, drops a leading or
-   intervening subject, flattens slash notation. "I've worked", "'ve worked" and
-   "have worked" all pass; a wrong tense still fails. */
-function canon(s){
-  var x = norm(s);
-  var pairs = [
-    [/\bi've\b/g,"i have"], [/\bwe've\b/g,"we have"], [/\bthey've\b/g,"they have"],
-    [/\byou've\b/g,"you have"], [/\bhe's\b/g,"he has"], [/\bshe's\b/g,"she has"],
-    [/\bit's\b/g,"it has"], [/\bwe'd\b/g,"we had"], [/\bi'd\b/g,"i had"],
-    [/\bthey'd\b/g,"they had"], [/\bshe'd\b/g,"she had"], [/\bhe'd\b/g,"he had"],
-    [/\bwe'll\b/g,"we will"], [/\bi'll\b/g,"i will"], [/\bthey'll\b/g,"they will"],
-    [/\bshe'll\b/g,"she will"], [/\bhe'll\b/g,"he will"], [/\bit'll\b/g,"it will"],
-    [/\bwe're\b/g,"we are"], [/\bthey're\b/g,"they are"], [/\bi'm\b/g,"i am"],
-    [/\bhaven't\b/g,"have not"], [/\bhasn't\b/g,"has not"], [/\bhadn't\b/g,"had not"],
-    [/\bdidn't\b/g,"did not"], [/\bwon't\b/g,"will not"],
-    [/^'ve\b/,"have"], [/^'s\b/,"has"], [/^'d\b/,"had"], [/^'ll\b/,"will"]
-  ];
-  for(var i=0;i<pairs.length;i++){ x = x.replace(pairs[i][0], pairs[i][1]); }
-  x = x.replace(/\s*\/\s*/g,' ').replace(/\.{2,}/g,' ');
-  x = x.replace(/^(i|you|we|they|he|she|it|the system|the team|the client|the batch|the line|quality|nobody)\s+/,'');
-  x = x.replace(/\b(did|do|does|have|has|had|will|would)\s+(i|you|we|they|he|she|it)\s+/,'$1 ');
-  return x.replace(/\s+/g,' ').trim();
-}
-function matchesForm(v, list){
-  return list.some(function(a){ return canon(v) === canon(a); });
-}
-function matchesLoose(v, list){
-  return list.some(function(a){
-    return norm(v).replace(/^(a|an|the)\s+/,'').replace(/-/g,' ')
-        === norm(a).replace(/^(a|an|the)\s+/,'').replace(/-/g,' ');
-  });
-}
+/* MULTIPLE CHOICE, used by the Access check and by the framing exercise. */
+function buildPick(L,data,stack){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var st=stack?' style="flex-direction:column;align-items:stretch;"':'';
+  var bs=stack?' style="text-align:left;border-radius:10px;"':'';
+  var h='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+(stack?'<b>'+it.s+'</b>':it.q)+'</div><div class="choices"'+st+'>';
+  it.o.forEach(function(o,j){h+='<button class="choice-btn"'+bs+' id="'+L+i+'_'+j+'" onclick="pick(\''+L+'\','+i+','+j+')">'+o+'</button>';});
+  h+='</div><div class="fb" id="'+L+'fb'+i+'"></div>';d.innerHTML=h;el.appendChild(d);});}
+function pick(L,i,j){PICK[L+i]=j;
+ var n=document.querySelectorAll('[id^="'+L+i+'_"]');
+ for(var k=0;k<n.length;k++){n[k].className='choice-btn'+(k===j?' picked':'');}}
+function checkPick(L,data,yes,no){var c=0;data.forEach(function(it,i){
+ var p=PICK[L+i],ok=(p===it.a);if(ok)c++;
+ if(p!==undefined)document.getElementById(L+i+'_'+p).className='choice-btn '+(ok?'correct':'wrong');
+ if(!ok)document.getElementById(L+i+'_'+it.a).className='choice-btn correct';
+ setfb(L+'fb'+i,ok,(ok?yes:no)+' '+it.why);});tally(L,c,data.length);}
 
-/* ===== EXERCISE BUILDERS ===== */
-function buildForm(L, data, ph){
-  var el = document.getElementById('ex'+L); el.innerHTML='';
-  data.forEach(function(item,i){
-    var d=document.createElement('div'); d.className='q';
-    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
-    var inputs;
-    if(multi){
-      /* Per-blank answer key (item.a is an array of per-blank answer
-         arrays): one input per blank, with the sentence's own fixed
-         word(s) printed between them so the student sees exactly where
-         each answer goes, instead of one box for a multi-word answer
-         with no stated convention for what to type in it. A leading
-         parenthetical right after a blank is a conjugation hint (e.g.
-         "(know)"), not part of the sentence, so it is stripped before
-         display -- the fixed text shown is exactly what the finished
-         sentence says between the blanks, nothing else. Keyed off the
-         answer format, not the blank count in the text, so an item
-         whose key has not been migrated yet still renders the old,
-         single-box way instead of a box count nothing backs. */
-      var segs=item.q.split(/_{3,}/);
-      var row='<input type="text" id="'+L+i+'_0" placeholder="'+ph+'">';
-      for(var k=1;k<item.a.length;k++){
-        var mid=(segs[k]||'').replace(/^\s*\(.*?\)\s*/,'').trim();
-        row+=' <span class="fixed-word">'+mid+'</span> <input type="text" id="'+L+i+'_'+k+'" placeholder="'+ph+'">';
-      }
-      inputs='<div class="answer-row">'+row+'</div>';
-    } else {
-      inputs='<input type="text" id="'+L+i+'" placeholder="'+ph+'">';
-    }
-    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      inputs+'<div class="fb" id="'+L+'fb'+i+'"></div>';
-    el.appendChild(d);
-  });
-}
-function checkForm(L, data){
-  var c=0;
-  data.forEach(function(item,i){
-    var fb=document.getElementById(L+'fb'+i);
-    var multi=Array.isArray(item.a) && Array.isArray(item.a[0]);
-    var ok, shown;
-    if(multi){
-      ok=true;
-      var parts=[];
-      for(var k=0;k<item.a.length;k++){
-        var v=document.getElementById(L+i+'_'+k).value;
-        if(!matchesForm(v,item.a[k])) ok=false;
-        parts.push(item.a[k][0]);
-      }
-      shown=parts.join(' / ');
-    } else {
-      var v=document.getElementById(L+i).value;
-      ok=matchesForm(v,item.a);
-      shown=item.a[0];
-    }
-    if(ok){ fb.textContent='Correct.'+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+shown; fb.className='fb bad'; }
-  });
-  registerGrade(L,c,data.length);
-}
+/* GAP FILL with one or two gaps per item. */
+function buildGaps(L,data,bank){var el=document.getElementById('ex'+L);el.innerHTML='';
+ if(bank&&bank.length){var b=document.createElement('p');b.className='soft-note';
+  b.textContent='Word bank: '+bank.join(', ');el.appendChild(b);}
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var h='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+it.t+'</div><div class="answer-row">';
+  it.a.forEach(function(_,j){h+='<input type="text" id="'+L+i+'_'+j+'" placeholder="'+(it.a.length>1?(j===0?'first gap':'second gap'):'answer')+'">';});
+  h+='</div><div class="fb" id="'+L+'fb'+i+'"></div>';d.innerHTML=h;el.appendChild(d);});}
+function checkGaps(L,data){var c=0;data.forEach(function(it,i){var ok=true;
+ it.a.forEach(function(alts,j){var v=norm(document.getElementById(L+i+'_'+j).value);
+  if(alts.map(norm).indexOf(v)<0)ok=false;});
+ if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?('Good.'+(it.w?' '+it.w:'')):'Not yet. &nbsp;<span class="muted">'+it.a.map(function(x){return x[0];}).join(' &nbsp;/&nbsp; ')+'</span>');});
+ tally(L,c,data.length);}
 
-function buildRewrite(L, data, ph){
-  var el=document.getElementById('ex'+L); el.innerHTML='';
-  data.forEach(function(item,i){
-    var n = item.note ? ' <i style="color:var(--gray);">'+item.note+'</i>' : '';
-    var d=document.createElement('div'); d.className='q';
-    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+n+'</div>'+
-      '<input type="text" class="wide" id="'+L+i+'" placeholder="'+ph+'"><div class="fb" id="'+L+'fb'+i+'"></div>';
-    el.appendChild(d);
-  });
-}
-function checkRewrite(L, data){
-  var c=0;
-  data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
-    var fb=document.getElementById(L+'fb'+i);
-    var hit=item.keys.some(function(k){ return contains(v,k); });
-    /* "reject" blocks answers that left the original error in place */
-    if(hit && item.reject){
-      hit = !item.reject.some(function(r){ return contains(v,r); });
-    }
-    if(hit){ fb.textContent='Correct. '+item.full+(item.why?' '+item.why:''); fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.full; fb.className='fb bad'; }
-  });
-  registerGrade(L,c,data.length);
-}
+/* REPAIR. EVERY PRINTED STRING IS ENGLISH THE LANGUAGE NEVER ALLOWS. */
+function buildRepair(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span><span class="wrong">'+it.q+'</span>'+
+  (it.n?' <i class="muted">'+it.n+'</i>':'')+'</div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="write it correctly">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+/* Two ways to mark a repair, and the item chooses. WITHOUT `k`: the answer must
+   equal one of `a` (what B1/B2 writes). WITH `k`: the answer must CONTAIN one of
+   the key phrases and must not contain anything in `x`, which is how the C1
+   pages have always marked, and `x` is the list that stops a student handing the
+   original error straight back. Collapsing `k` to a single exact sentence would
+   mark correct English wrong, which Rule 4 forbids. */
+function checkRepair(L,data){var c=0;data.forEach(function(it,i){
+ var raw=document.getElementById(L+i).value,v=norm(raw),ok;
+ if(it.k){ok=it.k.some(function(k){return v.indexOf(norm(k))!==-1;});
+  if(ok&&it.x)ok=!it.x.some(function(r){return v.indexOf(norm(r))!==-1;});}
+ else ok=it.a.map(norm).indexOf(v)>=0;
+ if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?('Good. '+it.a[0]+(it.w?' '+it.w:'')):'Not yet. &nbsp;<span class="muted">'+it.a[0]+'</span>');});
+ tally(L,c,data.length);}
 
-function buildMatch(L, openers, endings, bold){
-  var el=document.getElementById('ex'+L); el.innerHTML='';
-  openers.forEach(function(op,i){
-    var opts='<option value="">choose one</option>';
-    endings.forEach(function(e){ opts+='<option value="'+e.id+'">'+e.id+'. '+e.t+'</option>'; });
-    var label = bold ? '<b>'+op+'</b>' : op;
-    var d=document.createElement('div'); d.className='q';
-    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+label+'</div>'+
-      '<select class="match-select" id="'+L+i+'">'+opts+'</select><div class="fb" id="'+L+'fb'+i+'"></div>';
-    el.appendChild(d);
-  });
-}
-function checkMatch(L, endings, key){
-  var c=0;
-  key.forEach(function(k,i){
-    var v=document.getElementById(L+i).value;
-    var fb=document.getElementById(L+'fb'+i);
-    var txt=''; endings.forEach(function(e){ if(e.id===k) txt=e.t; });
-    if(v===k){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+k+'. '+txt; fb.className='fb bad'; }
-  });
-  registerGrade(L,c,key.length);
-}
+/* JOIN. Presence, shape and ORDER, and never truth. `cont` names the verb that
+   must carry the marked form, which is what stops the checker from rewarding
+   the exact analysis the unit exists to prevent. */
+function buildJoin(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var hint=it.start?' <span class="hint">(start with <b>'+it.start+'</b>)</span>':'';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+it.t+hint+'</div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="one sentence">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkJoin(L,data,rule){var c=0;data.forEach(function(it,i){
+ var raw=(document.getElementById(L+i).value||'').trim(),low=raw.toLowerCase(),why='';
+ var first=(low.split(/\s+/)[0]||'').replace(/[^a-z]/g,''),comma=raw.indexOf(',');
+ /* ONE ITEM MAY OVERRIDE THE MARK. The rule is the exercise's, but an item can
+    demand something the others do not -- a word the learner has to SUPPLY
+    rather than copy. Without this the demand has to go into `cont`, which is
+    documented as naming a verb, and a checker whose fields lie is one nobody
+    can maintain. */
+ var mkSrc=it.mark||rule.mark, mkWhy=it.markWhy||rule.markWhy;
+ var markRx=new RegExp(mkSrc.replace('STEM',it.cont||'\\w+'),'i');
+ if(!raw)why='Write one sentence.';
+ else if(it.start&&first!==it.start)why='Start this one with <b>'+it.start+'</b>.';
+ else if(rule.join&&!new RegExp(rule.join,'i').test(low))why=rule.joinWhy;
+ else if(!markRx.test(raw))why=mkWhy;
+ else if(rule.frontWords&&new RegExp('^('+rule.frontWords+')\\b','i').test(low)&&comma<0)
+   why='You started with <b>'+first+'</b>, so the sentence needs a comma in the middle.';
+ else if(rule.before&&new RegExp('^('+rule.before+')\\b','i').test(low)&&!markRx.test(raw.slice(0,comma)))
+   why=rule.beforeWhy;
+ else if(rule.after&&new RegExp('^('+rule.after+')\\b','i').test(low)&&!markRx.test(raw.slice(comma)))
+   why=rule.afterWhy;
+ else if(!/^[A-Z]/.test(raw))why='Start with a capital letter.';
+ else if(!/[.!?]$/.test(raw))why='End it with a full stop.';
+ if(why)setfb(L+'fb'+i,false,why+'<br><span class="muted">One way: '+it.m+'</span>');
+ else{c++;setfb(L+'fb'+i,true,'Good.<br><span class="muted">'+(it.alt?'Also right: '+it.alt:'Another way: '+it.m)+'</span>');}});
+ tally(L,c,data.length);}
+function revealKey(L,data){var k=document.getElementById(L+'key');
+ k.innerHTML='<b>Model answers.</b><br>'+data.map(function(it,i){
+  return (i+1)+'. '+it.m+(it.alt?'<br><span class="muted" style="margin-left:18px;">or: '+it.alt+'</span>':'');}).join('<br>');
+ k.className='key-box shown';}
 
-var CHOICE_PICKED = {};
-function buildChoice(L, data, opts){
-  var el=document.getElementById('ex'+L); el.innerHTML='';
-  CHOICE_PICKED[L] = {};
-  data.forEach(function(item,i){
-    var btns='';
-    opts.forEach(function(o,oi){
-      btns+='<button class="choice-btn" id="'+L+i+'b'+oi+'" onclick="pickChoice(\''+L+'\','+i+','+oi+')">'+o.label+'</button>';
-    });
-    var d=document.createElement('div'); d.className='q';
-    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<div class="choices">'+btns+'</div><div class="fb" id="'+L+'fb'+i+'"></div>';
-    el.appendChild(d);
-  });
-}
-function pickChoice(L, i, oi){
-  var data = window[L+'_DATA'], opts = window[L+'_OPTS'];
-  CHOICE_PICKED[L][i] = oi;
-  opts.forEach(function(o,j){ document.getElementById(L+i+'b'+j).className='choice-btn'; });
-  var fb=document.getElementById(L+'fb'+i);
-  var correct = data[i].a;
-  if(oi === correct){
-    document.getElementById(L+i+'b'+oi).className='choice-btn correct';
-    fb.textContent='Correct. '+data[i].note; fb.className='fb ok';
-  } else {
-    document.getElementById(L+i+'b'+oi).className='choice-btn wrong';
-    document.getElementById(L+i+'b'+correct).className='choice-btn correct';
-    fb.textContent='Not quite. '+data[i].note; fb.className='fb bad';
-  }
-  var c=0;
-  data.forEach(function(it,j){ if(CHOICE_PICKED[L][j] === it.a) c++; });
-  registerGrade(L, c, data.length);
-}
+/* MATCHING. The key is checked at build time, not here: see checks.py. */
+function buildMatch(L,terms,means){var el=document.getElementById('ex'+L);
+ var opts='<option value="">&mdash;</option>'+means.map(function(m){return '<option value="'+m.id+'">'+m.id+'</option>';}).join('');
+ var h='<div class="body-copy" style="margin-bottom:14px;">'+means.map(function(m){return '<b>'+m.id+'.</b> '+m.t;}).join('<br>')+'</div>';
+ terms.forEach(function(t,i){h+='<div class="q"><div class="answer-row"><span class="num" style="color:var(--navy);font-weight:700;">'+(i+1)+'.</span>'+
+  '<span class="fixed-word" style="min-width:130px;"><b>'+t+'</b></span>'+
+  '<select class="match-select" style="width:90px;" id="'+L+i+'">'+opts+'</select>'+
+  '<span class="fb" id="'+L+'fb'+i+'" style="margin:0;display:block;"></span></div></div>';});
+ el.innerHTML=h;}
+function checkMatch(L,terms,key){var c=0;terms.forEach(function(t,i){
+ var ok=document.getElementById(L+i).value===key[i];if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?'&#10003;':'&rarr; '+key[i]);});tally(L,c,terms.length);}
 
-function buildGap(L, data, bank){
-  var el=document.getElementById('ex'+L);
-  el.innerHTML='<p class="soft-note" style="margin-bottom:14px;">Word bank: '+bank.join(', ')+'</p>';
-  data.forEach(function(item,i){
-    var d=document.createElement('div'); d.className='q';
-    d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+item.q+'</div>'+
-      '<input type="text" id="'+L+i+'" placeholder="fill the gap"><div class="fb" id="'+L+'fb'+i+'"></div>';
-    el.appendChild(d);
-  });
-}
-function checkGap(L, data){
-  var c=0;
-  data.forEach(function(item,i){
-    var v=document.getElementById(L+i).value;
-    var fb=document.getElementById(L+'fb'+i);
-    if(matchesLoose(v,item.a)){ fb.textContent='Correct.'; fb.className='fb ok'; c++; }
-    else { fb.textContent='Not quite. Answer: '+item.a[0]; fb.className='fb bad'; }
-  });
-  registerGrade(L,c,data.length);
-}
+/* THE FREE SENTENCE. Presence, shape and order. Never truth. Model either way.
 
+   `front` HOLDS SUBORDINATE-CLAUSE OPENERS AND NOTHING ELSE. A word belongs
+   there only if a MAIN CLAUSE has to follow it, which is what makes the comma
+   obligatory: while, when, as soon as, until, before, after, once, if, unless,
+   as long as, by the time.
+   IT HAS BEEN FILLED WRONGLY THREE TIMES AND EACH TIME THE CHECKER REFUSED
+   CORRECT ENGLISH:
+     `at first`, `back then`, `in an ideal world`  -- adverbials. They open a
+        sentence and nothing has to follow them, so no comma is required.
+     `if only`  -- opens a WHOLE WISH. "If only this room had a window." is a
+        complete sentence with no second half at all.
+   If you cannot name the main clause that must follow, the word does not go in.
 
-var A_DATA = [{"q": "______ the price is higher, our support is better.", "a": ["Although", "Even though"]}, {"q": "Granted, the rollout was rocky, ______ it's stable now.", "a": ["but"]}, {"q": "______ I can't extend the deadline, I can add more resources.", "a": ["While", "Although", "Even though"], "why": "All three work. Even though is the strongest concession, although is neutral, while is the softest."}, {"q": "Even though the setup is slower, it ______ time later.", "a": ["saves"]}, {"q": "Fair point, ______ the numbers still favor our approach.", "a": ["but"]}, {"q": "______ the budget is tight, quality can't slip.", "a": ["Even though", "Although", "While"], "why": "All three work. Even though is the strongest concession, although is neutral, while is the softest."}];
-function buildA(){ buildForm("A", A_DATA, "type the verb form"); }
-function checkA(){ checkForm("A", A_DATA); }
-var B_DATA = [{"q": "Although the price is higher, but the support is better.", "keys": ["higher, the support is better"], "reject": ["but the support"], "full": "Although the price is higher, the support is better."}, {"q": "Granted the rollout was rocky, it's stable now, however.", "keys": ["rocky, but it's stable now", "rocky, but it is stable now"], "full": "Granted, the rollout was rocky, but it's stable now."}, {"q": "Whilst I can't move on price, I can extend the term.", "keys": ["while i can't move", "while i cannot move"], "full": "While I can't move on price, I can extend the term."}, {"q": "Even the setup takes longer, it saves time later.", "keys": ["even though the setup"], "full": "Even though the setup takes longer, it saves time later."}, {"q": "Although our timeline is longer than theirs it's more reliable.", "keys": ["than theirs, it's more reliable", "than theirs, it is more reliable"], "full": "Although our timeline is longer than theirs, it's more reliable."}];
-function buildB(){ buildRewrite("B", B_DATA, "rewrite it correctly"); }
-function checkB(){ checkRewrite("B", B_DATA); }
-var C_DATA = [{"q": "The price is higher. Our support is more responsive.", "keys": ["although the price is higher", "even though the price is higher"], "full": "Although the price is higher, our support is more responsive."}, {"q": "The rollout was rocky. It's stable now.", "keys": ["even though the rollout was rocky", "although the rollout was rocky"], "full": "Even though the rollout was rocky, it's stable now."}, {"q": "We can't move on price. We can extend the contract.", "keys": ["while we can't move", "while we cannot move", "although we can't move"], "full": "While we can't move on price, we can extend the contract."}, {"q": "The setup takes longer. It saves time later.", "keys": ["even though the setup takes longer", "although the setup takes longer"], "full": "Even though the setup takes longer, it saves time later."}, {"q": "The budget is tight. Quality can't slip.", "keys": ["even though the budget is tight", "although the budget is tight"], "full": "Even though the budget is tight, quality can't slip."}];
-function buildC(){ buildRewrite("C", C_DATA, "combine them"); }
-function checkC(){ checkRewrite("C", C_DATA); }
-var D_OPENERS = ["Although the price is higher,", "Even though the rollout was rocky,", "While I can't shorten the timeline,", "Granted, it's not a full fix,", "Fair point, but"];
-var D_ENDINGS = [{"id": "a", "t": "our support answers in minutes, not days."}, {"id": "b", "t": "it should hold until the rewrite lands."}, {"id": "c", "t": "the data has not moved since we last looked."}, {"id": "d", "t": "I can add two more reviewers."}, {"id": "e", "t": "it's stable now, three weeks running."}];
-var D_KEY = ["a", "e", "d", "b", "c"];
-function buildD(){ buildMatch("D", D_OPENERS, D_ENDINGS, false); }
-function checkD(){ checkMatch("D", D_ENDINGS, D_KEY); }
-var E_DATA = [{"q": "The other side has a real point you must acknowledge before pushing back.", "a": 0, "note": "Soft concession first: “I hear you on budget, and I want to find a way to work with that.”"}, {"q": "You need to hold firm on price but soften the overall tone.", "a": 1, "note": "Firm line, brief concession: “Granted, it's more upfront, but the price holds.”"}, {"q": "You want a brief, low-key concession before a firm counterpoint.", "a": 1, "note": "Low-key concession: “Fair point. That said, the timeline stays as is.”"}, {"q": "You're conceding a small thing to protect a much bigger point.", "a": 2, "note": "Small concession, big point held: “I can move the kickoff date, but the scope stays fixed.”"}];
-var E_OPTS = [{"label": "Concede first, then push back"}, {"label": "Brief concession, firm line"}, {"label": "Small concession, bigger point held"}];
-function buildE(){ buildChoice("E", E_DATA, E_OPTS); }
-var F_DATA = [{"q": "The price is fixed.", "note": "[concede the client's point about budget first, then hold the price]", "keys": ["the price stays fixed", "the price holds"], "full": "Although I understand the budget concern, the price stays fixed."}, {"q": "The timeline slipped.", "note": "[make the concession brief, then pivot firmly to the current status]", "keys": ["back on track"], "full": "Granted, the timeline slipped, but we're back on track now."}, {"q": "We can't waive the fee.", "note": "[concede the frustration, then offer a firm alternative]", "keys": ["payment plan"], "full": "I hear the frustration, but I can't waive the fee; I can offer a payment plan instead."}, {"q": "Our quality is non-negotiable.", "note": "[concede the cost point first, then hold quality firmly]", "keys": ["isn't negotiable", "is not negotiable", "quality standard"], "full": "Although cost is a real concern, our quality standard isn't negotiable."}];
-function buildF(){ buildRewrite("F", F_DATA, "rewrite it"); }
-function checkF(){ checkRewrite("F", F_DATA); }
-var G_OPENERS = ["to give ground", "a sticking point", "a non-starter", "common ground", "to hold the line", "a fair ask"];
-var G_ENDINGS = [{"id": "a", "t": "the specific issue blocking an agreement"}, {"id": "b", "t": "to make a concession in a negotiation"}, {"id": "c", "t": "a shared point of agreement between two sides"}, {"id": "d", "t": "a proposal that will not be accepted, not worth raising"}, {"id": "e", "t": "a reasonable request, not excessive"}, {"id": "f", "t": "to refuse to move further on a position"}];
-var G_KEY = ["b", "a", "d", "c", "f", "e"];
-function buildG(){ buildMatch("G", G_OPENERS, G_ENDINGS, true); }
-function checkG(){ checkMatch("G", G_ENDINGS, G_KEY); }
-var H_DATA = [{"q": "We found some ______ on the timeline, if nothing else.", "a": ["common ground"]}, {"q": "Price is clearly the ______ in this deal.", "a": ["sticking point"]}, {"q": "A full refund is a ______. We can't offer that.", "a": ["non-starter"]}, {"q": "We're willing to ______ on delivery dates, not on price.", "a": ["give ground"]}, {"q": "On the core terms, we need to ______.", "a": ["hold the line"]}, {"q": "Extending the trial period seems like a ______.", "a": ["fair ask"]}];
-function buildH(){ buildGap("H", H_DATA, ["give ground", "sticking point", "non-starter", "common ground", "hold the line", "fair ask"]); }
-function checkH(){ checkGap("H", H_DATA); }
+   AN ITEM MAY DECLARE `find`, A REGEX, INSTEAD OF RELYING ON ITS OWN SPELLING.
+   The literal search failed on three of unit 5's own models and one of unit 3's,
+   and in every case the MODEL WAS RIGHT AND THE CHECKER WAS WRONG: a learner
+   writes `falls through`, not `fall through`, and `put the launch off`, not
+   `put off`. A multi-word expression is inflected and separated in real use, and
+   a checker that demands the dictionary form refuses correct English.
 
-function buildAll(){ buildA(); buildB(); buildC(); buildD(); buildE(); buildF(); buildG(); buildH(); updateScore(); }
+   AND `front` IS FOR CLAUSE OPENERS ONLY. `While I was checking, ...` needs the
+   comma. `Back then we used to send it by post` does not, because a short adverb
+   is not a clause. Unit 1 shipped with `at first` on that list and would have
+   refused a correct sentence. */
+function buildWrite(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span><b>'+it.word+'</b></div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="your own sentence">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkWrite(L,data,rule){var c=0;data.forEach(function(it,i){
+ var raw=(document.getElementById(L+i).value||'').trim(),low=raw.toLowerCase(),why='';
+ var front=(rule.front||[]).filter(function(w){return low.indexOf(w)===0;})[0];
+ if(!raw)why='Write a sentence.';
+ else if(!(it.find? new RegExp(it.find,'i').test(raw)
+                 : low.indexOf(it.word.toLowerCase().replace(/^(a|an|the)\s+/,''))>=0))
+   why='I cannot find <b>'+it.word+'</b> in your sentence.';
+ else if(it.must&&!it.must.some(function(m){return new RegExp('\\b'+m+'\\b','i').test(raw);}))
+   why='Use one of these: <b>'+it.must.join(', ')+'</b>.';
+ else if(rule.mark&&!new RegExp(rule.mark,'i').test(raw))why=rule.markWhy;
+ else if(front&&raw.indexOf(',')<0)
+   why='You started with <b>'+front+'</b>, so the sentence needs a comma in the middle.';
+ else if(!/^[A-Z]/.test(raw))why='Start with a capital letter.';
+ else if(!/[.!?]$/.test(raw))why='End it with a full stop.';
+ else if(raw.split(/\s+/).length<(rule.minWords||6))why='Say a little more. '+(rule.minWords||6)+' words at least.';
+ if(why)setfb(L+'fb'+i,false,why+'<br><span class="muted">One way: '+it.model+'</span>');
+ else{c++;setfb(L+'fb'+i,true,'Good.<br><span class="muted">Another way: '+it.model+'</span>');}});
+ tally(L,c,data.length);}
 
+var R_DATA=[{"q": "Nina says <em>Although our price is higher, our support is far more responsive.</em> Which half is her position?", "o": ["the first", "the second", "both equally"], "a": 1, "why": "The concession is in the <em>although</em> clause. The main clause carries the position, and that is the half the listener keeps."}, {"q": "What would change if she said <em>Our support is far more responsive, although our price is higher</em>?", "o": ["nothing", "the price would land last", "it would be ungrammatical"], "a": 1, "why": "Same two facts, reversed order. Whatever comes last is what the listener carries out of the room, so the order is the decision."}, {"q": "Why does she say <em>Granted, that's not a full solution</em>?", "o": ["to weaken her offer", "to say the objection before the client does", "to be polite"], "a": 1, "why": "Naming the weakness first takes it away as an attack. The client can no longer raise it as news."}];
+var A_DATA=[{"t": "______ the price is higher, our support is better.", "a": [["Although", "Even though"]]}, {"t": "Granted, the rollout was rocky, ______ it's stable now.", "a": [["but"]]}, {"t": "______ I can't extend the deadline, I can add more resources.", "a": [["While", "Although", "Even though"]], "w": "All three work. Even though is the strongest concession, although is neutral, while is the softest."}, {"t": "Even though the setup is slower, it ______ time later.", "a": [["saves"]]}, {"t": "Fair point, ______ the numbers still favor our approach.", "a": [["but"]]}, {"t": "______ the budget is tight, quality can't slip.", "a": [["Even though", "Although", "While"]], "w": "All three work. Even though is the strongest concession, although is neutral, while is the softest."}];
+var B_DATA=[{"q": "Although the price is higher, but the support is better.", "a": ["Although the price is higher, the support is better."], "k": ["higher, the support is better"], "x": ["but the support"]}, {"q": "Granted the rollout was rocky, it's stable now, however.", "a": ["Granted, the rollout was rocky, but it's stable now."], "k": ["rocky, but it's stable now", "rocky, but it is stable now"]}, {"q": "Whilst I can't move on price, I can extend the term.", "a": ["While I can't move on price, I can extend the term."], "k": ["while i can't move", "while i cannot move"]}, {"q": "Even the setup takes longer, it saves time later.", "a": ["Even though the setup takes longer, it saves time later."], "k": ["even though the setup"]}, {"q": "Although our timeline is longer than theirs it's more reliable.", "a": ["Although our timeline is longer than theirs, it's more reliable."], "k": ["than theirs, it's more reliable", "than theirs, it is more reliable"]}];
+var C_DATA=[{"q": "The price is higher. Our support is more responsive.", "a": ["Although the price is higher, our support is more responsive."], "k": ["although the price is higher", "even though the price is higher"]}, {"q": "The rollout was rocky. It's stable now.", "a": ["Even though the rollout was rocky, it's stable now."], "k": ["even though the rollout was rocky", "although the rollout was rocky"]}, {"q": "We can't move on price. We can extend the contract.", "a": ["While we can't move on price, we can extend the contract."], "k": ["while we can't move", "while we cannot move", "although we can't move"]}, {"q": "The setup takes longer. It saves time later.", "a": ["Even though the setup takes longer, it saves time later."], "k": ["even though the setup takes longer", "although the setup takes longer"]}, {"q": "The budget is tight. Quality can't slip.", "a": ["Even though the budget is tight, quality can't slip."], "k": ["even though the budget is tight", "although the budget is tight"]}];
+var D_TERMS=["Although the price is higher,", "Even though the rollout was rocky,", "While I can't shorten the timeline,", "Granted, it's not a full fix,", "Fair point, but"];
+var D_MEANS=[{"id": "a", "t": "our support answers in minutes, not days."}, {"id": "b", "t": "it should hold until the rewrite lands."}, {"id": "c", "t": "the data has not moved since we last looked."}, {"id": "d", "t": "I can add two more reviewers."}, {"id": "e", "t": "it's stable now, three weeks running."}];
+var D_KEY=["a", "e", "d", "b", "c"];
+var E_DATA=[{"s": "The other side has a real point you must acknowledge before pushing back.", "o": ["Concede first, then push back", "Brief concession, firm line", "Small concession, bigger point held"], "a": 0, "why": "Soft concession first: “I hear you on budget, and I want to find a way to work with that.”"}, {"s": "You need to hold firm on price but soften the overall tone.", "o": ["Concede first, then push back", "Brief concession, firm line", "Small concession, bigger point held"], "a": 1, "why": "Firm line, brief concession: “Granted, it's more upfront, but the price holds.”"}, {"s": "You want a brief, low-key concession before a firm counterpoint.", "o": ["Concede first, then push back", "Brief concession, firm line", "Small concession, bigger point held"], "a": 1, "why": "Low-key concession: “Fair point. That said, the timeline stays as is.”"}, {"s": "You're conceding a small thing to protect a much bigger point.", "o": ["Concede first, then push back", "Brief concession, firm line", "Small concession, bigger point held"], "a": 2, "why": "Small concession, big point held: “I can move the kickoff date, but the scope stays fixed.”"}];
+var F_DATA=[{"q": "The price is fixed.", "n": "[concede the client's point about budget first, then hold the price]", "a": ["Although I understand the budget concern, the price stays fixed."], "k": ["the price stays fixed", "the price holds"]}, {"q": "The timeline slipped.", "n": "[make the concession brief, then pivot firmly to the current status]", "a": ["Granted, the timeline slipped, but we're back on track now."], "k": ["back on track"]}, {"q": "We can't waive the fee.", "n": "[concede the frustration, then offer a firm alternative]", "a": ["I hear the frustration, but I can't waive the fee; I can offer a payment plan instead."], "k": ["payment plan"]}, {"q": "Our quality is non-negotiable.", "n": "[concede the cost point first, then hold quality firmly]", "a": ["Although cost is a real concern, our quality standard isn't negotiable."], "k": ["isn't negotiable", "is not negotiable", "quality standard"]}];
+var G_TERMS=["to give ground", "a sticking point", "a non-starter", "common ground", "to hold the line", "a fair ask"];
+var G_MEANS=[{"id": "a", "t": "the specific issue blocking an agreement"}, {"id": "b", "t": "to make a concession in a negotiation"}, {"id": "c", "t": "a shared point of agreement between two sides"}, {"id": "d", "t": "a proposal that will not be accepted, not worth raising"}, {"id": "e", "t": "a reasonable request, not excessive"}, {"id": "f", "t": "to refuse to move further on a position"}];
+var G_KEY=["b", "a", "d", "c", "f", "e"];
+var H_DATA=[{"t": "We found some ______ on the timeline, if nothing else.", "a": [["common ground"]]}, {"t": "Price is clearly the ______ in this deal.", "a": [["sticking point"]]}, {"t": "A full refund is a ______. We can't offer that.", "a": [["non-starter"]]}, {"t": "We're willing to ______ on delivery dates, not on price.", "a": [["give ground"]]}, {"t": "On the core terms, we need to ______.", "a": [["hold the line"]]}, {"t": "Extending the trial period seems like a ______.", "a": [["fair ask"]]}];
+var H_BANK=["give ground", "sticking point", "non-starter", "common ground", "hold the line", "fair ask"];
+function buildAll(){
+  buildPick("R",R_DATA,false);
+  buildGaps("A",A_DATA);
+  buildRepair("B",B_DATA);
+  buildRepair("C",C_DATA);
+  buildMatch("D",D_TERMS,D_MEANS);
+  buildPick("E",E_DATA,true);
+  buildRepair("F",F_DATA);
+  buildMatch("G",G_TERMS,G_MEANS);
+  buildGaps("H",H_DATA,H_BANK);
+}</script><script>
+/* ONE Audio element for the page. Tapping a line plays it; tapping the line that
+   is already playing stops it. Nothing preloads: a learner on mobile data pays
+   for the line he asked for and for no other. */
 (function(){
-  if(isUnlocked()){
-    document.getElementById('gate').style.display='none';
-    document.getElementById('content').style.display='block';
-    buildAll();
-    maybeShowPrivacyModal();
+  var el=null, cur=null;
+  function stop(){ if(el){el.pause();} if(cur){cur.classList.remove('playing');} cur=null; }
+  function play(p){
+    if(cur===p){ stop(); return; }
+    stop();
+    if(!el){ el=new Audio(); }
+    el.onended=stop;
+    el.src='audio/'+p.dataset.a+'.mp3';
+    cur=p; p.classList.add('playing');
+    el.play().catch(function(){ stop(); });
   }
+  document.addEventListener('click',function(e){
+    var p=e.target.closest ? e.target.closest('.say-line') : null; if(p) play(p);
+  });
+  document.addEventListener('keydown',function(e){
+    var a=document.activeElement;
+    if((e.key===' '||e.key==='Enter')&&a&&a.classList&&a.classList.contains('say-line')){
+      e.preventDefault(); play(a);
+    }
+  });
+  window.playScene=function playScene(){
+    var lines=[].slice.call(document.querySelectorAll('.say-line')), i=0;
+    stop();
+    if(!el){ el=new Audio(); }
+    function step(){
+      if(i>=lines.length){ cur=null; el.onended=stop; return; }
+      cur=lines[i]; cur.classList.add('playing');
+      el.src='audio/'+cur.dataset.a+'.mp3';
+      el.play().catch(function(){ cur.classList.remove('playing'); cur=null; el.onended=stop; });
+    }
+    el.onended=function(){ if(cur){cur.classList.remove('playing');} i++; step(); };
+    step();
+  };
 })();
-</script>
-</body></html>
+</script></body></html>
