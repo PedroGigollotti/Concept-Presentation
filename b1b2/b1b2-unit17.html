@@ -679,21 +679,21 @@
     <p class="ex-title">Step it back</p>
     <p class="ex-instr">Write the reported form. Five of these describe something that is OVER, so the step back is the only honest option. THE LAST ONE HAS TWO CORRECT ANSWERS, and the third section says why.</p>
     <div id="exA"></div>
-    <button class="check-btn" onclick="checkGaps("A",A_DATA)">Check</button>
+    <button class="check-btn" onclick="checkGaps(&quot;A&quot;,A_DATA)">Check</button>
     <div class="fb" id="Ascore"></div>
   </div>
   <div class="ex-block"><span class="ex-label">B</span>
     <p class="ex-title">Spot and fix the error</p>
     <p class="ex-instr">Each sentence has one mistake. Write it correctly.</p>
     <div id="exB"></div>
-    <button class="check-btn" onclick="checkRepair("B",B_DATA)">Check</button>
+    <button class="check-btn" onclick="checkRepair(&quot;B&quot;,B_DATA)">Check</button>
     <div class="fb" id="Bscore"></div>
   </div>
   <div class="ex-block"><span class="ex-label">C</span>
     <p class="ex-title">Say or tell?</p>
     <p class="ex-instr">Report each statement. The situation tells you whether the listener is in your sentence.</p>
     <div id="exC"></div>
-    <button class="check-btn" onclick="checkJoin("C",C_DATA,C_RULE)">Check</button>
+    <button class="check-btn" onclick="checkJoin(&quot;C&quot;,C_DATA,C_RULE)">Check</button>
     <button class="reveal-btn" onclick="revealKey("C",C_DATA)">Show model answers</button>
     <div class="fb" id="Cscore"></div>
     <div class="key-box" id="Ckey"></div>
@@ -702,21 +702,21 @@
     <p class="ex-title">Is it fair to them?</p>
     <p class="ex-instr">Both sentences are correct English, and both report the same words. Choose the one that is fair to the person who is not in the room.</p>
     <div id="exD"></div>
-    <button class="check-btn" onclick="checkPick("D",D_DATA,"Yes.","The other one gives your manager a different person.")">Check</button>
+    <button class="check-btn" onclick="checkPick(&quot;D&quot;,D_DATA,&quot;Yes.&quot;,&quot;The other one gives your manager a different person.&quot;)">Check</button>
     <div class="fb" id="Dscore"></div>
   </div>
   <div class="ex-block"><span class="ex-label">E</span>
     <p class="ex-title">Vocabulary: reporting verbs</p>
     <p class="ex-instr">Match each verb to its meaning.</p>
     <div id="exE"></div>
-    <button class="check-btn" onclick="checkMatch("E",E_TERMS,E_KEY)">Check</button>
+    <button class="check-btn" onclick="checkMatch(&quot;E&quot;,E_TERMS,E_KEY)">Check</button>
     <div class="fb" id="Escore"></div>
   </div>
   <div class="ex-block"><span class="ex-label">F</span>
     <p class="ex-title">Write a sentence</p>
     <p class="ex-instr">Write ONE sentence with each verb, reporting something a real person really said.</p>
     <div id="exF"></div>
-    <button class="check-btn" onclick="checkWrite("F",F_DATA,F_RULE)">Check</button>
+    <button class="check-btn" onclick="checkWrite(&quot;F&quot;,F_DATA,F_RULE)">Check</button>
     <div class="fb" id="Fscore"></div>
     <p class="soft-note">This check looks at three things only: that your verb is there, that it is in the past, and that it looks like a sentence. It cannot check the step back, and it certainly cannot tell you whether the verb you picked is fair to the person. The model is there for that, and so are you.</p>
   </div>
