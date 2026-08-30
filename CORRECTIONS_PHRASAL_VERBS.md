@@ -844,3 +844,34 @@ they do not come back as a second American/British callout in the same unit.
 These pages have no generator. This record is the only place the correction is
 written down, so a future edit that regenerates or replaces the page has
 something to check itself against.
+
+---
+
+## 30 Aug 2026 — unit 2 gains the task the other 31 units give
+
+**File:** `unit2.html`, the ACCESS paragraph.
+
+| was | is |
+| --- | --- |
+| One phrase here, **live with**, follows a pattern you'll learn to spot. | One phrase here, **live with**, follows a pattern you'll learn to spot. Before you read on, decide whether it splits. |
+
+**Why.** Measured across all 32 published pages: 31 hand the learner something
+to do before the explanation, in several wordings — *Guess it from the particle*
+(unit 1), *Predict it from the particle before you read on* (unit 25), *let the
+particle show you what each one means* (unit 17). Unit 2 named its untaught
+phrase and asked nothing.
+
+**Why this task and not the usual one.** Unit 2 teaches syntax, not meaning:
+which verbs split around their object and which never do. Predicting a meaning
+from the particle would be the wrong operation, so the prediction is about the
+pattern. The scene answers it four lines later — Nadia: *Put up with it, never
+split. Same with live with the risk.*
+
+**What this is not.** It is not the ONE QUESTION panel from C1 and C2. Phrasal
+Verbs already has its own decision procedure, and units 29–32 deliberately drop
+it because that part of the book is about placement rather than decoding — it
+says so itself: *This part of the book is about placement, not decoding.*
+Nothing was imported from another book.
+
+Applied by `concept-kit/tools/phrasal_unit2_prediction.py`, which verifies the
+target string is byte-identical and refuses the file otherwise.
