@@ -150,6 +150,7 @@
     <a class="nav-link" id="navHome" href="index.html">Home</a>
           <a class="nav-link" id="navMethod" href="method.html">Method</a>
           <a class="nav-link" id="navBook" href="book.html">Books</a>
+    <a class="nav-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
     <div class="lang-switch" id="langSwitch">
       <button type="button" data-lang="en"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg></span>EN</button>
       <button type="button" data-lang="pt"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#009B3A"/><path d="M30 8L54 30 30 52 6 30z" fill="#FEDF00"/><circle cx="30" cy="30" r="10" fill="#002776"/></svg></span>PT</button>
@@ -254,7 +255,7 @@
 <script>
 window.I18N = {
   en: {
-    nav_method: "Method", nav_book: "Books", nav_home: "Home", nav_cta: "Talk to me",
+    nav_method: "Method", nav_book: "Books", nav_home: "Home", nav_lessons: "Students", nav_cta: "Talk to me",
     about_kicker: "ABOUT",
     about_h2_a: "Not an agency.", about_h2_em: "One teacher", about_h2_b: ", 25 years in.",
     about_p1: "I've spent a quarter of a century teaching professional communication across six countries: Brazil, the USA, England, Ireland, Malta, and Italy. That range isn't a travel list. It's why I can teach how English actually shifts between a London boardroom, a New York sales call, and a Milan negotiation.",
@@ -286,7 +287,7 @@ window.I18N = {
     footer_copy: "© 2026 Concept. Mind your future."
   },
   pt: {
-    nav_method: "Método", nav_book: "Livros", nav_home: "Início", nav_cta: "Falar comigo",
+    nav_method: "Método", nav_book: "Livros", nav_home: "Início", nav_lessons: "Alunos", nav_cta: "Falar comigo",
     about_kicker: "SOBRE",
     about_h2_a: "Nada de agências.", about_h2_em: "Apenas um especialista", about_h2_b: ", com 25 anos de estrada.",
     about_p1: "Passei um quarto de século ensinando comunicação corporativa em seis países: Brasil, EUA, Inglaterra, Irlanda, Malta e Itália. Isso não é só um roteiro de viagens. É o que me permite entender de verdade como o inglês muda entre uma reunião de diretoria em Londres, uma call de vendas em Nova York e uma negociação tensa em Milão.",
@@ -318,7 +319,7 @@ window.I18N = {
     footer_copy: "© 2026 Concept. Todos os direitos reservados."
   },
   it: {
-    nav_method: "Metodo", nav_book: "Libri", nav_home: "Home", nav_cta: "Contattami",
+    nav_method: "Metodo", nav_book: "Libri", nav_home: "Home", nav_lessons: "Studenti", nav_cta: "Contattami",
     about_kicker: "CHI SONO",
     about_h2_a: "Nessun intermediario.", about_h2_em: "Un solo esperto", about_h2_b: "con 25 anni di esperienza.",
     about_p1: "Ho passato un quarto di secolo a formare i professionisti di sei paesi: Brasile, Stati Uniti, Regno Unito, Irlanda, Malta e Italia. Non è solo un elenco di viaggi, è ciò che mi permette di capire veramente come cambia l'inglese tra un CdA a Londra, una call di vendita a New York e una trattativa complessa a Milano.",
@@ -370,6 +371,8 @@ function applyLang(lang){
   document.getElementById('ctaContact').setAttribute('href', 'index.html?lang=' + lang + '#contact');
   var nm = document.getElementById('navMethod');
         if(nm){ nm.textContent = t('nav_method'); nm.setAttribute('href','method.html?lang=' + lang); }
+        var nl = document.getElementById('navLessons');
+  if(nl){ nl.textContent = t('nav_lessons'); }
         var nb = document.getElementById('navBook');
         if(nb){ nb.textContent = t('nav_book'); }
         document.getElementById('ctaMethod').textContent = t('ctaMethod');

@@ -454,6 +454,7 @@
     <a class="nav-link" id="navMethod" href="method.html">Method</a>
           <a class="nav-link" id="navAbout" href="about.html">About</a>
     <a class="nav-link" id="navBook" href="book.html">Book</a>
+    <a class="nav-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
     <div class="lang-switch" id="langSwitch">
       <button type="button" data-lang="en"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg></span>EN</button>
       <button type="button" data-lang="pt"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#009B3A"/><path d="M30 8L54 30 30 52 6 30z" fill="#FEDF00"/><circle cx="30" cy="30" r="10" fill="#002776"/></svg></span>PT</button>
@@ -737,7 +738,7 @@ window.I18N = {
   en: {
     nav_cta: "Talk to me",
     nav_method: "Method", nav_about: "About",
-    nav_book: "Books",
+    nav_book: "Books", nav_lessons: "Students",
     book_kicker: "THE BOOK SERIES",
     book_h2_a: "The method, ", book_h2_em: "in print", book_h2_b: ".",
     book_lede: "Professional English Practice and Calibrated Speech put the same register and pragmatics work into a page you can read on your own time, structured by CEFR level, from your first sentence to full command.",
@@ -902,7 +903,7 @@ window.I18N = {
   pt: {
     nav_cta: "Falar comigo",
     nav_method: "Método", nav_about: "Sobre",
-    nav_book: "Livros",
+    nav_book: "Livros", nav_lessons: "Alunos",
     book_kicker: "A SÉRIE DE LIVROS",
     book_h2_a: "O método, ", book_h2_em: "no papel", book_h2_b: ".",
     book_lede: "Professional English Practice e Calibrated Speech trazem o mesmo trabalho de registro e pragmática para uma leitura no seu próprio ritmo, organizada por nível do CEFR, da primeira frase ao domínio completo.",
@@ -1067,7 +1068,7 @@ window.I18N = {
   it: {
     nav_cta: "Contattami",
     nav_method: "Metodo", nav_about: "Chi sono",
-    nav_book: "Libri",
+    nav_book: "Libri", nav_lessons: "Studenti",
     book_kicker: "LA COLLANA DI LIBRI",
     book_h2_a: "Il metodo, ", book_h2_em: "su carta", book_h2_b: ".",
     book_lede: "Professional English Practice e Calibrated Speech portano lo stesso lavoro su registro e pragmatica in una lettura al tuo ritmo, organizzata per livello CEFR, dalla prima frase alla piena padronanza.",
@@ -1388,6 +1389,13 @@ function applyLang(lang){
   var navBook = document.getElementById('navBook');
   if(navBook){
     navBook.textContent = t('nav_book');
+  }
+  /* The lessons a student actually works in. It leaves this site: the address
+     is a separate property, gated, and it carries no language parameter
+     because the product inside it is in English for everybody. */
+  var navLessons = document.getElementById('navLessons');
+  if(navLessons){
+    navLessons.textContent = t('nav_lessons');
   }
   
   var el = document.getElementById('emailLink');
