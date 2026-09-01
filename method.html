@@ -234,8 +234,9 @@
   <div class="nav-right">
     <a class="nav-link" id="navMethod" href="method.html">Method</a>
           <a class="nav-link" id="navAbout" href="about.html">About</a>
-    <a class="nav-link" href="book.html">Books</a>
-    <a class="nav-link" href="https://lessons.theconceptmethod.com">Students</a>
+    <a class="nav-link" id="navBook" href="book.html">Books</a>
+    <a class="nav-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
+    <a class="nav-link" id="navTeachers" href="https://lessons.theconceptmethod.com/#teacher">Teachers</a>
     <div class="lang-switch" id="langSwitch">
       <button type="button" data-lang="en">EN</button>
       <button type="button" data-lang="pt">PT</button>
@@ -503,7 +504,7 @@ var D3_Q = {q:"We're not going to agree ___ the price today.", a:"on", b:"with",
 /* ============ I18N ============ */
 var I18N = {
 en:{
-  back:"BACK TO CONCEPT", nav_cta:"Book the call", nav_about:"About",
+  back:"BACK TO CONCEPT", nav_cta:"Book the call", nav_method:"Method", nav_about:"About", nav_book:"Books", nav_lessons:"Students", nav_teachers:"Teachers",
   hero_kicker:"THE METHOD, LIVE",
   hero_h1_a:"Don't read the method.", hero_h1_em:"Run it", hero_h1_b:"on yourself.",
   hero_lede:"This page is not a description of how I teach. It is a compressed version of an actual lesson, with you as the student. Six short demonstrations. Nothing to install, nothing to submit, no data leaves your browser.",
@@ -640,7 +641,7 @@ en:{
 },
 
 pt:{
-  back:"VOLTAR AO INÍCIO", nav_cta:"Agendar a conversa", nav_about:"Sobre",
+  back:"VOLTAR AO INÍCIO", nav_cta:"Agendar a conversa", nav_method:"Método", nav_about:"Sobre", nav_book:"Livros", nav_lessons:"Alunos", nav_teachers:"Professores",
   hero_kicker:"O MÉTODO, NA PRÁTICA",
   hero_h1_a:"Não leia sobre o método.", hero_h1_em:"Teste-o", hero_h1_b:"em você mesmo.",
   hero_lede:"Esta página não descreve como eu ensino. Ela é uma versão condensada de uma aula real, com você no lugar do aluno. Seis demonstrações curtas. Nada para instalar, nada para enviar, nenhum dado sai do seu navegador.",
@@ -777,7 +778,7 @@ pt:{
 },
 
 it:{
-  back:"TORNA ALLA HOME", nav_cta:"Prenota la call", nav_about:"Chi sono",
+  back:"TORNA ALLA HOME", nav_cta:"Prenota la call", nav_method:"Metodo", nav_about:"Chi sono", nav_book:"Libri", nav_lessons:"Studenti", nav_teachers:"Insegnanti",
   hero_kicker:"IL METODO, DAL VIVO",
   hero_h1_a:"Non leggere il metodo.", hero_h1_em:"Provalo", hero_h1_b:"su di te.",
   hero_lede:"Questa pagina non descrive come insegno. È una versione compressa di una lezione vera, con te al posto dello studente. Sei brevi dimostrazioni. Niente da installare, niente da inviare, nessun dato esce dal tuo browser.",
@@ -974,7 +975,15 @@ function applyLang(l){
   document.getElementById("homeLink").setAttribute("href","index.html?lang="+l);
   var navAbout = document.getElementById("navAbout");
   if(navAbout){
+    var nm = document.getElementById("navMethod");
+    if(nm){ nm.textContent = T("nav_method"); }
     navAbout.textContent = T("nav_about");
+    var nb = document.getElementById("navBook");
+    if(nb){ nb.textContent = T("nav_book"); }
+    var nl = document.getElementById("navLessons");
+    if(nl){ nl.textContent = T("nav_lessons"); }
+    var nt = document.getElementById("navTeachers");
+    if(nt){ nt.textContent = T("nav_teachers"); }
     navAbout.setAttribute("href", "about.html?lang="+l);
   }
   
