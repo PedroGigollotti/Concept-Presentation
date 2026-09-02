@@ -1,0 +1,1404 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light only"><meta name="theme-color" content="#FAFAF7"><title>Unit 39 &middot; Should and shouldn't &middot; Concept</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><style>
+  :root{
+    --ink:#0A0B0D; --navy:#1F5570; --navy-dark:#123A4E; --white:#fff;
+    --paper:#FAFAF7; --panel:#F1F2ED; --panel-2:#E9EAE3;
+    --red:#B3132B; --red-hi:#8E0F22; --green:#1E7A44; --green-bg:#E7F4EB;
+    --gray:#6B6F76; --gray-dark:#33363B;
+    --line:#DCDDD6;
+    --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+    --serif:'Instrument Serif',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:light;background:var(--paper);}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  em,i{font-family:var(--serif);font-style:italic;color:var(--navy);}
+  #nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:12px 32px;background:var(--white);border-bottom:1px solid var(--line);}
+  #nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--gray-dark);}
+  #nav .brand img{height:30px;width:30px;}
+  #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
+  #nav .brand:hover .word{color:var(--red-hi);}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  .print-head{display:none;}
+  @media print{
+    .print-head{display:flex;align-items:center;justify-content:space-between;
+      padding-bottom:20px;margin-bottom:32px;border-bottom:1px solid #ccc;}
+    .print-head img{height:78px;}
+    .print-head .pline{font-size:12.5px;letter-spacing:2.5px;color:#555;text-transform:uppercase;}
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 100px;}
+  /* GATE */
+  #gate{max-width:420px;margin:80px auto;text-align:center;padding:0 24px;}
+  #gate h1{font-family:var(--serif);font-weight:400;font-size:30px;margin-bottom:10px;color:var(--ink);}
+  #gate p{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:26px;}
+  #gate input{width:100%;background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:14px 16px;border-radius:10px;font-size:16px;letter-spacing:2px;text-align:center;margin-bottom:14px;}
+  #gate input:focus{outline:none;border-color:var(--navy);}
+  #gate button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:14px;font-weight:600;font-size:14.5px;cursor:pointer;}
+  #gate button:hover{background:var(--red-hi);}
+  #gateError{color:var(--red);font-size:13px;margin-top:12px;min-height:16px;}
+  #content{display:none;}
+  h2.sec{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,34px);margin:56px 0 4px;letter-spacing:-.01em;color:var(--ink);}
+  .sec-kicker{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--navy);margin:0 0 8px;}
+  .goal{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:22px;font-style:italic;}
+  .dialogue{background:var(--panel);border-radius:14px;padding:24px 26px;margin:18px 0;border:1px solid var(--line);}
+  .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
+  .dialogue p:last-child{margin-bottom:0;}
+  .dialogue b{color:var(--navy);}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
+  .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
+  .body-copy b{color:var(--ink);}
+  .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
+  .callout b{color:var(--navy);}
+  .callout p{margin:0 0 12px;}
+  .callout p:last-child{margin-bottom:0;}
+  /* SPLIT CARD */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+  @media (max-width:640px){.split{grid-template-columns:1fr;}}
+  .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+  .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+  .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+  .card-col dt:first-child{margin-top:0;}
+  .card-col dd{margin:2px 0 0;}
+  .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+  .moves{margin:16px 0 0;padding:0;list-style:none;}
+  .moves li{font-size:15px;line-height:1.6;color:var(--gray-dark);padding:8px 0;border-bottom:1px dashed var(--line);}
+  .moves li:last-child{border-bottom:none;}
+  .moves .slot{color:var(--navy);font-weight:600;}
+  .diagram{margin:26px 0;text-align:center;}
+  .diagram svg{max-width:100%;height:auto;}
+  .diagram-cap{font-size:12.5px;color:var(--gray);font-style:italic;margin-top:16px;line-height:1.5;}
+  .ex-block{margin:44px 0;padding-top:28px;border-top:1px solid var(--line);}
+  .ex-label{display:inline-block;background:var(--navy);color:#fff;font-weight:600;font-size:12px;
+    padding:4px 11px;border-radius:6px;margin-bottom:10px;}
+  .ex-title{font-size:19px;font-weight:600;margin:0 0 6px;color:var(--ink);}
+  .ex-instr{color:var(--gray);font-size:14px;margin-bottom:18px;font-style:italic;}
+  .q{margin-bottom:16px;}
+  .q-text{font-size:15px;margin-bottom:8px;color:var(--gray-dark);line-height:1.55;}
+  .q-text .num{color:var(--navy);font-weight:700;margin-right:6px;}
+  .q input[type=text]{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
+  .q input[type=text]:focus{outline:none;border-color:var(--navy);}
+  .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
+  .choices{display:flex;flex-wrap:wrap;gap:8px;}
+  .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .choice-btn:hover{border-color:var(--navy);}
+  .choice-btn.picked{border-color:var(--navy);background:var(--panel);}
+  .choice-btn.correct{border-color:var(--green);background:var(--green-bg);color:var(--green);}
+  .choice-btn.wrong{border-color:var(--red);background:#FBE9EB;color:var(--red);}
+  .fb{display:block;font-size:13px;margin-top:6px;min-height:16px;font-weight:600;line-height:1.5;}
+  .fb.ok{color:var(--green);}
+  .fb.bad{color:var(--red);}
+  select.match-select{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:8px 10px;border-radius:8px;font-size:13.5px;width:100%;font-family:var(--sans);}
+  .check-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);padding:9px 20px;
+    border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;margin-top:6px;font-family:var(--sans);}
+  .check-btn:hover{background:var(--navy);color:#fff;}
+  .reveal-btn{background:none;border:1.5px solid var(--line);color:var(--gray);padding:9px 20px;
+    border-radius:999px;font-size:13px;cursor:pointer;font-family:var(--sans);}
+  .reveal-btn:hover{border-color:var(--ink);color:var(--ink);}
+  .key-box{display:none;background:var(--panel);border-radius:10px;padding:16px 18px;margin-top:12px;font-size:14px;color:var(--gray-dark);line-height:1.7;border:1px solid var(--line);}
+  .key-box.shown{display:block;}
+  .key-box b{color:var(--green);}
+  .soft-note{font-size:12px;color:var(--gray);margin-top:6px;}
+  .task-box{background:var(--panel);border-radius:12px;padding:20px 22px;border:1px solid var(--line);
+    font-size:15px;line-height:1.7;color:var(--gray-dark);}
+  .task-box p{margin:0 0 14px;}
+  .task-box p:last-child{margin-bottom:0;}
+  .task-box b{color:var(--ink);}
+  #scoreBar{position:sticky;bottom:0;background:rgba(250,250,247,.95);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);padding:16px 24px;display:flex;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  #scoreBar .score{font-size:14px;color:var(--gray);}
+  #scoreBar .score b{color:var(--ink);font-size:16px;}
+  .action-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:11px 22px;
+    font-weight:600;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .action-btn:hover{background:var(--red-hi);}
+  .action-btn.outline{background:none;border:1.5px solid var(--line);color:var(--ink);}
+  .action-btn.outline:hover{border-color:var(--ink);}
+  @media print{
+    #nav,#scoreBar,.check-btn,.reveal-btn,input,select,.choice-btn{display:none !important;}
+    body{background:#fff;color:#000;}
+    .key-box{display:block !important;}
+    a{color:#000;}
+  }
+  .unit-nav{display:flex;justify-content:space-between;gap:12px;margin:50px 0 10px;padding-top:24px;border-top:1px solid var(--line);}
+  .nav-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--sans);
+    font-weight:600;font-size:13.5px;padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);
+    color:var(--ink);transition:border-color .2s ease,color .2s ease;}
+  .nav-btn:hover{border-color:var(--navy);color:var(--navy);}
+  .nav-btn.next{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .nav-btn.next:hover{background:var(--navy-dark);}
+  @media print{.unit-nav{display:none !important;}}
+  #privacyModal{position:fixed;inset:0;background:rgba(10,11,13,.55);z-index:200;
+    display:none;align-items:center;justify-content:center;padding:24px;}
+  #privacyModal.shown{display:flex;}
+  #privacyModal .card{background:var(--white);border-radius:16px;max-width:420px;width:100%;
+    padding:28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+  #privacyModal h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 12px;color:var(--ink);}
+  #privacyModal p{font-size:14px;line-height:1.6;color:var(--gray-dark);margin:0 0 20px;}
+  #privacyModal button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:13px;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--sans);}
+  #privacyModal button:hover{background:var(--red-hi);}
+  .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
+  @media print{#privacyModal{display:none !important;}}
+
+  /* ---- A1/A2 additions. Everything above this line is the C1 stylesheet,
+     read from the published page at build time and not edited here. ---- */
+  .ex-label.named{display:inline-block;width:auto;min-width:0;padding:0 10px;border-radius:11px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
+  .split.three{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:640px){.split.three{grid-template-columns:1fr;}}
+  /* ================= FINDABILITY, 30 Aug 2026 =========================
+     "A CONTROL MUST ANNOUNCE ITSELF AS A CONTROL." Netto, after opening the
+     book on a phone. SERIES_STANDARD 9p.
+
+     ONE CONTROL, ONE SHAPE, ONE POSITION. The pill below is the only thing in
+     this book that plays audio, it carries a play mark and a word, it is at
+     least 44x44, and it is the FIRST thing on its line everywhere.
+
+     WHY THE PLAY MARK IS A ::before AND NOT A CHARACTER IN THE MARKUP: the
+     reading copies and ceiling.py read the markup, and a triangle in the
+     button's text would land in the .txt as a word and in the word count as a
+     word. The x on a wrong form is the opposite case and is deliberately in
+     the markup -- there the mark IS the teaching and the .txt must carry it.
+
+     44px: measured at 375px, between 59 and 70 of about 75 controls per unit
+     were under the minimum touch target. Every one of them is a rule here.
+     NOTHING IS EDITED IN kit_final/unit.css. Three shipped books read that
+     file; these are overrides in the A1/A2 block, which is appended after it. */
+  .audio-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);
+    border-radius:999px;padding:0 14px;min-height:44px;font-size:13px;font-weight:600;
+    font-family:var(--sans);cursor:pointer;margin-right:6px;
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+  /* ===== THE PLAY MARK IS AN SVG, NOT A CHARACTER. 30 Aug 2026 =============
+     U+25B6 IS AN EMOJI ON iOS. It has no default text presentation there, so
+     Safari substitutes Apple Color Emoji and draws a small white triangle
+     INSIDE A GREY-BLUE ROUNDED SQUARE -- a second button nested in the button,
+     which is exactly what Netto saw on unit 10's Access. Reproduced here on a
+     Mac by forcing the same font, so it is not a guess about his phone.
+     THE FIRST OPTION -- enlarge it and suppress the frame in CSS -- IS
+     IMPOSSIBLE, and that is a fact about glyphs rather than a preference: the
+     square is part of the emoji font's own artwork, a bitmap, and no CSS
+     property reaches inside a glyph. Enlarging only makes the square bigger.
+     U+FE0E, the text-presentation selector, does work today; it is a hint to
+     font selection, it varies by iOS version, and it would put a second
+     invisible character into every button. Rejected as fragile.
+     AN SVG BACKGROUND ON THE PSEUDO-ELEMENT ends the class: no font is
+     involved, nothing can substitute, and it is still pure CSS, so not one
+     line of markup changes in any of the four places.
+     THE PROPORTION: the mark's height equals the label's font-size. A 13px
+     label gets a 13px mark, an 11px label an 11px mark. That is the same
+     relationship the x on a wrong form has to the words around it -- set at
+     the surrounding size -- so the play triangle is not the only oversized
+     thing on the page. It was 0.78em before, which is why it read as tiny
+     inside a 44px control.
+     THIS IS THE SECOND TIME THIS CHARACTER HAS COST A ROUND. The first was the
+     octal escape that shipped "B6 Listen"; SERIES_STANDARD 9q named the class
+     then -- the layer no check reads -- and this is the same layer. */
+  .audio-btn::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
+  /* Record, and Check the line, are not play buttons. */
+  #sayRec::before,#sayShow::before{content:none;}
+  .audio-btn:hover{border-color:var(--navy);}
+  .audio-btn:disabled{color:var(--gray);cursor:default;opacity:.5;}
+  .audio-btn.rec-on{background:var(--red);border-color:var(--red);color:#fff;}
+  .listen-note{font-size:12.5px;color:var(--gray);line-height:1.65;margin:0 0 18px;}
+  /* CONTROL FIRST, THEN THE NAME. It used to sit AFTER the speaker name, which
+     put it at two different x-positions down one dialogue -- 86px after "Ana",
+     103px after "Marco" -- so there was no column to aim at. */
+  .audio-line{display:flex;align-items:flex-start;gap:10px;margin:0 0 12px;
+    flex-wrap:wrap;}
+  .audio-line .who{flex:0 0 auto;padding-top:11px;}
+  .audio-line .audio-btn{flex:0 0 auto;margin-right:0;}
+  .audio-line .line-text{padding-top:10px;flex:1 1 200px;}
+  /* ON A NARROW COLUMN THE LINE TAKES THE FULL WIDTH. Control-first is right
+     and it costs 145px of the row, which on a phone left a 180px text column
+     wrapping every line three times. The control and the name keep the first
+     row; the sentence gets its own, full width. Nothing changes above 640px. */
+  @media (max-width:640px){
+    .audio-line{gap:8px 10px;}
+    .audio-line .line-text{flex:1 0 100%;padding-top:2px;}
+  }
+  /* ---- the vocabulary bank: its own section, between Access and Analysis.
+     Sound first: the meaning is on the card from the start, the spelling is
+     revealed on request, so the student meets the word as a sound and checks
+     the letters afterwards. ---- */
+  /* ---- the bank as ROWS, not cards. Eight items have to be readable as one
+     set, which means all eight on screen at once; eight cards are eight
+     screens. Nothing is hidden here: this is the presentation moment and the
+     learner has nothing to retrieve yet. Hiding is a testing move and it lives
+     in the exercises. ---- */
+  .bank{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin:16px 0 0;}
+  @media (max-width:640px){.bank{grid-template-columns:1fr;}}
+  .bank-item{display:flex;align-items:center;gap:12px;padding:7px 0;
+    border-bottom:1px solid var(--line);}
+  .bank-img{width:100%;height:auto;display:block;}
+  /* THE PICTURE AND ITS LABEL ARE ONE BUTTON. Not two: the clip merge of
+     29 Aug was right, and two identical controls are a question the learner
+     answers by pressing both. What the merge cost was the LABEL, because the
+     control that survived was the picture -- and a picture reads as an
+     illustration. The answer to an unlabelled control is a label. */
+  .bank-play{flex:0 0 76px;display:flex;flex-direction:column;align-items:stretch;
+    padding:0;border:1.5px solid var(--navy);background:var(--white);
+    border-radius:10px;cursor:pointer;overflow:hidden;line-height:0;}
+  .bank-cap{display:flex;align-items:center;justify-content:center;gap:5px;
+    background:var(--navy);color:#fff;font-family:var(--sans);font-size:11px;
+    font-weight:600;padding:6px 0;line-height:1.2;}
+  .bank-cap::before{content:"";flex:0 0 auto;width:9px;height:11px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%23ffffff'/%3E%3C/svg%3E");}
+  /* A ROW WITH NO PICTURE GETS THE SAME OBJECT IN THE SAME COLUMN. That is
+     what makes unit 3 look like unit 1, ends two kinds of control inside one
+     list in units 2 and 4, and removes the empty bordered spacer that read as
+     a drawing which had failed to load. */
+  .bank-play-flat{border-radius:999px;min-height:44px;}
+  .bank-play-flat .bank-cap{padding:14px 0;border-radius:999px;}
+  .bank-play:hover{opacity:.9;}
+  .draft-note{border-left:4px solid #b45309;background:#fff7ed;}
+  .status-ok{border-left:4px solid #15803d;background:#f0fdf4;}
+  .status-open{border-left:4px solid #6b7280;background:#f8f8f7;}
+  /* .bank-noimg IS GONE, 30 Aug 2026. It was an empty bordered cell kept so
+     the two kinds of row would line up; on a phone it read as a drawing that
+     had failed to load. The rows line up because both now carry a control. */
+  .listen-q{margin-right:10px;vertical-align:middle;}
+  .numset{margin:6px 0 26px;}
+  .numset-head{font-family:var(--serif);font-size:19px;margin:18px 0 2px;color:var(--ink);}
+  .numset-note{font-size:13px;color:var(--gray);margin:0 0 12px;}
+  .numstrip{display:flex;flex-wrap:wrap;gap:7px;}
+  .numcell{background:var(--white);border:1.5px solid var(--line);border-radius:9px;
+    padding:8px 13px;font:inherit;font-size:15px;color:var(--ink);cursor:pointer;
+    display:inline-flex;align-items:baseline;gap:8px;}
+  /* Tabular figures so the digits line up down the column. */
+  /* inline-block: min-width and text-align are block-only properties and
+     verify.py is right to refuse them on a bare inline. */
+  .numfig{display:inline-block;font-variant-numeric:tabular-nums;
+    font-weight:700;color:var(--navy);min-width:1.7em;text-align:right;}
+  .numwd{font-size:15px;}
+  .numcell:hover{border-color:var(--navy);color:var(--navy);}
+  /* "The base. Listen once, then say the row." -- and nothing on the screen
+     said listen. The chips ARE the control; now they say so. */
+  .numcell{min-height:44px;border-color:var(--navy);}
+  .numcell::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
+  /* CONTROL FIRST. It used to be the fifth column, at the far right of a
+     narrow screen, furthest from the thumb and last in reading order. */
+  .numpairs{display:grid;grid-template-columns:auto auto 1fr auto 1fr;gap:8px 12px;
+    align-items:center;max-width:520px;}
+  .numpair-head{font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--gray);}
+  /* THE UNDERLINE CAME OFF. A non-control may not carry a control's marks:
+     this one was heavier than the real button's and on the same screen. */
+  .numword{font-size:16px;color:var(--ink);padding:4px 0;}
+  .numplay{justify-self:start;}
+  .bank-more{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 0;}
+  .more-btn{display:inline-block;background:var(--navy);color:var(--white);
+    border-radius:999px;padding:10px 20px;font-size:14px;font-weight:600;
+    text-decoration:none;letter-spacing:.01em;}
+  .more-btn:hover{opacity:.88;}
+  /* ---- the rest of the controls, to the same floor. Six declarations, no
+     markup. IOS SAFARI ZOOMS ANY FOCUSED CONTROL UNDER 16px AND DOES NOT ZOOM
+     BACK: every field and every dropdown in the book did it, in every
+     exercise, and it is the one defect here that a learner meets on the very
+     first tap. ---- */
+  .check-btn{min-height:44px;padding:0 20px;display:inline-flex;align-items:center;}
+  .say-row{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;}
+  .more-btn{min-height:44px;padding:0 20px;display:inline-flex;align-items:center;}
+  .action-btn{min-height:44px;padding:0 22px;display:inline-flex;align-items:center;}
+  .choice-btn{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;}
+  .q input[type=text]{font-size:16px;min-height:44px;}
+  select.match-select{font-size:16px;min-height:44px;}
+  #gate input{font-size:16px;}
+  .bank-more-note{font-size:13px;color:var(--gray);flex:1 1 220px;}
+  .bank-item-flat{padding:9px 0;}
+  /* .bank-word-btn IS GONE. The word was the control on picture-less rows and
+     it announced itself with a 1px DOTTED underline in the palest grey in the
+     book, 20px tall -- while .numword, which does nothing at all, carried a
+     SOLID underline in the same grey. The affordance was inverted. The word is
+     a word now, and the control beside it is a control. */
+  .bank-body{flex:1 1 auto;min-width:0;}
+  .bank-word{font-weight:600;font-size:15px;color:var(--ink);display:block;}
+  .bank-fig{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;}
+  .bank-sent{font-family:var(--serif);font-size:14.5px;color:var(--navy);display:block;
+    line-height:1.35;}
+  @media print{.bank-word{display:inline !important;}}
+  .listen-note b{color:var(--gray-dark);}
+  /* ---- exercise I: listen, say it, read. The record-and-compare component
+     from Calibrated Speech, in this book's tokens. The model's amplitude
+     envelope is gray and the student's own is red, which is that book's
+     convention: red marks what the student produced, the same job it does in
+     the Exercise B key. ---- */
+  .say-rows{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;}
+  .say-row{background:var(--white);border:1.5px solid var(--line);border-radius:999px;
+    padding:8px 15px;font-family:var(--sans);font-size:13.5px;color:var(--ink);cursor:pointer;}
+  .say-row:hover{border-color:var(--navy);}
+  .say-row.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .say-row .who{color:inherit;font-weight:600;margin-right:7px;}
+  .say-panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;}
+  .say-sel{font-size:14.5px;color:var(--gray-dark);margin:0 0 14px;}
+  .say-sel b{color:var(--ink);}
+  .say-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .wave{width:100%;height:auto;display:block;background:var(--white);
+    border:1px solid var(--line);border-radius:10px;}
+  .say-text{font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.45;
+    margin:14px 0 0;min-height:26px;}
+  .say-status{font-size:13px;color:var(--gray);margin:8px 0 0;min-height:18px;line-height:1.5;}
+  .say-status .win{color:var(--green);font-weight:600;}
+  .mic-msg{font-size:12.5px;color:var(--red);line-height:1.6;margin:10px 0 0;min-height:16px;}
+  @media print{
+    .audio-btn,.say-btns,.wave,.say-rows{display:none !important;}
+  }
+
+  .wrong{color:#B3132B;font-weight:600;white-space:nowrap;}
+  .wrong .x{font-weight:700;}
+
+/* --- THREE DEVICES TAKEN FROM MURPHY, 28 Aug 2026 ------------------------
+   Read off eight spreads of Basic Grammar in Use. See a1a2/MURPHY_ANATOMY.md
+   for what was counted and what was deliberately NOT copied.              */
+
+/* the worked first item: his is set in a handwriting face so it reads as
+   somebody's answer and not as part of the question. */
+.ex-worked{margin:12px 0 22px;padding:10px 14px;border-left:2px solid #C9D9E2;
+  background:#F7FAFB;border-radius:0 8px 8px 0;
+  font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-size:16px;
+  color:#1F5570;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-worked-n{font-family:"Instrument Sans",Arial,sans-serif;font-style:normal;
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8FA6B4;
+  flex:0 0 auto}
+
+/* Compare: two columns, one label. */
+.cmp-head{margin:30px 0 10px;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#1F5570}
+.cmp{display:flex;gap:18px;flex-wrap:wrap}
+.cmp-col{flex:1 1 240px;background:#F7F7F4;border:1px solid #E3E4DF;
+  border-radius:10px;padding:14px 16px}
+.cmp-t{margin:0 0 8px;font-size:12px;letter-spacing:.05em;color:#6B6F76;
+  text-transform:uppercase}
+.cmp-l{margin:0 0 6px;font-size:15px;line-height:1.5;color:#33363B}
+
+/* the cross-reference footer. */
+.see-also{margin:34px 0 0;padding:12px 16px;border:1px solid #E3E4DF;
+  border-radius:10px;display:flex;flex-wrap:wrap;gap:6px 20px;
+  align-items:baseline;background:#FAFAF7}
+.see-also-k{font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:#9A9EA4}
+.see-also-i{font-size:13px;color:#6B6F76}
+.see-also-i b{color:#1F5570;font-weight:600}
+
+/* --- THE PARALLEL SCENE -------------------------------------------------
+   Two people introducing themselves separately. It has to LOOK like two
+   people speaking past each other, because that is what it is -- drawn as one
+   running list it reads as a conversation, which is the thing this shape was
+   chosen to stop being. Netto, 28 Aug 2026. */
+.para-scene{display:flex;gap:16px;flex-wrap:wrap;align-items:stretch}
+.para-col{flex:1 1 260px;min-width:0;background:#FFFFFF;border:1px solid #E3E4DF;
+  border-radius:12px;padding:14px 16px 6px}
+.para-who{margin:0 0 6px;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#1F5570;
+  border-bottom:1px solid #EDEEE9;padding-bottom:8px}
+.para-col .say-line{padding-left:26px}
+.para-col .say-line-flat{margin:0 0 8px;font-size:16px;line-height:1.55}
+
+/* --- THE PICTURE STRIP --------------------------------------------------
+   Murphy's device, in the one form this series can actually draw: inline SVG
+   badges, not cartoons. See engine.js for what that limit costs.          */
+.pic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:18px}
+.pic-cell{position:relative}
+.pic-n{position:absolute;top:-2px;left:0;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:12px;font-weight:700;color:#1F5570}
+.pic-art{margin:0 0 10px 20px;background:#FFFFFF;border:1px solid #E3E4DF;
+  border-radius:10px;padding:10px;display:flex;justify-content:center}
+.pic-art img{width:100%;height:auto;max-width:180px;display:block}
+.pic-name{margin:0 0 10px 20px;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:.1em;color:#1F5570}
+.pic-cell input.wide{margin-left:20px;width:calc(100% - 20px)}
+.pic-cell .fb{margin-left:20px}
+
+/* the word box, Murphy's. The words the exercise needs, at hand, with the one
+   the worked example already used struck through so the box shrinks as the
+   learner works. Vocabulary must not be the reason a grammar exercise fails. */
+.wordbox{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 20px;padding:12px 16px;
+  border:1px solid #E3E4DF;border-radius:10px;background:#FFF;
+  font-family:"Instrument Serif",Georgia,serif;font-size:17px;color:#33363B}
+.wordbox b{font-weight:400}
+.wordbox s{color:#B9BDC2;text-decoration-thickness:1.5px}
+
+/* listen, say it, compare. No score: the comparison is the feedback. */
+.say-cell{padding:14px 0;border-top:1px solid #EDEEE9}
+.say-cell:first-child{border-top:none}
+.say-target{font-family:"Instrument Serif",Georgia,serif;font-size:20px;
+  color:#33363B;margin-bottom:10px}
+.say-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.say-btn{min-height:38px;padding:0 14px;border-radius:19px;border:1px solid #C9CBC4;
+  background:#FFF;font-family:"Instrument Sans",Arial,sans-serif;font-size:13px;
+  color:#33363B;cursor:pointer}
+.say-btn:hover:not(:disabled){border-color:#1F5570;color:#1F5570}
+.say-btn:disabled{opacity:.4;cursor:default}
+.say-btn.rec.on{background:#8C2231;border-color:#8C2231;color:#FFF}
+.say-none{font-family:"Instrument Sans",Arial,sans-serif;font-size:12px;color:#9A9EA4}
+.say-hint{margin-top:8px;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:13px;line-height:1.55;color:#6B6F76}
+.say-audio{margin-top:10px;width:100%;max-width:340px;display:block}
+.say-note{margin:16px 0 0;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:12.5px;line-height:1.6;color:#8A8F95}
+
+/* the bank speaks. Twelve words the learner is made to produce in F and G;
+   a word he has never heard comes out of his mouth as a spelling. */
+.bank-say{flex:0 0 auto;width:26px;height:26px;margin-right:10px;border-radius:50%;
+  border:1px solid #C9CBC4;background:#FFF;color:#1F5570;font-size:9px;
+  line-height:1;cursor:pointer;padding:0}
+.bank-say:hover{border-color:#1F5570;background:#EAF1F5}
+.bank-item-flat{display:flex;align-items:flex-start}
+
+/* the contraction pairs. Section 5 teaches a sound; this is the sound. */
+.ct-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.ct-btn{padding:9px 14px;border-radius:20px;border:1px solid #C9CBC4;background:#FFF;
+  font-family:"Instrument Serif",Georgia,serif;font-size:16px;color:#33363B;
+  cursor:pointer}
+.ct-btn:hover{border-color:#1F5570;color:#1F5570}
+.ct-none{opacity:.45;cursor:default}
+.say-wave{margin:10px 0 4px;max-width:340px}
+.say-verdict{font-family:"Instrument Sans",Arial,sans-serif;font-size:13px;
+  color:#6B6F76;min-height:18px}
+.say-win{color:#1F5570;font-weight:600}
+
+  #nav{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#3A3D42;}
+  .brand img{height:30px;width:30px;}
+  .brand .word{font-weight:700;letter-spacing:3px;font-size:13px;}
+  .nav-btn{display:inline-block;border:1px solid var(--navy);color:var(--navy);
+    border-radius:999px;padding:8px 16px;font-size:13px;text-decoration:none;margin-left:8px;}
+  .action-btn{border:none;border-radius:999px;padding:12px 22px;font-weight:600;
+    font-size:14px;cursor:pointer;background:var(--navy);color:#fff;}
+  .action-btn.outline{background:#fff;color:var(--navy);border:1px solid var(--navy);}
+  #gate{max-width:420px;margin:14vh auto;padding:0 24px;text-align:center;}
+  #gate h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;margin:0 0 8px;}
+  #gate p{color:#6B6F76;font-size:14px;line-height:1.6;margin:0 0 22px;}
+  #gate input{width:100%;padding:13px;border:1px solid #DCDDD6;border-radius:10px;box-sizing:border-box;
+    font-size:16px;text-align:center;letter-spacing:2px;text-transform:uppercase;}
+  #gate button{width:100%;margin-top:12px;background:#B3132B;color:#fff;border:none;
+    border-radius:999px;padding:13px;font-weight:600;font-size:14px;cursor:pointer;}
+  #gateError{color:#B3132B;font-size:13px;margin-top:10px;min-height:18px;}
+  #privacyModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);
+    align-items:center;justify-content:center;z-index:99;padding:24px;}
+  #privacyModal.shown{display:flex;}
+  #privacyModal .card{background:#fff;border-radius:16px;max-width:420px;width:100%;padding:28px 26px;}
+  #privacyModal h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:22px;margin:0 0 12px;}
+  #privacyModal p{font-size:14px;line-height:1.6;color:#3A3D42;margin:0 0 20px;}
+  #privacyModal button{width:100%;background:#B3132B;color:#fff;border:none;
+    border-radius:999px;padding:13px;font-weight:600;font-size:14px;cursor:pointer;}
+  .foot{display:flex;gap:10px;align-items:center;justify-content:space-between;
+    margin:46px 0 10px;flex-wrap:wrap;}
+  .print-reminder{font-size:12px;color:#6B6F76;margin-top:6px;text-align:right;}
+  @media print{#privacyModal,#gate,.topbar,.foot,.print-reminder{display:none !important;}}
+
+  
+  .wrap{position:relative;z-index:1;}
+  .listen-note{font-size:13px;letter-spacing:1px;color:var(--navy);font-weight:600;margin:0 0 6px;}
+  .wrong{color:var(--red);text-decoration:line-through;text-decoration-color:rgba(179,19,43,.45);}
+  /* series.css line 365 sets .wrong{white-space:nowrap}. That is CORRECT in a
+     book where .wrong holds a fragment: you do not want "he go" split across
+     two lines, because the learner reads the wrong form as one object.
+     IN THIS BOOK .wrong HOLDS WHOLE SENTENCES. nowrap ran them off the right
+     edge of the phone -- unit 9 pushed the page to 413px and unit 10 to 381px
+     against a 375px screen -- so the learner could not read the END of a
+     string he is being asked to judge. In a book whose fourth rule is about
+     what a printed error may be, half a printed error is the worst version.
+     Wrapping is allowed here. The line-through carries across the break. */
+  .wrong{white-space:normal;}
+  .muted{color:var(--gray);font-weight:400;font-family:var(--serif);font-size:15px;}
+  .hint{color:var(--gray);font-size:13.5px;font-style:italic;}
+  .hint b{color:var(--navy);font-style:normal;}
+  .one-question{background:var(--panel);border:1.5px solid var(--navy);border-radius:14px;
+    padding:20px 22px;margin:24px 0 20px;}
+  .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 10px;}
+  .one-question .oq{font-family:var(--serif);font-size:clamp(21px,3vw,26px);line-height:1.3;margin:0 0 10px;color:var(--ink);}
+  .one-question .oq-note{font-size:14.5px;line-height:1.6;color:var(--gray-dark);margin:0;}
+  .form-box{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 26px;}
+  .form-box .fb-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 10px;}
+  .form-box table{border-collapse:collapse;width:100%;font-size:15px;}
+  .form-box td{padding:7px 0;color:var(--gray-dark);vertical-align:baseline;}
+  .form-box td:nth-child(2){padding-left:18px;white-space:nowrap;}
+  .form-box td.fx{font-family:var(--serif);font-size:16.5px;color:var(--navy);padding-left:18px;text-align:right;}
+  /* THE PHONE IS NOT AN EDGE CASE, IT IS THE READER. Netto, 27 Aug 2026: the
+     books live in the app, so almost all reading is on a phone.
+     The first version hid the example column below 520px to stop the table
+     overflowing. IT DID NOT STOP THE OVERFLOW, and it hid a third of the form
+     box from almost every learner who will ever open the page: the paradigm is
+     one of the four things the explanation must carry, and its examples were
+     rendering nowhere. The row collapses to a block instead, so everything is
+     visible and nothing is wider than the column. */
+  @media (max-width:560px){
+    .form-box table,.form-box tbody,.form-box tr,.form-box td{display:block;width:auto;}
+    .form-box tr{padding:9px 0;border-bottom:1px solid var(--line);}
+    .form-box tr:last-child{border-bottom:none;padding-bottom:0;}
+    .form-box tr:first-child{padding-top:0;}
+    .form-box td{padding:1px 0 !important;text-align:left !important;white-space:normal !important;}
+    .form-box td:first-child{color:var(--gray);font-size:13px;}
+    .form-box td.fx{display:block;font-size:16.5px;padding-top:2px !important;}
+  }
+  .ambr{background:var(--white);border:1.5px solid var(--line);border-left:3px solid var(--red);
+    border-radius:0 12px 12px 0;padding:16px 20px;margin:22px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
+  .ambr .ab-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--red);margin:0 0 10px;}
+  .ambr p{margin:0 0 10px;} .ambr p:last-child{margin-bottom:0;}
+  .ambr b{color:var(--ink);}
+  /* THE FIGURE IS A PICTURE, NOT A PARAGRAPH. Netto, 27 Aug 2026:
+     "deixe no maior tamanho possivel respeitando a visualizacao no celular."
+     The text column keeps its 24px gutter, because about 42 characters a line
+     is where the prose reads best. THE FIGURE DOES NOT HAVE TO OBEY THAT
+     GUTTER. On a phone it steps 8px out on each side and draws at 343 instead
+     of 327. The caption below it stays on the text margin, so the page still
+     has one left edge for everything you read as a sentence.
+     The 340px cap was the other half of the waste. On a 430px phone the
+     column offers 398 and the figure was still taking 340. The cap is now 420,
+     which no phone reaches, so THE SCREEN is the limit and not a number I
+     picked once and stopped looking at. */
+  /* THE DIALOGUE PLAYS. Netto, 27 Aug 2026: "coloque o audio apenas no dialogo."
+     THE WHOLE LINE IS THE CONTROL, not a button beside it. Six 44px buttons in a
+     six-line scene is more furniture than dialogue, and the line is already a
+     target far bigger than any button could be. The dot is the affordance. */
+  .say-line{position:relative;box-sizing:border-box;min-height:44px;
+            padding:9px 0 9px 40px;cursor:pointer;border-radius:6px;}
+  .say-line:focus-visible{outline:2px solid var(--navy);outline-offset:3px;}
+  .say-dot{position:absolute;left:0;top:9px;width:26px;height:26px;border-radius:50%;
+           border:1px solid var(--line);background:var(--white);display:flex;
+           align-items:center;justify-content:center;transition:background .12s;}
+  .say-dot::after{content:"";border-left:8px solid var(--navy);
+           border-top:5.5px solid transparent;border-bottom:5.5px solid transparent;
+           margin-left:2px;}
+  .say-line:hover .say-dot{border-color:var(--navy);background:#EAF1F5;}
+  .say-line.playing{background:var(--panel);}
+  .say-line.playing .say-dot{background:var(--navy);border-color:var(--navy);}
+  .say-line.playing .say-dot::after{border-left-color:var(--white);}
+  .scene-btn{margin-top:14px;min-height:44px;padding:0 18px;border-radius:22px;
+             border:1.5px solid var(--line);background:var(--white);color:var(--ink);
+             font:inherit;font-size:14px;cursor:pointer;}
+  .scene-btn:hover{border-color:var(--navy);}
+  .diagram svg{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;}
+  @media (max-width:460px){
+    .diagram svg{width:calc(100% + 16px);max-width:none;margin-left:-8px;margin-right:-8px;}
+  }
+  .check-btn,.reveal-btn,.choice-btn{min-height:44px;}
+  /* series.css line 319 gives .choice-btn display:inline-flex, to centre the
+     label inside a 44px tap target. THAT SILENTLY DELETES A SPACE. A flex
+     container makes each child a flex item, and the leading whitespace of an
+     anonymous text item is stripped, so
+        <em>tell</em> needs a person
+     renders as "tellneeds a person". The space IS in the HTML. Flex eats it.
+     Netto saw it before any check did, and no check I own could have seen it:
+     every one of them reads the SOURCE, where the space is present.
+     The rule is latent in four other button classes for the same reason. A1/A2
+     never tripped it because none of its options carries an inline tag. THIS
+     BOOK IS THE FIRST TO PUT ONE THERE. It has exactly two, both of them in
+     unit 16, and two was enough.
+     inline-block lays the label out as ordinary text and keeps the tap target
+     with padding instead of centring. */
+  .choice-btn{display:inline-block !important;align-items:initial;
+              padding:12px 15px !important;line-height:1.35;}
+  .review-key{margin:56px 0 0;padding:22px 24px;border:1.5px solid var(--navy);border-radius:12px;
+    background:var(--panel);font-size:14px;line-height:1.6;color:var(--gray-dark);}
+  .review-key .rk-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 14px;}
+  .review-key .rk-q{margin:16px 0 6px;color:var(--ink);}
+  .review-key .rk-q:first-of-type{margin-top:0;}
+  .review-key ol.rk{margin:0 0 4px;padding-left:22px;}
+  .review-key ol.rk li{margin:3px 0;}
+  .review-key .rk-alt{color:var(--gray);font-size:13px;}
+  .review-key .rk-match{margin:2px 0 4px;font-variant-numeric:tabular-nums;}
+  .build-note{margin:24px 0 0;padding:22px 24px;border:1.5px dashed var(--red);border-radius:12px;
+    background:#FDF6F7;font-size:13.5px;line-height:1.65;color:var(--gray-dark);}
+  .build-note p{margin:0 0 12px;} .build-note p:last-child{margin-bottom:0;}
+  .build-note b{color:var(--red);}
+</style></head><body><div id="gate">
+  <h1>Unit 39</h1>
+  <p>Should and shouldn't<br>This code unlocks every book in the series. Enter it once.</p>
+  <input type="text" id="codeInput" placeholder="ACCESS CODE" maxlength="12" autocomplete="off">
+  <button onclick="tryCode()">Unlock unit</button>
+  <div id="gateError"></div>
+</div>
+<div id="privacyModal"><div class="card">
+  <h3>Nothing is saved here</h3>
+  <p>This site doesn't have a login and doesn't store your answers, scores, or progress anywhere. Once you close or refresh the page, this session is gone for good.</p>
+  <p>If you want to keep a record of your work, use the Print / Save as PDF button at the bottom of the unit before you leave it.</p>
+  <button onclick="dismissPrivacy()">Got it</button>
+</div></div>
+<div id="content" style="display:none"><div id="nav"><a class="brand" href="a1a2.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIyMCAxNzAgNDQwIDI2MCI+CjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjwvc3ZnPgo=" alt="Concept"><span class="word">CONCEPT</span></a><div><a class="nav-btn" href="a1a2.html">&larr; Back to book</a><a class="nav-btn" href="a1a2.html">All units</a></div>
+</div>
+
+<div class="wrap">
+  <p class="sec-kicker" style="margin-top:36px;">PROFESSIONAL ENGLISH PRACTICE &nbsp;&middot;&nbsp; A2 &nbsp;&middot;&nbsp; WHAT YOU ARE ABLE TO DO</p>
+  <h2 class="sec" style="margin-top:4px;">Should and shouldn't</h2>
+  <p class="goal" style="font-size:16px;">Advice, and how to ask for it.</p>
+
+  <p class="sec-kicker" style="margin-top:48px;">ACCESS</p>
+  <p class="goal"><b>Goal.</b> Somebody is tired all the time, and gets advice. Listen and read at the same time, and notice that the word never changes and the verb after it never does either.</p>
+  <div class="dialogue">
+    <p class="say-line" data-a="u39-ac-i_m_so_tired_all_the_time-56e6" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Sam</span>I'm so tired all the time.</p>
+    <p class="say-line" data-a="u39-ac-you_should_sleep_more_and_you-c1fe" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Mia</span>You should sleep more. And you shouldn't drink so much coffee.</p>
+    <p class="say-line" data-a="u39-ac-you_re_right_what_should_i_do-1c89" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Sam</span>You're right. What should I do to relax?</p>
+    <p class="say-line" data-a="u39-ac-you_should_try_walking_it_real-3542" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Mia</span>You should try walking. It really helps.</p>
+    <p class="say-line" data-a="u39-ac-good_idea_should_i_start_today-0ae3" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Sam</span>Good idea. Should I start today?</p>
+    <p class="say-line" data-a="u39-ac-yes_you_shouldn_t_wait-bcb4" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Mia</span>Yes! You shouldn't wait.</p>
+    <button class="scene-btn" onclick="playScene()">Play the whole conversation</button>
+  </div>
+  <div class="ex-block" style="border-top:none;padding-top:8px;margin-top:18px;">
+    <p class="listen-note"><b>Test your perception.</b></p>
+    <p class="ex-instr">Three questions about what you heard. Answer them before you read the explanation.</p>
+    <div id="exR"></div>
+    <button class="check-btn" onclick="checkPick('R',R_DATA,'Yes.','Not that one.')">Check</button>
+    <div class="fb" id="Rscore"></div>
+  </div>
+
+  <p class="sec-kicker" style="margin-top:52px;">VOCABULARY</p>
+  <p class="body-copy">Five verbs for looking after yourself and telling somebody else to, three words for the advice itself, and four for how you feel and how much you change.</p>
+  <div class="bank">
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-advice-ebbe" aria-label="say advice">&#9654;</button><span class="bank-body"><span class="bank-word">advice</span><span class="bank-sent">what somebody says you should do</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-to_advise-5e6c" aria-label="say to advise">&#9654;</button><span class="bank-body"><span class="bank-word">to advise</span><span class="bank-sent">she advises him to sleep more</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-to_suggest-2b52" aria-label="say to suggest">&#9654;</button><span class="bank-body"><span class="bank-word">to suggest</span><span class="bank-sent">he suggests a walk after lunch</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-to_exercise-7520" aria-label="say to exercise">&#9654;</button><span class="bank-body"><span class="bank-word">to exercise</span><span class="bank-sent">he exercises every morning</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-to_avoid-f533" aria-label="say to avoid">&#9654;</button><span class="bank-body"><span class="bank-word">to avoid</span><span class="bank-sent">she avoids coffee at night</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-a_tip-4d5c" aria-label="say a tip">&#9654;</button><span class="bank-body"><span class="bank-word">a tip</span><span class="bank-sent">one small piece of advice</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-a_routine-2b77" aria-label="say a routine">&#9654;</button><span class="bank-body"><span class="bank-word">a routine</span><span class="bank-sent">the things you do every day, in order</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-energy-a6c1" aria-label="say energy">&#9654;</button><span class="bank-body"><span class="bank-word">energy</span><span class="bank-sent">what you need to do things</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-stress-d009" aria-label="say stress">&#9654;</button><span class="bank-body"><span class="bank-word">stress</span><span class="bank-sent">the feeling when there is too much to do</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-healthy-1bd7" aria-label="say healthy">&#9654;</button><span class="bank-body"><span class="bank-word">healthy</span><span class="bank-sent">good for your body</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-to_worry-3ab2" aria-label="say to worry">&#9654;</button><span class="bank-body"><span class="bank-word">to worry</span><span class="bank-sent">she worries about the meeting</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u39-bk-less-c314" aria-label="say less">&#9654;</button><span class="bank-body"><span class="bank-word">less</span><span class="bank-sent">not so much</span></span></div>
+  </div>
+
+  <p class="sec-kicker" style="margin-top:52px;">ANALYSIS</p>
+  <p class="goal"><b>Goal.</b> A form you built in unit 16, the one job it does, and the difference between advice and an order.</p>
+
+  <div class="one-question">
+    <p class="oq-label">ONE QUESTION RUNS THIS WHOLE UNIT</p>
+    <p class="oq"><b>Am I advising, or telling?</b></p>
+    <p class="oq-note">This word advises. It says what you think is a good idea and leaves the choice with the other person: <em>You <b>should</b> sleep more.</em> <em>Have to</em> and <em>must</em> take the choice away, and they are unit 41.</p>
+  </div>
+
+  <div class="form-box"><p class="fb-label">THE FORM</p><table>
+    <tr><td>everybody &rarr;</td><td><b>should</b> + bare verb</td><td class="fx">You should sleep more.</td></tr>
+    <tr><td>to say not to &rarr;</td><td><b>shouldn't</b> + bare verb</td><td class="fx">You shouldn't wait.</td></tr>
+    <tr><td>to ask for advice &rarr;</td><td><b>What should</b> + person</td><td class="fx">What should I do to relax?</td></tr>
+    <tr><td>to check &rarr;</td><td><b>Should</b> in front of the person</td><td class="fx">Should I start today?</td></tr>
+    <tr><td>the verb after it &rarr;</td><td>always bare</td><td class="fx">You should try walking.</td></tr>
+    <tr><td>never &rarr;</td><td>an -s, a <em>to</em>, or a helper</td><td class="fx">You shouldn't drink so much coffee.</td></tr>
+  </table></div>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>The form is unit 16's, unchanged</b></p>
+  <p class="body-copy">There is nothing new to build. This word behaves exactly as <em>can</em> did: one form, a bare verb, and no helper anywhere.</p>
+  <p class="body-copy">One form for everybody: <em>I should, you should, she should, they should.</em> No <b>-s</b> for one person.</p>
+  <p class="body-copy">The verb after it takes nothing: no <b>-s</b>, no <em>to</em>, no <b>-ing</b>. Mia says &ldquo;You should <b>sleep</b> more.&rdquo;</p>
+  <p class="body-copy">So say the two words together and stop. Never &ldquo;<span class='wrong'>She shoulds sleep</span>&rdquo; and never &ldquo;<span class='wrong'>You should to sleep</span>&rdquo;.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>To ask and to say no, the word itself</b></p>
+  <p class="body-copy">No helper is added here either, and the negative is one word worth learning whole.</p>
+  <p class="body-copy">To ask, put it in front of the person: &ldquo;<b>Should</b> I start today?&rdquo;</p>
+  <p class="body-copy">To say not to, join it with <em>not</em>: <b>shouldn't</b>. &ldquo;You <b>shouldn't</b> drink so much coffee.&rdquo;</p>
+  <p class="body-copy">So use no <em>do</em> anywhere near it. Never &ldquo;<span class='wrong'>Do I should start?</span>&rdquo;</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>It gives advice, not an order</b></p>
+  <p class="body-copy">The form costs nothing, so the unit is really about what the word does to the person hearing it.</p>
+  <p class="body-copy">It says what you think is a good idea and leaves them free to decide. That is why it is the word colleagues use with each other.</p>
+  <p class="body-copy"><em>Have to</em> and <em>must</em> take the choice away. Say them to a colleague and you have given an order, which is unit 41's business.</p>
+  <p class="body-copy">So use this word whenever the other person can say no. Ask yourself whether you are advising or telling before you choose.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>Asking for advice, and checking</b></p>
+  <p class="body-copy">Half the uses in a real conversation are not advice given but advice asked for, and the scene shows both.</p>
+  <p class="body-copy">Ask with a question word in front: &ldquo;<b>What should</b> I do to relax?&rdquo; This is the most useful sentence in the unit.</p>
+  <p class="body-copy">Check with the word alone: &ldquo;<b>Should</b> I start today?&rdquo; The answer is <em>Yes, you should</em> or <em>No, you shouldn't</em>.</p>
+  <p class="body-copy">So learn those two questions as whole sentences. You will use them more often than you give advice.</p>
+  <div class="split" style="margin-top:26px;">
+    <div class="card-col"><h4>The form is unit 16's, unchanged</h4><dl>
+      <dt>The idea</dt><dd>One form for everybody and a bare verb after it. No <b>-s</b>, no <em>to</em>, no <b>-ing</b>.</dd>
+      <dt>from the scene</dt><dd>You should sleep more &middot; You should try walking</dd>
+      <dt>from your own week</dt><dd>She should rest &middot; They should ask</dd>
+      <dt>never</dt><dd><span class='wrong'>She shoulds sleep</span></dd>
+    </dl><div class="eg">You should sleep more.</div></div>
+    <div class="card-col"><h4>To ask and to say no, the word itself</h4><dl>
+      <dt>The idea</dt><dd>It moves in front of the person to ask, and joins <em>not</em> to say not to.</dd>
+      <dt>from the scene</dt><dd>Should I start today? &middot; You shouldn't wait</dd>
+      <dt>from your own week</dt><dd>Should I call him? &middot; You shouldn't worry</dd>
+      <dt>never</dt><dd><span class='wrong'>Do I should start?</span></dd>
+    </dl><div class="eg">Good idea. Should I start today?</div></div>
+    <div class="card-col"><h4>It gives advice, not an order</h4><dl>
+      <dt>The idea</dt><dd>It leaves the choice with the other person. <em>Have to</em> and <em>must</em> do not.</dd>
+      <dt>from the scene</dt><dd>You should sleep more. And you shouldn't drink so much coffee.</dd>
+      <dt>from your own week</dt><dd>You should take a break</dd>
+      <dt>never</dt><dd><span class='wrong'>You have to sleep more</span> to a colleague</dd>
+    </dl><div class="eg">And you shouldn't drink so much coffee.</div></div>
+    <div class="card-col"><h4>Asking for advice, and checking</h4><dl>
+      <dt>The idea</dt><dd>A question word in front to ask, and the word alone to check.</dd>
+      <dt>from the scene</dt><dd>What should I do to relax? &middot; Should I start today?</dd>
+      <dt>from your own week</dt><dd>What should I say? &middot; Should I wait?</dd>
+      <dt>never</dt><dd><span class='wrong'>What I should do?</span></dd>
+    </dl><div class="eg">You're right. What should I do to relax?</div></div>
+  </div>
+  <div class="callout"><p><b>Watch out</b></p>
+    <p><b>No -s, on either word.</b> Say &ldquo;She <b>should sleep</b> more.&rdquo; Never &ldquo;<span class='wrong'>She shoulds sleep.</span>&rdquo; and never &ldquo;<span class='wrong'>She should sleeps.</span>&rdquo;</p>
+    <p><b>No to in front of the verb.</b> Say &ldquo;You should <b>rest</b>.&rdquo; Never &ldquo;<span class='wrong'>You should to rest.</span>&rdquo;</p>
+    <p><b>No helper in the question.</b> Say &ldquo;<b>Should</b> I start today?&rdquo; Never &ldquo;<span class='wrong'>Do I should start today?</span>&rdquo;</p>
+  </div>
+  <p class="body-copy" style="margin-top:26px;"><b>The moves</b></p>
+  <p class="body-copy" style="font-size:14.5px;color:var(--gray);">Ask whether you are advising or telling, then say it. The frame does not change; only the blue words do.</p>
+  <div class="split" style="margin-top:14px;">
+    <div class="card-col"><h4>giving advice</h4><ul class="moves">
+      <li>You should <span class="slot">[sleep, rest]</span> <span class="slot">[more, less]</span>.</li>
+      <li>You shouldn't <span class="slot">[drink, worry]</span> so much <span class="slot">[coffee, about it]</span>.</li>
+      <li>She should <span class="slot">[exercise, avoid]</span> <span class="slot">[every day, stress]</span>.</li>
+      <li>They should <span class="slot">[try, start]</span> <span class="slot">[walking, today]</span>.</li>
+    </ul></div>
+    <div class="card-col"><h4>asking for it, and checking</h4><ul class="moves">
+      <li>What should I <span class="slot">[do, say]</span> to <span class="slot">[relax, help]</span>?</li>
+      <li>Should I <span class="slot">[start, wait]</span> <span class="slot">[today, a week]</span>?</li>
+      <li>Yes, <span class="slot">[you should, I think so]</span>.</li>
+      <li>No, <span class="slot">[you shouldn't, not yet]</span>.</li>
+    </ul></div>
+  </div>
+  <div class="diagram"><svg viewBox="0 -4 342 116" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Two boxes. The left box reads you should sleep more, labelled
+     the choice is theirs. The right box reads you have to sleep more,
+     labelled no choice, and unit 41.">
+  <text x="10" y="16" font-family="Instrument Serif, Georgia, serif" font-size="15" fill="#1F5570">Am I advising, or telling?</text>
+
+  <rect x="10" y="32" width="146" height="32" rx="6" fill="#EAF1F5" stroke="#1F5570" stroke-width="1.6"/>
+  <text x="83" y="53" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" fill="#1F5570">You <tspan font-weight="600">should</tspan> sleep more.</text>
+
+  <rect x="188" y="32" width="146" height="32" rx="6" fill="#F4F4F1" stroke="#C9CBC4" stroke-width="1.5"/>
+  <text x="261" y="53" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" fill="#33363B">You <tspan font-weight="600">have to</tspan> sleep more.</text>
+
+  <text x="83" y="84" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="10.5" fill="#6B6F76">advice, and the choice is theirs</text>
+  <text x="261" y="84" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="10.5" fill="#6B6F76">an order, and unit 41 teaches it</text>
+</svg>
+    <p class="diagram-cap">Advice leaves the choice with the other person. The word in unit 41 takes it away.</p>
+  </div>
+  
+  <p class="cmp-head">Advice, and the order it is not</p>
+  <div class="cmp">
+    <div class="cmp-col"><p class="cmp-t">advice: the choice is theirs</p>
+      <p class="cmp-l">You <b>should</b> sleep more.</p>
+      <p class="cmp-l">You <b>shouldn't</b> wait.</p>
+      <p class="cmp-l"><b>Should</b> I start today?</p>
+      <p class="cmp-l">What <b>should</b> I do?</p>
+    </div>
+    <div class="cmp-col"><p class="cmp-t">unit 41: no choice</p>
+      <p class="cmp-l">You <b>have to</b> sleep more.</p>
+      <p class="cmp-l">You <b>must</b> start today.</p>
+      <p class="cmp-l"><b>Do</b> I have to start?</p>
+      <p class="cmp-l">What do I <b>have to</b> do?</p>
+    </div>
+  </div>
+
+  
+
+  
+
+  <p class="body-copy" style="margin-top:26px;"><b>Why this works</b></p>
+  <p class="body-copy">You will be asked for advice on your first week and you will need to ask for it sooner than that. The form is free, because you built it in unit 16. What this word adds is tone: it lets you say what somebody should do without telling them to do it.</p>
+
+  <p class="sec-kicker" style="margin-top:52px;">ACTIVATION</p>
+  <p class="goal"><b>Goal.</b> Six written exercises, one recording, and one speaking task. In every written exercise the first item is done for you, so you can see the shape before you make it.</p>
+  <div class="ex-block"><span class="ex-label">A</span>
+    <p class="ex-title">Give the advice</p>
+    <p class="ex-instr">Read the problem, then write the advice. Two words, and the second one is bare.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span>I'm tired. &rarr; You <u>should sleep</u> more.</span></p>
+    <div id="exA"></div>
+    <button class="check-btn" onclick="checkGaps(&quot;A&quot;,A_DATA)">Check</button>
+    <div class="fb" id="Ascore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">B</span>
+    <p class="ex-title">Ask for the advice</p>
+    <p class="ex-instr">Put the word in front of the person to check, and a question word in front of that to ask.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span>I want advice. &rarr; <u>What should</u> I do?</span></p>
+    <div id="exB"></div>
+    <button class="check-btn" onclick="checkGaps(&quot;B&quot;,B_DATA)">Check</button>
+    <div class="fb" id="Bscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">C</span>
+    <p class="ex-title">Spot and fix the error</p>
+    <p class="ex-instr">Each sentence has one mistake. Write it correctly.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span><i>She shoulds sleep more.</i> &rarr; She should sleep more.</span></p>
+    <div id="exC"></div>
+    <button class="check-btn" onclick="checkRepair(&quot;C&quot;,C_DATA)">Check</button>
+    <div class="fb" id="Cscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">D</span>
+    <p class="ex-title">The words you need</p>
+    <p class="ex-instr">Match each word to a sentence with it in.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span>advice &rarr; <u>f</u></span></p>
+    <div id="exD"></div>
+    <button class="check-btn" onclick="checkMatch(&quot;D&quot;,D_TERMS,D_KEY)">Check</button>
+    <div class="fb" id="Dscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">E</span>
+    <p class="ex-title">Write a sentence</p>
+    <p class="ex-instr">Use the word, and write one piece of advice.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span><i>a tip</i> &rarr; Here's a tip: you should start early.</span></p>
+    <div id="exE"></div>
+    <button class="check-btn" onclick="checkWrite(&quot;E&quot;,E_DATA,E_RULE)">Check</button>
+    <div class="fb" id="Escore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">F</span>
+    <p class="ex-title">Write the sentence</p>
+    <p class="ex-instr">Look at each one. Write the advice you would give.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span><i>an empty bed &middot; SLEEP</i> &rarr; You should rest more.</span></p>
+    <div id="exF"></div>
+    <button class="check-btn" onclick="checkPicture(&quot;F&quot;,F_DATA,F_RULE)">Check</button>
+    <div class="fb" id="Fscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">G</span>
+    <p class="ex-title">Say it after the speaker</p>
+    <p class="ex-instr">These are three of Mia's lines from the conversation. Listen to one, say it out loud, record yourself, and compare the two shapes. Nobody is marking this.</p>
+    <div id="exG"></div>
+    <div class="fb" id="Gscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">H</span>
+    <p class="ex-title">Over to you</p>
+    <p class="ex-instr">Not graded. This is where the form stops being a rule and becomes a sentence you say.</p>
+    <div class="task-box">
+      <p><b>Your partner says four problems. Give one piece of advice each time</b>, two with <em>should</em> and two with <em>shouldn't</em>.</p>
+      <p><b>Now ask for advice four times</b> with <em>What should I</em> and <em>Should I</em>. Answer each one short.</p>
+      <p><b>Say two of your pieces of advice again with <em>have to</em>.</b> Say which of the two versions you would use with a colleague.</p>
+      <p><b>In pairs.</b> Give each other three tips for a first week at a new job. Keep the verb after the word bare every time.</p>
+    </div>
+  </div>
+  <div class="see-also"><span class="see-also-k">See also</span>
+    <span class="see-also-i">the same shape, for what you are able to do <b>unit 16</b></span>
+    <span class="see-also-i">could, for the politer request <b>unit 16</b></span>
+    <span class="see-also-i">have to and must, which give no choice <b>unit 41</b></span>
+    <span class="see-also-i">the adverbs that go with this advice <b>unit 38</b></span>
+    <span class="see-also-i">should have, for advice after the event <b>B1/B2 unit 12</b></span>
+  </div>
+  </div><div class="foot"><a class="nav-btn" href="a1a2.html">&larr; All units</a><button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button></div><p class="print-reminder">Nothing here is saved. Print before you leave the page.</p></div><script>var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-2388", "AL-5227", "AN-3666", "AO-1929", "AQ-1403", "AR-1212", "AS-8941", "AT-3988", "AU-9614", "AW-1121", "AW-5920", "AY-3957", "AY-8830", "BB-7565", "BI-0990", "BJ-0189", "BJ-2537", "BJ-7138", "BL-1583", "BL-3205", "BL-9902", "BN-2930", "BO-5513", "BQ-9974", "BU-2315", "BU-3356", "BU-4201", "BW-0098", "BY-5952", "BY-8964", "CA-3321", "CA-5707", "CA-7225", "CE-4217", "CE-7673", "CG-8575", "CH-3047", "CM-5599", "CN-0288", "CO-2672", "CO-7250", "CP-0265", "CP-3323", "CQ-7403", "CQ-8469", "CR-3646", "CS-4766", "CU-8380", "CU-8619", "CX-8573", "CX-9951", "CZ-8599", "DB-1837", "DD-7645", "DE-3739", "DE-6860", "DF-6761", "DH-1654", "DH-4587", "DI-3846", "DJ-1666", "DJ-8783", "DJ-9635", "DK-6801", "DR-4798", "DU-0538", "DU-2870", "DU-7191", "DY-1342", "DZ-6215", "EA-5295", "EB-7574", "EI-2870", "EJ-2435", "EJ-7588", "EK-3626", "EL-5403", "EL-7751", "EM-4758", "EN-5720", "EP-8690", "EU-1749", "EU-4668", "EY-0156", "EY-5028", "EY-5771", "EY-8988", "EZ-4901", "EZ-7238", "FA-2480", "FA-3229", "FD-0817", "FD-2307", "FD-2954", "FD-9547", "FF-6110", "FF-8319", "FH-0212", "FI-7378", "FK-4255", "FN-0921", "FN-5013", "FO-3645", "FS-3397", "FU-5114", "FV-4372", "FW-7388", "FX-5735", "FX-8026", "GA-7376", "GC-0379", "GC-0593", "GC-7846", "GD-4624", "GD-8256", "GE-7330", "GG-5258", "GJ-2971", "GJ-8315", "GK-1640", "GK-6237", "GO-2922", "GQ-8518", "GS-0957", "GU-4499", "GX-1422", "GY-4850", "GY-8831", "GZ-1807", "HC-5667", "HD-6398", "HD-6695", "HG-8960", "HI-5126", "HM-0814", "HN-5191", "HR-1799", "HS-0660", "HS-8959", "HT-1159", "HU-6366", "HV-7356", "HX-4184", "HY-8543", "HZ-0868", "HZ-4384", "HZ-4394", "IA-9592", "ID-9262", "IG-2279", "IH-1623", "II-1515", "IL-0808", "IL-2856", "IM-2202", "IN-2853", "IP-2206", "IP-6428", "IS-6888", "IT-7177", "IT-9370", "IU-6890", "IW-7209", "IW-7334", "IX-7882", "IZ-4596", "IZ-5460", "JA-3789", "JA-8127", "JB-4864", "JB-5887", "JB-8392", "JD-3404", "JE-8781", "JG-5409", "JI-6836", "JI-7780", "JJ-1294", "JK-5150", "JL-9806", "JN-9881", "JO-4953", "JP-2813", "JR-6563", "JT-5889", "JU-0546", "KC-4490", "KD-3748", "KF-9500", "KG-2805", "KH-1496", "KM-0226", "KM-6267", "KM-9998", "KN-9232", "KO-2249", "KP-5927", "KQ-1642", "KQ-2174", "KQ-4629", "KS-0562", "KS-2035", "KT-5622", "KX-3719", "KX-5687", "KZ-9069", "LA-3641", "LC-9505", "LF-2835", "LF-3440", "LF-5723", "LG-4259", "LH-0762", "LI-1652", "LJ-4532", "LK-6242", "LM-2637", "LP-6442", "LR-3052", "LR-3190", "LR-3876", "LU-6959", "LY-2430", "LY-8251", "MB-0985", "MC-0432", "MD-5355", "MD-6035", "MF-4039", "MH-8350", "MK-6490", "ML-1094", "ML-6536", "MM-0505", "MM-4633", "MN-6227", "MP-2446", "MU-0263", "MU-1972", "MU-6200", "MV-9345", "MW-3909", "MX-7105", "MZ-7757", "MZ-9673", "NA-6476", "ND-2505", "NE-2445", "NG-4097", "NI-0149", "NI-1933", "NM-4728", "NM-6484", "NQ-0471", "NQ-0763", "NQ-8797", "NS-2836", "NT-1247", "NT-2961", "NT-8096", "NV-2259", "NW-4877", "NX-8284", "OB-2118", "OC-9941", "OD-2269", "OH-9176", "OK-1376", "OL-9223", "OM-3600", "OM-9841", "OO-7410", "OP-0397", "OQ-0089", "OQ-6861", "OS-1295", "OT-0558", "OU-1086", "OZ-3311", "PE-6681", "PF-1393", "PF-5372", "PF-6218", "PI-7454", "PM-5473", "PO-3136", "PO-4375", "PO-6594", "PP-5386", "PW-1775", "PW-8454", "QA-2276", "QB-9637", "QG-4980", "QI-4570", "QI-8762", "QJ-3229", "QK-9389", "QK-9591", "QP-1713", "QP-2800", "QU-3388", "QU-6791", "QV-6067", "QX-4220", "RA-0723", "RA-7714", "RA-9103", "RB-3503", "RC-9055", "RG-8909", "RG-8964", "RG-9044", "RH-0746", "RH-6442", "RN-2614", "RP-8912", "RR-0677", "RS-6858", "RS-6869", "RT-0649", "RT-4827", "RT-9471", "RV-9405", "RW-6355", "RY-1670", "RY-3755", "RY-4569", "SA-4126", "SB-4542", "SC-6853", "SD-6526", "SD-8485", "SH-2111", "SI-6535", "SK-0128", "SK-6149", "SL-2687", "SL-6976", "SL-7928", "SN-9048", "SO-9187", "SQ-1122", "SR-9043", "SR-9835", "ST-1671", "SW-6772", "SX-8305", "SY-5519", "SY-7251", "TB-1236", "TC-3500", "TC-4264", "TD-4528", "TE-3783", "TF-4337", "TF-5946", "TG-4810", "TH-0894", "TL-5384", "TN-6202", "TO-4008", "TO-7503", "TP-3931", "TR-3063", "TV-0181", "TW-7963", "TW-9135", "TY-7002", "UA-5949", "UB-7783", "UB-9445", "UE-0444", "UF-5448", "UG-1507", "UH-0750", "UJ-4353", "UL-1840", "UM-7749", "UN-1590", "UO-0016", "UO-7188", "UQ-0062", "US-3875", "US-5935", "US-6661", "US-7320", "UT-3058", "UT-3191", "UW-5490", "VA-8631", "VB-1375", "VC-0785", "VC-8246", "VC-8661", "VG-3345", "VG-5533", "VG-7188", "VH-6911", "VI-0235", "VJ-9942", "VK-0601", "VK-7802", "VL-5404", "VM-7528", "VN-0611", "VP-6098", "VQ-8570", "VS-1740", "VS-2601", "VS-6960", "VT-6564", "VW-0371", "VX-3419", "VZ-1036", "VZ-1836", "WA-6224", "WB-0446", "WC-4705", "WC-5293", "WC-7126", "WG-1442", "WG-4319", "WG-7876", "WH-7291", "WI-6394", "WL-6650", "WM-1936", "WM-3402", "WM-3514", "WO-4160", "WO-9743", "WP-5457", "WV-1968", "WW-2749", "WY-0407", "XC-0115", "XC-4025", "XC-5579", "XE-5640", "XE-8199", "XE-8990", "XJ-7882", "XL-0683", "XL-1983", "XL-8634", "XO-8511", "XP-7585", "XQ-3502", "XR-5738", "XT-4226", "XU-8893", "XV-2651", "XW-2661", "YA-4779", "YA-6871", "YD-8536", "YF-6161", "YH-6239", "YI-0086", "YI-0777", "YI-3786", "YK-1311", "YK-7066", "YQ-7512", "YU-2273", "YU-9619", "YV-6712", "ZC-0180", "ZD-3923", "ZD-9426", "ZE-9214", "ZF-5917", "ZF-6868", "ZG-1159", "ZG-5395", "ZH-6679", "ZH-9625", "ZK-7397", "ZL-0255", "ZM-4958", "ZN-2112", "ZN-7991", "ZN-9807", "ZO-3469", "ZO-4134", "ZP-7760", "ZQ-4512", "ZQ-5687", "ZU-2853", "ZU-9981", "ZV-9981", "ZW-7998", "ZY-0638", "ZZ-2645"];
+
+/* ADDITIVE ONLY, and copied from C1 so the whole series behaves the same.
+   A direct visitor has window.self === window.top, so this returns false at
+   once and the gate behaves exactly as it always has. It exists because the
+   Coach FRAMES the published page rather than keeping a copy of it, and a
+   student who already unlocked the book in the app must not meet the gate
+   again inside it. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
+/* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
+   before the series had a shared key. Honouring it is what keeps an existing
+   student from being asked for a code they already used. */
+function hasAccess(){
+  if(framedByApp()){ return true; }
+  try{ return localStorage.getItem('cm_access')==='1' ||
+              localStorage.getItem('cm_pv_access')==='1'; }
+  catch(e){ return false; }
+}
+function dismissPrivacy(){
+  document.getElementById('privacyModal').classList.remove('shown');
+  try{ localStorage.setItem('cm_privacy','1'); }catch(e){}
+}
+function maybeShowPrivacyModal(){
+  var seen=false; try{ seen = localStorage.getItem('cm_privacy')==='1'; }catch(e){}
+  if(!seen) document.getElementById('privacyModal').classList.add('shown');
+}
+function openUnit(){
+  document.getElementById('gate').style.display='none';
+  document.getElementById('content').style.display='block';
+  buildAll();
+  maybeShowPrivacyModal();
+}
+function tryCode(){
+  var v = document.getElementById('codeInput').value.trim().toUpperCase();
+  if(VALID_CODES.indexOf(v) !== -1){ grantAccess(); openUnit(); }
+  else { document.getElementById('gateError').textContent =
+    'That code was not recognised. Check it and try again.'; }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(hasAccess()) openUnit();
+  var i=document.getElementById('codeInput');
+  if(i) i.addEventListener('keydown', function(e){ if(e.key==='Enter') tryCode(); });
+});
+
+/* THE SHARED ENGINE. One copy for the book, per-unit data supplied by the
+   module. Unit 1 carried its own copy and that is a second place to be wrong. */
+/* CONTRACTIONS ARE EXPANDED BEFORE COMPARING, so a learner who writes `I've
+   gone` is not marked wrong against a key that says `I have gone`. Netto asked
+   whether the answer key is coherent; it was not. An instrument that fed each
+   item its own model answer in contracted form found 115 correct alternatives
+   refused across the book, almost all of them in the repair exercise.
+
+   `'d` IS DELIBERATELY LEFT ALONE. It expands to both `had` and `would`, so
+   normalising it would make `I'd read more` match a key that reads `I had read
+   more`, and the checker would start accepting the exact error the conditional
+   units exist to prevent. Those items list their alternatives by hand instead. */
+function expand(s){
+ /* `amn't` NAO E UMA CONTRACAO DO INGLES, e por isso a unidade 2 a ensina como
+    erro. Sem esta linha a regra geral de `n't` a lia como `am not`, o erro e a
+    resposta viravam a mesma string, e a pagina aprovava `I amn't on the list.`
+    O behaviour.html da serie pegou isso em 31 ago 2026. Ela e mantida como uma
+    palavra so, para continuar diferente de `am not`. */
+ return s.replace(/\bamn't\b/g,'amnt')
+         .replace(/\bcan't\b/g,'can not').replace(/\bcannot\b/g,'can not')
+         .replace(/\bwon't\b/g,'will not').replace(/\bshan't\b/g,'shall not')
+         .replace(/n't\b/g,' not')
+         .replace(/'ve\b/g,' have').replace(/'ll\b/g,' will')
+         .replace(/'re\b/g,' are').replace(/'m\b/g,' am')
+         .replace(/\s+/g,' ');
+}
+function norm(s){return expand((s||'').toLowerCase().replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[.!?,;]+$/,'').replace(/\s+/g,' ').trim()).trim();}
+function setfb(id,ok,html){var e=document.getElementById(id);e.className='fb '+(ok?'ok':'bad');e.innerHTML=html;}
+function tally(L,c,n){setfb(L+'score',c===n,c+' / '+n+' correct.');}
+var PICK={};
+
+/* MULTIPLE CHOICE, used by the Access check and by the framing exercise. */
+function buildPick(L,data,stack){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var st=stack?' style="flex-direction:column;align-items:stretch;"':'';
+  var bs=stack?' style="text-align:left;border-radius:10px;"':'';
+  var h='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+(stack?'<b>'+it.s+'</b>':it.q)+'</div><div class="choices"'+st+'>';
+  it.o.forEach(function(o,j){h+='<button class="choice-btn"'+bs+' id="'+L+i+'_'+j+'" onclick="pick(\''+L+'\','+i+','+j+')">'+o+'</button>';});
+  h+='</div><div class="fb" id="'+L+'fb'+i+'"></div>';d.innerHTML=h;el.appendChild(d);});}
+function pick(L,i,j){PICK[L+i]=j;
+ var n=document.querySelectorAll('[id^="'+L+i+'_"]');
+ for(var k=0;k<n.length;k++){n[k].className='choice-btn'+(k===j?' picked':'');}}
+function checkPick(L,data,yes,no){var c=0;data.forEach(function(it,i){
+ var p=PICK[L+i],ok=(p===it.a);if(ok)c++;
+ if(p!==undefined)document.getElementById(L+i+'_'+p).className='choice-btn '+(ok?'correct':'wrong');
+ if(!ok)document.getElementById(L+i+'_'+it.a).className='choice-btn correct';
+ setfb(L+'fb'+i,ok,(ok?yes:no)+' '+it.why);});tally(L,c,data.length);}
+
+/* GAP FILL with one or two gaps per item. */
+function buildGaps(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var h='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+it.t+'</div><div class="answer-row">';
+  it.a.forEach(function(_,j){h+='<input type="text" id="'+L+i+'_'+j+'" placeholder="'+(it.a.length>1?(j===0?'first gap':'second gap'):'answer')+'">';});
+  h+='</div><div class="fb" id="'+L+'fb'+i+'"></div>';d.innerHTML=h;el.appendChild(d);});}
+function checkGaps(L,data){var c=0;data.forEach(function(it,i){var ok=true;
+ it.a.forEach(function(alts,j){var v=norm(document.getElementById(L+i+'_'+j).value);
+  if(alts.map(norm).indexOf(v)<0)ok=false;});
+ if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?'Good.':'Not yet. &nbsp;<span class="muted">'+it.a.map(function(x){return x[0];}).join(' &nbsp;/&nbsp; ')+'</span>');});
+ tally(L,c,data.length);}
+
+/* REPAIR. EVERY PRINTED STRING IS ENGLISH THE LANGUAGE NEVER ALLOWS. */
+function buildRepair(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span><span class="wrong">'+it.q+'</span></div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="write it correctly">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkRepair(L,data){var c=0;data.forEach(function(it,i){
+ var v=norm(document.getElementById(L+i).value),ok=it.a.map(norm).indexOf(v)>=0;if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?'Good.':'Not yet. &nbsp;<span class="muted">'+it.a[0]+'</span>');});
+ tally(L,c,data.length);}
+
+/* JOIN. Presence, shape and ORDER, and never truth. `cont` names the verb that
+   must carry the marked form, which is what stops the checker from rewarding
+   the exact analysis the unit exists to prevent. */
+function buildJoin(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var hint=it.start?' <span class="hint">(start with <b>'+it.start+'</b>)</span>':'';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+it.t+hint+'</div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="one sentence">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkJoin(L,data,rule){var c=0;data.forEach(function(it,i){
+ var raw=(document.getElementById(L+i).value||'').trim(),low=raw.toLowerCase(),why='';
+ var first=(low.split(/\s+/)[0]||'').replace(/[^a-z]/g,''),comma=raw.indexOf(',');
+ /* ONE ITEM MAY OVERRIDE THE MARK. The rule is the exercise's, but an item can
+    demand something the others do not -- a word the learner has to SUPPLY
+    rather than copy. Without this the demand has to go into `cont`, which is
+    documented as naming a verb, and a checker whose fields lie is one nobody
+    can maintain. */
+ var mkSrc=it.mark||rule.mark, mkWhy=it.markWhy||rule.markWhy;
+ var markRx=new RegExp(mkSrc.replace('STEM',it.cont||'\\w+'),'i');
+ if(!raw)why='Write one sentence.';
+ else if(it.start&&first!==it.start)why='Start this one with <b>'+it.start+'</b>.';
+ else if(rule.join&&!new RegExp(rule.join,'i').test(low))why=rule.joinWhy;
+ else if(!markRx.test(raw))why=mkWhy;
+ else if(rule.frontWords&&new RegExp('^('+rule.frontWords+')\\b','i').test(low)&&comma<0)
+   why='You started with <b>'+first+'</b>, so the sentence needs a comma in the middle.';
+ else if(rule.before&&new RegExp('^('+rule.before+')\\b','i').test(low)&&!markRx.test(raw.slice(0,comma)))
+   why=rule.beforeWhy;
+ else if(rule.after&&new RegExp('^('+rule.after+')\\b','i').test(low)&&!markRx.test(raw.slice(comma)))
+   why=rule.afterWhy;
+ else if(!/^[A-Z]/.test(raw))why='Start with a capital letter.';
+ else if(!/[.!?]$/.test(raw))why='End it with a full stop.';
+ if(why)setfb(L+'fb'+i,false,why+'<br><span class="muted">One way: '+it.m+'</span>');
+ else{c++;setfb(L+'fb'+i,true,'Good.<br><span class="muted">'+(it.alt?'Also right: '+it.alt:'Another way: '+it.m)+'</span>');}});
+ tally(L,c,data.length);}
+function revealKey(L,data){var k=document.getElementById(L+'key');
+ k.innerHTML='<b>Model answers.</b><br>'+data.map(function(it,i){
+  return (i+1)+'. '+it.m+(it.alt?'<br><span class="muted" style="margin-left:18px;">or: '+it.alt+'</span>':'');}).join('<br>');
+ k.className='key-box shown';}
+
+/* MATCHING. The key is checked at build time, not here: see checks.py. */
+function buildMatch(L,terms,means){var el=document.getElementById('ex'+L);
+ var opts='<option value="">&mdash;</option>'+means.map(function(m){return '<option value="'+m.id+'">'+m.id+'</option>';}).join('');
+ var h='<div class="body-copy" style="margin-bottom:14px;">'+means.map(function(m){return '<b>'+m.id+'.</b> '+m.t;}).join('<br>')+'</div>';
+ terms.forEach(function(t,i){h+='<div class="q"><div class="answer-row"><span class="num" style="color:var(--navy);font-weight:700;">'+(i+1)+'.</span>'+
+  '<span class="fixed-word" style="min-width:130px;"><b>'+t+'</b></span>'+
+  '<select class="match-select" style="width:90px;" id="'+L+i+'">'+opts+'</select>'+
+  '<span class="fb" id="'+L+'fb'+i+'" style="margin:0;display:block;"></span></div></div>';});
+ el.innerHTML=h;}
+function checkMatch(L,terms,key){var c=0;terms.forEach(function(t,i){
+ var ok=document.getElementById(L+i).value===key[i];if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?'&#10003;':'&rarr; '+key[i]);});tally(L,c,terms.length);}
+
+/* THE FREE SENTENCE. Presence, shape and order. Never truth. Model either way.
+
+   `front` HOLDS SUBORDINATE-CLAUSE OPENERS AND NOTHING ELSE. A word belongs
+   there only if a MAIN CLAUSE has to follow it, which is what makes the comma
+   obligatory: while, when, as soon as, until, before, after, once, if, unless,
+   as long as, by the time.
+   IT HAS BEEN FILLED WRONGLY THREE TIMES AND EACH TIME THE CHECKER REFUSED
+   CORRECT ENGLISH:
+     `at first`, `back then`, `in an ideal world`  -- adverbials. They open a
+        sentence and nothing has to follow them, so no comma is required.
+     `if only`  -- opens a WHOLE WISH. "If only this room had a window." is a
+        complete sentence with no second half at all.
+   If you cannot name the main clause that must follow, the word does not go in.
+
+   AN ITEM MAY DECLARE `find`, A REGEX, INSTEAD OF RELYING ON ITS OWN SPELLING.
+   The literal search failed on three of unit 5's own models and one of unit 3's,
+   and in every case the MODEL WAS RIGHT AND THE CHECKER WAS WRONG: a learner
+   writes `falls through`, not `fall through`, and `put the launch off`, not
+   `put off`. A multi-word expression is inflected and separated in real use, and
+   a checker that demands the dictionary form refuses correct English.
+
+   AND `front` IS FOR CLAUSE OPENERS ONLY. `While I was checking, ...` needs the
+   comma. `Back then we used to send it by post` does not, because a short adverb
+   is not a clause. Unit 1 shipped with `at first` on that list and would have
+   refused a correct sentence. */
+function buildWrite(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span><b>'+it.word+'</b></div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="your own sentence">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkWrite(L,data,rule){var c=0;data.forEach(function(it,i){
+ var raw=(document.getElementById(L+i).value||'').trim(),low=raw.toLowerCase(),why='';
+ var front=(rule.front||[]).filter(function(w){return low.indexOf(w)===0;})[0];
+ if(!raw)why='Write a sentence.';
+ else if(!(it.find? new RegExp(it.find,'i').test(raw)
+                 : low.indexOf(it.word.toLowerCase().replace(/^(a|an|the)\s+/,''))>=0))
+   why='I cannot find <b>'+it.word+'</b> in your sentence.';
+ else if(it.must&&!it.must.some(function(m){return new RegExp('\\b'+m+'\\b','i').test(raw);}))
+   why='Use one of these: <b>'+it.must.join(', ')+'</b>.';
+ else if(rule.mark&&!new RegExp(rule.mark,'i').test(raw))why=rule.markWhy;
+ else if(front&&raw.indexOf(',')<0)
+   why='You started with <b>'+front+'</b>, so the sentence needs a comma in the middle.';
+ else if(!/^[A-Z]/.test(raw))why='Start with a capital letter.';
+ else if(!/[.!?]$/.test(raw))why='End it with a full stop.';
+ else if(raw.split(/\s+/).length<(rule.minWords||6))why='Say a little more. '+(rule.minWords||6)+' words at least.';
+ if(why)setfb(L+'fb'+i,false,why+'<br><span class="muted">One way: '+it.model+'</span>');
+ else{c++;setfb(L+'fb'+i,true,'Good.<br><span class="muted">Another way: '+it.model+'</span>');}});
+ tally(L,c,data.length);}
+
+/* THE PICTURE STRIP. Six of Murphy's eight spreads have one: numbered pictures,
+   one sentence each. It matters more at A1 than anywhere else, because the
+   learner produces a sentence from a FACT instead of from an English prompt he
+   would otherwise translate first.
+
+   THE PANELS ARE DRAWN FILES, not inline SVG. Two SVG versions were written by
+   hand and both failed: the first printed the answer word on every card, the
+   second was unreadable. images.py draws them from the unit's own list, with
+   one fixed style preamble and an anchor image, so five panels are one style.
+   The NAME is printed by this builder under the drawing, never baked into the
+   image: the drawing stays reusable and the label stays editable.
+
+   THE CHECK IS THE WRITE CHECK WITHOUT THE WORD REQUIREMENT: there is no
+   prompt word to find, because the picture is the prompt. */
+function buildPicture(L,data,box,used){var el=document.getElementById('ex'+L);el.innerHTML='';
+ if(box&&box.length){var b=document.createElement('div');b.className='wordbox';
+  b.innerHTML=box.map(function(w){
+    return w===used?'<s>'+w+'</s>':'<b>'+w+'</b>';}).join('');
+  el.appendChild(b);}
+ var g=document.createElement('div');g.className='pic-grid';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='pic-cell';
+  d.innerHTML='<div class="pic-n">'+(i+1)+'</div>'+
+   '<div class="pic-art"><img src="img/'+it.img+'.png" alt="'+it.shows+'"></div>'+
+   '<div class="pic-name">'+it.name+'</div>'+
+   '<input type="text" class="wide" id="'+L+i+'" placeholder="write the sentence">'+
+   '<div class="fb" id="'+L+'fb'+i+'"></div>';g.appendChild(d);});
+ el.appendChild(g);}
+function checkPicture(L,data,rule){var c=0;data.forEach(function(it,i){
+ var raw=(document.getElementById(L+i).value||'').trim(),why='';
+ if(!raw)why='Write a sentence.';
+ else if(it.must&&!it.must.some(function(m){return new RegExp('\\b'+m+'\\b','i').test(raw);}))
+   why='This one needs <b>'+it.must.join('</b> or <b>')+'</b>.';
+ else if(rule.mark&&!new RegExp(rule.mark,'i').test(raw))why=rule.markWhy;
+ else if(!/^[A-Z]/.test(raw))why='Start with a capital letter.';
+ else if(!/[.!?]$/.test(raw))why='End it with a full stop.';
+ else if(raw.split(/\s+/).length<(rule.minWords||3))why='Say a little more.';
+ if(why)setfb(L+'fb'+i,false,why+'<br><span class="muted">One way: '+it.model+'</span>');
+ else{c++;setfb(L+'fb'+i,true,'Good.<br><span class="muted">Another way: '+it.model+'</span>');}});
+ tally(L,c,data.length);}
+
+/* LISTEN, SAY IT, COMPARE. Netto, 30 Aug 2026.
+
+   THIS IS NOT NEW WORK. The C2 book has been doing voice capture for a while
+   and it is on the air -- see the `SAY IT: voice capture` block in
+   c2-unit1.html. Netto pointed at it, and three things came across that the
+   first draft of this function did not have and should never have lacked:
+
+     THE PRIVACY PROMISE, MADE TO THE LEARNER ON THE PAGE. His voice stays in
+     the tab, is never uploaded, and is gone when he closes it. C2 states that
+     in words next to the button, and so does this.
+
+     THE FALLBACK KEEPS THE EXERCISE ALIVE. When the browser will not record,
+     C2 does not print a dead button -- it says "say the line aloud twice
+     anyway: the speaking is the exercise, the recording only lets you hear
+     what you sound like." That framing is the correct one and it is now ours.
+
+     DISCARD, AND revokeObjectURL. The learner can delete what he recorded,
+     and the blob URL is released instead of leaking one per attempt.
+
+   WHAT IS DIFFERENT HERE, and it is the reason this exists at all: C2 records
+   ONE line for the whole unit. This records FOUR, each against a model clip,
+   and plays the two back to back. At A1 the comparison is the teaching; at C2
+   the learner can already hear himself.
+
+   NO SCORE, AND THAT IS DELIBERATE. Nothing judges his pronunciation. The
+   project's own asr_probe.py says why it could not be trusted to: it
+   transcribes WORDS and "says nothing about the voice, the stress, or whether
+   the reading is natural." A number claiming to grade an accent, computed
+   from a word match, would be a lie with a decimal point. */
+function speakSupported(){
+  return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+}
+
+/* THE WAVEFORM COMPARISON IS THE CALIBRATED SPEECH PATTERN, and Netto pointed
+   at it for this exercise. Its two good ideas, both taken:
+
+     THE TWO SHAPES ARE DRAWN ON TOP OF EACH OTHER -- the model in grey, the
+     learner in the accent colour. He SEES where he paused and she did not, and
+     where he pressed on a word she left weak. Playing one after the other only
+     tells him they differ; the overlay tells him where.
+
+     NO NUMBER IS EVER SHOWN. calibrated_speech computes a cosine similarity of
+     the two envelopes and then throws the number away, printing "Great match --
+     that's the shape" above a threshold and "Compare the shapes and try again"
+     below it. That is the honest presentation: the similarity of two loudness
+     envelopes is not a pronunciation score, and printing it as a percentage
+     would be a lie with a decimal point. */
+function peaksOf(blob,n){
+  return blob.arrayBuffer().then(function(buf){
+    var AC=window.AudioContext||window.webkitAudioContext, ac=new AC();
+    return ac.decodeAudioData(buf).then(function(ab){
+      var d=ab.getChannelData(0), st=Math.floor(d.length/n)||1, o=[];
+      for(var i=0;i<n;i++){ var m=0;
+        for(var j=i*st;j<(i+1)*st&&j<d.length;j++){ var v=Math.abs(d[j]); if(v>m)m=v; }
+        o.push(m); }
+      var mx=Math.max.apply(null,o)||1; ac.close();
+      return o.map(function(v){ return +(v/mx).toFixed(3); });
+    });
+  });
+}
+function simShape(a,b){
+  if(!a||!b||!a.length||!b.length) return 0;
+  var n=Math.min(a.length,b.length), d=0, na=0, nb=0;
+  for(var i=0;i<n;i++){ d+=a[i]*b[i]; na+=a[i]*a[i]; nb+=b[i]*b[i]; }
+  return d/(Math.sqrt(na*nb)||1);
+}
+function wavePath(pk,color,fill){
+  if(!pk||!pk.length) return '';
+  var W=300,H=44,mid=H/2,step=W/(pk.length-1),up='',dn='';
+  for(var i=0;i<pk.length;i++){
+    var x=(i*step).toFixed(1), y=(mid-pk[i]*mid*0.92).toFixed(1);
+    up+=(i?'L':'M')+x+' '+y+' ';
+  }
+  for(var k=pk.length-1;k>=0;k--){
+    var x2=(k*step).toFixed(1), y2=(mid+pk[k]*mid*0.92).toFixed(1);
+    dn+='L'+x2+' '+y2+' ';
+  }
+  return '<path d="'+up+dn+'Z" fill="'+fill+'" stroke="'+color+'" stroke-width="1.2"/>';
+}
+function drawWave(el,model,mine){
+  el.innerHTML='<svg viewBox="0 0 300 44" preserveAspectRatio="none" '+
+    'style="width:100%;height:44px;display:block">'+
+    '<line x1="0" y1="22" x2="300" y2="22" stroke="#E3E4DF" stroke-width="1"/>'+
+    wavePath(model,'#B6BAC0','rgba(182,186,192,.28)')+
+    wavePath(mine,'#1F5570','rgba(31,85,112,.22)')+'</svg>';
+}
+function speakSupported(){
+  return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+}
+function buildSpeak(L,data){
+  var el=document.getElementById('ex'+L); el.innerHTML='';
+  var ok=speakSupported(), S={};
+  data.forEach(function(it,i){
+    var model=(window.CLIPS||[]).indexOf(it.clip)>=0;
+    var d=document.createElement('div'); d.className='say-cell';
+    d.innerHTML='<div class="say-target">'+it.text+'</div><div class="say-row">'+
+      (model?'<button class="say-btn" data-play="'+it.clip+'">Listen</button>'
+            :'<span class="say-none">the model clip is not cut yet</span>')+
+      (ok?'<button class="say-btn rec" data-rec="'+i+'">Record</button>'+
+          (model?'<button class="say-btn both" data-both="'+i+'" disabled>Both, one after the other</button>':'')+
+          '<button class="say-btn drop" data-drop="'+i+'" style="display:none;">Discard</button>':'')+
+      '</div>'+
+      '<div class="say-wave" id="'+L+'w'+i+'"></div>'+
+      '<div class="say-verdict" id="'+L+'v'+i+'"></div>'+
+      (ok?'<audio class="say-audio" id="'+L+'a'+i+'" controls style="display:none;"></audio>':'')+
+      '<div class="say-hint">'+(it.hint||'')+'</div>';
+    el.appendChild(d);
+    drawWave(document.getElementById(L+'w'+i), (window.PEAKS||{})[it.clip], null);
+  });
+  var note=document.createElement('p'); note.className='say-note';
+  note.innerHTML = ok
+    ? 'Your recordings stay in this browser tab. They are never uploaded, and '+
+      'they are gone the moment you close or refresh the page.'
+    : 'This browser will not record audio. Say each line aloud twice anyway: '+
+      'the speaking is the exercise, and the recording only lets you hear what '+
+      'you sound like.';
+  el.appendChild(note);
+  if(!ok) return;
+
+  el.addEventListener('click',function(e){
+    var t=e.target, i;
+    if(t.dataset.play){ var a=document.getElementById('a-'+t.dataset.play);
+      if(a){ a.currentTime=0; a.play(); } return; }
+
+    if(t.dataset.rec!==undefined){ i=t.dataset.rec;
+      var st=S[i];
+      if(st && st.rec && st.rec.state==='recording'){ st.rec.stop(); return; }
+      navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+        var chunks=[], mr=new MediaRecorder(stream);
+        S[i]={rec:mr, stream:stream, url:(S[i]||{}).url||null};
+        mr.ondataavailable=function(ev){ if(ev.data.size) chunks.push(ev.data); };
+        mr.onstop=function(){
+          var blob=new Blob(chunks,{type:mr.mimeType||'audio/webm'});
+          if(S[i].url) URL.revokeObjectURL(S[i].url);
+          S[i].url=URL.createObjectURL(blob);
+          var au=document.getElementById(L+'a'+i);
+          au.src=S[i].url; au.style.display='block';
+          var b=el.querySelector('[data-both="'+i+'"]'); if(b) b.disabled=false;
+          var mp=(window.PEAKS||{})[data[i].clip];
+          peaksOf(blob, mp&&mp.length?mp.length:50).then(function(mine){
+            drawWave(document.getElementById(L+'w'+i), mp, mine);
+            var v=document.getElementById(L+'v'+i);
+            if(!mp){ v.textContent=''; return; }
+            var sc=simShape(mp,mine);
+            v.innerHTML = sc>0.85
+              ? '<span class="say-win">Great match. That is the shape.</span>'
+              : 'Compare the two shapes and try again.';
+          }).catch(function(){});
+          el.querySelector('[data-drop="'+i+'"]').style.display='inline-flex';
+          stream.getTracks().forEach(function(tr){ tr.stop(); });
+          t.textContent='Record again'; t.classList.remove('on');
+        };
+        mr.start(); t.textContent='Stop'; t.classList.add('on');
+      }).catch(function(){
+        t.disabled=true;
+        t.parentNode.insertAdjacentHTML('beforeend',
+          '<span class="say-none">microphone not available, so say it aloud instead</span>');
+      });
+      return; }
+
+    if(t.dataset.drop!==undefined){ i=t.dataset.drop;
+      if(S[i]&&S[i].url){ URL.revokeObjectURL(S[i].url); S[i].url=null; }
+      var au2=document.getElementById(L+'a'+i); au2.src=''; au2.style.display='none';
+      t.style.display='none';
+      var b2=el.querySelector('[data-both="'+i+'"]'); if(b2) b2.disabled=true;
+      el.querySelector('[data-rec="'+i+'"]').textContent='Record';
+      return; }
+
+    if(t.dataset.both!==undefined){ i=t.dataset.both;
+      if(!S[i]||!S[i].url||!window.playClip) return;
+      var url=S[i].url;
+      window.playClip(data[i].clip, function(){ new Audio(url).play(); });
+      return; }
+  });
+}
+
+/* One delegated handler for every `data-play` on the page: the bank words and
+   the contraction pairs. The Access lines have their own, older path. */
+document.addEventListener('click',function(e){
+  var t=e.target.closest?e.target.closest('[data-play]'):null;
+  if(!t)return;
+  if(window.playClip) window.playClip(t.dataset.play);
+});
+
+var R_DATA=[{"q": "Mia says &ldquo;You <b>should</b> sleep&rdquo; to one person. Where is the -s of unit 8?", "o": ["there is none: this word has one form, exactly like <em>can</em>", "it is on <em>sleep</em>", "it was dropped because the sentence is advice"], "a": 0, "why": "One form for everybody, and the verb after it is bare. That is unit 16's shape, and nothing about it changes here."}, {"q": "Sam asks &ldquo;<b>Should</b> I start today?&rdquo; Why is there no <em>do</em> in the question?", "o": ["because the question is short", "because the word moves in front of the person by itself", "because <em>start</em> is a regular verb"], "a": 1, "why": "Exactly as <em>can</em> did in unit 16. It goes in front of the person and the question is built. No helper is added."}, {"q": "Suppose the advice had been given with <em>have to</em> instead. What would change?", "o": ["nothing at all", "it would be more polite", "it would sound like an order rather than advice"], "a": 2, "why": "This word gives advice and leaves the choice with the other person. <em>Have to</em> and <em>must</em> take the choice away, and they are unit 41."}];
+var CLIPS=["u39-ac-good_idea_should_i_start_today-0ae3", "u39-ac-i_m_so_tired_all_the_time-56e6", "u39-ac-yes_you_shouldn_t_wait-bcb4", "u39-ac-you_re_right_what_should_i_do-1c89", "u39-ac-you_should_sleep_more_and_you-c1fe", "u39-ac-you_should_try_walking_it_real-3542", "u39-bk-a_routine-2b77", "u39-bk-a_tip-4d5c", "u39-bk-advice-ebbe", "u39-bk-energy-a6c1", "u39-bk-healthy-1bd7", "u39-bk-less-c314", "u39-bk-stress-d009", "u39-bk-to_advise-5e6c", "u39-bk-to_avoid-f533", "u39-bk-to_exercise-7520", "u39-bk-to_suggest-2b52", "u39-bk-to_worry-3ab2"];
+var A_DATA=[{"t": "I drink coffee all day. &rarr; You ______ so much.", "a": [["shouldn't drink"]]}, {"t": "I never move from my desk. &rarr; You ______ every day.", "a": [["should exercise"]]}, {"t": "I worry about everything. &rarr; You ______ so much.", "a": [["shouldn't worry"]]}, {"t": "I have no energy. &rarr; You ______ more.", "a": [["should rest", "should sleep", "should eat"]]}, {"t": "I want to start now. &rarr; You ______.", "a": [["shouldn't wait"]]}, {"t": "I have too much stress. &rarr; You ______ a break.", "a": [["should take"]]}];
+var B_DATA=[{"t": "I want to start today. &rarr; ______ today?", "a": [["Should I start", "should I start"]]}, {"t": "I do not know what to say. &rarr; ______ say?", "a": [["What should I", "what should I"]]}, {"t": "I do not know when to call. &rarr; ______ call?", "a": [["When should I", "when should I"]]}, {"t": "Should I wait? &rarr; No, ______.", "a": [["you shouldn't"]]}, {"t": "Should she start today? &rarr; Yes, ______.", "a": [["she should"]]}, {"t": "I do not know where to go. &rarr; ______ go?", "a": [["Where should I", "where should I"]]}];
+var C_DATA=[{"q": "You should to rest.", "a": ["You should rest"]}, {"q": "Do I should start today?", "a": ["Should I start today"]}, {"q": "She should sleeps more.", "a": ["She should sleep more"]}, {"q": "What I should do?", "a": ["What should I do"]}, {"q": "You don't should worry.", "a": ["You shouldn't worry"]}, {"q": "No, you shouldn't to wait.", "a": ["No, you shouldn't wait"]}];
+var D_TERMS=["advice", "to advise", "to suggest", "to exercise", "to avoid", "a tip", "a routine", "energy", "stress", "healthy", "to worry", "less"];
+var D_MEANS=[{"id": "a", "t": "good for your body"}, {"id": "b", "t": "she advises him to sleep more"}, {"id": "c", "t": "not so much"}, {"id": "d", "t": "he exercises every morning"}, {"id": "e", "t": "the things you do every day, in order"}, {"id": "f", "t": "what somebody says you should do"}, {"id": "g", "t": "she worries about the meeting"}, {"id": "h", "t": "she avoids coffee at night"}, {"id": "i", "t": "the feeling when there is too much to do"}, {"id": "j", "t": "he suggests a walk after lunch"}, {"id": "k", "t": "what you need to do things"}, {"id": "l", "t": "one small piece of advice"}];
+var D_KEY=["f", "b", "j", "d", "h", "l", "e", "k", "i", "a", "g", "c"];
+var E_DATA=[{"word": "advice", "model": "You should ask her for advice."}, {"word": "to exercise", "model": "You should exercise before work."}, {"word": "to avoid", "model": "You shouldn't avoid the difficult ones."}, {"word": "stress", "model": "You shouldn't take so much stress home."}, {"word": "energy", "model": "You should eat something: you have no energy."}, {"word": "a routine", "model": "You should keep the same routine every day."}, {"word": "less", "model": "You should drink less coffee after lunch."}];
+var E_RULE={"mark": "\\b(?:should|shouldn't)\\b", "markWhy": "Use <em>should</em> or <em>shouldn't</em>, and leave the verb after it bare.", "minWords": 4};
+var F_DATA=[{"img": "u39-many-cups", "name": "TOO MUCH COFFEE", "draw": "five empty coffee cups standing together on a desk", "shows": "five empty coffee cups on a desk", "model": "You shouldn't drink so much coffee."}, {"img": "u39-walking-shoes", "name": "WALKING", "draw": "two walking shoes standing side by side beside an open door", "shows": "two shoes beside an open door", "model": "You should exercise every day."}, {"img": "u39-full-calendar", "name": "STRESS", "draw": "one week of a calendar with every box full of marks", "shows": "a calendar week with every box full", "model": "You shouldn't have so much stress."}, {"img": "u39-clock-night", "name": "LATE", "draw": "one clock showing one o clock beside a small closed window", "shows": "a clock at one beside a window", "model": "You should sleep more."}, {"img": "u39-notebook-tips", "name": "ADVICE", "draw": "one open notebook with three short lines and a number beside each", "shows": "a notebook with three numbered lines", "model": "You should ask for advice."}];
+var F_BOX=["advice", "exercise", "avoid", "routine", "energy", "stress"];
+var F_USED="advice";
+var F_RULE={"mark": "\\b(?:should|shouldn't)\\b", "markWhy": "Give the advice, and keep the verb after the word bare.", "minWords": 4};
+var G_DATA=[{"say": "You should sleep more. And you shouldn't drink so much coffee.", "text": "You should sleep more. And you shouldn't drink so much coffee.", "hint": "&ldquo;should&rdquo; is quiet and &ldquo;shouldn't&rdquo; is not. That is the whole difference.", "clip": "u39-ac-you_should_sleep_more_and_you-c1fe"}, {"say": "You should try walking. It really helps.", "text": "You should try walking. It really helps.", "hint": "Two short sentences. The second one is why the first one works.", "clip": "u39-ac-you_should_try_walking_it_real-3542"}, {"say": "Yes! You shouldn't wait.", "text": "Yes! You shouldn't wait.", "hint": "One word, then three. &ldquo;shouldn't&rdquo; carries the whole line.", "clip": "u39-ac-yes_you_shouldn_t_wait-bcb4"}];
+var PEAKS={"u39-ac-you_should_sleep_more_and_you-c1fe": [0.484, 0.932, 0.475, 0.954, 0.072, 0.355, 0.632, 0.381, 0.606, 0.572, 0.673, 0.544, 0.223, 0.003, 0.002, 0.002, 0.002, 0.001, 0.001, 0.001, 0.641, 0.765, 0.762, 0.615, 0.288, 0.388, 0.126, 0.783, 1.0, 0.594, 0.385, 0.776, 0.788, 0.22, 0.595, 0.474, 0.536, 0.28, 0.131, 0.768, 0.839, 0.042, 0.604, 0.589, 0.215, 0.003, 0.0, 0.0, 0.0, 0.0], "u39-ac-you_should_try_walking_it_real-3542": [0.01, 0.512, 0.615, 0.296, 1.0, 0.759, 0.232, 0.389, 0.76, 0.649, 0.661, 0.683, 0.86, 0.857, 0.239, 0.127, 0.605, 0.588, 0.304, 0.225, 0.087, 0.016, 0.007, 0.0, 0.494, 0.522, 0.297, 0.156, 0.585, 0.87, 0.601, 0.46, 0.459, 0.233, 0.67, 0.731, 0.496, 0.223, 0.124, 0.015, 0.005, 0.007, 0.006, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "u39-ac-yes_you_shouldn_t_wait-bcb4": [0.001, 0.2, 0.223, 0.797, 1.0, 0.944, 0.997, 0.54, 0.078, 0.017, 0.015, 0.015, 0.007, 0.012, 0.004, 0.002, 0.002, 0.002, 0.001, 0.001, 0.003, 0.079, 0.198, 0.671, 0.673, 0.219, 0.166, 0.843, 0.864, 0.423, 0.373, 0.17, 0.483, 0.884, 0.726, 0.582, 0.673, 0.408, 0.089, 0.155, 0.035, 0.01, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]};
+function buildAll(){
+  buildPick("R",R_DATA,false);
+  buildGaps("A",A_DATA);
+  buildGaps("B",B_DATA);
+  buildRepair("C",C_DATA);
+  buildMatch("D",D_TERMS,D_MEANS);
+  buildWrite("E",E_DATA);
+  buildPicture("F",F_DATA,F_BOX,F_USED);
+  buildSpeak("G",G_DATA);
+}</script><script>
+/* ONE Audio element for the page. Tapping a line plays it; tapping the line that
+   is already playing stops it. Nothing preloads: a learner on mobile data pays
+   for the line he asked for and for no other. */
+(function(){
+  var el=null, cur=null;
+  function stop(){ if(el){el.pause();} if(cur){cur.classList.remove('playing');} cur=null; }
+  function play(p){
+    if(cur===p){ stop(); return; }
+    stop();
+    if(!el){ el=new Audio(); }
+    el.onended=stop;
+    el.src='audio/'+p.dataset.a+'.mp3';
+    cur=p; p.classList.add('playing');
+    el.play().catch(function(){ stop(); });
+  }
+  document.addEventListener('click',function(e){
+    var p=e.target.closest ? e.target.closest('.say-line') : null; if(p) play(p);
+  });
+  document.addEventListener('keydown',function(e){
+    var a=document.activeElement;
+    if((e.key===' '||e.key==='Enter')&&a&&a.classList&&a.classList.contains('say-line')){
+      e.preventDefault(); play(a);
+    }
+  });
+  /* Two names the rest of the page uses. `playClip` takes an optional
+     callback so the speak exercise can play the model and then the learner's
+     own recording, one after the other. */
+  window.hasClip=function(id){ return (window.CLIPS||[]).indexOf(id)>=0; };
+  window.playClip=function(id,done){
+    stop();
+    if(!el){ el=new Audio(); }
+    el.onended=function(){ el.onended=null; if(done) done(); };
+    el.src='audio/'+id+'.mp3';
+    el.play().catch(function(){ if(done) done(); });
+  };
+  window.playScene=function playScene(){
+    var lines=[].slice.call(document.querySelectorAll('.say-line')), i=0;
+    stop();
+    if(!el){ el=new Audio(); }
+    function step(){
+      if(i>=lines.length){ cur=null; el.onended=stop; return; }
+      cur=lines[i]; cur.classList.add('playing');
+      el.src='audio/'+cur.dataset.a+'.mp3';
+      el.play().catch(function(){ cur.classList.remove('playing'); cur=null; el.onended=stop; });
+    }
+    el.onended=function(){ if(cur){cur.classList.remove('playing');} i++; step(); };
+    step();
+  };
+})();
+</script></body></html>

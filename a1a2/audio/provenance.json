@@ -1,0 +1,4717 @@
+{
+ "u04-ac-marco_our_team_is_small_is_len-9d7c": {
+  "text": "Marco, our team is small. Is Lena on it?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-yes_she_is_lena_is_our_manager-451e": {
+  "text": "Yes, she is. Lena is our manager, and she's an engineer too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-she_s_a_manager_and_an_enginee-5397": {
+  "text": "She's a manager and an engineer.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-yes_i_m_a_designer_and_you_re-0c05": {
+  "text": "Yes. I'm a designer, and you're a nurse.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-sofia_is_a_nurse_too_is_she_on-ac04": {
+  "text": "Sofia is a nurse too. Is she on our team?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-no_she_isn_t_she_s_in_rome_and-4cf6": {
+  "text": "No, she isn't. She's in Rome, and nurses are busy in Rome too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-nurses_and_designers_are_busy-3834": {
+  "text": "Nurses and designers are busy people.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-we_re_busy_and_our_room_is_sma-67c1": {
+  "text": "We're busy, and our room is small.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-our_desks_are_small_and_our_ch-1b56": {
+  "text": "Our desks are small, and our chairs are old.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-my_chair_is_old_too_and_my_bag-4260": {
+  "text": "My chair is old too, and my bag is heavy.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-bags_are_heavy_on_a_first_day-3627": {
+  "text": "Bags are heavy on a first day. My keys are in my bag.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-my_keys_are_in_my_bag_too_and-b48c": {
+  "text": "My keys are in my bag too, and two boxes are on my desk.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-boxes_are_big_and_our_desks_ar-47b7": {
+  "text": "Boxes are big, and our desks are small.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_chair-2122": {
+  "text": "a chair",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_box-1f25": {
+  "text": "a box",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_key-9976": {
+  "text": "a key",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_watch-a7c1": {
+  "text": "a watch",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-an_email-c24b": {
+  "text": "an email",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-an_hour-044a": {
+  "text": "an hour",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_person-97d0": {
+  "text": "a person",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-people-ae77": {
+  "text": "people",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_man-2d3d": {
+  "text": "a man",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_woman-d037": {
+  "text": "a woman",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_child-fe34": {
+  "text": "a child",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-old-f199": {
+  "text": "old",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-ana_our_room_is_room_four_is_t-61a9": {
+  "text": "Ana, our room is room four. Is the door open?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-yes_it_is_the_door_is_open_and-cf2b": {
+  "text": "Yes, it is. The door is open, and the room is small.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-i_m_at_a_desk_the_desk_is_old-d44c": {
+  "text": "I'm at a desk. The desk is old.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-my_desk_is_old_too_is_the_wind-5fc3": {
+  "text": "My desk is old too. Is the window open?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-no_it_isn_t_the_window_is_clos-65c2": {
+  "text": "No, it isn't. The window is closed.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-the_manager_is_lena_her_office-9da2": {
+  "text": "The manager is Lena. Her office is room five.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-lena_is_from_spain_and_she_s_a-bb9c": {
+  "text": "Lena is from Spain, and she's an engineer. Her office is big.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-engineers_are_busy_people-38cd": {
+  "text": "Engineers are busy people.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-nurses_are_busy_too-bb72": {
+  "text": "Nurses are busy too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-yes_we_are_the_nurses_in_our_h-7bfd": {
+  "text": "Yes, we are. The nurses in our hospital are busy today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-the_meeting_is_at_nine_is_it_i-dd7e": {
+  "text": "The meeting is at nine. Is it in room five?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-yes_it_is_the_meeting_is_in_le-3daf": {
+  "text": "Yes, it is. The meeting is in Lena's office.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-lena_s_office_is_big_and_the_d-c6dc": {
+  "text": "Lena's office is big, and the door is open.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-bk-a_wall-b95f": {
+  "text": "a wall",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-a_floor-2c7d": {
+  "text": "a floor",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-a_light-93c3": {
+  "text": "a light",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-a_printer-f621": {
+  "text": "a printer",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-a_kitchen-088c": {
+  "text": "a kitchen",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-an_elevator-1a0c": {
+  "text": "an elevator",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-a_building-d194": {
+  "text": "a building",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-an_entrance-a190": {
+  "text": "an entrance",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-a_hallway-4def": {
+  "text": "a hallway",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-a_street-09f3": {
+  "text": "a street",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-bright-f128": {
+  "text": "bright",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-dark-d2ef": {
+  "text": "dark",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-marco_this_is_my_desk-7bdc": {
+  "text": "Marco, this is my desk.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-and_that_is_my_desk_near_the_w-4623": {
+  "text": "And that is my desk, near the window.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-that_desk_is_old_too-aca7": {
+  "text": "That desk is old too.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-yes_it_is_these_are_my_keys_an-d820": {
+  "text": "Yes, it is. These are my keys, and those are my boxes.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-those_boxes_are_big-cadc": {
+  "text": "Those boxes are big.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-this_box_is_small_too_my_badge-62b7": {
+  "text": "This box is small too. My badge is in it.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-my_badge_is_on_my_desk_these_a-e709": {
+  "text": "My badge is on my desk. These are our chairs.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-those_chairs_are_for_the_meeti-db22": {
+  "text": "Those chairs are for the meeting.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-that_meeting_is_at_nine-8baf": {
+  "text": "That meeting is at nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-our_meeting_is_in_lena_s_offic-692d": {
+  "text": "Our meeting is in Lena's office.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-lena_s_office_is_near_the_door-9faa": {
+  "text": "Lena's office is near the door. She's here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-hello_lena-5123": {
+  "text": "Hello, Lena.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-lena_this_is_marco_he_s_a_desi-eb4e": {
+  "text": "Lena, this is Marco. He's a designer.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_computer-bc8f": {
+  "text": "a computer",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_screen-20ca": {
+  "text": "a screen",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_cup-1db9": {
+  "text": "a cup",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_drawer-dbd5": {
+  "text": "a drawer",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_folder-f9cd": {
+  "text": "a folder",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_pen-b10c": {
+  "text": "a pen",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_notebook-f792": {
+  "text": "a notebook",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_bottle-5b45": {
+  "text": "a bottle",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_jacket-e3fb": {
+  "text": "a jacket",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-new-050b": {
+  "text": "new",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-clean-cb92": {
+  "text": "clean",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-dirty-8f50": {
+  "text": "dirty",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-ana_there_s_a_printer_in_the_k-0484": {
+  "text": "Ana, there's a printer in the kitchen.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-there_are_two_printers_the_new-d9e7": {
+  "text": "There are two printers. The new one is on the table.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-there_s_a_table_in_the_kitchen-601e": {
+  "text": "There's a table in the kitchen too?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-yes_there_s_a_table_and_there-9e14": {
+  "text": "Yes. There's a table, and there's a fridge too.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-are_there_cups-cb7e": {
+  "text": "Are there cups?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-there_are_six_cups_and_they_re-ba3f": {
+  "text": "There are six cups, and they're clean.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-there_isn_t_a_clock_in_our_roo-136c": {
+  "text": "There isn't a clock in our room.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-there_s_a_clock_in_the_hallway-2d06": {
+  "text": "There's a clock in the hallway. It's on the wall.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-there_are_two_posters_on_that-b5b1": {
+  "text": "There are two posters on that wall too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-those_posters_are_old_there_s-0a33": {
+  "text": "Those posters are old. There's a plant near the door.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-that_plant_is_near_my_desk_too-d231": {
+  "text": "That plant is near my desk too. Is there a lamp on your desk?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-no_there_isn_t_there_s_a_lamp-dff0": {
+  "text": "No, there isn't. There's a lamp on Lena's desk.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-there_are_lamps_on_all_the_des-268a": {
+  "text": "There are lamps on all the desks in her office too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-bk-a_table-94d3": {
+  "text": "a table",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_plant-0aa2": {
+  "text": "a plant",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_clock-0c00": {
+  "text": "a clock",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_sofa-bbde": {
+  "text": "a sofa",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_mirror-00fc": {
+  "text": "a mirror",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_fridge-97d4": {
+  "text": "a fridge",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_coffee_machine-da82": {
+  "text": "a coffee machine",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_poster-0cb8": {
+  "text": "a poster",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_lamp-949d": {
+  "text": "a lamp",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_trash_can-99ab": {
+  "text": "a trash can",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-green-9f22": {
+  "text": "green",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-full-af9a": {
+  "text": "full",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-ana_two_people_are_at_the_door-8d85": {
+  "text": "Ana, two people are at the door.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-rui_is_an_engineer_and_tom_is-bb98": {
+  "text": "Rui is an engineer, and Tom is an intern.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-rui_and_tom_are_on_our_team-4223": {
+  "text": "Rui and Tom are on our team?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-yes_our_team_is_five_people_an-37fd": {
+  "text": "Yes. Our team is five people, and it's small.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-five_is_small_engineers_design-1559": {
+  "text": "Five is small. Engineers, designers and nurses are in one room here.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-interns_too_tom_s_desk_is_near-bfc6": {
+  "text": "Interns too. Tom's desk is near the door.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-rui_s_boxes_are_on_tom_s_desk-25c2": {
+  "text": "Rui's boxes are on Tom's desk.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-the_boxes_are_heavy_they_re_fo-eecd": {
+  "text": "The boxes are heavy. They're for our room.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-a_watch_is_on_rui_s_desk_too-aabd": {
+  "text": "A watch is on Rui's desk too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-it_s_an_old_watch_his_keys_are-ee12": {
+  "text": "It's an old watch. His keys are on the desk.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-keys_boxes_and_a_watch_rui_s_d-c3bf": {
+  "text": "Keys, boxes and a watch. Rui's desk is small.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-our_desks_are_small_chairs_are-d29c": {
+  "text": "Our desks are small. Chairs are small here too.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-yes_they_are_five_desks_five_c-a018": {
+  "text": "Yes, they are. Five desks, five chairs and five people.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-ana_is_the_door_open-897e": {
+  "text": "Ana, is the door open?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-yes_it_is_a_visitor_is_with_le-d04d": {
+  "text": "Yes, it is. A visitor is with Lena.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-the_visitor_is_in_her_office-ab8f": {
+  "text": "The visitor is in her office?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-yes_the_visitor_is_from_madrid-1d3a": {
+  "text": "Yes. The visitor is from Madrid, in Spain.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-her_office_is_near_the_door_of-41e8": {
+  "text": "Her office is near the door of the hallway.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-the_hallway_is_dark_the_lights-70c7": {
+  "text": "The hallway is dark. The lights in the hallway are old.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-nurses_are_busy_people-2b20": {
+  "text": "Nurses are busy people.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-the_nurses_in_our_building_are-2330": {
+  "text": "The nurses in our building are busy today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-engineers_are_busy_too-f43c": {
+  "text": "Engineers are busy too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-the_engineers_in_our_room_are-0d9b": {
+  "text": "The engineers in our room are busy. Rui is at his desk.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-the_window_near_his_desk_is_op-6fd2": {
+  "text": "The window near his desk is open.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-lena_and_the_visitor_are_in_th-166d": {
+  "text": "Lena and the visitor are in the hallway now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-the_door_of_the_hallway_is_ope-b2a7": {
+  "text": "The door of the hallway is open too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-marco_these_are_our_computers-edb2": {
+  "text": "Marco, these are our computers.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-and_those_are_the_screens_near-ed0d": {
+  "text": "And those are the screens, near the door.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-that_screen_is_big-d1d9": {
+  "text": "That screen is big.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-yes_it_is_these_are_my_folders-f4ee": {
+  "text": "Yes, it is. These are my folders, and those are my notebooks.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-those_notebooks_are_new-d62c": {
+  "text": "Those notebooks are new.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-this_notebook_is_old_too_my_pe-98bb": {
+  "text": "This notebook is old too. My pens are in it.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-my_pens_are_on_my_desk_these_a-5c41": {
+  "text": "My pens are on my desk. These are our cups.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-those_cups_are_rui_s-ea9f": {
+  "text": "Those cups are Rui's.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-that_box_is_empty-9f35": {
+  "text": "That box is empty.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-our_boxes_are_empty_now_this_c-d633": {
+  "text": "Our boxes are empty now. This computer is for Tom.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-tom_is_at_the_door-57f7": {
+  "text": "Tom is at the door.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-hello_tom-2d9d": {
+  "text": "Hello, Tom.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-tom_this_is_marco_marco_is_at-86f3": {
+  "text": "Tom, this is Marco. Marco is at that desk, near the window.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-yes_there_s_a_table_a_fridge_a-16d1": {
+  "text": "Yes. There's a table, a fridge and a coffee machine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-good_morning_marco_our_day_sta-19ba": {
+  "text": "Good morning, Marco. Our day starts at nine.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-i_start_at_nine_too_rui_starts-1f1d": {
+  "text": "I start at nine too. Rui starts at eight.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-rui_works_with_tom_they_test_t-0e5d": {
+  "text": "Rui works with Tom. They test the new screens.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-i_draw_with_a_pen_lena_knows_t-8a50": {
+  "text": "I draw with a pen. Lena knows the clients.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-lena_knows_the_clients_and_she-051e": {
+  "text": "Lena knows the clients, and she draws too.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-i_use_one_computer_tom_uses_tw-1ea7": {
+  "text": "I use one computer. Tom uses two computers.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-i_use_one_computer_too_i_check-c2aa": {
+  "text": "I use one computer too. I check the tests, and Tom helps Rui.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-rui_needs_a_new_screen_he_test-9fac": {
+  "text": "Rui needs a new screen. He tests the screens every morning.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-i_live_near_the_office_marco_l-d2fa": {
+  "text": "I live near the office. Marco lives in the same street.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-yes_i_live_in_that_street_too-f5dd": {
+  "text": "Yes, I live in that street too. We finish at six.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-lena_finishes_at_seven_she_mak-ea40": {
+  "text": "Lena finishes at seven. She makes the coffee in the morning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-tom_makes_the_coffee_today_he-e724": {
+  "text": "Tom makes the coffee today. He starts at eight too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-yes_our_day_starts_at_nine_and-9fc9": {
+  "text": "Yes. Our day starts at nine and finishes at six.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_work-17de": {
+  "text": "to work",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_start-c37c": {
+  "text": "to start",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_finish-a277": {
+  "text": "to finish",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_make-4933": {
+  "text": "to make",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_test-223a": {
+  "text": "to test",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_check-32de": {
+  "text": "to check",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_draw-99de": {
+  "text": "to draw",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_need-ac63": {
+  "text": "to need",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_use-4afb": {
+  "text": "to use",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_know-05b2": {
+  "text": "to know",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_live-58c1": {
+  "text": "to live",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_help-0233": {
+  "text": "to help",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-ac-hi_ana_i_m_marco_nice_to_meet-883e": {
+  "text": "Hi Ana. I'm Marco. Nice to meet you.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u01-ac-nice_to_meet_you_too_are_you_t-22dd": {
+  "text": "Nice to meet you too. Are you the new designer?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-ac-yes_i_am_and_you-2b31": {
+  "text": "Yes, I am. And you?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u01-ac-i_m_a_nurse_i_m_from_brazil-7330": {
+  "text": "I'm a nurse. I'm from Brazil.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-ac-oh_nice_my_manager_is_brazilia-a7ec": {
+  "text": "Oh, nice. My manager is Brazilian too. She's great.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u01-bk-a_teacher-a87f": {
+  "text": "a teacher",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-bk-a_student-f440": {
+  "text": "a student",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-bk-a_name-6a6d": {
+  "text": "a name",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-bk-a_country-c63f": {
+  "text": "a country",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-bk-great-4fe0": {
+  "text": "great",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-bk-nice-6bc5": {
+  "text": "nice",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-bk-new-050b": {
+  "text": "new",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-bk-glad-e2bf": {
+  "text": "glad",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-ct-marco_is_from_brazil_marco_s_f-062f": {
+  "text": "Marco is from Brazil. Marco's from Brazil.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-ac-hi_are_you_ana-392b": {
+  "text": "Hi. Are you Ana?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u02-ac-no_i_m_not_i_m_priya_ana_isn_t-3846": {
+  "text": "No, I'm not. I'm Priya. Ana isn't here yet.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-ac-oh_sorry_is_the_meeting_in_thi-2909": {
+  "text": "Oh, sorry. Is the meeting in this room?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u02-ac-no_it_isn_t_it_s_in_room_4-e70d": {
+  "text": "No, it isn't. It's in room 4.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-ac-thanks_are_we_late-3993": {
+  "text": "Thanks. Are we late?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u02-ac-no_we_aren_t_we_re_early-f145": {
+  "text": "No, we aren't. We're early.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-bk-a_floor-2c7d": {
+  "text": "a floor",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-bk-late-4ba2": {
+  "text": "late",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u02-bk-early-05b5": {
+  "text": "early",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-ac-is_this_your_family-23a9": {
+  "text": "Is this your family?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-ac-yes_this_is_my_sister_her_name-0c89": {
+  "text": "Yes. This is my sister. Her name is Sofia.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u03-ac-and_who_is_he-59ee": {
+  "text": "And who is he?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-ac-that_s_sofia_s_husband_his_nam-3cd2": {
+  "text": "That's Sofia's husband. His name is Ravi.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u03-ac-they_re_a_lovely_family_is_tha-7b24": {
+  "text": "They're a lovely family. Is that their dog?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-ac-yes_that_s_ravi_s_dog_its_name-a5fb": {
+  "text": "Yes, that's Ravi's dog. Its name is Max.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u03-bk-a_family-9471": {
+  "text": "a family",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-bk-a_husband-76e8": {
+  "text": "a husband",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-bk-a_wife-17f2": {
+  "text": "a wife",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-bk-a_son-7fe3": {
+  "text": "a son",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-bk-a_daughter-91a7": {
+  "text": "a daughter",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-bk-a_dog-821b": {
+  "text": "a dog",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-bk-a_cat-66c0": {
+  "text": "a cat",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-bk-a_photo-f32f": {
+  "text": "a photo",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-bk-lovely-54d8": {
+  "text": "lovely",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u03-bk-young-9269": {
+  "text": "young",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-welcome_leo_this_is_your_desk-1395": {
+  "text": "Welcome, Leo! This is your desk.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-thanks_what_s_this-73fc": {
+  "text": "Thanks. What's this?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-it_s_a_laptop_and_that_s_a_hea-6c98": {
+  "text": "It's a laptop. And that's a headset.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-and_these_small_things-297c": {
+  "text": "And these small things?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-ac-they_re_pens_and_that_s_an_era-5110": {
+  "text": "They're pens. And that's an eraser.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-ac-an_eraser_nice_i_m_ready_to_st-d1f8": {
+  "text": "An eraser? Nice. I'm ready to start.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u04-bk-a_desk-b94a": {
+  "text": "a desk",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_laptop-a711": {
+  "text": "a laptop",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_headset-ec85": {
+  "text": "a headset",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_pen-b10c": {
+  "text": "a pen",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_screen-20ca": {
+  "text": "a screen",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-an_eraser-d75a": {
+  "text": "an eraser",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_folder-f9cd": {
+  "text": "a folder",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_notebook-f792": {
+  "text": "a notebook",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_book-a35d": {
+  "text": "a book",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-a_thing-8562": {
+  "text": "a thing",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-small-fd9c": {
+  "text": "small",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u04-bk-ready-1edf": {
+  "text": "ready",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-i_m_in_a_meeting_with_a_client-3b0e": {
+  "text": "I'm in a meeting with a client today.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-nice_where_s_the_meeting-8992": {
+  "text": "Nice. Where's the meeting?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-it_s_in_the_big_room_on_the_se-759f": {
+  "text": "It's in the big room, on the second floor.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-and_the_client_is_she_from_the-121f": {
+  "text": "And the client? Is she from the Madrid office?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-ac-yes_clients_from_madrid_are_al-6fd0": {
+  "text": "Yes. Clients from Madrid are always early.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-ac-ha_then_the_coffee_is_on_you-7194": {
+  "text": "Ha! Then the coffee is on you.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u05-bk-a_client-1da1": {
+  "text": "a client",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-an_office-f02f": {
+  "text": "an office",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-a_visitor-e4ed": {
+  "text": "a visitor",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-a_chair-2122": {
+  "text": "a chair",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-coffee-775d": {
+  "text": "coffee",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-big-5289": {
+  "text": "big",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-second-a701": {
+  "text": "second",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-quiet-6409": {
+  "text": "quiet",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u05-bk-busy-6ce5": {
+  "text": "busy",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-excuse_me_how_much_is_this_bag-42dc": {
+  "text": "Excuse me, how much is this bag?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-this_one_it_s_twenty_dollars-a55b": {
+  "text": "This one? It's 20 dollars.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-and_those_shoes_over_there-9db7": {
+  "text": "And those shoes over there?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-those_are_forty_dollars-2cef": {
+  "text": "Those are 40 dollars.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-ac-okay_these_gloves_are_they_on-8985": {
+  "text": "Okay. These gloves? Are they on sale?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-ac-yes_and_that_coat_is_on_sale_t-7453": {
+  "text": "Yes. And that coat is on sale too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u06-bk-a_bag-e440": {
+  "text": "a bag",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_shoe-3e74": {
+  "text": "a shoe",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_glove-8342": {
+  "text": "a glove",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_coat-f2b5": {
+  "text": "a coat",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_shirt-4ced": {
+  "text": "a shirt",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_hat-8616": {
+  "text": "a hat",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_price-0df5": {
+  "text": "a price",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_dollar-92a4": {
+  "text": "a dollar",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_shop-81d6": {
+  "text": "a shop",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-a_sale-10a0": {
+  "text": "a sale",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-cheap-834f": {
+  "text": "cheap",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u06-bk-expensive-2661": {
+  "text": "expensive",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-my_new_apartment_is_great_ther-f518": {
+  "text": "My new apartment is great. There's a big kitchen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-nice_are_there_two_bedrooms-f014": {
+  "text": "Nice! Are there two bedrooms?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-yes_there_are_and_there_s_a_sm-d7e6": {
+  "text": "Yes, there are. And there's a small balcony.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-is_there_a_park_near_you-2f4a": {
+  "text": "Is there a park near you?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-ac-yes_there_are_two_parks_and_a-752b": {
+  "text": "Yes. There are two parks and a nice cafe.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-ac-that_s_perfect-1976": {
+  "text": "That's perfect.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u07-bk-an_apartment-40cd": {
+  "text": "an apartment",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_kitchen-088c": {
+  "text": "a kitchen",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_bedroom-d675": {
+  "text": "a bedroom",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_bathroom-96af": {
+  "text": "a bathroom",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_balcony-ca44": {
+  "text": "a balcony",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_park-81b5": {
+  "text": "a park",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_cafe-19f0": {
+  "text": "a cafe",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_garden-054d": {
+  "text": "a garden",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_neighbor-2616": {
+  "text": "a neighbor",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-a_street-09f3": {
+  "text": "a street",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-perfect-5da6": {
+  "text": "perfect",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u07-bk-near-3d03": {
+  "text": "near",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-so_what_s_your_day_like_leo-7fee": {
+  "text": "So, what's your day like, Leo?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-i_get_up_at_seven_and_i_make_c-b1aa": {
+  "text": "I get up at seven and I make coffee. Then I check my email.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-and_your_wife-00e4": {
+  "text": "And your wife?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-she_gets_up_at_six_she_goes_to-78aa": {
+  "text": "She gets up at six. She goes to the gym every morning.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-ac-wow_she_s_busy_i_just_walk_my-d96b": {
+  "text": "Wow, she's busy. I just walk my dog.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-ac-ha_my_dog_sleeps_all_day-8d80": {
+  "text": "Ha! My dog sleeps all day.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u08-bk-to_get-c972": {
+  "text": "to get",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_go-eda7": {
+  "text": "to go",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_walk-a33c": {
+  "text": "to walk",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-to_sleep-f47a": {
+  "text": "to sleep",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-a_gym-3ae0": {
+  "text": "a gym",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-an_email-c24b": {
+  "text": "an email",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u08-bk-a_morning-3ae8": {
+  "text": "a morning",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-ac-do_you_live_near_here-7ce9": {
+  "text": "Do you live near here?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-ac-no_i_don_t_i_live_across_town-25d3": {
+  "text": "No, I don't. I live across town.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u09-ac-does_your_sister_live_with_you-bf95": {
+  "text": "Does your sister live with you?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-ac-no_she_doesn_t_she_lives_abroa-4349": {
+  "text": "No, she doesn't. She lives abroad.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u09-ac-cool_where_do_you_work-5b15": {
+  "text": "Cool. Where do you work?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-ac-i_work_at_a_school_i_don_t_wor-c640": {
+  "text": "I work at a school. I don't work on Fridays.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u09-bk-a_town-2ddf": {
+  "text": "a town",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-a_city-ee20": {
+  "text": "a city",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-a_school-c78f": {
+  "text": "a school",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-a_university-7e10": {
+  "text": "a university",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-a_week-8840": {
+  "text": "a week",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-a_weekend-5355": {
+  "text": "a weekend",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-a_job-8f47": {
+  "text": "a job",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-a_train-7e7f": {
+  "text": "a train",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-far-f70f": {
+  "text": "far",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-abroad-ab6c": {
+  "text": "abroad",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-alone-7a7a": {
+  "text": "alone",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u09-bk-to_work-17de": {
+  "text": "to work",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u01-ct-ana_is_from_brazil_ana_s_from-558a": {
+  "text": "Ana is from Brazil. Ana's from Brazil.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-ac-do_you_have_a_car-c18b": {
+  "text": "Do you have a car?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u10-ac-yes_i_do_i_have_an_old_one_do-00bb": {
+  "text": "Yes, I do. I have an old one. Do you?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-ac-no_i_don_t_i_have_a_bike-5dd1": {
+  "text": "No, I don't. I have a bike.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u10-ac-lucky_you_my_car_doesn_t_have-a71f": {
+  "text": "Lucky you. My car doesn't have air conditioning.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-ac-in_this_heat_does_it_have_a_ra-d593": {
+  "text": "In this heat? Does it have a radio?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u10-ac-yes_it_does_but_my_sister_has-e929": {
+  "text": "Yes, it does. But my sister has the good car.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-a_car-5f14": {
+  "text": "a car",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-a_bike-8b9a": {
+  "text": "a bike",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-a_radio-6ad6": {
+  "text": "a radio",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-air_conditioning-8a88": {
+  "text": "air conditioning",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-to_have-de03": {
+  "text": "to have",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-a_garage-b7a7": {
+  "text": "a garage",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-a_phone-4267": {
+  "text": "a phone",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-a_laptop-a711": {
+  "text": "a laptop",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-a_key-9976": {
+  "text": "a key",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-heat-e2c3": {
+  "text": "heat",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-old-f199": {
+  "text": "old",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-lucky-8e02": {
+  "text": "lucky",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u10-bk-a_wallet-56d4": {
+  "text": "a wallet",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ac-what_s_in_the_box-8ddf": {
+  "text": "What's in the box?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ac-books_where_do_you_want_them-86c3": {
+  "text": "Books. Where do you want them?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u11-ac-on_that_shelf_who_are_they_for-c1f7": {
+  "text": "On that shelf. Who are they for?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ac-the_new_students_they_start_on-61d6": {
+  "text": "The new students. They start on Monday.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u11-ac-why_so_many_when_do_they_read-ca8c": {
+  "text": "Why so many? When do they read them all?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-ac-ha_how_do_you_teach_without_bo-1fcf": {
+  "text": "Ha! How do you teach without books?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u11-bk-what-d172": {
+  "text": "what",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-who-90c9": {
+  "text": "who",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-where-6a8a": {
+  "text": "where",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-when-5f67": {
+  "text": "when",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-why-0f8b": {
+  "text": "why",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-how-5968": {
+  "text": "how",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-a_box-1f25": {
+  "text": "a box",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-a_shelf-2d54": {
+  "text": "a shelf",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-a_lesson-26ad": {
+  "text": "a lesson",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-a_reason-bfac": {
+  "text": "a reason",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-to_teach-2fb7": {
+  "text": "to teach",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u11-bk-to_arrive-635e": {
+  "text": "to arrive",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ac-do_you_play_sports-86d3": {
+  "text": "Do you play sports?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ac-i_sometimes_play_tennis_i_usua-8368": {
+  "text": "I sometimes play tennis. I usually go running.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u12-ac-nice_i_never_do_sports_i_m_alw-a901": {
+  "text": "Nice. I never do sports. I'm always tired.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ac-ha_i_often_feel_tired_too_but-1fe2": {
+  "text": "Ha! I often feel tired too. But I'm never bored on weekends.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u12-ac-really_what_do_you_do-3429": {
+  "text": "Really? What do you do?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-ac-i_always_meet_friends_we_usual-d7b7": {
+  "text": "I always meet friends. We usually watch a movie.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u12-bk-always-50fa": {
+  "text": "always",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-usually-45f2": {
+  "text": "usually",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-often-3a8b": {
+  "text": "often",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-sometimes-0c2d": {
+  "text": "sometimes",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-never-dff6": {
+  "text": "never",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-to_play-ab34": {
+  "text": "to play",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-tennis-7f24": {
+  "text": "tennis",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-a_movie-56c2": {
+  "text": "a movie",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-a_friend-fb24": {
+  "text": "a friend",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-tired-0911": {
+  "text": "tired",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-bored-ceab": {
+  "text": "bored",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-to_watch-038f": {
+  "text": "to watch",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u12-bk-to_meet-29f0": {
+  "text": "to meet",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ac-hi_sam_what_are_you_doing-5101": {
+  "text": "Hi Sam! What are you doing?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ac-i_m_making_dinner_what_about_y-8817": {
+  "text": "I'm making dinner. What about you?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-ac-i_m_sitting_in_the_park_the_ki-2d44": {
+  "text": "I'm sitting in the park. The kids are playing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ac-nice_is_it_raining_there-b9cf": {
+  "text": "Nice! Is it raining there?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-ac-no_it_isn_t_the_sun_is_shining-b6e9": {
+  "text": "No, it isn't. The sun is shining.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-ac-lucky_you_i_m_working_late_ton-7500": {
+  "text": "Lucky you. I'm working late tonight.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u13-bk-to_sit-7578": {
+  "text": "to sit",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-to_shine-5b9e": {
+  "text": "to shine",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-to_wait-0f85": {
+  "text": "to wait",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-to_carry-5df3": {
+  "text": "to carry",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-to_run-300a": {
+  "text": "to run",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-to_write-71f7": {
+  "text": "to write",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-dinner-7fe4": {
+  "text": "dinner",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-the_sun-6de7": {
+  "text": "the sun",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-rain-5ccf": {
+  "text": "rain",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-a_kid-e8c7": {
+  "text": "a kid",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-tonight-d876": {
+  "text": "tonight",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u13-bk-now-6c77": {
+  "text": "now",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ac-are_you_working_today_it_s_sun-00f1": {
+  "text": "Are you working today? It's Sunday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ac-i_know_i_usually_rest_on_sunda-bd2d": {
+  "text": "I know. I usually rest on Sundays, but I'm finishing a report.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u14-ac-poor_you_does_your_team_work_o-5be2": {
+  "text": "Poor you. Does your team work on weekends?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ac-no_they_don_t_they_re_all_slee-8334": {
+  "text": "No, they don't. They're all sleeping right now.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u14-ac-ha_i_m_drinking_coffee_in_the-35ba": {
+  "text": "Ha! I'm drinking coffee in the garden.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-ac-don_t_tell_me_that_i_m_going_b-ef66": {
+  "text": "Don't tell me that. I'm going back to work.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u14-bk-a_report-99da": {
+  "text": "a report",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-a_team-2c37": {
+  "text": "a team",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-a_habit-7226": {
+  "text": "a habit",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-a_minute-9327": {
+  "text": "a minute",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-today-88a9": {
+  "text": "today",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-every_day-79f7": {
+  "text": "every day",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-poor-6d0d": {
+  "text": "poor",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-to_rest-bbc1": {
+  "text": "to rest",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-to_drink-69b8": {
+  "text": "to drink",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-to_tell-da81": {
+  "text": "to tell",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-to_stop-3f8c": {
+  "text": "to stop",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u14-bk-to_change-6e2a": {
+  "text": "to change",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ac-there_s_a_new_cafe_near_my_hou-4501": {
+  "text": "There's a new cafe near my house. It's really nice.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ac-cool_is_it_big-20f4": {
+  "text": "Cool. Is it big?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u15-ac-no_it_s_small_but_it_s_cozy_th-6096": {
+  "text": "No, it's small, but it's cozy. The coffee is amazing.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ac-nice_is_it_expensive-9b42": {
+  "text": "Nice. Is it expensive?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u15-ac-no_it_s_cheap_and_the_staff_ar-e896": {
+  "text": "No, it's cheap. And the staff are friendly.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-ac-perfect_i_love_small_friendly-f525": {
+  "text": "Perfect. I love small, friendly places.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u15-bk-cozy-3f1c": {
+  "text": "cozy",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-friendly-0e43": {
+  "text": "friendly",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-amazing-4c9a": {
+  "text": "amazing",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-heavy-daa7": {
+  "text": "heavy",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-light-ee7d": {
+  "text": "light",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-clean-cb92": {
+  "text": "clean",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-dirty-8f50": {
+  "text": "dirty",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-loud-3bdc": {
+  "text": "loud",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-slow-03d8": {
+  "text": "slow",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-fast-d904": {
+  "text": "fast",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-a_place-6a70": {
+  "text": "a place",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u15-bk-the_staff-bb26": {
+  "text": "the staff",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ac-can_you_drive-4cb5": {
+  "text": "Can you drive?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u16-ac-yes_i_can_but_i_can_t_drive_a-60f3": {
+  "text": "Yes, I can. But I can't drive a truck.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ac-ha_can_you_help_me_with_this_b-89dc": {
+  "text": "Ha. Can you help me with this box? It's heavy.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u16-ac-sure_can_sam_help_too-7853": {
+  "text": "Sure. Can Sam help too?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-ac-he_can_t_he_s_busy_can_i_ask_a-b55b": {
+  "text": "He can't. He's busy. Can I ask Ana?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u16-ac-of_course_she_can_lift_anythin-b33a": {
+  "text": "Of course. She can lift anything.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-to_drive-d94c": {
+  "text": "to drive",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-to_lift-b8db": {
+  "text": "to lift",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-to_help-0233": {
+  "text": "to help",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-to_ask-6046": {
+  "text": "to ask",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-a_truck-6132": {
+  "text": "a truck",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-a_driver-3dfe": {
+  "text": "a driver",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-a_machine-223e": {
+  "text": "a machine",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-anything-36ec": {
+  "text": "anything",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-of_course-5695": {
+  "text": "of course",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-strong-f9ad": {
+  "text": "strong",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-difficult-2342": {
+  "text": "difficult",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u16-bk-easy-c193": {
+  "text": "easy",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ac-do_you_like_cooking-5228": {
+  "text": "Do you like cooking?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ac-i_love_cooking_but_i_hate_wash-575b": {
+  "text": "I love cooking! But I hate washing up.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u17-ac-ha_me_too_my_brother_likes_coo-d562": {
+  "text": "Ha, me too. My brother likes cooking too.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ac-nice_do_you_like_running-9725": {
+  "text": "Nice. Do you like running?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u17-ac-no_i_don_t_but_i_love_swimming-25a1": {
+  "text": "No, I don't. But I love swimming.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-ac-cool_my_sister_loves_swimming-0ebe": {
+  "text": "Cool. My sister loves swimming too. She hates running.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u17-bk-to_like-3ce1": {
+  "text": "to like",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-to_love-24a8": {
+  "text": "to love",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-to_hate-5591": {
+  "text": "to hate",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-to_cook-8ff6": {
+  "text": "to cook",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-to_swim-f276": {
+  "text": "to swim",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-to_wash-05f8": {
+  "text": "to wash",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-to_dance-600e": {
+  "text": "to dance",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-to_read-c035": {
+  "text": "to read",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-to_travel-ac9a": {
+  "text": "to travel",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-washing_up-783d": {
+  "text": "washing up",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-a_hobby-99b6": {
+  "text": "a hobby",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u17-bk-a_plate-dfcf": {
+  "text": "a plate",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-do_you_know_sofia-985c": {
+  "text": "Do you know Sofia?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-yes_i_like_her_she_s_really_ni-f86a": {
+  "text": "Yes, I like her. She's really nice.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u18-ac-can_you_call_her_tonight_she_n-faf2": {
+  "text": "Can you call her tonight? She needs help with the report.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-sure_can_you_send_me_her_numbe-041b": {
+  "text": "Sure. Can you send me her number?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u18-ac-of_course_i_can_text_it_to_you-6387": {
+  "text": "Of course. I can text it to you now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-ac-thanks_and_leo_and_ana_can_we-ee3c": {
+  "text": "Thanks. And Leo and Ana? Can we invite them to lunch?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u18-bk-to_call-0e54": {
+  "text": "to call",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-to_send-278e": {
+  "text": "to send",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-to_text-5bc6": {
+  "text": "to text",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-to_invite-aeb2": {
+  "text": "to invite",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-to_need-ac63": {
+  "text": "to need",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-to_know-05b2": {
+  "text": "to know",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-a_number-1576": {
+  "text": "a number",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-a_message-1b61": {
+  "text": "a message",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-a_coworker-22f7": {
+  "text": "a coworker",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-lunch-a2e4": {
+  "text": "lunch",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-somebody-69d5": {
+  "text": "somebody",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u18-bk-really-1bf0": {
+  "text": "really",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-ac-where_are_you_the_meeting_is_a-92bf": {
+  "text": "Where are you? The meeting is at 3.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u19-ac-i_m_on_the_bus_i_m_at_the_stat-aa19": {
+  "text": "I'm on the bus. I'm at the station now.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-ac-okay_it_s_in_room_4_on_the_sec-0b2e": {
+  "text": "Okay. It's in room 4, on the second floor.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u19-ac-got_it_see_you_at_3-aae3": {
+  "text": "Got it. See you at 3.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-ac-great_and_the_party_is_it_on_f-74fa": {
+  "text": "Great. And the party? Is it on Friday?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u19-ac-yes_on_friday_at_7_at_my_place-4751": {
+  "text": "Yes, on Friday, at 7, at my place.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-a_bus-d19e": {
+  "text": "a bus",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-a_station-bd2e": {
+  "text": "a station",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-a_party-eb13": {
+  "text": "a party",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-a_corner-8a9d": {
+  "text": "a corner",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-a_wall-b95f": {
+  "text": "a wall",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-a_table-94d3": {
+  "text": "a table",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-an_hour-044a": {
+  "text": "an hour",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-a_date-0c70": {
+  "text": "a date",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-midnight-2c53": {
+  "text": "midnight",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-noon-90ad": {
+  "text": "noon",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-a_holiday-5f90": {
+  "text": "a holiday",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u19-bk-a_season-ad1a": {
+  "text": "a season",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-ac-how_was_your_weekend-9a97": {
+  "text": "How was your weekend?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-ac-it_was_great_i_was_at_the_beac-0ebe": {
+  "text": "It was great! I was at the beach.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u20-ac-nice_were_you_with_friends-7517": {
+  "text": "Nice! Were you with friends?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-ac-yes_we_were_the_weather_was_pe-338d": {
+  "text": "Yes, we were. The weather was perfect.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u20-ac-lucky_you_i_was_at_home_i_was-7292": {
+  "text": "Lucky you. I was at home. I was sick.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-ac-oh_no_were_you_okay_on_monday-1bfe": {
+  "text": "Oh no. Were you okay on Monday?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u20-bk-a_beach-3ebc": {
+  "text": "a beach",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-the_sea-9054": {
+  "text": "the sea",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-sand-824f": {
+  "text": "sand",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-a_towel-0466": {
+  "text": "a towel",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-the_weather-dda7": {
+  "text": "the weather",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-warm-043a": {
+  "text": "warm",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-cold-c636": {
+  "text": "cold",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-sick-d1f4": {
+  "text": "sick",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-okay-a04d": {
+  "text": "okay",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-empty-d7ad": {
+  "text": "empty",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-yesterday-26f7": {
+  "text": "yesterday",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u20-bk-last_week-86f7": {
+  "text": "last week",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-ac-how_was_your_weekend-9a97": {
+  "text": "How was your weekend?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-ac-good_i_relaxed_at_home_i_watch-192f": {
+  "text": "Good! I relaxed at home. I watched a movie and cooked dinner.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u21-ac-nice_i_worked_on_saturday_actu-1e67": {
+  "text": "Nice. I worked on Saturday, actually.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-ac-oh_no_what_happened-131a": {
+  "text": "Oh no. What happened?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u21-ac-we_finished_a_big_project_we_s-8208": {
+  "text": "We finished a big project. We started it last month.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-ac-well_done_you_needed_a_break-238a": {
+  "text": "Well done. You needed a break.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u21-bk-to_relax-9af3": {
+  "text": "to relax",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-to_happen-6ed2": {
+  "text": "to happen",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-to_visit-5ffc": {
+  "text": "to visit",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-to_answer-fd99": {
+  "text": "to answer",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-to_close-d3b8": {
+  "text": "to close",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-to_study-0d62": {
+  "text": "to study",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-a_project-0ac0": {
+  "text": "a project",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-a_break-6802": {
+  "text": "a break",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-last_month-9b78": {
+  "text": "last month",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-a_plan-658f": {
+  "text": "a plan",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-actually-63b8": {
+  "text": "actually",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u21-bk-well_done-480f": {
+  "text": "well done",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-ac-how_was_your_trip_to_rome-5345": {
+  "text": "How was your trip to Rome?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u22-ac-amazing_we_went_to_the_colosse-3cff": {
+  "text": "Amazing! We went to the Colosseum. We saw everything.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-ac-nice_the_food_is_great_there-59cd": {
+  "text": "Nice. The food is great there.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u22-ac-yes_we_ate_so_much_pasta_i_had-e89f": {
+  "text": "Yes! We ate so much pasta. I had pizza every day.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-ac-ha_and_the_hotel-9538": {
+  "text": "Ha! And the hotel?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u22-ac-it_was_perfect_we_got_a_great-91d0": {
+  "text": "It was perfect. We got a great room. We took lots of photos.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-a_trip-29c3": {
+  "text": "a trip",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-a_hotel-5543": {
+  "text": "a hotel",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-a_museum-28ee": {
+  "text": "a museum",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-a_ticket-e98d": {
+  "text": "a ticket",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-a_suitcase-fe11": {
+  "text": "a suitcase",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-a_flight-3b97": {
+  "text": "a flight",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-a_guide-2dcc": {
+  "text": "a guide",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-food-e04e": {
+  "text": "food",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-pasta-af16": {
+  "text": "pasta",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-everything-76f1": {
+  "text": "everything",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-lots_of-1a4b": {
+  "text": "lots of",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u22-bk-so_much-3142": {
+  "text": "so much",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-ac-did_you_go_to_the_party-5b17": {
+  "text": "Did you go to the party?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-ac-no_i_didn_t_i_didn_t_feel_well-f0a7": {
+  "text": "No, I didn't. I didn't feel well.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u23-ac-oh_no_what_did_you_do-69d1": {
+  "text": "Oh no. What did you do?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-ac-i_stayed_home_i_didn_t_do_much-abcd": {
+  "text": "I stayed home. I didn't do much.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u23-ac-did_leo_go-d658": {
+  "text": "Did Leo go?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-ac-yes_he_did_but_he_didn_t_stay-2dd0": {
+  "text": "Yes, he did. But he didn't stay long.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u23-bk-to_stay-ce64": {
+  "text": "to stay",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-to_feel-55f3": {
+  "text": "to feel",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-a_guest-9416": {
+  "text": "a guest",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-music-eb32": {
+  "text": "music",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-juice-eb24": {
+  "text": "juice",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-a_cake-88e2": {
+  "text": "a cake",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-an_excuse-3f65": {
+  "text": "an excuse",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-long-b07d": {
+  "text": "long",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-much-1ae8": {
+  "text": "much",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-anybody-d61d": {
+  "text": "anybody",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-nothing-757e": {
+  "text": "nothing",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u23-bk-well-b70b": {
+  "text": "well",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-ac-i_called_you_last_night_you_di-6fe3": {
+  "text": "I called you last night. You didn't answer.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u24-ac-sorry_i_was_cooking_dinner-8de4": {
+  "text": "Sorry! I was cooking dinner.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-ac-ha_no_problem_what_were_you_ma-6990": {
+  "text": "Ha, no problem. What were you making?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u24-ac-pasta_and_the_kids_were_doing-58cf": {
+  "text": "Pasta. And the kids were doing their homework.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-ac-nice_i_was_watching_a_movie_wh-46ba": {
+  "text": "Nice. I was watching a movie when you texted back.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u24-ac-right_we_were_all_busy-e7e7": {
+  "text": "Right. We were all busy!",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-to_knock-3a06": {
+  "text": "to knock",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-to_ring-918e": {
+  "text": "to ring",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-to_burn-557b": {
+  "text": "to burn",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-homework-faa8": {
+  "text": "homework",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-a_problem-987b": {
+  "text": "a problem",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-a_noise-ddb3": {
+  "text": "a noise",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-a_moment-dcb3": {
+  "text": "a moment",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-back-152b": {
+  "text": "back",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-while-081f": {
+  "text": "while",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-suddenly-4bc8": {
+  "text": "suddenly",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-sorry-5e77": {
+  "text": "sorry",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u24-bk-right-ec93": {
+  "text": "right",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-ac-you_look_tired_what_happened-4b82": {
+  "text": "You look tired. What happened?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u25-ac-i_was_walking_home_when_it_sta-66f8": {
+  "text": "I was walking home when it started to rain.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-ac-oh_no_did_you_have_an_umbrella-1eed": {
+  "text": "Oh no. Did you have an umbrella?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u25-ac-no_and_my_phone_rang_while_i_w-cdc9": {
+  "text": "No. And my phone rang while I was running.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-ac-ha_did_you_answer_it-8277": {
+  "text": "Ha! Did you answer it?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u25-ac-i_tried_but_i_dropped_it_in_a-6b69": {
+  "text": "I tried, but I dropped it in a puddle.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-to_drop-dea6": {
+  "text": "to drop",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-to_try-9e89": {
+  "text": "to try",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-to_slip-5257": {
+  "text": "to slip",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-to_wear-15d5": {
+  "text": "to wear",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-an_umbrella-7fe0": {
+  "text": "an umbrella",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-a_puddle-7368": {
+  "text": "a puddle",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-a_raincoat-2d31": {
+  "text": "a raincoat",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-an_accident-7c94": {
+  "text": "an accident",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-wet-50de": {
+  "text": "wet",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-dry-6656": {
+  "text": "dry",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-luckily-98cd": {
+  "text": "luckily",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-bk-a_story-7616": {
+  "text": "a story",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-ac-what_are_you_going_to_do_this-b461": {
+  "text": "What are you going to do this weekend?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-ac-i_m_going_to_visit_my_parents-91ad": {
+  "text": "I'm going to visit my parents. What about you?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u26-ac-i_m_going_to_relax_i_m_not_goi-2ffe": {
+  "text": "I'm going to relax. I'm not going to work.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-ac-nice_look_at_those_clouds_it_s-d56a": {
+  "text": "Nice. Look at those clouds. It's going to rain.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u26-ac-oh_no_are_you_going_to_drive-47eb": {
+  "text": "Oh no. Are you going to drive?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-ac-yeah_we_re_going_to_leave_earl-7838": {
+  "text": "Yeah. We're going to leave early.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u26-bk-parents-0263": {
+  "text": "parents",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-a_cloud-6ce3": {
+  "text": "a cloud",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-the_sky-0c54": {
+  "text": "the sky",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-wind-e83c": {
+  "text": "wind",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-an_airport-471a": {
+  "text": "an airport",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-a_picnic-28fa": {
+  "text": "a picnic",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-grass-4c98": {
+  "text": "grass",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-to_leave-1b43": {
+  "text": "to leave",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-to_pack-3a0b": {
+  "text": "to pack",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-next_week-3b4e": {
+  "text": "next week",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-soon-6743": {
+  "text": "soon",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u26-bk-probably-f8bc": {
+  "text": "probably",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-ac-this_box_is_really_heavy-9078": {
+  "text": "This box is really heavy.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u27-ac-i_ll_help_you-1f3f": {
+  "text": "I'll help you.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-ac-thanks_oh_the_phone_s_ringing-4d42": {
+  "text": "Thanks! Oh, the phone's ringing.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u27-ac-i_ll_get_it-08eb": {
+  "text": "I'll get it.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-ac-great_can_you_send_sam_the_fil-7ae5": {
+  "text": "Great. Can you send Sam the file?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u27-ac-sure_i_ll_send_it_now_i_won_t-9127": {
+  "text": "Sure, I'll send it now. I won't forget.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-to_forget-3727": {
+  "text": "to forget",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-to_lend-242d": {
+  "text": "to lend",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-to_fix-4cbd": {
+  "text": "to fix",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-to_bring-e791": {
+  "text": "to bring",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-to_return-516b": {
+  "text": "to return",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-to_hold-b9b7": {
+  "text": "to hold",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-a_file-9af6": {
+  "text": "a file",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-a_favor-5201": {
+  "text": "a favor",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-a_hand-6265": {
+  "text": "a hand",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-upstairs-6e2b": {
+  "text": "upstairs",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-a_promise-e9ee": {
+  "text": "a promise",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u27-bk-immediately-1176": {
+  "text": "immediately",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-ac-are_you_free_on_thursday-6638": {
+  "text": "Are you free on Thursday?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u28-ac-no_i_m_meeting_a_client_at_2_w-75ea": {
+  "text": "No, I'm meeting a client at 2. Why?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-ac-we_re_having_a_team_lunch_can-da93": {
+  "text": "We're having a team lunch. Can you come Friday?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u28-ac-friday_works_what_time-1099": {
+  "text": "Friday works. What time?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-ac-we_re_starting_at_12-bba0": {
+  "text": "We're starting at 12.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u28-ac-great_i_m_seeing_the_dentist_a-e4d6": {
+  "text": "Great. I'm seeing the dentist at 9, but I'm free after.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-a_dentist-ec91": {
+  "text": "a dentist",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-a_doctor-9586": {
+  "text": "a doctor",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-an_appointment-7ec8": {
+  "text": "an appointment",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-an_interview-e619": {
+  "text": "an interview",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-a_calendar-4757": {
+  "text": "a calendar",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-a_schedule-fe91": {
+  "text": "a schedule",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-to_arrange-7af9": {
+  "text": "to arrange",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-to_cancel-bb37": {
+  "text": "to cancel",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-to_confirm-ff3d": {
+  "text": "to confirm",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-to_move-7744": {
+  "text": "to move",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-available-07f2": {
+  "text": "available",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u28-bk-a_reminder-31be": {
+  "text": "a reminder",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-ac-have_you_ever_been_to_japan-259c": {
+  "text": "Have you ever been to Japan?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-ac-no_i_haven_t_but_i_ve_visited-efa2": {
+  "text": "No, I haven't. But I've visited China.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u29-ac-nice_i_ve_never_been_to_asia-77b6": {
+  "text": "Nice! I've never been to Asia.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-ac-really_have_you_traveled_a_lot-48ec": {
+  "text": "Really? Have you traveled a lot?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u29-ac-a_bit_i_ve_seen_most_of_europe-0aad": {
+  "text": "A bit. I've seen most of Europe.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-ac-cool_i_ve_never_worked_abroad-c9df": {
+  "text": "Cool. I've never worked abroad, though.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u29-bk-a_continent-6d9d": {
+  "text": "a continent",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-a_passport-4427": {
+  "text": "a passport",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-a_visa-f2be": {
+  "text": "a visa",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-a_language-dc19": {
+  "text": "a language",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-a_souvenir-fba8": {
+  "text": "a souvenir",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-an_experience-6b88": {
+  "text": "an experience",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-to_fly-73fc": {
+  "text": "to fly",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-to_climb-1cf7": {
+  "text": "to climb",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-ever-4c9f": {
+  "text": "ever",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-a_bit-7581": {
+  "text": "a bit",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-most_of-63a7": {
+  "text": "most of",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u29-bk-though-01ca": {
+  "text": "though",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-ac-you_look_happy_any_news-e0e7": {
+  "text": "You look happy. Any news?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u30-ac-yes_i_ve_just_started_a_new_jo-968d": {
+  "text": "Yes! I've just started a new job.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-ac-congrats_have_you_told_your_te-21a0": {
+  "text": "Congrats! Have you told your team yet?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u30-ac-i_ve_already_told_them_they_re-f670": {
+  "text": "I've already told them. They're happy for me.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-ac-how_long_have_you_wanted_this-ea9c": {
+  "text": "How long have you wanted this?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u30-ac-for_years_i_ve_worked_here_sin-aa85": {
+  "text": "For years! I've worked here since 2019.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-news-974f": {
+  "text": "news",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-a_year-a62d": {
+  "text": "a year",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-a_month-0515": {
+  "text": "a month",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-an_age-2b25": {
+  "text": "an age",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-so_far-e35a": {
+  "text": "so far",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-lately-c0dd": {
+  "text": "lately",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-to_begin-0a89": {
+  "text": "to begin",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-to_grow-d2fe": {
+  "text": "to grow",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-to_improve-4032": {
+  "text": "to improve",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-to_last-7359": {
+  "text": "to last",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-congratulations-fde0": {
+  "text": "congratulations",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u30-bk-happy_for_you-d8a2": {
+  "text": "happy for you",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-ac-i_ve_been_to_new_york-defc": {
+  "text": "I've been to New York!",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u31-ac-wow_when_did_you_go-0dd2": {
+  "text": "Wow! When did you go?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-ac-i_went_last_spring_i_stayed_fo-5c80": {
+  "text": "I went last spring. I stayed for a week.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u31-ac-nice_have_you_seen_a_broadway-f85d": {
+  "text": "Nice. Have you seen a Broadway show?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-ac-yes_i_saw_hamilton_it_was_amaz-9c73": {
+  "text": "Yes, I saw Hamilton. It was amazing.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u31-ac-i_ve_always_wanted_to_go-bb64": {
+  "text": "I've always wanted to go.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-a_show-824d": {
+  "text": "a show",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-a_theater-e5ac": {
+  "text": "a theater",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-spring-3280": {
+  "text": "spring",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-summer-0231": {
+  "text": "summer",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-a_detail-1d83": {
+  "text": "a detail",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-a_memory-483b": {
+  "text": "a memory",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-to_remember-e70c": {
+  "text": "to remember",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-to_describe-95e4": {
+  "text": "to describe",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-once-e595": {
+  "text": "once",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-twice-7164": {
+  "text": "twice",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-to_see-38be": {
+  "text": "to see",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u31-bk-recently-4703": {
+  "text": "recently",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-ac-which_laptop_should_i_buy-4308": {
+  "text": "Which laptop should I buy?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-ac-this_one_is_cheaper_but_that_o-d03e": {
+  "text": "This one is cheaper, but that one is faster.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u32-ac-hmm_the_blue_one_is_more_expen-362f": {
+  "text": "Hmm. The blue one is more expensive.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-ac-true_but_it_s_better_the_scree-07cd": {
+  "text": "True, but it's better. The screen is bigger.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u32-ac-and_it_s_lighter_than_my_old_o-2db3": {
+  "text": "And it's lighter than my old one.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-ac-yeah_it_s_more_comfortable_to-d969": {
+  "text": "Yeah. It's more comfortable to carry.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u32-bk-comfortable-e5ed": {
+  "text": "comfortable",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-safe-e62f": {
+  "text": "safe",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-dangerous-8789": {
+  "text": "dangerous",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-modern-5a21": {
+  "text": "modern",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-simple-8fc5": {
+  "text": "simple",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-useful-5edb": {
+  "text": "useful",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-quick-72c9": {
+  "text": "quick",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-a_keyboard-316f": {
+  "text": "a keyboard",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-a_battery-42e5": {
+  "text": "a battery",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-a_model-8260": {
+  "text": "a model",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-a_choice-d262": {
+  "text": "a choice",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u32-bk-a_difference-1d15": {
+  "text": "a difference",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-ac-this_is_the_best_phone_in_the-a5ec": {
+  "text": "This is the best phone in the store.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u33-ac-but_it_s_the_most_expensive_on-7f2f": {
+  "text": "But it's the most expensive one!",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-ac-true_what_about_this_it_s_the-7cf2": {
+  "text": "True. What about this? It's the cheapest.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u33-ac-it_s_also_the_smallest_the_scr-dfa5": {
+  "text": "It's also the smallest. The screen is tiny.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-ac-okay_this_one_has_the_biggest-8825": {
+  "text": "Okay, this one has the biggest screen.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u33-ac-perfect_and_it_got_the_best_re-ea1f": {
+  "text": "Perfect. And it got the best reviews.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-a_store-0a70": {
+  "text": "a store",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-a_review-372f": {
+  "text": "a review",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-a_brand-1bae": {
+  "text": "a brand",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-a_size-6f26": {
+  "text": "a size",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-a_customer-956a": {
+  "text": "a customer",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-a_bargain-16c9": {
+  "text": "a bargain",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-huge-cebb": {
+  "text": "huge",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-tiny-282a": {
+  "text": "tiny",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-popular-7142": {
+  "text": "popular",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-terrible-6e7e": {
+  "text": "terrible",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-to_choose-634c": {
+  "text": "to choose",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u33-bk-to_recommend-760c": {
+  "text": "to recommend",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-ac-is_there_any_coffee-0268": {
+  "text": "Is there any coffee?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u34-ac-there_s_some_in_the_kitchen_bu-37b0": {
+  "text": "There's some in the kitchen. But there isn't any milk.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-ac-any_sugar-2e90": {
+  "text": "Any sugar?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u34-ac-no_sugar_at_all_i_bought_some-72d6": {
+  "text": "No sugar at all. I bought some yesterday, but it's gone.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-ac-are_there_any_clean_cups-307f": {
+  "text": "Are there any clean cups?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u34-ac-there_are_some_on_the_shelf_ta-e544": {
+  "text": "There are some on the shelf. Take one.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-milk-a4bf": {
+  "text": "milk",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-sugar-65ac": {
+  "text": "sugar",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-tea-9407": {
+  "text": "tea",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-a_fridge-97d4": {
+  "text": "a fridge",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-a_cupboard-73e4": {
+  "text": "a cupboard",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-a_spoon-51b3": {
+  "text": "a spoon",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-a_bottle-5b45": {
+  "text": "a bottle",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-a_packet-cd83": {
+  "text": "a packet",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-a_kettle-acec": {
+  "text": "a kettle",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-fresh-e8f4": {
+  "text": "fresh",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-at_all-8312": {
+  "text": "at all",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-bk-to_fill-81da": {
+  "text": "to fill",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-ac-how_much_coffee_do_we_have-0d0c": {
+  "text": "How much coffee do we have?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u35-ac-not_much_and_we_don_t_have_man-7ef2": {
+  "text": "Not much. And we don't have many cups.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-ac-okay_we_have_a_lot_of_tea_thou-e398": {
+  "text": "Okay. We have a lot of tea, though.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u35-ac-good_but_only_a_little_milk_an-dac2": {
+  "text": "Good. But only a little milk and a few snacks.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-ac-i_ll_get_some_more_how_many_pe-7d74": {
+  "text": "I'll get some more. How many people are coming?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u35-ac-about_twenty-509a": {
+  "text": "About twenty.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-a_snack-b67a": {
+  "text": "a snack",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-a_glass-4b4d": {
+  "text": "a glass",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-a_bowl-2cbe": {
+  "text": "a bowl",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-a_napkin-4f7b": {
+  "text": "a napkin",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-a_slice-cf12": {
+  "text": "a slice",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-a_piece-3f02": {
+  "text": "a piece",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-water-b249": {
+  "text": "water",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-bread-946a": {
+  "text": "bread",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-cheese-2c7f": {
+  "text": "cheese",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-rice-f3a2": {
+  "text": "rice",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-salt-1987": {
+  "text": "salt",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u35-bk-about-ee23": {
+  "text": "about",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-ac-can_we_fit_everyone_in_this_ro-e736": {
+  "text": "Can we fit everyone in this room?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-ac-no_it_s_too_small_there_aren_t-c8cd": {
+  "text": "No, it's too small. There aren't enough chairs.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u36-ac-and_it_s_too_hot_in_here-cc7c": {
+  "text": "And it's too hot in here.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-ac-right_there_are_too_many_peopl-7ec6": {
+  "text": "Right. There are too many people for this space.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u36-ac-is_the_big_room_free_it_s_big-57ad": {
+  "text": "Is the big room free? It's big enough.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-ac-good_idea_but_we_don_t_have_en-9530": {
+  "text": "Good idea. But we don't have enough time to move.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u36-bk-a_seat-1d41": {
+  "text": "a seat",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-a_fan-1d78": {
+  "text": "a fan",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-a_heater-fc42": {
+  "text": "a heater",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-a_whiteboard-3cba": {
+  "text": "a whiteboard",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-space-27aa": {
+  "text": "space",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-air-7393": {
+  "text": "air",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-an_idea-7561": {
+  "text": "an idea",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-crowded-c416": {
+  "text": "crowded",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-noisy-61e1": {
+  "text": "noisy",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-nearly-b946": {
+  "text": "nearly",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-to_fit-0360": {
+  "text": "to fit",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u36-bk-to_breathe-96d3": {
+  "text": "to breathe",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-ac-why_are_you_late-8e9c": {
+  "text": "Why are you late?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-ac-i_m_late_because_the_train_was-a716": {
+  "text": "I'm late because the train was delayed.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u37-ac-oh_no_so_you_missed_the_start-cfaa": {
+  "text": "Oh no. So you missed the start?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-ac-yeah_the_meeting_was_important-9bb7": {
+  "text": "Yeah. The meeting was important, but I caught the end.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u37-ac-well_although_you_were_late_yo-f61f": {
+  "text": "Well, although you were late, you didn't miss much.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-ac-true_i_was_worried_so_i_ran_fr-bedf": {
+  "text": "True. I was worried, so I ran from the station.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u37-bk-to_delay-3073": {
+  "text": "to delay",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-to_miss-c45f": {
+  "text": "to miss",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-to_catch-ec6c": {
+  "text": "to catch",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-to_explain-ebae": {
+  "text": "to explain",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-to_apologize-4b3d": {
+  "text": "to apologize",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-a_crowd-4a53": {
+  "text": "a crowd",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-a_traffic_jam-6303": {
+  "text": "a traffic jam",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-a_platform-62c8": {
+  "text": "a platform",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-a_result-0e2b": {
+  "text": "a result",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-important-fcc5": {
+  "text": "important",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-worried-504e": {
+  "text": "worried",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u37-bk-anyway-1485": {
+  "text": "anyway",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-ac-how_s_the_new_hire_doing-a98b": {
+  "text": "How's the new hire doing?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u38-ac-great_she_works_quickly_and_le-2f5e": {
+  "text": "Great. She works quickly and learns fast.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-ac-nice_does_she_communicate_well-2cbd": {
+  "text": "Nice. Does she communicate well?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u38-ac-yes_she_explains_things_clearl-52e9": {
+  "text": "Yes, she explains things clearly.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-ac-perfect_she_should_check_the_n-1fb4": {
+  "text": "Perfect. She should check the numbers carefully, though.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u38-ac-she_does_and_she_always_works-ba06": {
+  "text": "She does. And she always works hard.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-a_hire-1f89": {
+  "text": "a hire",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-to_communicate-8903": {
+  "text": "to communicate",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-to_manage-c365": {
+  "text": "to manage",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-to_type-bc9b": {
+  "text": "to type",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-to_correct-8eb9": {
+  "text": "to correct",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-a_mistake-3f34": {
+  "text": "a mistake",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-a_skill-94bd": {
+  "text": "a skill",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-an_effort-e984": {
+  "text": "an effort",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-careful-899c": {
+  "text": "careful",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-polite-8d5b": {
+  "text": "polite",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-honest-94bf": {
+  "text": "honest",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u38-bk-patient-c252": {
+  "text": "patient",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-ac-i_m_so_tired_all_the_time-56e6": {
+  "text": "I'm so tired all the time.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u39-ac-you_should_sleep_more_and_you-c1fe": {
+  "text": "You should sleep more. And you shouldn't drink so much coffee.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-ac-you_re_right_what_should_i_do-1c89": {
+  "text": "You're right. What should I do to relax?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u39-ac-you_should_try_walking_it_real-3542": {
+  "text": "You should try walking. It really helps.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-ac-good_idea_should_i_start_today-0ae3": {
+  "text": "Good idea. Should I start today?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u39-ac-yes_you_shouldn_t_wait-bcb4": {
+  "text": "Yes! You shouldn't wait.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-advice-ebbe": {
+  "text": "advice",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-to_advise-5e6c": {
+  "text": "to advise",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-to_suggest-2b52": {
+  "text": "to suggest",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-to_exercise-7520": {
+  "text": "to exercise",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-to_avoid-f533": {
+  "text": "to avoid",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-a_tip-4d5c": {
+  "text": "a tip",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-a_routine-2b77": {
+  "text": "a routine",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-energy-a6c1": {
+  "text": "energy",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-stress-d009": {
+  "text": "stress",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-healthy-1bd7": {
+  "text": "healthy",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-to_worry-3ab2": {
+  "text": "to worry",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u39-bk-less-c314": {
+  "text": "less",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-ac-are_you_coming_to_the_party_on-75e1": {
+  "text": "Are you coming to the party on Saturday?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u40-ac-i_might_i_m_not_sure_yet-4b60": {
+  "text": "I might. I'm not sure yet.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-ac-why_not-b2fd": {
+  "text": "Why not?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u40-ac-my_sister_may_visit_she_hasn_t-c5c1": {
+  "text": "My sister may visit. She hasn't decided.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-ac-okay_let_me_know-af33": {
+  "text": "Okay. Let me know.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u40-ac-i_will_i_might_know_by_thursda-4397": {
+  "text": "I will. I might know by Thursday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-certain-d1e7": {
+  "text": "certain",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-perhaps-0c29": {
+  "text": "perhaps",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-a_chance-d61d": {
+  "text": "a chance",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-a_doubt-f82a": {
+  "text": "a doubt",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-a_possibility-e65f": {
+  "text": "a possibility",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-an_invitation-d3cb": {
+  "text": "an invitation",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-to_decide-8ddc": {
+  "text": "to decide",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-to_depend-a110": {
+  "text": "to depend",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-to_expect-eb8c": {
+  "text": "to expect",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-to_let_somebody_know-32a9": {
+  "text": "to let somebody know",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-possible-3be6": {
+  "text": "possible",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-bk-by_then-81e0": {
+  "text": "by then",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-ac-what_time_do_we_start-af4d": {
+  "text": "What time do we start?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u41-ac-we_have_to_be_there_by_nine_yo-4336": {
+  "text": "We have to be there by nine. You must sign in at reception.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-ac-do_i_have_to_wear_a_suit-029c": {
+  "text": "Do I have to wear a suit?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u41-ac-no_you_don_t_have_to_but_you_m-9446": {
+  "text": "No, you don't have to. But you mustn't wear jeans.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-ac-got_it_does_sam_have_to_come_t-68e5": {
+  "text": "Got it. Does Sam have to come too?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u41-ac-yes_everyone_has_to_attend-db9e": {
+  "text": "Yes, everyone has to attend.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-a_rule-0f71": {
+  "text": "a rule",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-reception-8fb5": {
+  "text": "reception",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-a_badge-8502": {
+  "text": "a badge",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-a_suit-d4f9": {
+  "text": "a suit",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-jeans-eede": {
+  "text": "jeans",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-a_uniform-0999": {
+  "text": "a uniform",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-to_sign_in-efea": {
+  "text": "to sign in",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-to_attend-3075": {
+  "text": "to attend",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-to_allow-c401": {
+  "text": "to allow",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-to_require-4473": {
+  "text": "to require",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-optional-53d1": {
+  "text": "optional",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u41-bk-forbidden-1a33": {
+  "text": "forbidden",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-ac-should_we_launch_on_friday-8acd": {
+  "text": "Should we launch on Friday?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-ac-if_we_launch_friday_we_ll_be_r-7105": {
+  "text": "If we launch Friday, we'll be ready.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u42-ac-but_if_there_s_a_bug_customers-06e8": {
+  "text": "But if there's a bug, customers will complain.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-ac-true_if_we_wait_we_ll_have_mor-eb85": {
+  "text": "True. If we wait, we'll have more time to test.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u42-ac-okay_if_the_tests_pass_we_ll_g-6c05": {
+  "text": "Okay. If the tests pass, we'll go live Monday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-ac-sounds_good_i_ll_tell_the_team-e140": {
+  "text": "Sounds good. I'll tell the team if you agree.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u42-bk-a_release-00a4": {
+  "text": "a release",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-a_bug-c123": {
+  "text": "a bug",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-a_user-5894": {
+  "text": "a user",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-a_server-4ce0": {
+  "text": "a server",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-a_deadline-37ce": {
+  "text": "a deadline",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-a_version-d5b9": {
+  "text": "a version",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-to_launch-5398": {
+  "text": "to launch",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-to_test-223a": {
+  "text": "to test",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-to_pass-0f61": {
+  "text": "to pass",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-to_complain-d4c3": {
+  "text": "to complain",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-to_agree-39b6": {
+  "text": "to agree",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u42-bk-a_risk-1366": {
+  "text": "a risk",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-ac-what_do_you_want_to_do_this_we-1f28": {
+  "text": "What do you want to do this weekend?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-ac-i_need_to_finish_a_report_but-a2ab": {
+  "text": "I need to finish a report, but I hope to relax too.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u43-ac-same_i_enjoy_hiking_do_you_wan-8ff6": {
+  "text": "Same. I enjoy hiking. Do you want to come?",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-ac-i_d_love_to_i_ve_decided_to_be-5967": {
+  "text": "I'd love to! I've decided to be more active.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u43-ac-great_let_s_plan_to_meet_satur-90c3": {
+  "text": "Great. Let's plan to meet Saturday.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-ac-perfect_i_ll_try_to_be_on_time-6be0": {
+  "text": "Perfect. I'll try to be on time!",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u43-bk-to_want-8074": {
+  "text": "to want",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-to_need-ac63": {
+  "text": "to need",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-to_hope-69ff": {
+  "text": "to hope",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-to_plan-117e": {
+  "text": "to plan",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-to_offer-ee81": {
+  "text": "to offer",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-to_refuse-5c6d": {
+  "text": "to refuse",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-to_enjoy-680a": {
+  "text": "to enjoy",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-to_mind-a117": {
+  "text": "to mind",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-to_keep-0c6f": {
+  "text": "to keep",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-hiking-0e9e": {
+  "text": "hiking",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-active-f5c0": {
+  "text": "active",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-on_time-b649": {
+  "text": "on time",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-to_learn-8792": {
+  "text": "to learn",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u43-bk-to_prefer-cea4": {
+  "text": "to prefer",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-ac-who_s_the_new_person-3ad3": {
+  "text": "Who's the new person?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u44-ac-she_s_the_designer_who_joined-ee03": {
+  "text": "She's the designer who joined last week.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-ac-and_what_s_that_app_you_use-62fc": {
+  "text": "And what's that app you use?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u44-ac-it_s_a_tool_which_tracks_our_t-8f37": {
+  "text": "It's a tool which tracks our tasks.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-ac-nice_is_this_the_room_where_yo-0b0d": {
+  "text": "Nice. Is this the room where you meet?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u44-ac-yes_it_s_the_one_that_has_the-edb4": {
+  "text": "Yes, it's the one that has the big screen.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-an_app-d504": {
+  "text": "an app",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-a_tool-2e8a": {
+  "text": "a tool",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-a_task-5215": {
+  "text": "a task",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-a_colleague-133c": {
+  "text": "a colleague",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-a_developer-fce3": {
+  "text": "a developer",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-a_printer-f621": {
+  "text": "a printer",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-a_button-5034": {
+  "text": "a button",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-the_stairs-eb7b": {
+  "text": "the stairs",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-to_press-d2a8": {
+  "text": "to press",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-to_track-e165": {
+  "text": "to track",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-to_join-e01c": {
+  "text": "to join",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u44-bk-to_use-4afb": {
+  "text": "to use",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u25-ac-ha_did_you_answer_the_phone-9d32": {
+  "text": "Ha! Did you answer the phone?",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u25-ac-i_tried_but_i_dropped_the_phon-3867": {
+  "text": "I tried, but I dropped the phone in a puddle.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u34-ac-there_are_some_clean_cups_on_t-a21c": {
+  "text": "There are some clean cups on the shelf. Take one.",
+  "voice": "f",
+  "source": "cut"
+ },
+ "u40-ac-i_might_i_m_not_sure_about_sat-ad20": {
+  "text": "I might. I'm not sure about Saturday yet.",
+  "voice": "f",
+  "source": "cut"
+ }
+}

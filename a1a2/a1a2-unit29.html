@@ -1,0 +1,1405 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light only"><meta name="theme-color" content="#FAFAF7"><title>Unit 29 &middot; Present perfect: experience &middot; Concept</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><style>
+  :root{
+    --ink:#0A0B0D; --navy:#1F5570; --navy-dark:#123A4E; --white:#fff;
+    --paper:#FAFAF7; --panel:#F1F2ED; --panel-2:#E9EAE3;
+    --red:#B3132B; --red-hi:#8E0F22; --green:#1E7A44; --green-bg:#E7F4EB;
+    --gray:#6B6F76; --gray-dark:#33363B;
+    --line:#DCDDD6;
+    --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+    --serif:'Instrument Serif',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:light;background:var(--paper);}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  em,i{font-family:var(--serif);font-style:italic;color:var(--navy);}
+  #nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:12px 32px;background:var(--white);border-bottom:1px solid var(--line);}
+  #nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--gray-dark);}
+  #nav .brand img{height:30px;width:30px;}
+  #nav .brand .word{font-weight:700;letter-spacing:3px;color:var(--red);font-size:14px;}
+  #nav .brand:hover .word{color:var(--red-hi);}
+  #nav .unit-label{font-size:12px;color:var(--gray);letter-spacing:1px;padding-left:16px;text-align:right;}
+  /* At phone width the unit label wraps and runs straight into the CONCEPT
+     wordmark with no gap at all. Give it room, and drop it entirely on the
+     narrowest screens: the unit name is already the page heading two lines
+     below, so the nav is the one place it is not needed. */
+  @media (max-width:520px){ #nav .unit-label{display:none;} }
+  .print-head{display:none;}
+  @media print{
+    .print-head{display:flex;align-items:center;justify-content:space-between;
+      padding-bottom:20px;margin-bottom:32px;border-bottom:1px solid #ccc;}
+    .print-head img{height:78px;}
+    .print-head .pline{font-size:12.5px;letter-spacing:2.5px;color:#555;text-transform:uppercase;}
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 100px;}
+  /* GATE */
+  #gate{max-width:420px;margin:80px auto;text-align:center;padding:0 24px;}
+  #gate h1{font-family:var(--serif);font-weight:400;font-size:30px;margin-bottom:10px;color:var(--ink);}
+  #gate p{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:26px;}
+  #gate input{width:100%;background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:14px 16px;border-radius:10px;font-size:16px;letter-spacing:2px;text-align:center;margin-bottom:14px;}
+  #gate input:focus{outline:none;border-color:var(--navy);}
+  #gate button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:14px;font-weight:600;font-size:14.5px;cursor:pointer;}
+  #gate button:hover{background:var(--red-hi);}
+  #gateError{color:var(--red);font-size:13px;margin-top:12px;min-height:16px;}
+  #content{display:none;}
+  h2.sec{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,34px);margin:56px 0 4px;letter-spacing:-.01em;color:var(--ink);}
+  .sec-kicker{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--navy);margin:0 0 8px;}
+  .goal{color:var(--gray);font-size:14.5px;line-height:1.6;margin-bottom:22px;font-style:italic;}
+  .dialogue{background:var(--panel);border-radius:14px;padding:24px 26px;margin:18px 0;border:1px solid var(--line);}
+  .dialogue p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--gray-dark);}
+  .dialogue p:last-child{margin-bottom:0;}
+  .dialogue b{color:var(--navy);}
+  .dialogue .who{color:var(--ink);font-weight:600;margin-right:7px;}
+  .body-copy{font-size:15.5px;line-height:1.7;color:var(--gray-dark);}
+  .body-copy b{color:var(--ink);}
+  .callout{background:var(--panel);border-left:3px solid var(--navy);padding:18px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
+  .callout b{color:var(--navy);}
+  .callout p{margin:0 0 12px;}
+  .callout p:last-child{margin-bottom:0;}
+  /* SPLIT CARD */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+  @media (max-width:640px){.split{grid-template-columns:1fr;}}
+  .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+  .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+  .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+  .card-col dt:first-child{margin-top:0;}
+  .card-col dd{margin:2px 0 0;}
+  .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+  .moves{margin:16px 0 0;padding:0;list-style:none;}
+  .moves li{font-size:15px;line-height:1.6;color:var(--gray-dark);padding:8px 0;border-bottom:1px dashed var(--line);}
+  .moves li:last-child{border-bottom:none;}
+  .moves .slot{color:var(--navy);font-weight:600;}
+  .diagram{margin:26px 0;text-align:center;}
+  .diagram svg{max-width:100%;height:auto;}
+  .diagram-cap{font-size:12.5px;color:var(--gray);font-style:italic;margin-top:16px;line-height:1.5;}
+  .ex-block{margin:44px 0;padding-top:28px;border-top:1px solid var(--line);}
+  .ex-label{display:inline-block;background:var(--navy);color:#fff;font-weight:600;font-size:12px;
+    padding:4px 11px;border-radius:6px;margin-bottom:10px;}
+  .ex-title{font-size:19px;font-weight:600;margin:0 0 6px;color:var(--ink);}
+  .ex-instr{color:var(--gray);font-size:14px;margin-bottom:18px;font-style:italic;}
+  .q{margin-bottom:16px;}
+  .q-text{font-size:15px;margin-bottom:8px;color:var(--gray-dark);line-height:1.55;}
+  .q-text .num{color:var(--navy);font-weight:700;margin-right:6px;}
+  .q input[type=text]{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:10px 12px;border-radius:8px;font-size:14.5px;width:300px;max-width:100%;font-family:var(--sans);}
+  .q input[type=text]:focus{outline:none;border-color:var(--navy);}
+  .q input.wide{width:100%;}
+  .answer-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px;}
+  .answer-row input[type=text]{width:150px;}
+  .answer-row .fixed-word{color:var(--gray-dark);font-size:14.5px;}
+  .choices{display:flex;flex-wrap:wrap;gap:8px;}
+  .choice-btn{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:9px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .choice-btn:hover{border-color:var(--navy);}
+  .choice-btn.picked{border-color:var(--navy);background:var(--panel);}
+  .choice-btn.correct{border-color:var(--green);background:var(--green-bg);color:var(--green);}
+  .choice-btn.wrong{border-color:var(--red);background:#FBE9EB;color:var(--red);}
+  .fb{display:block;font-size:13px;margin-top:6px;min-height:16px;font-weight:600;line-height:1.5;}
+  .fb.ok{color:var(--green);}
+  .fb.bad{color:var(--red);}
+  select.match-select{background:var(--white);border:1.5px solid var(--line);color:var(--ink);
+    padding:8px 10px;border-radius:8px;font-size:13.5px;width:100%;font-family:var(--sans);}
+  .check-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);padding:9px 20px;
+    border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;margin-top:6px;font-family:var(--sans);}
+  .check-btn:hover{background:var(--navy);color:#fff;}
+  .reveal-btn{background:none;border:1.5px solid var(--line);color:var(--gray);padding:9px 20px;
+    border-radius:999px;font-size:13px;cursor:pointer;font-family:var(--sans);}
+  .reveal-btn:hover{border-color:var(--ink);color:var(--ink);}
+  .key-box{display:none;background:var(--panel);border-radius:10px;padding:16px 18px;margin-top:12px;font-size:14px;color:var(--gray-dark);line-height:1.7;border:1px solid var(--line);}
+  .key-box.shown{display:block;}
+  .key-box b{color:var(--green);}
+  .soft-note{font-size:12px;color:var(--gray);margin-top:6px;}
+  .task-box{background:var(--panel);border-radius:12px;padding:20px 22px;border:1px solid var(--line);
+    font-size:15px;line-height:1.7;color:var(--gray-dark);}
+  .task-box p{margin:0 0 14px;}
+  .task-box p:last-child{margin-bottom:0;}
+  .task-box b{color:var(--ink);}
+  #scoreBar{position:sticky;bottom:0;background:rgba(250,250,247,.95);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);padding:16px 24px;display:flex;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  #scoreBar .score{font-size:14px;color:var(--gray);}
+  #scoreBar .score b{color:var(--ink);font-size:16px;}
+  .action-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:11px 22px;
+    font-weight:600;font-size:13.5px;cursor:pointer;font-family:var(--sans);}
+  .action-btn:hover{background:var(--red-hi);}
+  .action-btn.outline{background:none;border:1.5px solid var(--line);color:var(--ink);}
+  .action-btn.outline:hover{border-color:var(--ink);}
+  @media print{
+    #nav,#scoreBar,.check-btn,.reveal-btn,input,select,.choice-btn{display:none !important;}
+    body{background:#fff;color:#000;}
+    .key-box{display:block !important;}
+    a{color:#000;}
+  }
+  .unit-nav{display:flex;justify-content:space-between;gap:12px;margin:50px 0 10px;padding-top:24px;border-top:1px solid var(--line);}
+  .nav-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--sans);
+    font-weight:600;font-size:13.5px;padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);
+    color:var(--ink);transition:border-color .2s ease,color .2s ease;}
+  .nav-btn:hover{border-color:var(--navy);color:var(--navy);}
+  .nav-btn.next{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .nav-btn.next:hover{background:var(--navy-dark);}
+  @media print{.unit-nav{display:none !important;}}
+  #privacyModal{position:fixed;inset:0;background:rgba(10,11,13,.55);z-index:200;
+    display:none;align-items:center;justify-content:center;padding:24px;}
+  #privacyModal.shown{display:flex;}
+  #privacyModal .card{background:var(--white);border-radius:16px;max-width:420px;width:100%;
+    padding:28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+  #privacyModal h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 12px;color:var(--ink);}
+  #privacyModal p{font-size:14px;line-height:1.6;color:var(--gray-dark);margin:0 0 20px;}
+  #privacyModal button{width:100%;background:var(--red);color:#fff;border:none;border-radius:999px;
+    padding:13px;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--sans);}
+  #privacyModal button:hover{background:var(--red-hi);}
+  .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
+  @media print{#privacyModal{display:none !important;}}
+
+  /* ---- A1/A2 additions. Everything above this line is the C1 stylesheet,
+     read from the published page at build time and not edited here. ---- */
+  .ex-label.named{display:inline-block;width:auto;min-width:0;padding:0 10px;border-radius:11px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
+  .split.three{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:640px){.split.three{grid-template-columns:1fr;}}
+  /* ================= FINDABILITY, 30 Aug 2026 =========================
+     "A CONTROL MUST ANNOUNCE ITSELF AS A CONTROL." Netto, after opening the
+     book on a phone. SERIES_STANDARD 9p.
+
+     ONE CONTROL, ONE SHAPE, ONE POSITION. The pill below is the only thing in
+     this book that plays audio, it carries a play mark and a word, it is at
+     least 44x44, and it is the FIRST thing on its line everywhere.
+
+     WHY THE PLAY MARK IS A ::before AND NOT A CHARACTER IN THE MARKUP: the
+     reading copies and ceiling.py read the markup, and a triangle in the
+     button's text would land in the .txt as a word and in the word count as a
+     word. The x on a wrong form is the opposite case and is deliberately in
+     the markup -- there the mark IS the teaching and the .txt must carry it.
+
+     44px: measured at 375px, between 59 and 70 of about 75 controls per unit
+     were under the minimum touch target. Every one of them is a rule here.
+     NOTHING IS EDITED IN kit_final/unit.css. Three shipped books read that
+     file; these are overrides in the A1/A2 block, which is appended after it. */
+  .audio-btn{background:none;border:1.5px solid var(--navy);color:var(--navy);
+    border-radius:999px;padding:0 14px;min-height:44px;font-size:13px;font-weight:600;
+    font-family:var(--sans);cursor:pointer;margin-right:6px;
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+  /* ===== THE PLAY MARK IS AN SVG, NOT A CHARACTER. 30 Aug 2026 =============
+     U+25B6 IS AN EMOJI ON iOS. It has no default text presentation there, so
+     Safari substitutes Apple Color Emoji and draws a small white triangle
+     INSIDE A GREY-BLUE ROUNDED SQUARE -- a second button nested in the button,
+     which is exactly what Netto saw on unit 10's Access. Reproduced here on a
+     Mac by forcing the same font, so it is not a guess about his phone.
+     THE FIRST OPTION -- enlarge it and suppress the frame in CSS -- IS
+     IMPOSSIBLE, and that is a fact about glyphs rather than a preference: the
+     square is part of the emoji font's own artwork, a bitmap, and no CSS
+     property reaches inside a glyph. Enlarging only makes the square bigger.
+     U+FE0E, the text-presentation selector, does work today; it is a hint to
+     font selection, it varies by iOS version, and it would put a second
+     invisible character into every button. Rejected as fragile.
+     AN SVG BACKGROUND ON THE PSEUDO-ELEMENT ends the class: no font is
+     involved, nothing can substitute, and it is still pure CSS, so not one
+     line of markup changes in any of the four places.
+     THE PROPORTION: the mark's height equals the label's font-size. A 13px
+     label gets a 13px mark, an 11px label an 11px mark. That is the same
+     relationship the x on a wrong form has to the words around it -- set at
+     the surrounding size -- so the play triangle is not the only oversized
+     thing on the page. It was 0.78em before, which is why it read as tiny
+     inside a 44px control.
+     THIS IS THE SECOND TIME THIS CHARACTER HAS COST A ROUND. The first was the
+     octal escape that shipped "B6 Listen"; SERIES_STANDARD 9q named the class
+     then -- the layer no check reads -- and this is the same layer. */
+  .audio-btn::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
+  /* Record, and Check the line, are not play buttons. */
+  #sayRec::before,#sayShow::before{content:none;}
+  .audio-btn:hover{border-color:var(--navy);}
+  .audio-btn:disabled{color:var(--gray);cursor:default;opacity:.5;}
+  .audio-btn.rec-on{background:var(--red);border-color:var(--red);color:#fff;}
+  .listen-note{font-size:12.5px;color:var(--gray);line-height:1.65;margin:0 0 18px;}
+  /* CONTROL FIRST, THEN THE NAME. It used to sit AFTER the speaker name, which
+     put it at two different x-positions down one dialogue -- 86px after "Ana",
+     103px after "Marco" -- so there was no column to aim at. */
+  .audio-line{display:flex;align-items:flex-start;gap:10px;margin:0 0 12px;
+    flex-wrap:wrap;}
+  .audio-line .who{flex:0 0 auto;padding-top:11px;}
+  .audio-line .audio-btn{flex:0 0 auto;margin-right:0;}
+  .audio-line .line-text{padding-top:10px;flex:1 1 200px;}
+  /* ON A NARROW COLUMN THE LINE TAKES THE FULL WIDTH. Control-first is right
+     and it costs 145px of the row, which on a phone left a 180px text column
+     wrapping every line three times. The control and the name keep the first
+     row; the sentence gets its own, full width. Nothing changes above 640px. */
+  @media (max-width:640px){
+    .audio-line{gap:8px 10px;}
+    .audio-line .line-text{flex:1 0 100%;padding-top:2px;}
+  }
+  /* ---- the vocabulary bank: its own section, between Access and Analysis.
+     Sound first: the meaning is on the card from the start, the spelling is
+     revealed on request, so the student meets the word as a sound and checks
+     the letters afterwards. ---- */
+  /* ---- the bank as ROWS, not cards. Eight items have to be readable as one
+     set, which means all eight on screen at once; eight cards are eight
+     screens. Nothing is hidden here: this is the presentation moment and the
+     learner has nothing to retrieve yet. Hiding is a testing move and it lives
+     in the exercises. ---- */
+  .bank{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin:16px 0 0;}
+  @media (max-width:640px){.bank{grid-template-columns:1fr;}}
+  .bank-item{display:flex;align-items:center;gap:12px;padding:7px 0;
+    border-bottom:1px solid var(--line);}
+  .bank-img{width:100%;height:auto;display:block;}
+  /* THE PICTURE AND ITS LABEL ARE ONE BUTTON. Not two: the clip merge of
+     29 Aug was right, and two identical controls are a question the learner
+     answers by pressing both. What the merge cost was the LABEL, because the
+     control that survived was the picture -- and a picture reads as an
+     illustration. The answer to an unlabelled control is a label. */
+  .bank-play{flex:0 0 76px;display:flex;flex-direction:column;align-items:stretch;
+    padding:0;border:1.5px solid var(--navy);background:var(--white);
+    border-radius:10px;cursor:pointer;overflow:hidden;line-height:0;}
+  .bank-cap{display:flex;align-items:center;justify-content:center;gap:5px;
+    background:var(--navy);color:#fff;font-family:var(--sans);font-size:11px;
+    font-weight:600;padding:6px 0;line-height:1.2;}
+  .bank-cap::before{content:"";flex:0 0 auto;width:9px;height:11px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%23ffffff'/%3E%3C/svg%3E");}
+  /* A ROW WITH NO PICTURE GETS THE SAME OBJECT IN THE SAME COLUMN. That is
+     what makes unit 3 look like unit 1, ends two kinds of control inside one
+     list in units 2 and 4, and removes the empty bordered spacer that read as
+     a drawing which had failed to load. */
+  .bank-play-flat{border-radius:999px;min-height:44px;}
+  .bank-play-flat .bank-cap{padding:14px 0;border-radius:999px;}
+  .bank-play:hover{opacity:.9;}
+  .draft-note{border-left:4px solid #b45309;background:#fff7ed;}
+  .status-ok{border-left:4px solid #15803d;background:#f0fdf4;}
+  .status-open{border-left:4px solid #6b7280;background:#f8f8f7;}
+  /* .bank-noimg IS GONE, 30 Aug 2026. It was an empty bordered cell kept so
+     the two kinds of row would line up; on a phone it read as a drawing that
+     had failed to load. The rows line up because both now carry a control. */
+  .listen-q{margin-right:10px;vertical-align:middle;}
+  .numset{margin:6px 0 26px;}
+  .numset-head{font-family:var(--serif);font-size:19px;margin:18px 0 2px;color:var(--ink);}
+  .numset-note{font-size:13px;color:var(--gray);margin:0 0 12px;}
+  .numstrip{display:flex;flex-wrap:wrap;gap:7px;}
+  .numcell{background:var(--white);border:1.5px solid var(--line);border-radius:9px;
+    padding:8px 13px;font:inherit;font-size:15px;color:var(--ink);cursor:pointer;
+    display:inline-flex;align-items:baseline;gap:8px;}
+  /* Tabular figures so the digits line up down the column. */
+  /* inline-block: min-width and text-align are block-only properties and
+     verify.py is right to refuse them on a bare inline. */
+  .numfig{display:inline-block;font-variant-numeric:tabular-nums;
+    font-weight:700;color:var(--navy);min-width:1.7em;text-align:right;}
+  .numwd{font-size:15px;}
+  .numcell:hover{border-color:var(--navy);color:var(--navy);}
+  /* "The base. Listen once, then say the row." -- and nothing on the screen
+     said listen. The chips ARE the control; now they say so. */
+  .numcell{min-height:44px;border-color:var(--navy);}
+  .numcell::before{content:"";flex:0 0 auto;width:11px;height:13px;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 13'%3E%3Cpath d='M1 1.2v10.6a.6.6 0 0 0 .93.5l8.2-5.3a.6.6 0 0 0 0-1L1.93.7A.6.6 0 0 0 1 1.2z' fill='%2314344F'/%3E%3C/svg%3E");}
+  /* CONTROL FIRST. It used to be the fifth column, at the far right of a
+     narrow screen, furthest from the thumb and last in reading order. */
+  .numpairs{display:grid;grid-template-columns:auto auto 1fr auto 1fr;gap:8px 12px;
+    align-items:center;max-width:520px;}
+  .numpair-head{font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--gray);}
+  /* THE UNDERLINE CAME OFF. A non-control may not carry a control's marks:
+     this one was heavier than the real button's and on the same screen. */
+  .numword{font-size:16px;color:var(--ink);padding:4px 0;}
+  .numplay{justify-self:start;}
+  .bank-more{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 0;}
+  .more-btn{display:inline-block;background:var(--navy);color:var(--white);
+    border-radius:999px;padding:10px 20px;font-size:14px;font-weight:600;
+    text-decoration:none;letter-spacing:.01em;}
+  .more-btn:hover{opacity:.88;}
+  /* ---- the rest of the controls, to the same floor. Six declarations, no
+     markup. IOS SAFARI ZOOMS ANY FOCUSED CONTROL UNDER 16px AND DOES NOT ZOOM
+     BACK: every field and every dropdown in the book did it, in every
+     exercise, and it is the one defect here that a learner meets on the very
+     first tap. ---- */
+  .check-btn{min-height:44px;padding:0 20px;display:inline-flex;align-items:center;}
+  .say-row{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;}
+  .more-btn{min-height:44px;padding:0 20px;display:inline-flex;align-items:center;}
+  .action-btn{min-height:44px;padding:0 22px;display:inline-flex;align-items:center;}
+  .choice-btn{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;}
+  .q input[type=text]{font-size:16px;min-height:44px;}
+  select.match-select{font-size:16px;min-height:44px;}
+  #gate input{font-size:16px;}
+  .bank-more-note{font-size:13px;color:var(--gray);flex:1 1 220px;}
+  .bank-item-flat{padding:9px 0;}
+  /* .bank-word-btn IS GONE. The word was the control on picture-less rows and
+     it announced itself with a 1px DOTTED underline in the palest grey in the
+     book, 20px tall -- while .numword, which does nothing at all, carried a
+     SOLID underline in the same grey. The affordance was inverted. The word is
+     a word now, and the control beside it is a control. */
+  .bank-body{flex:1 1 auto;min-width:0;}
+  .bank-word{font-weight:600;font-size:15px;color:var(--ink);display:block;}
+  .bank-fig{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;}
+  .bank-sent{font-family:var(--serif);font-size:14.5px;color:var(--navy);display:block;
+    line-height:1.35;}
+  @media print{.bank-word{display:inline !important;}}
+  .listen-note b{color:var(--gray-dark);}
+  /* ---- exercise I: listen, say it, read. The record-and-compare component
+     from Calibrated Speech, in this book's tokens. The model's amplitude
+     envelope is gray and the student's own is red, which is that book's
+     convention: red marks what the student produced, the same job it does in
+     the Exercise B key. ---- */
+  .say-rows{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;}
+  .say-row{background:var(--white);border:1.5px solid var(--line);border-radius:999px;
+    padding:8px 15px;font-family:var(--sans);font-size:13.5px;color:var(--ink);cursor:pointer;}
+  .say-row:hover{border-color:var(--navy);}
+  .say-row.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .say-row .who{color:inherit;font-weight:600;margin-right:7px;}
+  .say-panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;}
+  .say-sel{font-size:14.5px;color:var(--gray-dark);margin:0 0 14px;}
+  .say-sel b{color:var(--ink);}
+  .say-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .wave{width:100%;height:auto;display:block;background:var(--white);
+    border:1px solid var(--line);border-radius:10px;}
+  .say-text{font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.45;
+    margin:14px 0 0;min-height:26px;}
+  .say-status{font-size:13px;color:var(--gray);margin:8px 0 0;min-height:18px;line-height:1.5;}
+  .say-status .win{color:var(--green);font-weight:600;}
+  .mic-msg{font-size:12.5px;color:var(--red);line-height:1.6;margin:10px 0 0;min-height:16px;}
+  @media print{
+    .audio-btn,.say-btns,.wave,.say-rows{display:none !important;}
+  }
+
+  .wrong{color:#B3132B;font-weight:600;white-space:nowrap;}
+  .wrong .x{font-weight:700;}
+
+/* --- THREE DEVICES TAKEN FROM MURPHY, 28 Aug 2026 ------------------------
+   Read off eight spreads of Basic Grammar in Use. See a1a2/MURPHY_ANATOMY.md
+   for what was counted and what was deliberately NOT copied.              */
+
+/* the worked first item: his is set in a handwriting face so it reads as
+   somebody's answer and not as part of the question. */
+.ex-worked{margin:12px 0 22px;padding:10px 14px;border-left:2px solid #C9D9E2;
+  background:#F7FAFB;border-radius:0 8px 8px 0;
+  font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-size:16px;
+  color:#1F5570;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ex-worked-n{font-family:"Instrument Sans",Arial,sans-serif;font-style:normal;
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8FA6B4;
+  flex:0 0 auto}
+
+/* Compare: two columns, one label. */
+.cmp-head{margin:30px 0 10px;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#1F5570}
+.cmp{display:flex;gap:18px;flex-wrap:wrap}
+.cmp-col{flex:1 1 240px;background:#F7F7F4;border:1px solid #E3E4DF;
+  border-radius:10px;padding:14px 16px}
+.cmp-t{margin:0 0 8px;font-size:12px;letter-spacing:.05em;color:#6B6F76;
+  text-transform:uppercase}
+.cmp-l{margin:0 0 6px;font-size:15px;line-height:1.5;color:#33363B}
+
+/* the cross-reference footer. */
+.see-also{margin:34px 0 0;padding:12px 16px;border:1px solid #E3E4DF;
+  border-radius:10px;display:flex;flex-wrap:wrap;gap:6px 20px;
+  align-items:baseline;background:#FAFAF7}
+.see-also-k{font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:#9A9EA4}
+.see-also-i{font-size:13px;color:#6B6F76}
+.see-also-i b{color:#1F5570;font-weight:600}
+
+/* --- THE PARALLEL SCENE -------------------------------------------------
+   Two people introducing themselves separately. It has to LOOK like two
+   people speaking past each other, because that is what it is -- drawn as one
+   running list it reads as a conversation, which is the thing this shape was
+   chosen to stop being. Netto, 28 Aug 2026. */
+.para-scene{display:flex;gap:16px;flex-wrap:wrap;align-items:stretch}
+.para-col{flex:1 1 260px;min-width:0;background:#FFFFFF;border:1px solid #E3E4DF;
+  border-radius:12px;padding:14px 16px 6px}
+.para-who{margin:0 0 6px;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#1F5570;
+  border-bottom:1px solid #EDEEE9;padding-bottom:8px}
+.para-col .say-line{padding-left:26px}
+.para-col .say-line-flat{margin:0 0 8px;font-size:16px;line-height:1.55}
+
+/* --- THE PICTURE STRIP --------------------------------------------------
+   Murphy's device, in the one form this series can actually draw: inline SVG
+   badges, not cartoons. See engine.js for what that limit costs.          */
+.pic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:18px}
+.pic-cell{position:relative}
+.pic-n{position:absolute;top:-2px;left:0;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:12px;font-weight:700;color:#1F5570}
+.pic-art{margin:0 0 10px 20px;background:#FFFFFF;border:1px solid #E3E4DF;
+  border-radius:10px;padding:10px;display:flex;justify-content:center}
+.pic-art img{width:100%;height:auto;max-width:180px;display:block}
+.pic-name{margin:0 0 10px 20px;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:.1em;color:#1F5570}
+.pic-cell input.wide{margin-left:20px;width:calc(100% - 20px)}
+.pic-cell .fb{margin-left:20px}
+
+/* the word box, Murphy's. The words the exercise needs, at hand, with the one
+   the worked example already used struck through so the box shrinks as the
+   learner works. Vocabulary must not be the reason a grammar exercise fails. */
+.wordbox{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 20px;padding:12px 16px;
+  border:1px solid #E3E4DF;border-radius:10px;background:#FFF;
+  font-family:"Instrument Serif",Georgia,serif;font-size:17px;color:#33363B}
+.wordbox b{font-weight:400}
+.wordbox s{color:#B9BDC2;text-decoration-thickness:1.5px}
+
+/* listen, say it, compare. No score: the comparison is the feedback. */
+.say-cell{padding:14px 0;border-top:1px solid #EDEEE9}
+.say-cell:first-child{border-top:none}
+.say-target{font-family:"Instrument Serif",Georgia,serif;font-size:20px;
+  color:#33363B;margin-bottom:10px}
+.say-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.say-btn{min-height:38px;padding:0 14px;border-radius:19px;border:1px solid #C9CBC4;
+  background:#FFF;font-family:"Instrument Sans",Arial,sans-serif;font-size:13px;
+  color:#33363B;cursor:pointer}
+.say-btn:hover:not(:disabled){border-color:#1F5570;color:#1F5570}
+.say-btn:disabled{opacity:.4;cursor:default}
+.say-btn.rec.on{background:#8C2231;border-color:#8C2231;color:#FFF}
+.say-none{font-family:"Instrument Sans",Arial,sans-serif;font-size:12px;color:#9A9EA4}
+.say-hint{margin-top:8px;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:13px;line-height:1.55;color:#6B6F76}
+.say-audio{margin-top:10px;width:100%;max-width:340px;display:block}
+.say-note{margin:16px 0 0;font-family:"Instrument Sans",Arial,sans-serif;
+  font-size:12.5px;line-height:1.6;color:#8A8F95}
+
+/* the bank speaks. Twelve words the learner is made to produce in F and G;
+   a word he has never heard comes out of his mouth as a spelling. */
+.bank-say{flex:0 0 auto;width:26px;height:26px;margin-right:10px;border-radius:50%;
+  border:1px solid #C9CBC4;background:#FFF;color:#1F5570;font-size:9px;
+  line-height:1;cursor:pointer;padding:0}
+.bank-say:hover{border-color:#1F5570;background:#EAF1F5}
+.bank-item-flat{display:flex;align-items:flex-start}
+
+/* the contraction pairs. Section 5 teaches a sound; this is the sound. */
+.ct-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.ct-btn{padding:9px 14px;border-radius:20px;border:1px solid #C9CBC4;background:#FFF;
+  font-family:"Instrument Serif",Georgia,serif;font-size:16px;color:#33363B;
+  cursor:pointer}
+.ct-btn:hover{border-color:#1F5570;color:#1F5570}
+.ct-none{opacity:.45;cursor:default}
+.say-wave{margin:10px 0 4px;max-width:340px}
+.say-verdict{font-family:"Instrument Sans",Arial,sans-serif;font-size:13px;
+  color:#6B6F76;min-height:18px}
+.say-win{color:#1F5570;font-weight:600}
+
+  #nav{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#3A3D42;}
+  .brand img{height:30px;width:30px;}
+  .brand .word{font-weight:700;letter-spacing:3px;font-size:13px;}
+  .nav-btn{display:inline-block;border:1px solid var(--navy);color:var(--navy);
+    border-radius:999px;padding:8px 16px;font-size:13px;text-decoration:none;margin-left:8px;}
+  .action-btn{border:none;border-radius:999px;padding:12px 22px;font-weight:600;
+    font-size:14px;cursor:pointer;background:var(--navy);color:#fff;}
+  .action-btn.outline{background:#fff;color:var(--navy);border:1px solid var(--navy);}
+  #gate{max-width:420px;margin:14vh auto;padding:0 24px;text-align:center;}
+  #gate h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;margin:0 0 8px;}
+  #gate p{color:#6B6F76;font-size:14px;line-height:1.6;margin:0 0 22px;}
+  #gate input{width:100%;padding:13px;border:1px solid #DCDDD6;border-radius:10px;box-sizing:border-box;
+    font-size:16px;text-align:center;letter-spacing:2px;text-transform:uppercase;}
+  #gate button{width:100%;margin-top:12px;background:#B3132B;color:#fff;border:none;
+    border-radius:999px;padding:13px;font-weight:600;font-size:14px;cursor:pointer;}
+  #gateError{color:#B3132B;font-size:13px;margin-top:10px;min-height:18px;}
+  #privacyModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);
+    align-items:center;justify-content:center;z-index:99;padding:24px;}
+  #privacyModal.shown{display:flex;}
+  #privacyModal .card{background:#fff;border-radius:16px;max-width:420px;width:100%;padding:28px 26px;}
+  #privacyModal h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:22px;margin:0 0 12px;}
+  #privacyModal p{font-size:14px;line-height:1.6;color:#3A3D42;margin:0 0 20px;}
+  #privacyModal button{width:100%;background:#B3132B;color:#fff;border:none;
+    border-radius:999px;padding:13px;font-weight:600;font-size:14px;cursor:pointer;}
+  .foot{display:flex;gap:10px;align-items:center;justify-content:space-between;
+    margin:46px 0 10px;flex-wrap:wrap;}
+  .print-reminder{font-size:12px;color:#6B6F76;margin-top:6px;text-align:right;}
+  @media print{#privacyModal,#gate,.topbar,.foot,.print-reminder{display:none !important;}}
+
+  
+  .wrap{position:relative;z-index:1;}
+  .listen-note{font-size:13px;letter-spacing:1px;color:var(--navy);font-weight:600;margin:0 0 6px;}
+  .wrong{color:var(--red);text-decoration:line-through;text-decoration-color:rgba(179,19,43,.45);}
+  /* series.css line 365 sets .wrong{white-space:nowrap}. That is CORRECT in a
+     book where .wrong holds a fragment: you do not want "he go" split across
+     two lines, because the learner reads the wrong form as one object.
+     IN THIS BOOK .wrong HOLDS WHOLE SENTENCES. nowrap ran them off the right
+     edge of the phone -- unit 9 pushed the page to 413px and unit 10 to 381px
+     against a 375px screen -- so the learner could not read the END of a
+     string he is being asked to judge. In a book whose fourth rule is about
+     what a printed error may be, half a printed error is the worst version.
+     Wrapping is allowed here. The line-through carries across the break. */
+  .wrong{white-space:normal;}
+  .muted{color:var(--gray);font-weight:400;font-family:var(--serif);font-size:15px;}
+  .hint{color:var(--gray);font-size:13.5px;font-style:italic;}
+  .hint b{color:var(--navy);font-style:normal;}
+  .one-question{background:var(--panel);border:1.5px solid var(--navy);border-radius:14px;
+    padding:20px 22px;margin:24px 0 20px;}
+  .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 10px;}
+  .one-question .oq{font-family:var(--serif);font-size:clamp(21px,3vw,26px);line-height:1.3;margin:0 0 10px;color:var(--ink);}
+  .one-question .oq-note{font-size:14.5px;line-height:1.6;color:var(--gray-dark);margin:0;}
+  .form-box{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 26px;}
+  .form-box .fb-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 10px;}
+  .form-box table{border-collapse:collapse;width:100%;font-size:15px;}
+  .form-box td{padding:7px 0;color:var(--gray-dark);vertical-align:baseline;}
+  .form-box td:nth-child(2){padding-left:18px;white-space:nowrap;}
+  .form-box td.fx{font-family:var(--serif);font-size:16.5px;color:var(--navy);padding-left:18px;text-align:right;}
+  /* THE PHONE IS NOT AN EDGE CASE, IT IS THE READER. Netto, 27 Aug 2026: the
+     books live in the app, so almost all reading is on a phone.
+     The first version hid the example column below 520px to stop the table
+     overflowing. IT DID NOT STOP THE OVERFLOW, and it hid a third of the form
+     box from almost every learner who will ever open the page: the paradigm is
+     one of the four things the explanation must carry, and its examples were
+     rendering nowhere. The row collapses to a block instead, so everything is
+     visible and nothing is wider than the column. */
+  @media (max-width:560px){
+    .form-box table,.form-box tbody,.form-box tr,.form-box td{display:block;width:auto;}
+    .form-box tr{padding:9px 0;border-bottom:1px solid var(--line);}
+    .form-box tr:last-child{border-bottom:none;padding-bottom:0;}
+    .form-box tr:first-child{padding-top:0;}
+    .form-box td{padding:1px 0 !important;text-align:left !important;white-space:normal !important;}
+    .form-box td:first-child{color:var(--gray);font-size:13px;}
+    .form-box td.fx{display:block;font-size:16.5px;padding-top:2px !important;}
+  }
+  .ambr{background:var(--white);border:1.5px solid var(--line);border-left:3px solid var(--red);
+    border-radius:0 12px 12px 0;padding:16px 20px;margin:22px 0;font-size:14.5px;line-height:1.65;color:var(--gray-dark);}
+  .ambr .ab-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--red);margin:0 0 10px;}
+  .ambr p{margin:0 0 10px;} .ambr p:last-child{margin-bottom:0;}
+  .ambr b{color:var(--ink);}
+  /* THE FIGURE IS A PICTURE, NOT A PARAGRAPH. Netto, 27 Aug 2026:
+     "deixe no maior tamanho possivel respeitando a visualizacao no celular."
+     The text column keeps its 24px gutter, because about 42 characters a line
+     is where the prose reads best. THE FIGURE DOES NOT HAVE TO OBEY THAT
+     GUTTER. On a phone it steps 8px out on each side and draws at 343 instead
+     of 327. The caption below it stays on the text margin, so the page still
+     has one left edge for everything you read as a sentence.
+     The 340px cap was the other half of the waste. On a 430px phone the
+     column offers 398 and the figure was still taking 340. The cap is now 420,
+     which no phone reaches, so THE SCREEN is the limit and not a number I
+     picked once and stopped looking at. */
+  /* THE DIALOGUE PLAYS. Netto, 27 Aug 2026: "coloque o audio apenas no dialogo."
+     THE WHOLE LINE IS THE CONTROL, not a button beside it. Six 44px buttons in a
+     six-line scene is more furniture than dialogue, and the line is already a
+     target far bigger than any button could be. The dot is the affordance. */
+  .say-line{position:relative;box-sizing:border-box;min-height:44px;
+            padding:9px 0 9px 40px;cursor:pointer;border-radius:6px;}
+  .say-line:focus-visible{outline:2px solid var(--navy);outline-offset:3px;}
+  .say-dot{position:absolute;left:0;top:9px;width:26px;height:26px;border-radius:50%;
+           border:1px solid var(--line);background:var(--white);display:flex;
+           align-items:center;justify-content:center;transition:background .12s;}
+  .say-dot::after{content:"";border-left:8px solid var(--navy);
+           border-top:5.5px solid transparent;border-bottom:5.5px solid transparent;
+           margin-left:2px;}
+  .say-line:hover .say-dot{border-color:var(--navy);background:#EAF1F5;}
+  .say-line.playing{background:var(--panel);}
+  .say-line.playing .say-dot{background:var(--navy);border-color:var(--navy);}
+  .say-line.playing .say-dot::after{border-left-color:var(--white);}
+  .scene-btn{margin-top:14px;min-height:44px;padding:0 18px;border-radius:22px;
+             border:1.5px solid var(--line);background:var(--white);color:var(--ink);
+             font:inherit;font-size:14px;cursor:pointer;}
+  .scene-btn:hover{border-color:var(--navy);}
+  .diagram svg{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;}
+  @media (max-width:460px){
+    .diagram svg{width:calc(100% + 16px);max-width:none;margin-left:-8px;margin-right:-8px;}
+  }
+  .check-btn,.reveal-btn,.choice-btn{min-height:44px;}
+  /* series.css line 319 gives .choice-btn display:inline-flex, to centre the
+     label inside a 44px tap target. THAT SILENTLY DELETES A SPACE. A flex
+     container makes each child a flex item, and the leading whitespace of an
+     anonymous text item is stripped, so
+        <em>tell</em> needs a person
+     renders as "tellneeds a person". The space IS in the HTML. Flex eats it.
+     Netto saw it before any check did, and no check I own could have seen it:
+     every one of them reads the SOURCE, where the space is present.
+     The rule is latent in four other button classes for the same reason. A1/A2
+     never tripped it because none of its options carries an inline tag. THIS
+     BOOK IS THE FIRST TO PUT ONE THERE. It has exactly two, both of them in
+     unit 16, and two was enough.
+     inline-block lays the label out as ordinary text and keeps the tap target
+     with padding instead of centring. */
+  .choice-btn{display:inline-block !important;align-items:initial;
+              padding:12px 15px !important;line-height:1.35;}
+  .review-key{margin:56px 0 0;padding:22px 24px;border:1.5px solid var(--navy);border-radius:12px;
+    background:var(--panel);font-size:14px;line-height:1.6;color:var(--gray-dark);}
+  .review-key .rk-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 14px;}
+  .review-key .rk-q{margin:16px 0 6px;color:var(--ink);}
+  .review-key .rk-q:first-of-type{margin-top:0;}
+  .review-key ol.rk{margin:0 0 4px;padding-left:22px;}
+  .review-key ol.rk li{margin:3px 0;}
+  .review-key .rk-alt{color:var(--gray);font-size:13px;}
+  .review-key .rk-match{margin:2px 0 4px;font-variant-numeric:tabular-nums;}
+  .build-note{margin:24px 0 0;padding:22px 24px;border:1.5px dashed var(--red);border-radius:12px;
+    background:#FDF6F7;font-size:13.5px;line-height:1.65;color:var(--gray-dark);}
+  .build-note p{margin:0 0 12px;} .build-note p:last-child{margin-bottom:0;}
+  .build-note b{color:var(--red);}
+</style></head><body><div id="gate">
+  <h1>Unit 29</h1>
+  <p>Present perfect: experience<br>This code unlocks every book in the series. Enter it once.</p>
+  <input type="text" id="codeInput" placeholder="ACCESS CODE" maxlength="12" autocomplete="off">
+  <button onclick="tryCode()">Unlock unit</button>
+  <div id="gateError"></div>
+</div>
+<div id="privacyModal"><div class="card">
+  <h3>Nothing is saved here</h3>
+  <p>This site doesn't have a login and doesn't store your answers, scores, or progress anywhere. Once you close or refresh the page, this session is gone for good.</p>
+  <p>If you want to keep a record of your work, use the Print / Save as PDF button at the bottom of the unit before you leave it.</p>
+  <button onclick="dismissPrivacy()">Got it</button>
+</div></div>
+<div id="content" style="display:none"><div id="nav"><a class="brand" href="a1a2.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIyMCAxNzAgNDQwIDI2MCI+CjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjwvc3ZnPgo=" alt="Concept"><span class="word">CONCEPT</span></a><div><a class="nav-btn" href="a1a2.html">&larr; Back to book</a><a class="nav-btn" href="a1a2.html">All units</a></div>
+</div>
+
+<div class="wrap">
+  <p class="sec-kicker" style="margin-top:36px;">PROFESSIONAL ENGLISH PRACTICE &nbsp;&middot;&nbsp; A2 &nbsp;&middot;&nbsp; WHAT YOU HAVE DONE</p>
+  <h2 class="sec" style="margin-top:4px;">Present perfect: experience</h2>
+  <p class="goal" style="font-size:16px;">At some time in your life, and the time does not matter.</p>
+
+  <p class="sec-kicker" style="margin-top:48px;">ACCESS</p>
+  <p class="goal"><b>Goal.</b> Two people finding out where the other one has been. Listen and read at the same time, and notice what is missing from every single line.</p>
+  <div class="dialogue">
+    <p class="say-line" data-a="u29-ac-have_you_ever_been_to_japan-259c" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Mia</span>Have you ever been to Japan?</p>
+    <p class="say-line" data-a="u29-ac-no_i_haven_t_but_i_ve_visited-efa2" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Sam</span>No, I haven't. But I've visited China.</p>
+    <p class="say-line" data-a="u29-ac-nice_i_ve_never_been_to_asia-77b6" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Mia</span>Nice! I've never been to Asia.</p>
+    <p class="say-line" data-a="u29-ac-really_have_you_traveled_a_lot-48ec" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Sam</span>Really? Have you traveled a lot?</p>
+    <p class="say-line" data-a="u29-ac-a_bit_i_ve_seen_most_of_europe-0aad" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Mia</span>A bit. I've seen most of Europe.</p>
+    <p class="say-line" data-a="u29-ac-cool_i_ve_never_worked_abroad-c9df" role="button" tabindex="0"><span class="say-dot" aria-hidden="true"></span><span class="who">Sam</span>Cool. I've never worked abroad, though.</p>
+    <button class="scene-btn" onclick="playScene()">Play the whole conversation</button>
+  </div>
+  <div class="ex-block" style="border-top:none;padding-top:8px;margin-top:18px;">
+    <p class="listen-note"><b>Test your perception.</b></p>
+    <p class="ex-instr">Three questions about what you heard. Answer them before you read the explanation.</p>
+    <div id="exR"></div>
+    <button class="check-btn" onclick="checkPick('R',R_DATA,'Yes.','Not that one.')">Check</button>
+    <div class="fb" id="Rscore"></div>
+  </div>
+
+  <p class="sec-kicker" style="margin-top:52px;">VOCABULARY</p>
+  <p class="body-copy">Six words for travel and the papers it needs, two verbs you will put in this tense constantly, and four words for saying how much of something you have done.</p>
+  <div class="bank">
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-a_continent-6d9d" aria-label="say a continent">&#9654;</button><span class="bank-body"><span class="bank-word">a continent</span><span class="bank-sent">Europe, Asia or Africa</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-a_passport-4427" aria-label="say a passport">&#9654;</button><span class="bank-body"><span class="bank-word">a passport</span><span class="bank-sent">you need it to leave your country</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-a_visa-f2be" aria-label="say a visa">&#9654;</button><span class="bank-body"><span class="bank-word">a visa</span><span class="bank-sent">the paper that lets you enter a country</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-a_language-dc19" aria-label="say a language">&#9654;</button><span class="bank-body"><span class="bank-word">a language</span><span class="bank-sent">English, Spanish or Japanese</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-a_souvenir-fba8" aria-label="say a souvenir">&#9654;</button><span class="bank-body"><span class="bank-word">a souvenir</span><span class="bank-sent">the small thing you bring home from a trip</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-an_experience-6b88" aria-label="say an experience">&#9654;</button><span class="bank-body"><span class="bank-word">an experience</span><span class="bank-sent">something that happened to you and stayed with you</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-to_fly-73fc" aria-label="say to fly">&#9654;</button><span class="bank-body"><span class="bank-word">to fly</span><span class="bank-sent">she flies to another country twice a year</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-to_climb-1cf7" aria-label="say to climb">&#9654;</button><span class="bank-body"><span class="bank-word">to climb</span><span class="bank-sent">he climbs the stairs every morning</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-ever-4c9f" aria-label="say ever">&#9654;</button><span class="bank-body"><span class="bank-word">ever</span><span class="bank-sent">at any time in your whole life</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-a_bit-7581" aria-label="say a bit">&#9654;</button><span class="bank-body"><span class="bank-word">a bit</span><span class="bank-sent">a small amount of it</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-most_of-63a7" aria-label="say most of">&#9654;</button><span class="bank-body"><span class="bank-word">most of</span><span class="bank-sent">nearly all of it</span></span></div>
+    <div class="bank-item bank-item-flat"><button class="bank-say" data-play="u29-bk-though-01ca" aria-label="say though">&#9654;</button><span class="bank-body"><span class="bank-word">though</span><span class="bank-sent">and that is the other side of it</span></span></div>
+  </div>
+
+  <p class="sec-kicker" style="margin-top:52px;">ANALYSIS</p>
+  <p class="goal"><b>Goal.</b> A tense with no time in it, the third form of the verb, and the two words that widen a question to a whole life.</p>
+
+  <div class="one-question">
+    <p class="oq-label">ONE QUESTION RUNS THIS WHOLE UNIT</p>
+    <p class="oq"><b>Does the sentence say when?</b></p>
+    <p class="oq-note">If it does, this is the wrong tense. <em>I've been to Japan</em> is about a life; <em>I went to Japan in 2019</em> is about a year. The moment you name the moment, unit 22's tense takes over. That one rule settles almost every mistake in this unit.</p>
+  </div>
+
+  <div class="form-box"><p class="fb-label">THE FORM</p><table>
+    <tr><td>I, you, we, they &rarr;</td><td><b>have</b> + third form</td><td class="fx">I've visited China.</td></tr>
+    <tr><td>he, she, it &rarr;</td><td><b>has</b> + third form</td><td class="fx">She has seen Europe.</td></tr>
+    <tr><td>to say no &rarr;</td><td><b>haven't</b> / <b>hasn't</b></td><td class="fx">No, I haven't.</td></tr>
+    <tr><td>in a question &rarr;</td><td><b>ever</b>, after the person</td><td class="fx">Have you ever been to Japan?</td></tr>
+    <tr><td>in the answer &rarr;</td><td><b>never</b>, before the verb</td><td class="fx">I've never been to Asia.</td></tr>
+    <tr><td>never &rarr;</td><td>a time word in the sentence</td><td class="fx">I've visited China.</td></tr>
+  </table></div>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>Two words, and the second one is often new</b></p>
+  <p class="body-copy">Use <b>have</b>, or <b>has</b> for one other person, and then a third form of the verb.</p>
+  <p class="body-copy">For a regular verb the third form is unit 21's past, unchanged: <em>visit &rarr; visited, travel &rarr; traveled, work &rarr; worked</em>.</p>
+  <p class="body-copy">For an irregular verb it is often a new word: <em>be &rarr; been, see &rarr; seen, go &rarr; gone</em>.</p>
+  <p class="body-copy">And six more of the same kind: <em>do &rarr; done, take &rarr; taken, eat &rarr; eaten, give &rarr; given, know &rarr; known, fly &rarr; flown</em>.</p>
+  <p class="body-copy">So learn the third form beside the second one, from now on. <em>go, went, gone.</em> Say all three every time you meet a new verb.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>The sentence must not say when</b></p>
+  <p class="body-copy">This is the rule that decides everything else, and it is the one thing to get right.</p>
+  <p class="body-copy">The tense says that something has happened in your life. The moment is not part of what you are saying, so it cannot appear.</p>
+  <p class="body-copy">Six lines in the scene, and not one date, month or year. Sam says &ldquo;I've visited China&rdquo; and stops.</p>
+  <p class="body-copy">So check for a time word before you speak. If there is one, use unit 22's tense instead. Never &ldquo;<span class='wrong'>I've been to Japan in 2019.</span>&rdquo;</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>Ever asks about a whole life</b></p>
+  <p class="body-copy">This tense has two small words of its own, and both of them are in the scene.</p>
+  <p class="body-copy"><b>Ever</b> goes in the question, after the person: &ldquo;Have you <b>ever</b> been to Japan?&rdquo; It means at any time at all.</p>
+  <p class="body-copy"><b>Never</b> goes in the answer, before the third form: &ldquo;I've <b>never</b> been to Asia.&rdquo; It is already negative, exactly as in unit 12.</p>
+  <p class="body-copy">So use <em>ever</em> to ask and <em>never</em> to answer, and do not put <em>not</em> in a sentence that already has <em>never</em>.</p>
+  <p class="body-copy" style="margin-top:26px;margin-bottom:14px;"><b>The short answer, and what people say next</b></p>
+  <p class="body-copy">The answer is the helper, as it has been since unit 9, and then a sentence that says more.</p>
+  <p class="body-copy">Sam answers &ldquo;No, I <b>haven't</b>&rdquo; and then adds the thing he has done: &ldquo;But I've visited China.&rdquo;</p>
+  <p class="body-copy">That second sentence is what makes the conversation continue, and it is what both speakers do every time.</p>
+  <p class="body-copy">So answer short, then give one thing you have done instead. Two sentences, and the other person has something to ask about.</p>
+  <div class="split" style="margin-top:26px;">
+    <div class="card-col"><h4>Two words, and the second one is often new</h4><dl>
+      <dt>The idea</dt><dd><b>have</b> or <b>has</b>, then a third form. Regular verbs keep unit 21's past; irregular ones often change again.</dd>
+      <dt>from the scene</dt><dd>I've visited China &middot; I've seen most of Europe &middot; I've never worked abroad</dd>
+      <dt>from your own week</dt><dd>I've flown to Asia &middot; She's climbed it</dd>
+      <dt>never</dt><dd><span class='wrong'>I've saw Europe</span></dd>
+    </dl><div class="eg">But I've visited China.</div></div>
+    <div class="card-col"><h4>The sentence must not say when</h4><dl>
+      <dt>The idea</dt><dd>The moment is not part of the meaning, so it cannot be in the sentence.</dd>
+      <dt>from the scene</dt><dd>Have you ever been to Japan? &middot; I've seen most of Europe</dd>
+      <dt>from your own week</dt><dd>I've been to three continents</dd>
+      <dt>never</dt><dd><span class='wrong'>I've been to Japan in 2019</span></dd>
+    </dl><div class="eg">I've seen most of Europe.</div></div>
+    <div class="card-col"><h4>Ever asks about a whole life</h4><dl>
+      <dt>The idea</dt><dd><b>ever</b> in the question, after the person. <b>never</b> in the answer, before the verb.</dd>
+      <dt>from the scene</dt><dd>Have you ever been to Japan? &middot; I've never been to Asia</dd>
+      <dt>from your own week</dt><dd>Have you ever flown to Asia?</dd>
+      <dt>never</dt><dd><span class='wrong'>I haven't never been</span></dd>
+    </dl><div class="eg">I've never been to Asia.</div></div>
+    <div class="card-col"><h4>The short answer, and what people say next</h4><dl>
+      <dt>The idea</dt><dd>Answer with the helper, then add one thing you have done instead.</dd>
+      <dt>from the scene</dt><dd>No, I haven't. But I've visited China.</dd>
+      <dt>from your own week</dt><dd>No, I haven't. But I've been to Spain.</dd>
+      <dt>never</dt><dd><span class='wrong'>No, I didn't.</span></dd>
+    </dl><div class="eg">No, I haven't. But I've visited China.</div></div>
+  </div>
+  <div class="callout"><p><b>Watch out</b></p>
+    <p><b>No time word in the sentence.</b> Say &ldquo;I've been to Japan.&rdquo; Never &ldquo;<span class='wrong'>I've been to Japan in 2019.</span>&rdquo; Name the year and you need unit 22's tense.</p>
+    <p><b>The second word is the third form, not the past.</b> Say &ldquo;I've <b>seen</b> Europe.&rdquo; Never &ldquo;<span class='wrong'>I've saw Europe.</span>&rdquo;</p>
+    <p><b>Never is already the no.</b> Say &ldquo;I've <b>never</b> been to Asia.&rdquo; Never &ldquo;<span class='wrong'>I haven't never been to Asia.</span>&rdquo;</p>
+  </div>
+  <p class="body-copy" style="margin-top:26px;"><b>The moves</b></p>
+  <p class="body-copy" style="font-size:14.5px;color:var(--gray);">Say the two words, and say no time at all. The frame does not change; only the blue words do.</p>
+  <div class="split" style="margin-top:14px;">
+    <div class="card-col"><h4>what you have done</h4><ul class="moves">
+      <li>I've <span class="slot">[visited, seen]</span> <span class="slot">[China, most of Europe]</span>.</li>
+      <li>She's <span class="slot">[flown, been]</span> to <span class="slot">[Asia, three continents]</span>.</li>
+      <li>We've <span class="slot">[climbed, seen]</span> <span class="slot">[it, everything]</span>.</li>
+      <li>I've <span class="slot">[never]</span> <span class="slot">[worked, lived]</span> abroad.</li>
+    </ul></div>
+    <div class="card-col"><h4>asking, and answering short</h4><ul class="moves">
+      <li><span class="slot">[Have]</span> you <span class="slot">[ever]</span> been to <span class="slot">[Japan, Asia]</span>?</li>
+      <li><span class="slot">[Have]</span> you <span class="slot">[traveled, flown]</span> a lot?</li>
+      <li>No, I <span class="slot">[haven't]</span>.</li>
+      <li>Yes, <span class="slot">[I have, a bit]</span>.</li>
+    </ul></div>
+  </div>
+  <div class="diagram"><svg viewBox="0 -4 342 116" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Two boxes. The left box reads I've been to Japan, labelled no
+     time, a whole life. The right box reads I went to Japan in 2019, with in
+     2019 highlighted, labelled a time, so a different tense.">
+  <text x="10" y="16" font-family="Instrument Serif, Georgia, serif" font-size="15" fill="#1F5570">Does the sentence say when?</text>
+
+  <rect x="10" y="32" width="146" height="32" rx="6" fill="#EAF1F5" stroke="#1F5570" stroke-width="1.6"/>
+  <text x="83" y="53" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" fill="#1F5570">I've <tspan font-weight="600">been</tspan> to Japan.</text>
+
+  <rect x="188" y="32" width="146" height="32" rx="6" fill="#F4F4F1" stroke="#C9CBC4" stroke-width="1.5"/>
+  <text x="261" y="53" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="12" fill="#33363B">I went to Japan <tspan font-weight="600">in 2019</tspan>.</text>
+
+  <text x="83" y="84" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="10.5" fill="#6B6F76">no time: a whole life</text>
+  <text x="261" y="84" text-anchor="middle" font-family="Instrument Sans, Arial, sans-serif" font-size="10.5" fill="#6B6F76">a time: unit 22's tense</text>
+</svg>
+    <p class="diagram-cap">A whole life on the left, one year on the right, and the time word is what moves the sentence across.</p>
+  </div>
+  
+  <p class="cmp-head">A life, and a year</p>
+  <div class="cmp">
+    <div class="cmp-col"><p class="cmp-t">no time: this tense</p>
+      <p class="cmp-l">I've been to Japan.</p>
+      <p class="cmp-l">I've visited China.</p>
+      <p class="cmp-l">She's seen most of Europe.</p>
+      <p class="cmp-l">I've never worked abroad.</p>
+    </div>
+    <div class="cmp-col"><p class="cmp-t">a time: unit 22's tense</p>
+      <p class="cmp-l">I went to Japan in 2019.</p>
+      <p class="cmp-l">I visited China last year.</p>
+      <p class="cmp-l">She saw Europe on that trip.</p>
+      <p class="cmp-l">I worked abroad for a year.</p>
+    </div>
+  </div>
+
+  
+
+  
+
+  <p class="body-copy" style="margin-top:26px;"><b>Why this works</b></p>
+  <p class="body-copy">This is the tense of every conversation with somebody you just met: where you have been, what you have done, what you have never tried. It is also the first tense that is not about when, which is why the rule is a prohibition rather than a meaning. Look for the time word.</p>
+
+  <p class="sec-kicker" style="margin-top:52px;">ACTIVATION</p>
+  <p class="goal"><b>Goal.</b> Six written exercises, one recording, and one speaking task. In every written exercise the first item is done for you, so you can see the shape before you make it.</p>
+  <div class="ex-block"><span class="ex-label">A</span>
+    <p class="ex-title">Write the two words</p>
+    <p class="ex-instr">Choose <em>have</em> or <em>has</em> by the person, then write the third form of the verb in brackets.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span>I ______ (visit) China. &rarr; I <u>have visited</u> China.</span></p>
+    <div id="exA"></div>
+    <button class="check-btn" onclick="checkGaps(&quot;A&quot;,A_DATA)">Check</button>
+    <div class="fb" id="Ascore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">B</span>
+    <p class="ex-title">Which tense</p>
+    <p class="ex-instr">Look for a time word. If there is one, use unit 22's tense. If there is none, use this one.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span>I ______ (go) to Japan in 2019. &rarr; I <u>went</u> to Japan in 2019.</span></p>
+    <div id="exB"></div>
+    <button class="check-btn" onclick="checkGaps(&quot;B&quot;,B_DATA)">Check</button>
+    <div class="fb" id="Bscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">C</span>
+    <p class="ex-title">Spot and fix the error</p>
+    <p class="ex-instr">Each sentence has one mistake. Write it correctly.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span><i>I've been to Japan in 2019.</i> &rarr; I went to Japan in 2019.</span></p>
+    <div id="exC"></div>
+    <button class="check-btn" onclick="checkRepair(&quot;C&quot;,C_DATA)">Check</button>
+    <div class="fb" id="Cscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">D</span>
+    <p class="ex-title">The words you need</p>
+    <p class="ex-instr">Match each word to a sentence with it in.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span>a continent &rarr; <u>g</u></span></p>
+    <div id="exD"></div>
+    <button class="check-btn" onclick="checkMatch(&quot;D&quot;,D_TERMS,D_KEY)">Check</button>
+    <div class="fb" id="Dscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">E</span>
+    <p class="ex-title">Write a sentence</p>
+    <p class="ex-instr">Use the word, and write one sentence about your life, with no time in it.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span><i>a souvenir</i> &rarr; I've brought a souvenir from every trip.</span></p>
+    <div id="exE"></div>
+    <button class="check-btn" onclick="checkWrite(&quot;E&quot;,E_DATA,E_RULE)">Check</button>
+    <div class="fb" id="Escore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">F</span>
+    <p class="ex-title">Write the sentence</p>
+    <p class="ex-instr">Look at each one. Write one sentence about your life, with no time in it.</p>
+    <p class="ex-worked"><span class="ex-worked-n">like this</span><span><i>a stamp in a book &middot; PASSPORT</i> &rarr; I've been to four countries.</span></p>
+    <div id="exF"></div>
+    <button class="check-btn" onclick="checkPicture(&quot;F&quot;,F_DATA,F_RULE)">Check</button>
+    <div class="fb" id="Fscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">G</span>
+    <p class="ex-title">Say it after the speaker</p>
+    <p class="ex-instr">These are three of Mia's lines from the conversation. Listen to one, say it out loud, record yourself, and compare the two shapes. Nobody is marking this.</p>
+    <div id="exG"></div>
+    <div class="fb" id="Gscore"></div>
+  </div>
+  <div class="ex-block"><span class="ex-label">H</span>
+    <p class="ex-title">Over to you</p>
+    <p class="ex-instr">Not graded. This is where the form stops being a rule and becomes a sentence you say.</p>
+    <div class="task-box">
+      <p><b>Say four things you have done in your life</b> and two you have never done. No dates in any of the six.</p>
+      <p><b>Now say two of them again with a year.</b> The verb has to change; say both versions and hear the difference.</p>
+      <p><b>Ask your partner six questions with <em>Have you ever</em>.</b> He answers short first, then adds one thing he has done instead.</p>
+      <p><b>In pairs.</b> Find three things you have both done and one neither of you has. Say them all without naming a single date.</p>
+    </div>
+  </div>
+  <div class="see-also"><span class="see-also-k">See also</span>
+    <span class="see-also-i">the tense that takes a time word <b>unit 22</b></span>
+    <span class="see-also-i">the have you already know, in the present <b>unit 10</b></span>
+    <span class="see-also-i">never, and where it stands <b>unit 12</b></span>
+    <span class="see-also-i">for and since, and how long it has been <b>unit 30</b></span>
+    <span class="see-also-i">the two tenses side by side <b>unit 31</b></span>
+  </div>
+  </div><div class="foot"><a class="nav-btn" href="a1a2.html">&larr; All units</a><button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button></div><p class="print-reminder">Nothing here is saved. Print before you leave the page.</p></div><script>var VALID_CODES = ["AB-6567", "AD-1652", "AF-3892", "AF-6525", "AH-6558", "AK-2388", "AL-5227", "AN-3666", "AO-1929", "AQ-1403", "AR-1212", "AS-8941", "AT-3988", "AU-9614", "AW-1121", "AW-5920", "AY-3957", "AY-8830", "BB-7565", "BI-0990", "BJ-0189", "BJ-2537", "BJ-7138", "BL-1583", "BL-3205", "BL-9902", "BN-2930", "BO-5513", "BQ-9974", "BU-2315", "BU-3356", "BU-4201", "BW-0098", "BY-5952", "BY-8964", "CA-3321", "CA-5707", "CA-7225", "CE-4217", "CE-7673", "CG-8575", "CH-3047", "CM-5599", "CN-0288", "CO-2672", "CO-7250", "CP-0265", "CP-3323", "CQ-7403", "CQ-8469", "CR-3646", "CS-4766", "CU-8380", "CU-8619", "CX-8573", "CX-9951", "CZ-8599", "DB-1837", "DD-7645", "DE-3739", "DE-6860", "DF-6761", "DH-1654", "DH-4587", "DI-3846", "DJ-1666", "DJ-8783", "DJ-9635", "DK-6801", "DR-4798", "DU-0538", "DU-2870", "DU-7191", "DY-1342", "DZ-6215", "EA-5295", "EB-7574", "EI-2870", "EJ-2435", "EJ-7588", "EK-3626", "EL-5403", "EL-7751", "EM-4758", "EN-5720", "EP-8690", "EU-1749", "EU-4668", "EY-0156", "EY-5028", "EY-5771", "EY-8988", "EZ-4901", "EZ-7238", "FA-2480", "FA-3229", "FD-0817", "FD-2307", "FD-2954", "FD-9547", "FF-6110", "FF-8319", "FH-0212", "FI-7378", "FK-4255", "FN-0921", "FN-5013", "FO-3645", "FS-3397", "FU-5114", "FV-4372", "FW-7388", "FX-5735", "FX-8026", "GA-7376", "GC-0379", "GC-0593", "GC-7846", "GD-4624", "GD-8256", "GE-7330", "GG-5258", "GJ-2971", "GJ-8315", "GK-1640", "GK-6237", "GO-2922", "GQ-8518", "GS-0957", "GU-4499", "GX-1422", "GY-4850", "GY-8831", "GZ-1807", "HC-5667", "HD-6398", "HD-6695", "HG-8960", "HI-5126", "HM-0814", "HN-5191", "HR-1799", "HS-0660", "HS-8959", "HT-1159", "HU-6366", "HV-7356", "HX-4184", "HY-8543", "HZ-0868", "HZ-4384", "HZ-4394", "IA-9592", "ID-9262", "IG-2279", "IH-1623", "II-1515", "IL-0808", "IL-2856", "IM-2202", "IN-2853", "IP-2206", "IP-6428", "IS-6888", "IT-7177", "IT-9370", "IU-6890", "IW-7209", "IW-7334", "IX-7882", "IZ-4596", "IZ-5460", "JA-3789", "JA-8127", "JB-4864", "JB-5887", "JB-8392", "JD-3404", "JE-8781", "JG-5409", "JI-6836", "JI-7780", "JJ-1294", "JK-5150", "JL-9806", "JN-9881", "JO-4953", "JP-2813", "JR-6563", "JT-5889", "JU-0546", "KC-4490", "KD-3748", "KF-9500", "KG-2805", "KH-1496", "KM-0226", "KM-6267", "KM-9998", "KN-9232", "KO-2249", "KP-5927", "KQ-1642", "KQ-2174", "KQ-4629", "KS-0562", "KS-2035", "KT-5622", "KX-3719", "KX-5687", "KZ-9069", "LA-3641", "LC-9505", "LF-2835", "LF-3440", "LF-5723", "LG-4259", "LH-0762", "LI-1652", "LJ-4532", "LK-6242", "LM-2637", "LP-6442", "LR-3052", "LR-3190", "LR-3876", "LU-6959", "LY-2430", "LY-8251", "MB-0985", "MC-0432", "MD-5355", "MD-6035", "MF-4039", "MH-8350", "MK-6490", "ML-1094", "ML-6536", "MM-0505", "MM-4633", "MN-6227", "MP-2446", "MU-0263", "MU-1972", "MU-6200", "MV-9345", "MW-3909", "MX-7105", "MZ-7757", "MZ-9673", "NA-6476", "ND-2505", "NE-2445", "NG-4097", "NI-0149", "NI-1933", "NM-4728", "NM-6484", "NQ-0471", "NQ-0763", "NQ-8797", "NS-2836", "NT-1247", "NT-2961", "NT-8096", "NV-2259", "NW-4877", "NX-8284", "OB-2118", "OC-9941", "OD-2269", "OH-9176", "OK-1376", "OL-9223", "OM-3600", "OM-9841", "OO-7410", "OP-0397", "OQ-0089", "OQ-6861", "OS-1295", "OT-0558", "OU-1086", "OZ-3311", "PE-6681", "PF-1393", "PF-5372", "PF-6218", "PI-7454", "PM-5473", "PO-3136", "PO-4375", "PO-6594", "PP-5386", "PW-1775", "PW-8454", "QA-2276", "QB-9637", "QG-4980", "QI-4570", "QI-8762", "QJ-3229", "QK-9389", "QK-9591", "QP-1713", "QP-2800", "QU-3388", "QU-6791", "QV-6067", "QX-4220", "RA-0723", "RA-7714", "RA-9103", "RB-3503", "RC-9055", "RG-8909", "RG-8964", "RG-9044", "RH-0746", "RH-6442", "RN-2614", "RP-8912", "RR-0677", "RS-6858", "RS-6869", "RT-0649", "RT-4827", "RT-9471", "RV-9405", "RW-6355", "RY-1670", "RY-3755", "RY-4569", "SA-4126", "SB-4542", "SC-6853", "SD-6526", "SD-8485", "SH-2111", "SI-6535", "SK-0128", "SK-6149", "SL-2687", "SL-6976", "SL-7928", "SN-9048", "SO-9187", "SQ-1122", "SR-9043", "SR-9835", "ST-1671", "SW-6772", "SX-8305", "SY-5519", "SY-7251", "TB-1236", "TC-3500", "TC-4264", "TD-4528", "TE-3783", "TF-4337", "TF-5946", "TG-4810", "TH-0894", "TL-5384", "TN-6202", "TO-4008", "TO-7503", "TP-3931", "TR-3063", "TV-0181", "TW-7963", "TW-9135", "TY-7002", "UA-5949", "UB-7783", "UB-9445", "UE-0444", "UF-5448", "UG-1507", "UH-0750", "UJ-4353", "UL-1840", "UM-7749", "UN-1590", "UO-0016", "UO-7188", "UQ-0062", "US-3875", "US-5935", "US-6661", "US-7320", "UT-3058", "UT-3191", "UW-5490", "VA-8631", "VB-1375", "VC-0785", "VC-8246", "VC-8661", "VG-3345", "VG-5533", "VG-7188", "VH-6911", "VI-0235", "VJ-9942", "VK-0601", "VK-7802", "VL-5404", "VM-7528", "VN-0611", "VP-6098", "VQ-8570", "VS-1740", "VS-2601", "VS-6960", "VT-6564", "VW-0371", "VX-3419", "VZ-1036", "VZ-1836", "WA-6224", "WB-0446", "WC-4705", "WC-5293", "WC-7126", "WG-1442", "WG-4319", "WG-7876", "WH-7291", "WI-6394", "WL-6650", "WM-1936", "WM-3402", "WM-3514", "WO-4160", "WO-9743", "WP-5457", "WV-1968", "WW-2749", "WY-0407", "XC-0115", "XC-4025", "XC-5579", "XE-5640", "XE-8199", "XE-8990", "XJ-7882", "XL-0683", "XL-1983", "XL-8634", "XO-8511", "XP-7585", "XQ-3502", "XR-5738", "XT-4226", "XU-8893", "XV-2651", "XW-2661", "YA-4779", "YA-6871", "YD-8536", "YF-6161", "YH-6239", "YI-0086", "YI-0777", "YI-3786", "YK-1311", "YK-7066", "YQ-7512", "YU-2273", "YU-9619", "YV-6712", "ZC-0180", "ZD-3923", "ZD-9426", "ZE-9214", "ZF-5917", "ZF-6868", "ZG-1159", "ZG-5395", "ZH-6679", "ZH-9625", "ZK-7397", "ZL-0255", "ZM-4958", "ZN-2112", "ZN-7991", "ZN-9807", "ZO-3469", "ZO-4134", "ZP-7760", "ZQ-4512", "ZQ-5687", "ZU-2853", "ZU-9981", "ZV-9981", "ZW-7998", "ZY-0638", "ZZ-2645"];
+
+/* ADDITIVE ONLY, and copied from C1 so the whole series behaves the same.
+   A direct visitor has window.self === window.top, so this returns false at
+   once and the gate behaves exactly as it always has. It exists because the
+   Coach FRAMES the published page rather than keeping a copy of it, and a
+   student who already unlocked the book in the app must not meet the gate
+   again inside it. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
+/* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
+   before the series had a shared key. Honouring it is what keeps an existing
+   student from being asked for a code they already used. */
+function hasAccess(){
+  if(framedByApp()){ return true; }
+  try{ return localStorage.getItem('cm_access')==='1' ||
+              localStorage.getItem('cm_pv_access')==='1'; }
+  catch(e){ return false; }
+}
+function dismissPrivacy(){
+  document.getElementById('privacyModal').classList.remove('shown');
+  try{ localStorage.setItem('cm_privacy','1'); }catch(e){}
+}
+function maybeShowPrivacyModal(){
+  var seen=false; try{ seen = localStorage.getItem('cm_privacy')==='1'; }catch(e){}
+  if(!seen) document.getElementById('privacyModal').classList.add('shown');
+}
+function openUnit(){
+  document.getElementById('gate').style.display='none';
+  document.getElementById('content').style.display='block';
+  buildAll();
+  maybeShowPrivacyModal();
+}
+function tryCode(){
+  var v = document.getElementById('codeInput').value.trim().toUpperCase();
+  if(VALID_CODES.indexOf(v) !== -1){ grantAccess(); openUnit(); }
+  else { document.getElementById('gateError').textContent =
+    'That code was not recognised. Check it and try again.'; }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(hasAccess()) openUnit();
+  var i=document.getElementById('codeInput');
+  if(i) i.addEventListener('keydown', function(e){ if(e.key==='Enter') tryCode(); });
+});
+
+/* THE SHARED ENGINE. One copy for the book, per-unit data supplied by the
+   module. Unit 1 carried its own copy and that is a second place to be wrong. */
+/* CONTRACTIONS ARE EXPANDED BEFORE COMPARING, so a learner who writes `I've
+   gone` is not marked wrong against a key that says `I have gone`. Netto asked
+   whether the answer key is coherent; it was not. An instrument that fed each
+   item its own model answer in contracted form found 115 correct alternatives
+   refused across the book, almost all of them in the repair exercise.
+
+   `'d` IS DELIBERATELY LEFT ALONE. It expands to both `had` and `would`, so
+   normalising it would make `I'd read more` match a key that reads `I had read
+   more`, and the checker would start accepting the exact error the conditional
+   units exist to prevent. Those items list their alternatives by hand instead. */
+function expand(s){
+ /* `amn't` NAO E UMA CONTRACAO DO INGLES, e por isso a unidade 2 a ensina como
+    erro. Sem esta linha a regra geral de `n't` a lia como `am not`, o erro e a
+    resposta viravam a mesma string, e a pagina aprovava `I amn't on the list.`
+    O behaviour.html da serie pegou isso em 31 ago 2026. Ela e mantida como uma
+    palavra so, para continuar diferente de `am not`. */
+ return s.replace(/\bamn't\b/g,'amnt')
+         .replace(/\bcan't\b/g,'can not').replace(/\bcannot\b/g,'can not')
+         .replace(/\bwon't\b/g,'will not').replace(/\bshan't\b/g,'shall not')
+         .replace(/n't\b/g,' not')
+         .replace(/'ve\b/g,' have').replace(/'ll\b/g,' will')
+         .replace(/'re\b/g,' are').replace(/'m\b/g,' am')
+         .replace(/\s+/g,' ');
+}
+function norm(s){return expand((s||'').toLowerCase().replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[.!?,;]+$/,'').replace(/\s+/g,' ').trim()).trim();}
+function setfb(id,ok,html){var e=document.getElementById(id);e.className='fb '+(ok?'ok':'bad');e.innerHTML=html;}
+function tally(L,c,n){setfb(L+'score',c===n,c+' / '+n+' correct.');}
+var PICK={};
+
+/* MULTIPLE CHOICE, used by the Access check and by the framing exercise. */
+function buildPick(L,data,stack){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var st=stack?' style="flex-direction:column;align-items:stretch;"':'';
+  var bs=stack?' style="text-align:left;border-radius:10px;"':'';
+  var h='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+(stack?'<b>'+it.s+'</b>':it.q)+'</div><div class="choices"'+st+'>';
+  it.o.forEach(function(o,j){h+='<button class="choice-btn"'+bs+' id="'+L+i+'_'+j+'" onclick="pick(\''+L+'\','+i+','+j+')">'+o+'</button>';});
+  h+='</div><div class="fb" id="'+L+'fb'+i+'"></div>';d.innerHTML=h;el.appendChild(d);});}
+function pick(L,i,j){PICK[L+i]=j;
+ var n=document.querySelectorAll('[id^="'+L+i+'_"]');
+ for(var k=0;k<n.length;k++){n[k].className='choice-btn'+(k===j?' picked':'');}}
+function checkPick(L,data,yes,no){var c=0;data.forEach(function(it,i){
+ var p=PICK[L+i],ok=(p===it.a);if(ok)c++;
+ if(p!==undefined)document.getElementById(L+i+'_'+p).className='choice-btn '+(ok?'correct':'wrong');
+ if(!ok)document.getElementById(L+i+'_'+it.a).className='choice-btn correct';
+ setfb(L+'fb'+i,ok,(ok?yes:no)+' '+it.why);});tally(L,c,data.length);}
+
+/* GAP FILL with one or two gaps per item. */
+function buildGaps(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var h='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+it.t+'</div><div class="answer-row">';
+  it.a.forEach(function(_,j){h+='<input type="text" id="'+L+i+'_'+j+'" placeholder="'+(it.a.length>1?(j===0?'first gap':'second gap'):'answer')+'">';});
+  h+='</div><div class="fb" id="'+L+'fb'+i+'"></div>';d.innerHTML=h;el.appendChild(d);});}
+function checkGaps(L,data){var c=0;data.forEach(function(it,i){var ok=true;
+ it.a.forEach(function(alts,j){var v=norm(document.getElementById(L+i+'_'+j).value);
+  if(alts.map(norm).indexOf(v)<0)ok=false;});
+ if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?'Good.':'Not yet. &nbsp;<span class="muted">'+it.a.map(function(x){return x[0];}).join(' &nbsp;/&nbsp; ')+'</span>');});
+ tally(L,c,data.length);}
+
+/* REPAIR. EVERY PRINTED STRING IS ENGLISH THE LANGUAGE NEVER ALLOWS. */
+function buildRepair(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span><span class="wrong">'+it.q+'</span></div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="write it correctly">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkRepair(L,data){var c=0;data.forEach(function(it,i){
+ var v=norm(document.getElementById(L+i).value),ok=it.a.map(norm).indexOf(v)>=0;if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?'Good.':'Not yet. &nbsp;<span class="muted">'+it.a[0]+'</span>');});
+ tally(L,c,data.length);}
+
+/* JOIN. Presence, shape and ORDER, and never truth. `cont` names the verb that
+   must carry the marked form, which is what stops the checker from rewarding
+   the exact analysis the unit exists to prevent. */
+function buildJoin(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  var hint=it.start?' <span class="hint">(start with <b>'+it.start+'</b>)</span>':'';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span>'+it.t+hint+'</div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="one sentence">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkJoin(L,data,rule){var c=0;data.forEach(function(it,i){
+ var raw=(document.getElementById(L+i).value||'').trim(),low=raw.toLowerCase(),why='';
+ var first=(low.split(/\s+/)[0]||'').replace(/[^a-z]/g,''),comma=raw.indexOf(',');
+ /* ONE ITEM MAY OVERRIDE THE MARK. The rule is the exercise's, but an item can
+    demand something the others do not -- a word the learner has to SUPPLY
+    rather than copy. Without this the demand has to go into `cont`, which is
+    documented as naming a verb, and a checker whose fields lie is one nobody
+    can maintain. */
+ var mkSrc=it.mark||rule.mark, mkWhy=it.markWhy||rule.markWhy;
+ var markRx=new RegExp(mkSrc.replace('STEM',it.cont||'\\w+'),'i');
+ if(!raw)why='Write one sentence.';
+ else if(it.start&&first!==it.start)why='Start this one with <b>'+it.start+'</b>.';
+ else if(rule.join&&!new RegExp(rule.join,'i').test(low))why=rule.joinWhy;
+ else if(!markRx.test(raw))why=mkWhy;
+ else if(rule.frontWords&&new RegExp('^('+rule.frontWords+')\\b','i').test(low)&&comma<0)
+   why='You started with <b>'+first+'</b>, so the sentence needs a comma in the middle.';
+ else if(rule.before&&new RegExp('^('+rule.before+')\\b','i').test(low)&&!markRx.test(raw.slice(0,comma)))
+   why=rule.beforeWhy;
+ else if(rule.after&&new RegExp('^('+rule.after+')\\b','i').test(low)&&!markRx.test(raw.slice(comma)))
+   why=rule.afterWhy;
+ else if(!/^[A-Z]/.test(raw))why='Start with a capital letter.';
+ else if(!/[.!?]$/.test(raw))why='End it with a full stop.';
+ if(why)setfb(L+'fb'+i,false,why+'<br><span class="muted">One way: '+it.m+'</span>');
+ else{c++;setfb(L+'fb'+i,true,'Good.<br><span class="muted">'+(it.alt?'Also right: '+it.alt:'Another way: '+it.m)+'</span>');}});
+ tally(L,c,data.length);}
+function revealKey(L,data){var k=document.getElementById(L+'key');
+ k.innerHTML='<b>Model answers.</b><br>'+data.map(function(it,i){
+  return (i+1)+'. '+it.m+(it.alt?'<br><span class="muted" style="margin-left:18px;">or: '+it.alt+'</span>':'');}).join('<br>');
+ k.className='key-box shown';}
+
+/* MATCHING. The key is checked at build time, not here: see checks.py. */
+function buildMatch(L,terms,means){var el=document.getElementById('ex'+L);
+ var opts='<option value="">&mdash;</option>'+means.map(function(m){return '<option value="'+m.id+'">'+m.id+'</option>';}).join('');
+ var h='<div class="body-copy" style="margin-bottom:14px;">'+means.map(function(m){return '<b>'+m.id+'.</b> '+m.t;}).join('<br>')+'</div>';
+ terms.forEach(function(t,i){h+='<div class="q"><div class="answer-row"><span class="num" style="color:var(--navy);font-weight:700;">'+(i+1)+'.</span>'+
+  '<span class="fixed-word" style="min-width:130px;"><b>'+t+'</b></span>'+
+  '<select class="match-select" style="width:90px;" id="'+L+i+'">'+opts+'</select>'+
+  '<span class="fb" id="'+L+'fb'+i+'" style="margin:0;display:block;"></span></div></div>';});
+ el.innerHTML=h;}
+function checkMatch(L,terms,key){var c=0;terms.forEach(function(t,i){
+ var ok=document.getElementById(L+i).value===key[i];if(ok)c++;
+ setfb(L+'fb'+i,ok,ok?'&#10003;':'&rarr; '+key[i]);});tally(L,c,terms.length);}
+
+/* THE FREE SENTENCE. Presence, shape and order. Never truth. Model either way.
+
+   `front` HOLDS SUBORDINATE-CLAUSE OPENERS AND NOTHING ELSE. A word belongs
+   there only if a MAIN CLAUSE has to follow it, which is what makes the comma
+   obligatory: while, when, as soon as, until, before, after, once, if, unless,
+   as long as, by the time.
+   IT HAS BEEN FILLED WRONGLY THREE TIMES AND EACH TIME THE CHECKER REFUSED
+   CORRECT ENGLISH:
+     `at first`, `back then`, `in an ideal world`  -- adverbials. They open a
+        sentence and nothing has to follow them, so no comma is required.
+     `if only`  -- opens a WHOLE WISH. "If only this room had a window." is a
+        complete sentence with no second half at all.
+   If you cannot name the main clause that must follow, the word does not go in.
+
+   AN ITEM MAY DECLARE `find`, A REGEX, INSTEAD OF RELYING ON ITS OWN SPELLING.
+   The literal search failed on three of unit 5's own models and one of unit 3's,
+   and in every case the MODEL WAS RIGHT AND THE CHECKER WAS WRONG: a learner
+   writes `falls through`, not `fall through`, and `put the launch off`, not
+   `put off`. A multi-word expression is inflected and separated in real use, and
+   a checker that demands the dictionary form refuses correct English.
+
+   AND `front` IS FOR CLAUSE OPENERS ONLY. `While I was checking, ...` needs the
+   comma. `Back then we used to send it by post` does not, because a short adverb
+   is not a clause. Unit 1 shipped with `at first` on that list and would have
+   refused a correct sentence. */
+function buildWrite(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
+  d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span><b>'+it.word+'</b></div>'+
+  '<input type="text" class="wide" id="'+L+i+'" placeholder="your own sentence">'+
+  '<div class="fb" id="'+L+'fb'+i+'"></div>';el.appendChild(d);});}
+function checkWrite(L,data,rule){var c=0;data.forEach(function(it,i){
+ var raw=(document.getElementById(L+i).value||'').trim(),low=raw.toLowerCase(),why='';
+ var front=(rule.front||[]).filter(function(w){return low.indexOf(w)===0;})[0];
+ if(!raw)why='Write a sentence.';
+ else if(!(it.find? new RegExp(it.find,'i').test(raw)
+                 : low.indexOf(it.word.toLowerCase().replace(/^(a|an|the)\s+/,''))>=0))
+   why='I cannot find <b>'+it.word+'</b> in your sentence.';
+ else if(it.must&&!it.must.some(function(m){return new RegExp('\\b'+m+'\\b','i').test(raw);}))
+   why='Use one of these: <b>'+it.must.join(', ')+'</b>.';
+ else if(rule.mark&&!new RegExp(rule.mark,'i').test(raw))why=rule.markWhy;
+ else if(front&&raw.indexOf(',')<0)
+   why='You started with <b>'+front+'</b>, so the sentence needs a comma in the middle.';
+ else if(!/^[A-Z]/.test(raw))why='Start with a capital letter.';
+ else if(!/[.!?]$/.test(raw))why='End it with a full stop.';
+ else if(raw.split(/\s+/).length<(rule.minWords||6))why='Say a little more. '+(rule.minWords||6)+' words at least.';
+ if(why)setfb(L+'fb'+i,false,why+'<br><span class="muted">One way: '+it.model+'</span>');
+ else{c++;setfb(L+'fb'+i,true,'Good.<br><span class="muted">Another way: '+it.model+'</span>');}});
+ tally(L,c,data.length);}
+
+/* THE PICTURE STRIP. Six of Murphy's eight spreads have one: numbered pictures,
+   one sentence each. It matters more at A1 than anywhere else, because the
+   learner produces a sentence from a FACT instead of from an English prompt he
+   would otherwise translate first.
+
+   THE PANELS ARE DRAWN FILES, not inline SVG. Two SVG versions were written by
+   hand and both failed: the first printed the answer word on every card, the
+   second was unreadable. images.py draws them from the unit's own list, with
+   one fixed style preamble and an anchor image, so five panels are one style.
+   The NAME is printed by this builder under the drawing, never baked into the
+   image: the drawing stays reusable and the label stays editable.
+
+   THE CHECK IS THE WRITE CHECK WITHOUT THE WORD REQUIREMENT: there is no
+   prompt word to find, because the picture is the prompt. */
+function buildPicture(L,data,box,used){var el=document.getElementById('ex'+L);el.innerHTML='';
+ if(box&&box.length){var b=document.createElement('div');b.className='wordbox';
+  b.innerHTML=box.map(function(w){
+    return w===used?'<s>'+w+'</s>':'<b>'+w+'</b>';}).join('');
+  el.appendChild(b);}
+ var g=document.createElement('div');g.className='pic-grid';
+ data.forEach(function(it,i){var d=document.createElement('div');d.className='pic-cell';
+  d.innerHTML='<div class="pic-n">'+(i+1)+'</div>'+
+   '<div class="pic-art"><img src="img/'+it.img+'.png" alt="'+it.shows+'"></div>'+
+   '<div class="pic-name">'+it.name+'</div>'+
+   '<input type="text" class="wide" id="'+L+i+'" placeholder="write the sentence">'+
+   '<div class="fb" id="'+L+'fb'+i+'"></div>';g.appendChild(d);});
+ el.appendChild(g);}
+function checkPicture(L,data,rule){var c=0;data.forEach(function(it,i){
+ var raw=(document.getElementById(L+i).value||'').trim(),why='';
+ if(!raw)why='Write a sentence.';
+ else if(it.must&&!it.must.some(function(m){return new RegExp('\\b'+m+'\\b','i').test(raw);}))
+   why='This one needs <b>'+it.must.join('</b> or <b>')+'</b>.';
+ else if(rule.mark&&!new RegExp(rule.mark,'i').test(raw))why=rule.markWhy;
+ else if(!/^[A-Z]/.test(raw))why='Start with a capital letter.';
+ else if(!/[.!?]$/.test(raw))why='End it with a full stop.';
+ else if(raw.split(/\s+/).length<(rule.minWords||3))why='Say a little more.';
+ if(why)setfb(L+'fb'+i,false,why+'<br><span class="muted">One way: '+it.model+'</span>');
+ else{c++;setfb(L+'fb'+i,true,'Good.<br><span class="muted">Another way: '+it.model+'</span>');}});
+ tally(L,c,data.length);}
+
+/* LISTEN, SAY IT, COMPARE. Netto, 30 Aug 2026.
+
+   THIS IS NOT NEW WORK. The C2 book has been doing voice capture for a while
+   and it is on the air -- see the `SAY IT: voice capture` block in
+   c2-unit1.html. Netto pointed at it, and three things came across that the
+   first draft of this function did not have and should never have lacked:
+
+     THE PRIVACY PROMISE, MADE TO THE LEARNER ON THE PAGE. His voice stays in
+     the tab, is never uploaded, and is gone when he closes it. C2 states that
+     in words next to the button, and so does this.
+
+     THE FALLBACK KEEPS THE EXERCISE ALIVE. When the browser will not record,
+     C2 does not print a dead button -- it says "say the line aloud twice
+     anyway: the speaking is the exercise, the recording only lets you hear
+     what you sound like." That framing is the correct one and it is now ours.
+
+     DISCARD, AND revokeObjectURL. The learner can delete what he recorded,
+     and the blob URL is released instead of leaking one per attempt.
+
+   WHAT IS DIFFERENT HERE, and it is the reason this exists at all: C2 records
+   ONE line for the whole unit. This records FOUR, each against a model clip,
+   and plays the two back to back. At A1 the comparison is the teaching; at C2
+   the learner can already hear himself.
+
+   NO SCORE, AND THAT IS DELIBERATE. Nothing judges his pronunciation. The
+   project's own asr_probe.py says why it could not be trusted to: it
+   transcribes WORDS and "says nothing about the voice, the stress, or whether
+   the reading is natural." A number claiming to grade an accent, computed
+   from a word match, would be a lie with a decimal point. */
+function speakSupported(){
+  return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+}
+
+/* THE WAVEFORM COMPARISON IS THE CALIBRATED SPEECH PATTERN, and Netto pointed
+   at it for this exercise. Its two good ideas, both taken:
+
+     THE TWO SHAPES ARE DRAWN ON TOP OF EACH OTHER -- the model in grey, the
+     learner in the accent colour. He SEES where he paused and she did not, and
+     where he pressed on a word she left weak. Playing one after the other only
+     tells him they differ; the overlay tells him where.
+
+     NO NUMBER IS EVER SHOWN. calibrated_speech computes a cosine similarity of
+     the two envelopes and then throws the number away, printing "Great match --
+     that's the shape" above a threshold and "Compare the shapes and try again"
+     below it. That is the honest presentation: the similarity of two loudness
+     envelopes is not a pronunciation score, and printing it as a percentage
+     would be a lie with a decimal point. */
+function peaksOf(blob,n){
+  return blob.arrayBuffer().then(function(buf){
+    var AC=window.AudioContext||window.webkitAudioContext, ac=new AC();
+    return ac.decodeAudioData(buf).then(function(ab){
+      var d=ab.getChannelData(0), st=Math.floor(d.length/n)||1, o=[];
+      for(var i=0;i<n;i++){ var m=0;
+        for(var j=i*st;j<(i+1)*st&&j<d.length;j++){ var v=Math.abs(d[j]); if(v>m)m=v; }
+        o.push(m); }
+      var mx=Math.max.apply(null,o)||1; ac.close();
+      return o.map(function(v){ return +(v/mx).toFixed(3); });
+    });
+  });
+}
+function simShape(a,b){
+  if(!a||!b||!a.length||!b.length) return 0;
+  var n=Math.min(a.length,b.length), d=0, na=0, nb=0;
+  for(var i=0;i<n;i++){ d+=a[i]*b[i]; na+=a[i]*a[i]; nb+=b[i]*b[i]; }
+  return d/(Math.sqrt(na*nb)||1);
+}
+function wavePath(pk,color,fill){
+  if(!pk||!pk.length) return '';
+  var W=300,H=44,mid=H/2,step=W/(pk.length-1),up='',dn='';
+  for(var i=0;i<pk.length;i++){
+    var x=(i*step).toFixed(1), y=(mid-pk[i]*mid*0.92).toFixed(1);
+    up+=(i?'L':'M')+x+' '+y+' ';
+  }
+  for(var k=pk.length-1;k>=0;k--){
+    var x2=(k*step).toFixed(1), y2=(mid+pk[k]*mid*0.92).toFixed(1);
+    dn+='L'+x2+' '+y2+' ';
+  }
+  return '<path d="'+up+dn+'Z" fill="'+fill+'" stroke="'+color+'" stroke-width="1.2"/>';
+}
+function drawWave(el,model,mine){
+  el.innerHTML='<svg viewBox="0 0 300 44" preserveAspectRatio="none" '+
+    'style="width:100%;height:44px;display:block">'+
+    '<line x1="0" y1="22" x2="300" y2="22" stroke="#E3E4DF" stroke-width="1"/>'+
+    wavePath(model,'#B6BAC0','rgba(182,186,192,.28)')+
+    wavePath(mine,'#1F5570','rgba(31,85,112,.22)')+'</svg>';
+}
+function speakSupported(){
+  return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+}
+function buildSpeak(L,data){
+  var el=document.getElementById('ex'+L); el.innerHTML='';
+  var ok=speakSupported(), S={};
+  data.forEach(function(it,i){
+    var model=(window.CLIPS||[]).indexOf(it.clip)>=0;
+    var d=document.createElement('div'); d.className='say-cell';
+    d.innerHTML='<div class="say-target">'+it.text+'</div><div class="say-row">'+
+      (model?'<button class="say-btn" data-play="'+it.clip+'">Listen</button>'
+            :'<span class="say-none">the model clip is not cut yet</span>')+
+      (ok?'<button class="say-btn rec" data-rec="'+i+'">Record</button>'+
+          (model?'<button class="say-btn both" data-both="'+i+'" disabled>Both, one after the other</button>':'')+
+          '<button class="say-btn drop" data-drop="'+i+'" style="display:none;">Discard</button>':'')+
+      '</div>'+
+      '<div class="say-wave" id="'+L+'w'+i+'"></div>'+
+      '<div class="say-verdict" id="'+L+'v'+i+'"></div>'+
+      (ok?'<audio class="say-audio" id="'+L+'a'+i+'" controls style="display:none;"></audio>':'')+
+      '<div class="say-hint">'+(it.hint||'')+'</div>';
+    el.appendChild(d);
+    drawWave(document.getElementById(L+'w'+i), (window.PEAKS||{})[it.clip], null);
+  });
+  var note=document.createElement('p'); note.className='say-note';
+  note.innerHTML = ok
+    ? 'Your recordings stay in this browser tab. They are never uploaded, and '+
+      'they are gone the moment you close or refresh the page.'
+    : 'This browser will not record audio. Say each line aloud twice anyway: '+
+      'the speaking is the exercise, and the recording only lets you hear what '+
+      'you sound like.';
+  el.appendChild(note);
+  if(!ok) return;
+
+  el.addEventListener('click',function(e){
+    var t=e.target, i;
+    if(t.dataset.play){ var a=document.getElementById('a-'+t.dataset.play);
+      if(a){ a.currentTime=0; a.play(); } return; }
+
+    if(t.dataset.rec!==undefined){ i=t.dataset.rec;
+      var st=S[i];
+      if(st && st.rec && st.rec.state==='recording'){ st.rec.stop(); return; }
+      navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+        var chunks=[], mr=new MediaRecorder(stream);
+        S[i]={rec:mr, stream:stream, url:(S[i]||{}).url||null};
+        mr.ondataavailable=function(ev){ if(ev.data.size) chunks.push(ev.data); };
+        mr.onstop=function(){
+          var blob=new Blob(chunks,{type:mr.mimeType||'audio/webm'});
+          if(S[i].url) URL.revokeObjectURL(S[i].url);
+          S[i].url=URL.createObjectURL(blob);
+          var au=document.getElementById(L+'a'+i);
+          au.src=S[i].url; au.style.display='block';
+          var b=el.querySelector('[data-both="'+i+'"]'); if(b) b.disabled=false;
+          var mp=(window.PEAKS||{})[data[i].clip];
+          peaksOf(blob, mp&&mp.length?mp.length:50).then(function(mine){
+            drawWave(document.getElementById(L+'w'+i), mp, mine);
+            var v=document.getElementById(L+'v'+i);
+            if(!mp){ v.textContent=''; return; }
+            var sc=simShape(mp,mine);
+            v.innerHTML = sc>0.85
+              ? '<span class="say-win">Great match. That is the shape.</span>'
+              : 'Compare the two shapes and try again.';
+          }).catch(function(){});
+          el.querySelector('[data-drop="'+i+'"]').style.display='inline-flex';
+          stream.getTracks().forEach(function(tr){ tr.stop(); });
+          t.textContent='Record again'; t.classList.remove('on');
+        };
+        mr.start(); t.textContent='Stop'; t.classList.add('on');
+      }).catch(function(){
+        t.disabled=true;
+        t.parentNode.insertAdjacentHTML('beforeend',
+          '<span class="say-none">microphone not available, so say it aloud instead</span>');
+      });
+      return; }
+
+    if(t.dataset.drop!==undefined){ i=t.dataset.drop;
+      if(S[i]&&S[i].url){ URL.revokeObjectURL(S[i].url); S[i].url=null; }
+      var au2=document.getElementById(L+'a'+i); au2.src=''; au2.style.display='none';
+      t.style.display='none';
+      var b2=el.querySelector('[data-both="'+i+'"]'); if(b2) b2.disabled=true;
+      el.querySelector('[data-rec="'+i+'"]').textContent='Record';
+      return; }
+
+    if(t.dataset.both!==undefined){ i=t.dataset.both;
+      if(!S[i]||!S[i].url||!window.playClip) return;
+      var url=S[i].url;
+      window.playClip(data[i].clip, function(){ new Audio(url).play(); });
+      return; }
+  });
+}
+
+/* One delegated handler for every `data-play` on the page: the bank words and
+   the contraction pairs. The Access lines have their own, older path. */
+document.addEventListener('click',function(e){
+  var t=e.target.closest?e.target.closest('[data-play]'):null;
+  if(!t)return;
+  if(window.playClip) window.playClip(t.dataset.play);
+});
+
+var R_DATA=[{"q": "Six lines about travel, and not one date. Why is there no time in any of them?", "o": ["because they have forgotten the dates", "because a time would make it a different tense", "because the dates are not interesting"], "a": 1, "why": "This tense says that something happened at some point in a life. Add a time and you have to use unit 22's tense instead."}, {"q": "Sam says &ldquo;I've visited China&rdquo; and &ldquo;I've never worked abroad.&rdquo; What are the two words in each verb?", "o": ["<em>have</em> and the third form of the verb", "<em>have</em> and the bare verb", "the past and the bare verb"], "a": 0, "why": "<b>Have</b> or <b>has</b>, then a third form. For a regular verb it looks exactly like unit 21's past; for an irregular one it is often a new word."}, {"q": "Mia asks &ldquo;Have you ever been to Japan?&rdquo; What is <em>ever</em> doing?", "o": ["it means <em>often</em>", "it makes the question polite", "it means at any time in your whole life"], "a": 2, "why": "It widens the question to a lifetime, which is exactly what this tense is for. In the answer it becomes <b>never</b>."}];
+var CLIPS=["u29-ac-a_bit_i_ve_seen_most_of_europe-0aad", "u29-ac-cool_i_ve_never_worked_abroad-c9df", "u29-ac-have_you_ever_been_to_japan-259c", "u29-ac-nice_i_ve_never_been_to_asia-77b6", "u29-ac-no_i_haven_t_but_i_ve_visited-efa2", "u29-ac-really_have_you_traveled_a_lot-48ec", "u29-bk-a_bit-7581", "u29-bk-a_continent-6d9d", "u29-bk-a_language-dc19", "u29-bk-a_passport-4427", "u29-bk-a_souvenir-fba8", "u29-bk-a_visa-f2be", "u29-bk-an_experience-6b88", "u29-bk-ever-4c9f", "u29-bk-most_of-63a7", "u29-bk-though-01ca", "u29-bk-to_climb-1cf7", "u29-bk-to_fly-73fc"];
+var A_DATA=[{"t": "She ______ (see) most of Europe.", "a": [["has seen", "'s seen"]]}, {"t": "They ______ (be) to three continents.", "a": [["have been", "'ve been"]]}, {"t": "I ______ (fly) to Asia twice.", "a": [["have flown", "'ve flown"]]}, {"t": "He ______ (climb) it before.", "a": [["has climbed", "'s climbed"]]}, {"t": "We ______ (travel) a lot.", "a": [["have traveled", "'ve traveled"]]}, {"t": "She ______ (work) abroad.", "a": [["has worked", "'s worked"]]}];
+var B_DATA=[{"t": "I ______ (be) to Japan. (no time)", "a": [["have been", "'ve been"]]}, {"t": "She ______ (visit) China last year.", "a": [["visited"]]}, {"t": "We ______ (see) most of Europe. (no time)", "a": [["have seen", "'ve seen"]]}, {"t": "He ______ (fly) there in March.", "a": [["flew"]]}, {"t": "They ______ (work) abroad. (no time)", "a": [["have worked", "'ve worked"]]}, {"t": "I ______ (climb) it on Sunday.", "a": [["climbed"]]}];
+var C_DATA=[{"q": "I've saw most of Europe.", "a": ["I've seen most of Europe"]}, {"q": "She have visited China.", "a": ["She has visited China"]}, {"q": "I haven't never been to Asia.", "a": ["I've never been to Asia"]}, {"q": "Have you ever went to Japan?", "a": ["Have you ever been to Japan"]}, {"q": "No, I didn't.", "a": ["No, I haven't"]}, {"q": "We've traveled a lot last year.", "a": ["We traveled a lot last year"]}];
+var D_TERMS=["a continent", "a passport", "a visa", "a language", "a souvenir", "an experience", "to fly", "to climb", "ever", "a bit", "most of", "though"];
+var D_MEANS=[{"id": "a", "t": "English, Spanish or Japanese"}, {"id": "b", "t": "and that is the other side of it"}, {"id": "c", "t": "he climbs the stairs every morning"}, {"id": "d", "t": "you need it to leave your country"}, {"id": "e", "t": "a small amount of it"}, {"id": "f", "t": "something that happened to you and stayed with you"}, {"id": "g", "t": "Europe, Asia or Africa"}, {"id": "h", "t": "nearly all of it"}, {"id": "i", "t": "the small thing you bring home from a trip"}, {"id": "j", "t": "at any time in your whole life"}, {"id": "k", "t": "the paper that lets you enter a country"}, {"id": "l", "t": "she flies to another country twice a year"}];
+var D_KEY=["g", "d", "k", "a", "i", "f", "l", "c", "j", "e", "h", "b"];
+var E_DATA=[{"word": "a continent", "model": "I've been to three continents."}, {"word": "a passport", "model": "I've had the same passport for years."}, {"word": "a language", "model": "She's learned two languages."}, {"word": "to fly", "model": "I've never flown to Asia."}, {"word": "to climb", "model": "He's climbed it twice."}, {"word": "ever", "model": "Have you ever worked abroad?"}, {"word": "most of", "model": "We've seen most of Europe."}];
+var E_RULE={"mark": "\\b(?:have|has|'ve|'s|haven't|hasn't)\\b", "markWhy": "Use <em>have</em> or <em>has</em> and a third form, and put no time word in the sentence.", "minWords": 3};
+var F_DATA=[{"img": "u29-passport", "name": "A PASSPORT", "draw": "one closed passport lying flat with a small emblem on the cover", "shows": "a closed passport", "model": "I've never had a visa."}, {"img": "u29-world-map", "name": "A CONTINENT", "draw": "one simple world map with the outlines of two large land masses", "shows": "a world map with two land masses", "model": "I've visited most of Europe."}, {"img": "u29-plane-window", "name": "FLYING", "draw": "one oval plane window with two clouds outside it", "shows": "a plane window with clouds outside", "model": "I've flown to Asia."}, {"img": "u29-souvenir", "name": "A SOUVENIR", "draw": "one small carved figure standing on a shelf", "shows": "a small carved figure on a shelf", "model": "I've never had a souvenir."}, {"img": "u29-mountain", "name": "CLIMBING", "draw": "one mountain with a thin path drawn winding up its side", "shows": "a mountain with a path up it", "model": "I've never climbed it."}];
+var F_BOX=["continent", "passport", "visa", "language", "fly", "ever"];
+var F_USED="passport";
+var F_RULE={"mark": "\\b(?:have|has|'ve|'s|haven't|hasn't|ever|never)\\b", "markWhy": "Use <em>have</em> or <em>has</em> and a third form, and say no time at all.", "minWords": 3};
+var G_DATA=[{"say": "Have you ever been to Japan?", "text": "Have you ever been to Japan?", "hint": "&ldquo;Have you&rdquo; runs together and almost disappears. &ldquo;ever&rdquo; is clear.", "clip": "u29-ac-have_you_ever_been_to_japan-259c"}, {"say": "Nice! I've never been to Asia.", "text": "Nice! I've never been to Asia.", "hint": "One word, a stop, then the sentence. &ldquo;never&rdquo; is the loud one.", "clip": "u29-ac-nice_i_ve_never_been_to_asia-77b6"}, {"say": "A bit. I've seen most of Europe.", "text": "A bit. I've seen most of Europe.", "hint": "Two short pieces. &ldquo;I've&rdquo; is half a sound before &ldquo;seen&rdquo;.", "clip": "u29-ac-a_bit_i_ve_seen_most_of_europe-0aad"}];
+var PEAKS={"u29-ac-have_you_ever_been_to_japan-259c": [0.001, 0.037, 0.648, 0.667, 0.164, 0.293, 0.449, 0.536, 0.316, 0.557, 0.95, 1.0, 0.209, 0.647, 0.687, 0.514, 0.094, 0.496, 0.552, 0.44, 0.288, 0.236, 0.272, 0.15, 0.166, 0.455, 0.461, 0.169, 0.235, 0.352, 0.394, 0.39, 0.45, 0.457, 0.354, 0.298, 0.215, 0.158, 0.01, 0.012, 0.005, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "u29-ac-nice_i_ve_never_been_to_asia-77b6": [0.258, 0.661, 0.999, 0.676, 0.527, 0.861, 0.805, 0.443, 0.025, 0.015, 0.014, 0.019, 0.006, 0.001, 0.0, 0.001, 0.0, 0.046, 0.028, 0.761, 0.965, 1.0, 0.389, 0.698, 0.765, 0.678, 0.744, 0.5, 0.702, 0.359, 0.941, 0.764, 0.588, 0.745, 0.425, 0.46, 0.145, 0.702, 0.673, 0.464, 0.208, 0.08, 0.003, 0.102, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "u29-ac-a_bit_i_ve_seen_most_of_europe-0aad": [0.007, 0.561, 0.529, 0.148, 0.801, 0.701, 1.0, 0.954, 0.881, 0.087, 0.034, 0.012, 0.002, 0.001, 0.001, 0.0, 0.0, 0.009, 0.002, 0.888, 0.691, 0.681, 0.071, 0.02, 0.327, 0.428, 0.395, 0.329, 0.596, 0.559, 0.404, 0.016, 0.259, 0.306, 0.18, 0.271, 0.609, 0.59, 0.637, 0.495, 0.509, 0.019, 0.063, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]};
+function buildAll(){
+  buildPick("R",R_DATA,false);
+  buildGaps("A",A_DATA);
+  buildGaps("B",B_DATA);
+  buildRepair("C",C_DATA);
+  buildMatch("D",D_TERMS,D_MEANS);
+  buildWrite("E",E_DATA);
+  buildPicture("F",F_DATA,F_BOX,F_USED);
+  buildSpeak("G",G_DATA);
+}</script><script>
+/* ONE Audio element for the page. Tapping a line plays it; tapping the line that
+   is already playing stops it. Nothing preloads: a learner on mobile data pays
+   for the line he asked for and for no other. */
+(function(){
+  var el=null, cur=null;
+  function stop(){ if(el){el.pause();} if(cur){cur.classList.remove('playing');} cur=null; }
+  function play(p){
+    if(cur===p){ stop(); return; }
+    stop();
+    if(!el){ el=new Audio(); }
+    el.onended=stop;
+    el.src='audio/'+p.dataset.a+'.mp3';
+    cur=p; p.classList.add('playing');
+    el.play().catch(function(){ stop(); });
+  }
+  document.addEventListener('click',function(e){
+    var p=e.target.closest ? e.target.closest('.say-line') : null; if(p) play(p);
+  });
+  document.addEventListener('keydown',function(e){
+    var a=document.activeElement;
+    if((e.key===' '||e.key==='Enter')&&a&&a.classList&&a.classList.contains('say-line')){
+      e.preventDefault(); play(a);
+    }
+  });
+  /* Two names the rest of the page uses. `playClip` takes an optional
+     callback so the speak exercise can play the model and then the learner's
+     own recording, one after the other. */
+  window.hasClip=function(id){ return (window.CLIPS||[]).indexOf(id)>=0; };
+  window.playClip=function(id,done){
+    stop();
+    if(!el){ el=new Audio(); }
+    el.onended=function(){ el.onended=null; if(done) done(); };
+    el.src='audio/'+id+'.mp3';
+    el.play().catch(function(){ if(done) done(); });
+  };
+  window.playScene=function playScene(){
+    var lines=[].slice.call(document.querySelectorAll('.say-line')), i=0;
+    stop();
+    if(!el){ el=new Audio(); }
+    function step(){
+      if(i>=lines.length){ cur=null; el.onended=stop; return; }
+      cur=lines[i]; cur.classList.add('playing');
+      el.src='audio/'+cur.dataset.a+'.mp3';
+      el.play().catch(function(){ cur.classList.remove('playing'); cur=null; el.onended=stop; });
+    }
+    el.onended=function(){ if(cur){cur.classList.remove('playing');} i++; step(); };
+    step();
+  };
+})();
+</script></body></html>
