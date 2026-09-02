@@ -162,6 +162,28 @@
   #privacyModal button:hover{background:var(--red-hi);}
   .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
   @media print{#privacyModal{display:none !important;}}
+
+ /* A ANALYSIS da serie. Carregado verbatim de c2-unit5.html: estas
+    regras ja existem no B1/B2, C1 e C2 e nao existiam aqui. As
+    sete variaveis que elas usam ja estao definidas nesta pagina. */
+ .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+ .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+ .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+ .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+ .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+ .card-col dt:first-child{margin-top:0;}
+ .card-col dd{margin:2px 0 0;}
+ .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+ .one-question{background:var(--panel);border:1.5px solid var(--navy);border-radius:14px;
+    padding:22px 24px;margin:26px 0 4px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-note{font-size:14.5px;line-height:1.6;color:var(--gray-dark);margin:0;}
+ @media (max-width:640px){.split{grid-template-columns:1fr;}}
+ .an-h{font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;}
 </style>
 </head>
 <body>
@@ -213,8 +235,32 @@
     </div>
 
     <p class="sec-kicker" style="margin-top:36px;">ANALYSIS</p>
+  <div class="one-question">
+    <p class="oq-label">ONE QUESTION RUNS THIS WHOLE UNIT</p>
+    <p class="oq"><b>Verb or noun &mdash; where is the stress?</b></p>
+    <p class="oq-note">Almost any phrasal verb can freeze into a noun: break down becomes a breakdown, roll out becomes a rollout. Two things change when it does, and both are mechanical: the stress moves to the front, and the spelling closes up.</p>
+  </div>
+
+    <h3 class="an-h">The structure</h3>
     <p class="body-copy">This is the last move in the book, and the most quietly useful. Almost any phrasal verb can freeze into a noun. Break down becomes a breakdown; roll out becomes a rollout; hand over becomes a handover.</p>
     <p class="body-copy">Two things change when the verb becomes a noun. First, the stress moves to the front. As a verb, the stress is on the particle: <em>the system broke DOWN.</em> As a noun, it jumps to the verb: <em>a BREAKdown of costs.</em> Second, the spelling tightens: most close up into one word, a few take a hyphen, and the meaning narrows to one specific sense.</p>
+    <div class="split">
+      <div class="card-col">
+        <h4>As a verb</h4>
+        <dl><dt>Form</dt><dd>verb + particle, two words, stress on the particle</dd><dt>Meaning</dt><dd>it is doing something in the sentence</dd><dt>Use it to</dt><dd>describe an act as it happens</dd></dl>
+        <div class="eg">The system <b>broke DOWN</b> on Tuesday.</div>
+      </div>
+      <div class="card-col">
+        <h4>As a noun</h4>
+        <dl><dt>Form</dt><dd>one word, stress on the front</dd><dt>Meaning</dt><dd>it is a thing in the sentence, with an article in front of it</dd><dt>Use it to</dt><dd>name the act as an object you can point at</dd></dl>
+        <div class="eg">They sent a <b>BREAKdown</b> of the costs.</div>
+      </div>
+      <div class="card-col">
+        <h4>The spelling</h4>
+        <dl><dt>Form</dt><dd>most close up, a few take a hyphen</dd><dt>Meaning</dt><dd>the written form follows the spoken one</dd><dt>Use it to</dt><dd>write it the way the reader expects to see it</dd></dl>
+        <div class="eg">a <b>rollout</b>, a <b>handover</b>, a <b>follow-up</b></div>
+      </div>
+    </div>
 
     <div class="diagram">
       <table style="width:100%;border-collapse:collapse;font-size:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden;">
@@ -233,6 +279,17 @@
       </table>
       <p class="diagram-cap">The capitals mark the stress. As a verb it sits on the particle; as a noun it jumps to the front.</p>
     </div>
+
+    <h3 class="an-h">The meaning narrows on the way</h3>
+    <p class="body-copy">The stress and the spelling are the visible changes. The third change is the one worth watching, because nothing on the page announces it.</p>
+    <p class="body-copy">The verb <b>break down</b> covers a wide range: a machine stops, a person loses composure, a negotiation collapses. The noun <b>a breakdown</b> most often means one specific thing &mdash; an itemized list. The verb kept its range; the noun took one sense and kept it.</p>
+    <p class="body-copy">The same narrowing runs through the set. A <b>handover</b> is a specific event with a document; <b>hand over</b> is any transfer. When a phrasal verb freezes, it usually freezes around one meaning.</p>
+
+    <h3 class="an-h">The test you can run with no book</h3>
+    <p class="body-copy">Ask: <b>is there an article in front of it?</b></p>
+    <p class="body-copy"><i>A</i>, <i>the</i>, <i>this</i>, or a possessive in front means you are looking at the noun, which means one word and the stress on the front. No article and it is the verb: two words, stress on the particle.</p>
+    <p class="body-copy">Say both out loud and the difference is unmistakable &mdash; broke <b>DOWN</b> against a <b>BREAK</b>down. The stress is not decoration; it is how a listener knows which one you meant.</p>
+    <p class="body-copy">The mechanical half: <b>a noun takes a plural, a verb takes a tense.</b> Two rollouts, three handovers. If you can add an <i>s</i> for number, write it as one word.</p>
 
     <div class="callout">
       <b>Watch out.</b> Not every phrasal verb makes a noun. You can hand over a project and write about the handover, but there is no <em>a look after</em> or <em>a get up with.</em> Don't invent them; check the noun is in real use.

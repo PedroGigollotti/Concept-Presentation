@@ -162,6 +162,28 @@
   #privacyModal button:hover{background:var(--red-hi);}
   .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
   @media print{#privacyModal{display:none !important;}}
+
+ /* A ANALYSIS da serie. Carregado verbatim de c2-unit5.html: estas
+    regras ja existem no B1/B2, C1 e C2 e nao existiam aqui. As
+    sete variaveis que elas usam ja estao definidas nesta pagina. */
+ .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+ .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+ .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+ .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+ .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+ .card-col dt:first-child{margin-top:0;}
+ .card-col dd{margin:2px 0 0;}
+ .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+ .one-question{background:var(--panel);border:1.5px solid var(--navy);border-radius:14px;
+    padding:22px 24px;margin:26px 0 4px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-note{font-size:14.5px;line-height:1.6;color:var(--gray-dark);margin:0;}
+ @media (max-width:640px){.split{grid-template-columns:1fr;}}
+ .an-h{font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;}
 </style>
 </head>
 <body>
@@ -213,8 +235,37 @@
     </div>
 
     <p class="sec-kicker" style="margin-top:36px;">ANALYSIS</p>
+  <div class="one-question">
+    <p class="oq-label">ONE QUESTION RUNS THIS WHOLE UNIT</p>
+    <p class="oq"><b>Which direction is <i>take</i> pointing?</b></p>
+    <p class="oq-note">The verb is holding still on purpose. <i>Take</i> on its own means little more than to get hold of something, so every sharper meaning in this unit is the particle&rsquo;s doing. Name the direction and you have named the phrase.</p>
+  </div>
+
+    <h3 class="an-h">The structure</h3>
     <p class="body-copy">In every unit so far, the particle moved and the verb changed with it. This clinic flips the axis. The verb take stays perfectly still, so whatever shifts, from accepting a job to leaving the ground, is coming from the particle alone.</p>
     <p class="body-copy">Take is a good verb to prove it on, because it means almost nothing by itself. To take is just to get hold of something. Add a particle and a direction appears.</p>
+    <div class="split">
+      <div class="card-col">
+        <h4>Over &mdash; across</h4>
+        <dl><dt>Sense</dt><dd>control crosses from somebody else to you</dd><dt>How you know</dt><dd>there was a previous holder</dd><dt>Use it to</dt><dd>report a handover you are on the receiving end of</dd></dl>
+        <div class="eg">She will <b>take over</b> the account in April.</div>
+      </div>
+      <div class="card-col">
+        <h4>On &mdash; onto a surface</h4>
+        <dl><dt>Sense</dt><dd>a load comes to rest on you</dd><dt>How you know</dt><dd>afterward you are carrying it</dd><dt>Use it to</dt><dd>report accepting work, or accepting a person into a team</dd></dl>
+        <div class="eg">We cannot <b>take on</b> a fourth site this quarter.</div>
+      </div>
+      <div class="card-col">
+        <h4>Up &mdash; off the ground</h4>
+        <dl><dt>Sense</dt><dd>something is lifted from rest and begun</dd><dt>How you know</dt><dd>it was not happening before</dd><dt>Use it to</dt><dd>report starting a practice, not finishing one</dd></dl>
+        <div class="eg">He <b>took up</b> the reporting line himself.</div>
+      </div>
+      <div class="card-col">
+        <h4>In &mdash; inside a boundary</h4>
+        <dl><dt>Sense</dt><dd>something crosses inward and is absorbed</dd><dt>How you know</dt><dd>the thing taken in does not move again</dd><dt>Use it to</dt><dd>report understanding, or capacity</dd></dl>
+        <div class="eg">Give them a minute to <b>take in</b> the numbers.</div>
+      </div>
+    </div>
 
     <div class="diagram">
       <table style="width:100%;border-collapse:collapse;font-size:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden;">
@@ -234,6 +285,17 @@
       <p class="diagram-cap">Read down the particle column. You already know each one. Predict the meaning before your eye reaches the third column.</p>
     </div>
 
+    <h3 class="an-h">The axis has flipped</h3>
+    <p class="body-copy">Every unit before this one held a particle still and let the verbs change. This one does the opposite, and the reason is a proof.</p>
+    <p class="body-copy">If <b>take over</b>, <b>take on</b>, <b>take up</b> and <b>take in</b> mean four different things, and the verb was identical in all four, then the meaning cannot have come from the verb. There is nowhere else for it to have come from.</p>
+    <p class="body-copy">And the particles are behaving exactly as they did in their own units. <i>Over</i> is still across, <i>on</i> is still onto a surface, <i>up</i> is still off the ground, <i>in</i> is still inside a boundary. Nothing new has to be learned here &mdash; only recognized.</p>
+
+    <h3 class="an-h">The test you can run with no book</h3>
+    <p class="body-copy">Ask: <b>what would the particle mean if you were moving a physical object?</b></p>
+    <p class="body-copy">Take it over: carry it across to somebody. Take it on: put it on your back. Take it up: lift it. Take it in: bring it inside. In every case the abstract sense is that same movement, done to something you cannot hold.</p>
+    <p class="body-copy">That is the whole method of this book, and this unit is where you can check it under controlled conditions, because only one thing is allowed to vary.</p>
+    <p class="body-copy">The mechanical half: <b><i>take on</i> takes a load, <i>take over</i> takes a thing somebody else had.</b> If nobody held it before you, <i>over</i> is wrong.</p>
+
     <div class="callout">
       <b>Watch out.</b> Take off has three senses: leave or depart, remove, or, informally, suddenly succeed. And take in is a trap: understand, attend, shelter, or deceive, all with the same phrase. Read the object before you commit.
     </div>
@@ -243,6 +305,10 @@
     </div>
 
     <p class="body-copy">Hold the verb still and the lesson is impossible to miss: take barely means anything until a particle gives it a direction. On loads a responsibility onto you; over slides control across from someone else; in pulls something inward; out pushes it away. The verb is the hand; the particle is where the hand moves.</p>
+
+    <div class="callout">
+      <b>Your prediction: take on board.</b> You predicted this one from <em>on board</em> before you read any of the unit: what somebody offers you is brought in and kept. Across this unit <em>take</em> is the verb of moving something to yourself, and the particle says where it lands.
+    </div>
 
     <h2 class="sec">ACTIVATION</h2>
     <p class="goal">Practice top to bottom: predict the particle first, then the strangers, then the discrimination, then the words, then say it out loud.</p>

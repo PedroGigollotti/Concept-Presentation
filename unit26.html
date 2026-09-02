@@ -162,6 +162,28 @@
   #privacyModal button:hover{background:var(--red-hi);}
   .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
   @media print{#privacyModal{display:none !important;}}
+
+ /* A ANALYSIS da serie. Carregado verbatim de c2-unit5.html: estas
+    regras ja existem no B1/B2, C1 e C2 e nao existiam aqui. As
+    sete variaveis que elas usam ja estao definidas nesta pagina. */
+ .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+ .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+ .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+ .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+ .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+ .card-col dt:first-child{margin-top:0;}
+ .card-col dd{margin:2px 0 0;}
+ .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+ .one-question{background:var(--panel);border:1.5px solid var(--navy);border-radius:14px;
+    padding:22px 24px;margin:26px 0 4px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-note{font-size:14.5px;line-height:1.6;color:var(--gray-dark);margin:0;}
+ @media (max-width:640px){.split{grid-template-columns:1fr;}}
+ .an-h{font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;}
 </style>
 </head>
 <body>
@@ -213,8 +235,37 @@
     </div>
 
     <p class="sec-kicker" style="margin-top:36px;">ANALYSIS</p>
+  <div class="one-question">
+    <p class="oq-label">ONE QUESTION RUNS THIS WHOLE UNIT</p>
+    <p class="oq"><b>How far did you get, and how hard was it?</b></p>
+    <p class="oq-note"><i>Get</i> is the vaguest verb in English &mdash; to come to have, or come to be. Held still, every sharper meaning here is the particle measuring the journey: all the way, barely, around, or out.</p>
+  </div>
+
+    <h3 class="an-h">The structure</h3>
     <p class="body-copy">The verb get is the busiest word in English precisely because it is so vague. On its own it just means to come to have, or come to be. Hold it still, and every sharper meaning here, survival, escape, progress, is the particle's doing.</p>
     <p class="body-copy">Get is about motion toward a state, so its particles are about how far you make it and how hard it was. Get through it (all the way across, survive), get by (just past, barely), get around it (circle the obstacle), get on with it (keep moving), get back to someone (return), get out of it (escape).</p>
+    <div class="split">
+      <div class="card-col">
+        <h4>Through &mdash; end to end</h4>
+        <dl><dt>Sense</dt><dd>all the way across, and out the far side</dd><dt>How you know</dt><dd>the passage was hard and it is over</dd><dt>Use it to</dt><dd>report survival, not achievement</dd></dl>
+        <div class="eg">We will <b>get through</b> the audit somehow.</div>
+      </div>
+      <div class="card-col">
+        <h4>By &mdash; just past</h4>
+        <dl><dt>Sense</dt><dd>only just past, with nothing to spare</dd><dt>How you know</dt><dd>the standard was met and no more</dd><dt>Use it to</dt><dd>report coping, with a note of insufficiency</dd></dl>
+        <div class="eg">Two of the sites are <b>getting by</b> on one analyst.</div>
+      </div>
+      <div class="card-col">
+        <h4>Around &mdash; in a circle</h4>
+        <dl><dt>Sense</dt><dd>round the obstacle rather than into it</dd><dt>How you know</dt><dd>the obstacle is still there afterward</dd><dt>Use it to</dt><dd>report a workaround</dd></dl>
+        <div class="eg">We can <b>get around</b> the limit with a second batch.</div>
+      </div>
+      <div class="card-col">
+        <h4>Ahead &mdash; in front</h4>
+        <dl><dt>Sense</dt><dd>out in front of the thing instead of behind it</dd><dt>How you know</dt><dd>you were chasing before, and now you are not</dd><dt>Use it to</dt><dd>report gaining on a problem</dd></dl>
+        <div class="eg">If we fix the caching we finally <b>get ahead</b> of the incidents.</div>
+      </div>
+    </div>
 
     <div class="diagram">
       <table style="width:100%;border-collapse:collapse;font-size:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden;">
@@ -233,6 +284,17 @@
       <p class="diagram-cap">Read down the particle column. You already know each one. Predict the meaning before your eye reaches the third column.</p>
     </div>
 
+    <h3 class="an-h">Getting through, and getting by</h3>
+    <p class="body-copy">These two sit closest together and carry very different news about you.</p>
+    <p class="body-copy"><b>Get through</b> the quarter and you came out the other side: it is over. <b>Get by</b> and nothing is over &mdash; you are still in it, and only just. One is a finish line, the other is a margin.</p>
+    <p class="body-copy">That is why <i>get by</i> almost always attracts a phrase saying on how little: getting by on one analyst, on a smaller budget, on four hours. The particle means barely past, and the sentence usually wants to say past what.</p>
+
+    <h3 class="an-h">The test you can run with no book</h3>
+    <p class="body-copy">Ask: <b>how much of the distance did you cover?</b></p>
+    <p class="body-copy">All of it, and the particle is <i>through</i>. Barely any margin, and it is <i>by</i>. None of it, because you went round, and it is <i>around</i>. Past the thing and in front of it, and it is <i>ahead</i>.</p>
+    <p class="body-copy">Because <i>get</i> contributes almost nothing, this unit is the best place in the book to practise reading a phrasal verb backwards: cover the verb, look only at the particle, and the sense is still there.</p>
+    <p class="body-copy">The mechanical half: <b><i>get by</i> takes no object.</b> You get through something; you simply get by. The moment an object appears, the particle has to change.</p>
+
     <div class="callout">
       <b>Watch out.</b> Get through has three senses: survive the day, finish the work, or reach someone by phone or understanding. And get on has two lives: continue a task, or have a good relationship with a person.
     </div>
@@ -242,6 +304,10 @@
     </div>
 
     <p class="body-copy">Because get is nearly meaningless alone, it is the clearest proof the method has. Get through and get out of share a verb and could not be further apart: one is survival, the other is escape, and the entire difference is through versus out of.</p>
+
+    <div class="callout">
+      <b>Your prediction: get ahead.</b> You predicted this one from <em>ahead</em> before you read any of the unit: you move in front of the thing instead of following it. Across this unit <em>get</em> is the verb of changing position or state, and the particle says which way.
+    </div>
 
     <h2 class="sec">ACTIVATION</h2>
     <p class="goal">Practice top to bottom: predict the particle first, then the strangers, then the discrimination, then the words, then say it out loud.</p>

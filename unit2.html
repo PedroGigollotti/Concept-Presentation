@@ -162,6 +162,28 @@
   #privacyModal button:hover{background:var(--red-hi);}
   .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
   @media print{#privacyModal{display:none !important;}}
+
+ /* A ANALYSIS da serie. Carregado verbatim de c2-unit5.html: estas
+    regras ja existem no B1/B2, C1 e C2 e nao existiam aqui. As
+    sete variaveis que elas usam ja estao definidas nesta pagina. */
+ .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+ .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+ .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+ .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+ .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+ .card-col dt:first-child{margin-top:0;}
+ .card-col dd{margin:2px 0 0;}
+ .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+ .one-question{background:var(--panel);border:1.5px solid var(--navy);border-radius:14px;
+    padding:22px 24px;margin:26px 0 4px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-note{font-size:14.5px;line-height:1.6;color:var(--gray-dark);margin:0;}
+ @media (max-width:640px){.split{grid-template-columns:1fr;}}
+ .an-h{font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;}
 </style>
 </head>
 <body>
@@ -213,8 +235,37 @@
     </div>
 
     <p class="sec-kicker" style="margin-top:36px;">ANALYSIS</p>
+  <div class="one-question">
+    <p class="oq-label">ONE QUESTION RUNS THIS WHOLE UNIT</p>
+    <p class="oq"><b>Where can the object sit?</b></p>
+    <p class="oq-note">Four shapes, and the only thing you have to learn about any of them is where the object goes. Three never split. The one that splits has a single firm rule, and it is about pronouns. Ask this before you place the object, not after.</p>
+  </div>
+
+    <h3 class="an-h">The structure</h3>
     <p class="body-copy">Phrasal verbs come in four shapes, and the only thing you have to learn is where the object can sit. Three of the four are easy: they never split. The one that splits, the separable transitive, has a single firm rule about pronouns.</p>
     <p class="body-copy">Separable transitive verbs take an object that can go after the particle or between (turn off the light, turn the light off), but a pronoun must go between (turn it off, never turn off it). Inseparable transitive verbs keep the object after the particle, always (look after the kids, look after them). Intransitive verbs take no object at all (the deal fell through). Three-part verbs, verb plus particle plus preposition, are inseparable and keep the object at the end (put up with it, look forward to it).</p>
+    <div class="split">
+      <div class="card-col">
+        <h4>Separable transitive</h4>
+        <dl><dt>Form</dt><dd>verb + object + particle, or verb + particle + object</dd><dt>Meaning</dt><dd>a full noun phrase can sit either side, but a pronoun must go between</dd><dt>Use it to</dt><dd>place an object correctly without memorizing the phrase</dd></dl>
+        <div class="eg"><b>Turn off</b> the light / turn the light <b>off</b> / turn it <b>off</b>. Never <span class='wrong'>turn off it</span>.</div>
+      </div>
+      <div class="card-col">
+        <h4>Inseparable transitive</h4>
+        <dl><dt>Form</dt><dd>verb + particle + object, always</dd><dt>Meaning</dt><dd>the object never comes between, not even a pronoun</dd><dt>Use it to</dt><dd>avoid the split that separable verbs invite</dd></dl>
+        <div class="eg"><b>Look after</b> the kids / look after them. Never <span class='wrong'>look the kids after</span>.</div>
+      </div>
+      <div class="card-col">
+        <h4>Intransitive</h4>
+        <dl><dt>Form</dt><dd>verb + particle, and nothing else</dd><dt>Meaning</dt><dd>there is no object at all to place</dd><dt>Use it to</dt><dd>recognize the shape that cannot be got wrong</dd></dl>
+        <div class="eg">The deal <b>fell through</b>.</div>
+      </div>
+      <div class="card-col">
+        <h4>Three-part</h4>
+        <dl><dt>Form</dt><dd>verb + particle + preposition, inseparable</dd><dt>Meaning</dt><dd>the object always sits at the end, after all three parts</dd><dt>Use it to</dt><dd>handle the longest shape without hesitating</dd></dl>
+        <div class="eg">We <b>put up with</b> it. Never <span class='wrong'>put it up with</span>.</div>
+      </div>
+    </div>
 
     <div class="diagram">
       <table style="width:100%;border-collapse:collapse;font-size:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden;">
@@ -231,6 +282,17 @@
       <p class="diagram-cap">Only the separable verbs split, and only with a firm rule for pronouns. The other three stay whole.</p>
     </div>
 
+    <h3 class="an-h">The one rule that is never broken</h3>
+    <p class="body-copy">Of everything in this unit, one rule earns memorizing, because it is absolute and because breaking it is the error that marks a speaker fastest.</p>
+    <p class="body-copy"><b>A pronoun goes between the verb and the particle.</b> Turn it off. Bring them up. Sort it out. There is no separable phrasal verb in English where <span class='wrong'>turn off it</span> is acceptable.</p>
+    <p class="body-copy">Everything else in the unit is a tendency you will absorb from reading. This one is a wall, and you can rely on it from today.</p>
+
+    <h3 class="an-h">The test you can run with no book</h3>
+    <p class="body-copy">Ask: <b>put a pronoun in it.</b></p>
+    <p class="body-copy">Say the phrase with <i>it</i> or <i>them</i> instead of the noun. If <i>it</i> sounds right between the verb and the particle &mdash; turn it off &mdash; the verb is separable. If <i>it</i> has to come after the particle &mdash; look after it &mdash; the verb is inseparable.</p>
+    <p class="body-copy">Your ear will answer faster than your memory, because you have heard these forms far more often than you have been taught them. The test converts a grammar question into a listening question.</p>
+    <p class="body-copy">The mechanical half: <b>if the phrase has three parts, the object goes at the end, with no exceptions.</b> Put up with it, look forward to it, get on with it.</p>
+
     <div class="callout">
       <b>Watch out.</b> The pronoun error is the most common one. “Can you fill out it?” should be <em>fill it out.</em> Whenever the object is a pronoun and the verb is separable, the pronoun goes in the middle. No exceptions.
     </div>
@@ -240,6 +302,10 @@
     </div>
 
     <p class="body-copy">This unit comes early because the syntax never changes. Every phrasal verb in the next thirty units obeys these four shapes. Once you know that separable verbs split, with the pronoun rule, and everything else stays whole, you can write any phrasal verb cleanly without thinking about it again.</p>
+
+    <div class="callout">
+      <b>Your prediction: live with.</b> You were asked to decide whether it splits, and the answer is no. The object never comes between: <em>live with the risk</em>, never <em>live the risk with</em>. That is the inseparable pattern &mdash; and you could tell before you knew what the phrase meant, which is the whole point of this unit. (It means you accept something you cannot change and keep going.)
+    </div>
 
     <h2 class="sec">ACTIVATION</h2>
     <p class="goal">Practice the syntax: place the pronoun, fix the word order, and sort verbs by shape.</p>

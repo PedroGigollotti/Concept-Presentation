@@ -162,6 +162,28 @@
   #privacyModal button:hover{background:var(--red-hi);}
   .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
   @media print{#privacyModal{display:none !important;}}
+
+ /* A ANALYSIS da serie. Carregado verbatim de c2-unit5.html: estas
+    regras ja existem no B1/B2, C1 e C2 e nao existiam aqui. As
+    sete variaveis que elas usam ja estao definidas nesta pagina. */
+ .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+ .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+ .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+ .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+ .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+ .card-col dt:first-child{margin-top:0;}
+ .card-col dd{margin:2px 0 0;}
+ .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+ .one-question{background:var(--panel);border:1.5px solid var(--navy);border-radius:14px;
+    padding:22px 24px;margin:26px 0 4px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-note{font-size:14.5px;line-height:1.6;color:var(--gray-dark);margin:0;}
+ @media (max-width:640px){.split{grid-template-columns:1fr;}}
+ .an-h{font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;}
 </style>
 </head>
 <body>
@@ -213,8 +235,37 @@
     </div>
 
     <p class="sec-kicker" style="margin-top:36px;">ANALYSIS</p>
+  <div class="one-question">
+    <p class="oq-label">ONE QUESTION RUNS THIS WHOLE UNIT</p>
+    <p class="oq"><b>Toward me, or away from me?</b></p>
+    <p class="oq-note">Two verbs, pulling opposite ways. <i>Come</i> moves toward the speaker and is about arrival and emergence; <i>go</i> moves away and is about outcome and departure. Fix the direction first and the particle is easier than it looks.</p>
+  </div>
+
+    <h3 class="an-h">The structure</h3>
     <p class="body-copy">This clinic runs two verbs at once, and they pull in opposite directions. Come moves toward you; go moves away.</p>
     <p class="body-copy">Come is about arrival and emergence. A topic comes up (rises into view), you come across a certain way (arrive at an impression), a decision comes down to one thing (settles to its base). Go is about outcome and departure. It goes over well (lands with an audience), it goes through (passes all the way), or it goes under (sinks and fails).</p>
+    <div class="split">
+      <div class="card-col">
+        <h4>Come up</h4>
+        <dl><dt>Sense</dt><dd>something rises into view, toward you</dd><dt>How you know</dt><dd>nobody delivered it; it appeared on the agenda</dd><dt>Use it to</dt><dd>report a topic surfacing</dd></dl>
+        <div class="eg">Two other items <b>came up</b> before yours.</div>
+      </div>
+      <div class="card-col">
+        <h4>Come across</h4>
+        <dl><dt>Sense</dt><dd>you arrive at somebody as a certain impression</dd><dt>How you know</dt><dd>there is an audience forming a view of you</dd><dt>Use it to</dt><dd>report how you are read, not what you said</dd></dl>
+        <div class="eg">He <b>comes across</b> as more certain than he is.</div>
+      </div>
+      <div class="card-col">
+        <h4>Go over</h4>
+        <dl><dt>Sense</dt><dd>the outcome lands with an audience</dd><dt>How you know</dt><dd>somebody received it and had a reaction</dd><dt>Use it to</dt><dd>report reception, not delivery</dd></dl>
+        <div class="eg">The phased plan <b>went over</b> well with the board.</div>
+      </div>
+      <div class="card-col">
+        <h4>Go under</h4>
+        <dl><dt>Sense</dt><dd>it sinks, and does not come back</dd><dt>How you know</dt><dd>there was something afloat before</dd><dt>Use it to</dt><dd>report failure, not decline</dd></dl>
+        <div class="eg">Two of the suppliers <b>went under</b> last year.</div>
+      </div>
+    </div>
 
     <div class="diagram">
       <table style="width:100%;border-collapse:collapse;font-size:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:16px;">
@@ -236,6 +287,17 @@
       <p class="diagram-cap">Two verbs, opposite directions. Come brings it toward you; go sends it away. Read down each table and predict before the meaning column.</p>
     </div>
 
+    <h3 class="an-h">Come across, and get across</h3>
+    <p class="body-copy">One of the most useful pairs in the book, and the difference is exactly the difference between the two verbs.</p>
+    <p class="body-copy"><b>Come across</b> is about you: it is the impression that arrives at the listener, whether you intended it or not. <b>Get across</b>, from Unit 23, is about your message: it is the content arriving, because you worked to send it.</p>
+    <p class="body-copy">So a presentation can get the risk across perfectly and still come across as defensive. Both crossed the same gap. Only one of them was the thing you were trying to send.</p>
+
+    <h3 class="an-h">The test you can run with no book</h3>
+    <p class="body-copy">Ask: <b>which way is it moving relative to you?</b></p>
+    <p class="body-copy">Toward you and the verb is <i>come</i>: something arrives, appears, or reaches you. Away from you and it is <i>go</i>: something departs, lands elsewhere, or sinks.</p>
+    <p class="body-copy">Then read the particle exactly as its own unit taught it. <i>Up</i> is into view, <i>across</i> is over to a receiver, <i>over</i> is across and above, <i>under</i> is below the surface.</p>
+    <p class="body-copy">The mechanical half: <b><i>come across</i> takes <i>as</i>.</b> He comes across as certain. Without <i>as</i>, <i>come across</i> means to find something by chance instead &mdash; I came across the old file.</p>
+
     <div class="callout">
       <b>Watch out.</b> Go over has two senses: be received well by people, or review something (<em>go over the numbers</em>). And come across, come up, come out are three different arrivals: make an impression or find by chance, arise as a topic, or be revealed.
     </div>
@@ -245,6 +307,10 @@
     </div>
 
     <p class="body-copy">Two opposite verbs, one set of particles, and the particles behave exactly as they always do. Come up and go under are miles apart, but not because of anything mysterious. Come rises and arrives; go departs and, with under, sinks. The verbs set the direction; the particles set the fate.</p>
+
+    <div class="callout">
+      <b>Your prediction: go about.</b> You predicted this one from <em>about</em> before you read any of the unit: you take the task from its sides &mdash; the manner of your approach, not the fact of starting. Across this unit <em>go</em> is movement and departure, and the particle says how.
+    </div>
 
     <h2 class="sec">ACTIVATION</h2>
     <p class="goal">Practice top to bottom: predict the particle first, then the strangers, then the discrimination, then the words, then say it out loud.</p>

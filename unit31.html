@@ -162,6 +162,28 @@
   #privacyModal button:hover{background:var(--red-hi);}
   .print-reminder{font-size:12px;color:var(--gray);margin-top:8px;text-align:right;}
   @media print{#privacyModal{display:none !important;}}
+
+ /* A ANALYSIS da serie. Carregado verbatim de c2-unit5.html: estas
+    regras ja existem no B1/B2, C1 e C2 e nao existiam aqui. As
+    sete variaveis que elas usam ja estao definidas nesta pagina. */
+ .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+ .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+ .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
+ .card-col dl{margin:0;font-size:14px;line-height:1.6;color:var(--gray-dark);}
+ .card-col dt{font-weight:600;color:var(--ink);margin-top:8px;}
+ .card-col dt:first-child{margin-top:0;}
+ .card-col dd{margin:2px 0 0;}
+ .card-col .eg{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.45;}
+ .one-question{background:var(--panel);border:1.5px solid var(--navy);border-radius:14px;
+    padding:22px 24px;margin:26px 0 4px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;
+    color:var(--navy);margin:0 0 10px;}
+ .one-question .oq-note{font-size:14.5px;line-height:1.6;color:var(--gray-dark);margin:0;}
+ @media (max-width:640px){.split{grid-template-columns:1fr;}}
+ .an-h{font-family:var(--serif);font-weight:400;font-size:22px;margin:32px 0 10px;}
 </style>
 </head>
 <body>
@@ -213,8 +235,32 @@
     </div>
 
     <p class="sec-kicker" style="margin-top:36px;">ANALYSIS</p>
+  <div class="one-question">
+    <p class="oq-label">ONE QUESTION RUNS THIS WHOLE UNIT</p>
+    <p class="oq"><b>What is your posture, not your position?</b></p>
+    <p class="oq-note">Until now the particle carried meaning. In disagreement it also carries stance &mdash; your posture toward the person across the table. <i>I reject your proposal</i> and <i>let me push back on that</i> can mean the same thing and feel worlds apart.</p>
+  </div>
+
+    <h3 class="an-h">The structure</h3>
     <p class="body-copy">Until now, the particle carried meaning. In disagreement, it also carries stance, your posture toward the other person. <em>I reject your proposal</em> and <em>let me push back on that</em> can mean the same thing, but they feel worlds apart. The verb reject is a wall; push back on is a hand on the table, still in the conversation.</p>
     <p class="body-copy">The soft phrasal verbs of disagreement share a quality: they frame the objection as a move in a shared game, not a verdict. Push back on invites a response. Hold off on delays without refusing. Walk back lets you retreat without losing face.</p>
+    <div class="split">
+      <div class="card-col">
+        <h4>Pushing back</h4>
+        <dl><dt>Form</dt><dd>an objection framed as a move in a shared game</dd><dt>Meaning</dt><dd>the phrase invites a reply rather than closing the exchange</dd><dt>Use it to</dt><dd>disagree without ending the conversation</dd></dl>
+        <div class="eg">Let me <b>push back on</b> the second assumption.</div>
+      </div>
+      <div class="card-col">
+        <h4>Holding off</h4>
+        <dl><dt>Form</dt><dd>a delay that is not a refusal</dd><dt>Meaning</dt><dd>nothing has been decided against; it has been paused</dd><dt>Use it to</dt><dd>buy time without conceding or refusing</dd></dl>
+        <div class="eg">Can we <b>hold off on</b> the announcement until Thursday?</div>
+      </div>
+      <div class="card-col">
+        <h4>Walking back</h4>
+        <dl><dt>Form</dt><dd>a retreat that costs no face</dd><dt>Meaning</dt><dd>a position is moved back rather than admitted wrong</dd><dt>Use it to</dt><dd>change your position and keep your standing</dd></dl>
+        <div class="eg">We may need to <b>walk back</b> the earlier estimate.</div>
+      </div>
+    </div>
 
     <div class="diagram">
       <p class="diagram-cap" style="margin-top:0;margin-bottom:18px;font-weight:700;color:var(--ink);font-style:normal;">Saying no, from gentle to direct</p>
@@ -262,6 +308,17 @@
         .stance-mobile-list li:last-child{border-left-color:var(--ink);}
       }
     </style>
+
+    <h3 class="an-h">A wall, and a hand on the table</h3>
+    <p class="body-copy">The whole unit turns on one comparison, and it is worth sitting with, because the two sentences carry the same information.</p>
+    <p class="body-copy"><i>I reject your proposal</i> is a verdict. It is complete, it is about the proposal, and there is nothing for the other person to do with it except accept or fight. <i>Let me push back on that</i> is a move: it is about the conversation, it expects an answer, and it leaves the matter open.</p>
+    <p class="body-copy">This is why the soft phrasal verbs matter more at senior level rather than less. The higher the stakes, the more work the framing does, and the more expensive it is to close a conversation you needed to keep open.</p>
+
+    <h3 class="an-h">The test you can run with no book</h3>
+    <p class="body-copy">Ask: <b>does this leave them a move?</b></p>
+    <p class="body-copy">If the other person can reply and change something, your framing is open. If the only available responses are agreement or a fight, you have issued a verdict, and you should check that you meant to.</p>
+    <p class="body-copy">Then, separately, check that the content survived the softening. This is the failure mode of the whole technique: a soft frame followed by a vague point leaves nobody knowing what was objected to.</p>
+    <p class="body-copy">The mechanical half: <b>soften the frame, never the fact.</b> Push back on the estimate and then say it is nine percent low. A softener that runs into the content has flagged nothing.</p>
 
     <div class="callout">
       <b>Watch out.</b> Soft is not weak. Softening phrasal verbs keep the relationship, but they must still land the disagreement. And call out is the hard end: among these phrasal verbs, it's the sharpest, since it publicly names a problem or a person.
