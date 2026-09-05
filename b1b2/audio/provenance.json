@@ -1368,5 +1368,15 @@
   "text": "Good. A short, clear, written note, and nothing more.",
   "voice": "m",
   "source": "cut"
+ },
+ "u04-ac-walk_me_through_the_migration-d0ad": {
+  "text": "Walk me through the migration.",
+  "voice": "m",
+  "source": "cut"
+ },
+ "u39-ac-at_nine_at_the_client_s_office-359b": {
+  "text": "At nine, at the client's office, on the third floor.",
+  "voice": "m",
+  "source": "cut"
  }
 }
