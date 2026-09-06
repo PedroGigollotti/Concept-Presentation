@@ -9,8 +9,8 @@
         alone. Nothing here runs before the page's own check has run.
      2. A page that is still locked asks the lessons who is holding the
         cookie (credentials: include; the cookie is same-site). A registered
-        learner, teacher or director gets the same key the access code used
-        to give, and the page reloads and opens by its own path.
+        learner, teacher or director gets the shared key (the one a code once
+        gave), and the page reloads and opens by its own path.
      3. A stranger gets one more thing in the gate box: a button to enter
         with the email they registered, which comes back to this very page.
 
@@ -64,7 +64,7 @@
     a.style.cssText = 'display:inline-block;padding:12px 22px;border-radius:999px;' +
       'background:#B3132B;color:#fff;font-weight:600;text-decoration:none;font-family:inherit;';
     var p = document.createElement('p');
-    p.textContent = 'Registered with Concept? One tap on the link that comes to your email opens every book, the lessons and the Coach on this device.';
+    p.textContent = 'A link and a six-digit code come to your email. One tap, and this device is signed in for a year: every book, the lessons, and the Coach.';
     p.style.cssText = 'margin:10px 0 0;font-size:14px;line-height:1.5;opacity:.8;';
     wrap.appendChild(a);
     wrap.appendChild(p);
