@@ -69,7 +69,6 @@ the shared one.
 
 | Location | As published | Approved correction |
 |---|---|---|
-| `tryCode`, all 32 | `setItem('cm_pv_access','1')` | `setItem('cm_access','1'); setItem('cm_pv_access','1')` |
 | auto-unlock, all 32 | `getItem('cm_pv_access') === '1'` | `getItem('cm_access') === '1' \|\| getItem('cm_pv_access') === '1'` |
 | privacy write, all 32 | `setItem('cm_pv_privacy_seen','1')` | `setItem('cm_privacy_seen','1'); setItem('cm_pv_privacy_seen','1')` |
 | privacy read, all 32 | `getItem('cm_pv_privacy_seen') !== '1'` | `getItem('cm_privacy_seen') !== '1' && getItem('cm_pv_privacy_seen') !== '1'` |
@@ -87,7 +86,9 @@ islanded in both directions at once.
 
 | Location | As published | Approved correction |
 |---|---|---|
-| script header, all 32 | `/* ===== ACCESS CODES (pilot: replace with the real 50 before launch) ===== */` | `/* ===== ACCESS CODES ===== */` |
+| script header, all 32 | `/* ===== ACCESS CODES (pilot: replace with the real 50 before launch) ===== */` | `/* ===== THE GATE (the registered email, through gate.js) ===== */` |
+
+6 Sep 2026, Pedro: the access code left every book. `tryCode()`, the code list and the code field are gone from all 32 pages; the way in is the registered email (the door in the gate box, and /gate.js at the site root, which writes the shared key `cm_access` when the lessons recognise the reader). The row that once named `tryCode` (writing both keys on unlock) is retired with the function; the auto-unlock row still holds, because the page still reads both keys. The script header row now names the header as it is.
 
 The book has launched, and the 500 codes in it are correct: the list is
 byte-identical, in the same order, to `codes.json` in the `concept-kit`

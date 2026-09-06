@@ -14,9 +14,11 @@
      3. A stranger gets one more thing in the gate box: a button to enter
         with the email they registered, which comes back to this very page.
 
-   The access code still works. It is the way in for anybody who bought a book
-   and is not yet registered in the lessons, and it stays until every buyer
-   is. Removing it is Pedro's call, on that day.
+   THE ACCESS CODE IS GONE. Pedro, 6 Sep 2026: "pode tirar o ACCESS CODE de
+   todos os livros." Every gate box now carries the email door itself (the
+   markup with class house-enter, written into the page); offerEmail() below
+   is the fallback for a page that somehow lacks it. A device that unlocked
+   with a code before that day keeps its key: cm_access is still honored.
 
    One file for all six books. Every unit page loads it with
    <script src="/gate.js" defer></script>, and the generators emit that line.
