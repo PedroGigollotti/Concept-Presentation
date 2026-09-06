@@ -443,7 +443,7 @@ function buildA(){
   var el = document.getElementById('exA'); el.innerHTML = '';
   A_DATA.forEach(function(item, i){
     var d = document.createElement('div'); d.className = 'q';
-    var multi = Array.isArray(item.a);
+    var multi = Array.isArray(item.a) && Array.isArray(item.a[0]);
     var inputs;
     if(multi){
       /* Per-blank answer key (item.a is an array of per-blank answer

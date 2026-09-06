@@ -164,8 +164,8 @@
   @media print{#privacyModal{display:none !important;}}
 
  /* A ANALYSIS da serie. Carregado verbatim de c2-unit5.html: estas
-    regras ja existem no B1/B2, C1 e C2 e nao existiam aqui. As sete
-    variaveis que elas usam ja estao definidas nesta pagina. */
+    regras ja existem no B1/B2, C1 e C2 e nao existiam aqui. As
+    sete variaveis que elas usam ja estao definidas nesta pagina. */
  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
  .card-col{background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
  .card-col h4{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--navy);}
@@ -443,7 +443,7 @@ function buildA(){
   var el = document.getElementById('exA'); el.innerHTML = '';
   A_DATA.forEach(function(item, i){
     var d = document.createElement('div'); d.className = 'q';
-    var multi = Array.isArray(item.a);
+    var multi = Array.isArray(item.a) && Array.isArray(item.a[0]);
     var inputs;
     if(multi){
       /* Per-blank answer key (item.a is an array of per-blank answer
