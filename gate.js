@@ -83,7 +83,11 @@
         var role = who && who.role;
         if (role === 'student' || role === 'teacher' || role === 'director') {
           grant();
-          location.reload();
+          /* Reload only if the key took: with storage blocked the page would
+             ask, grant nothing, and reload for ever. Otherwise open in place. */
+          if (unlocked()) { location.reload(); }
+          else if (typeof window.openUnit === 'function') { window.openUnit(); }
+          else if (typeof window.openBook === 'function') { window.openBook(); }
         } else {
           offerEmail();
         }
