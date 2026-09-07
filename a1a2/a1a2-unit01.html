@@ -609,15 +609,6 @@
      with padding instead of centring. */
   .choice-btn{display:inline-block !important;align-items:initial;
               padding:12px 15px !important;line-height:1.35;}
-  .review-key{margin:56px 0 0;padding:22px 24px;border:1.5px solid var(--navy);border-radius:12px;
-    background:var(--panel);font-size:14px;line-height:1.6;color:var(--gray-dark);}
-  .review-key .rk-label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);margin:0 0 14px;}
-  .review-key .rk-q{margin:16px 0 6px;color:var(--ink);}
-  .review-key .rk-q:first-of-type{margin-top:0;}
-  .review-key ol.rk{margin:0 0 4px;padding-left:22px;}
-  .review-key ol.rk li{margin:3px 0;}
-  .review-key .rk-alt{color:var(--gray);font-size:13px;}
-  .review-key .rk-match{margin:2px 0 4px;font-variant-numeric:tabular-nums;}
   .build-note{margin:24px 0 0;padding:22px 24px;border:1.5px dashed var(--red);border-radius:12px;
     background:#FDF6F7;font-size:13.5px;line-height:1.65;color:var(--gray-dark);}
   .build-note p{margin:0 0 12px;} .build-note p:last-child{margin-bottom:0;}
@@ -625,7 +616,7 @@
 </style></head><body><div id="gate">
   <h1>Unit 1</h1>
   <p>Subject pronouns and to be<br>Enter once with the email you registered, and every book in the series opens on this device.</p>
-  <div class="house-enter" style="margin:18px 0 6px;flex:1 1 100%;text-align:center;"><a class="house-btn" href="https://lessons.theconceptmethod.com/enter?next=https%3A%2F%2Ftheconceptmethod.com%2Fa1a2%2Fa1a2-unit01.html" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#B3132B;color:#fff;font-weight:600;text-decoration:none;font-family:inherit;">Enter with my email</a><p style="margin:10px 0 0;font-size:14px;line-height:1.5;opacity:.8;">A link and a six-digit code come to your email. One tap, and this device is signed in for a year: every book, the lessons, and the Coach.</p></div>
+  <div class="house-enter" style="margin:18px 0 6px;flex:1 1 100%;text-align:center;"><a class="house-btn" href="https://lessons.theconceptmethod.com/enter" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#B3132B;color:#fff;font-weight:600;text-decoration:none;font-family:inherit;">Enter with my email</a><p style="margin:10px 0 0;font-size:14px;line-height:1.5;opacity:.8;">A link and a six-digit code come to your email. One tap, and this device is signed in for a year: every book, the lessons, and the Coach.</p></div>
 </div>
 <div id="privacyModal"><div class="card">
   <h3>Nothing is saved here</h3>
@@ -876,7 +867,7 @@
   </div>
   <div class="ex-block"><span class="ex-label">F</span>
     <p class="ex-title">Write a sentence</p>
-    <p class="ex-instr">Use the word, and write one sentence.</p>
+    <p class="ex-instr">Write one sentence with each word.</p>
     <p class="ex-worked"><span class="ex-worked-n">like this</span><span><i>a student</i> &rarr; I am a student.</span></p>
     <div id="exF"></div>
     <button class="check-btn" onclick="checkWrite(&quot;F&quot;,F_DATA,F_RULE)">Check</button>
@@ -892,13 +883,13 @@
   </div>
   <div class="ex-block"><span class="ex-label">H</span>
     <p class="ex-title">Say it after the speaker</p>
-    <p class="ex-instr">These are three of Marco's lines from the conversation. Listen to one, say it out loud, record yourself, and compare the two shapes. Nobody is marking this.</p>
+    <p class="ex-instr">Three of Marco's lines from the conversation. Listen to one, say it back, then record yourself. You will see your line drawn over the one you heard. Nobody is marking this.</p>
     <div id="exH"></div>
     <div class="fb" id="Hscore"></div>
   </div>
   <div class="ex-block"><span class="ex-label">I</span>
     <p class="ex-title">Over to you</p>
-    <p class="ex-instr">Not graded. This is where the form stops being a rule and becomes a sentence you say.</p>
+    <p class="ex-instr">Nobody marks this one. Do it out loud, with somebody if you can.</p>
     <div class="task-box">
       <p><b>Look again at Ana and at Marco.</b> Each of them gives four things: a job, a country, an age, and one thing about somebody else. Write your own four, out loud first and then on paper.</p>
       <p><b>Now one that is not about a person.</b> What day is it? What is your office like? Same verb.</p>
@@ -914,7 +905,8 @@
     <span class="see-also-i">was and were, the past of this verb <b>unit 20</b></span>
     <span class="see-also-i">the whole article system <b>B1/B2 unit 19</b></span>
   </div>
-  </div><div class="foot"><a class="nav-btn" href="a1a2.html">&larr; All units</a><button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button></div><p class="print-reminder">Nothing here is saved. Print before you leave the page.</p></div><script>/* ADDITIVE ONLY, and copied from C1 so the whole series behaves the same.
+  </div><div class="foot"><a class="nav-btn" href="a1a2.html">&larr; All units</a><button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button></div><p class="print-reminder">Nothing here is saved. Print before you leave the page.</p></div><script>
+/* ADDITIVE ONLY, and copied from C1 so the whole series behaves the same.
    A direct visitor has window.self === window.top, so this returns false at
    once and the gate behaves exactly as it always has. It exists because the
    Coach FRAMES the published page rather than keeping a copy of it, and a
@@ -952,6 +944,13 @@ function openUnit(){
   buildAll();
   maybeShowPrivacyModal();
 }
+/* THE EMAIL DOOR COMES BACK TO THIS PAGE. The link in the gate box is
+   written without a destination; the page adds its own address, so a
+   learner who signs in returns to the unit they were opening. */
+(function(){
+  var a = document.querySelector('.house-btn');
+  if(a){ a.href += '?next=' + encodeURIComponent(location.href.split('#')[0]); }
+})();
 document.addEventListener('DOMContentLoaded', function(){
   if(hasAccess()) openUnit();
 });
@@ -1430,5 +1429,4 @@ function buildAll(){
     step();
   };
 })();
-</script><script src="/gate.js" defer></script>
-</body></html>
+</script><script src="/gate.js" defer></script></body></html>
