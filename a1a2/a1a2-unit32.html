@@ -873,20 +873,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1438,7 +1438,7 @@ var C_DATA=[{"q": "This one is more fast.", "a": ["This one is faster"]}, {"q": 
 var D_TERMS=["comfortable", "safe", "dangerous", "modern", "simple", "useful", "quick", "a keyboard", "a battery", "a model", "a choice", "a difference"];
 var D_MEANS=[{"id": "a", "t": "you type on it"}, {"id": "b", "t": "nothing bad can happen"}, {"id": "c", "t": "the thing you pick out of two"}, {"id": "d", "t": "with nothing extra in it"}, {"id": "e", "t": "you feel good in it or with it"}, {"id": "f", "t": "one version of a thing"}, {"id": "g", "t": "new in the way it is made"}, {"id": "h", "t": "what is not the same"}, {"id": "i", "t": "it takes very little time"}, {"id": "j", "t": "something bad can happen"}, {"id": "k", "t": "it holds the power"}, {"id": "l", "t": "it helps you do something"}];
 var D_KEY=["e", "b", "j", "g", "d", "l", "i", "a", "k", "f", "c", "h"];
-var E_DATA=[{"word": "comfortable", "model": "This chair is more comfortable than that one."}, {"word": "safe", "model": "The new model is safer than the old one."}, {"word": "modern", "model": "Their office is more modern than ours."}, {"word": "quick", "model": "This way is quicker than the bus."}, {"word": "a keyboard", "model": "My keyboard is better than yours."}, {"word": "a battery", "model": "This battery is as good as the old one."}, {"word": "a difference", "model": "There's no difference between them."}];
+var E_DATA=[{"word": "comfortable", "model": "This chair is more comfortable than that one."}, {"word": "safe", "model": "The new model is safer than the old one."}, {"word": "modern", "model": "Their office is more modern than ours."}, {"word": "quick", "model": "This way is quicker than the bus."}, {"word": "a keyboard", "model": "My keyboard is better than yours."}, {"word": "a battery", "model": "This battery is as good as the old one."}, {"word": "a difference", "model": "The difference is bigger than I expected."}];
 var E_RULE={"mark": "\\b(?:than|as|more|better|worse)\\b|\\w+er\\b", "markWhy": "Compare two things, and finish the sentence with <em>than</em> or the second <em>as</em>.", "minWords": 4};
 var F_DATA=[{"img": "u32-two-chairs", "name": "TWO CHAIRS", "draw": "two chairs side by side, one with a thick cushion and one plain", "shows": "two chairs, one with a cushion", "model": "This chair is more comfortable than that one."}, {"img": "u32-two-batteries", "name": "TWO BATTERIES", "draw": "two batteries side by side, one drawn full and one nearly empty", "shows": "two batteries, one full and one empty", "model": "This battery is better than that one."}, {"img": "u32-two-keyboards", "name": "TWO KEYBOARDS", "draw": "two keyboards side by side, one with many keys and one with few", "shows": "two keyboards, one with fewer keys", "model": "This keyboard is simpler than that one."}, {"img": "u32-two-models", "name": "TWO MODELS", "draw": "two phones side by side, one thick and square and one thin and round", "shows": "two phones, one thick and one thin", "model": "This model is more modern than that one."}, {"img": "u32-two-roads", "name": "TWO WAYS", "draw": "two paths from the same point, one straight and short and one long and winding", "shows": "two paths, one short and one long", "model": "This one is quicker than that one."}];
 var F_BOX=["comfortable", "safe", "modern", "quick", "keyboard", "battery"];

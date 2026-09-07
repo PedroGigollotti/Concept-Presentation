@@ -875,20 +875,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1440,7 +1440,7 @@ var C_DATA=[{"q": "She's been here since three months.", "a": ["She's been here 
 var D_TERMS=["news", "a year", "a month", "an age", "so far", "lately", "to begin", "to grow", "to improve", "to last", "congratulations", "happy for you"];
 var D_MEANS=[{"id": "a", "t": "in the last few days or weeks"}, {"id": "b", "t": "what you say when somebody has good news"}, {"id": "c", "t": "thirty days, more or less"}, {"id": "d", "t": "the team grows every year"}, {"id": "e", "t": "what somebody tells you that you did not know"}, {"id": "f", "t": "the class lasts an hour"}, {"id": "g", "t": "up to now, and it may change"}, {"id": "h", "t": "glad because something good happened to you"}, {"id": "i", "t": "twelve months"}, {"id": "j", "t": "his English improves every month"}, {"id": "k", "t": "a very long time"}, {"id": "l", "t": "the class begins at nine"}];
 var D_KEY=["e", "i", "c", "k", "g", "a", "l", "d", "j", "f", "b", "h"];
-var E_DATA=[{"word": "news", "model": "I've just heard the news."}, {"word": "a year", "model": "She's worked here for a year."}, {"word": "a month", "model": "I haven't seen them since last month."}, {"word": "to begin", "model": "The class has already begun."}, {"word": "to grow", "model": "The team has grown since 2019."}, {"word": "so far", "model": "So far nothing has changed."}, {"word": "congratulations", "model": "Congratulations! Have you told them yet?"}];
+var E_DATA=[{"word": "news", "model": "I've just heard the news."}, {"word": "a year", "model": "She's worked here for a year."}, {"word": "a month", "model": "I haven't seen them since last month."}, {"word": "to begin", "model": "The class has already begun."}, {"word": "to grow", "model": "The team has grown since 2019."}, {"word": "so far", "model": "So far nothing has changed, and I haven't heard from them yet."}, {"word": "congratulations", "model": "Congratulations! Have you told them yet?"}];
 var E_RULE={"mark": "\\b(?:for|since|just|already|yet)\\b", "markWhy": "Use one of the five words, and put it where this unit puts it.", "minWords": 4};
 var F_DATA=[{"img": "u30-calendar-year", "name": "A YEAR", "draw": "twelve small squares in three rows, all of them empty", "shows": "twelve small squares in three rows", "model": "She's worked here for a year."}, {"img": "u30-growing-chart", "name": "GROWING", "draw": "four upright bars side by side, each one taller than the one before it", "shows": "four bars, each taller than the last", "model": "The team has grown since 2019."}, {"img": "u30-empty-list", "name": "SO FAR", "draw": "one list of five lines with the first two ticked and three empty", "shows": "a list with two lines ticked", "model": "We haven't finished it yet."}, {"img": "u30-newspaper", "name": "NEWS", "draw": "one folded newspaper lying flat with a headline bar across the top", "shows": "a folded newspaper with a headline", "model": "I've just read the news."}, {"img": "u30-open-door-class", "name": "ALREADY BEGUN", "draw": "one open door with a long table and empty chairs seen through it", "shows": "an open door and a table beyond it", "model": "The meeting has already begun."}];
 var F_BOX=["news", "year", "month", "begin", "grow", "so far"];

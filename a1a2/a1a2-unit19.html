@@ -884,20 +884,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1449,7 +1449,7 @@ var C_DATA=[{"q": "The meeting is at room 4.", "a": ["The meeting is in room 4"]
 var D_TERMS=["a bus", "a station", "a party", "a corner", "a wall", "a table", "an hour", "a date", "midnight", "noon", "a holiday", "a season"];
 var D_MEANS=[{"id": "a", "t": "summer, winter, spring or fall"}, {"id": "b", "t": "the side of a room"}, {"id": "c", "t": "twelve at night"}, {"id": "d", "t": "the buses and trains stop there"}, {"id": "e", "t": "sixty minutes"}, {"id": "f", "t": "it takes many people across town"}, {"id": "g", "t": "a day when nobody works"}, {"id": "h", "t": "where two streets meet"}, {"id": "i", "t": "twelve in the day"}, {"id": "j", "t": "people, food and music"}, {"id": "k", "t": "the day of the month"}, {"id": "l", "t": "you eat at it"}];
 var D_KEY=["f", "d", "j", "h", "b", "l", "e", "k", "c", "i", "g", "a"];
-var E_DATA=[{"word": "a bus", "model": "I'm on the bus."}, {"word": "a party", "model": "The party is on Friday, at 8."}, {"word": "a corner", "model": "See you at the corner."}, {"word": "a table", "model": "Your keys are on the table."}, {"word": "noon", "model": "We finish at noon."}, {"word": "a season", "model": "It rains a lot in winter."}, {"word": "a holiday", "model": "The holiday is on Monday."}];
+var E_DATA=[{"word": "a bus", "model": "I'm on the bus."}, {"word": "a party", "model": "The party is on Friday, at 8."}, {"word": "a corner", "model": "See you at the corner."}, {"word": "a table", "model": "Your keys are on the table."}, {"word": "noon", "model": "We finish at noon."}, {"word": "a season", "model": "My favorite season starts in December."}, {"word": "a holiday", "model": "The holiday is on Monday."}];
 var E_RULE={"mark": "\\b(?:in|on|at)\\b", "markWhy": "Put <em>in</em>, <em>on</em> or <em>at</em> in the sentence, and choose it by size.", "minWords": 4};
 var F_DATA=[{"img": "u19-photo-wall", "name": "A WALL", "draw": "one framed photo hanging on a wall with a picture hook above it", "shows": "a framed photo on a wall", "model": "The photo is on the wall."}, {"img": "u19-keys-table", "name": "A TABLE", "draw": "one set of keys lying on a small table seen from above", "shows": "keys on a table", "model": "The keys are on the table."}, {"img": "u19-station", "name": "A STATION", "draw": "one bus shelter with a bench under it and a sign on a post beside it", "shows": "a bus shelter with a bench", "model": "I'm at the station."}, {"img": "u19-corner", "name": "A CORNER", "draw": "two streets meeting at a right angle seen from above, with a lamp post at the corner", "shows": "two streets meeting at a corner", "model": "The bus stops at the corner."}, {"img": "u19-bus", "name": "A BUS", "draw": "one bus seen from the side with six windows and two doors", "shows": "a bus from the side", "model": "I'm on the bus."}];
 var F_BOX=["bus", "station", "corner", "wall", "table", "party"];

@@ -880,20 +880,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1446,7 +1446,7 @@ var D_TERMS=["a client", "an office", "a building", "an elevator", "a hallway", 
 var D_MEANS=[{"id": "a", "t": "the long way between two rooms"}, {"id": "b", "t": "after the first"}, {"id": "c", "t": "the room where somebody works"}, {"id": "d", "t": "you sit on it"}, {"id": "e", "t": "with no free time"}, {"id": "f", "t": "the person who buys from you"}, {"id": "g", "t": "not small"}, {"id": "h", "t": "it takes you up and down"}, {"id": "i", "t": "with no noise"}, {"id": "j", "t": "the offices are in it"}, {"id": "k", "t": "a hot drink for the morning"}, {"id": "l", "t": "somebody from outside"}];
 var D_KEY=["f", "c", "j", "h", "a", "l", "d", "k", "g", "b", "i", "e"];
 var E_DATA=[{"word": "a client", "model": "The client is from Madrid."}, {"word": "an office", "model": "Her office is big."}, {"word": "a building", "model": "The building is on my street."}, {"word": "an elevator", "model": "The elevator is at the end of the hallway."}, {"word": "a hallway", "model": "The hallway is quiet."}, {"word": "a visitor", "model": "A visitor is here for you."}, {"word": "coffee", "model": "The coffee is on the second floor."}];
-var E_RULE={"mark": "\\b(?:a|an|the)\\b", "markWhy": "Ask whether the other person knows which one. Then write <em>the</em>, <em>a</em> or <em>an</em>, or no word at all.", "minWords": 3};
+var E_RULE={"mark": "\\b(?:a|an|the|my|your|his|her|its|our|their)\\b", "markWhy": "Ask whether the other person knows which one. Then write <em>the</em>, <em>a</em>, <em>an</em>, <em>my</em> or <em>her</em>.", "minWords": 3};
 var F_DATA=[{"img": "u05-office", "name": "OFFICE", "draw": "one office room seen from the door, with a desk, a chair and a window behind the desk", "shows": "an office with a desk and a chair", "model": "The office is big."}, {"img": "u05-building", "name": "BUILDING", "draw": "one tall office building seen from the street, four rows of windows, nothing else in the frame", "shows": "one office building", "model": "The building is big."}, {"img": "u05-hallway", "name": "HALLWAY", "draw": "a long narrow hallway drawn in perspective with three closed doors on the left and three on the right", "shows": "a hallway with doors on both sides", "model": "The hallway is quiet."}, {"img": "u05-chair", "name": "CHAIR", "draw": "one office chair on wheels seen from the side, nothing else in the frame", "shows": "one office chair", "model": "The chair is new."}, {"img": "u05-coffee", "name": "COFFEE", "draw": "one coffee machine on a counter with two cups beside it", "shows": "a coffee machine with two cups", "model": "The coffee is here."}];
 var F_BOX=["client", "office", "building", "elevator", "hallway", "chair"];
 var F_USED="elevator";

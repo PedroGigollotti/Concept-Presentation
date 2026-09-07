@@ -879,20 +879,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1445,7 +1445,7 @@ var D_DATA=[{"q": "Ravi and her dog.", "a": ["Ravi and his dog"]}, {"q": "The my
 var E_TERMS=["a family", "a sister", "a brother", "a husband", "a wife", "a son", "a daughter", "a dog", "a cat", "a photo", "lovely", "young"];
 var E_MEANS=[{"id": "a", "t": "a picture of real people"}, {"id": "b", "t": "the man a woman is married to"}, {"id": "c", "t": "not old"}, {"id": "d", "t": "a girl with the same parents"}, {"id": "e", "t": "somebody's girl"}, {"id": "f", "t": "the people you belong to"}, {"id": "g", "t": "very nice to see"}, {"id": "h", "t": "the woman a man is married to"}, {"id": "i", "t": "it lives with you and is quiet"}, {"id": "j", "t": "a boy with the same parents"}, {"id": "k", "t": "it lives with you and barks"}, {"id": "l", "t": "somebody's boy"}];
 var E_KEY=["f", "d", "j", "b", "h", "l", "e", "k", "i", "a", "g", "c"];
-var F_DATA=[{"word": "a family", "model": "This is my family."}, {"word": "a sister", "model": "Her name is Sofia."}, {"word": "a husband", "model": "Sofia's husband is Ravi."}, {"word": "a dog", "model": "Its name is Max."}, {"word": "a son", "model": "Their son is young."}, {"word": "a photo", "model": "This is Leo's photo."}, {"word": "lovely", "model": "They're a lovely family."}];
+var F_DATA=[{"word": "a family", "model": "This is my family."}, {"word": "a sister", "model": "My sister works at the airport."}, {"word": "a husband", "model": "Sofia's husband is Ravi."}, {"word": "a dog", "model": "Her dog is called Max."}, {"word": "a son", "model": "Their son is young."}, {"word": "a photo", "model": "This is Leo's photo."}, {"word": "lovely", "model": "Their apartment is lovely."}];
 var F_RULE={"mark": "\\b(?:my|your|his|her|its|our|their)\\b|'s\\b", "markWhy": "Say whose it is. Use <em>my, your, his, her, its, our, their</em>, or a name with <em>'s</em>.", "minWords": 3};
 var G_DATA=[{"img": "u03-family", "name": "A FAMILY", "draw": "four people standing side by side facing forward: a man, a woman, a boy and a girl, all the same simple style", "shows": "a family of four standing together", "model": "This is their family."}, {"img": "u03-woman-dog", "name": "A WOMAN AND A DOG", "draw": "one woman standing beside a dog that sits at her feet, both facing forward", "shows": "a woman with a dog at her feet", "model": "Her dog is young."}, {"img": "u03-man-dog", "name": "A MAN AND A DOG", "draw": "one man standing beside a dog that sits at his feet, both facing forward", "shows": "a man with a dog at his feet", "model": "His dog is young."}, {"img": "u03-cat", "name": "A CAT", "draw": "one cat sitting alone and facing forward, nothing else in the frame", "shows": "one cat sitting", "model": "Its name is Max."}, {"img": "u03-two-sisters", "name": "TWO SISTERS", "draw": "two young women standing side by side facing forward, the same height", "shows": "two young women side by side", "model": "They are sisters."}];
 var G_BOX=["family", "sister", "husband", "dog", "cat", "son"];

@@ -873,20 +873,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1438,7 +1438,7 @@ var C_DATA=[{"q": "Her needs help.", "a": ["She needs help"]}, {"q": "Can you ca
 var D_TERMS=["to call", "to send", "to text", "to invite", "to need", "to know", "a number", "a message", "a coworker", "lunch", "somebody", "really"];
 var D_MEANS=[{"id": "a", "t": "she texts me the number"}, {"id": "b", "t": "the meal in the middle of the day"}, {"id": "c", "t": "she knows everybody here"}, {"id": "d", "t": "she calls him every night"}, {"id": "e", "t": "more than a little"}, {"id": "f", "t": "what you send when you cannot call"}, {"id": "g", "t": "they invite us to lunch"}, {"id": "h", "t": "a person you do not name"}, {"id": "i", "t": "he sends me an email"}, {"id": "j", "t": "somebody who works with you"}, {"id": "k", "t": "he needs a new phone"}, {"id": "l", "t": "you call it"}];
 var D_KEY=["d", "i", "a", "g", "k", "c", "l", "f", "j", "b", "h", "e"];
-var E_DATA=[{"word": "to call", "model": "I can call him tonight."}, {"word": "to send", "model": "Can you send me the report?"}, {"word": "to invite", "model": "We can invite them to lunch."}, {"word": "to know", "model": "She knows us well."}, {"word": "a number", "model": "I can text it to you now."}, {"word": "a message", "model": "Send her a message."}, {"word": "lunch", "model": "Come to lunch with us."}];
+var E_DATA=[{"word": "to call", "model": "I can call him tonight."}, {"word": "to send", "model": "Can you send me the report?"}, {"word": "to invite", "model": "We can invite them to lunch."}, {"word": "to know", "model": "She knows us well."}, {"word": "a number", "model": "I have a number for her."}, {"word": "a message", "model": "Send her a message."}, {"word": "lunch", "model": "Come to lunch with us."}];
 var E_RULE={"mark": "\\b(?:me|him|her|us|them|it|you)\\b", "markWhy": "Put one of the seven after-the-verb words in the sentence.", "minWords": 3};
 var F_DATA=[{"img": "u18-phone", "name": "CALLING", "draw": "one phone seen from the front with a call screen and two round buttons on it", "shows": "a phone showing a call screen", "model": "I can call her tonight."}, {"img": "u18-envelope", "name": "SENDING", "draw": "one closed envelope seen from the front with a stamp in the corner", "shows": "a closed envelope with a stamp", "model": "She can send it to me."}, {"img": "u18-message", "name": "A MESSAGE", "draw": "one phone screen with three message bubbles on it, two on one side and one on the other", "shows": "a phone screen with message bubbles", "model": "He can text me the number."}, {"img": "u18-lunch-table", "name": "LUNCH", "draw": "one table seen from above with three plates and three glasses set on it", "shows": "a table set for three", "model": "We can invite them to lunch."}, {"img": "u18-two-coworkers", "name": "TWO COWORKERS", "draw": "two people standing side by side facing forward, one holding a folder", "shows": "two people, one with a folder", "model": "I know them well."}];
 var F_BOX=["call", "send", "text", "invite", "number", "lunch"];

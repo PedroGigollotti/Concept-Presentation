@@ -873,20 +873,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1439,7 +1439,7 @@ var D_TERMS=["a report", "a team", "a habit", "a minute", "today", "every day", 
 var D_MEANS=[{"id": "a", "t": "you feel sorry for somebody"}, {"id": "b", "t": "the paper you write about your work"}, {"id": "c", "t": "he tells me everything"}, {"id": "d", "t": "sixty seconds"}, {"id": "e", "t": "it changes every week"}, {"id": "f", "t": "the people you work with"}, {"id": "g", "t": "she is drinking coffee"}, {"id": "h", "t": "this day, the one you are in"}, {"id": "i", "t": "they stop at six"}, {"id": "j", "t": "something you do again and again"}, {"id": "k", "t": "he rests on Sunday"}, {"id": "l", "t": "all seven days, with no exception"}];
 var D_KEY=["b", "f", "j", "d", "h", "l", "a", "k", "g", "c", "i", "e"];
 var E_DATA=[{"word": "a report", "model": "I'm writing a report today."}, {"word": "to rest", "model": "I usually rest on Sundays."}, {"word": "to drink", "model": "She's drinking coffee right now."}, {"word": "to stop", "model": "We always stop at six."}, {"word": "a habit", "model": "It is a habit: I read every day."}, {"word": "today", "model": "The team is working today."}, {"word": "to change", "model": "The list changes every week."}];
-var E_RULE={"mark": "\\b(?:every day|now|today|usually|always|never|on \\w+days)\\b", "markWhy": "Put a word for time in the sentence, so the form you chose has a reason.", "minWords": 4};
+var E_RULE={"mark": "\\b(?:every \\w+|now|today|tonight|usually|always|never|sometimes|often|rarely|at the moment|right now|this \\w+|these days|twice a \\w+|on \\w+days)\\b", "markWhy": "Put a word for time in the sentence, so the form you chose has a reason.", "minWords": 4};
 var F_DATA=[{"img": "u14-report", "name": "REPORT", "draw": "one sheet of paper with a title bar at the top and six lines of writing under it", "shows": "a sheet of paper with lines of writing", "model": "He is writing a report now."}, {"img": "u14-coffee", "name": "COFFEE", "draw": "one cup of coffee on a saucer on a small round table", "shows": "a cup of coffee on a table", "model": "She is drinking coffee now."}, {"img": "u14-clock-six", "name": "SIX", "draw": "one round wall clock with the hands at six o clock", "shows": "a clock at six", "model": "They stop at six every day."}, {"img": "u14-sleeping", "name": "SLEEPING", "draw": "one person lying on a sofa with their eyes closed and one arm over the side", "shows": "a person asleep on a sofa", "model": "He is sleeping now."}, {"img": "u14-empty-desk", "name": "EMPTY DESK", "draw": "one desk with nothing on it and one empty chair pushed under it", "shows": "an empty desk with a chair", "model": "The team rests every Sunday."}];
 var F_BOX=["report", "rest", "coffee", "stop", "sleep", "now"];
 var F_USED="rest";

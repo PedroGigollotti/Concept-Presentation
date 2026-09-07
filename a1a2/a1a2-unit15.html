@@ -873,20 +873,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1439,11 +1439,11 @@ var D_TERMS=["cozy", "friendly", "amazing", "heavy", "light", "clean", "dirty", 
 var D_MEANS=[{"id": "a", "t": "it takes very little time"}, {"id": "b", "t": "much better than good"}, {"id": "c", "t": "you hear it from far away"}, {"id": "d", "t": "small and comfortable"}, {"id": "e", "t": "the people who work there"}, {"id": "f", "t": "easy to lift"}, {"id": "g", "t": "easy to talk to"}, {"id": "h", "t": "somewhere you can be"}, {"id": "i", "t": "with no dirt on it"}, {"id": "j", "t": "it takes a long time"}, {"id": "k", "t": "hard to lift"}, {"id": "l", "t": "with dirt on it"}];
 var D_KEY=["d", "g", "b", "k", "f", "i", "l", "c", "j", "a", "h", "e"];
 var E_DATA=[{"word": "cozy", "model": "It's a cozy little place."}, {"word": "heavy", "model": "This box is very heavy."}, {"word": "clean", "model": "The rooms are clean."}, {"word": "loud", "model": "My neighbors are loud at night."}, {"word": "fast", "model": "We take the fast train."}, {"word": "a place", "model": "I know a cheap place near here."}, {"word": "amazing", "model": "The coffee here is amazing."}];
-var E_RULE={"mark": "\\b(?:cozy|friendly|amazing|heavy|light|clean|dirty|loud|slow|fast)\\b", "markWhy": "Use one of the describing words, in front of the noun or after <em>be</em>.", "minWords": 3};
+var E_RULE={"mark": "\\b(?:cozy|friendly|amazing|heavy|light|clean|dirty|loud|slow|fast|cheap|small)\\b", "markWhy": "Use one of the describing words, in front of the noun or after <em>be</em>.", "minWords": 3};
 var F_DATA=[{"img": "u15-heavy-box", "name": "HEAVY BOX", "draw": "one large closed box on the floor with two thick straps around it", "shows": "a large box with straps around it", "model": "The box is heavy."}, {"img": "u15-clean-desk", "name": "CLEAN DESK", "draw": "one desk with nothing on it at all, seen from the front", "shows": "a desk with nothing on it", "model": "The desk is clean."}, {"img": "u15-dirty-window", "name": "DIRTY WINDOW", "draw": "one window seen from inside with marks and streaks across the glass", "shows": "a window with marks across the glass", "model": "The window is dirty."}, {"img": "u15-two-cafes", "name": "TWO CAFES", "draw": "two small shop fronts side by side, each with a door and one window and an awning", "shows": "two small shop fronts", "model": "They are cozy places."}, {"img": "u15-light-bag", "name": "LIGHT BAG", "draw": "one small empty bag hanging from a hook by one strap", "shows": "a small empty bag on a hook", "model": "The bag is light."}];
 var F_BOX=["cozy", "heavy", "light", "clean", "dirty", "loud"];
 var F_USED="cozy";
-var F_RULE={"mark": "\\b(?:cozy|friendly|amazing|heavy|light|clean|dirty|loud|slow|fast)\\b", "markWhy": "Describe it, in front of the noun or after <em>be</em>.", "minWords": 3};
+var F_RULE={"mark": "\\b(?:cozy|friendly|amazing|heavy|light|clean|dirty|loud|slow|fast|cheap|small)\\b", "markWhy": "Describe it, in front of the noun or after <em>be</em>.", "minWords": 3};
 var G_DATA=[{"say": "There's a new cafe near my house. It's really nice.", "text": "There's a new cafe near my house. It's really nice.", "hint": "&ldquo;new&rdquo; is the loud word in the first half, and &ldquo;nice&rdquo; in the second.", "clip": "u15-ac-there_s_a_new_cafe_near_my_hou-4501"}, {"say": "No, it's small, but it's cozy. The coffee is amazing.", "text": "No, it's small, but it's cozy. The coffee is amazing.", "hint": "Stop on the comma. The two halves lean against each other.", "clip": "u15-ac-no_it_s_small_but_it_s_cozy_th-6096"}, {"say": "No, it's cheap. And the staff are friendly.", "text": "No, it's cheap. And the staff are friendly.", "hint": "&ldquo;are&rdquo; is quick and quiet between the two strong words.", "clip": "u15-ac-no_it_s_cheap_and_the_staff_ar-e896"}];
 var PEAKS={"u15-ac-there_s_a_new_cafe_near_my_hou-4501": [0.157, 0.765, 0.678, 0.504, 0.539, 0.61, 0.317, 0.696, 0.928, 0.048, 1.0, 0.928, 0.511, 0.604, 0.903, 0.96, 0.239, 0.7, 0.504, 0.312, 0.019, 0.011, 0.01, 0.002, 0.001, 0.002, 0.576, 0.441, 0.076, 0.141, 0.117, 0.159, 0.809, 0.962, 0.858, 0.576, 0.418, 0.635, 0.625, 0.443, 0.103, 0.008, 0.015, 0.007, 0.004, 0.036, 0.0, 0.0, 0.0, 0.0], "u15-ac-no_it_s_small_but_it_s_cozy_th-6096": [0.515, 0.768, 0.769, 0.648, 0.267, 0.459, 0.679, 0.023, 0.493, 0.635, 0.864, 0.743, 0.134, 0.545, 0.536, 0.108, 0.178, 0.592, 0.706, 0.396, 0.522, 0.41, 0.045, 0.006, 0.004, 0.004, 0.002, 0.499, 0.424, 0.228, 1.0, 0.81, 0.557, 0.431, 0.57, 0.31, 0.436, 0.287, 0.242, 0.622, 0.728, 0.65, 0.472, 0.455, 0.369, 0.284, 0.0, 0.0, 0.0, 0.0], "u15-ac-no_it_s_cheap_and_the_staff_ar-e896": [0.162, 0.361, 0.901, 0.928, 1.0, 0.922, 0.766, 0.645, 0.739, 0.566, 0.026, 0.021, 0.17, 0.323, 0.577, 0.617, 0.416, 0.102, 0.055, 0.003, 0.0, 0.003, 0.004, 0.685, 0.489, 0.559, 0.041, 0.022, 0.739, 0.914, 0.882, 0.047, 0.589, 0.463, 0.031, 0.707, 0.725, 0.321, 0.511, 0.555, 0.483, 0.274, 0.027, 0.008, 0.079, 0.0, 0.0, 0.0, 0.0, 0.0]};
 function buildAll(){

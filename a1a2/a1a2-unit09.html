@@ -876,20 +876,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1441,7 +1441,7 @@ var C_DATA=[{"q": "He doesn't lives across town.", "a": ["He doesn't live across
 var D_TERMS=["a town", "a city", "a school", "a university", "a week", "a weekend", "a job", "a train", "far", "abroad", "alone", "to work"];
 var D_MEANS=[{"id": "a", "t": "not near"}, {"id": "b", "t": "children learn there"}, {"id": "c", "t": "he works at a school"}, {"id": "d", "t": "Saturday and Sunday"}, {"id": "e", "t": "smaller than a city"}, {"id": "f", "t": "it takes you across town"}, {"id": "g", "t": "you study there after school"}, {"id": "h", "t": "with nobody else"}, {"id": "i", "t": "a very big town"}, {"id": "j", "t": "in another country"}, {"id": "k", "t": "seven days"}, {"id": "l", "t": "the work somebody does"}];
 var D_KEY=["e", "i", "b", "g", "k", "d", "l", "f", "a", "j", "h", "c"];
-var E_DATA=[{"word": "a town", "model": "I don't live in this town."}, {"word": "a city", "model": "Does she live in a big city?"}, {"word": "a school", "model": "He works at a school."}, {"word": "a job", "model": "Do you like your job?"}, {"word": "a week", "model": "We don't work every week."}, {"word": "far", "model": "She doesn't live far from here."}, {"word": "abroad", "model": "Does your sister live abroad?"}];
+var E_DATA=[{"word": "a town", "model": "I don't live in this town."}, {"word": "a city", "model": "Does she live in a big city?"}, {"word": "a school", "model": "He doesn't work at a school."}, {"word": "a job", "model": "Do you like your job?"}, {"word": "a week", "model": "We don't work every week."}, {"word": "far", "model": "She doesn't live far from here."}, {"word": "abroad", "model": "Does your sister live abroad?"}];
 var E_RULE={"mark": "\\b(?:do|does|don't|doesn't)\\b", "markWhy": "Use <em>don't</em>, <em>doesn't</em>, <em>Do</em> or <em>Does</em>, and leave the verb after it bare.", "minWords": 3};
 var F_DATA=[{"img": "u09-city", "name": "CITY", "draw": "a row of five tall buildings of different heights seen from the street", "shows": "a row of tall city buildings", "model": "She doesn't live in a city."}, {"img": "u09-school", "name": "SCHOOL", "draw": "one school building with a door in the middle and four windows, and a flag on the roof", "shows": "a school building with a flag", "model": "He doesn't work at a school."}, {"img": "u09-train", "name": "TRAIN", "draw": "one train seen from the side with three carriages and windows along it", "shows": "a train with three carriages", "model": "They don't live near the train."}, {"img": "u09-two-people", "name": "TWO PEOPLE", "draw": "two people standing side by side facing forward, both with a bag on one shoulder", "shows": "two people with bags", "model": "They don't live near here."}, {"img": "u09-one-person", "name": "ONE PERSON", "draw": "one person standing alone facing forward with a bag on one shoulder", "shows": "one person with a bag", "model": "She doesn't live near here."}];
 var F_BOX=["town", "city", "school", "train", "job", "week"];

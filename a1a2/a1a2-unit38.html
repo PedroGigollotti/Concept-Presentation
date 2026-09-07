@@ -873,20 +873,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1438,7 +1438,7 @@ var C_DATA=[{"q": "He learns fastly.", "a": ["He learns fast"]}, {"q": "She comm
 var D_TERMS=["a hire", "to communicate", "to manage", "to type", "to correct", "a mistake", "a skill", "an effort", "careful", "polite", "honest", "patient"];
 var D_MEANS=[{"id": "a", "t": "the work you put into something"}, {"id": "b", "t": "somebody who has just joined the team"}, {"id": "c", "t": "you tell the truth"}, {"id": "d", "t": "she corrects the mistakes"}, {"id": "e", "t": "he manages the whole project"}, {"id": "f", "t": "you say please and thank you"}, {"id": "g", "t": "something you do wrong"}, {"id": "h", "t": "you can wait without getting angry"}, {"id": "i", "t": "she communicates well with the team"}, {"id": "j", "t": "you do not make mistakes"}, {"id": "k", "t": "she types on the keyboard"}, {"id": "l", "t": "something you can do well"}];
 var D_KEY=["b", "i", "e", "k", "d", "g", "l", "a", "j", "f", "c", "h"];
-var E_DATA=[{"word": "a hire", "model": "The new hire learns fast."}, {"word": "to communicate", "model": "She communicates well with everybody."}, {"word": "to type", "model": "He types quickly and makes no mistakes."}, {"word": "careful", "model": "She is careful, and she checks everything carefully."}, {"word": "polite", "model": "He answers the phone politely."}, {"word": "a mistake", "model": "She makes very few mistakes."}, {"word": "patient", "model": "He waits patiently for an answer."}];
+var E_DATA=[{"word": "a hire", "model": "The new hire learns fast."}, {"word": "to communicate", "model": "She communicates well with everybody."}, {"word": "to type", "model": "He types quickly and makes no mistakes."}, {"word": "careful", "model": "She is careful, and she checks everything carefully."}, {"word": "polite", "model": "He answers the phone politely."}, {"word": "a mistake", "model": "She corrected the mistake quickly."}, {"word": "patient", "model": "He waits patiently for an answer."}];
 var E_RULE={"mark": "\\b\\w+ly\\b|\\b(?:well|fast|hard)\\b", "markWhy": "Say how somebody does it, and put the word after the verb.", "minWords": 4};
 var F_DATA=[{"img": "u38-typing-hands", "name": "TYPING", "draw": "two hands over a keyboard with three short lines above them", "shows": "two hands over a keyboard", "model": "She types quickly."}, {"img": "u38-checked-list", "name": "CAREFUL", "draw": "one list of six lines with a tick beside every one of them", "shows": "a list with a tick on every line", "model": "He checks everything carefully."}, {"img": "u38-two-people-talking", "name": "COMMUNICATING", "draw": "two people facing each other, one with an open hand raised", "shows": "two people talking", "model": "She communicates well."}, {"img": "u38-crossed-out", "name": "A MISTAKE", "draw": "one sheet of paper with two lines crossed out and one written above", "shows": "a paper with two lines crossed out", "model": "He corrects his mistakes quickly."}, {"img": "u38-waiting-chair", "name": "PATIENT", "draw": "one person sitting on a chair with their hands in their lap", "shows": "a person sitting with hands in their lap", "model": "She waits patiently."}];
 var F_BOX=["hire", "communicate", "type", "mistake", "careful", "patient"];

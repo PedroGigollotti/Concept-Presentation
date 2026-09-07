@@ -885,20 +885,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1451,7 +1451,7 @@ var D_DATA=[{"q": "I'm designer.", "a": ["I'm a designer"]}, {"q": "They're a pe
 var E_TERMS=["a desk", "a laptop", "a headset", "a pen", "a screen", "an eraser", "a folder", "a notebook", "a book", "a thing", "small", "ready"];
 var E_MEANS=[{"id": "a", "t": "you write in it"}, {"id": "b", "t": "you wear it to hear and talk"}, {"id": "c", "t": "not big"}, {"id": "d", "t": "the table you work at"}, {"id": "e", "t": "it takes the pencil off"}, {"id": "f", "t": "able to start now"}, {"id": "g", "t": "you write with it"}, {"id": "h", "t": "you read it"}, {"id": "i", "t": "a computer you carry"}, {"id": "j", "t": "your papers are in it"}, {"id": "k", "t": "you look at it to see your work"}, {"id": "l", "t": "anything you can hold"}];
 var E_KEY=["d", "i", "b", "g", "k", "e", "j", "a", "h", "l", "c", "f"];
-var F_DATA=[{"word": "a laptop", "model": "It's a laptop."}, {"word": "a headset", "model": "It's a headset."}, {"word": "an eraser", "model": "It's an eraser."}, {"word": "a pen", "model": "They're pens."}, {"word": "a desk", "model": "This is my desk."}, {"word": "a book", "model": "Two books are on the desk."}, {"word": "a thing", "model": "These small things are erasers."}];
+var F_DATA=[{"word": "a laptop", "model": "It's a laptop."}, {"word": "a headset", "model": "It's a headset."}, {"word": "an eraser", "model": "It's an eraser."}, {"word": "a pen", "model": "I have a pen in my bag."}, {"word": "a desk", "model": "This is my desk."}, {"word": "a book", "model": "Two books are on the desk."}, {"word": "a thing", "model": "These small things are erasers."}];
 var F_RULE={"mark": "\\b(?:a|an)\\b|\\w+s\\b|\\b(?:men|women|children|people)\\b", "markWhy": "One thing takes <em>a</em> or <em>an</em> in front. More than one adds <em>-s</em> and takes nothing in front.", "minWords": 3};
 var G_DATA=[{"img": "u04-laptop", "name": "LAPTOP", "draw": "one open laptop seen from the front, the screen up and the keyboard flat, nothing else in the frame", "shows": "one open laptop", "model": "It's a laptop."}, {"img": "u04-headsets", "name": "HEADSET", "draw": "three identical headsets with a headband and one microphone arm each, side by side in a row", "shows": "three headsets in a row", "model": "They're headsets."}, {"img": "u04-eraser", "name": "ERASER", "draw": "one rectangular eraser lying alone in the middle of the frame", "shows": "one eraser", "model": "It's an eraser."}, {"img": "u04-books", "name": "BOOK", "draw": "four closed books stacked one on top of another, seen from the side", "shows": "four books in a stack", "model": "They're books."}, {"img": "u04-desk", "name": "DESK", "draw": "one empty office desk with four legs, seen from the front, nothing on top of it", "shows": "one empty desk", "model": "It's a desk."}];
 var G_BOX=["laptop", "headset", "eraser", "pen", "book", "desk"];

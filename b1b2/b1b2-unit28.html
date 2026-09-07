@@ -729,20 +729,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -953,6 +953,7 @@ var _IRR = {be:['am','is','are','was','were','been','being'],
  buy:['buys','bought','buying'], eat:['eats','ate','eaten','eating'],
  sit:['sits','sat','sitting'], stand:['stands','stood','standing'],
  lose:['loses','lost','losing'], win:['wins','won','winning'],
+ strike:['strikes','struck','striking'],
  begin:['begins','began','begun','beginning'], break:['breaks','broke','broken','breaking'],
  hold:['holds','held','holding'], hear:['hears','heard','hearing'],
  ring:['rings','rang','rung','ringing'], grow:['grows','grew','grown','growing'],
@@ -1020,15 +1021,81 @@ function _saidSplit(raw,word){
  return false;
 }
 
+/* THE CITATION FORM IS NOT THE FORM ENGLISH LETS YOU WRITE.
+   ------------------------------------------------------------------
+   NETTO'S OWN BOOKS REFUSED FOURTEEN CORRECT SENTENCES on 7 Sep 2026,
+   every one of them because the finder wanted the words exactly as the
+   prompt prints them:
+
+     take its toll   -> "The hours had taken THEIR toll"      refused
+     kick yourself   -> "I could kick MYSELF"                 refused
+     make a case     -> "She made a STRONG case"              refused
+     meet a standard -> "did not meet THE standard"           refused
+     take somebody in-> "The first quote took US in"          refused
+     turn it around  -> "They had IT TURNED around"           refused
+
+   Each of those is the prompt used the only way English allows: the
+   possessive agrees with the subject, the reflexive agrees with the
+   subject, a modifier goes inside the pairing, the article is chosen by
+   the sentence, the placeholder is filled by a real object, and the
+   causative puts the object before the participle. A learner who writes
+   the citation form instead would be writing worse English.
+
+   SO A SLOT IS A SLOT. `its` in a prompt means "the possessive", not the
+   word its. Same for a reflexive, an article, and `somebody`. And one
+   modifier may stand inside the pairing, exactly one, never at either
+   end, so `make a case` is not satisfied by two unrelated words that
+   happen to sit five apart. */
+var _POSS=' my your his her its our their ';
+var _REFL=' myself yourself himself herself itself ourselves yourselves themselves oneself ';
+var _ART=' a an the ';
+var _ANY=' somebody someone something somewhere ';
+var _PRON=' it them him her us me you this that ';
+
+function _slot(want,got){
+ if(_sameW(want,got)) return true;
+ if(_POSS.indexOf(' '+want+' ')>=0 && _POSS.indexOf(' '+got+' ')>=0) return true;
+ if(_REFL.indexOf(' '+want+' ')>=0 && _REFL.indexOf(' '+got+' ')>=0) return true;
+ if(_ART.indexOf(' '+want+' ')>=0 && _ART.indexOf(' '+got+' ')>=0) return true;
+ /* `somebody` IS A PERSON, AND THAT IS THE WHOLE OF THE NARROWING.
+    Letting it stand for any single word made "We take the train in the
+    morning" satisfy `take somebody in`, which is a different verb. A person
+    in object position is a personal pronoun, or a name -- and a name is the
+    one thing a lowercased token list cannot see, so the prompt's own word is
+    accepted too and nothing else is. */
+ if(want==='somebody'||want==='someone')
+  return ' me you him her us them somebody someone '.indexOf(' '+got+' ')>=0;
+ if(want==='something'||want==='somewhere')
+  return ' a an the of to in on at and or but '.indexOf(' '+got+' ')<0;
+ return false;
+}
+
+/* The run, allowing at most one word inside it that the prompt does not
+   name. `skip` is spent once and never at the first or the last token. */
+function _runFrom(want,got,i){
+ var k=0,j=i,spent=false;
+ while(k<want.length){
+  if(j>=got.length) return false;
+  if(_slot(want[k],got[j])){ k++; j++; continue; }
+  if(!spent&&k>0&&k<want.length&&_ANY.indexOf(' '+want[k]+' ')<0){
+   spent=true; j++; continue; }
+  return false; }
+ return true;
+}
+
 function _saidIt(raw,word){
  var want=_wtoks(word);
  while(want.length>1&&' to a an the '.indexOf(' '+want[0]+' ')>=0) want=want.slice(1);
  if(!want.length) return true;
  var got=_wtoks(raw);
- for(var i=0;i+want.length<=got.length;i++){
-  var ok=true;
-  for(var k=0;k<want.length;k++){ if(!_sameW(want[k],got[i+k])){ ok=false; break; } }
-  if(ok) return true; }
+ for(var i=0;i<got.length;i++) if(_runFrom(want,got,i)) return true;
+ /* THE CAUSATIVE PUTS THE OBJECT FIRST: had IT TURNED around. Only for a
+    three-word prompt whose middle is the object and whose last is a
+    particle, which is the one place English reorders these. */
+ if(want.length===3&&_PARTS.indexOf(' '+want[2]+' ')>=0&&
+    (_PRON.indexOf(' '+want[1]+' ')>=0||_ANY.indexOf(' '+want[1]+' ')>=0)){
+  var alt=[want[1],want[0],want[2]];
+  for(var m=0;m<got.length;m++) if(_runFrom(alt,got,m)) return true; }
  return false;
 }
 

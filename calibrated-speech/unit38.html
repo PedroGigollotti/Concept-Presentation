@@ -294,7 +294,7 @@ Promise.resolve(PF_DATA).then(data=>{
 </script>
 <script>
 (function(){
-  function isUnlocked(){if(framedByApp())return true;try{return localStorage.getItem('cm_access')==='1'||localStorage.getItem('cm_pv_access')==='1';}catch(e){return false;}}
+  function isUnlocked(){try{return localStorage.getItem('cm_access')==='1'||localStorage.getItem('cm_pv_access')==='1';}catch(e){return false;}}
   function grant(){try{localStorage.setItem('cm_access','1');localStorage.setItem('cm_pv_access','1');}catch(e){}}
   var gate=document.getElementById('cmGate');
   function openBook(){if(gate)gate.style.display='none';document.documentElement.classList.remove('cm-locked');document.body.classList.remove('cm-locked');}

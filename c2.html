@@ -188,7 +188,7 @@
 /* Series-wide unlock. 'cm_access' is the new shared key; 'cm_pv_access' is the
    legacy phrasal-verbs key, honored so existing students never re-enter a code. */
 function isUnlocked(){
-  if(framedByApp()){ return true; }
+  
   try{
     return localStorage.getItem('cm_access') === '1' || localStorage.getItem('cm_pv_access') === '1';
   }catch(e){ return false; }

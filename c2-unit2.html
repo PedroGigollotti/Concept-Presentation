@@ -469,7 +469,7 @@
    'cm_access' is the shared key. 'cm_pv_access' is the legacy phrasal-verbs key,
    honored so students who already entered a code never have to enter it again. */
 function isUnlocked(){
-  if(framedByApp()){ return true; }
+  
   try{ return localStorage.getItem('cm_access')==='1' || localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
 }

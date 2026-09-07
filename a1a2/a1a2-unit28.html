@@ -873,20 +873,20 @@
    Coach FRAMES the published page rather than keeping a copy of it, and a
    student who already unlocked the book in the app must not meet the gate
    again inside it. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
+/* framedByApp() LIVED HERE AND HAS MOVED TO /gate.js, which all 229 gated
+   pages already load. It was wired into hasAccess() below: being inside a
+   frame whose referrer began with one of two strings opened the book with no
+   further check. The app's door is one shared password, the same bytes for
+   everybody, so anybody holding it could open the app, let it frame any unit,
+   and read all six books without being a registered learner.
+   Closing it costs the app nothing: functions/book/[[path]].js serves the unit
+   from the APP'S OWN ORIGIN and writes cm_access before the page's own script
+   runs, so hasAccess() is already true in there on the key alone. */
 function grantAccess(){ try{ localStorage.setItem('cm_access','1'); }catch(e){} }
 /* cm_pv_access is the LEGACY key, from the Phrasal Verbs book, which unlocked
    before the series had a shared key. Honouring it is what keeps an existing
    student from being asked for a code they already used. */
 function hasAccess(){
-  if(framedByApp()){ return true; }
   try{ return localStorage.getItem('cm_access')==='1' ||
               localStorage.getItem('cm_pv_access')==='1'; }
   catch(e){ return false; }
@@ -1438,7 +1438,7 @@ var C_DATA=[{"q": "I meeting a client at 2.", "a": ["I'm meeting a client at 2",
 var D_TERMS=["a dentist", "a doctor", "an appointment", "an interview", "a calendar", "a schedule", "to arrange", "to cancel", "to confirm", "to move", "available", "a reminder"];
 var D_MEANS=[{"id": "a", "t": "she confirms the time by email"}, {"id": "b", "t": "you go there for your teeth"}, {"id": "c", "t": "free, and able to come"}, {"id": "d", "t": "the days of the month on one page"}, {"id": "e", "t": "a fixed time to meet somebody"}, {"id": "f", "t": "something that tells you not to forget"}, {"id": "g", "t": "she arranges the lunch for Friday"}, {"id": "h", "t": "you go there when you are sick"}, {"id": "i", "t": "he moves the meeting to Friday"}, {"id": "j", "t": "they ask you questions about a job"}, {"id": "k", "t": "he cancels the meeting"}, {"id": "l", "t": "the list of what happens and when"}];
 var D_KEY=["b", "h", "e", "j", "d", "l", "g", "k", "a", "i", "c", "f"];
-var E_DATA=[{"word": "a dentist", "model": "I'm seeing the dentist at 9."}, {"word": "an appointment", "model": "I have an appointment, so I'm leaving at 4."}, {"word": "an interview", "model": "She's having an interview on Monday."}, {"word": "to cancel", "model": "They canceled it, so I'm free on Friday."}, {"word": "to confirm", "model": "He confirmed it: we're starting at 12."}, {"word": "available", "model": "I'm available after 3 on Thursday."}, {"word": "to move", "model": "We're moving the meeting to Friday."}];
+var E_DATA=[{"word": "a dentist", "model": "I'm seeing the dentist at 9."}, {"word": "an appointment", "model": "I have an appointment, so I'm leaving at 4."}, {"word": "an interview", "model": "She's having an interview on Monday."}, {"word": "to cancel", "model": "They're canceling the meeting on Friday."}, {"word": "to confirm", "model": "He confirmed it: we're starting at 12."}, {"word": "available", "model": "I'm seeing the doctor on Monday, so I'm only available after three."}, {"word": "to move", "model": "We're moving the meeting to Friday."}];
 var E_RULE={"mark": "\\b(?:am|is|are|'m|'s|'re)\\b[^.]*\\b\\w+ing\\b", "markWhy": "Use <em>be</em> and the verb with <em>-ing</em>, and put a time word at the end.", "minWords": 4};
 var F_DATA=[{"img": "u28-calendar-week", "name": "A CALENDAR", "draw": "one week of a calendar drawn as five boxes, two of them shaded and three empty", "shows": "five calendar boxes, two shaded", "model": "I'm working on Thursday."}, {"img": "u28-dentist-chair", "name": "A DENTIST", "draw": "one dentist chair with a lamp on an arm above it", "shows": "a dentist chair with a lamp", "model": "I'm at the dentist at 9."}, {"img": "u28-clock-twelve", "name": "TWELVE", "draw": "one round wall clock with both hands straight up at twelve", "shows": "a clock at twelve", "model": "We're starting at 12."}, {"img": "u28-interview", "name": "AN INTERVIEW", "draw": "two chairs facing each other across one small table", "shows": "two chairs facing each other", "model": "She's having an interview at 10."}, {"img": "u28-reminder", "name": "A REMINDER", "draw": "one phone screen with a small bell drawn in the middle of it", "shows": "a phone screen with a bell on it", "model": "The reminder is on my phone."}];
 var F_BOX=["dentist", "doctor", "interview", "calendar", "reminder", "available"];
