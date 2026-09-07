@@ -508,7 +508,7 @@
 </style></head><body><div id="gate">
   <h1>Unit 40</h1>
   <p>Collocation: what a word travels with<br>Enter once with the email you registered, and every book in the series opens on this device.</p>
-  <div class="house-enter" style="margin:18px 0 6px;flex:1 1 100%;text-align:center;"><a class="house-btn" href="https://lessons.theconceptmethod.com/enter?next=https%3A%2F%2Ftheconceptmethod.com%2Fb1b2%2Fb1b2-unit40.html" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#B3132B;color:#fff;font-weight:600;text-decoration:none;font-family:inherit;">Enter with my email</a><p style="margin:10px 0 0;font-size:14px;line-height:1.5;opacity:.8;">A link and a six-digit code come to your email. One tap, and this device is signed in for a year: every book, the lessons, and the Coach.</p></div>
+  <div class="house-enter" style="margin:18px 0 6px;flex:1 1 100%;text-align:center;"><a class="house-btn" href="https://lessons.theconceptmethod.com/enter" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#B3132B;color:#fff;font-weight:600;text-decoration:none;font-family:inherit;">Enter with my email</a><p style="margin:10px 0 0;font-size:14px;line-height:1.5;opacity:.8;">A link and a six-digit code come to your email. One tap, and this device is signed in for a year: every book, the lessons, and the Coach.</p></div>
 </div>
 <div id="privacyModal"><div class="card">
   <h3>Nothing is saved here</h3>
@@ -760,7 +760,8 @@
       <p><b>And after that.</b> Do the same thing once a week, for a year. You have the grammar of this level and nobody can give you the company. It is collected, one word at a time, in the language of the work you actually do.</p>
     </div>
   </div>
-  </div><div class="foot"><a class="nav-btn" href="b1b2.html">&larr; All units</a><button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button></div><p class="print-reminder">Nothing here is saved. Print before you leave the page.</p></div><script>/* ADDITIVE ONLY, and copied from C1 so the whole series behaves the same.
+  </div><div class="foot"><a class="nav-btn" href="b1b2.html">&larr; All units</a><button class="action-btn outline" onclick="window.print()">Print / Save as PDF</button></div><p class="print-reminder">Nothing here is saved. Print before you leave the page.</p></div><script>
+/* ADDITIVE ONLY, and copied from C1 so the whole series behaves the same.
    A direct visitor has window.self === window.top, so this returns false at
    once and the gate behaves exactly as it always has. It exists because the
    Coach FRAMES the published page rather than keeping a copy of it, and a
@@ -798,6 +799,13 @@ function openUnit(){
   buildAll();
   maybeShowPrivacyModal();
 }
+/* THE EMAIL DOOR COMES BACK TO THIS PAGE. The link in the gate box is
+   written without a destination; the page adds its own address, so a
+   learner who signs in returns to the unit they were opening. */
+(function(){
+  var a = document.querySelector('.house-btn');
+  if(a){ a.href += '?next=' + encodeURIComponent(location.href.split('#')[0]); }
+})();
 document.addEventListener('DOMContentLoaded', function(){
   if(hasAccess()) openUnit();
 });
@@ -945,6 +953,124 @@ function checkMatch(L,terms,key){var c=0;terms.forEach(function(t,i){
    comma. `Back then we used to send it by post` does not, because a short adverb
    is not a clause. Unit 1 shipped with `at first` on that list and would have
    refused a correct sentence. */
+/* DID THE LEARNER WRITE THIS EXPRESSION, IN ANY FORM ENGLISH GIVES IT?
+
+   This was `low.indexOf(it.word)` -- a literal substring search for the prompt
+   as printed. The prompt is a dictionary form and a sentence is not: unit 8
+   asks for `to get` and its own model answer is "I get up at seven", so the
+   book scored 0 out of 7 against the answers printed on its own page, and the
+   worked example above them failed too. Measured across A1/A2 on 7 Sep 2026:
+   89 of 308 model answers refused by their own book.
+
+   So the prompt is read as words, not as a string. A leading `to`, `a`, `an`
+   or `the` is dropped, because a prompt names the dictionary entry and a
+   sentence puts its own determiner there. Each remaining word matches any
+   ordinary inflection of itself, plus the irregular pasts and participles a
+   beginner meets first. The words must still appear together and in order, so
+   `take its toll` is not satisfied by `take` and `toll` in different clauses.
+
+   IT DOES NOT GUESS ACROSS A GAP. `iron out` is matched only as `iron out`,
+   not as `ironed the last two clauses out`: a separable phrasal verb with its
+   object inside is a real answer, and the item can say so with `find`, which
+   is the escape hatch this engine already has. Widening the run to skip words
+   would make `take its toll` match `take the folder off the toll road`. */
+var _IRR = {be:['am','is','are','was','were','been','being'],
+ have:['has','had','having'], do:['does','did','done','doing'],
+ go:['goes','went','gone','going'], get:['gets','got','gotten','getting'],
+ make:['makes','made','making'], take:['takes','took','taken','taking'],
+ come:['comes','came','coming'], say:['says','said','saying'],
+ see:['sees','saw','seen','seeing'], know:['knows','knew','known','knowing'],
+ give:['gives','gave','given','giving'], find:['finds','found','finding'],
+ think:['thinks','thought','thinking'], tell:['tells','told','telling'],
+ leave:['leaves','left','leaving'], feel:['feels','felt','feeling'],
+ keep:['keeps','kept','keeping'], put:['puts','putting'],
+ send:['sends','sent','sending'], meet:['meets','met','meeting'],
+ pay:['pays','paid','paying'], run:['runs','ran','running'],
+ write:['writes','wrote','written','writing'], read:['reads','reading'],
+ speak:['speaks','spoke','spoken','speaking'], bring:['brings','brought','bringing'],
+ buy:['buys','bought','buying'], eat:['eats','ate','eaten','eating'],
+ sit:['sits','sat','sitting'], stand:['stands','stood','standing'],
+ lose:['loses','lost','losing'], win:['wins','won','winning'],
+ begin:['begins','began','begun','beginning'], break:['breaks','broke','broken','breaking'],
+ hold:['holds','held','holding'], hear:['hears','heard','hearing'],
+ ring:['rings','rang','rung','ringing'], grow:['grows','grew','grown','growing'],
+ fly:['flies','flew','flown','flying'], drive:['drives','drove','driven','driving'],
+ wear:['wears','wore','worn','wearing'], sleep:['sleeps','slept','sleeping'],
+ teach:['teaches','taught','teaching'], catch:['catches','caught','catching'],
+ choose:['chooses','chose','chosen','choosing'], drink:['drinks','drank','drunk','drinking'],
+ fall:['falls','fell','fallen','falling'], forget:['forgets','forgot','forgotten','forgetting'],
+ build:['builds','built','building'], spend:['spends','spent','spending'],
+ lead:['leads','led','leading'], mean:['means','meant','meaning'],
+ understand:['understands','understood','understanding'], wake:['wakes','woke','woken','waking']};
+
+function _stem(w){
+ return w.replace(/ies$/,'y').replace(/(ss|sh|ch|x|o)es$/,'$1')
+         .replace(/([^s])s$/,'$1').replace(/ied$/,'y').replace(/eed$/,'ee')
+         .replace(/([^e])ed$/,'$1').replace(/ing$/,'').replace(/([a-z])\1$/,'$1');
+}
+function _sameW(a,b){
+ if(a===b) return true;
+ var f=_IRR[a]; if(f&&f.indexOf(b)>=0) return true;
+ f=_IRR[b]; if(f&&f.indexOf(a)>=0) return true;
+ var x=_stem(a), y=_stem(b);
+ if(x===y || x===y+'e' || y===x+'e') return true;
+ /* AN ADJECTIVE AND ITS ADVERB ARE THE SAME WORD FOR THIS PURPOSE. Unit 38
+    teaches adverbs of manner: the prompt is `polite` and the answer it wants
+    is "She answered politely", so the book asked for a word and then refused
+    the only sentence that could contain it. Both directions, and the y that
+    becomes i: quick/quickly, easy/easily. */
+ var ly=function(p,q){ return q===p+'ly' || q===p.replace(/y$/,'i')+'ly'
+                          || q===p.replace(/le$/,'ly'); };
+ if(ly(x,y) || ly(y,x)) return true;
+ /* AND SO ARE AN ADJECTIVE AND ITS COMPARATIVE. Unit 32 is the comparative
+    unit: it prompts `safe` and its model answer is "This road is safer than
+    the old one", so the book refused the sentence it had written itself.
+    Both spellings of the doubled consonant, and the y that becomes i. */
+ var er=function(p,q){ return q===p+'r' || q===p+'er' || q===p+'st' || q===p+'est'
+                          || q===p.replace(/y$/,'i')+'er' || q===p.replace(/y$/,'i')+'est'
+                          || q===p+p.slice(-1)+'er' || q===p+p.slice(-1)+'est'; };
+ return er(x,y) || er(y,x);
+}
+function _wtoks(s){
+ var t=String(s==null?'':s).toLowerCase().replace(/[‘’]/g,"'")
+        .replace(/n't\b/g,' not').replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ')
+        .replace(/^ | $/g,'');
+ return t?t.split(' '):[];
+}
+
+/* A SEPARABLE PHRASAL VERB PUTS ITS OBJECT IN THE MIDDLE, AND THAT IS THE
+   ANSWER, NOT A NEAR MISS. B1/B2 prompts `iron out` and its own model reads
+   "We ironed the last two clauses out before signing", which the run above
+   cannot see, because the two words are four apart.
+   ONLY FOR A PARTICLE, AND ONLY FOUR WORDS. The list is closed to the
+   particles English actually separates, so `take its toll` is not widened and
+   cannot be satisfied by `take the folder off the toll road`. Four is the
+   longest object any model in the two books puts there. */
+var _PARTS=' out up off on in down over through away back around apart together aside forward across ';
+function _saidSplit(raw,word){
+ var want=_wtoks(word);
+ while(want.length>1&&' to a an the '.indexOf(' '+want[0]+' ')>=0) want=want.slice(1);
+ if(want.length!==2||_PARTS.indexOf(' '+want[1]+' ')<0) return false;
+ var got=_wtoks(raw);
+ for(var i=0;i<got.length;i++){
+  if(!_sameW(want[0],got[i])) continue;
+  for(var k=i+1;k<=i+5&&k<got.length;k++) if(got[k]===want[1]) return true; }
+ return false;
+}
+
+function _saidIt(raw,word){
+ var want=_wtoks(word);
+ while(want.length>1&&' to a an the '.indexOf(' '+want[0]+' ')>=0) want=want.slice(1);
+ if(!want.length) return true;
+ var got=_wtoks(raw);
+ for(var i=0;i+want.length<=got.length;i++){
+  var ok=true;
+  for(var k=0;k<want.length;k++){ if(!_sameW(want[k],got[i+k])){ ok=false; break; } }
+  if(ok) return true; }
+ return false;
+}
+
+
 function buildWrite(L,data){var el=document.getElementById('ex'+L);el.innerHTML='';
  data.forEach(function(it,i){var d=document.createElement('div');d.className='q';
   d.innerHTML='<div class="q-text"><span class="num">'+(i+1)+'.</span><b>'+it.word+'</b></div>'+
@@ -954,8 +1080,7 @@ function checkWrite(L,data,rule){var c=0;data.forEach(function(it,i){
  var raw=(document.getElementById(L+i).value||'').trim(),low=raw.toLowerCase(),why='';
  var front=(rule.front||[]).filter(function(w){return low.indexOf(w)===0;})[0];
  if(!raw)why='Write a sentence.';
- else if(!(it.find? new RegExp(it.find,'i').test(raw)
-                 : low.indexOf(it.word.toLowerCase().replace(/^(a|an|the)\s+/,''))>=0))
+ else if(!(it.find? new RegExp(it.find,'i').test(raw) : (_saidIt(raw,it.word)||_saidSplit(raw,it.word))))
    why='I cannot find <b>'+it.word+'</b> in your sentence.';
  else if(it.must&&!it.must.some(function(m){return new RegExp('\\b'+m+'\\b','i').test(raw);}))
    why='Use one of these: <b>'+it.must.join(', ')+'</b>.';
@@ -1025,5 +1150,4 @@ function buildAll(){
     step();
   };
 })();
-</script><script src="/gate.js" defer></script>
-</body></html>
+</script><script src="/gate.js" defer></script></body></html>
