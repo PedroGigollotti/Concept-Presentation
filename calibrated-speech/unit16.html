@@ -212,6 +212,24 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;text-alig
 .gscore b{color:#fff;font-size:20px;font-family:var(--sans);display:block;letter-spacing:0}
 .win{color:#1E7A44;font-weight:600}
 </style>
+
+<!-- THE DOOR, PUT BACK INTO THE THING THAT BUILDS THE PAGE, 7 Sep 2026.
+
+     REBUILD_WARNING.md has said since 17 Aug 2026 that rebuilding this book
+     publishes all 44 units with no paywall, because the generator emitted no
+     gate at all. It was true, it was measured twice, and the answer to it was
+     a written warning: do not rebuild. That is not a fix. It is a rule a
+     person has to remember for ever, and the day nobody remembers is the day
+     the only book being sold becomes free to anyone with the address.
+
+     So the gate is in the template now, and the source and the published page
+     agree. What is here is what the live pages carry, lifted from
+     calibrated-speech/unit01.html: the EMAIL door, not the retired access
+     code. REBUILD_WARNING's table still lists VALID_CODES and tryCode; those
+     left the books on 6 Sep and are not in the live pages either.
+
+     Two ways in, and both are in the script below: the house cookie, which
+     /gate.js reads, and being framed by the app. -->
 <style id="cm-gate-style">
 #cmGate{position:fixed;inset:0;z-index:99999;background:var(--paper,#FAFAF7);display:flex;
   align-items:center;justify-content:center;text-align:center;padding:24px}
@@ -228,6 +246,52 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;text-alig
 html.cm-locked,body.cm-locked{overflow:hidden}
 </style>
 </head><body>
+<div id="cmGate" role="dialog" aria-label="Enter with your email" aria-modal="true">
+  <div class="in">
+    <h2>Calibrated Speech</h2>
+    <p>Interactive pronunciation book<br>Enter once with the email you registered, and every book in the series opens on this device.</p>
+    <div class="house-enter" style="margin:18px 0 6px;flex:1 1 100%;text-align:center;"><a class="house-btn" href="https://lessons.theconceptmethod.com/enter?next=https%3A%2F%2Ftheconceptmethod.com%2Fcalibrated-speech%2Funit01.html" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#B3132B;color:#fff;font-weight:600;text-decoration:none;font-family:inherit;">Enter with my email</a><p style="margin:10px 0 0;font-size:14px;line-height:1.5;opacity:.8;">A link and a six-digit code come to your email. One tap, and this device is signed in for a year: every book, the lessons, and the Coach.</p></div>
+  </div>
+</div>
+<script>
+(function(){
+  function isUnlocked(){if(framedByApp())return true;try{return localStorage.getItem('cm_access')==='1'||localStorage.getItem('cm_pv_access')==='1';}catch(e){return false;}}
+  function grant(){try{localStorage.setItem('cm_access','1');localStorage.setItem('cm_pv_access','1');}catch(e){}}
+  var gate=document.getElementById('cmGate');
+  function openBook(){if(gate)gate.style.display='none';document.documentElement.classList.remove('cm-locked');document.body.classList.remove('cm-locked');}
+  function lock(){document.documentElement.classList.add('cm-locked');document.body.classList.add('cm-locked');if(gate)gate.style.display='flex';}
+  /* ---- framed by The Concept Coach -------------------------------------------
+   Inside the app this page is a THIRD-PARTY frame, served from
+   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
+   third-party storage outright, so the unlock flag can never be written and the
+   gate would ask for a code again on every single unit. When the app is the
+   framer the page is already behind the app's own password: protect it once,
+   not twice.
+
+   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
+   coach.theconceptmethod.com is the final address, registered and not yet
+   connected. If only the first were listed here, the day that domain is
+   connected all 138 gated pages would start asking for codes again and nobody
+   would remember why.
+
+   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
+   concept-coach.pages.dev.example.com would match the prefix.
+
+   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
+   returns false immediately and the gate behaves exactly as it always has. */
+function framedByApp(){
+  try{
+    if(window.self === window.top){ return false; }
+    var r = document.referrer || '';
+    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
+           r.indexOf('https://coach.theconceptmethod.com/') === 0;
+  }catch(e){ return false; }
+}
+
+  if(isUnlocked())openBook();else lock();
+})();
+</script>
+<script src="/gate.js" defer>
 
 <header><a class="brand" href="contents.html"><img class="mark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIyMCAxNzAgNDQwIDI2MCI+CjxwYXRoIGQ9Ik0gNTgwLjk1LDM1MS4zMCBBIDE1MC4wMCwxNTAuMDAgMCAxIDEgNTgwLjk1LDI0OC43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUExQTFBIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NDAiIGN5PSIzMDAiIHI9IjExIiBmaWxsPSIjMUExQTFBIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTYyLjg3LDIxMy45NiA0NDguMDMsMzExLjQ3IDQzMS45NywyODguNTMiIGZpbGw9IiNCMzEzMkIiLz4KPGNpcmNsZSBjeD0iNTYyLjg3IiBjeT0iMjEzLjk2IiByPSI3IiBmaWxsPSIjQjMxMzJCIi8+Cjwvc3ZnPgo=" alt="Concept"><span class="wordmark">CONCEPT</span></a><span class="tagline">Mind Your Future</span></header>
 
@@ -239,7 +303,7 @@ html.cm-locked,body.cm-locked{overflow:hidden}
     <div class="meta">Worksheet W16</div>
   </div>
 
-  <div class="coachintro"><b>From your coach.</b> Four short vowels, four different mouth shapes. Run them in a row until the distances feel automatic.</div>
+  <div class="coachintro"><b>From your coach.</b> Cat, bet, cut, cart. Run them in a row until your mouth changes shape without you thinking about it.</div>
 
   <div id="boot" class="err">Loading audio index…</div>
 
@@ -267,7 +331,7 @@ html.cm-locked,body.cm-locked{overflow:hidden}
   <div class="callout try"><div class="lbl">Try this now</div><p>Say them as a slow sequence, five times: cat, bet, cut, cart. Then in reverse. You are training the movement between them, not four separate sounds.</p></div>
   <div class="callout trap"><div class="lbl">Common trap</div><p>The <i>cat</i> vowel should feel slightly exaggerated, even unpleasant. If it feels polite, it is not far enough.</p></div>
 
-  <div class="soundlab mouthwrap"><div class="mouthmap"><img src="boca_crop.png?v=5" alt="Side view of the mouth, showing how the sound is made"><div class="fxslot"></div></div><div><div class="chips"><button class="chip active" data-w="cat"><span class="cipa">/æ/</span><span>cat</span></button><button class="chip" data-w="bet"><span class="cipa">/ɛ/</span><span>bet</span></button><button class="chip" data-w="cut"><span class="cipa">/ʌ/</span><span>cut</span></button><button class="chip" data-w="cart"><span class="cipa">/ɑ/</span><span>cart</span></button></div><p class="dcap fxcap"></p><div class="labbtns"><button class="mini labhear">▶ hear</button><button class="mini labslow">▶ slow</button></div></div></div><script>window.LAB=[{"word": "cat", "cap": "The tongue body sits low and front and holds still. The lips stay relaxed. A short, relaxed vowel. Every vowel is voiced, so the throat buzzes the whole time.", "svg": "<svg class=\"mouthfx\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><circle class=\"fx-tongue\" cx=\"56.5\" cy=\"65.3\" r=\"4.5\"/><g class=\"fx-voice\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g><g class=\"fx-voice\" style=\"animation-delay:.55s\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g></svg>"}, {"word": "bet", "cap": "The tongue body sits mid and front and holds still. The lips stay relaxed. A short, relaxed vowel. Every vowel is voiced, so the throat buzzes the whole time.", "svg": "<svg class=\"mouthfx\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><circle class=\"fx-tongue\" cx=\"58.5\" cy=\"57.0\" r=\"4.5\"/><g class=\"fx-voice\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g><g class=\"fx-voice\" style=\"animation-delay:.55s\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g></svg>"}, {"word": "cut", "cap": "The tongue body sits mid and central and holds still. The lips stay relaxed. A short, relaxed vowel. Every vowel is voiced, so the throat buzzes the whole time.", "svg": "<svg class=\"mouthfx\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><circle class=\"fx-tongue\" cx=\"47.0\" cy=\"58.6\" r=\"4.5\"/><g class=\"fx-voice\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g><g class=\"fx-voice\" style=\"animation-delay:.55s\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g></svg>"}, {"word": "cart", "cap": "The tongue body sits low and back and holds still. The lips stay relaxed. A long, tense vowel. Every vowel is voiced, so the throat buzzes the whole time.", "svg": "<svg class=\"mouthfx\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><circle class=\"fx-tongue\" cx=\"41.5\" cy=\"67.9\" r=\"4.5\"/><g class=\"fx-voice\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g><g class=\"fx-voice\" style=\"animation-delay:.55s\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g></svg>"}];</script>
+  <div class="soundlab mouthwrap"><div class="mouthmap"><img src="boca_crop.png?v=5" alt="Side view of the mouth, showing how the sound is made"><div class="fxslot"></div></div><div><div class="chips"><button class="chip active" data-w="cat"><span class="cipa">/æ/</span><span>cat</span></button><button class="chip" data-w="bet"><span class="cipa">/ɛ/</span><span>bet</span></button><button class="chip" data-w="cut"><span class="cipa">/ʌ/</span><span>cut</span></button><button class="chip" data-w="cart"><span class="cipa">/ɑ/</span><span>cart</span></button></div><p class="dcap fxcap"></p><div class="labbtns"><button class="mini labhear">▶ hear</button><button class="mini labslow">▶ slow</button></div></div></div><script>window.LAB=[{"word": "cat", "cap": "The tongue sits low and front and stays put, lips relaxed. A short, relaxed vowel, and like every vowel it is voiced, so your throat buzzes right through it.", "svg": "<svg class=\"mouthfx\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><circle class=\"fx-tongue\" cx=\"56.5\" cy=\"65.3\" r=\"4.5\"/><g class=\"fx-voice\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g><g class=\"fx-voice\" style=\"animation-delay:.55s\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g></svg>"}, {"word": "bet", "cap": "The tongue sits mid and front and stays put, lips relaxed. A short, relaxed vowel, and like every vowel it is voiced, so your throat buzzes right through it.", "svg": "<svg class=\"mouthfx\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><circle class=\"fx-tongue\" cx=\"58.5\" cy=\"57.0\" r=\"4.5\"/><g class=\"fx-voice\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g><g class=\"fx-voice\" style=\"animation-delay:.55s\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g></svg>"}, {"word": "cut", "cap": "The tongue sits mid and central and stays put, lips relaxed. A short, relaxed vowel, and like every vowel it is voiced, so your throat buzzes right through it.", "svg": "<svg class=\"mouthfx\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><circle class=\"fx-tongue\" cx=\"47.0\" cy=\"58.6\" r=\"4.5\"/><g class=\"fx-voice\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g><g class=\"fx-voice\" style=\"animation-delay:.55s\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g></svg>"}, {"word": "cart", "cap": "The tongue sits low and back and stays put, lips relaxed. A long, tense vowel, and like every vowel it is voiced, so your throat buzzes right through it.", "svg": "<svg class=\"mouthfx\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><circle class=\"fx-tongue\" cx=\"41.5\" cy=\"67.9\" r=\"4.5\"/><g class=\"fx-voice\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g><g class=\"fx-voice\" style=\"animation-delay:.55s\"><circle cx=\"21.0\" cy=\"66.0\" r=\"4\"/></g></svg>"}];</script>
 
   <div class="game">
     <h3>Train your ear</h3>
@@ -398,7 +462,7 @@ async function toggleRecord(from){
    if(recLive){recLive.classList.remove("live");recLive.textContent="\ud83c\udf99 you";recLive=null;}
    $("playMine").disabled=false;
    const sc=Array.isArray(mp)?simShape(mp,minePeaks):0;
-   $("status").innerHTML=sc>0.85?'<span class="win">Great match \u2014 that\u2019s the shape.</span>':"Compare the shapes and try again.";
+   $("status").innerHTML=sc>0.85?'<span class="win">Nice. That is the shape.</span>':"Not quite. Look at both shapes and record it again.";
    $("hint").style.display="none";draw();};
   rec.start();$("recBtn").textContent="Stop";$("recBtn").classList.add("live");
   if(from){from.classList.add("live");from.textContent="\u25cf stop";recLive=from;}
@@ -473,51 +537,4 @@ fetch("index.json?v="+Date.now(),{cache:"no-store"}).then(r=>r.json()).then(j=>{
  const dead=[...new Set(all.filter(t=>!lookup(t)))];
  if(dead.length)$("status").textContent="Not yet rendered: "+dead.join(", ");
 }).catch(()=>{$("boot").innerHTML="<b>Could not load index.json.</b> Serve this page over HTTP from the folder containing index.json and audio/.";});
-</script>
-<div id="cmGate" role="dialog" aria-label="Enter with your email" aria-modal="true">
-  <div class="in">
-    <h2>Calibrated Speech</h2>
-    <p>Interactive pronunciation book<br>Enter once with the email you registered, and every book in the series opens on this device.</p>
-    <div class="house-enter" style="margin:18px 0 6px;flex:1 1 100%;text-align:center;"><a class="house-btn" href="https://lessons.theconceptmethod.com/enter?next=https%3A%2F%2Ftheconceptmethod.com%2Fcalibrated-speech%2Funit16.html" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#B3132B;color:#fff;font-weight:600;text-decoration:none;font-family:inherit;">Enter with my email</a><p style="margin:10px 0 0;font-size:14px;line-height:1.5;opacity:.8;">A link and a six-digit code come to your email. One tap, and this device is signed in for a year: every book, the lessons, and the Coach.</p></div>
-  </div>
-</div>
-<script>
-(function(){
-  function isUnlocked(){if(framedByApp())return true;try{return localStorage.getItem('cm_access')==='1'||localStorage.getItem('cm_pv_access')==='1';}catch(e){return false;}}
-  function grant(){try{localStorage.setItem('cm_access','1');localStorage.setItem('cm_pv_access','1');}catch(e){}}
-  var gate=document.getElementById('cmGate');
-  function openBook(){if(gate)gate.style.display='none';document.documentElement.classList.remove('cm-locked');document.body.classList.remove('cm-locked');}
-  function lock(){document.documentElement.classList.add('cm-locked');document.body.classList.add('cm-locked');if(gate)gate.style.display='flex';}
-  /* ---- framed by The Concept Coach -------------------------------------------
-   Inside the app this page is a THIRD-PARTY frame, served from
-   theconceptmethod.com and displayed from the app's own host. iOS Safari blocks
-   third-party storage outright, so the unlock flag can never be written and the
-   gate would ask for a code again on every single unit. When the app is the
-   framer the page is already behind the app's own password: protect it once,
-   not twice.
-
-   BOTH HOSTS, ON PURPOSE. concept-coach.pages.dev is where the app lives today.
-   coach.theconceptmethod.com is the final address, registered and not yet
-   connected. If only the first were listed here, the day that domain is
-   connected all 138 gated pages would start asking for codes again and nobody
-   would remember why.
-
-   THE TRAILING SLASH IS LOAD BEARING. Without it, a host such as
-   concept-coach.pages.dev.example.com would match the prefix.
-
-   ADDITIVE ONLY. A direct visitor has window.self === window.top, so this
-   returns false immediately and the gate behaves exactly as it always has. */
-function framedByApp(){
-  try{
-    if(window.self === window.top){ return false; }
-    var r = document.referrer || '';
-    return r.indexOf('https://concept-coach.pages.dev/') === 0 ||
-           r.indexOf('https://coach.theconceptmethod.com/') === 0;
-  }catch(e){ return false; }
-}
-
-  if(isUnlocked())openBook();else lock();
-})();
-</script>
-<script src="/gate.js" defer></script>
-</body></html>
+</script></body></html>
