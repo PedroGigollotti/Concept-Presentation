@@ -111,7 +111,18 @@
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (who) {
         var role = who && who.role;
-        if (role === 'student' || role === 'teacher' || role === 'director') {
+        /* AND THE PERSON THE DIRECTOR INVITED [13 Sep 2026]. `tester` is a
+           role the lessons have answered with since 10 Sep, and this list had
+           never heard of it: an invited person reached the shelf, opened a
+           book and was asked for an email that finds nobody, because the
+           lessons look invited people up by their code and not their address.
+           A trial that shows the shelf and refuses every book on it is worse
+           than no trial.
+           THE LESSONS DECIDE WHETHER THE TERM IS STILL RUNNING, not this file.
+           A revoked or finished trial comes back from whoami as `nobody`, so
+           the word below never has to know a date. */
+        if (role === 'student' || role === 'teacher' || role === 'director' ||
+            role === 'tester') {
           grant();
           /* Reload only if the key took: with storage blocked the page would
              ask, grant nothing, and reload for ever. Otherwise open in place. */
