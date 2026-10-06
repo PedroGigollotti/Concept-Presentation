@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>It&#x27;s Not Only a Phrasal Verb List · B1-C2 | Concept</title>
+<meta name="description" content="The Concept Method book series: Professional English Practice, books 1 through 5, and Calibrated Speech, a pronunciation manual for Brazilian speakers.">
+<style>
+  :root{
+    --red:#B3132B;
+    --black:#0A0B0D;
+    --platinum:#E7E8EA;
+    --line:#1A1A1A;
+    --muted:#7C7F84;
+    --display:Georgia,"Times New Roman",serif;
+    --body:Calibri,Carlito,"Segoe UI",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--black);color:var(--platinum);
+    font-family:var(--body);font-size:17px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:56px 28px 96px;}
+
+  .masthead{padding-bottom:30px;border-bottom:1px solid var(--line);}
+  .masthead h1{font-family:var(--display);font-size:40px;line-height:1.1;font-weight:normal;margin:0 0 10px;letter-spacing:-0.01em;}
+  .masthead h1 em{color:var(--red);font-style:italic;}
+  .kicker{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;}
+  .standfirst{color:var(--muted);max-width:60ch;margin:0;font-size:16px;}
+
+  .collection{margin-top:72px;}
+  .collection-head{margin-bottom:8px;}
+  .collection-head h2{font-family:var(--display);font-size:26px;font-weight:normal;color:var(--platinum);margin:0;}
+  .collection-head .sub{font-size:13px;color:var(--muted);margin:4px 0 0;max-width:64ch;}
+  .collection-rule{height:1px;background:var(--line);margin:22px 0 44px;}
+
+  .book{display:flex;gap:36px;align-items:flex-start;padding-bottom:56px;margin-bottom:56px;border-bottom:1px solid var(--line);}
+  .book:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+
+  .covers{flex:0 0 auto;display:flex;gap:12px;align-items:flex-start;}
+
+  /* real cover art, native 440x640 (svg) or scanned png, scaled down */
+  .cover-real{width:168px;height:244px;border-radius:6px;overflow:hidden;display:block;
+    border:1px solid rgba(231,232,234,0.14);
+    box-shadow:0 10px 26px rgba(0,0,0,.55);
+    transition:transform .35s cubic-bezier(.25,1,.25,1), box-shadow .35s ease;
+    cursor:zoom-in;
+  }
+  .cover-real:hover{transform:scale(1.055);box-shadow:0 16px 38px rgba(0,0,0,.65);z-index:2;position:relative;}
+  .cover-real:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+  .cover-real img{width:100%;height:100%;display:block;object-fit:cover;}
+
+  /* placeholder mock cover, used until real art exists */
+  .cover-mock{
+    width:168px;height:244px;
+    background:var(--black);border:1px solid rgba(231,232,234,0.14);border-radius:6px;
+    padding:14px 14px 12px;overflow:hidden;display:flex;flex-direction:column;position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,.55);
+    transition:transform .35s cubic-bezier(.25,1,.25,1), box-shadow .35s ease;
+    cursor:zoom-in;
+  }
+  .cover-mock:hover{transform:scale(1.055);box-shadow:0 16px 38px rgba(0,0,0,.65);z-index:2;}
+  .cover-mock:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+  .cover-mock.front .top{display:flex;justify-content:space-between;align-items:flex-start;}
+  .cover-mock .badge{text-align:right;line-height:1;}
+  .cover-mock .badge .lbl{font-size:5px;letter-spacing:0.16em;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:2px;}
+  .cover-mock .badge .val{font-family:var(--display);font-weight:bold;font-size:15px;color:var(--red);}
+  .cover-mock .hook{font-family:var(--display);font-size:14px;line-height:1.22;color:var(--platinum);margin-top:auto;}
+  .cover-mock .hook i{color:var(--red);font-style:italic;}
+  .cover-mock .hookrule{width:26px;height:2px;background:var(--red);margin:8px 0 9px;}
+  .cover-mock .subtitle{font-size:6px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+  .cover-mock .imprint{margin-top:12px;}
+  .cover-mock .imprint .by{font-size:6px;color:var(--platinum);letter-spacing:0.04em;}
+  .cover-mock .imprint .brand{font-size:4.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+  .cover-mock .inprod{position:absolute;top:8px;left:8px;font-size:5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:3px 5px;border-radius:3px;}
+
+  .meta{flex:1;min-width:0;padding-top:2px;}
+  .meta .series-label{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin:0 0 8px;}
+  .meta h3 .book-link{color:inherit;text-decoration:none;}
+  .meta h3{font-family:var(--display);font-size:24px;font-weight:normal;margin:0 0 4px;line-height:1.2;}
+  .meta .subtitle-line{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;}
+  .meta p{margin:0 0 14px;font-size:15px;color:var(--platinum);max-width:62ch;}
+  .meta p.muted{color:var(--muted);}
+  .whatsinside{list-style:none;margin:0 0 20px;padding:0;font-size:13px;color:var(--platinum);}
+  .whatsinside li{margin-bottom:6px;padding-left:14px;position:relative;}
+  .whatsinside li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:1px;background:var(--red);}
+
+  .get{
+    display:inline-block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  a:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+
+  .companion-cta{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--red);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:11px 20px;border-radius:999px;transition:background .2s ease,transform .2s ease;}
+  .companion-cta:hover{background:#8E0F22;transform:translateY(-2px);}
+  .companion-cta:focus-visible{outline:2px solid var(--platinum);outline-offset:3px;}
+
+  /* ===== ZOOM LIGHTBOX ===== */
+  #lightbox{
+    position:fixed;inset:0;background:rgba(6,6,7,0.92);
+    display:flex;align-items:center;justify-content:center;padding:56px 24px;
+    opacity:0;visibility:hidden;transition:opacity .28s ease;z-index:500;
+  }
+  #lightbox.open{opacity:1;visibility:visible;}
+  #lightbox .lb-inner{position:relative;width:min(92vw,560px);max-height:88vh;}
+  #lightbox .lb-inner img{
+    display:block;width:100%;height:auto;max-height:88vh;object-fit:contain;
+    border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6);
+  }
+  #lightbox .lb-mockwrap{width:168px;height:244px;transform:scale(2.35);transform-origin:center;margin:104px auto;}
+  #lightbox .lb-close{
+    position:absolute;top:-46px;right:0;width:34px;height:34px;border-radius:50%;
+    background:none;border:1px solid var(--line);color:var(--platinum);
+    font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:border-color .2s ease,color .2s ease;
+  }
+  #lightbox .lb-close:hover,#lightbox .lb-close:focus-visible{border-color:var(--red);color:var(--red);outline:none;}
+  @media (max-width:640px){
+    #lightbox{padding:64px 16px 40px;}
+    #lightbox .lb-inner{width:min(94vw,560px);}
+    #lightbox .lb-mockwrap{transform:scale(1.7);margin:70px auto;}
+  }
+
+  footer{margin-top:88px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--muted);text-decoration:none;}
+  footer a:hover{color:var(--platinum);}
+
+  @media (max-width:640px){
+    .wrap{padding:36px 20px 72px;}
+    .masthead h1{font-size:31px;}
+    .book{flex-direction:column;}
+    .covers{align-self:center;}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+  .topnav{display:flex;align-items:center;justify-content:space-between;gap:20px;
+    padding-bottom:20px;margin-bottom:34px;border-bottom:1px solid var(--line);}
+  .topnav .brand{font-family:var(--display);font-size:15px;letter-spacing:0.2em;
+    text-transform:uppercase;color:var(--platinum);text-decoration:none;white-space:nowrap;}
+  .topnav .brand:hover{color:var(--red);}
+  .topnav-links{display:flex;gap:26px;flex-wrap:wrap;}
+  .topnav-links a{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+    color:var(--muted);text-decoration:none;transition:color .18s ease;}
+  .topnav-links a:hover{color:var(--platinum);}
+  .topnav-links a.here{color:var(--platinum);}
+  @media(max-width:600px){
+    .topnav{flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:26px;}
+    .topnav-links{gap:18px;}
+  }
+  .back-all{margin:34px 0 0;font-size:14px;} .back-all a{color:inherit;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="topnav">
+      <a class="brand" href="../../index.html">Concept</a>
+      <div class="topnav-links">
+        <a href="../../method.html">Method</a>
+        <a href="../../about.html">About</a>
+        <a href="../../book.html">Books</a>
+      </div>
+    </nav>
+  <header class="masthead">
+    <p class="kicker">Professional English Practice · Book 5</p>
+    <h1>It's Not Only a Phrasal Verb List <em>B1-C2</em></h1>
+    <p class="standfirst">English Communication for Professionals</p>
+  </header>
+
+  <section class="collection">
+    <div class="collection-rule"></div>
+    <article class="book">
+      <div class="covers"><div class="cover-real"><img src="../../PEP_PhrasalVerbs_Front_Cover.png" alt="It&#x27;s Not Only a Phrasal Verb List front cover, B1-C2"></div><div class="cover-real"><img src="../../PEP_PhrasalVerbs_Back_Cover.png" alt="It&#x27;s Not Only a Phrasal Verb List back cover, B1-C2"></div></div>
+      <div class="meta">
+        <p class="series-label">Professional English Practice · Book 5 &middot; CEFR B1-C2</p>
+        <p class="subtitle-line">English Communication for Professionals</p>
+        <p>Organized by particle rather than topic: the same handful of particles, like up, out, and off, recur across dozens of verbs with a traceable core meaning, so recognition transfers instead of resetting with every new verb.</p>
+        <p class="muted">Every other phrasal verb book hands you an endless list and asks you to memorize it. The list never ends, so learners give up and reach for the stiff Latinate word instead. This book does the opposite: you learn twenty particles, not two thousand verbs, and the meaning falls out of the particle. You stop recalling. You start predicting.</p>
+        <ul class="whatsinside"><li>Read the particle and predict a verb you've never seen</li><li>Choose the phrasal verb a native would use, not the Latinate one</li><li>Catch phrasal verbs in fast speech instead of missing them</li><li>Turn twenty particles into hundreds of verbs you can deploy</li></ul>
+        <span class="get">Online now</span>
+        <div><a class="companion-cta" href="../../phrasal-verbs.html">Students: access the interactive units &rarr;</a></div>
+      </div>
+    </article>
+    <p class="back-all"><a href="../../book.html">&larr; All the books</a></p>
+  </section>
+  <footer>
+    <span>Concept &middot; Mind Your Future</span>
+    <span><a href="../../index.html">Back to Concept</a></span>
+  </footer>
+</div>
+</body>
+</html>
