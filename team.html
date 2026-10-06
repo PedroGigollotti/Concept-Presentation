@@ -142,31 +142,27 @@
   .mfig{position:relative;background:#E7E8EA;border-radius:22px;display:flex;justify-content:center;align-items:flex-end;}
   .mfig video{display:block;width:100%;max-width:420px;margin-left:auto;height:auto;aspect-ratio:720/1010;background:#E7E8EA;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);}
   .mname{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6vw,76px);line-height:.95;margin:0 0 14px;color:#fff;}
-  .mphone{position:absolute;left:-46px;bottom:26px;z-index:3;perspective:1400px;width:200px;height:416px;}
-  .mphone .p3d{width:200px;height:416px;}
-  .mphone .pedge,.mphone .pbody{border-radius:32px;}
-  .mphone .pscreen{left:7px;top:7px;right:7px;bottom:7px;border-radius:26px;}
-  .mphone .pisland{top:13px;width:58px;height:18px;margin-left:-29px;}
-  .mphone .papp{padding:36px 11px 8px;}
-  .mphone .papp .pmark{width:24px;height:24px;}
-  .mphone .papp b{font-size:11.5px;}
-  .mphone .papp span{font-size:9.5px;}
-  .mphone .tmsg{font-size:11px;padding:8px 10px;}
-  .mphone .tmsg .lbl{font-size:7.5px;}
+  .mrow{display:grid;grid-template-columns:236px minmax(0,1fr);gap:30px;align-items:start;margin-top:8px;}
+  .mrow .quiz{margin-top:0;}
+  .mphone{position:relative;perspective:1400px;width:236px;height:490px;}
+  .mphone .p3d{width:236px;height:490px;}
+  .mphone .pedge,.mphone .pbody{border-radius:36px;}
+  .mphone .pscreen{left:8px;top:8px;right:8px;bottom:8px;border-radius:29px;}
+  .mphone .pisland{top:14px;width:64px;height:19px;margin-left:-32px;}
+  .mphone .papp{padding:40px 12px 9px;}
+  .mphone .papp .pmark{width:26px;height:26px;}
+  .mphone .papp b{font-size:12px;}
+  .mphone .papp span{font-size:10px;}
+  .mphone .tchat{gap:7px;padding:10px 9px;}
+  .mphone .tmsg{font-size:11px;line-height:1.4;padding:8px 10px;}
+  .mphone .tmsg .lbl{font-size:7.5px;margin-bottom:3px;}
   .mphone .pbar{font-size:8px;padding:6px 0 10px;}
-  .member.flip .mphone{left:auto;right:-46px;}
-  .member.flip .hear{right:auto;left:18px;}
-  .member.flip .mphone .p3d{transform:rotateY(calc(var(--ry,-20deg) * -1)) rotateX(var(--rx,6deg)) rotateZ(calc(var(--rz,0deg) * -1));}
   .tap-pill{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:120;display:inline-flex;align-items:center;gap:10px;background:#fff;color:#000;border:0;border-radius:999px;padding:12px 20px;font-family:var(--sans);font-weight:600;font-size:14px;box-shadow:0 16px 40px rgba(0,0,0,.5);cursor:pointer;animation:pillIn .4s ease both;}
   .tap-pill[hidden]{display:none;}
   .tap-pill svg{width:18px;height:18px;}
   @keyframes pillIn{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
-  @media (max-width:860px){
-    .mphone,.member.flip .mphone{left:auto;right:-4px;bottom:-56px;transform:scale(.6);transform-origin:bottom right;}
-    .mfig{margin-bottom:64px;}
-    .mfig video{margin:0 auto;}
-    .hear,.member.flip .hear{left:12px;right:auto;bottom:12px;}
-  }
+  @media (max-width:1100px){ .mrow{grid-template-columns:1fr;justify-items:center;} .mrow .quiz{width:100%;} }
+  @media (max-width:860px){ .mfig video{margin:0 auto;} }
   .hear{position:absolute;right:18px;bottom:18px;z-index:3;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:9px 15px 9px 12px;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s,border-color .2s;}
   .hear svg{width:16px;height:16px;}
   .hear:hover{background:var(--red);border-color:var(--red);}
@@ -635,20 +631,19 @@ function buildMembers(){
     html += '<section class="member bg-black' + (i % 2 ? ' flip' : '') + '" id="' + m.id + '">' +
       '<div class="wrap mgrid">' +
         '<div class="mfig reveal-scale"><video muted playsinline preload="none" poster="team/home-' + m.id + '-still.webp?v=4" data-src="team/home-' + m.id + '.mp4?v=4" width="720" height="1010" aria-hidden="true"></video>' +
-        '<div class="mphone" aria-hidden="true"><div class="pfloat"><div class="p3d"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen">' +
-          '<div class="papp"><img class="pmark" src="team/' + m.id + '-face.webp" alt=""><div><b>' + esc(m.name) + '</b><span class="prole"></span></div></div>' +
-          '<div class="tchat"><div class="tmsg me"><div class="lbl ml"></div><div class="mask"></div></div>' +
-          '<div class="tmsg them"><div class="lbl"><img src="team/' + m.id + '-face.webp" alt=""><span>' + esc(m.name) + '</span></div><div class="mans"></div></div></div>' +
-          '<div class="pbar"><span>Concept Coach</span></div>' +
-        '</div><i class="pisland"></i><i class="psheen"></i></div></div></div></div>' +
+
         '<button class="hear" type="button" data-id="' + m.id + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="hl"></span></button></div>' +
         '<div class="mcopy reveal">' +
           '<p class="kicker mrole"></p>' +
           '<h2 class="mname">' + esc(m.name) + '</h2>' +
           '<p class="mline">“' + esc(m.line) + '”</p>' +
-          '<p class="mcoach"><span class="mck"></span>“' + esc(m.coach) + '”</p>' +
-          '<p class="does-k"></p><p class="body-copy on-dark mdoes"></p>' +
-          quiz +
+          '<div class="mrow">' +'<div class="mphone" aria-hidden="true"><div class="pfloat"><div class="p3d"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen">' +
+          '<div class="papp"><img class="pmark" src="team/' + m.id + '-face.webp" alt=""><div><b>' + esc(m.name) + '</b><span class="prole"></span></div></div>' +
+          '<div class="tchat"><div class="tmsg them hi"><div class="lbl"><img src="team/' + m.id + '-face.webp" alt=""><span>' + esc(m.name) + '</span></div><div class="mhi"></div></div><div class="tmsg me"><div class="lbl ml"></div><div class="mask"></div></div>' +
+          '<div class="tmsg them"><div class="lbl"><img src="team/' + m.id + '-face.webp" alt=""><span>' + esc(m.name) + '</span></div><div class="mans"></div></div></div>' +
+          '<div class="pbar"><span>Concept Coach</span></div>' +
+        '</div><i class="pisland"></i><i class="psheen"></i></div></div></div></div>' +
+          quiz + '</div>' +
         '</div>' +
       '</div></section>';
   });
@@ -692,15 +687,17 @@ function buildMembers(){
     ph.style.setProperty('--ry', ex.ang[0] + 'deg'); ph.style.setProperty('--rx', ex.ang[1] + 'deg'); ph.style.setProperty('--rz', ex.ang[2] + 'deg');
     function phone(){
       seq.forEach(clearTimeout); seq = [];
-      var me = sec.querySelector('.tmsg.me'), them = sec.querySelector('.tmsg.them'), q = sec.querySelector('.mask'), a = sec.querySelector('.mans');
-      me.classList.remove('on'); them.classList.remove('on'); q.textContent = ''; a.innerHTML = '';
-      if(reduce){ me.classList.add('on'); them.classList.add('on'); q.textContent = ex.ask; a.innerHTML = ex.ans; return; }
+      var hi = sec.querySelector('.tmsg.hi'), me = sec.querySelector('.tmsg.me'), them = sec.querySelector('.tmsg.them:not(.hi)'), q = sec.querySelector('.mask'), a = sec.querySelector('.mans');
+      sec.querySelector('.mhi').textContent = m.coach;
+      hi.classList.remove('on'); me.classList.remove('on'); them.classList.remove('on'); q.textContent = ''; a.innerHTML = '';
+      if(reduce){ hi.classList.add('on'); me.classList.add('on'); them.classList.add('on'); q.textContent = ex.ask; a.innerHTML = ex.ans; return; }
       var n = 0;
+      seq.push(setTimeout(function(){ hi.classList.add('on'); }, 300));
       seq.push(setTimeout(function(){ me.classList.add('on');
         (function step(){ n += 2; q.textContent = ex.ask.slice(0, n); if(n < ex.ask.length) seq.push(setTimeout(step, 30));
           else { seq.push(setTimeout(function(){ them.classList.add('on'); a.innerHTML = '<span class="tdots"><i></i><i></i><i></i></span>'; }, 350));
                  seq.push(setTimeout(function(){ a.innerHTML = ex.ans; }, 1700)); } })();
-      }, 500));
+      }, 2600));
     }
     function scene(){
       st.mode = 'scene'; btn.classList.remove('playing');
@@ -794,10 +791,8 @@ function relabel(){
   TEAM.forEach(function(m){
     var s = document.getElementById(m.id); if(!s) return;
     s.querySelector('.mrole').textContent = d.m[m.id].role.toUpperCase();
-    s.querySelector('.does-k').textContent = d.does;
-    s.querySelector('.mdoes').textContent = d.m[m.id].does;
     var hl = s.querySelector('.hear .hl'); if(hl) hl.textContent = d.hear + ' ' + m.name;
-    s.querySelector('.prole').textContent = d.m[m.id].role; s.querySelector('.mck').textContent = d.coach_k; s.querySelector('.ml').textContent = d.you_ask;
+    s.querySelector('.prole').textContent = d.m[m.id].role;  s.querySelector('.ml').textContent = d.you_ask;
     var qz = s.querySelector('.quiz'); if(!qz) return;
     qz.querySelector('.ql').textContent = d.q_label;
     if(m.id in answers){
