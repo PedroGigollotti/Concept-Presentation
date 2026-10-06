@@ -38,7 +38,9 @@
   .hero-team:hover .arrow{transform:translateX(4px);}
   .hero-team:hover span:last-child{color:#fff;}
 
-  #team{position:relative;overflow:hidden;}
+  #team{position:relative;scroll-margin-top:90px;}
+  #team .tstage{margin-top:44px;}
+  .team-note{margin:14px 0 0;color:var(--gray);font-size:13px;line-height:1.6;}
   #team .team-intro{max-width:760px;}
   .tstage{position:relative;margin-top:46px;background:#E7E8EA;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;min-height:540px;color:#0A0B0D;}
   .tcopy{position:relative;z-index:2;padding:48px 20px 40px 48px;display:flex;flex-direction:column;gap:16px;min-width:0;}
@@ -544,20 +546,7 @@
     </h1>
     <p class="lede on-dark reveal d2" style="margin-top:26px;" data-t="hero_lede"></p>
     <div class="ctas reveal d3"><a class="btn btn-outline" id="heroCta1" href="#"></a></div>
-    <a class="hero-team reveal d3" href="#team"><span class="faces" aria-hidden="true"><img src="team/netto-face.webp" alt="" width="40" height="40"><img src="team/victor-hugo-face.webp" alt="" width="40" height="40"><img src="team/luana-face.webp" alt="" width="40" height="40"><img src="team/bia-face.webp" alt="" width="40" height="40"><img src="team/murillo-face.webp" alt="" width="40" height="40"><img src="team/marcelo-face.webp" alt="" width="40" height="40"></span><span data-t="hero_team"></span><span class="arrow" aria-hidden="true">&rarr;</span></a>
-    <div class="scrollcue reveal d3"><span class="bar"></span><span data-t="scroll"></span></div>
-  </div>
-</section>
-
-<!-- ===== THE CONCEPT TEAM ===== -->
-<section id="team" class="bg-black section-pad">
-  <div class="wrap">
-    <div class="team-intro">
-      <p class="kicker reveal" data-t="team_kicker"></p>
-      <h2 class="headline reveal d1" style="color:#fff;"><span data-t="team_h2_a"></span> <i data-t="team_h2_em"></i> <span data-t="team_h2_b"></span></h2>
-      <p class="body-copy on-dark reveal d2" data-t="team_p"></p>
-    </div>
-    <div class="reveal-scale" id="teamBox">
+    <div class="reveal d3" id="team">
       <div class="tstage" id="tStage" aria-live="polite">
         <div class="tcopy">
           <div class="tswap"><div class="trole" id="tRole"></div><div class="tname" id="tName"></div></div>
@@ -569,13 +558,11 @@
         <div class="tfig"><video class="tswap" id="tFig" muted playsinline preload="none" width="720" height="1010" aria-hidden="true"></video></div>
       </div>
       <div class="ttabs" id="tTabs" role="tablist"></div>
-    </div>
-    <div class="team-foot reveal">
-      <p data-t="team_foot"></p>
-      <a class="btn btn-solid" href="#start" data-t="team_cta"></a>
+      <p class="team-note" data-t="team_note"></p>
     </div>
   </div>
 </section>
+
 
 <!-- ===== STATS ===== -->
 <section id="stats" class="bg-black">
@@ -836,6 +823,7 @@
 <script>
 window.I18N = {
   en: {
+    "team_note": "The Concept team are AI coaches built on the Concept method. Your people talk to them in the Concept Coach app on the days without a lesson.",
     "nav_team": "Team",
     "hero_team": "Meet the Concept team",
     "team_kicker": "THE CONCEPT TEAM",
@@ -1009,6 +997,7 @@ window.I18N = {
   },
 
   pt: {
+    "team_note": "O time Concept são coaches de IA criados sobre o método Concept. A sua equipe fala com eles no app Concept Coach, nos dias sem aula.",
     "nav_team": "Time",
     "hero_team": "Conheça o time Concept",
     "team_kicker": "O TIME CONCEPT",
@@ -1182,6 +1171,7 @@ window.I18N = {
   },
 
   it: {
+    "team_note": "Il team Concept è formato da coach di intelligenza artificiale costruiti sul metodo Concept. Le tue persone parlano con loro nell’app Concept Coach, nei giorni senza lezione.",
     "nav_team": "Team",
     "hero_team": "Conosci il team Concept",
     "team_kicker": "IL TEAM CONCEPT",
