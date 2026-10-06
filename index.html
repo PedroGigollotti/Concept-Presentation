@@ -47,37 +47,9 @@
   .ttry{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);text-decoration:none;border-bottom:1px solid rgba(227,47,46,.35);}
   .ttry:hover{border-bottom-color:var(--red);}
   #team .team-intro{max-width:760px;}
-  .tstage{position:relative;margin-top:46px;background:radial-gradient(70% 90% at 72% 60%,#15151a 0%,#000 70%);border:1px solid var(--line-dark);border-radius:22px;overflow:hidden;display:grid;grid-template-columns:.78fr 1fr 1fr;min-height:560px;color:#fff;}
-  .tcopy{position:relative;z-index:2;padding:48px 10px 40px 44px;display:flex;flex-direction:column;justify-content:center;gap:16px;min-width:0;}
-  .tcopy .ttry{display:inline-block;margin-top:18px;}
-  /* the 3D phone (the Concept videos' phone, scene.css) */
-  .tphone{position:relative;z-index:3;display:flex;align-items:center;justify-content:center;perspective:1500px;min-width:0;padding:20px 0;}
-  .pfloat{animation:pfloat 6s ease-in-out infinite;}
-  @keyframes pfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  .p3d{position:relative;width:250px;height:520px;transform-style:preserve-3d;transform:rotateY(var(--ry,-20deg)) rotateX(var(--rx,6deg)) rotateZ(var(--rz,0deg));transition:transform 1.3s cubic-bezier(.2,.8,.2,1);}
-  .pedge{position:absolute;inset:0;border-radius:40px;background:#15171B;}
-  .pedge.rim{background:#3A3E46;}
-  .pbody{position:absolute;inset:0;border-radius:40px;background:#0B0C0E;border:1px solid #33363D;box-shadow:0 40px 90px rgba(0,0,0,.7),inset 0 0 0 2px #1C1E23;-webkit-box-reflect:below 18px linear-gradient(transparent 70%,rgba(255,255,255,.07));}
-  .pscreen{position:absolute;left:9px;top:9px;right:9px;bottom:9px;border-radius:32px;overflow:hidden;background:#F3F2EF;color:#0A0B0D;display:flex;flex-direction:column;}
-  .pisland{position:absolute;left:50%;top:17px;width:74px;height:22px;margin-left:-37px;border-radius:12px;background:#000;}
-  .psheen{position:absolute;inset:0;border-radius:40px;pointer-events:none;background:linear-gradient(112deg,transparent 38%,rgba(255,255,255,.10) 50%,transparent 62%);background-size:240% 100%;background-position:var(--sx,50%) 0;mix-blend-mode:screen;transition:background-position 1.3s cubic-bezier(.2,.8,.2,1);}
-  .papp{display:flex;align-items:center;gap:9px;padding:46px 14px 10px;border-bottom:1px solid rgba(0,0,0,.07);background:#fff;}
-  .papp .pmark{width:30px;height:30px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E7E8EA;flex:none;}
-  .papp b{display:block;font-size:13px;font-weight:600;line-height:1.2;}
-  .papp span{display:block;font-size:10.5px;color:#8A8F98;line-height:1.3;}
-  .pscreen .tchat{flex:1;justify-content:flex-start;gap:9px;margin:0;padding:14px 11px;max-width:none;overflow:hidden;}
-  .pscreen .tmsg{font-size:12.5px;line-height:1.45;padding:10px 12px;border-radius:14px;}
-  .pscreen .tmsg .lbl{font-size:8.5px;letter-spacing:1.4px;margin-bottom:4px;gap:6px;}
-  .pscreen .tmsg.them .lbl img{width:16px;height:16px;}
-  .pbar{padding:8px 0 12px;text-align:center;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#8A8F98;border-top:1px solid rgba(0,0,0,.06);background:#fff;}
-  /* Bia's balloons: one idea through four languages into English (the app's journeys) */
-  .bballoon{position:absolute;z-index:4;right:58%;max-width:230px;width:max-content;display:grid;gap:1px;text-align:right;background:#fff;color:#0A0B0D;border-radius:14px 14px 4px 14px;padding:6px 11px 7px;box-shadow:0 12px 30px rgba(0,0,0,.45);animation:bpop .26s cubic-bezier(.2,.8,.2,1) both;transition:opacity .4s,transform .4s;}
-  .bballoon .bl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#8A8F98;}
-  .bballoon .bt{font-family:var(--serif);font-style:italic;font-size:14px;line-height:1.2;}
-  .bballoon.en{box-shadow:0 0 0 1.5px var(--red) inset,0 12px 30px rgba(0,0,0,.45);}
-  .bballoon.out{opacity:0;transform:translateY(-6px);}
-  @keyframes bpop{from{opacity:0;transform:scale(.6) translateX(14px)}to{opacity:1;transform:none}}
-  .tname{font-family:var(--serif);font-size:clamp(40px,4.4vw,60px);line-height:.95;letter-spacing:-.01em;color:#fff;}
+  .tstage{position:relative;margin-top:46px;background:#E7E8EA;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;min-height:540px;color:#0A0B0D;}
+  .tcopy{position:relative;z-index:2;padding:48px 20px 40px 48px;display:flex;flex-direction:column;gap:16px;min-width:0;}
+  .tname{font-family:var(--serif);font-size:clamp(40px,5vw,64px);line-height:.95;letter-spacing:-.01em;}
   .trole{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);}
   .tchat{display:flex;flex-direction:column;gap:12px;margin-top:10px;max-width:470px;}
   .tmsg{border-radius:16px;padding:14px 16px;font-size:15.5px;line-height:1.5;box-shadow:0 10px 28px rgba(0,0,0,.08);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.25,1,.25,1);}
@@ -96,8 +68,15 @@
   @keyframes tdot{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
   .caret{display:inline-block;width:2px;height:1em;background:#fff;vertical-align:-2px;margin-left:1px;animation:caret 1s steps(1) infinite;}
   @keyframes caret{50%{opacity:0}}
+  .bballoon{position:absolute;z-index:4;right:58%;max-width:230px;width:max-content;display:grid;gap:1px;text-align:right;background:#fff;color:#0A0B0D;border-radius:14px 14px 4px 14px;padding:6px 11px 7px;box-shadow:0 10px 26px rgba(0,0,0,.14);animation:bpop .26s cubic-bezier(.2,.8,.2,1) both;transition:opacity .4s,transform .4s;}
+  .bballoon .bl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#8A8F98;}
+  .bballoon .bt{font-family:var(--serif);font-style:italic;font-size:14px;line-height:1.2;}
+  .bballoon.en{box-shadow:0 0 0 1.5px var(--red) inset,0 10px 26px rgba(0,0,0,.14);}
+  .bballoon.out{opacity:0;transform:translateY(-6px);}
+  @keyframes bpop{from{opacity:0;transform:scale(.6) translateX(14px)}to{opacity:1;transform:none}}
+  @media (max-width:900px){.bballoon{right:auto;left:8px;}}
   .tfig{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:center;min-width:0;}
-  .tfig video{display:block;height:560px;width:auto;max-width:100%;aspect-ratio:720/1010;object-fit:contain;object-position:bottom;background:#000;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);}
+  .tfig video{display:block;height:540px;width:auto;max-width:100%;aspect-ratio:720/1010;object-fit:contain;object-position:bottom;background:#E7E8EA;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 8%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 8%);mask-composite:intersect;}
   .tswap{transition:opacity .45s ease,transform .6s cubic-bezier(.25,1,.25,1);}
   .tstage.out .tswap{opacity:0;transform:translateY(14px);}
   .tstage.out .tfig .tswap{transform:translateX(30px);}
@@ -116,12 +95,9 @@
   .team-foot p{margin:0;color:var(--gray);font-size:14px;max-width:560px;line-height:1.6;}
   @media (max-width:900px){
     .tstage{grid-template-columns:1fr;min-height:0;}
-    .tfig{order:-1;height:300px;}
-    .tfig video{height:300px;}
-    .tcopy{padding:4px 22px 0;text-align:center;align-items:center;}
-    .tphone{padding:18px 0 46px;}
-    .p3d{width:230px;height:470px;}
-    .bballoon{right:auto;left:8px;}
+    .tfig{order:-1;height:320px;}
+    .tfig video{height:320px;}
+    .tcopy{padding:8px 22px 28px;}
     .ttabs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
     .ttab{flex:none;scroll-snap-align:start;}
   }
@@ -595,16 +571,12 @@
     <div class="reveal d3" id="team">
       <div class="tstage" id="tStage" aria-live="polite">
         <div class="tcopy">
-          <div class="tswap"><div class="trole" id="tRole"></div><div class="tname" id="tName"></div><a class="ttry" id="tTry" href="team.html#test" hidden></a></div>
-        </div>
-        <div class="tphone" aria-hidden="false"><div class="pfloat"><div class="p3d" id="tPhone"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen">
-          <div class="papp"><img class="pmark" src="team/netto-face.webp" alt="" id="tAppFace"><div><b id="tAppName"></b><span id="tAppRole"></span></div></div>
+          <div class="tswap"><div class="trole" id="tRole"></div><div class="tname" id="tName"></div></div>
           <div class="tchat tswap">
             <div class="tmsg me" id="tAsk"><div class="lbl" data-t="team_you"></div><div id="tAskText"></div></div>
-            <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt=""><span id="tAnsWho"></span></div><div id="tAnsText"></div></div>
+            <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt=""><span id="tAnsWho"></span></div><div id="tAnsText"></div><a class="ttry" id="tTry" href="team.html#test" hidden></a></div>
           </div>
-          <div class="pbar"><span>Concept Coach</span></div>
-        </div><i class="pisland"></i><i class="psheen" id="tSheen"></i></div></div></div></div>
+        </div>
         <div class="tfig"><video class="tswap" id="tFig" muted playsinline preload="none" width="720" height="1010" aria-hidden="true"></video></div>
       </div>
       <div class="ttabs" id="tTabs" role="tablist"></div>
@@ -1780,22 +1752,22 @@ window.addEventListener('pageshow', function (e) {
 /* ===== THE CONCEPT TEAM: one member at a time, a real question and the answer ===== */
 (function(){
   var TEAM = [
-    {id:'netto', name:'Netto', ang:[-20,7,-2],
+    {id:'netto', name:'Netto',
      ask:'Netto, what should I practice this week?',
      ans:'Start with the two mistakes from Tuesday’s lesson. They came back twice in your writing. Then one short review, five minutes.'},
-    {id:'victor-hugo', name:'Victor Hugo', ang:[16,5,2],
+    {id:'victor-hugo', name:'Victor Hugo',
      ask:'Is this OK for a client? “We need the contract signed by Friday.”',
      ans:'It is correct, but it sounds like an order. For a client, try: <span class="q">“Would it be possible to have the contract signed by Friday?”</span>'},
-    {id:'luana', name:'Luana', ang:[-30,9,1],
+    {id:'luana', name:'Luana',
      ask:'Luana, is this right? “I work here since 2019.”',
      ans:'Use the present perfect: <span class="q">“I have worked here since 2019.”</span> It started in the past and it is still true.'},
-    {id:'bia', name:'Bia', ang:[24,4,-3],
+    {id:'bia', name:'Bia',
      ask:'Bia, can I say “let’s touch base” to my manager?',
      ans:'Yes. It means a short conversation to check how things are going. It is very common at work. With a new client, <span class="q">“could we have a quick call?”</span> is safer.'},
-    {id:'murillo', name:'Murillo', ang:[-12,12,2],
+    {id:'murillo', name:'Murillo',
      ask:'Murillo, how do I say “comfortable”?',
      ans:'Three syllables, not four: <span class="q">/\u02c8k\u028cmft\u025ab\u0259l/</span>, COMF-ter-bul. The stress is on the first syllable. Listen, then say it with me.'},
-    {id:'marcelo', name:'Marcelo', ang:[28,7,0],
+    {id:'marcelo', name:'Marcelo',
      ask:'Marcelo, where does “salary” come from?',
      ans:'From the Latin <span class="q">salarium</span>, from <span class="q">sal</span>, “salt”. Nobody knows for sure why. The story that Roman soldiers were paid in salt is not proven.'}
   ];
@@ -1820,7 +1792,7 @@ window.addEventListener('pageshow', function (e) {
   tabs.style.setProperty('--dur', DUR + 'ms');
   fig.addEventListener('canplay', function(){ if(!reduce && visible && fig.paused && fig.currentTime === 0){ var p = fig.play(); if(p && p.catch) p.catch(function(){}); } });
 
-  function preload(i){ var l = document.createElement('link'); l.rel = 'preload'; l.as = 'image'; l.href = 'team/'+TEAM[i].id+'-still.webp?v=4'; document.head.appendChild(l); }
+  function preload(i){ var l = document.createElement('link'); l.rel = 'preload'; l.as = 'image'; l.href = 'team/home-'+TEAM[i].id+'-still.webp?v=4'; document.head.appendChild(l); }
 
   function typeInto(el, text, done){
     if(reduce){ el.textContent = text; done(); return; }
@@ -1838,12 +1810,6 @@ window.addEventListener('pageshow', function (e) {
     document.getElementById('tRole').textContent = L('role_' + m.id);
     document.getElementById('tAnsWho').textContent = m.name;
     document.getElementById('tAnsFace').src = 'team/'+m.id+'-face.webp';
-    document.getElementById('tAppFace').src = 'team/'+m.id+'-face.webp';
-    document.getElementById('tAppName').textContent = m.name;
-    document.getElementById('tAppRole').textContent = L('role_' + m.id);
-    var ph = document.getElementById('tPhone'), k = window.innerWidth < 900 ? 0.55 : 1;
-    ph.style.setProperty('--ry', (m.ang[0] * k) + 'deg'); ph.style.setProperty('--rx', (m.ang[1] * k) + 'deg'); ph.style.setProperty('--rz', (m.ang[2] * k) + 'deg');
-    ph.querySelector('.psheen').style.setProperty('--sx', Math.round((m.ang[0] + 32) / 64 * 100) + '%');
     if(m.id === 'bia') later(balloons, reduce ? 0 : 3800);
     var tr = document.getElementById('tTry'); tr.hidden = true;
     tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
@@ -1851,9 +1817,9 @@ window.addEventListener('pageshow', function (e) {
     var ask = document.getElementById('tAsk'), ans = document.getElementById('tAns');
     var askT = document.getElementById('tAskText'), ansT = document.getElementById('tAnsText');
     ask.classList.remove('on'); ans.classList.remove('on'); askT.textContent = ''; ansT.innerHTML = '';
-    fig.poster = 'team/'+m.id+'-still.webp?v=4';
+    fig.poster = 'team/home-'+m.id+'-still.webp?v=4';
     if(!reduce){
-      fig.src = 'team/'+m.id+'.mp4?v=4';
+      fig.src = 'team/home-'+m.id+'.mp4?v=4';
       var pr = fig.play(); if(pr && pr.catch) pr.catch(function(){});
     } else { fig.removeAttribute('src'); }
     later(function(){ ask.classList.add('on'); typeInto(askT, m.ask, function(){
@@ -1921,13 +1887,11 @@ window.addEventListener('pageshow', function (e) {
     if(cur < 0) return;
     var m = TEAM[cur];
     document.getElementById('tRole').textContent = L('role_' + m.id);
-    document.getElementById('tAppRole').textContent = L('role_' + m.id);
     var tr = document.getElementById('tTry');
     tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
     tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
   };
 })();
-
 /* ===== NETTO'S 3D POINT in the hero: once when the hero is on screen, again after 20 s away ===== */
 (function(){
   var img = document.getElementById('heroNetto'); if(!img) return;
