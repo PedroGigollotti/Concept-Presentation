@@ -49,6 +49,7 @@
   #team .team-intro{max-width:760px;}
   .tstage{position:relative;margin-top:46px;background:#E7E8EA;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;min-height:540px;color:#0A0B0D;}
   .tcopy{position:relative;z-index:2;padding:48px 20px 40px 48px;display:flex;flex-direction:column;gap:16px;min-width:0;}
+  .tline{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--red);margin-top:8px;}
   .tname{font-family:var(--serif);font-size:clamp(40px,5vw,64px);line-height:.95;letter-spacing:-.01em;}
   .trole{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);}
   .tchat{display:flex;flex-direction:column;gap:12px;margin-top:10px;max-width:470px;}
@@ -317,15 +318,6 @@
   #hero{padding:180px 0 80px;}
   #hero .market{font-size:11.5px;letter-spacing:3px;color:#7E838C;margin-bottom:26px;}
   #hero .ctas{margin-top:40px;}
-  /* Netto points down from the hero to the team (his 3D point, transparent frames). */
-  .hero-wrap{position:relative;}
-  .hero-netto{position:absolute;right:10px;top:150px;width:250px;pointer-events:none;z-index:4;-webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 97%);mask-image:linear-gradient(to bottom,#000 82%,transparent 97%);}
-  .hero-netto img{display:block;width:100%;height:auto;}
-  #hero h1,#hero .lede,#hero .ctas,#hero .market{position:relative;z-index:2;}
-  #team{position:relative;z-index:3;}
-  @media (max-width:900px){
-    .hero-netto{position:relative;right:auto;top:auto !important;width:210px;margin:20px auto -120px;}
-  }
   .scrollcue{margin-top:68px;display:flex;align-items:center;gap:11px;font-size:11px;letter-spacing:2px;color:#6E727A;}
   .scrollcue .bar{width:1px;height:32px;background:linear-gradient(to bottom,var(--red),transparent);animation:cue 1.9s ease-in-out infinite;}
   @keyframes cue{0%,100%{opacity:.25;transform:scaleY(.6);}50%{opacity:1;transform:scaleY(1);}}
@@ -559,7 +551,7 @@
 
 <!-- ===== HERO ===== -->
 <section id="hero" class="bg-black">
-  <div class="wrap hero-wrap">
+  <div class="wrap">
     <div class="market reveal" data-t="hero_market"></div>
     <h1 class="hero reveal d1">
       <span data-t="hero_h1_a"></span><br>
@@ -567,11 +559,10 @@
     </h1>
     <p class="lede on-dark reveal d2" style="margin-top:26px;" data-t="hero_lede"></p>
     <div class="ctas reveal d3"><a class="btn btn-outline" id="heroCta1" href="#"></a></div>
-    <div class="hero-netto" aria-hidden="true"><img id="heroNetto" src="team/netto-point-first.webp" alt="" width="380" height="695"></div>
     <div class="reveal d3" id="team">
       <div class="tstage" id="tStage" aria-live="polite">
         <div class="tcopy">
-          <div class="tswap"><div class="trole" id="tRole"></div><div class="tname" id="tName"></div></div>
+          <div class="tswap"><div class="trole" id="tRole"></div><div class="tname" id="tName"></div><div class="tline" id="tLine"></div></div>
           <div class="tchat tswap">
             <div class="tmsg me" id="tAsk"><div class="lbl" data-t="team_you"></div><div id="tAskText"></div></div>
             <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt=""><span id="tAnsWho"></span></div><div id="tAnsText"></div><a class="ttry" id="tTry" href="team.html#test" hidden></a></div>
@@ -1752,22 +1743,22 @@ window.addEventListener('pageshow', function (e) {
 /* ===== THE CONCEPT TEAM: one member at a time, a real question and the answer ===== */
 (function(){
   var TEAM = [
-    {id:'netto', name:'Netto',
+    {id:'netto', name:'Netto', line:"Let's make it land!", punch:null,
      ask:'Netto, what should I practice this week?',
      ans:'Start with the two mistakes from Tuesday’s lesson. They came back twice in your writing. Then one short review, five minutes.'},
-    {id:'victor-hugo', name:'Victor Hugo',
+    {id:'victor-hugo', name:'Victor Hugo', line:"Read the room, then hit send.", punch:"victor-hugo-punch",
      ask:'Is this OK for a client? “We need the contract signed by Friday.”',
      ans:'It is correct, but it sounds like an order. For a client, try: <span class="q">“Would it be possible to have the contract signed by Friday?”</span>'},
-    {id:'luana', name:'Luana',
+    {id:'luana', name:'Luana', line:"Every comma counts.", punch:"luana-punch",
      ask:'Luana, is this right? “I work here since 2019.”',
      ans:'Use the present perfect: <span class="q">“I have worked here since 2019.”</span> It started in the past and it is still true.'},
-    {id:'bia', name:'Bia',
+    {id:'bia', name:'Bia', line:"That's how people really say it.", punch:"bia-punch",
      ask:'Bia, can I say “let’s touch base” to my manager?',
      ans:'Yes. It means a short conversation to check how things are going. It is very common at work. With a new client, <span class="q">“could we have a quick call?”</span> is safer.'},
-    {id:'murillo', name:'Murillo',
+    {id:'murillo', name:'Murillo', line:"Stress the word that matters.", punch:"murillo-punch",
      ask:'Murillo, how do I say “comfortable”?',
      ans:'Three syllables, not four: <span class="q">/\u02c8k\u028cmft\u025ab\u0259l/</span>, COMF-ter-bul. The stress is on the first syllable. Listen, then say it with me.'},
-    {id:'marcelo', name:'Marcelo',
+    {id:'marcelo', name:'Marcelo', line:"Every word has a story.", punch:"marcelo-punch",
      ask:'Marcelo, where does “salary” come from?',
      ans:'From the Latin <span class="q">salarium</span>, from <span class="q">sal</span>, “salt”. Nobody knows for sure why. The story that Roman soldiers were paid in salt is not proven.'}
   ];
@@ -1776,7 +1767,10 @@ window.addEventListener('pageshow', function (e) {
   var tabs = document.getElementById('tTabs');
   var fig = document.getElementById('tFig');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var cur = -1, timer = null, seq = [], visible = false, started = false;
+  var cur = -1, timer = null, seq = [], visible = false, started = false, soundOK = null;
+  fig.addEventListener('ended', function(){ if(fig._after && !fig.muted){ var f = fig._after; fig._after = null; f(); } });
+  /* the first tap or key on the page lets the members speak again */
+  ['pointerdown','keydown'].forEach(function(ev){ document.addEventListener(ev, function(){ if(soundOK === false) soundOK = null; }, true); });
 
   function L(k){ try{ return window.I18N[currentLang][k] || window.I18N.en[k] || ''; }catch(e){ return ''; } }
   function clearSeq(){ seq.forEach(clearTimeout); seq = []; }
@@ -1818,9 +1812,15 @@ window.addEventListener('pageshow', function (e) {
     var askT = document.getElementById('tAskText'), ansT = document.getElementById('tAnsText');
     ask.classList.remove('on'); ans.classList.remove('on'); askT.textContent = ''; ansT.innerHTML = '';
     fig.poster = 'team/home-'+m.id+'-still.webp?v=4';
+    document.getElementById('tLine').textContent = '\u201c' + m.line + '\u201d';
     if(!reduce){
-      fig.src = 'team/home-'+m.id+'.mp4?v=4';
-      var pr = fig.play(); if(pr && pr.catch) pr.catch(function(){});
+      var scene = function(){ fig.muted = true; fig.src = 'team/home-'+m.id+'.mp4?v=4'; var p2 = fig.play(); if(p2 && p2.catch) p2.catch(function(){}); };
+      if(m.punch && soundOK !== false){
+        fig._after = scene;
+        fig.muted = false; fig.src = 'team/home-'+m.punch+'.mp4?v=4';
+        var pr = fig.play();
+        if(pr && pr.then) pr.then(function(){ soundOK = true; }, function(){ soundOK = false; if(cur === i) scene(); });
+      } else scene();
     } else { fig.removeAttribute('src'); }
     later(function(){ ask.classList.add('on'); typeInto(askT, m.ask, function(){
       later(function(){ ans.classList.add('on'); ansT.innerHTML = '<span class="tdots"><i></i><i></i><i></i></span>'; }, 350);
@@ -1891,33 +1891,6 @@ window.addEventListener('pageshow', function (e) {
     tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
     tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
   };
-})();
-/* ===== NETTO'S 3D POINT in the hero: once when the hero is on screen, again after 20 s away ===== */
-(function(){
-  var img = document.getElementById('heroNetto'); if(!img) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce){ img.src = 'team/netto-point-still.webp'; return; }
-  var blob = null, last = 0, busy = false, DUR = 92 * 1000 / 15;
-  fetch('team/netto-point.webp').then(function(r){ return r.blob(); }).then(function(b){ blob = b; tryPlay(); }).catch(function(){ img.src = 'team/netto-point-still.webp'; });
-  function place(){
-    var box = img.parentNode, st = document.getElementById('tStage');
-    if(!st || window.innerWidth <= 900){ box.style.top = ''; return; }
-    var wrapTop = box.parentNode.getBoundingClientRect().top, stTop = st.getBoundingClientRect().top - wrapTop;
-    box.style.top = Math.round(stTop - box.offsetHeight * 0.6) + 'px';
-  }
-  place(); window.addEventListener('resize', place); img.addEventListener('load', place);
-  var seen = false;
-  function introDone(){ var i = document.getElementById('intro'); return !i || i.classList.contains('done'); }
-  function tryPlay(){
-    if(!blob || busy || !seen || document.hidden || !introDone() || Date.now() - last < 20000) return;
-    busy = true; last = Date.now();
-    var u = URL.createObjectURL(blob); img.src = u;
-    setTimeout(function(){ img.src = 'team/netto-point-still.webp'; URL.revokeObjectURL(u); busy = false; }, DUR + 100);
-  }
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){ seen = es[0].isIntersecting; if(seen) setTimeout(tryPlay, 700); }, {threshold:0.5}).observe(img);
-  } else { seen = true; }
-  setInterval(tryPlay, 1500);
 })();
 </script>
 </body>

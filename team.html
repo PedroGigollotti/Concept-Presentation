@@ -139,10 +139,35 @@
   .mgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;}
   .member.flip .mfig{order:2;}
   .mgrid>*{min-width:0;}
-  .mfig{position:relative;background:#000;border-radius:22px;display:flex;justify-content:center;align-items:flex-end;}
-  .mfig video{display:block;width:100%;max-width:460px;height:auto;aspect-ratio:720/1010;background:#000;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 12%,#000 92%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 12%,#000 92%,transparent 100%);mask-composite:intersect;}
+  .mfig{position:relative;background:#E7E8EA;border-radius:22px;display:flex;justify-content:center;align-items:flex-end;}
+  .mfig video{display:block;width:100%;max-width:420px;margin-left:auto;height:auto;aspect-ratio:720/1010;background:#E7E8EA;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);}
   .mname{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6vw,76px);line-height:.95;margin:0 0 14px;color:#fff;}
-  .hear{position:absolute;left:18px;bottom:18px;z-index:3;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:9px 15px 9px 12px;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s,border-color .2s;}
+  .mphone{position:absolute;left:-46px;bottom:26px;z-index:3;perspective:1400px;width:200px;height:416px;}
+  .mphone .p3d{width:200px;height:416px;}
+  .mphone .pedge,.mphone .pbody{border-radius:32px;}
+  .mphone .pscreen{left:7px;top:7px;right:7px;bottom:7px;border-radius:26px;}
+  .mphone .pisland{top:13px;width:58px;height:18px;margin-left:-29px;}
+  .mphone .papp{padding:36px 11px 8px;}
+  .mphone .papp .pmark{width:24px;height:24px;}
+  .mphone .papp b{font-size:11.5px;}
+  .mphone .papp span{font-size:9.5px;}
+  .mphone .tmsg{font-size:11px;padding:8px 10px;}
+  .mphone .tmsg .lbl{font-size:7.5px;}
+  .mphone .pbar{font-size:8px;padding:6px 0 10px;}
+  .member.flip .mphone{left:auto;right:-46px;}
+  .member.flip .hear{right:auto;left:18px;}
+  .member.flip .mphone .p3d{transform:rotateY(calc(var(--ry,-20deg) * -1)) rotateX(var(--rx,6deg)) rotateZ(calc(var(--rz,0deg) * -1));}
+  .tap-pill{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:120;display:inline-flex;align-items:center;gap:10px;background:#fff;color:#000;border:0;border-radius:999px;padding:12px 20px;font-family:var(--sans);font-weight:600;font-size:14px;box-shadow:0 16px 40px rgba(0,0,0,.5);cursor:pointer;animation:pillIn .4s ease both;}
+  .tap-pill[hidden]{display:none;}
+  .tap-pill svg{width:18px;height:18px;}
+  @keyframes pillIn{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
+  @media (max-width:860px){
+    .mphone,.member.flip .mphone{left:auto;right:-4px;bottom:-56px;transform:scale(.6);transform-origin:bottom right;}
+    .mfig{margin-bottom:64px;}
+    .mfig video{margin:0 auto;}
+    .hear,.member.flip .hear{left:12px;right:auto;bottom:12px;}
+  }
+  .hear{position:absolute;right:18px;bottom:18px;z-index:3;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:9px 15px 9px 12px;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s,border-color .2s;}
   .hear svg{width:16px;height:16px;}
   .hear:hover{background:var(--red);border-color:var(--red);}
   .hear.playing{background:var(--red);border-color:var(--red);}
@@ -163,6 +188,8 @@
   .cfilm{position:relative;border-radius:22px;overflow:hidden;background:#000;}
   .cfilm video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;}
   @media (max-width:860px){.closing{grid-template-columns:1fr;gap:28px;}.cfilm{max-width:300px;margin:0 auto;}}
+  .mcoach{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.4;color:var(--silver);margin:-12px 0 24px;max-width:540px;}
+  .mcoach .mck{display:block;font-family:var(--sans);font-style:normal;font-size:10.5px;font-weight:600;letter-spacing:2.2px;color:#6E727A;margin-bottom:4px;}
   .mline{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,30px);color:var(--red);margin:0 0 26px;line-height:1.2;}
   .does-k{font-size:11px;font-weight:600;letter-spacing:2.5px;color:#6E727A;margin:0 0 8px;}
   .mdoes{margin:0;max-width:560px;}
@@ -297,6 +324,13 @@
     .tdots i,.caret{animation:none;}
   }
 
+  /* Netto points down from the top of the page to the test (his 3D point, transparent frames) */
+  .team-hero{position:relative;z-index:5;}
+  .hero-wrap{position:relative;}
+  .hero-wrap>*:not(.hero-netto){position:relative;z-index:2;max-width:640px;}
+  .hero-netto{position:absolute;right:10px;bottom:-190px;width:280px;pointer-events:none;z-index:6;-webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 97%);mask-image:linear-gradient(to bottom,#000 82%,transparent 97%);}
+  .hero-netto img{display:block;width:100%;height:auto;}
+  @media (max-width:900px){ .hero-netto{position:relative;right:auto;bottom:auto;width:220px;margin:24px auto -150px;} }
 </style>
 
 </head>
@@ -331,8 +365,8 @@
   </div>
 </nav>
 
-<section class="bg-black section-pad" style="padding-top:150px;padding-bottom:40px;">
-  <div class="wrap">
+<section class="bg-black section-pad team-hero" style="padding-top:150px;padding-bottom:40px;">
+  <div class="wrap hero-wrap">
     <p class="kicker reveal" data-t="k_team"></p>
     <h1 class="name reveal"><span data-t="h1_a"></span> <i data-t="h1_em"></i></h1>
     <p class="lede on-dark reveal" data-t="lede"></p>
@@ -340,25 +374,10 @@
       <a class="btn btn-solid" href="#test" data-t="cta_test"></a>
       <button class="btn btn-outline sound" id="soundBtn" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span id="soundTxt"></span></button>
     </div>
-    <div class="reveal d3" id="team">
-      <div class="tstage" id="tStage" aria-live="polite">
-        <div class="tcopy">
-          <div class="tswap"><div class="trole" id="tRole"></div><div class="tname" id="tName"></div><a class="ttry" id="tTry" href="team.html#test" hidden></a></div>
-        </div>
-        <div class="tphone" aria-hidden="false"><div class="pfloat"><div class="p3d" id="tPhone"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen">
-          <div class="papp"><img class="pmark" src="team/netto-face.webp" alt="" id="tAppFace"><div><b id="tAppName"></b><span id="tAppRole"></span></div></div>
-          <div class="tchat tswap">
-            <div class="tmsg me" id="tAsk"><div class="lbl" data-t="team_you"></div><div id="tAskText"></div></div>
-            <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt=""><span id="tAnsWho"></span></div><div id="tAnsText"></div></div>
-          </div>
-          <div class="pbar"><span>Concept Coach</span></div>
-        </div><i class="pisland"></i><i class="psheen" id="tSheen"></i></div></div></div></div>
-        <div class="tfig"><video class="tswap" id="tFig" muted playsinline preload="none" width="720" height="1010" aria-hidden="true"></video></div>
-      </div>
-      <div class="ttabs" id="tTabs" role="tablist"></div>
-    </div>
+    <div class="hero-netto" aria-hidden="true"><img id="heroNetto" src="team/netto-point-first.webp" alt="" width="380" height="695"></div>
   </div>
 </section>
+<button class="tap-pill" id="tapPill" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-t="tap_sound"></span></button>
 
 <section class="bg-black" id="test">
   <div class="wrap">
@@ -413,6 +432,9 @@
 <script>
 window.I18N = {
   en: {
+    coach_k: "WHEN YOU OPEN THE COACH",
+    you_ask: "Your question",
+    tap_sound: "Tap anywhere to hear the team",
     "team_you": "Your question",
     "team_try": "Try a question from",
     "team_meet_all": "Take the 5-question test",
@@ -423,7 +445,7 @@ window.I18N = {
     "role_murillo": "Pronunciation and listening",
     "role_marcelo": "Word origins",
     hear: "Hear",
-    sound_on: "Turn on sound to hear the team",
+    sound_on: "Sound off",
     sound_is_on: "Sound on",
     k_close: "FROM NETTO",
     hear_close: "Play with sound",
@@ -461,6 +483,9 @@ window.I18N = {
     }
   },
   pt: {
+    coach_k: "QUANDO VOCÊ ABRE O COACH",
+    you_ask: "Sua pergunta",
+    tap_sound: "Toque em qualquer lugar para ouvir o time",
     "team_you": "Sua pergunta",
     "team_try": "Responda uma pergunta de",
     "team_meet_all": "Fazer o teste de 5 perguntas",
@@ -471,7 +496,7 @@ window.I18N = {
     "role_murillo": "Pronúncia e escuta",
     "role_marcelo": "Origem das palavras",
     hear: "Ouvir",
-    sound_on: "Ligar o som para ouvir o time",
+    sound_on: "Som desligado",
     sound_is_on: "Som ligado",
     k_close: "DO NETTO",
     hear_close: "Ver com som",
@@ -509,6 +534,9 @@ window.I18N = {
     }
   },
   it: {
+    coach_k: "QUANDO APRI IL COACH",
+    you_ask: "La tua domanda",
+    tap_sound: "Tocca ovunque per sentire il team",
     "team_you": "La tua domanda",
     "team_try": "Rispondi a una domanda di",
     "team_meet_all": "Fai il test di 5 domande",
@@ -519,7 +547,7 @@ window.I18N = {
     "role_murillo": "Pronuncia e ascolto",
     "role_marcelo": "Origine delle parole",
     hear: "Ascolta",
-    sound_on: "Attiva l’audio per sentire il team",
+    sound_on: "Audio spento",
     sound_is_on: "Audio attivo",
     k_close: "DA NETTO",
     hear_close: "Guarda con l’audio",
@@ -561,24 +589,32 @@ window.I18N = {
 /* The member's own line stays in English: it is the character's voice. The
    questions stay in English: they test English. */
 var TEAM = [
-  {id: "netto", name: "Netto", line: "Meet your Concept team.", voice: "netto-intro"},
-  {id: "victor-hugo", name: "Victor Hugo", line: "Read the room, then hit send.", voice: "victor-hugo-punch",
+  {id: "netto", name: "Netto", line: "Let's make it land!", coach: "Meet your Concept team. Each of them owns one part of your English, and I'm with you the whole way.", says: ["netto-intro"]},
+  {id: "victor-hugo", name: "Victor Hugo", line: "Read the room, then hit send.", coach: "Victor Hugo here. Tell me who's reading, and I'll tell you how it lands.", says: ["victor-hugo-open1", "victor-hugo-punch"],
    q: "You need a client to sign the contract by Friday. Which sentence is right for the client?",
    o: ["Sign the contract by Friday.", "Would it be possible to have the contract signed by Friday?", "I need the contract signed by Friday."], a: 1},
-  {id: "luana", name: "Luana", line: "Every comma counts.", voice: "luana-punch",
+  {id: "luana", name: "Luana", line: "Every comma counts.", coach: "Luana here. Got a sentence you're not sure about? Let's look at it together.", says: ["luana-open2", "luana-punch"],
    q: "Which sentence is correct?",
    o: ["I work here since 2019.", "I have worked here since 2019.", "I am working here since 2019."], a: 1},
-  {id: "bia", name: "Bia", line: "That's how people really say it.", voice: "bia-punch",
+  {id: "bia", name: "Bia", line: "That's how people really say it.", coach: "Bia here. Heard something in a meeting and not sure you can use it? Try me.", says: ["bia-open1", "bia-punch"],
    q: "Your manager writes: “Let's touch base tomorrow.” What does she want?",
    o: ["A short conversation to check how things are going", "A meeting at the main office", "To finish the project tomorrow"], a: 0},
-  {id: "murillo", name: "Murillo", line: "Stress the word that matters.", voice: "murillo-punch",
+  {id: "murillo", name: "Murillo", line: "Stress the word that matters.", coach: "Murillo here. Ears before mouth. Want to hear something most people miss?", says: ["murillo-open1", "murillo-punch"],
    q: "How many syllables does “Wednesday” have?",
    o: ["Three: Wed-nes-day", "Two: WENZ-day"], a: 1},
-  {id: "marcelo", name: "Marcelo", line: "Every word has a story.", voice: "marcelo-punch",
+  {id: "marcelo", name: "Marcelo", line: "Every word has a story.", coach: "Hi! Marcelo, the intern. Give me any word and I'll dig up where it came from.", says: ["marcelo-open1", "marcelo-punch"],
    q: "The word “salary” comes from a Latin word connected to…",
    o: ["salt", "soldiers", "silver"], a: 0}
 ];
 
+var EX = {
+  netto: {ang:[-18,6,-2], ask:'Netto, what should I practice this week?', ans:'Start with the two mistakes from Tuesday\u2019s lesson. They came back twice in your writing. Then one short review, five minutes.'},
+  'victor-hugo': {ang:[-24,7,2], ask:'Is this OK for a client? \u201cWe need the contract signed by Friday.\u201d', ans:'It is correct, but it sounds like an order. For a client, try: <span class="q">\u201cWould it be possible to have the contract signed by Friday?\u201d</span>'},
+  luana: {ang:[-14,9,-1], ask:'Luana, is this right? \u201cI work here since 2019.\u201d', ans:'Use the present perfect: <span class="q">\u201cI have worked here since 2019.\u201d</span> It started in the past and it is still true.'},
+  bia: {ang:[-28,5,1], ask:'Bia, can I say \u201clet\u2019s touch base\u201d to my manager?', ans:'Yes. It means a short conversation to check how things are going. It is very common at work. With a new client, <span class="q">\u201ccould we have a quick call?\u201d</span> is safer.'},
+  murillo: {ang:[-16,11,2], ask:'Murillo, how do I say \u201ccomfortable\u201d?', ans:'Three syllables, not four: <span class="q">/\u02c8k\u028cmft\u025ab\u0259l/</span>, COMF-ter-bul. The stress is on the first syllable.'},
+  marcelo: {ang:[-22,7,0], ask:'Marcelo, where does \u201csalary\u201d come from?', ans:'From the Latin <span class="q">salarium</span>, from <span class="q">sal</span>, \u201csalt\u201d. Nobody knows for sure why. The story that Roman soldiers were paid in salt is not proven.'}
+};
 var currentLang = "en";
 var answers = {};
 function t(k){ return window.I18N[currentLang][k]; }
@@ -598,12 +634,19 @@ function buildMembers(){
     }
     html += '<section class="member bg-black' + (i % 2 ? ' flip' : '') + '" id="' + m.id + '">' +
       '<div class="wrap mgrid">' +
-        '<div class="mfig reveal-scale"><video muted playsinline preload="none" poster="team/' + m.id + '-still.webp?v=4" data-src="team/' + m.id + '.mp4?v=4" width="720" height="1010" aria-hidden="true"></video>' +
+        '<div class="mfig reveal-scale"><video muted playsinline preload="none" poster="team/home-' + m.id + '-still.webp?v=4" data-src="team/home-' + m.id + '.mp4?v=4" width="720" height="1010" aria-hidden="true"></video>' +
+        '<div class="mphone" aria-hidden="true"><div class="pfloat"><div class="p3d"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen">' +
+          '<div class="papp"><img class="pmark" src="team/' + m.id + '-face.webp" alt=""><div><b>' + esc(m.name) + '</b><span class="prole"></span></div></div>' +
+          '<div class="tchat"><div class="tmsg me"><div class="lbl ml"></div><div class="mask"></div></div>' +
+          '<div class="tmsg them"><div class="lbl"><img src="team/' + m.id + '-face.webp" alt=""><span>' + esc(m.name) + '</span></div><div class="mans"></div></div></div>' +
+          '<div class="pbar"><span>Concept Coach</span></div>' +
+        '</div><i class="pisland"></i><i class="psheen"></i></div></div></div></div>' +
         '<button class="hear" type="button" data-id="' + m.id + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="hl"></span></button></div>' +
         '<div class="mcopy reveal">' +
           '<p class="kicker mrole"></p>' +
           '<h2 class="mname">' + esc(m.name) + '</h2>' +
           '<p class="mline">“' + esc(m.line) + '”</p>' +
+          '<p class="mcoach"><span class="mck"></span>“' + esc(m.coach) + '”</p>' +
           '<p class="does-k"></p><p class="body-copy on-dark mdoes"></p>' +
           quiz +
         '</div>' +
@@ -638,47 +681,76 @@ function buildMembers(){
     });
   });
 
-  /* each member: the scene plays (muted) when on screen; their line plays with
-     their voice on Hear, or by itself once the visitor has turned the sound on */
+  /* each member, when they are on screen: the phone shows their example, and
+     they say their line in their own voice (or, if the browser has not let the
+     page play sound yet, the scene plays silent until the first tap) */
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   TEAM.forEach(function(m){
     var sec = document.getElementById(m.id), v = sec.querySelector('video'), btn = sec.querySelector('.hear');
+    var ph = sec.querySelector('.p3d'), ex = EX[m.id], seq = [];
     var st = {vis: false, spoke: false, mode: ''};
+    ph.style.setProperty('--ry', ex.ang[0] + 'deg'); ph.style.setProperty('--rx', ex.ang[1] + 'deg'); ph.style.setProperty('--rz', ex.ang[2] + 'deg');
+    function phone(){
+      seq.forEach(clearTimeout); seq = [];
+      var me = sec.querySelector('.tmsg.me'), them = sec.querySelector('.tmsg.them'), q = sec.querySelector('.mask'), a = sec.querySelector('.mans');
+      me.classList.remove('on'); them.classList.remove('on'); q.textContent = ''; a.innerHTML = '';
+      if(reduce){ me.classList.add('on'); them.classList.add('on'); q.textContent = ex.ask; a.innerHTML = ex.ans; return; }
+      var n = 0;
+      seq.push(setTimeout(function(){ me.classList.add('on');
+        (function step(){ n += 2; q.textContent = ex.ask.slice(0, n); if(n < ex.ask.length) seq.push(setTimeout(step, 30));
+          else { seq.push(setTimeout(function(){ them.classList.add('on'); a.innerHTML = '<span class="tdots"><i></i><i></i><i></i></span>'; }, 350));
+                 seq.push(setTimeout(function(){ a.innerHTML = ex.ans; }, 1700)); } })();
+      }, 500));
+    }
     function scene(){
       st.mode = 'scene'; btn.classList.remove('playing');
-      v.muted = true; v.loop = false; v.src = v.getAttribute('data-src');
+      v.muted = true; v.src = v.getAttribute('data-src');
       if(reduce) return;
       var p = v.play(); if(p && p.catch) p.catch(function(){});
       if(m.id === 'bia') balloons(sec.querySelector('.mfig'));
     }
-    function voice(){
+    var q = 0;
+    function voice(){ q = 0; say(); }
+    function say(){
       st.mode = 'voice'; st.spoke = true; btn.classList.add('playing');
       sec.querySelectorAll('.bballoon').forEach(function(b){ b.remove(); });
-      v.muted = false; v.src = 'team/' + m.voice + '.mp4?v=4';
-      var p = v.play(); if(p && p.catch) p.catch(function(){ v.muted = true; scene(); });
+      v.muted = false; v.src = 'team/home-' + m.says[q] + '.mp4?v=4';
+      var p = v.play();
+      if(p && p.catch) p.catch(function(){ st.spoke = false; askForTap(); scene(); });
     }
-    v.addEventListener('ended', function(){ if(st.mode === 'voice' && st.vis) scene(); });
+    v.addEventListener('ended', function(){
+      if(st.mode !== 'voice' || !st.vis) return;
+      if(++q < m.says.length) say(); else scene();
+    });
     btn.addEventListener('click', function(){ stopOthers(m.id); voice(); });
     m._stop = function(){ if(!v.paused) v.pause(); btn.classList.remove('playing'); };
+    m._replay = function(){ if(st.vis && !st.spoke){ stopOthers(m.id); voice(); } };
     if('IntersectionObserver' in window){
       new IntersectionObserver(function(es){
-        st.vis = es[0].isIntersecting;
-        if(st.vis){ if(soundOn && !st.spoke){ stopOthers(m.id); voice(); } else if(st.mode !== 'voice') scene(); }
-        else { m._stop(); st.mode = ''; }
-      }, {threshold: 0.5}).observe(v);
+        var was = st.vis; st.vis = es[0].isIntersecting;
+        if(st.vis && !was){ phone(); if(soundOn && !st.spoke){ stopOthers(m.id); voice(); } else scene(); }
+        else if(!st.vis){ m._stop(); st.mode = ''; seq.forEach(clearTimeout); }
+      }, {threshold: 0.55}).observe(v);
     }
   });
   closingFilm();
 }
 
-var soundOn = false;
+var soundOn = true, tapAsked = false;
+function askForTap(){
+  if(tapAsked) return; tapAsked = true;
+  var pill = document.getElementById('tapPill'); pill.hidden = false;
+  function go(){ document.removeEventListener('pointerdown', go, true); document.removeEventListener('keydown', go, true); pill.hidden = true;
+    TEAM.forEach(function(x){ if(x._replay) x._replay(); }); }
+  document.addEventListener('pointerdown', go, true); document.addEventListener('keydown', go, true);
+}
 function stopOthers(id){ TEAM.forEach(function(x){ if(x.id !== id && x._stop) x._stop(); }); var f = document.getElementById('closingFilm'); if(f && !f.paused) f.pause(); }
 function paintSound(){
   var b = document.getElementById('soundBtn');
   b.setAttribute('aria-pressed', soundOn ? 'true' : 'false');
   document.getElementById('soundTxt').textContent = soundOn ? t('sound_is_on') : t('sound_on');
 }
-document.getElementById('soundBtn').addEventListener('click', function(){ soundOn = !soundOn; paintSound(); if(soundOn) document.getElementById('netto').scrollIntoView({behavior: 'smooth', block: 'center'}); });
+document.getElementById('soundBtn').addEventListener('click', function(){ soundOn = !soundOn; paintSound(); if(!soundOn) TEAM.forEach(function(x){ if(x._stop) x._stop(); }); });
 
 var JOURNEYS = [
   [['Japanese','一石二鳥'],['Chinese','一石二鸟'],['Italian','prendere due piccioni con una fava'],['Portuguese','matar dois coelhos com uma cajadada só'],['English','kill two birds with one stone']],
@@ -725,6 +797,7 @@ function relabel(){
     s.querySelector('.does-k').textContent = d.does;
     s.querySelector('.mdoes').textContent = d.m[m.id].does;
     var hl = s.querySelector('.hear .hl'); if(hl) hl.textContent = d.hear + ' ' + m.name;
+    s.querySelector('.prole').textContent = d.m[m.id].role; s.querySelector('.mck').textContent = d.coach_k; s.querySelector('.ml').textContent = d.you_ask;
     var qz = s.querySelector('.quiz'); if(!qz) return;
     qz.querySelector('.ql').textContent = d.q_label;
     if(m.id in answers){
@@ -759,7 +832,6 @@ function applyLang(lang){
   for(var b = 0; b < btns.length; b++) btns[b].className = (btns[b].getAttribute('data-lang') === lang) ? 'active' : '';
   relabel();
   paintSound();
-  if(window.teamRelabel) window.teamRelabel();
   observeAll();
 }
 
@@ -783,153 +855,22 @@ buildMembers();
 var langParam = new URLSearchParams(window.location.search).get('lang');
 applyLang(langParam && window.I18N[langParam] ? langParam : 'en');
 if(location.hash){ var h = document.getElementById(location.hash.slice(1)); if(h) setTimeout(function(){ h.scrollIntoView({block: location.hash === '#test' ? 'start' : 'center'}); }, 300); }
-/* ===== THE CONCEPT TEAM: one member at a time, a real question and the answer ===== */
+
+/* Netto's 3D point: once when he is on screen, again after 20 s away */
 (function(){
-  var TEAM = [
-    {id:'netto', name:'Netto', ang:[-20,7,-2],
-     ask:'Netto, what should I practice this week?',
-     ans:'Start with the two mistakes from Tuesday’s lesson. They came back twice in your writing. Then one short review, five minutes.'},
-    {id:'victor-hugo', name:'Victor Hugo', ang:[16,5,2],
-     ask:'Is this OK for a client? “We need the contract signed by Friday.”',
-     ans:'It is correct, but it sounds like an order. For a client, try: <span class="q">“Would it be possible to have the contract signed by Friday?”</span>'},
-    {id:'luana', name:'Luana', ang:[-30,9,1],
-     ask:'Luana, is this right? “I work here since 2019.”',
-     ans:'Use the present perfect: <span class="q">“I have worked here since 2019.”</span> It started in the past and it is still true.'},
-    {id:'bia', name:'Bia', ang:[24,4,-3],
-     ask:'Bia, can I say “let’s touch base” to my manager?',
-     ans:'Yes. It means a short conversation to check how things are going. It is very common at work. With a new client, <span class="q">“could we have a quick call?”</span> is safer.'},
-    {id:'murillo', name:'Murillo', ang:[-12,12,2],
-     ask:'Murillo, how do I say “comfortable”?',
-     ans:'Three syllables, not four: <span class="q">/\u02c8k\u028cmft\u025ab\u0259l/</span>, COMF-ter-bul. The stress is on the first syllable. Listen, then say it with me.'},
-    {id:'marcelo', name:'Marcelo', ang:[28,7,0],
-     ask:'Marcelo, where does “salary” come from?',
-     ans:'From the Latin <span class="q">salarium</span>, from <span class="q">sal</span>, “salt”. Nobody knows for sure why. The story that Roman soldiers were paid in salt is not proven.'}
-  ];
-  var DUR = 11000;
-  var stage = document.getElementById('tStage'); if(!stage) return;
-  var tabs = document.getElementById('tTabs');
-  var fig = document.getElementById('tFig');
+  var img = document.getElementById('heroNetto'); if(!img) return;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var cur = -1, timer = null, seq = [], visible = false, started = false;
-
-  function L(k){ try{ return window.I18N[currentLang][k] || window.I18N.en[k] || ''; }catch(e){ return ''; } }
-  function clearSeq(){ seq.forEach(clearTimeout); seq = []; }
-  function later(fn, ms){ seq.push(setTimeout(fn, ms)); }
-
-  TEAM.forEach(function(m, i){
-    var b = document.createElement('button');
-    b.type = 'button'; b.className = 'ttab'; b.setAttribute('role','tab');
-    b.innerHTML = '<img src="team/'+m.id+'-face.webp" alt="" width="34" height="34"><span>'+m.name+'</span><i class="bar"></i>';
-    b.addEventListener('click', function(){ show(i, true); });
-    tabs.appendChild(b);
-  });
-  tabs.style.setProperty('--dur', DUR + 'ms');
-  fig.addEventListener('canplay', function(){ if(!reduce && visible && fig.paused && fig.currentTime === 0){ var p = fig.play(); if(p && p.catch) p.catch(function(){}); } });
-
-  function preload(i){ var l = document.createElement('link'); l.rel = 'preload'; l.as = 'image'; l.href = 'team/'+TEAM[i].id+'-still.webp?v=4'; document.head.appendChild(l); }
-
-  function typeInto(el, text, done){
-    if(reduce){ el.textContent = text; done(); return; }
-    var n = 0; el.innerHTML = '<span></span><i class="caret"></i>';
-    var span = el.firstChild;
-    (function step(){
-      n += 2; span.textContent = text.slice(0, n);
-      if(n < text.length) later(step, 28); else { el.textContent = text; done(); }
-    })();
+  if(reduce){ img.src = 'team/netto-point-still.webp'; return; }
+  var blob = null, last = 0, busy = false, seen = false, DUR = 92 * 1000 / 15;
+  fetch('team/netto-point.webp').then(function(r){ return r.blob(); }).then(function(b){ blob = b; tryPlay(); }).catch(function(){ img.src = 'team/netto-point-still.webp'; });
+  function tryPlay(){
+    if(!blob || busy || !seen || document.hidden || Date.now() - last < 20000) return;
+    busy = true; last = Date.now();
+    var u = URL.createObjectURL(blob); img.src = u;
+    setTimeout(function(){ img.src = 'team/netto-point-still.webp'; URL.revokeObjectURL(u); busy = false; }, DUR + 100);
   }
-
-  function fill(i){
-    var m = TEAM[i];
-    document.getElementById('tName').textContent = m.name;
-    document.getElementById('tRole').textContent = L('role_' + m.id);
-    document.getElementById('tAnsWho').textContent = m.name;
-    document.getElementById('tAnsFace').src = 'team/'+m.id+'-face.webp';
-    document.getElementById('tAppFace').src = 'team/'+m.id+'-face.webp';
-    document.getElementById('tAppName').textContent = m.name;
-    document.getElementById('tAppRole').textContent = L('role_' + m.id);
-    var ph = document.getElementById('tPhone'), k = window.innerWidth < 900 ? 0.55 : 1;
-    ph.style.setProperty('--ry', (m.ang[0] * k) + 'deg'); ph.style.setProperty('--rx', (m.ang[1] * k) + 'deg'); ph.style.setProperty('--rz', (m.ang[2] * k) + 'deg');
-    ph.querySelector('.psheen').style.setProperty('--sx', Math.round((m.ang[0] + 32) / 64 * 100) + '%');
-    if(m.id === 'bia') later(balloons, reduce ? 0 : 3800);
-    var tr = document.getElementById('tTry'); tr.hidden = true;
-    tr.href = '#' + (m.id === 'netto' ? 'test' : m.id);
-    tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
-    var ask = document.getElementById('tAsk'), ans = document.getElementById('tAns');
-    var askT = document.getElementById('tAskText'), ansT = document.getElementById('tAnsText');
-    ask.classList.remove('on'); ans.classList.remove('on'); askT.textContent = ''; ansT.innerHTML = '';
-    fig.poster = 'team/'+m.id+'-still.webp?v=4';
-    if(!reduce){
-      fig.src = 'team/'+m.id+'.mp4?v=4';
-      var pr = fig.play(); if(pr && pr.catch) pr.catch(function(){});
-    } else { fig.removeAttribute('src'); }
-    later(function(){ ask.classList.add('on'); typeInto(askT, m.ask, function(){
-      later(function(){ ans.classList.add('on'); ansT.innerHTML = '<span class="tdots"><i></i><i></i><i></i></span>'; }, 350);
-      later(function(){ ansT.innerHTML = m.ans; document.getElementById('tTry').hidden = false; }, reduce ? 0 : 1500);
-    }); }, reduce ? 0 : 450);
-  }
-
-  var JOURNEYS = [
-    [['Japanese','\u4e00\u77f3\u4e8c\u9ce5'],['Chinese','\u4e00\u77f3\u4e8c\u9e1f'],['Italian','prendere due piccioni con una fava'],['Portuguese','matar dois coelhos com uma cajadada s\u00f3'],['English','kill two birds with one stone']],
-    [['Japanese','\u65e9\u8d77\u304d\u306f\u4e09\u6587\u306e\u5fb3'],['Chinese','\u65e9\u8d77\u7684\u9e1f\u513f\u6709\u866b\u5403'],['Italian','chi dorme non piglia pesci'],['Portuguese','Deus ajuda quem cedo madruga'],['English','the early bird catches the worm']]
-  ], jn = 0;
-  function balloons(){
-    var box = fig.parentNode; box.querySelectorAll('.bballoon').forEach(function(b){ b.remove(); });
-    if(reduce) return;
-    var trip = JOURNEYS[jn++ % JOURNEYS.length], top0 = window.innerWidth < 900 ? 10 : 70;
-    trip.forEach(function(st, i){
-      later(function(){
-        var b = document.createElement('span');
-        b.className = 'bballoon' + (i === trip.length - 1 ? ' en' : '');
-        b.style.top = (top0 + i * 50) + 'px';
-        b.innerHTML = '<span class="bl"></span><span class="bt"></span>';
-        b.firstChild.textContent = st[0]; b.lastChild.textContent = st[1];
-        box.appendChild(b);
-        later(function(){ b.classList.add('out'); }, 4600 - i * 600);
-        later(function(){ b.remove(); }, 5100 - i * 600);
-      }, i * 600);
-    });
-  }
-  function show(i, byHand){
-    clearSeq(); clearTimeout(timer);
-    fig.parentNode.querySelectorAll('.bballoon').forEach(function(b){ b.remove(); });
-    var first = cur === -1;
-    cur = i;
-    [].forEach.call(tabs.children, function(b, k){
-      b.classList.remove('on'); void b.offsetWidth;
-      if(k === i){ b.classList.add('on'); b.setAttribute('aria-selected','true'); } else b.setAttribute('aria-selected','false');
-    });
-    if(byHand && tabs.children[i].scrollIntoView && window.innerWidth < 900) tabs.children[i].scrollIntoView({inline:'nearest', block:'nearest', behavior:'smooth'});
-    if(first || reduce){ fill(i); }
-    else { stage.classList.add('out'); later(function(){ fill(i); stage.classList.remove('out'); }, 450); }
-    preload((i + 1) % TEAM.length);
-    schedule();
-  }
-  function schedule(){
-    clearTimeout(timer);
-    if(reduce || !visible || document.hidden){ tabs.classList.add('paused'); return; }
-    tabs.classList.remove('paused');
-    timer = setTimeout(function(){ show((cur + 1) % TEAM.length); }, DUR);
-  }
-
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){
-      visible = es[0].isIntersecting;
-      if(visible && !started){ started = true; show(0); }
-      else if(visible){ show(cur); }
-      else { clearTimeout(timer); tabs.classList.add('paused'); }
-    }, {threshold:0.35}).observe(stage);
-  } else { visible = true; started = true; show(0); }
-  document.addEventListener('visibilitychange', function(){ if(!document.hidden && visible) show(cur); else { clearTimeout(timer); tabs.classList.add('paused'); } });
-
-  window.teamRelabel = function(){
-    if(cur < 0) return;
-    var m = TEAM[cur];
-    document.getElementById('tRole').textContent = L('role_' + m.id);
-    document.getElementById('tAppRole').textContent = L('role_' + m.id);
-    var tr = document.getElementById('tTry');
-    tr.href = '#' + (m.id === 'netto' ? 'test' : m.id);
-    tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
-  };
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ seen = es[0].isIntersecting; if(seen) setTimeout(tryPlay, 600); }, {threshold:0.5}).observe(img); } else { seen = true; }
+  setInterval(tryPlay, 1500);
 })();
 </script>
 </body>
