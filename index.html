@@ -25,6 +25,74 @@
   a{color:inherit;}
   em,i{font-family:var(--serif);font-style:italic;color:var(--red);}
 
+
+  /* ===== THE CONCEPT TEAM ===== */
+  .hero-team{display:inline-flex;align-items:center;gap:14px;margin-top:34px;text-decoration:none;color:var(--silver);font-size:14px;font-weight:600;}
+  .hero-team .faces{display:flex;}
+  .hero-team .faces img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E8E8E8;border:2px solid #000;margin-left:-11px;transition:transform .35s cubic-bezier(.25,1,.25,1);}
+  .hero-team .faces img:first-child{margin-left:0;}
+  .hero-team:hover .faces img{transform:translateY(-4px);}
+  .hero-team:hover .faces img:nth-child(2){transition-delay:.04s}.hero-team:hover .faces img:nth-child(3){transition-delay:.08s}
+  .hero-team:hover .faces img:nth-child(4){transition-delay:.12s}.hero-team:hover .faces img:nth-child(5){transition-delay:.16s}.hero-team:hover .faces img:nth-child(6){transition-delay:.2s}
+  .hero-team .arrow{color:var(--red);transition:transform .3s;}
+  .hero-team:hover .arrow{transform:translateX(4px);}
+  .hero-team:hover span:last-child{color:#fff;}
+
+  #team{position:relative;overflow:hidden;}
+  #team .team-intro{max-width:760px;}
+  .tstage{position:relative;margin-top:46px;background:#E7E8EA;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;min-height:540px;color:#0A0B0D;}
+  .tcopy{position:relative;z-index:2;padding:48px 20px 40px 48px;display:flex;flex-direction:column;gap:16px;min-width:0;}
+  .tname{font-family:var(--serif);font-size:clamp(40px,5vw,64px);line-height:.95;letter-spacing:-.01em;}
+  .trole{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);}
+  .tchat{display:flex;flex-direction:column;gap:12px;margin-top:10px;max-width:470px;}
+  .tmsg{border-radius:16px;padding:14px 16px;font-size:15.5px;line-height:1.5;box-shadow:0 10px 28px rgba(0,0,0,.08);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.25,1,.25,1);}
+  .tmsg.on{opacity:1;transform:none;}
+  .tmsg .lbl{display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+  .tmsg.me{align-self:flex-end;background:#0A0B0D;color:#fff;border-bottom-right-radius:5px;max-width:88%;}
+  .tmsg.me .lbl{color:#8A8F98;}
+  .tmsg.them{background:#fff;border-bottom-left-radius:5px;}
+  .tmsg.them .lbl{color:var(--red);}
+  .tmsg.them .lbl img{width:22px;height:22px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E8E8E8;}
+  .tmsg b{font-weight:600;}
+  .tmsg .q{background:rgba(227,47,46,.10);border-radius:4px;padding:0 3px;}
+  .tdots{display:inline-flex;gap:4px;padding:4px 0;}
+  .tdots i{width:7px;height:7px;border-radius:50%;background:#B9BCC2;animation:tdot 1s infinite;}
+  .tdots i:nth-child(2){animation-delay:.15s}.tdots i:nth-child(3){animation-delay:.3s}
+  @keyframes tdot{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+  .caret{display:inline-block;width:2px;height:1em;background:#fff;vertical-align:-2px;margin-left:1px;animation:caret 1s steps(1) infinite;}
+  @keyframes caret{50%{opacity:0}}
+  .tfig{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:center;min-width:0;}
+  .tfig img{display:block;height:100%;max-height:540px;width:auto;max-width:100%;object-fit:contain;object-position:bottom;}
+  .tswap{transition:opacity .45s ease,transform .6s cubic-bezier(.25,1,.25,1);}
+  .tstage.out .tswap{opacity:0;transform:translateY(14px);}
+  .tstage.out .tfig .tswap{transform:translateX(30px);}
+  .ttabs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:16px;}
+  .ttab{position:relative;display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line-dark);border-radius:14px;padding:10px 12px;color:var(--silver);font-family:var(--sans);font-size:13.5px;font-weight:600;cursor:pointer;overflow:hidden;text-align:left;transition:border-color .3s,color .3s;}
+  .ttab img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E8E8E8;flex:none;}
+  .ttab span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ttab:hover{color:#fff;border-color:rgba(228,230,234,.3);}
+  .ttab.on{color:#fff;border-color:var(--red);}
+  .ttab .bar{display:block;position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--red);}
+  .ttab.on .bar{animation:tbar var(--dur,10s) linear forwards;}
+  .ttabs.paused .ttab.on .bar{animation-play-state:paused;}
+  @keyframes tbar{to{width:100%}}
+  .ttab:focus-visible{outline:2px solid var(--red);outline-offset:2px;}
+  .team-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:34px;}
+  .team-foot p{margin:0;color:var(--gray);font-size:14px;max-width:560px;line-height:1.6;}
+  @media (max-width:900px){
+    .tstage{grid-template-columns:1fr;min-height:0;}
+    .tfig{order:-1;height:320px;}
+    .tfig img{max-height:320px;}
+    .tcopy{padding:8px 22px 28px;}
+    .ttabs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
+    .ttab{flex:none;scroll-snap-align:start;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .tmsg,.tswap{transition:none;}
+    .ttab.on .bar{animation:none;width:100%;}
+    .tdots i,.caret{animation:none;}
+  }
+
   /* ===== INTRO / LANGUAGE GATE ===== */
   #intro{
     position:fixed;top:0;left:0;right:0;bottom:0;
@@ -190,6 +258,7 @@
     #nav .wordmark{display:none;}
     #nav .cta{padding:9px 14px;font-size:12px;}
     .lang-switch button{padding:9px 11px;font-size:11px;}
+    #navTeam{display:none;}
   }
 
   /* ===== LAYOUT ===== */
@@ -453,6 +522,7 @@
   <div class="nav-right">
     <a class="nav-link" id="navMethod" href="method.html">Method</a>
           <a class="nav-link" id="navAbout" href="about.html">About</a>
+    <a class="nav-link" id="navTeam" href="#team" data-t="nav_team">Team</a>
     <a class="nav-link" id="navBook" href="book.html">Book</a>
     <a class="nav-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
     <a class="nav-link" id="navTeachers" href="https://lessons.theconceptmethod.com/teaching#teacher">Teachers</a>
@@ -475,6 +545,7 @@
     </h1>
     <p class="lede on-dark reveal d2" style="margin-top:26px;" data-t="hero_lede"></p>
     <div class="ctas reveal d3"><a class="btn btn-outline" id="heroCta1" href="#"></a></div>
+    <a class="hero-team reveal d3" href="#team"><span class="faces" aria-hidden="true"><img src="team/netto-face.webp" alt="" width="40" height="40"><img src="team/victor-hugo-face.webp" alt="" width="40" height="40"><img src="team/luana-face.webp" alt="" width="40" height="40"><img src="team/bia-face.webp" alt="" width="40" height="40"><img src="team/murillo-face.webp" alt="" width="40" height="40"><img src="team/marcelo-face.webp" alt="" width="40" height="40"></span><span data-t="hero_team"></span><span class="arrow" aria-hidden="true">&rarr;</span></a>
     <div class="scrollcue reveal d3"><span class="bar"></span><span data-t="scroll"></span></div>
   </div>
 </section>
@@ -498,6 +569,35 @@
     </div>
   </div>
 </section>
+
+<!-- ===== THE CONCEPT TEAM ===== -->
+<section id="team" class="bg-black section-pad">
+  <div class="wrap">
+    <div class="team-intro">
+      <p class="kicker reveal" data-t="team_kicker"></p>
+      <h2 class="headline reveal d1" style="color:#fff;"><span data-t="team_h2_a"></span> <i data-t="team_h2_em"></i> <span data-t="team_h2_b"></span></h2>
+      <p class="body-copy on-dark reveal d2" data-t="team_p"></p>
+    </div>
+    <div class="reveal-scale" id="teamBox">
+      <div class="tstage" id="tStage" aria-live="polite">
+        <div class="tcopy">
+          <div class="tswap"><div class="trole" id="tRole"></div><div class="tname" id="tName"></div></div>
+          <div class="tchat tswap">
+            <div class="tmsg me" id="tAsk"><div class="lbl" data-t="team_you"></div><div id="tAskText"></div></div>
+            <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt=""><span id="tAnsWho"></span></div><div id="tAnsText"></div></div>
+          </div>
+        </div>
+        <div class="tfig"><img class="tswap" id="tFig" alt="" width="330" height="464"></div>
+      </div>
+      <div class="ttabs" id="tTabs" role="tablist"></div>
+    </div>
+    <div class="team-foot reveal">
+      <p data-t="team_foot"></p>
+      <a class="btn btn-solid" href="#start" data-t="team_cta"></a>
+    </div>
+  </div>
+</section>
+
 
 <!-- ===== PROBLEM ===== -->
 <section id="problem" class="bg-white section-pad">
@@ -737,6 +837,22 @@
 <script>
 window.I18N = {
   en: {
+    "nav_team": "Team",
+    "hero_team": "Meet the team that works between lessons",
+    "team_kicker": "THE CONCEPT TEAM",
+    "team_h2_a": "I teach the lesson.",
+    "team_h2_em": "My team",
+    "team_h2_b": "works with your people until the next one.",
+    "team_p": "The Concept team are AI coaches I built on my method. Each one owns one part of English, and Netto directs them. Your people talk to them in the Concept Coach app, on the days without a lesson.",
+    "team_you": "Your question",
+    "team_foot": "They never replace the lessons with me. They keep each lesson working until the next one.",
+    "team_cta": "Book the diagnostic call",
+    "role_netto": "Coach and director of studies",
+    "role_victor-hugo": "Register",
+    "role_luana": "Grammar and punctuation",
+    "role_bia": "Expressions",
+    "role_murillo": "Pronunciation and listening",
+    "role_marcelo": "Word origins",
     nav_cta: "Talk to me",
     nav_method: "Method", nav_about: "About",
     nav_book: "Books", nav_lessons: "Students", nav_teachers: "Teachers",
@@ -902,6 +1018,22 @@ window.I18N = {
   },
 
   pt: {
+    "nav_team": "Time",
+    "hero_team": "Conheça o time que trabalha entre as aulas",
+    "team_kicker": "O TIME CONCEPT",
+    "team_h2_a": "Eu dou a aula.",
+    "team_h2_em": "Meu time",
+    "team_h2_b": "trabalha com a sua equipe até a próxima.",
+    "team_p": "O time Concept são coaches de IA que eu criei sobre o meu método. Cada um cuida de uma parte do inglês, e o Netto dirige todos. A sua equipe fala com eles no app Concept Coach, nos dias sem aula.",
+    "team_you": "Sua pergunta",
+    "team_foot": "Eles nunca substituem as aulas comigo. Eles mantêm cada aula funcionando até a próxima.",
+    "team_cta": "Agendar a conversa de diagnóstico",
+    "role_netto": "Coach e diretor pedagógico",
+    "role_victor-hugo": "Registro",
+    "role_luana": "Gramática e pontuação",
+    "role_bia": "Expressões",
+    "role_murillo": "Pronúncia e escuta",
+    "role_marcelo": "Origem das palavras",
     nav_cta: "Falar comigo",
     nav_method: "Método", nav_about: "Sobre",
     nav_book: "Livros", nav_lessons: "Alunos", nav_teachers: "Professores",
@@ -1067,6 +1199,22 @@ window.I18N = {
   },
 
   it: {
+    "nav_team": "Team",
+    "hero_team": "Conosci il team che lavora tra una lezione e l’altra",
+    "team_kicker": "IL TEAM CONCEPT",
+    "team_h2_a": "Io faccio la lezione.",
+    "team_h2_em": "Il mio team",
+    "team_h2_b": "lavora con le tue persone fino alla prossima.",
+    "team_p": "Il team Concept è formato da coach di intelligenza artificiale che ho costruito sul mio metodo. Ognuno segue una parte dell’inglese, e Netto li dirige. Le tue persone parlano con loro nell’app Concept Coach, nei giorni senza lezione.",
+    "team_you": "La tua domanda",
+    "team_foot": "Non sostituiscono mai le lezioni con me. Fanno in modo che ogni lezione continui a funzionare fino alla prossima.",
+    "team_cta": "Prenota la call di diagnosi",
+    "role_netto": "Coach e direttore didattico",
+    "role_victor-hugo": "Registro",
+    "role_luana": "Grammatica e punteggiatura",
+    "role_bia": "Espressioni",
+    "role_murillo": "Pronuncia e ascolto",
+    "role_marcelo": "Origine delle parole",
     nav_cta: "Contattami",
     nav_method: "Metodo", nav_about: "Chi sono",
     nav_book: "Libri", nav_lessons: "Studenti", nav_teachers: "Insegnanti",
@@ -1369,6 +1517,7 @@ function buildCharts(){
 
 function applyLang(lang){
   currentLang = lang;
+  if(window.teamRelabel) setTimeout(window.teamRelabel, 0);
   document.documentElement.lang = lang;
   var els = document.querySelectorAll('[data-t]');
   for(var i=0;i<els.length;i++){
@@ -1597,6 +1746,121 @@ window.addEventListener('pageshow', function (e) {
   document.body.classList.add('locked'); // and stop the page scrolling behind it
   window.scrollTo(0, 0);
 });
+
+/* ===== THE CONCEPT TEAM: one member at a time, a real question and the answer ===== */
+(function(){
+  var TEAM = [
+    {id:'netto', name:'Netto',
+     ask:'Netto, what should I practice this week?',
+     ans:'Start with the two mistakes from Tuesday’s lesson. They came back twice in your writing. Then one short review, five minutes.'},
+    {id:'victor-hugo', name:'Victor Hugo',
+     ask:'Is this OK for a client? “We need the contract signed by Friday.”',
+     ans:'It is correct, but it sounds like an order. For a client, try: <span class="q">“Would it be possible to have the contract signed by Friday?”</span>'},
+    {id:'luana', name:'Luana',
+     ask:'Luana, is this right? “I work here since 2019.”',
+     ans:'Use the present perfect: <span class="q">“I have worked here since 2019.”</span> It started in the past and it is still true.'},
+    {id:'bia', name:'Bia',
+     ask:'Bia, can I say “let’s touch base” to my manager?',
+     ans:'Yes. It means a short conversation to check how things are going. It is very common at work. With a new client, <span class="q">“could we have a quick call?”</span> is safer.'},
+    {id:'murillo', name:'Murillo',
+     ask:'Murillo, how do I say “comfortable”?',
+     ans:'Three syllables, not four: <span class="q">COMF-ter-bul</span>. The stress is on the first one. Listen, then say it with me.'},
+    {id:'marcelo', name:'Marcelo',
+     ask:'Marcelo, where does “salary” come from?',
+     ans:'From the Latin <span class="q">salarium</span>, from <span class="q">sal</span>, “salt”. Nobody knows for sure why. The story that Roman soldiers were paid in salt is not proven.'}
+  ];
+  var DUR = 11000;
+  var stage = document.getElementById('tStage'); if(!stage) return;
+  var tabs = document.getElementById('tTabs');
+  var fig = document.getElementById('tFig');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = -1, timer = null, seq = [], visible = false, blobs = {}, liveUrl = null, started = false;
+
+  function L(k){ try{ return window.I18N[currentLang][k] || window.I18N.en[k] || ''; }catch(e){ return ''; } }
+  function clearSeq(){ seq.forEach(clearTimeout); seq = []; }
+  function later(fn, ms){ seq.push(setTimeout(fn, ms)); }
+
+  TEAM.forEach(function(m, i){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'ttab'; b.setAttribute('role','tab');
+    b.innerHTML = '<img src="team/'+m.id+'-face.webp" alt="" width="34" height="34"><span>'+m.name+'</span><i class="bar"></i>';
+    b.addEventListener('click', function(){ show(i, true); });
+    tabs.appendChild(b);
+  });
+  tabs.style.setProperty('--dur', DUR + 'ms');
+
+  function clipUrl(id, cb){
+    if(reduce){ cb('team/'+id+'-still.webp'); return; }
+    if(blobs[id]){ cb(URL.createObjectURL(blobs[id])); return; }
+    fetch('team/'+id+'.webp').then(function(r){ return r.blob(); })
+      .then(function(b){ blobs[id] = b; cb(URL.createObjectURL(b)); })
+      .catch(function(){ cb('team/'+id+'-still.webp'); });
+  }
+  function preload(i){ var id = TEAM[i].id; if(!reduce && !blobs[id]) fetch('team/'+id+'.webp').then(function(r){ return r.blob(); }).then(function(b){ blobs[id] = b; }).catch(function(){}); }
+
+  function typeInto(el, text, done){
+    if(reduce){ el.textContent = text; done(); return; }
+    var n = 0; el.innerHTML = '<span></span><i class="caret"></i>';
+    var span = el.firstChild;
+    (function step(){
+      n += 2; span.textContent = text.slice(0, n);
+      if(n < text.length) later(step, 28); else { el.textContent = text; done(); }
+    })();
+  }
+
+  function fill(i){
+    var m = TEAM[i];
+    document.getElementById('tName').textContent = m.name;
+    document.getElementById('tRole').textContent = L('role_' + m.id);
+    document.getElementById('tAnsWho').textContent = m.name;
+    document.getElementById('tAnsFace').src = 'team/'+m.id+'-face.webp';
+    var ask = document.getElementById('tAsk'), ans = document.getElementById('tAns');
+    var askT = document.getElementById('tAskText'), ansT = document.getElementById('tAnsText');
+    ask.classList.remove('on'); ans.classList.remove('on'); askT.textContent = ''; ansT.innerHTML = '';
+    clipUrl(m.id, function(u){
+      if(cur !== i) return;
+      if(liveUrl && liveUrl.indexOf('blob:') === 0) URL.revokeObjectURL(liveUrl);
+      liveUrl = u; fig.src = u; fig.alt = m.name + ', ' + L('role_' + m.id);
+    });
+    later(function(){ ask.classList.add('on'); typeInto(askT, m.ask, function(){
+      later(function(){ ans.classList.add('on'); ansT.innerHTML = '<span class="tdots"><i></i><i></i><i></i></span>'; }, 350);
+      later(function(){ ansT.innerHTML = m.ans; }, reduce ? 0 : 1500);
+    }); }, reduce ? 0 : 450);
+  }
+
+  function show(i, byHand){
+    clearSeq(); clearTimeout(timer);
+    var first = cur === -1;
+    cur = i;
+    [].forEach.call(tabs.children, function(b, k){
+      b.classList.remove('on'); void b.offsetWidth;
+      if(k === i){ b.classList.add('on'); b.setAttribute('aria-selected','true'); } else b.setAttribute('aria-selected','false');
+    });
+    if(byHand && tabs.children[i].scrollIntoView && window.innerWidth < 900) tabs.children[i].scrollIntoView({inline:'nearest', block:'nearest', behavior:'smooth'});
+    if(first || reduce){ fill(i); }
+    else { stage.classList.add('out'); later(function(){ fill(i); stage.classList.remove('out'); }, 450); }
+    preload((i + 1) % TEAM.length);
+    schedule();
+  }
+  function schedule(){
+    clearTimeout(timer);
+    if(reduce || !visible || document.hidden){ tabs.classList.add('paused'); return; }
+    tabs.classList.remove('paused');
+    timer = setTimeout(function(){ show((cur + 1) % TEAM.length); }, DUR);
+  }
+
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      visible = es[0].isIntersecting;
+      if(visible && !started){ started = true; show(0); }
+      else if(visible){ show(cur); }
+      else { clearTimeout(timer); tabs.classList.add('paused'); }
+    }, {threshold:0.35}).observe(stage);
+  } else { visible = true; started = true; show(0); }
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden && visible) show(cur); else { clearTimeout(timer); tabs.classList.add('paused'); } });
+
+  window.teamRelabel = function(){ if(cur < 0) return; document.getElementById('tRole').textContent = L('role_' + TEAM[cur].id); };
+})();
 </script>
 </body>
 </html>
