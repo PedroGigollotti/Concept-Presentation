@@ -40,7 +40,12 @@
 
   #team{position:relative;scroll-margin-top:90px;}
   #team .tstage{margin-top:44px;}
-  .team-note{margin:14px 0 0;color:var(--gray);font-size:13px;line-height:1.6;}
+  .team-hook{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;}
+  .team-note{margin:0;color:var(--gray);font-size:13px;line-height:1.6;max-width:560px;}
+  .team-test{font-size:14px;padding:13px 22px;}
+  .team-test span:first-child{font-weight:400;opacity:.9;}
+  .ttry{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);text-decoration:none;border-bottom:1px solid rgba(227,47,46,.35);}
+  .ttry:hover{border-bottom-color:var(--red);}
   #team .team-intro{max-width:760px;}
   .tstage{position:relative;margin-top:46px;background:#E7E8EA;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;min-height:540px;color:#0A0B0D;}
   .tcopy{position:relative;z-index:2;padding:48px 20px 40px 48px;display:flex;flex-direction:column;gap:16px;min-width:0;}
@@ -523,7 +528,7 @@
   <div class="nav-right">
     <a class="nav-link" id="navMethod" href="method.html">Method</a>
           <a class="nav-link" id="navAbout" href="about.html">About</a>
-    <a class="nav-link" id="navTeam" href="#team" data-t="nav_team">Team</a>
+    <a class="nav-link" id="navTeam" href="team.html" data-t="nav_team">Team</a>
     <a class="nav-link" id="navBook" href="book.html">Book</a>
     <a class="nav-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
     <a class="nav-link" id="navTeachers" href="https://lessons.theconceptmethod.com/teaching#teacher">Teachers</a>
@@ -552,13 +557,16 @@
           <div class="tswap"><div class="trole" id="tRole"></div><div class="tname" id="tName"></div></div>
           <div class="tchat tswap">
             <div class="tmsg me" id="tAsk"><div class="lbl" data-t="team_you"></div><div id="tAskText"></div></div>
-            <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt=""><span id="tAnsWho"></span></div><div id="tAnsText"></div></div>
+            <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt=""><span id="tAnsWho"></span></div><div id="tAnsText"></div><a class="ttry" id="tTry" href="team.html#test" hidden></a></div>
           </div>
         </div>
         <div class="tfig"><video class="tswap" id="tFig" muted playsinline preload="none" width="720" height="1010" aria-hidden="true"></video></div>
       </div>
       <div class="ttabs" id="tTabs" role="tablist"></div>
-      <p class="team-note" data-t="team_note"></p>
+      <div class="team-hook">
+        <p class="team-note" data-t="team_note"></p>
+        <a class="btn btn-solid team-test" id="teamTest" href="team.html#test"><span data-t="team_test_q"></span> <b data-t="team_test_btn"></b> <span aria-hidden="true">&rarr;</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -823,6 +831,10 @@
 <script>
 window.I18N = {
   en: {
+    "team_test_q": "Would your team get these right?",
+    "team_test_btn": "Take the 5-question test",
+    "team_try": "Try a question from",
+    "team_meet_all": "Meet the whole team",
     "team_note": "The Concept team are AI coaches built on the Concept method. Your people talk to them in the Concept Coach app on the days without a lesson.",
     "nav_team": "Team",
     "hero_team": "Meet the Concept team",
@@ -997,6 +1009,10 @@ window.I18N = {
   },
 
   pt: {
+    "team_test_q": "A sua equipe acertaria?",
+    "team_test_btn": "Fazer o teste de 5 perguntas",
+    "team_try": "Responda uma pergunta de",
+    "team_meet_all": "Conheça o time inteiro",
     "team_note": "O time Concept são coaches de IA criados sobre o método Concept. A sua equipe fala com eles no app Concept Coach, nos dias sem aula.",
     "nav_team": "Time",
     "hero_team": "Conheça o time Concept",
@@ -1171,6 +1187,10 @@ window.I18N = {
   },
 
   it: {
+    "team_test_q": "Il tuo team risponderebbe giusto?",
+    "team_test_btn": "Fai il test di 5 domande",
+    "team_try": "Rispondi a una domanda di",
+    "team_meet_all": "Conosci tutto il team",
     "team_note": "Il team Concept è formato da coach di intelligenza artificiale costruiti sul metodo Concept. Le tue persone parlano con loro nell’app Concept Coach, nei giorni senza lezione.",
     "nav_team": "Team",
     "hero_team": "Conosci il team Concept",
@@ -1773,6 +1793,9 @@ window.addEventListener('pageshow', function (e) {
     document.getElementById('tRole').textContent = L('role_' + m.id);
     document.getElementById('tAnsWho').textContent = m.name;
     document.getElementById('tAnsFace').src = 'team/'+m.id+'-face.webp';
+    var tr = document.getElementById('tTry'); tr.hidden = true;
+    tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
+    tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
     var ask = document.getElementById('tAsk'), ans = document.getElementById('tAns');
     var askT = document.getElementById('tAskText'), ansT = document.getElementById('tAnsText');
     ask.classList.remove('on'); ans.classList.remove('on'); askT.textContent = ''; ansT.innerHTML = '';
@@ -1783,7 +1806,7 @@ window.addEventListener('pageshow', function (e) {
     } else { fig.removeAttribute('src'); }
     later(function(){ ask.classList.add('on'); typeInto(askT, m.ask, function(){
       later(function(){ ans.classList.add('on'); ansT.innerHTML = '<span class="tdots"><i></i><i></i><i></i></span>'; }, 350);
-      later(function(){ ansT.innerHTML = m.ans; }, reduce ? 0 : 1500);
+      later(function(){ ansT.innerHTML = m.ans; document.getElementById('tTry').hidden = false; }, reduce ? 0 : 1500);
     }); }, reduce ? 0 : 450);
   }
 
@@ -1818,7 +1841,16 @@ window.addEventListener('pageshow', function (e) {
   } else { visible = true; started = true; show(0); }
   document.addEventListener('visibilitychange', function(){ if(!document.hidden && visible) show(cur); else { clearTimeout(timer); tabs.classList.add('paused'); } });
 
-  window.teamRelabel = function(){ if(cur < 0) return; document.getElementById('tRole').textContent = L('role_' + TEAM[cur].id); };
+  window.teamRelabel = function(){
+    var tt = document.getElementById('teamTest'); if(tt) tt.href = 'team.html?lang=' + currentLang + '#test';
+    var nt = document.getElementById('navTeam'); if(nt) nt.href = 'team.html?lang=' + currentLang;
+    if(cur < 0) return;
+    var m = TEAM[cur];
+    document.getElementById('tRole').textContent = L('role_' + m.id);
+    var tr = document.getElementById('tTry');
+    tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
+    tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
+  };
 })();
 </script>
 </body>

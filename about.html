@@ -148,6 +148,7 @@
   </a>
   <div class="nav-right">
     <a class="nav-link" id="navHome" href="index.html">Home</a>
+    <a class="nav-link" id="navTeam" href="team.html" data-t="nav_team">Team</a>
           <a class="nav-link" id="navMethod" href="method.html">Method</a>
           <a class="nav-link" id="navBook" href="book.html">Books</a>
     <a class="nav-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
@@ -256,6 +257,7 @@
 <script>
 window.I18N = {
   en: {
+    nav_team: "Team",
     nav_method: "Method", nav_book: "Books", nav_home: "Home", nav_lessons: "Students", nav_teachers: "Teachers", nav_cta: "Talk to me",
     about_kicker: "ABOUT",
     about_h2_a: "Not an agency.", about_h2_em: "One teacher", about_h2_b: ", 25 years in.",
@@ -288,6 +290,7 @@ window.I18N = {
     footer_copy: "© 2026 Concept. Mind your future."
   },
   pt: {
+    nav_team: "Time",
     nav_method: "Método", nav_book: "Livros", nav_home: "Início", nav_lessons: "Alunos", nav_teachers: "Professores", nav_cta: "Falar comigo",
     about_kicker: "SOBRE",
     about_h2_a: "Nada de agências.", about_h2_em: "Apenas um especialista", about_h2_b: ", com 25 anos de estrada.",
@@ -320,6 +323,7 @@ window.I18N = {
     footer_copy: "© 2026 Concept. Todos os direitos reservados."
   },
   it: {
+    nav_team: "Team",
     nav_method: "Metodo", nav_book: "Libri", nav_home: "Home", nav_lessons: "Studenti", nav_teachers: "Insegnanti", nav_cta: "Contattami",
     about_kicker: "CHI SONO",
     about_h2_a: "Nessun intermediario.", about_h2_em: "Un solo esperto", about_h2_b: "con 25 anni di esperienza.",
@@ -366,6 +370,7 @@ function applyLang(lang){
   }
   document.getElementById('navHome').textContent = t('nav_home');
   document.getElementById('navHome').setAttribute('href', 'index.html?lang=' + lang);
+  document.getElementById('navTeam').setAttribute('href', 'team.html?lang=' + lang);
   document.getElementById('navCta').textContent = t('nav_cta');
   document.getElementById('navCta').setAttribute('href', 'index.html?lang=' + lang + '#contact');
   document.getElementById('ctaContact').textContent = t('ctaContact');
