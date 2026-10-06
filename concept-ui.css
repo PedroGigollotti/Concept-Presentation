@@ -102,3 +102,26 @@ h2.headline{font-size:clamp(26px,3.8vw,48px);}
   #nav .nav-link{display:none;}
   .topnav .cta{min-height:40px;padding:0 14px;font-size:13px;}
 }
+
+/* CONTRAST AND FOCUS (site audit, 6 Oct 2026). Small text needs 4.5:1, large text 3:1.
+   The brand red #B3132B is 2.85:1 on the near-black ground, so on dark pages the word and
+   the large red titles use the app's lighter red #C8172F (3.4:1) and small red labels #E04A4F
+   (4.9:1). Light pages keep #B3132B (5.6:1 on platinum). */
+#nav .wordmark,.topnav .brand .wordmark{color:#C8172F;}
+.masthead h1 em{color:#C8172F;}
+.meta .series-label{color:#E04A4F;}
+.quote .role{color:#6B7079;}
+.trust-label,.cascade-hint{color:#8A8F98;}
+.trole,.tline{color:#B3132B;}
+.out.empty{color:#9A9EA6;}
+.lab-do,.rl-verdict .h,.take .h,.trap .wrong,.em .rate{color:#FF4342;}
+.tick:focus-visible,.lang-choice:focus-visible{outline:2px solid #E04A4F;outline-offset:2px;}
+@media (max-width:480px){
+  #nav .nav-right{gap:6px;min-width:0;}
+  #nav .cta{padding:0 10px;font-size:12px;white-space:nowrap;}
+  .lang-switch button{padding:7px 4px;font-size:10.5px;}
+  #nav .wordmark{font-size:13px;letter-spacing:.2em;margin-right:-.2em;}
+  #nav .brand svg{height:40px;}
+  .rl-track{grid-template-columns:repeat(3,1fr);}
+  .rl-track button{min-width:0;overflow-wrap:anywhere;}
+}
