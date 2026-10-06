@@ -1727,6 +1727,18 @@ function fallbackCopy(done){
 }
 document.getElementById('contactCta').addEventListener('click', copyEmail);
 document.getElementById('startCta').addEventListener('click', copyEmail);
+/* the language buttons in the bar (they lost their click in the August refactor, bf1de6e; found
+   6 Oct 2026, Pedro: "a mudanca de idioma nao esta funcionando"). The same as about.html. */
+document.querySelectorAll('#langSwitch button').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    var l = btn.getAttribute('data-lang');
+    if(!window.I18N || !window.I18N[l]) return;
+    applyLang(l);
+    try{ var u = new URL(location.href); u.searchParams.set('lang', l); history.replaceState(null, '', u); }catch(err){}
+  });
+});
+
 document.getElementById('navCta').addEventListener('click', function(){
   document.getElementById('contact').scrollIntoView({behavior:'smooth'});
 });
