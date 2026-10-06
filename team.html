@@ -132,17 +132,37 @@
 
   /* ===== TEAM PAGE ===== */
   .nav-link.on{color:#fff;opacity:1;border-bottom:1px solid var(--red);padding-bottom:2px;}
-  .group{margin-top:56px;background:#E7E8EA;border-radius:22px;overflow:hidden;}
+  .group{margin-top:56px;background:#000;border-radius:22px;overflow:hidden;}
   .group img{display:block;width:100%;height:auto;}
   .test-intro{max-width:760px;padding:40px 0 10px;border-top:1px solid var(--line-dark);}
   .member{padding:70px 0;}
   .mgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;}
   .member.flip .mfig{order:2;}
   .mgrid>*{min-width:0;}
-  .mfig{background:#E7E8EA;border-radius:22px;overflow:hidden;display:flex;justify-content:center;align-items:flex-end;}
-  .mfig video{display:block;width:100%;max-width:440px;height:auto;aspect-ratio:720/1010;background:#E7E8EA;
-    -webkit-mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);}
+  .mfig{position:relative;background:radial-gradient(60% 70% at 50% 45%,#141418 0%,#000 72%);border-radius:22px;display:flex;justify-content:center;align-items:flex-end;}
+  .mfig video{display:block;width:100%;max-width:460px;height:auto;aspect-ratio:720/1010;background:#000;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);}
   .mname{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6vw,76px);line-height:.95;margin:0 0 14px;color:#fff;}
+  .hear{position:absolute;left:18px;bottom:18px;z-index:3;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:9px 15px 9px 12px;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s,border-color .2s;}
+  .hear svg{width:16px;height:16px;}
+  .hear:hover{background:var(--red);border-color:var(--red);}
+  .hear.playing{background:var(--red);border-color:var(--red);}
+  .hear:focus-visible,.sound:focus-visible{outline:2px solid var(--red);outline-offset:2px;}
+  .sound{gap:10px;}
+  .sound svg{width:18px;height:18px;}
+  .sound .w{opacity:.35;}
+  .sound[aria-pressed="true"]{background:#fff;color:#000;}
+  .sound[aria-pressed="true"] .w{opacity:1;}
+  .bballoon{position:absolute;z-index:4;right:60%;max-width:230px;width:max-content;display:grid;gap:1px;text-align:right;background:#fff;color:#0A0B0D;border-radius:14px 14px 4px 14px;padding:6px 11px 7px;box-shadow:0 12px 30px rgba(0,0,0,.45);animation:bpop .26s cubic-bezier(.2,.8,.2,1) both;transition:opacity .4s,transform .4s;}
+  .bballoon .bl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#8A8F98;}
+  .bballoon .bt{font-family:var(--serif);font-style:italic;font-size:14px;line-height:1.2;}
+  .bballoon.en{box-shadow:0 0 0 1.5px var(--red) inset,0 12px 30px rgba(0,0,0,.45);}
+  .bballoon.out{opacity:0;transform:translateY(-6px);}
+  @keyframes bpop{from{opacity:0;transform:scale(.6) translateX(14px)}to{opacity:1;transform:none}}
+  .closing{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:56px;align-items:center;border-top:1px solid var(--line-dark);padding-top:56px;}
+  .closing>*{min-width:0;}
+  .cfilm{position:relative;border-radius:22px;overflow:hidden;background:#000;}
+  .cfilm video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;}
+  @media (max-width:860px){.closing{grid-template-columns:1fr;gap:28px;}.cfilm{max-width:300px;margin:0 auto;}}
   .mline{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,30px);color:var(--red);margin:0 0 26px;line-height:1.2;}
   .does-k{font-size:11px;font-weight:600;letter-spacing:2.5px;color:#6E727A;margin:0 0 8px;}
   .mdoes{margin:0;max-width:560px;}
@@ -161,8 +181,9 @@
   .verdict{margin-top:16px;font-size:14.5px;line-height:1.6;color:var(--silver);}
   .verdict b{color:var(--red);}
   .verdict.ok b{color:#5FAE7B;}
+  .next[hidden],.verdict[hidden],.hear[hidden]{display:none;}
   .next{display:inline-block;margin-top:14px;color:#fff;font-weight:600;font-size:14px;text-decoration:none;border-bottom:1px solid var(--red);}
-  .result{max-width:760px;border-top:1px solid var(--line-dark);padding-top:56px;}
+  .result{max-width:760px;}
   .member,#test,#result{scroll-margin-top:72px;}
   @media (max-width:760px){ #nav .nav-link{display:none;} }
   @media (max-width:860px){
@@ -212,8 +233,9 @@
     <p class="lede on-dark reveal" data-t="lede"></p>
     <div class="cta-row reveal">
       <a class="btn btn-solid" href="#test" data-t="cta_test"></a>
+      <button class="btn btn-outline sound" id="soundBtn" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span id="soundTxt"></span></button>
     </div>
-    <div class="group reveal-scale"><img src="team/the-concept-team.jpg" alt="Netto, Luana, Victor Hugo, Bia, Murillo, and Marcelo, the Concept team" width="1400" height="312"></div>
+    <div class="group reveal-scale"><img src="team/the-concept-team-dark.jpg" alt="Netto, Luana, Victor Hugo, Bia, Murillo, and Marcelo, the Concept team" width="1800" height="313"></div>
   </div>
 </section>
 
@@ -231,7 +253,10 @@
 
 <section class="bg-black section-pad" id="result">
   <div class="wrap">
-    <div class="result reveal">
+    <div class="closing reveal">
+      <div class="cfilm"><video id="closingFilm" playsinline preload="none" poster="team/netto-closing-first.webp?v=4" data-src="team/netto-closing.mp4?v=4" width="720" height="1280"></video>
+        <button class="hear" id="closingHear" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/></svg><span data-t="hear_close"></span></button></div>
+    <div class="result">
       <p class="kicker" data-t="k_result"></p>
       <h2 class="headline" style="color:#fff;" id="resultLine"></h2>
       <p class="lede on-dark" data-t="result_p"></p>
@@ -239,6 +264,7 @@
         <a class="btn btn-solid" id="ctaCall" href="index.html#start" data-t="cta_call"></a>
         <a class="btn btn-outline" id="ctaHome" href="index.html" data-t="cta_home"></a>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -266,6 +292,11 @@
 <script>
 window.I18N = {
   en: {
+    hear: "Hear",
+    sound_on: "Turn on sound to hear the team",
+    sound_is_on: "Sound on",
+    k_close: "FROM NETTO",
+    hear_close: "Play with sound",
     nav_home: "Home", nav_method: "Method", nav_about: "About", nav_team: "Team", nav_book: "Books", nav_lessons: "Students", nav_teachers: "Teachers", nav_cta: "Talk to us",
     k_team: "THE CONCEPT TEAM",
     h1_a: "Six coaches.", h1_em: "One method.",
@@ -300,6 +331,11 @@ window.I18N = {
     }
   },
   pt: {
+    hear: "Ouvir",
+    sound_on: "Ligar o som para ouvir o time",
+    sound_is_on: "Som ligado",
+    k_close: "DO NETTO",
+    hear_close: "Ver com som",
     nav_home: "Início", nav_method: "Método", nav_about: "Sobre", nav_team: "Time", nav_book: "Livros", nav_lessons: "Alunos", nav_teachers: "Professores", nav_cta: "Fale conosco",
     k_team: "O TIME CONCEPT",
     h1_a: "Seis coaches.", h1_em: "Um método.",
@@ -334,6 +370,11 @@ window.I18N = {
     }
   },
   it: {
+    hear: "Ascolta",
+    sound_on: "Attiva l’audio per sentire il team",
+    sound_is_on: "Audio attivo",
+    k_close: "DA NETTO",
+    hear_close: "Guarda con l’audio",
     nav_home: "Home", nav_method: "Metodo", nav_about: "Chi siamo", nav_team: "Team", nav_book: "Libri", nav_lessons: "Studenti", nav_teachers: "Insegnanti", nav_cta: "Contattaci",
     k_team: "IL TEAM CONCEPT",
     h1_a: "Sei coach.", h1_em: "Un metodo.",
@@ -372,20 +413,20 @@ window.I18N = {
 /* The member's own line stays in English: it is the character's voice. The
    questions stay in English: they test English. */
 var TEAM = [
-  {id: "netto", name: "Netto", line: "Clear English, every day."},
-  {id: "victor-hugo", name: "Victor Hugo", line: "Check the tone before you send.",
+  {id: "netto", name: "Netto", line: "Meet your Concept team.", voice: "netto-intro"},
+  {id: "victor-hugo", name: "Victor Hugo", line: "Read the room, then hit send.", voice: "victor-hugo-punch",
    q: "You need a client to sign the contract by Friday. Which sentence is right for the client?",
    o: ["Sign the contract by Friday.", "Would it be possible to have the contract signed by Friday?", "I need the contract signed by Friday."], a: 1},
-  {id: "luana", name: "Luana", line: "Every comma counts.",
+  {id: "luana", name: "Luana", line: "Every comma counts.", voice: "luana-punch",
    q: "Which sentence is correct?",
    o: ["I work here since 2019.", "I have worked here since 2019.", "I am working here since 2019."], a: 1},
-  {id: "bia", name: "Bia", line: "That's how people really say it.",
+  {id: "bia", name: "Bia", line: "That's how people really say it.", voice: "bia-punch",
    q: "Your manager writes: “Let's touch base tomorrow.” What does she want?",
    o: ["A short conversation to check how things are going", "A meeting at the main office", "To finish the project tomorrow"], a: 0},
-  {id: "murillo", name: "Murillo", line: "Hear it, then say it.",
+  {id: "murillo", name: "Murillo", line: "Stress the word that matters.", voice: "murillo-punch",
    q: "How many syllables does “Wednesday” have?",
    o: ["Three: Wed-nes-day", "Two: WENZ-day"], a: 1},
-  {id: "marcelo", name: "Marcelo", line: "Every word has a story.",
+  {id: "marcelo", name: "Marcelo", line: "Every word has a story.", voice: "marcelo-punch",
    q: "The word “salary” comes from a Latin word connected to…",
    o: ["salt", "soldiers", "silver"], a: 0}
 ];
@@ -409,7 +450,8 @@ function buildMembers(){
     }
     html += '<section class="member bg-black' + (i % 2 ? ' flip' : '') + '" id="' + m.id + '">' +
       '<div class="wrap mgrid">' +
-        '<div class="mfig reveal-scale"><video muted playsinline preload="none" poster="team/' + m.id + '-still.webp" data-src="team/' + m.id + '.mp4" width="720" height="1010" aria-hidden="true"></video></div>' +
+        '<div class="mfig reveal-scale"><video muted playsinline preload="none" poster="team/' + m.id + '-still.webp?v=4" data-src="team/' + m.id + '.mp4?v=4" width="720" height="1010" aria-hidden="true"></video>' +
+        '<button class="hear" type="button" data-id="' + m.id + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="hl"></span></button></div>' +
         '<div class="mcopy reveal">' +
           '<p class="kicker mrole"></p>' +
           '<h2 class="mname">' + esc(m.name) + '</h2>' +
@@ -448,26 +490,83 @@ function buildMembers(){
     });
   });
 
-  /* each clip plays when its member is on screen */
-  var vids = root.querySelectorAll('video');
+  /* each member: the scene plays (muted) when on screen; their line plays with
+     their voice on Hear, or by itself once the visitor has turned the sound on */
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!reduce && 'IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        var v = e.target;
-        v._vis = e.isIntersecting;
-        if(e.isIntersecting){
-          if(!v.src) v.src = v.getAttribute('data-src');
-          if(v.ended) v.currentTime = 0;
-          var p = v.play(); if(p && p.catch) p.catch(function(){});
-        } else if(!v.paused){ v.pause(); }
-      });
-    }, {threshold: 0.45});
-    vids.forEach(function(v){
-      io.observe(v);
-      v.addEventListener('canplay', function(){ if(v._vis && v.paused && v.currentTime === 0){ var p = v.play(); if(p && p.catch) p.catch(function(){}); } });
-    });
-  }
+  TEAM.forEach(function(m){
+    var sec = document.getElementById(m.id), v = sec.querySelector('video'), btn = sec.querySelector('.hear');
+    var st = {vis: false, spoke: false, mode: ''};
+    function scene(){
+      st.mode = 'scene'; btn.classList.remove('playing');
+      v.muted = true; v.loop = false; v.src = v.getAttribute('data-src');
+      if(reduce) return;
+      var p = v.play(); if(p && p.catch) p.catch(function(){});
+      if(m.id === 'bia') balloons(sec.querySelector('.mfig'));
+    }
+    function voice(){
+      st.mode = 'voice'; st.spoke = true; btn.classList.add('playing');
+      sec.querySelectorAll('.bballoon').forEach(function(b){ b.remove(); });
+      v.muted = false; v.src = 'team/' + m.voice + '.mp4?v=4';
+      var p = v.play(); if(p && p.catch) p.catch(function(){ v.muted = true; scene(); });
+    }
+    v.addEventListener('ended', function(){ if(st.mode === 'voice' && st.vis) scene(); });
+    btn.addEventListener('click', function(){ stopOthers(m.id); voice(); });
+    m._stop = function(){ if(!v.paused) v.pause(); btn.classList.remove('playing'); };
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){
+        st.vis = es[0].isIntersecting;
+        if(st.vis){ if(soundOn && !st.spoke){ stopOthers(m.id); voice(); } else if(st.mode !== 'voice') scene(); }
+        else { m._stop(); st.mode = ''; }
+      }, {threshold: 0.5}).observe(v);
+    }
+  });
+  closingFilm();
+}
+
+var soundOn = false;
+function stopOthers(id){ TEAM.forEach(function(x){ if(x.id !== id && x._stop) x._stop(); }); var f = document.getElementById('closingFilm'); if(f && !f.paused) f.pause(); }
+function paintSound(){
+  var b = document.getElementById('soundBtn');
+  b.setAttribute('aria-pressed', soundOn ? 'true' : 'false');
+  document.getElementById('soundTxt').textContent = soundOn ? t('sound_is_on') : t('sound_on');
+}
+document.getElementById('soundBtn').addEventListener('click', function(){ soundOn = !soundOn; paintSound(); if(soundOn) document.getElementById('netto').scrollIntoView({behavior: 'smooth', block: 'center'}); });
+
+var JOURNEYS = [
+  [['Japanese','一石二鳥'],['Chinese','一石二鸟'],['Italian','prendere due piccioni con una fava'],['Portuguese','matar dois coelhos com uma cajadada só'],['English','kill two birds with one stone']],
+  [['Japanese','早起きは三文の徳'],['Chinese','早起的鸟儿有虫吃'],['Italian','chi dorme non piglia pesci'],['Portuguese','Deus ajuda quem cedo madruga'],['English','the early bird catches the worm']]
+], jn = 0;
+function balloons(box){
+  box.querySelectorAll('.bballoon').forEach(function(b){ b.remove(); });
+  var trip = JOURNEYS[jn++ % JOURNEYS.length];
+  trip.forEach(function(st, i){
+    setTimeout(function(){
+      var b = document.createElement('span');
+      b.className = 'bballoon' + (i === trip.length - 1 ? ' en' : '');
+      b.style.top = (40 + i * 50) + 'px';
+      b.innerHTML = '<span class="bl"></span><span class="bt"></span>';
+      b.firstChild.textContent = st[0]; b.lastChild.textContent = st[1];
+      box.appendChild(b);
+      setTimeout(function(){ b.classList.add('out'); }, 4600 - i * 600);
+      setTimeout(function(){ b.remove(); }, 5100 - i * 600);
+    }, 3800 + i * 600);
+  });
+}
+
+/* Netto's closing film: with his voice when the sound is on, otherwise silent with a button */
+function closingFilm(){
+  var f = document.getElementById('closingFilm'), hb = document.getElementById('closingHear');
+  if(!f || !('IntersectionObserver' in window)) return;
+  hb.addEventListener('click', function(){ stopOthers(''); hb.hidden = true; f.muted = false; f.currentTime = 0; var p = f.play(); if(p && p.catch) p.catch(function(){}); });
+  new IntersectionObserver(function(es){
+    if(es[0].isIntersecting){
+      if(!f.src) f.src = f.getAttribute('data-src');
+      if(f.ended) f.currentTime = 0;
+      f.muted = !soundOn; hb.hidden = soundOn;
+      if(soundOn) stopOthers('');
+      var p = f.play(); if(p && p.catch) p.catch(function(){ f.muted = true; hb.hidden = false; f.play().catch(function(){}); });
+    } else if(!f.paused){ f.pause(); }
+  }, {threshold: 0.55}).observe(f);
 }
 
 function relabel(){
@@ -477,6 +576,7 @@ function relabel(){
     s.querySelector('.mrole').textContent = d.m[m.id].role.toUpperCase();
     s.querySelector('.does-k').textContent = d.does;
     s.querySelector('.mdoes').textContent = d.m[m.id].does;
+    var hl = s.querySelector('.hear .hl'); if(hl) hl.textContent = d.hear + ' ' + m.name;
     var qz = s.querySelector('.quiz'); if(!qz) return;
     qz.querySelector('.ql').textContent = d.q_label;
     if(m.id in answers){
@@ -510,6 +610,7 @@ function applyLang(lang){
   var btns = document.querySelectorAll('#langSwitch button');
   for(var b = 0; b < btns.length; b++) btns[b].className = (btns[b].getAttribute('data-lang') === lang) ? 'active' : '';
   relabel();
+  paintSound();
   observeAll();
 }
 
