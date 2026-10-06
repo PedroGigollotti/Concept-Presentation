@@ -666,10 +666,11 @@ function buildMembers(){
     }
     html += '<section class="member bg-black' + (i % 2 ? ' flip' : '') + '" id="' + m.id + '">' +
       '<div class="wrap mgrid">' +
+        '<div class="mfig ' + (m.id === 'netto' ? 'n3d ' : '') + 'reveal-scale">' +
         (m.id === 'netto'
-          ? '<div class="mfig n3d reveal-scale"><div class="n3d-stage"><img class="n3d-point" src="team/netto-point-first.webp?v=7" alt="Netto, coach and director of studies" width="380" height="695">' +
+          ? '<div class="n3d-stage"><img class="n3d-point" src="team/netto-point-first.webp?v=7" alt="Netto, coach and director of studies" width="380" height="695">' +
             '<video class="n3d-talk" playsinline preload="none" src="team/netto-talk.mp4?v=7" width="720" height="1010" aria-hidden="true"></video></div>'
-          : '<div class="mfig reveal-scale"><video muted playsinline preload="none" poster="team/home-' + m.id + '-still.webp?v=7" data-src="team/home-' + m.id + '.mp4?v=7" width="720" height="1010" aria-hidden="true"></video>') +
+          : '<video muted playsinline preload="none" poster="team/home-' + m.id + '-still.webp?v=7" data-src="team/home-' + m.id + '.mp4?v=7" width="720" height="1010" aria-hidden="true"></video>') +
 
         '<button class="hear" type="button" data-id="' + m.id + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="hl"></span></button></div>' +
         '<div class="mcopy reveal">' +
