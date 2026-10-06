@@ -499,6 +499,7 @@
 
 
 
+
 <!-- seo:begin -->
 <meta name="description" content="Concept trains professionals who already speak English to use it at work. Our method teaches register, pragmatics, and timing under pressure.">
 <link rel="canonical" href="https://theconceptmethod.com/">
@@ -1835,7 +1836,7 @@ window.addEventListener('pageshow', function (e) {
   tabs.style.setProperty('--dur', DUR + 'ms');
   fig.addEventListener('canplay', function(){ if(!reduce && visible && fig.paused && fig.currentTime === 0){ var p = fig.play(); if(p && p.catch) p.catch(function(){}); } });
 
-  function preload(i){ var l = document.createElement('link'); l.rel = 'preload'; l.as = 'image'; l.href = 'team/home-'+TEAM[i].id+'-still.webp?v=4'; document.head.appendChild(l); }
+  function preload(i){ var l = document.createElement('link'); l.rel = 'preload'; l.as = 'image'; l.href = 'team/home-'+TEAM[i].id+'-still.webp?v=7'; document.head.appendChild(l); }
 
   function typeInto(el, text, done){
     if(reduce){ el.textContent = text; done(); return; }
@@ -1860,13 +1861,13 @@ window.addEventListener('pageshow', function (e) {
     var ask = document.getElementById('tAsk'), ans = document.getElementById('tAns');
     var askT = document.getElementById('tAskText'), ansT = document.getElementById('tAnsText');
     ask.classList.remove('on'); ans.classList.remove('on'); askT.textContent = ''; ansT.innerHTML = '';
-    fig.poster = 'team/home-'+m.id+'-still.webp?v=4';
+    fig.poster = 'team/home-'+m.id+'-still.webp?v=7';
     document.getElementById('tLine').textContent = '\u201c' + m.line + '\u201d';
     if(!reduce){
-      var scene = function(){ fig.muted = true; fig.src = 'team/home-'+m.id+'.mp4?v=4'; var p2 = fig.play(); if(p2 && p2.catch) p2.catch(function(){}); };
+      var scene = function(){ fig.muted = true; fig.src = 'team/home-'+m.id+'.mp4?v=7'; var p2 = fig.play(); if(p2 && p2.catch) p2.catch(function(){}); };
       if(m.punch && soundOK !== false){
         fig._after = scene;
-        fig.muted = false; fig.src = 'team/home-'+m.punch+'.mp4?v=4';
+        fig.muted = false; fig.src = 'team/home-'+m.punch+'.mp4?v=7';
         var pr = fig.play();
         if(pr && pr.then) pr.then(function(){ soundOK = true; }, function(){ soundOK = false; if(cur === i) scene(); });
       } else scene();
