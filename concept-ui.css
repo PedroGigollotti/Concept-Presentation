@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Carlito:wght@700&display=swap");
+/* The Concept standard for the mark and the buttons, one file for every page
+   (Pedro, 6 Oct 2026: "o logo que é a marca esta muito pequeno e os botoes nao
+   seguem o padrao premium Concept"). Taken from the app (concept-coach-team/
+   css/app.css .btn): the brand red #B3132B, corners of 4px, no pills, no glow.
+   Linked after each page's own <style>, so it wins on equal selectors. */
+
+:root{--concept-red:#B3132B;--concept-red-hover:#C8172F;--concept-red-press:#8E0F22;}
+
+/* the mark: 2/3 larger than it was, mark and word together, so the master's proportion holds
+   (Pedro, 6 Oct 2026: "o logo tem que ser evidente para fixacao da marca"). Ring 60px, word 30px,
+   in a 96px bar, 32px from the edge on every page. */
+#nav,#nav.scrolled{min-height:96px;padding-top:9px;padding-bottom:9px;}
+#nav .brand{gap:18px;text-decoration:none;}
+#nav .brand svg{height:78px;width:auto;}
+#nav .wordmark{display:inline;color:#B3132B;font-family:'Carlito','Calibri','Lato',sans-serif;font-weight:700;font-size:30px;letter-spacing:.4em;line-height:1;}
+
+/* the call to action */
+#nav .cta{background:var(--concept-red);border-radius:4px;min-height:44px;padding:0 22px;
+  font-size:14px;letter-spacing:.02em;display:inline-flex;align-items:center;}
+#nav .cta:hover{background:var(--concept-red-hover);transform:none;box-shadow:none;}
+#nav .cta:active{background:var(--concept-red-press);}
+
+/* the language switch: quiet, so the one red on the bar is the call to action */
+.lang-switch{border-radius:4px;background:transparent;border:1px solid rgba(231,232,234,.18);padding:3px;}
+.lang-switch button{border-radius:2px;}
+.lang-switch button.active{background:rgba(231,232,234,.14);color:#fff;}
+
+/* page buttons */
+.btn{border-radius:4px;}
+.btn-solid{background:var(--concept-red);border-color:var(--concept-red);}
+.btn-solid:hover{background:var(--concept-red-hover);border-color:var(--concept-red-hover);transform:none;box-shadow:none;}
+.btn-outline:hover{transform:none;}
+.companion-cta{border-radius:4px;background:var(--concept-red);}
+.tabs button,.chip{border-radius:4px;}
+
+#nav .cta:focus-visible,.btn:focus-visible,.companion-cta:focus-visible{outline:2px solid #E7E8EA;outline-offset:2px;}
+
+@media (max-width:760px){
+  /* the mark and the name stay on every screen (Pedro, 6 Oct 2026: "o logo tem sempre que
+     aparecer em evidencia") */
+  #nav,#nav.scrolled{min-height:72px;padding-top:6px;padding-bottom:6px;}
+  #nav .brand{gap:8px;}
+  #nav .brand svg{height:46px;}
+  #nav .wordmark{display:inline;font-size:15px;letter-spacing:.26em;}
+  .lang-switch .flag-chip{display:none;}
+  #nav .cta{min-height:40px;padding:0 14px;font-size:13px;}
+  /* on a phone the bar holds the mark, the languages and the call to action; the page links
+     pushed the last two off the screen */
+  #nav .nav-link{display:none;}
+  #nav .nav-right{gap:8px;}
+  .lang-switch button{padding:7px 7px;}
+}
+
+/* the books' page and every book page: the same mark in the same place as every other page */
+.topnav{width:100vw;margin-left:calc(50% - 50vw);margin-top:-56px;padding:9px 32px;box-sizing:border-box;min-height:96px;}
+.topnav .brand{display:flex;align-items:center;gap:18px;letter-spacing:0;}
+.topnav .brand svg{height:78px;width:auto;}
+.topnav .brand .wordmark{color:#B3132B;font-family:'Carlito','Calibri','Lato',sans-serif;font-weight:700;font-size:30px;letter-spacing:.4em;line-height:1;}
+@media (max-width:760px){ .topnav{padding:8px 16px;min-height:72px;flex-direction:row;flex-wrap:wrap;align-items:center;} }
+@media (max-width:640px){ .topnav{margin-top:-36px;} }
+@media (max-width:760px){ .topnav .brand svg{height:46px;} .topnav .brand{gap:8px;} .topnav .brand .wordmark{font-size:15px;letter-spacing:.26em;} }
+@media (max-width:400px){
+  #nav .cta{padding:0 9px;font-size:12.5px;}
+  .lang-switch button{padding:7px 5px;}
+}
+
+/* ONE TYPE SCALE FOR THE WHOLE SITE (Pedro, 6 Oct 2026: "o tamanho da fonte em coerencia com todo o
+   site"). Measured before: page titles were 84, 64 and 68px, section titles 53, 42 and 46px, the
+   Books page 40 and 26px. Now one size per role. Georgia and Carlito pages are set 6% larger than
+   Instrument Sans, because their x-height is smaller (.481 and .478 against .510, measured), so
+   the same role looks the same size on every page. */
+h1.hero,h1.name{font-size:clamp(36px,6vw,76px);}
+h2.headline{font-size:clamp(26px,3.8vw,48px);}
+.kicker{font-size:12px;}
+.lede{font-size:clamp(16px,1.5vw,18.5px);}
+.masthead h1{font-size:clamp(36px,6vw,80px);line-height:1.04;}
+.collection-head h2{font-size:clamp(28px,3.8vw,51px);line-height:1.08;}
+.standfirst{font-size:clamp(17px,1.6vw,19.5px);line-height:1.6;}
+
+/* THE BAR, ONE STANDARD ON EVERY PAGE, IN THE PAGE'S OWN COLOURS (Pedro, 6 Oct 2026: "a barra tem
+   que ter o mesmo padrao no site inteiro. Nas outras paginas, nas cores das paginas").
+   The word: the lockup's Carlito bold red, tracked; the master's .43em was drawn for the stacked
+   lockup at 46px and reads loose beside the mark, so the bar uses .3em at 26px, and the tracking
+   after the last letter is taken back so the word ends on the T. */
+#nav .wordmark,.topnav .brand .wordmark{font-size:26px;letter-spacing:.3em;margin-right:-.3em;font-weight:700;}
+#nav .nav-right{gap:24px;}
+#nav .nav-link,.topnav-links .nav-link{font-size:14px;font-weight:600;letter-spacing:0;text-transform:none;opacity:1;text-decoration:none;
+  display:inline-flex;align-items:center;min-height:44px;transition:color .2s;}
+#nav .nav-link[aria-current],.topnav-links .nav-link[aria-current]{box-shadow:inset 0 -2px 0 #B3132B;}
+#nav .cta,.topnav .cta{min-height:44px;padding:0 22px;font-size:14px;font-weight:600;border-radius:4px;}
+/* the Books page and the book pages: the same bar on their black */
+.topnav-links{display:flex;align-items:center;gap:24px;flex-wrap:nowrap;}
+.topnav-links .nav-link{color:#B8BCC4;font-family:inherit;}
+.topnav-links .nav-link:hover,.topnav-links .nav-link[aria-current]{color:#E7E8EA;}
+.topnav .cta{text-transform:none;letter-spacing:0;font-family:inherit;display:inline-flex;align-items:center;background:#B3132B;color:#fff;text-decoration:none;white-space:nowrap;transition:background .2s;}
+.topnav .cta:hover{background:#C8172F;}
+.topnav{border-bottom:1px solid rgba(231,232,234,.12);margin-bottom:34px;}
+@media (max-width:1100px){ .topnav-links .nav-link{display:none;} }
+@media (max-width:760px){
+  #nav .wordmark,.topnav .brand .wordmark{font-size:15px;letter-spacing:.24em;margin-right:-.24em;}
+  #nav .nav-link{display:none;}
+  .topnav .cta{min-height:40px;padding:0 14px;font-size:13px;}
+}

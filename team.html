@@ -3,359 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meet the Concept Team | The Concept Method</title>
+<title>The Concept Team | AI English Coaches for Professionals</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
+  /* The Team page in the Concept Coach app's colors (approved redesign, 6 Oct 2026) */
   :root{
-    --black:#000; --panel:#0B0B0B; --white:#fff;
-    --red:#E32F2E; --red-hi:#FF4342;
-    --gray:#8A8F98; --gray-dark:#4A4E57; --silver:#E4E6EA;
-    --line-dark:rgba(228, 230, 234, 0.12); --line-light:rgba(0,0,0,.09);
-    --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
-    --serif:'Instrument Serif',Georgia,serif;
+    --platinum:#E7E8EA; --graphite:#0A0B0D; --text-2:#3A3D44; --muted:#5C6068;
+    --hair:#C9CBD0; --outline:#7F838A; --red:#B3132B; --white:#FFFFFF;
+    --g-text:#E7E8EA; --g-text-2:#A7AAB0; --g-red:#E04A4F;
+    --graphite-panel:radial-gradient(circle at 100% 0%,#2A2C31 0%,#0A0B0D 55%);
+    --sans:'Carlito','Calibri','Lato',Arial,sans-serif;
+    --serif:Georgia,'Times New Roman',serif;
+    --display-xl:clamp(38px,6vw,80px); --display-l:clamp(28px,3.8vw,51px); --display-m:clamp(24px,2.2vw,32px);
+    --display-s:clamp(22px,1.9vw,26px); --quote:clamp(19px,1.6vw,23px);
+    --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px; --s7:96px; --s8:120px;
+    --side:96px; --pad:120px;
   }
+  @media (max-width:900px){ :root{ --side:24px; --pad:72px; } }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{margin:0;background:#000;color:#000;font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body{margin:0;background:var(--platinum);color:var(--graphite);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   a{color:inherit;}
-  em,i{font-family:var(--serif);font-style:italic;color:var(--red);}
+  p{margin:0;}
+  h1,h2,h3{margin:0;font-weight:400;}
+  .wrap{max-width:calc(1248px + 2 * var(--side));margin:0 auto;padding-left:var(--side);padding-right:var(--side);}
+  section{padding:var(--pad) 0;}
+  .hairline{border-top:1px solid var(--hair);}
+  em,.piv{font-family:var(--serif);font-style:italic;color:var(--red);}
 
-  /* ===== NAV (identical to Home) ===== */
-  #nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
-    justify-content:space-between;gap:12px;padding:16px 32px;
-    background:rgba(0,0,0,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line-dark);}
-  #nav .brand{display:flex;align-items:center;gap:14px;text-decoration:none;}
-  #nav .brand svg{height:28px;width:auto;overflow:visible;transition:transform .35s ease;}
-  #nav .wordmark{color:#B3132B;font-family:'Carlito','Calibri','Lato',var(--sans);font-weight:700;font-size:16px;letter-spacing:.43em;}
-  .nav-right{display:flex;align-items:center;gap:12px;z-index:105;}
-  .nav-link{color:var(--silver);font-family:var(--sans);font-weight:600;font-size:13px;
-    text-decoration:none;letter-spacing:.5px;opacity:.85;transition:opacity .22s ease;}
-  .nav-link:hover,.nav-link:focus-visible{opacity:1;color:var(--red);}
-  .lang-switch{display:flex;gap:3px;background:rgba(255,255,255,.07);border-radius:999px;padding:4px;}
-  .lang-switch button{background:none;border:none;color:var(--silver);font-family:var(--sans);
-    font-weight:600;font-size:11px;padding:7px 11px;border-radius:999px;cursor:pointer;
-    display:inline-flex;align-items:center;gap:6px;
-    -webkit-tap-highlight-color:rgba(227,47,46,.3);touch-action:manipulation;transition:all .22s ease;}
-  .lang-switch button.active{background:var(--red);color:#fff;}
-  .lang-switch .flag-chip{width:15px;height:15px;border-radius:50%;overflow:hidden;flex:0 0 auto;display:block;
-    -webkit-mask-image:radial-gradient(circle, #000 55%, transparent 100%);
-    mask-image:radial-gradient(circle, #000 55%, transparent 100%);}
-  .lang-switch .flag-chip svg{width:100%;height:100%;display:block;}
-  #nav .cta{background:var(--red);color:#fff;border:none;border-radius:999px;padding:10px 20px;
-    font-family:var(--sans);font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;text-decoration:none;
-    display:inline-flex;align-items:center;
-    touch-action:manipulation;transition:transform .18s ease,background .22s ease,box-shadow .22s ease;}
-  #nav .cta:hover{background:var(--red-hi);transform:translateY(-2px);box-shadow:0 8px 22px rgba(227,47,46,.4);}
-  @media (max-width:760px){
-    #nav{padding:12px 16px;}
-    #nav .wordmark{display:none;}
-    #nav .cta{padding:9px 14px;font-size:12px;}
-    .lang-switch button{padding:9px 11px;font-size:11px;}
-  }
+  /* type scale: one role each, the site's scale (concept-ui.css) in Georgia and Carlito, +6% for x-height */
+  .d-xl{font-family:var(--serif);font-size:var(--display-xl);line-height:.98;}
+  .d-l{font-family:var(--serif);font-size:var(--display-l);line-height:1;text-wrap:balance;}
+  .d-m{font-family:var(--serif);font-size:var(--display-m);line-height:1.08;}
+  .d-s{font-family:var(--serif);font-size:var(--display-s);line-height:1.1;}
+  .quote{font-family:var(--serif);font-style:italic;font-size:var(--quote);line-height:1.2;color:var(--red);text-wrap:balance;}
+  .t-card{font-family:var(--serif);font-size:28px;line-height:1.1;}
+  .body-l{font-size:20px;line-height:1.55;color:var(--text-2);}
+  .body{font-size:17px;line-height:1.6;color:var(--text-2);}
+  .caption{font-size:14px;color:var(--muted);}
+  .eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.3em;font-weight:700;color:var(--red);}
+  .micro{font-size:11px;text-transform:uppercase;letter-spacing:.24em;font-weight:600;color:var(--muted);}
 
-  /* ===== LAYOUT ===== */
-  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
-  .bg-black{background:#000;color:#fff;}
-  .bg-white{background:#fff;color:#000;}
-  .section-pad{padding:96px 0;}
-  @media (max-width:760px){.section-pad{padding:64px 0;} .wrap{padding:0 20px;}}
+  /* buttons: every primary identical, every secondary identical */
+  .btn-pri{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 32px;border-radius:4px;border:0;background:var(--red);color:var(--white);font-family:var(--sans);font-size:16px;font-weight:700;text-decoration:none;cursor:pointer;transition:background .2s;}
+  .btn-pri:hover{background:#C8172F;}
+  .btn-pri:active{background:#8E0F22;}
+  .btn-sec{display:inline-flex;align-items:center;gap:var(--s1);height:48px;padding:0 24px;border-radius:4px;border:1px solid var(--outline);background:transparent;color:var(--graphite);font-family:var(--sans);font-size:16px;font-weight:500;text-decoration:none;cursor:pointer;transition:border-color .2s,background .2s;}
+  .btn-sec svg{width:18px;height:18px;}
+  .btn-sec:hover{border-color:var(--graphite);}
+  .btn-sec.playing{background:var(--graphite);color:var(--platinum);border-color:var(--graphite);}
+  .btn-icon{width:44px;height:44px;border-radius:4px;border:1px solid var(--outline);background:transparent;color:var(--graphite);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;}
+  .btn-icon svg{width:20px;height:20px;}
+  .btn-icon .w{opacity:.3;}
+  .btn-icon[aria-pressed="true"]{background:var(--graphite);color:var(--platinum);border-color:var(--graphite);}
+  .btn-icon[aria-pressed="true"] .w{opacity:1;}
+  :focus-visible{outline:2px solid var(--red);outline-offset:3px;}
 
-  .kicker{font-size:11.5px;font-weight:600;letter-spacing:3px;color:var(--red);margin:0 0 18px;}
-  h1.name{font-weight:400;margin:0 0 8px;font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-.02em;color:#fff;}
-  h2.headline{font-weight:400;margin:0 0 22px;font-size:clamp(24px,3.6vw,42px);line-height:1.12;letter-spacing:-.02em;}
-  .lede{font-size:clamp(15.5px,1.5vw,18.5px);line-height:1.6;color:var(--gray-dark);max-width:680px;}
-  .lede.on-dark{color:var(--silver);}
-  .body-copy{font-size:15.5px;line-height:1.68;color:var(--gray-dark);}
-  .body-copy.on-dark{color:var(--silver);}
+  /* 1. nav */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(231,232,234,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair);}
+  /* the mark sits where it sits on every page of the site: 32px from the edge, in a 96px bar */
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);height:96px;max-width:none;padding:0 32px;}
+  @media (max-width:760px){ .nav .wrap{padding:0 16px;height:72px;} }
+  .brand{display:flex;align-items:center;gap:18px;text-decoration:none;}
+  .brand svg{width:78px;height:78px;}
+  .brand span{font-family:'Carlito','Calibri','Lato',var(--sans);font-weight:700;font-size:26px;letter-spacing:.3em;margin-right:-.3em;line-height:1;color:var(--red);}
+  @media (max-width:760px){ .brand{gap:8px;} .brand svg{width:46px;height:46px;} .brand span{font-size:15px;letter-spacing:.24em;margin-right:-.24em;} }
+  .nav-r{display:flex;align-items:center;gap:24px;}
+  .nav-r .lk{text-decoration:none;font-size:14px;font-weight:700;color:var(--text-2);display:inline-flex;align-items:center;min-height:44px;}
+  .nav-r .lk:hover{color:var(--graphite);}
+  .nav-r .lk[aria-current]{color:var(--graphite);font-weight:600;box-shadow:inset 0 -2px 0 var(--red);}
+  @media (max-width:1000px){ .nav-r .lk{display:none;} }
+  @media (max-width:700px){ .nav-r{gap:var(--s1);} .nav-r .btn-cta{padding:0 14px;} }
+  .btn-cta{display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:4px;background:var(--red);color:var(--white);font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;transition:background .2s;}
+  .btn-cta:hover{background:#C8172F;}
 
-  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-family:var(--sans);
-    font-weight:600;font-size:15px;padding:15px 28px;border-radius:999px;border:1.5px solid currentColor;
-    cursor:pointer;background:none;touch-action:manipulation;
-    transition:transform .2s ease,background .25s ease,color .25s ease,box-shadow .25s ease;}
-  .btn-solid{background:var(--red);border-color:var(--red);color:#fff;}
-  .btn-solid:hover{background:var(--red-hi);transform:translateY(-3px);box-shadow:0 12px 30px rgba(227,47,46,.38);}
-  .btn-outline{color:#fff;}
-  .btn-outline:hover{background:#fff;color:#000;transform:translateY(-3px);}
-  .cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:38px;}
+  /* avatars: sized by head height; their ground is the page's, the body fades into it */
+  .av{width:min(var(--w),82vw);margin:0 auto;position:relative;}
+  .av .mv{position:absolute;inset:0;width:100%;height:auto;opacity:0;-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 96%);mask-image:linear-gradient(to bottom,#000 70%,transparent 96%);}
+  .av .mv.on{opacity:1;}
+  .av img{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 96%);mask-image:linear-gradient(to bottom,#000 70%,transparent 96%);}
+  .enter{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1);}
+  .enter.in{opacity:1;transform:none;}
+  .breathe{animation:breathe 6s ease-in-out infinite;transform-origin:50% 90%;}
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.008) translateY(-1px)}}
 
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.25,1,.25,1),transform .8s cubic-bezier(.25,1,.25,1);}
-  .reveal.visible{opacity:1;transform:translateY(0);}
-  .reveal-scale{opacity:0;transform:scale(.95);transition:opacity .75s ease,transform .75s cubic-bezier(.25,1,.25,1);}
-  .reveal-scale.visible{opacity:1;transform:scale(1);}
-  @media (prefers-reduced-motion:reduce){.reveal,.reveal-scale{opacity:1!important;transform:none!important;transition:none;}}
+  /* 2. hero */
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:var(--s5);align-items:center;}
+  .hero h1{margin:var(--s3) 0 var(--s4);text-wrap:balance;}
+  .hero .body-l{max-width:560px;}
+  .hero .go{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s5);}
+  .hero .go .caption a{color:var(--text-2);text-underline-offset:4px;}
+  .h-netto{text-align:center;}
+  .h-netto .stage{width:min(420px,90vw);margin:0 auto;}
+  .h-netto .stage img{display:block;width:100%;height:auto;}
+  .h-netto .d-s{margin-top:var(--s1);position:relative;}
+  .h-netto .micro{display:block;margin-top:var(--s1);}
 
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
-  @media (max-width:760px){.two-col{grid-template-columns:1fr;gap:22px;}}
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  @media (max-width:900px){.grid-3{grid-template-columns:1fr;}}
+  /* 3. team strip */
+  .strip{padding-top:0;}
+  .strip-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3);flex-wrap:wrap;padding-top:var(--s5);}
+  .strip-list{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s3);margin-top:var(--s5);}
+  .s-item{display:flex;flex-direction:column;align-items:center;gap:var(--s1);text-decoration:none;text-align:center;padding:var(--s2) 0;border-radius:8px;transition:background .25s;}
+  .s-item:hover{background:rgba(255,255,255,.5);}
+  .s-av{display:block;width:152px;height:132px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,#000 72%,transparent 100%);}
+  .s-av img{position:absolute;left:50%;top:calc(-1 * var(--t));width:var(--w);height:auto;transform:translateX(-50%);}
+  .s-item .micro{max-width:150px;}
+  @media (max-width:900px){ .strip-list{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--s2);} .s-item{flex:0 0 168px;scroll-snap-align:start;} }
 
-  .card{background:var(--panel);border:1px solid var(--line-dark);border-radius:26px;padding:34px;color:#fff;
-    transition:transform .35s cubic-bezier(.25,1,.25,1),box-shadow .35s ease,border-color .35s ease;}
-  .card:hover{transform:translateY(-8px);border-color:rgba(227,47,46,.35);}
-  .card h3{font-weight:600;font-size:19px;margin:0 0 12px;line-height:1.3;}
-  .card p{margin:0;font-size:14.5px;line-height:1.62;color:var(--silver);}
-
-  #stats{padding:80px 0 96px;}
-  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:42px;}
-  .stat-num{font-size:clamp(34px,5vw,58px);letter-spacing:-.02em;color:#fff;line-height:1;}
-  .stat-num .accent{color:var(--red);font-family:var(--serif);font-style:italic;}
-  .stat-label{margin-top:12px;font-size:13.5px;color:#8D929B;line-height:1.5;}
-  @media (max-width:760px){.stat-grid{grid-template-columns:1fr;gap:32px;}}
-
-  .trust{padding:52px 0;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
-  .trust-label{font-size:11px;letter-spacing:2.5px;color:#6E727A;text-align:center;margin-bottom:22px;}
-  .trust-row{display:flex;gap:44px;justify-content:center;align-items:center;flex-wrap:wrap;}
-  .trust-row span{font-size:clamp(15px,2vw,21px);font-weight:600;color:#fff;opacity:.72;letter-spacing:.5px;}
-
-  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;}
-  @media (max-width:980px){.quote-grid{grid-template-columns:1fr 1fr;}}
-  @media (max-width:700px){.quote-grid{grid-template-columns:1fr;}}
-  .quote{background:#fff;border:1px solid var(--line-light);border-radius:24px;padding:30px;display:flex;flex-direction:column;
-    transition:transform .35s cubic-bezier(.25,1,.25,1),box-shadow .35s ease,border-color .35s ease;}
-  .quote:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(0,0,0,.09);border-color:rgba(227,47,46,.3);}
-  .quote .qm{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--red);line-height:.8;margin-bottom:12px;}
-  .quote p{margin:0 0 22px;font-size:14.5px;line-height:1.65;color:var(--gray-dark);flex:1;}
-  .quote .who{font-weight:600;font-size:14px;color:#000;}
-  .quote .role{font-size:12.5px;color:#8A8F98;margin-top:3px;line-height:1.4;}
-
-  footer{padding:34px 0 44px;border-top:1px solid var(--line-dark);}
-  .footrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
-    gap:14px;font-size:11.5px;color:#7E838C;}
-  .footrow .fl{display:flex;align-items:center;gap:11px;}
-  .footrow svg{height:24px;width:auto;overflow:visible;}
-  .needle{transform-origin:200px 200px;}
-  @keyframes tickTock{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-
-  /* ===== TEAM PAGE ===== */
-  .nav-link.on{color:#fff;opacity:1;border-bottom:1px solid var(--red);padding-bottom:2px;}
-  .group{margin-top:56px;background:#000;border-radius:22px;overflow:hidden;}
-  .group img{display:block;width:100%;height:auto;}
-  .test-intro{max-width:760px;padding:56px 0 6px;}
-  .member{padding:70px 0;}
-  .mgrid{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:44px;align-items:center;}
-  .member.flip .mfig{order:2;}
-  .member.flip .mgrid{grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr);}
-  .mgrid>*{min-width:0;}
-  .mfig{position:relative;background:#E7E8EA;border-radius:22px;display:flex;justify-content:center;align-items:flex-end;}
-  .mfig video{display:block;width:100%;max-width:420px;margin-left:auto;height:auto;aspect-ratio:720/1010;background:#E7E8EA;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 12%,#000 88%,transparent 100%);}
-  .mname{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6vw,76px);line-height:.95;margin:0 0 14px;color:#fff;}
-  .mrow{display:grid;grid-template-columns:236px minmax(300px,1fr);gap:28px;align-items:start;margin-top:8px;}
-  .mrow .quiz{margin-top:0;}
-  .mphone{position:relative;perspective:1400px;width:236px;height:490px;}
-  .mphone .p3d{width:236px;height:490px;}
-  .mphone .pedge,.mphone .pbody{border-radius:36px;}
-  .mphone .pscreen{left:8px;top:8px;right:8px;bottom:8px;border-radius:29px;}
-  .mphone .pisland{top:14px;width:64px;height:19px;margin-left:-32px;}
-  .mphone .papp{padding:40px 12px 9px;}
-  .mphone .papp .pmark{width:26px;height:26px;}
-  .mphone .papp b{font-size:12px;}
-  .mphone .papp span{font-size:10px;}
-  .mphone .tchat{gap:7px;padding:10px 9px;}
-  .mphone .tmsg{font-size:11px;line-height:1.4;padding:8px 10px;}
-  .mphone .tmsg .lbl{font-size:7.5px;margin-bottom:3px;}
-  .mphone .pbar{font-size:8px;padding:6px 0 10px;}
-  .mfig.n3d{background:#000;overflow:visible;border-radius:0;justify-content:center;align-items:flex-end;}
-  .n3d-stage{position:relative;width:min(100%,470px);margin:0 auto -18%;}
-  .n3d-stage img{display:block;width:100%;height:auto;position:relative;transition:opacity .55s ease;-webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent 64%);mask-image:linear-gradient(to bottom,#000 50%,transparent 64%);}
-  .n3d-stage .n3d-point{-webkit-mask-image:none;mask-image:none;}
-  .n3d-stage .n3d-talk{position:absolute;left:2.6%;top:-8.2%;width:94.7%;height:auto;aspect-ratio:720/1010;background:#000;opacity:0;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 10%,#000 90%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 10%,#000 90%,transparent 100%);}
-  .n3d-stage.talking .n3d-talk{opacity:1;}
-  .n3d-stage.talking .n3d-point{opacity:0;}
-  .mfig.n3d .hear{right:auto;left:50%;transform:translateX(-50%);top:57%;bottom:auto;}
-  .hero-wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center;}
-  .hero-wrap>*:not(.hero-netto){max-width:none;}
-  .team-hero h1.name{text-wrap:balance;}
-  .team-hero h1.name i{white-space:nowrap;}
-  .roll{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 18px;}
-  .roll a{display:flex;flex-direction:column;align-items:center;gap:12px;text-decoration:none;color:var(--silver);font-size:13px;font-weight:600;letter-spacing:.3px;transition:color .25s;}
-  .roll .face{display:block;width:118px;height:118px;border-radius:50%;background-color:#E7E8EA;background-size:175%;background-position:50% 4%;background-repeat:no-repeat;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 18px 40px rgba(0,0,0,.55);transition:transform .4s cubic-bezier(.25,1,.25,1),box-shadow .4s;}
-  .roll a:hover{color:#fff;}
-  .roll a:hover .face{transform:translateY(-6px);box-shadow:0 0 0 2px var(--red),0 24px 50px rgba(0,0,0,.6);}
-  .roll a:focus-visible{outline:2px solid var(--red);outline-offset:6px;border-radius:10px;}
-  @media (max-width:980px){ .hero-wrap{grid-template-columns:1fr;gap:40px;} .roll{grid-template-columns:repeat(6,1fr);gap:14px;} .roll .face{width:64px;height:64px;} .roll a{font-size:11.5px;} }
-  @media (max-width:600px){ .roll{grid-template-columns:repeat(3,1fr);gap:20px 10px;} .roll .face{width:84px;height:84px;} }
-  .tap-pill{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:120;display:inline-flex;align-items:center;gap:10px;background:#fff;color:#000;border:0;border-radius:999px;padding:12px 20px;font-family:var(--sans);font-weight:600;font-size:14px;box-shadow:0 16px 40px rgba(0,0,0,.5);cursor:pointer;animation:pillIn .4s ease both;}
-  .tap-pill[hidden]{display:none;}
-  .tap-pill svg{width:18px;height:18px;}
-  @keyframes pillIn{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
-  @media (max-width:1100px){ .mrow{grid-template-columns:1fr;justify-items:center;} .mrow .quiz{width:100%;} }
-  @media (max-width:860px){ .mfig video{margin:0 auto;} }
-  .hear{position:absolute;right:18px;bottom:18px;z-index:3;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:9px 15px 9px 12px;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s,border-color .2s;}
-  .hear svg{width:16px;height:16px;}
-  .hear:hover{background:var(--red);border-color:var(--red);}
-  .hear.playing{background:var(--red);border-color:var(--red);}
-  .hear:focus-visible,.sound:focus-visible{outline:2px solid var(--red);outline-offset:2px;}
-  .sound{gap:10px;}
-  .sound svg{width:18px;height:18px;}
-  .sound .w{opacity:.35;}
-  .sound[aria-pressed="true"]{background:#fff;color:#000;}
-  .sound[aria-pressed="true"] .w{opacity:1;}
-  .bballoon{position:absolute;z-index:4;right:60%;max-width:230px;width:max-content;display:grid;gap:1px;text-align:right;background:#fff;color:#0A0B0D;border-radius:14px 14px 4px 14px;padding:6px 11px 7px;box-shadow:0 12px 30px rgba(0,0,0,.45);animation:bpop .26s cubic-bezier(.2,.8,.2,1) both;transition:opacity .4s,transform .4s;}
-  .bballoon .bl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#8A8F98;}
-  .bballoon .bt{font-family:var(--serif);font-style:italic;font-size:14px;line-height:1.2;}
-  .bballoon.en{box-shadow:0 0 0 1.5px var(--red) inset,0 12px 30px rgba(0,0,0,.45);}
-  .bballoon.out{opacity:0;transform:translateY(-6px);}
-  @keyframes bpop{from{opacity:0;transform:scale(.6) translateX(14px)}to{opacity:1;transform:none}}
-  .closing{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:56px;align-items:center;border-top:1px solid var(--line-dark);padding-top:56px;}
-  .closing>*{min-width:0;}
-  .cfilm{position:relative;border-radius:22px;overflow:hidden;background:#000;}
-  .cfilm video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;}
-  @media (max-width:860px){.closing{grid-template-columns:1fr;gap:28px;}.cfilm{max-width:300px;margin:0 auto;}}
-  .mcoach{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.4;color:var(--silver);margin:-12px 0 24px;max-width:540px;}
-  .mcoach .mck{display:block;font-family:var(--sans);font-style:normal;font-size:10.5px;font-weight:600;letter-spacing:2.2px;color:#6E727A;margin-bottom:4px;}
-  .mline{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,30px);color:var(--red);margin:0 0 26px;line-height:1.2;}
-  .does-k{font-size:11px;font-weight:600;letter-spacing:2.5px;color:#6E727A;margin:0 0 8px;}
-  .mdoes{margin:0;max-width:560px;}
-  .quiz{margin-top:30px;padding:4px 0 0;max-width:600px;}
-  .q-label{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:2px;color:var(--red);}
-  .q-label img{width:26px;height:26px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E7E8EA;}
-  .quiz .q{color:#fff;font-size:18px;line-height:1.45;margin:14px 0 16px;}
-  .opts{display:grid;gap:10px;}
-  .opt{text-align:left;background:#141416;border:1px solid var(--line-dark);border-radius:12px;padding:13px 16px;color:var(--silver);
-    font-family:var(--sans);font-size:15px;line-height:1.4;cursor:pointer;transition:border-color .2s,background .2s,transform .2s;}
-  .opt:hover:not(:disabled){border-color:rgba(227,47,46,.6);transform:translateX(3px);}
-  .opt:focus-visible{outline:2px solid var(--red);outline-offset:2px;}
+  /* 4. the test */
+  .test{padding-top:var(--s7);}
+  .qcard{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:var(--s5);align-items:start;}
+  .q-av{text-align:center;position:sticky;top:112px;}
+  .q-who{display:flex;flex-direction:column;align-items:center;gap:var(--s1);margin-top:var(--s2);}
+  .qdisc{position:relative;display:block;width:160px;height:160px;margin:40px auto 0;border-radius:50%;background:#F6F7F8;border:1px solid #D3D5D9;box-shadow:0 1px 2px rgba(26,26,26,.08),0 6px 16px rgba(26,26,26,.10);}
+  .qdisc img{position:absolute;height:auto;max-width:none;}
+  .t-intro{margin-bottom:var(--s5);}
+  .bar{height:3px;background:var(--hair);border-radius:2px;margin:var(--s2) 0 var(--s4);overflow:hidden;}
+  .bar i{display:block;height:100%;background:var(--red);transition:width .6s ease;}
+  .goal{margin:var(--s2) 0 var(--s4);}
+  .opts{display:grid;gap:var(--s2);}
+  .opt{display:block;width:100%;text-align:left;background:#F6F7F8;border:2px solid #D3D5D9;border-radius:8px;padding:var(--s3);font-family:var(--sans);cursor:pointer;color:var(--graphite);transition:border-color .25s,box-shadow .25s,transform .2s;box-shadow:0 1px 0 rgba(10,11,13,.04);}
+  .opt:hover:not(:disabled){border-color:#7F838A;background:#EDEEF0;}
   .opt:disabled{cursor:default;}
-  .opt.is-right{border-color:#5FAE7B;background:rgba(95,174,123,.12);color:#fff;}
-  .opt.is-wrong{border-color:var(--red);background:rgba(227,47,46,.10);}
-  .verdict{margin-top:16px;font-size:14.5px;line-height:1.6;color:var(--silver);}
-  .verdict b{color:var(--red);}
-  .verdict.ok b{color:#5FAE7B;}
-  .next[hidden],.verdict[hidden],.hear[hidden]{display:none;}
-  .next{display:inline-block;margin-top:14px;color:#fff;font-weight:600;font-size:14px;text-decoration:none;border-bottom:1px solid var(--red);}
-  .result{max-width:760px;}
-  .member,#test,#result{scroll-margin-top:72px;}
-  @media (max-width:760px){ #nav .nav-link{display:none;} }
-  @media (max-width:860px){
-    .mgrid,.member.flip .mgrid{grid-template-columns:1fr;gap:26px;}
-    .member.flip .mfig{order:0;}
-    .mfig video{max-width:300px;}
-    .member{padding:48px 0;}
-  }
-  /* ===== THE CONCEPT TEAM ===== */
-  .hero-team{display:inline-flex;align-items:center;gap:14px;margin-top:34px;text-decoration:none;color:var(--silver);font-size:14px;font-weight:600;}
-  .hero-team .faces{display:flex;}
-  .hero-team .faces img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E8E8E8;border:2px solid #000;margin-left:-11px;transition:transform .35s cubic-bezier(.25,1,.25,1);}
-  .hero-team .faces img:first-child{margin-left:0;}
-  .hero-team:hover .faces img{transform:translateY(-4px);}
-  .hero-team:hover .faces img:nth-child(2){transition-delay:.04s}.hero-team:hover .faces img:nth-child(3){transition-delay:.08s}
-  .hero-team:hover .faces img:nth-child(4){transition-delay:.12s}.hero-team:hover .faces img:nth-child(5){transition-delay:.16s}.hero-team:hover .faces img:nth-child(6){transition-delay:.2s}
-  .hero-team .arrow{color:var(--red);transition:transform .3s;}
-  .hero-team:hover .arrow{transform:translateX(4px);}
-  .hero-team:hover span:last-child{color:#fff;}
+  .o-t{display:block;font-size:18px;line-height:1.5;}
+  .o-x{display:block;font-size:16px;line-height:1.55;color:var(--text-2);margin-top:var(--s1);}
+  .o-x[hidden]{display:none;}
+  .opt.lands{border-color:var(--graphite);}
+  .opt.picked-wrong{border-color:var(--red);}
+  .verdict{margin-top:var(--s4);}
+  .next{margin-top:var(--s4);}
+  [hidden]{display:none !important;}
 
-  #team{position:relative;scroll-margin-top:90px;}
-  #team .tstage{margin-top:44px;}
-  .team-hook{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;}
-  .team-note{margin:0;color:var(--gray);font-size:13px;line-height:1.6;max-width:560px;}
-  .team-test{font-size:14px;padding:13px 22px;}
-  .team-test span:first-child{font-weight:400;opacity:.9;}
-  .ttry{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);text-decoration:none;border-bottom:1px solid rgba(227,47,46,.35);}
-  .ttry:hover{border-bottom-color:var(--red);}
-  #team .team-intro{max-width:760px;}
-  .tstage{position:relative;margin-top:46px;background:#000;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:.78fr 1fr 1fr;min-height:560px;color:#fff;}
-  .tcopy{position:relative;z-index:2;padding:48px 10px 40px 44px;display:flex;flex-direction:column;justify-content:center;gap:16px;min-width:0;}
-  .tcopy .ttry{display:inline-block;margin-top:18px;}
-  /* the 3D phone (the Concept videos' phone, scene.css) */
-  .tphone{position:relative;z-index:3;display:flex;align-items:center;justify-content:center;perspective:1500px;min-width:0;padding:20px 0;}
-  .pfloat{animation:pfloat 6s ease-in-out infinite;}
-  @keyframes pfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  .p3d{position:relative;width:250px;height:520px;transform-style:preserve-3d;transform:rotateY(var(--ry,-20deg)) rotateX(var(--rx,6deg)) rotateZ(var(--rz,0deg));transition:transform 1.3s cubic-bezier(.2,.8,.2,1);}
-  .pedge{position:absolute;inset:0;border-radius:40px;background:#15171B;}
-  .pedge.rim{background:#3A3E46;}
-  .pbody{position:absolute;inset:0;border-radius:40px;background:#0B0C0E;border:1px solid #33363D;box-shadow:0 40px 90px rgba(0,0,0,.7),inset 0 0 0 2px #1C1E23;}
-  .pscreen{position:absolute;left:9px;top:9px;right:9px;bottom:9px;border-radius:32px;overflow:hidden;background:#F3F2EF;color:#0A0B0D;display:flex;flex-direction:column;}
-  .pisland{position:absolute;left:50%;top:17px;width:74px;height:22px;margin-left:-37px;border-radius:12px;background:#000;}
-  .psheen{position:absolute;inset:0;border-radius:40px;pointer-events:none;background:linear-gradient(112deg,transparent 38%,rgba(255,255,255,.10) 50%,transparent 62%);background-size:240% 100%;background-position:var(--sx,50%) 0;mix-blend-mode:screen;transition:background-position 1.3s cubic-bezier(.2,.8,.2,1);}
-  .papp{display:flex;align-items:center;gap:9px;padding:46px 14px 10px;border-bottom:1px solid rgba(0,0,0,.07);background:#fff;}
-  .papp .pmark{width:30px;height:30px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E7E8EA;flex:none;}
-  .papp b{display:block;font-size:13px;font-weight:600;line-height:1.2;}
-  .papp span{display:block;font-size:10.5px;color:#8A8F98;line-height:1.3;}
-  .pscreen .tchat{flex:1;justify-content:flex-start;gap:9px;margin:0;padding:14px 11px;max-width:none;overflow:hidden;}
-  .pscreen .tmsg{font-size:12.5px;line-height:1.45;padding:10px 12px;border-radius:14px;}
-  .pscreen .tmsg .lbl{font-size:8.5px;letter-spacing:1.4px;margin-bottom:4px;gap:6px;}
-  .pscreen .tmsg.them .lbl img{width:16px;height:16px;}
-  .pbar{padding:8px 0 12px;text-align:center;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#8A8F98;border-top:1px solid rgba(0,0,0,.06);background:#fff;}
-  /* Bia's balloons: one idea through four languages into English (the app's journeys) */
-  .bballoon{position:absolute;z-index:4;right:58%;max-width:230px;width:max-content;display:grid;gap:1px;text-align:right;background:#fff;color:#0A0B0D;border-radius:14px 14px 4px 14px;padding:6px 11px 7px;box-shadow:0 12px 30px rgba(0,0,0,.45);animation:bpop .26s cubic-bezier(.2,.8,.2,1) both;transition:opacity .4s,transform .4s;}
-  .bballoon .bl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#8A8F98;}
-  .bballoon .bt{font-family:var(--serif);font-style:italic;font-size:14px;line-height:1.2;}
-  .bballoon.en{box-shadow:0 0 0 1.5px var(--red) inset,0 12px 30px rgba(0,0,0,.45);}
-  .bballoon.out{opacity:0;transform:translateY(-6px);}
-  @keyframes bpop{from{opacity:0;transform:scale(.6) translateX(14px)}to{opacity:1;transform:none}}
-  .tname{font-family:var(--serif);font-size:clamp(40px,4.4vw,60px);line-height:.95;letter-spacing:-.01em;color:#fff;}
-  .trole{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);}
-  .tchat{display:flex;flex-direction:column;gap:12px;margin-top:10px;max-width:470px;}
-  .tmsg{border-radius:16px;padding:14px 16px;font-size:15.5px;line-height:1.5;box-shadow:0 10px 28px rgba(0,0,0,.08);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.25,1,.25,1);}
-  .tmsg.on{opacity:1;transform:none;}
-  .tmsg .lbl{display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
-  .tmsg.me{align-self:flex-end;background:#0A0B0D;color:#fff;border-bottom-right-radius:5px;max-width:88%;}
-  .tmsg.me .lbl{color:#8A8F98;}
-  .tmsg.them{background:#fff;border-bottom-left-radius:5px;}
-  .tmsg.them .lbl{color:var(--red);}
-  .tmsg.them .lbl img{width:22px;height:22px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E8E8E8;}
-  .tmsg b{font-weight:600;}
-  .tmsg .q{background:rgba(227,47,46,.10);border-radius:4px;padding:0 3px;}
-  .tdots{display:inline-flex;gap:4px;padding:4px 0;}
-  .tdots i{width:7px;height:7px;border-radius:50%;background:#B9BCC2;animation:tdot 1s infinite;}
-  .tdots i:nth-child(2){animation-delay:.15s}.tdots i:nth-child(3){animation-delay:.3s}
-  @keyframes tdot{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
-  .caret{display:inline-block;width:2px;height:1em;background:#fff;vertical-align:-2px;margin-left:1px;animation:caret 1s steps(1) infinite;}
-  @keyframes caret{50%{opacity:0}}
-  .tfig{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:center;min-width:0;}
-  .tfig video{display:block;height:560px;width:auto;max-width:100%;aspect-ratio:720/1010;object-fit:contain;object-position:bottom;background:#000;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 12%,#000 92%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 12%,#000 92%,transparent 100%);mask-composite:intersect;}
-  .tswap{transition:opacity .45s ease,transform .6s cubic-bezier(.25,1,.25,1);}
-  .tstage.out .tswap{opacity:0;transform:translateY(14px);}
-  .tstage.out .tfig .tswap{transform:translateX(30px);}
-  .ttabs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:16px;}
-  .ttab{position:relative;display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line-dark);border-radius:14px;padding:10px 12px;color:var(--silver);font-family:var(--sans);font-size:13.5px;font-weight:600;cursor:pointer;overflow:hidden;text-align:left;transition:border-color .3s,color .3s;}
-  .ttab img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E8E8E8;flex:none;}
-  .ttab span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-  .ttab:hover{color:#fff;border-color:rgba(228,230,234,.3);}
-  .ttab.on{color:#fff;border-color:var(--red);}
-  .ttab .bar{display:block;position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--red);}
-  .ttab.on .bar{animation:tbar var(--dur,10s) linear forwards;}
-  .ttabs.paused .ttab.on .bar{animation-play-state:paused;}
-  @keyframes tbar{to{width:100%}}
-  .ttab:focus-visible{outline:2px solid var(--red);outline-offset:2px;}
-  .team-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:34px;}
-  .team-foot p{margin:0;color:var(--gray);font-size:14px;max-width:560px;line-height:1.6;}
+  /* 5. result */
+  .result .wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:var(--s5);align-items:start;}
+  .result .r-side{text-align:center;}
+  .result .r-side .btn-sec{margin-top:var(--s3);}
+  .r-film{width:min(334px,80vw);margin:0 auto;-webkit-mask-image:linear-gradient(to bottom,#000 85%,transparent 100%);mask-image:linear-gradient(to bottom,#000 85%,transparent 100%);}
+  .r-film video{display:block;width:100%;height:auto;aspect-ratio:720/1280;background:var(--platinum);}
+  .result .d-l{margin:var(--s3) 0;}
+  .r-list{list-style:none;margin:var(--s5) 0;padding:0;}
+  .r-row{display:grid;grid-template-columns:56px minmax(0,190px) minmax(0,1fr) auto;gap:var(--s3);align-items:center;padding:var(--s3) 0;border-top:1px solid var(--hair);}
+  .r-row img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:var(--platinum);}
+  .r-name{display:flex;flex-direction:column;gap:4px;}
+  .pill{font-size:11px;letter-spacing:.24em;font-weight:600;border-radius:4px;padding:8px 16px;white-space:nowrap;}
+  .pill.landed{border:1px solid var(--graphite);color:var(--graphite);}
+  .pill.slipped{background:var(--red);color:var(--white);}
+  .r-go{display:flex;align-items:center;gap:var(--s4);flex-wrap:wrap;}
+  .r-go a.lk{font-weight:600;font-size:17px;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center;}
+  @media (max-width:700px){ .r-row{grid-template-columns:56px minmax(0,1fr);} .r-row .r-note,.r-row .pill{grid-column:2;} .pill{justify-self:start;} }
+
+  /* 6. coaches */
+  .coach + .coach{border-top:1px solid var(--hair);}
+  .cgrid{display:grid;grid-template-columns:424px minmax(0,1fr) 370px;gap:var(--s5);align-items:center;}
+  .c-text{position:relative;z-index:2;}
+  .p-left .c-phone{order:-1;}
+  .p-left .c-av{order:3;}
+  .p-left .cgrid{grid-template-columns:370px minmax(0,1fr) 424px;}
+  .c-av{position:relative;}
+  .c-av .say{position:absolute;left:50%;bottom:0;width:min(var(--sw),82vw);transform:translateX(-50%);opacity:0;transition:opacity .12s;background:var(--platinum);-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 96%),linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 70%,transparent 96%),linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);mask-composite:intersect;}
+  .c-av.speaking .say{opacity:1;}
+  .c-text .d-l{margin:var(--s2) 0 var(--s3);}
+  .c-text .quote{margin-bottom:var(--s3);}
+  .c-text .hear{margin-top:var(--s4);}
+
+  /* the phone: straight on, one size everywhere */
+  .phone{width:370px;height:760px;border-radius:56px;background:#1A1B1F;padding:12px;box-shadow:0 40px 80px rgba(10,11,13,0.18);margin:0 auto;}
+  .ph-screen{height:100%;border-radius:44px;background:var(--platinum);display:flex;flex-direction:column;overflow:hidden;}
+  .ph-top{padding:44px 22px 18px;display:flex;flex-direction:column;gap:10px;}
+  .ph-label{font-size:11px;text-transform:uppercase;letter-spacing:.24em;font-weight:600;color:var(--muted);}
+  .ph-hi{font-family:var(--serif);font-size:30px;line-height:1.1;}
+  .ph-q{font-size:15px;color:var(--text-2);}
+  .ph-card{background:#F6F7F8;border-radius:14px;padding:14px 16px;font-size:15px;line-height:1.45;}
+  .ph-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{font-size:12.5px;border:1px solid var(--outline);border-radius:999px;padding:5px 12px;color:var(--text-2);}
+  .chip.on{background:var(--graphite);border-color:var(--graphite);color:var(--g-text);}
+  .ph-rec{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text-2);}
+  .rec{width:44px;height:44px;border-radius:50%;background:var(--red);flex:none;}
+  .ph-panel{flex:none;margin:0 12px;border-radius:22px;background:var(--graphite-panel);color:var(--g-text);padding:20px 18px;display:flex;flex-direction:column;gap:10px;overflow:hidden;transition:filter .5s;}
+  .ph-panel hr{border:0;border-top:1px solid rgba(231,232,234,.14);margin:4px 0;width:100%;}
+  .pn-label{font-size:11px;text-transform:uppercase;letter-spacing:.24em;font-weight:600;color:var(--g-text-2);}
+  .pn-lead{font-size:14.5px;line-height:1.5;}
+  .pn-s{font-size:14px;line-height:1.45;}
+  .pn-n{font-size:13px;line-height:1.45;color:var(--g-text-2);margin-top:2px;}
+  .pn-pivot{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.2;color:var(--g-red);margin-top:6px;}
+  .ph-tabs{margin-top:auto;display:flex;justify-content:space-around;padding:14px 8px 22px;font-size:11px;color:var(--muted);}
+  .ph-tabs .on{color:var(--graphite);font-weight:600;}
+  /* between phone and wide screens the phone stays beside the coach, never below (Pedro, 6 Oct 2026:
+     "olha pra onde foi o celular"): the coach above the words, the phone at the side */
+  @media (max-width:1250px) and (min-width:901px){
+    .cgrid{grid-template-columns:minmax(0,1fr) 330px;grid-template-areas:"av ph" "tx ph";column-gap:var(--s5);row-gap:var(--s3);}
+    .p-left .cgrid{grid-template-columns:330px minmax(0,1fr);grid-template-areas:"ph av" "ph tx";}
+    .c-av{grid-area:av;} .c-text{grid-area:tx;} .c-phone{grid-area:ph;align-self:center;}
+    .c-av .av{width:min(var(--w),100%);}
+    .phone{width:320px;height:657px;border-radius:50px;padding:11px;}
+    .ph-screen{border-radius:40px;}
+  }
   @media (max-width:900px){
-    .tstage{grid-template-columns:1fr;min-height:0;}
-    .tfig{order:-1;height:300px;}
-    .tfig video{height:300px;}
-    .tcopy{padding:4px 22px 0;text-align:center;align-items:center;}
-    .tphone{padding:18px 0 46px;}
-    .p3d{width:230px;height:470px;}
-    .bballoon{right:auto;left:8px;}
-    .ttabs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
-    .ttab{flex:none;scroll-snap-align:start;}
+    .hero .wrap,.qcard,.result .wrap,.cgrid,.p-left .cgrid{grid-template-columns:1fr;}
+    .q-av{position:static;}
+    .p-left .c-av,.p-left .c-phone{order:0;}
+    .phone{width:300px;height:616px;border-radius:46px;padding:10px;}
+    .ph-screen{border-radius:36px;}
+    .ph-top{padding:34px 18px 14px;}
   }
+
+  /* 7. closing */
+  .closing h2{margin:var(--s3) 0 var(--s6);max-width:900px;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);}
+  .cols > div{border-top:1px solid var(--hair);padding-top:var(--s4);}
+  .cols .t-card{display:block;margin-bottom:var(--s2);}
+  @media (max-width:900px){ .cols{grid-template-columns:1fr;gap:var(--s4);} }
+
   @media (prefers-reduced-motion:reduce){
-    .tmsg,.tswap{transition:none;}
-    .ttab.on .bar{animation:none;width:100%;}
-    .tdots i,.caret{animation:none;}
+    .enter{opacity:1;transform:none;transition:none;}
+    .breathe{animation:none;}
+    html{scroll-behavior:auto;}
   }
-
-  /* Netto points down from the top of the page to the test (his 3D point, transparent frames) */
-  .team-hero{position:relative;z-index:5;}
-  .hero-wrap{position:relative;}
-  .hero-wrap>*:not(.hero-netto){position:relative;z-index:2;max-width:640px;}
 </style>
-
-
-
-
-
 <!-- seo:begin -->
-<meta name="description" content="Six AI coaches built on the Concept method work with your people between lessons. Meet them and take the 5-question test.">
+<meta name="description" content="Meet the Concept team: AI English coaches built on the Concept method and led by Netto. Then take the five-question test and see where your team&#x27;s English lands.">
 <link rel="canonical" href="https://theconceptmethod.com/team.html">
 <meta property="og:site_name" content="The Concept Method">
-<meta property="og:title" content="Meet the Concept Team | The Concept Method">
-<meta property="og:description" content="Six AI coaches built on the Concept method work with your people between lessons. Meet them and take the 5-question test.">
+<meta property="og:title" content="The Concept Team | AI English Coaches for Professionals">
+<meta property="og:description" content="Meet the Concept team: AI English coaches built on the Concept method and led by Netto. Then take the five-question test and see where your team&#x27;s English lands.">
 <meta property="og:url" content="https://theconceptmethod.com/team.html">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://theconceptmethod.com/og-image.jpg">
@@ -366,567 +238,214 @@
 </head>
 <body>
 
-<nav id="nav">
-  <a class="brand" href="index.html">
-    <svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-      <path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" stroke="#E7E8EA" stroke-width="8" stroke-linecap="round" fill="none"/>
-      <circle cx="200" cy="200" r="11" fill="#E7E8EA"/>
-      <g class="needle">
-        <polygon points="322.87,113.96 208.03,211.47 191.97,188.53" fill="#B3132B"/>
-        <circle cx="322.87" cy="113.96" r="7" fill="#B3132B"/>
-      </g>
-    </svg>
-    <span class="wordmark">CONCEPT</span>
-  </a>
-  <div class="nav-right">
-    <a class="nav-link" id="navHome" href="index.html" data-t="nav_home">Home</a>
-    <a class="nav-link" id="navAbout" href="about.html" data-t="nav_about">About</a>
-    <a class="nav-link on" id="navTeam" href="team.html" data-t="nav_team" aria-current="page">Team</a>
-          <a class="nav-link" id="navMethod" href="method.html" data-t="nav_method">Method</a>
-          <a class="nav-link" id="navBook" href="book.html" data-t="nav_book">Books</a>
-    <a class="nav-link" id="navLessons" href="https://lessons.theconceptmethod.com" data-t="nav_lessons">Students</a>
-    <a class="nav-link" id="navTeachers" href="https://lessons.theconceptmethod.com/teaching#teacher" data-t="nav_teachers">Teachers</a>
-    <div class="lang-switch" id="langSwitch">
-      <button type="button" data-lang="en"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0l60 60M60 0L0 60" stroke="#fff" stroke-width="12"/><path d="M0 0l60 60M60 0L0 60" stroke="#C8102E" stroke-width="7"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="20"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="12"/></svg></span>EN</button>
-      <button type="button" data-lang="pt"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#009B3A"/><path d="M30 8L54 30 30 52 6 30z" fill="#FEDF00"/><circle cx="30" cy="30" r="10" fill="#002776"/></svg></span>PT</button>
-      <button type="button" data-lang="it"><span class="flag-chip" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="20" height="60" fill="#009246"/><rect x="20" width="20" height="60" fill="#fff"/><rect x="40" width="20" height="60" fill="#CE2B37"/></svg></span>IT</button>
-    </div>
-    <a class="cta" id="navCta" href="index.html#contact" data-t="nav_cta">Talk to us</a>
-  </div>
-</nav>
-
-<section class="bg-black section-pad team-hero" style="padding-top:150px;padding-bottom:40px;">
-  <div class="wrap hero-wrap">
-    <div class="hero-text">
-    <p class="kicker reveal" data-t="k_team">THE CONCEPT TEAM</p>
-    <h1 class="name reveal"><span data-t="h1_a">Six coaches.</span> <i data-t="h1_em">One method.</i></h1>
-    <p class="lede on-dark reveal" data-t="lede">Each member of the Concept team is responsible for one part of English, and Netto, the director of studies, leads them. They are AI coaches built on the Concept method. Your people talk to them in the Concept Coach app on the days without a lesson.</p>
-    <div class="cta-row reveal">
-      <a class="btn btn-solid" href="#test" data-t="cta_test">Take the 5-question test</a>
-      <button class="btn btn-outline sound" id="soundBtn" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span id="soundTxt"><!--pre:soundTxt-->Sound on<!--/pre:soundTxt--></span></button>
-    </div>
-    </div>
-    <nav class="roll reveal-scale" aria-label="The team"><a href="#netto"><span class="face" style="background-image:url(team/home-netto-still.webp?v=7)" role="img" aria-label="Netto"></span><span class="nm">Netto</span></a><a href="#victor-hugo"><span class="face" style="background-image:url(team/home-victor-hugo-still.webp?v=7)" role="img" aria-label="Victor Hugo"></span><span class="nm">Victor Hugo</span></a><a href="#luana"><span class="face" style="background-image:url(team/home-luana-still.webp?v=7)" role="img" aria-label="Luana"></span><span class="nm">Luana</span></a><a href="#bia"><span class="face" style="background-image:url(team/home-bia-still.webp?v=7)" role="img" aria-label="Bia"></span><span class="nm">Bia</span></a><a href="#murillo"><span class="face" style="background-image:url(team/home-murillo-still.webp?v=7)" role="img" aria-label="Murillo"></span><span class="nm">Murillo</span></a><a href="#marcelo"><span class="face" style="background-image:url(team/home-marcelo-still.webp?v=7)" role="img" aria-label="Marcelo"></span><span class="nm">Marcelo</span></a></nav>
-  </div>
-</section>
-<button class="tap-pill" id="tapPill" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-t="tap_sound">Tap anywhere to hear the team</span></button>
-
-<section class="bg-black" id="test">
+<header class="nav">
   <div class="wrap">
-    <div class="test-intro reveal">
-      <p class="kicker" data-t="k_test">THE TEAM TEST</p>
-      <h2 class="headline" style="color:#fff;"><span data-t="test_h2_a">Would your team get</span> <i data-t="test_h2_em">these right?</i></h2>
-      <p class="body-copy on-dark" data-t="test_p">Five questions, one from each specialist. They come from real situations at work. No sign-up, and the answers are explained.</p>
+    <a class="brand" href="index.html"><svg role="img" aria-label="Concept" viewBox="0 0 400 400"><path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" stroke="#1A1A1A" stroke-width="8" stroke-linecap="round" fill="none"/><circle cx="200" cy="200" r="11" fill="#1A1A1A"/><polygon points="322.87,113.96 208.03,211.47 191.97,188.53" fill="#B3132B"/><circle cx="322.87" cy="113.96" r="7" fill="#B3132B"/></svg><span>CONCEPT</span></a>
+    <div class="nav-r">
+      <a class="lk" href="method.html">Method</a>
+      <a class="lk" href="about.html">About</a>
+      <a class="lk" href="team.html" aria-current="page">Team</a>
+      <a class="lk" href="book.html">Books</a>
+      <a class="lk" href="https://lessons.theconceptmethod.com">Students</a>
+      <a class="lk" href="https://lessons.theconceptmethod.com/teaching#teacher">Teachers</a>
+      <button class="btn-icon" id="soundBtn" type="button" aria-label="Turn sound on" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <a class="btn-cta" href="index.html#start">Talk to us</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">THE CONCEPT TEAM</p>
+      <h1 class="d-xl">Your team's English is correct. Now make it <em>land.</em></h1>
+      <p class="body-l">Six AI coaches built on the Concept method, each responsible for one part of English and led by Netto, director of studies. Your people work with them in the Concept Coach app on the days between lessons.</p>
+      <div class="go"><a class="btn-pri" id="teamBtn" href="#victor-hugo">Meet the team</a><span class="caption"><a href="#test">Or go straight to the five-question test</a></span></div>
+    </div>
+    <div class="h-netto">
+      <div class="stage breathe" id="heroNetto"><img src="team/netto-point-first.webp?v=12" alt="Netto, director of studies" width="440" height="716"></div>
+      <p class="d-s">Netto</p>
+      <span class="micro">DIRECTOR OF STUDIES</span>
     </div>
   </div>
 </section>
 
-<div id="members"><!--pre:members--><section class="member bg-black" id="netto"><div class="wrap mgrid"><div class="mfig n3d reveal-scale"><div class="n3d-stage"><img alt="Netto, coach and director of studies" class="n3d-point" height="695" src="team/netto-point-first.webp?v=7" width="380"/><video aria-hidden="true" class="n3d-talk" height="1010" playsinline="" preload="none" src="team/netto-talk.mp4?v=7" width="720"></video></div><button class="hear" data-id="netto" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"></path><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path></svg><span class="hl">Hear Netto</span></button></div><div class="mcopy reveal"><p class="kicker mrole">COACH AND DIRECTOR OF STUDIES</p><h2 class="mname">Netto</h2><p class="mline">“Let's make it land!”</p><div class="mrow"><div aria-hidden="true" class="mphone"><div class="pfloat"><div class="p3d" style="--ry: -18deg; --rx: 6deg; --rz: -2deg;"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen"><div class="papp"><img alt="" class="pmark" src="team/netto-face.webp"/><div><b>Netto</b><span class="prole">Coach and director of studies</span></div></div><div class="tchat"><div class="tmsg them hi"><div class="lbl"><img alt="" src="team/netto-face.webp"/><span>Netto</span></div><div class="mhi"></div></div><div class="tmsg me"><div class="lbl ml">Your question</div><div class="mask"></div></div><div class="tmsg them"><div class="lbl"><img alt="" src="team/netto-face.webp"/><span>Netto</span></div><div class="mans"></div></div></div><div class="pbar"><span>Concept Coach</span></div></div><i class="pisland"></i><i class="psheen"></i></div></div></div></div></div></div></div></section><section class="member bg-black flip" id="victor-hugo"><div class="wrap mgrid"><div class="mfig reveal-scale"><video aria-hidden="true" data-src="team/home-victor-hugo.mp4?v=7" height="1010" muted="" playsinline="" poster="team/home-victor-hugo-still.webp?v=7" preload="none" width="720"></video><button class="hear" data-id="victor-hugo" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"></path><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path></svg><span class="hl">Hear Victor Hugo</span></button></div><div class="mcopy reveal"><p class="kicker mrole">REGISTER</p><h2 class="mname">Victor Hugo</h2><p class="mline">“Read the room, then hit send.”</p><div class="mrow"><div aria-hidden="true" class="mphone"><div class="pfloat"><div class="p3d" style="--ry: -24deg; --rx: 7deg; --rz: 2deg;"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen"><div class="papp"><img alt="" class="pmark" src="team/victor-hugo-face.webp"/><div><b>Victor Hugo</b><span class="prole">Register</span></div></div><div class="tchat"><div class="tmsg them hi"><div class="lbl"><img alt="" src="team/victor-hugo-face.webp"/><span>Victor Hugo</span></div><div class="mhi"></div></div><div class="tmsg me"><div class="lbl ml">Your question</div><div class="mask"></div></div><div class="tmsg them"><div class="lbl"><img alt="" src="team/victor-hugo-face.webp"/><span>Victor Hugo</span></div><div class="mans"></div></div></div><div class="pbar"><span>Concept Coach</span></div></div><i class="pisland"></i><i class="psheen"></i></div></div></div></div><div class="quiz" data-id="victor-hugo"><div class="q-label"><img alt="" height="26" src="team/victor-hugo-face.webp" width="26"/><span class="ql">A QUESTION FROM</span> Victor Hugo</div><p class="q">You need a client to sign the contract by Friday. Which sentence is right for the client?</p><div class="opts"><button class="opt" data-k="0" type="button">Sign the contract by Friday.</button><button class="opt" data-k="1" type="button">Would it be possible to have the contract signed by Friday?</button><button class="opt" data-k="2" type="button">I need the contract signed by Friday.</button></div><div class="verdict" hidden=""><b class="vw"></b> <span class="vt"></span></div><a class="next" hidden="" href="#">Next question: Luana →</a></div></div></div></div></section><section class="member bg-black" id="luana"><div class="wrap mgrid"><div class="mfig reveal-scale"><video aria-hidden="true" data-src="team/home-luana.mp4?v=7" height="1010" muted="" playsinline="" poster="team/home-luana-still.webp?v=7" preload="none" width="720"></video><button class="hear" data-id="luana" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"></path><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path></svg><span class="hl">Hear Luana</span></button></div><div class="mcopy reveal"><p class="kicker mrole">GRAMMAR AND PUNCTUATION</p><h2 class="mname">Luana</h2><p class="mline">“Every comma counts.”</p><div class="mrow"><div aria-hidden="true" class="mphone"><div class="pfloat"><div class="p3d" style="--ry: -14deg; --rx: 9deg; --rz: -1deg;"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen"><div class="papp"><img alt="" class="pmark" src="team/luana-face.webp"/><div><b>Luana</b><span class="prole">Grammar and punctuation</span></div></div><div class="tchat"><div class="tmsg them hi"><div class="lbl"><img alt="" src="team/luana-face.webp"/><span>Luana</span></div><div class="mhi"></div></div><div class="tmsg me"><div class="lbl ml">Your question</div><div class="mask"></div></div><div class="tmsg them"><div class="lbl"><img alt="" src="team/luana-face.webp"/><span>Luana</span></div><div class="mans"></div></div></div><div class="pbar"><span>Concept Coach</span></div></div><i class="pisland"></i><i class="psheen"></i></div></div></div></div><div class="quiz" data-id="luana"><div class="q-label"><img alt="" height="26" src="team/luana-face.webp" width="26"/><span class="ql">A QUESTION FROM</span> Luana</div><p class="q">Which sentence is correct?</p><div class="opts"><button class="opt" data-k="0" type="button">I work here since 2019.</button><button class="opt" data-k="1" type="button">I have worked here since 2019.</button><button class="opt" data-k="2" type="button">I am working here since 2019.</button></div><div class="verdict" hidden=""><b class="vw"></b> <span class="vt"></span></div><a class="next" hidden="" href="#">Next question: Bia →</a></div></div></div></div></section><section class="member bg-black flip" id="bia"><div class="wrap mgrid"><div class="mfig reveal-scale"><video aria-hidden="true" data-src="team/home-bia.mp4?v=7" height="1010" muted="" playsinline="" poster="team/home-bia-still.webp?v=7" preload="none" width="720"></video><button class="hear" data-id="bia" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"></path><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path></svg><span class="hl">Hear Bia</span></button></div><div class="mcopy reveal"><p class="kicker mrole">EXPRESSIONS</p><h2 class="mname">Bia</h2><p class="mline">“That's how people really say it.”</p><div class="mrow"><div aria-hidden="true" class="mphone"><div class="pfloat"><div class="p3d" style="--ry: -28deg; --rx: 5deg; --rz: 1deg;"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen"><div class="papp"><img alt="" class="pmark" src="team/bia-face.webp"/><div><b>Bia</b><span class="prole">Expressions</span></div></div><div class="tchat"><div class="tmsg them hi"><div class="lbl"><img alt="" src="team/bia-face.webp"/><span>Bia</span></div><div class="mhi"></div></div><div class="tmsg me"><div class="lbl ml">Your question</div><div class="mask"></div></div><div class="tmsg them"><div class="lbl"><img alt="" src="team/bia-face.webp"/><span>Bia</span></div><div class="mans"></div></div></div><div class="pbar"><span>Concept Coach</span></div></div><i class="pisland"></i><i class="psheen"></i></div></div></div></div><div class="quiz" data-id="bia"><div class="q-label"><img alt="" height="26" src="team/bia-face.webp" width="26"/><span class="ql">A QUESTION FROM</span> Bia</div><p class="q">Your manager writes: “Let's touch base tomorrow.” What does she want?</p><div class="opts"><button class="opt" data-k="0" type="button">A short conversation to check how things are going</button><button class="opt" data-k="1" type="button">A meeting at the main office</button><button class="opt" data-k="2" type="button">To finish the project tomorrow</button></div><div class="verdict" hidden=""><b class="vw"></b> <span class="vt"></span></div><a class="next" hidden="" href="#">Next question: Murillo →</a></div></div></div></div></section><section class="member bg-black" id="murillo"><div class="wrap mgrid"><div class="mfig reveal-scale"><video aria-hidden="true" data-src="team/home-murillo.mp4?v=7" height="1010" muted="" playsinline="" poster="team/home-murillo-still.webp?v=7" preload="none" width="720"></video><button class="hear" data-id="murillo" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"></path><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path></svg><span class="hl">Hear Murillo</span></button></div><div class="mcopy reveal"><p class="kicker mrole">PRONUNCIATION AND LISTENING</p><h2 class="mname">Murillo</h2><p class="mline">“Stress the word that matters.”</p><div class="mrow"><div aria-hidden="true" class="mphone"><div class="pfloat"><div class="p3d" style="--ry: -16deg; --rx: 11deg; --rz: 2deg;"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen"><div class="papp"><img alt="" class="pmark" src="team/murillo-face.webp"/><div><b>Murillo</b><span class="prole">Pronunciation and listening</span></div></div><div class="tchat"><div class="tmsg them hi"><div class="lbl"><img alt="" src="team/murillo-face.webp"/><span>Murillo</span></div><div class="mhi"></div></div><div class="tmsg me"><div class="lbl ml">Your question</div><div class="mask"></div></div><div class="tmsg them"><div class="lbl"><img alt="" src="team/murillo-face.webp"/><span>Murillo</span></div><div class="mans"></div></div></div><div class="pbar"><span>Concept Coach</span></div></div><i class="pisland"></i><i class="psheen"></i></div></div></div></div><div class="quiz" data-id="murillo"><div class="q-label"><img alt="" height="26" src="team/murillo-face.webp" width="26"/><span class="ql">A QUESTION FROM</span> Murillo</div><p class="q">How many syllables does “Wednesday” have?</p><div class="opts"><button class="opt" data-k="0" type="button">Three: Wed-nes-day</button><button class="opt" data-k="1" type="button">Two: WENZ-day</button></div><div class="verdict" hidden=""><b class="vw"></b> <span class="vt"></span></div><a class="next" hidden="" href="#">Next question: Marcelo →</a></div></div></div></div></section><section class="member bg-black flip" id="marcelo"><div class="wrap mgrid"><div class="mfig reveal-scale"><video aria-hidden="true" data-src="team/home-marcelo.mp4?v=7" height="1010" muted="" playsinline="" poster="team/home-marcelo-still.webp?v=7" preload="none" width="720"></video><button class="hear" data-id="marcelo" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"></path><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path></svg><span class="hl">Hear Marcelo</span></button></div><div class="mcopy reveal"><p class="kicker mrole">WORD ORIGINS</p><h2 class="mname">Marcelo</h2><p class="mline">“Every word has a story.”</p><div class="mrow"><div aria-hidden="true" class="mphone"><div class="pfloat"><div class="p3d" style="--ry: -22deg; --rx: 7deg; --rz: 0deg;"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen"><div class="papp"><img alt="" class="pmark" src="team/marcelo-face.webp"/><div><b>Marcelo</b><span class="prole">Word origins</span></div></div><div class="tchat"><div class="tmsg them hi"><div class="lbl"><img alt="" src="team/marcelo-face.webp"/><span>Marcelo</span></div><div class="mhi"></div></div><div class="tmsg me"><div class="lbl ml">Your question</div><div class="mask"></div></div><div class="tmsg them"><div class="lbl"><img alt="" src="team/marcelo-face.webp"/><span>Marcelo</span></div><div class="mans"></div></div></div><div class="pbar"><span>Concept Coach</span></div></div><i class="pisland"></i><i class="psheen"></i></div></div></div></div><div class="quiz" data-id="marcelo"><div class="q-label"><img alt="" height="26" src="team/marcelo-face.webp" width="26"/><span class="ql">A QUESTION FROM</span> Marcelo</div><p class="q">The word “salary” comes from a Latin word connected to…</p><div class="opts"><button class="opt" data-k="0" type="button">salt</button><button class="opt" data-k="1" type="button">soldiers</button><button class="opt" data-k="2" type="button">silver</button></div><div class="verdict" hidden=""><b class="vw"></b> <span class="vt"></span></div><a class="next" hidden="" href="#">See your result →</a></div></div></div></div></section><!--/pre:members--></div>
 
-<section class="bg-black section-pad" id="result">
+<section class="coach p-left" id="victor-hugo" data-says="home-victor-hugo-open1,home-victor-hugo-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:365px" data-m="victor-hugo"><img class="base" src="team/move-victor-hugo-start.webp" alt="Victor Hugo, register coach" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">REGISTER</p><h2 class="d-l">Victor Hugo</h2><p class="quote">&ldquo;Read the room, then hit send.&rdquo;</p><p class="body-l">Victor Hugo shows your people what a sentence tells the person reading it, from a client email to a quick Slack thread. They choose the version. He makes sure they know why.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hear Victor Hugo</span></button></div><div class="c-phone"><div class="phone" aria-label="Victor Hugo in the Concept Coach app"><div class="ph-screen"><div class="ph-top"><p class="ph-label">CHECK</p><p class="ph-q">Who is reading?</p><div class="ph-chips"><span class="chip on">Client</span><span class="chip">Manager</span><span class="chip">Leadership</span><span class="chip">Slack</span></div><div class="ph-card">We need the contract signed by Friday.</div></div><div class="ph-panel"><p class="pn-label">WHAT THIS TELLS A CLIENT</p><p class="pn-lead">Correct, and it reads as an order. The client hears your deadline before their reason to sign.</p><hr><div class="pn-row"><p class="pn-s">Would it be possible to have the contract signed by Friday?</p><p class="pn-n">Reads as a request. The client has room to say yes.</p></div><div class="pn-row"><p class="pn-s">Could we aim to have it signed by Friday?</p><p class="pn-n">Makes the deadline shared work.</p></div><p class="pn-pivot">You know this client. Your call.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="on">Check</span><span class="">Expressions</span><span class="">Word origins</span><span class="">Books</span></nav></div></div></div></div></section><section class="coach a-left" id="luana" data-says="home-luana-open2,home-luana-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:376px" data-m="luana"><img class="base" src="team/move-luana-start.webp" alt="Luana, grammar and punctuation coach" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">GRAMMAR AND PUNCTUATION</p><h2 class="d-l">Luana</h2><p class="quote">&ldquo;Every comma counts.&rdquo;</p><p class="body-l">Luana works on the sentences that are almost right. She shows what a comma or a tense changes for the reader, so the fix sticks the next time.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hear Luana</span></button></div><div class="c-phone"><div class="phone" aria-label="Luana in the Concept Coach app"><div class="ph-screen"><div class="ph-top"><p class="ph-label">BOOKS, C1 GRAMMAR</p><div class="ph-card">Our CEO who joined in March will present the results.</div><p class="ph-q">Is this right for an all-hands email?</p></div><div class="ph-panel"><p class="pn-label">WHAT THE COMMAS CHANGE</p><p class="pn-lead">Without commas, the sentence suggests you have more than one CEO and you mean the one who joined in March.</p><hr><div class="pn-row"><p class="pn-s">Our CEO, who joined in March, will present the results.</p><p class="pn-n">One CEO. The March detail is extra information.</p></div><p class="pn-pivot">Two commas. One CEO.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="">Check</span><span class="">Expressions</span><span class="">Word origins</span><span class="on">Books</span></nav></div></div></div></div></section><section class="coach p-left" id="bia" data-says="home-bia-open1,home-bia-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:453px" data-m="bia"><img class="base" src="team/move-bia-start.webp" alt="Bia, expressions coach" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">EXPRESSIONS</p><h2 class="d-l">Bia</h2><p class="quote">&ldquo;That&#x27;s how people really say it.&rdquo;</p><p class="body-l">Bia explains the expressions people hear in meetings and Slack, with the closest version in their own language and the situations where each one fits.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hear Bia</span></button></div><div class="c-phone"><div class="phone" aria-label="Bia in the Concept Coach app"><div class="ph-screen"><div class="ph-top"><p class="ph-label">EXPRESSIONS</p><div class="ph-chips"><span class="chip on">English to Italian</span><span class="chip">English to Portuguese</span></div><div class="ph-card">touch base</div></div><div class="ph-panel"><p class="pn-label">IN ITALIAN</p><p class="pn-lead">Closest to fare il punto or sentirsi un attimo.</p><hr><div class="pn-row"><p class="pn-s">Let&#x27;s touch base tomorrow.</p><p class="pn-n">Very common at work. Fine with your manager and your team.</p></div><div class="pn-row"><p class="pn-s">Could we have a quick call tomorrow?</p><p class="pn-n">Safer with a new client.</p></div><p class="pn-pivot">Same idea, a different room.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="">Check</span><span class="on">Expressions</span><span class="">Word origins</span><span class="">Books</span></nav></div></div></div></div></section><section class="coach a-left" id="murillo" data-says="home-murillo-open1,home-murillo-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:358px" data-m="murillo"><img class="base" src="team/move-murillo-start.webp" alt="Murillo, pronunciation and listening coach" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">PRONUNCIATION AND LISTENING</p><h2 class="d-l">Murillo</h2><p class="quote">&ldquo;Stress the word that matters.&rdquo;</p><p class="body-l">Murillo gives your people a sentence from real work, listens to them say it and shows exactly where the stress fell. Then they try again.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hear Murillo</span></button></div><div class="c-phone"><div class="phone" aria-label="Murillo in the Concept Coach app"><div class="ph-screen"><div class="ph-top"><p class="ph-label">BOOKS, CALIBRATED SPEECH</p><p class="ph-q">Say it out loud</p><div class="ph-card">I'd like to <b>present</b> the results.</div><div class="ph-rec"><span class="rec" aria-hidden="true"></span><span>Recorded. 4 seconds.</span></div></div><div class="ph-panel"><p class="pn-label">WHAT MURILLO HEARD</p><p class="pn-lead">You said PRES-ent, the noun. As a verb it is pre-SENT.</p><hr><div class="pn-row"><p class="pn-s">The gift is a PRES-ent.</p><p class="pn-n">You pre-SENT the results.</p></div><p class="pn-pivot">Once more, stress on SENT.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="">Check</span><span class="">Expressions</span><span class="">Word origins</span><span class="on">Books</span></nav></div></div></div></div></section><section class="coach p-left" id="marcelo" data-says="home-marcelo-open1,home-marcelo-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:449px" data-m="marcelo"><img class="base" src="team/move-marcelo-start.webp" alt="Marcelo, word origins coach" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">WORD ORIGINS</p><h2 class="d-l">Marcelo</h2><p class="quote">&ldquo;Every word has a story.&rdquo;</p><p class="body-l">Marcelo is the intern who digs up where words come from. A word with a story is a word people remember and use with confidence.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hear Marcelo</span></button></div><div class="c-phone"><div class="phone" aria-label="Marcelo in the Concept Coach app"><div class="ph-screen"><div class="ph-top"><p class="ph-label">WORD ORIGINS</p><div class="ph-card">budget</div></div><div class="ph-panel"><p class="pn-label">WHERE IT CAME FROM</p><p class="pn-lead">From the Old French bougette, a small leather bag.</p><hr><div class="pn-row"><p class="pn-s">In Britain, the finance minister opened the budget, the bag that held the year&#x27;s accounts. The word moved from the bag to the plan inside it.</p></div><p class="pn-pivot">Now you won&#x27;t forget it.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="">Check</span><span class="">Expressions</span><span class="on">Word origins</span><span class="">Books</span></nav></div></div></div></div></section>
+
+<section class="closing">
   <div class="wrap">
-    <div class="closing reveal">
-      <div class="cfilm"><video id="closingFilm" playsinline preload="none" poster="team/netto-closing-first.webp?v=7" data-src="team/netto-closing.mp4?v=7" width="720" height="1280"></video>
-        <button class="hear" id="closingHear" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/></svg><span data-t="hear_close">Play with sound</span></button></div>
-    <div class="result">
-      <p class="kicker" data-t="k_result">YOUR RESULT</p>
-      <h2 class="headline" style="color:#fff;" id="resultLine"><!--pre:resultLine-->Answer the five questions above to see your result.<!--/pre:resultLine--></h2>
-      <p class="lede on-dark" data-t="result_p">Your people can practice like this every day, with the Concept team, between lessons. The lessons and the team follow the same method.</p>
-      <div class="cta-row">
-        <a class="btn btn-solid" id="ctaCall" href="index.html#start" data-t="cta_call">Book the diagnostic call</a>
-        <a class="btn btn-outline" id="ctaHome" href="index.html" data-t="cta_home">Back to the home page</a>
+    <p class="eyebrow">HOW IT WORKS FOR YOUR COMPANY</p>
+    <h2 class="d-l">Practice in private. <em>Improve</em> in public.</h2>
+    <div class="cols">
+      <div><span class="t-card">What stays with the learner</span><p class="body">Conversations with the coaches stay between the learner and the coach. The company never sees an individual's answers or level. People practice the sentence they would never risk in a meeting.</p></div>
+      <div><span class="t-card">How it fits the lessons</span><p class="body">The app picks up what came up in class, so the practice starts where the lesson stopped. Every coach follows the same method as the teacher in the room.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="test" id="test">
+  <div class="wrap"><p class="caption t-intro">Five situations from real work. No sign-up.</p><div class="qcard" data-n="1" data-right="2" data-coach="victor-hugo" data-land="You asked for a date and kept the client." data-slip="Your reminder was correct but asked for nothing the client could act on."><div class="q-av"><span class="qdisc" role="img" aria-label="Victor Hugo, register coach"><img class="qd-in" src="team/tiles/victor-hugo-still.webp" alt="" width="260" height="270" style="width:240px;left:-40px;top:-46px;clip-path:circle(80px at 120px 126px)"><img class="qd-up" src="team/tiles/victor-hugo-still.webp" alt="" width="260" height="270" style="width:240px;left:-40px;top:-46px;clip-path:inset(-60px -60px 123px -60px)"></span><p class="q-who"><span class="t-card">Victor Hugo</span><span class="micro">REGISTER</span></p></div><div class="q-body"><p class="eyebrow">QUESTION 1 OF 5</p><div class="bar"><i style="width:20%"></i></div><h3 class="d-m">A client&#x27;s invoice is three weeks late. Which message do you send?</h3><p class="body goal">You want the payment and you want to keep the client.</p><div class="opts"><button class="opt" type="button" data-k="0"><span class="o-t">Just a friendly reminder that invoice 214 is now overdue.</span><span class="o-x" hidden>Polite on the surface. Many clients read “friendly reminder” as a warning, and it asks for nothing specific.</span></button><button class="opt" type="button" data-k="1"><span class="o-t">As per my last email, invoice 214 is overdue.</span><span class="o-x" hidden>Tells the client they ignored you. It gets read as irritation, and it puts the relationship on the table.</span></button><button class="opt" type="button" data-k="2"><span class="o-t">Could you let me know when we can expect payment on invoice 214?</span><span class="o-x" hidden>Asks for a date instead of an apology. It keeps the door open and gets you a commitment.</span></button></div><p class="quote verdict" hidden><span class="v-land" hidden>That one lands.</span><span class="v-slip" hidden>That one slips.</span></p><button class="btn-pri next" type="button" hidden>Next question</button></div></div><div class="qcard" data-n="2" data-right="0" data-coach="luana" data-land="Clean sentence for a board report." data-slip="“Less” with things you count. Easy to miss, easy for a board to notice." hidden><div class="q-av"><span class="qdisc" role="img" aria-label="Luana, grammar and punctuation coach"><img class="qd-in" src="team/tiles/luana-still.webp" alt="" width="260" height="270" style="width:263px;left:-52px;top:-70px;clip-path:circle(80px at 132px 150px)"><img class="qd-up" src="team/tiles/luana-still.webp" alt="" width="260" height="270" style="width:263px;left:-52px;top:-70px;clip-path:inset(-60px -60px 123px -60px)"></span><p class="q-who"><span class="t-card">Luana</span><span class="micro">GRAMMAR AND PUNCTUATION</span></p></div><div class="q-body"><p class="eyebrow">QUESTION 2 OF 5</p><div class="bar"><i style="width:40%"></i></div><h3 class="d-m">This sentence opens your report to the board. Which version would a careful editor leave alone?</h3><p class="body goal">The board reads every word. You want them reading the numbers.</p><div class="opts"><button class="opt" type="button" data-k="0"><span class="o-t">Fewer clients renewed this quarter than last.</span><span class="o-x" hidden>Clean. “Fewer” goes with things you can count, like clients.</span></button><button class="opt" type="button" data-k="1"><span class="o-t">Less clients renewed this quarter than last.</span><span class="o-x" hidden>Common in speech, so it sounds fine. In writing to a board, some readers will stop on it.</span></button><button class="opt" type="button" data-k="2"><span class="o-t">Less clients have renewed this quarter compared to last.</span><span class="o-x" hidden>Same slip, plus a longer comparison that weakens the number.</span></button></div><p class="quote verdict" hidden><span class="v-land" hidden>That one lands.</span><span class="v-slip" hidden>That one slips.</span></p><button class="btn-pri next" type="button" hidden>Next question</button></div></div><div class="qcard" data-n="3" data-right="1" data-coach="bia" data-land="You read the client the way the client meant it." data-slip="The phrase was softer than its meaning." hidden><div class="q-av"><span class="qdisc" role="img" aria-label="Bia, expressions coach"><img class="qd-in" src="team/tiles/bia-still.webp" alt="" width="260" height="270" style="width:304px;left:-72px;top:-95px;clip-path:circle(80px at 152px 175px)"><img class="qd-up" src="team/tiles/bia-still.webp" alt="" width="260" height="270" style="width:304px;left:-72px;top:-95px;clip-path:inset(-60px -60px 140px -60px)"></span><p class="q-who"><span class="t-card">Bia</span><span class="micro">EXPRESSIONS</span></p></div><div class="q-body"><p class="eyebrow">QUESTION 3 OF 5</p><div class="bar"><i style="width:60%"></i></div><h3 class="d-m">A client says your proposal is “not quite there yet.” What is the client telling you?</h3><p class="body goal">You want to know whether to edit or rethink.</p><div class="opts"><button class="opt" type="button" data-k="0"><span class="o-t">It&#x27;s almost ready. A few small edits will do.</span><span class="o-x" hidden>The literal reading. In business English this phrase is usually softer than what it means.</span></button><button class="opt" type="button" data-k="1"><span class="o-t">It needs real changes before the client will say yes.</span><span class="o-x" hidden>The polite way of saying no to this version. The client is still open, but small edits will not get you there.</span></button><button class="opt" type="button" data-k="2"><span class="o-t">The client is rejecting the proposal.</span><span class="o-x" hidden>Too far. A client who was done would not say “yet.”</span></button></div><p class="quote verdict" hidden><span class="v-land" hidden>That one lands.</span><span class="v-slip" hidden>That one slips.</span></p><button class="btn-pri next" type="button" hidden>Next question</button></div></div><div class="qcard" data-n="4" data-right="1" data-coach="murillo" data-land="You stressed the word that mattered." data-slip="The stress fell on the wrong word, so the point got lost." hidden><div class="q-av"><span class="qdisc" role="img" aria-label="Murillo, pronunciation and listening coach"><img class="qd-in" src="team/tiles/murillo-still.webp" alt="" width="260" height="270" style="width:240px;left:-40px;top:-63px;clip-path:circle(80px at 120px 143px)"><img class="qd-up" src="team/tiles/murillo-still.webp" alt="" width="260" height="270" style="width:240px;left:-40px;top:-63px;clip-path:inset(-60px -60px 107px -60px)"></span><p class="q-who"><span class="t-card">Murillo</span><span class="micro">PRONUNCIATION AND LISTENING</span></p></div><div class="q-body"><p class="eyebrow">QUESTION 4 OF 5</p><div class="bar"><i style="width:80%"></i></div><h3 class="d-m">You are correcting a date on a call. Which word carries the stress?</h3><p class="body goal">You want the correction to be the first thing they hear.</p><div class="opts"><button class="opt" type="button" data-k="0"><span class="o-t">The MEETING is on Thursday, not Tuesday.</span><span class="o-x" hidden>Stresses the wrong idea. Nobody doubted it was a meeting.</span></button><button class="opt" type="button" data-k="1"><span class="o-t">The meeting is on THURSDAY, not Tuesday.</span><span class="o-x" hidden>The new day is the news, so it carries the stress.</span></button><button class="opt" type="button" data-k="2"><span class="o-t">The meeting IS on Thursday, not Tuesday.</span><span class="o-x" hidden>Sounds like an argument about whether the meeting exists.</span></button></div><p class="quote verdict" hidden><span class="v-land" hidden>That one lands.</span><span class="v-slip" hidden>That one slips.</span></p><button class="btn-pri next" type="button" hidden>Next question</button></div></div><div class="qcard" data-n="5" data-right="0" data-coach="marcelo" data-land="You knew where the word came from." data-slip="The word had a darker start than most people guess." hidden><div class="q-av"><span class="qdisc" role="img" aria-label="Marcelo, word origins coach"><img class="qd-in" src="team/tiles/marcelo-still.webp" alt="" width="260" height="270" style="width:263px;left:-52px;top:-67px;clip-path:circle(80px at 132px 147px)"><img class="qd-up" src="team/tiles/marcelo-still.webp" alt="" width="260" height="270" style="width:263px;left:-52px;top:-67px;clip-path:inset(-60px -60px 126px -60px)"></span><p class="q-who"><span class="t-card">Marcelo</span><span class="micro">WORD ORIGINS</span></p></div><div class="q-body"><p class="eyebrow">QUESTION 5 OF 5</p><div class="bar"><i style="width:100%"></i></div><h3 class="d-m">The word “deadline” first meant...</h3><p class="body goal">Every word has a story. This one starts in the 1860s.</p><div class="opts"><button class="opt" type="button" data-k="0"><span class="o-t">A line in a prison camp that prisoners were not allowed to cross.</span><span class="o-x" hidden>First recorded in the United States in the 1860s. Printers later used it for the edge of the printable area, and newsrooms turned it into a time.</span></button><button class="opt" type="button" data-k="1"><span class="o-t">The last train of the day.</span><span class="o-x" hidden>A good guess, but the railways had nothing to do with it.</span></button><button class="opt" type="button" data-k="2"><span class="o-t">The date a contract expires.</span><span class="o-x" hidden>That came much later, once “deadline” already meant a time limit.</span></button></div><p class="quote verdict" hidden><span class="v-land" hidden>That one lands.</span><span class="v-slip" hidden>That one slips.</span></p><button class="btn-pri next" type="button" hidden>See your result</button></div></div></div>
+</section>
+
+<section class="result" id="result">
+  <div class="wrap">
+    <div class="r-side"><div class="r-film" id="rFilm"><video id="closingFilm" playsinline muted preload="none" poster="team/netto-closing-first.webp?v=10" data-src="team/netto-closing.mp4?v=10" width="720" height="1280" aria-label="Netto"></video></div>
+      <button class="btn-sec" id="hearNetto" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Hear Netto</span></button></div>
+    <div>
+      <p class="eyebrow">YOUR RESULT</p>
+      <div id="rWait"><h2 class="d-l">See where your team <em>lands.</em></h2>
+        <p class="body-l">Answer the five questions above and your result appears here.</p>
+        <div class="r-go" style="margin-top:var(--s5)"><a class="btn-pri" href="index.html#start">Book the diagnostic call</a></div></div>
+      <div id="rDone" hidden>
+        <h2 class="d-l">You landed <em id="rNum">five</em> of five.</h2>
+        <p class="body-l">Here is where your English lands and where it slips. Each coach works on one of these in the app, a few minutes a day.</p>
+        <ul class="r-list"><li class="r-row" data-n="1" hidden><img src="team/victor-hugo-face.webp" alt="Victor Hugo, register coach" width="56" height="56"><div class="r-name"><span class="t-card">Victor Hugo</span><span class="micro">REGISTER</span></div><p class="body r-note"><span class="n-land" hidden>You asked for a date and kept the client.</span><span class="n-slip" hidden>Your reminder was correct but asked for nothing the client could act on.</span></p><span class="pill"><span class="p-land" hidden>LANDED</span><span class="p-slip" hidden>SLIPPED</span></span></li><li class="r-row" data-n="2" hidden><img src="team/luana-face.webp" alt="Luana, grammar and punctuation coach" width="56" height="56"><div class="r-name"><span class="t-card">Luana</span><span class="micro">GRAMMAR AND PUNCTUATION</span></div><p class="body r-note"><span class="n-land" hidden>Clean sentence for a board report.</span><span class="n-slip" hidden>“Less” with things you count. Easy to miss, easy for a board to notice.</span></p><span class="pill"><span class="p-land" hidden>LANDED</span><span class="p-slip" hidden>SLIPPED</span></span></li><li class="r-row" data-n="3" hidden><img src="team/bia-face.webp" alt="Bia, expressions coach" width="56" height="56"><div class="r-name"><span class="t-card">Bia</span><span class="micro">EXPRESSIONS</span></div><p class="body r-note"><span class="n-land" hidden>You read the client the way the client meant it.</span><span class="n-slip" hidden>The phrase was softer than its meaning.</span></p><span class="pill"><span class="p-land" hidden>LANDED</span><span class="p-slip" hidden>SLIPPED</span></span></li><li class="r-row" data-n="4" hidden><img src="team/murillo-face.webp" alt="Murillo, pronunciation and listening coach" width="56" height="56"><div class="r-name"><span class="t-card">Murillo</span><span class="micro">PRONUNCIATION AND LISTENING</span></div><p class="body r-note"><span class="n-land" hidden>You stressed the word that mattered.</span><span class="n-slip" hidden>The stress fell on the wrong word, so the point got lost.</span></p><span class="pill"><span class="p-land" hidden>LANDED</span><span class="p-slip" hidden>SLIPPED</span></span></li><li class="r-row" data-n="5" hidden><img src="team/marcelo-face.webp" alt="Marcelo, word origins coach" width="56" height="56"><div class="r-name"><span class="t-card">Marcelo</span><span class="micro">WORD ORIGINS</span></div><p class="body r-note"><span class="n-land" hidden>You knew where the word came from.</span><span class="n-slip" hidden>The word had a darker start than most people guess.</span></p><span class="pill"><span class="p-land" hidden>LANDED</span><span class="p-slip" hidden>SLIPPED</span></span></li></ul>
+        <div class="r-go"><a class="btn-pri" href="index.html#start">Book the diagnostic call</a><a class="lk" id="shareTest" href="#test">Send the test to your team</a></div>
       </div>
     </div>
-    </div>
   </div>
 </section>
 
-<footer class="bg-black">
-  <div class="wrap">
-    <div class="footrow">
-      <div class="fl">
-        <svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-      <path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" stroke="#E7E8EA" stroke-width="8" stroke-linecap="round" fill="none"/>
-      <circle cx="200" cy="200" r="11" fill="#E7E8EA"/>
-      <g class="needle">
-        <polygon points="322.87,113.96 208.03,211.47 191.97,188.53" fill="#B3132B"/>
-        <circle cx="322.87" cy="113.96" r="7" fill="#B3132B"/>
-      </g>
-    </svg>
-        <span data-t="footer_tag">CONCEPT · SÃO PAULO · ROME · MILANO</span>
-      </div>
-      <div data-t="footer_copy">© 2026 Concept. Mind your future.</div>
-    </div>
-  </div>
-</footer>
-
+</main>
 
 <script>
-window.I18N = {
-  en: {
-    coach_k: "WHEN YOU OPEN THE COACH",
-    you_ask: "Your question",
-    tap_sound: "Tap anywhere to hear the team",
-    "team_you": "Your question",
-    "team_try": "Try a question from",
-    "team_meet_all": "Take the 5-question test",
-    "role_netto": "Coach and director of studies",
-    "role_victor-hugo": "Register",
-    "role_luana": "Grammar and punctuation",
-    "role_bia": "Expressions",
-    "role_murillo": "Pronunciation and listening",
-    "role_marcelo": "Word origins",
-    hear: "Hear",
-    sound_on: "Sound off",
-    sound_is_on: "Sound on",
-    k_close: "FROM NETTO",
-    hear_close: "Play with sound",
-    nav_home: "Home", nav_method: "Method", nav_about: "About", nav_team: "Team", nav_book: "Books", nav_lessons: "Students", nav_teachers: "Teachers", nav_cta: "Talk to us",
-    k_team: "THE CONCEPT TEAM",
-    h1_a: "Six coaches.", h1_em: "One method.",
-    lede: "Each member of the Concept team is responsible for one part of English, and Netto, the director of studies, leads them. They are AI coaches built on the Concept method. Your people talk to them in the Concept Coach app on the days without a lesson.",
-    cta_test: "Take the 5-question test",
-    k_test: "THE TEAM TEST",
-    test_h2_a: "Would your team get", test_h2_em: "these right?",
-    test_p: "Five questions, one from each specialist. They come from real situations at work. No sign-up, and the answers are explained.",
-    does: "WHAT THEY DO",
-    q_label: "A QUESTION FROM",
-    right: "Right.", wrong: "Not quite.",
-    next: "Next question",
-    to_result: "See your result",
-    k_result: "YOUR RESULT",
-    result_line: "You answered {n} of 5 the way the team would.",
-    result_none: "Answer the five questions above to see your result.",
-    result_p: "Your people can practice like this every day, with the Concept team, between lessons. The lessons and the team follow the same method.",
-    cta_call: "Book the diagnostic call", cta_home: "Back to the home page",
-    footer_tag: "CONCEPT · SÃO PAULO · ROME · MILANO", footer_copy: "© 2026 Concept. Mind your future.",
-    m: {
-      netto: {role: "Coach and director of studies", does: "Netto looks at what happened in your last lesson and tells you what to practice first. Progress, reports, and reminders come from him."},
-      "victor-hugo": {role: "Register", does: "You write the message, and Victor Hugo tells you if the tone is right for the person who will read it, a client or a colleague.",
-        why: "All three are correct English. The first and the third sound like orders. With a client, a question gives the same message and keeps the relationship good."},
-      luana: {role: "Grammar and punctuation", does: "Luana explains each correction in one plain sentence, so you understand the rule and the same mistake does not come back.",
-        why: "With since and a situation that is still true, English uses the present perfect: I have worked here since 2019."},
-      bia: {role: "Expressions", does: "Bia teaches the expressions people really use at work, and tells you where each one is safe to use.",
-        why: "To touch base means to have a short conversation to check how things are going. It is very common at work."},
-      murillo: {role: "Pronunciation and listening", does: "Murillo works on the stress and the sounds that change how English is understood, and on how fast real speech is.",
-        why: "Two syllables: /ˈwɛnzdeɪ/. The first d is silent, and the stress is on the first syllable."},
-      marcelo: {role: "Word origins", does: "Marcelo explains where words come from. Knowing the origin of a word helps you remember it.",
-        why: "From the Latin salarium, from sal, salt. Nobody knows for sure why. The popular story that Roman soldiers were paid in salt is not proven."}
-    }
-  },
-  pt: {
-    coach_k: "QUANDO VOCÊ ABRE O COACH",
-    you_ask: "Sua pergunta",
-    tap_sound: "Toque em qualquer lugar para ouvir o time",
-    "team_you": "Sua pergunta",
-    "team_try": "Responda uma pergunta de",
-    "team_meet_all": "Fazer o teste de 5 perguntas",
-    "role_netto": "Coach e diretor pedagógico",
-    "role_victor-hugo": "Registro",
-    "role_luana": "Gramática e pontuação",
-    "role_bia": "Expressões",
-    "role_murillo": "Pronúncia e escuta",
-    "role_marcelo": "Origem das palavras",
-    hear: "Ouvir",
-    sound_on: "Som desligado",
-    sound_is_on: "Som ligado",
-    k_close: "DO NETTO",
-    hear_close: "Ver com som",
-    nav_home: "Início", nav_method: "Método", nav_about: "Sobre", nav_team: "Time", nav_book: "Livros", nav_lessons: "Alunos", nav_teachers: "Professores", nav_cta: "Fale conosco",
-    k_team: "O TIME CONCEPT",
-    h1_a: "Seis coaches.", h1_em: "Um método.",
-    lede: "Cada membro do time Concept cuida de uma parte do inglês, e o Netto, diretor pedagógico, lidera todos. Eles são coaches de IA criados sobre o método Concept. A sua equipe fala com eles no app Concept Coach, nos dias sem aula.",
-    cta_test: "Fazer o teste de 5 perguntas",
-    k_test: "O TESTE DO TIME",
-    test_h2_a: "A sua equipe acertaria", test_h2_em: "estas?",
-    test_p: "Cinco perguntas, uma de cada especialista. Elas vêm de situações reais do trabalho. Sem cadastro, e cada resposta é explicada.",
-    does: "O QUE FAZ",
-    q_label: "UMA PERGUNTA DE",
-    right: "Certo.", wrong: "Não exatamente.",
-    next: "Próxima pergunta",
-    to_result: "Ver o resultado",
-    k_result: "O SEU RESULTADO",
-    result_line: "Você respondeu {n} de 5 como o time responderia.",
-    result_none: "Responda as cinco perguntas acima para ver o resultado.",
-    result_p: "A sua equipe pode praticar assim todos os dias, com o time Concept, entre uma aula e outra. As aulas e o time seguem o mesmo método.",
-    cta_call: "Agendar a conversa de diagnóstico", cta_home: "Voltar para o início",
-    footer_tag: "CONCEPT · SÃO PAULO · ROMA · MILÃO", footer_copy: "© 2026 Concept. Todos os direitos reservados.",
-    m: {
-      netto: {role: "Coach e diretor pedagógico", does: "O Netto olha o que aconteceu na sua última aula e diz o que praticar primeiro. Progresso, relatórios e lembretes vêm dele."},
-      "victor-hugo": {role: "Registro", does: "Você escreve a mensagem, e o Victor Hugo diz se o tom está certo para quem vai ler, um cliente ou um colega.",
-        why: "As três frases estão corretas. A primeira e a terceira soam como ordens. Com um cliente, uma pergunta passa a mesma mensagem e preserva a relação."},
-      luana: {role: "Gramática e pontuação", does: "A Luana explica cada correção em uma frase simples, para você entender a regra e o mesmo erro não voltar.",
-        why: "Com since e uma situação que continua verdadeira, o inglês usa o present perfect: I have worked here since 2019."},
-      bia: {role: "Expressões", does: "A Bia ensina as expressões que as pessoas usam de verdade no trabalho e diz onde cada uma pode ser usada com segurança.",
-        why: "To touch base é ter uma conversa rápida para ver como as coisas estão. É muito comum no trabalho."},
-      murillo: {role: "Pronúncia e escuta", does: "O Murillo trabalha a tônica e os sons que mudam a forma como o inglês é entendido, e a velocidade da fala real.",
-        why: "Duas sílabas: /ˈwɛnzdeɪ/. O primeiro d é mudo, e a tônica está na primeira sílaba."},
-      marcelo: {role: "Origem das palavras", does: "O Marcelo explica de onde vêm as palavras. Saber a origem de uma palavra ajuda a lembrar dela.",
-        why: "Do latim salarium, de sal. Ninguém sabe ao certo por quê. A história popular de que os soldados romanos eram pagos em sal não é comprovada."}
-    }
-  },
-  it: {
-    coach_k: "QUANDO APRI IL COACH",
-    you_ask: "La tua domanda",
-    tap_sound: "Tocca ovunque per sentire il team",
-    "team_you": "La tua domanda",
-    "team_try": "Rispondi a una domanda di",
-    "team_meet_all": "Fai il test di 5 domande",
-    "role_netto": "Coach e direttore didattico",
-    "role_victor-hugo": "Registro",
-    "role_luana": "Grammatica e punteggiatura",
-    "role_bia": "Espressioni",
-    "role_murillo": "Pronuncia e ascolto",
-    "role_marcelo": "Origine delle parole",
-    hear: "Ascolta",
-    sound_on: "Audio spento",
-    sound_is_on: "Audio attivo",
-    k_close: "DA NETTO",
-    hear_close: "Guarda con l’audio",
-    nav_home: "Home", nav_method: "Metodo", nav_about: "Chi siamo", nav_team: "Team", nav_book: "Libri", nav_lessons: "Studenti", nav_teachers: "Insegnanti", nav_cta: "Contattaci",
-    k_team: "IL TEAM CONCEPT",
-    h1_a: "Sei coach.", h1_em: "Un metodo.",
-    lede: "Ogni membro del team Concept segue una parte dell’inglese, e Netto, il direttore didattico, li guida. Sono coach di intelligenza artificiale costruiti sul metodo Concept. Le tue persone parlano con loro nell’app Concept Coach, nei giorni senza lezione.",
-    cta_test: "Fai il test di 5 domande",
-    k_test: "IL TEST DEL TEAM",
-    test_h2_a: "Il tuo team risponderebbe", test_h2_em: "giusto?",
-    test_p: "Cinque domande, una per ogni specialista. Vengono da situazioni reali di lavoro. Nessuna registrazione, e ogni risposta è spiegata.",
-    does: "COSA FA",
-    q_label: "UNA DOMANDA DI",
-    right: "Giusto.", wrong: "Non proprio.",
-    next: "Domanda successiva",
-    to_result: "Vedi il risultato",
-    k_result: "IL TUO RISULTATO",
-    result_line: "Hai risposto come il team a {n} domande su 5.",
-    result_none: "Rispondi alle cinque domande qui sopra per vedere il risultato.",
-    result_p: "Le tue persone possono esercitarsi così ogni giorno, con il team Concept, tra una lezione e l’altra. Le lezioni e il team seguono lo stesso metodo.",
-    cta_call: "Prenota la call di diagnosi", cta_home: "Torna alla home",
-    footer_tag: "CONCEPT · SAN PAOLO · ROMA · MILANO", footer_copy: "© 2026 Concept. Tutti i diritti riservati.",
-    m: {
-      netto: {role: "Coach e direttore didattico", does: "Netto guarda cosa è successo nella tua ultima lezione e ti dice cosa esercitare per primo. Progressi, report e promemoria arrivano da lui."},
-      "victor-hugo": {role: "Registro", does: "Tu scrivi il messaggio, e Victor Hugo ti dice se il tono è giusto per chi lo leggerà, un cliente o un collega.",
-        why: "Tutte e tre le frasi sono corrette. La prima e la terza suonano come ordini. Con un cliente, una domanda dà lo stesso messaggio e protegge la relazione."},
-      luana: {role: "Grammatica e punteggiatura", does: "Luana spiega ogni correzione in una frase semplice, così capisci la regola e lo stesso errore non ritorna.",
-        why: "Con since e una situazione ancora vera, l’inglese usa il present perfect: I have worked here since 2019."},
-      bia: {role: "Espressioni", does: "Bia insegna le espressioni che le persone usano davvero al lavoro e ti dice dove ognuna si può usare senza rischi.",
-        why: "To touch base significa fare una breve conversazione per vedere come vanno le cose. È molto comune al lavoro."},
-      murillo: {role: "Pronuncia e ascolto", does: "Murillo lavora sull’accento e sui suoni che cambiano il modo in cui l’inglese viene capito, e sulla velocità del parlato reale.",
-        why: "Due sillabe: /ˈwɛnzdeɪ/. La prima d è muta, e l’accento è sulla prima sillaba."},
-      marcelo: {role: "Origine delle parole", does: "Marcelo spiega da dove vengono le parole. Conoscere l’origine di una parola aiuta a ricordarla.",
-        why: "Dal latino salarium, da sal, sale. Nessuno sa con certezza perché. La storia popolare dei soldati romani pagati in sale non è dimostrata."}
-    }
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var soundOn = false;
+  var sb = document.getElementById('soundBtn');
+  sb.addEventListener('click', function(){ soundOn = !soundOn; sb.setAttribute('aria-pressed', soundOn ? 'true' : 'false'); if(!soundOn) stopAll(); });
+
+  /* Netto points once, toward the team, then only breathes */
+  var hero = document.getElementById('heroNetto'), himg = hero.querySelector('img');
+  if(!reduce){
+    fetch('team/netto-point.webp?v=12').then(function(r){ return r.blob(); }).then(function(b){
+      var u = URL.createObjectURL(b);
+      setTimeout(function(){ hero.classList.remove('breathe'); himg.src = u;
+        setTimeout(function(){ himg.src = 'team/netto-point-still.webp?v=12'; URL.revokeObjectURL(u); hero.classList.add('breathe'); }, 133 * 1000 / 15 + 60);
+      }, 700);
+    }).catch(function(){});
+  } else { himg.src = 'team/netto-point-still.webp?v=12'; }
+
+  /* the coaches move on their own as in the app, mouth closed (the app's rule: a mouth never moves without a voice) */
+  /* Each move is a 720-wide video of the app's take; when it ends the still underneath becomes that
+     move's own last frame and the video goes away in the same instant, so two poses never show at
+     once (Pedro, 6 Oct 2026: "na transicao os agentes ficam com uma sombra tipo fantasma") */
+  function move(av, kind){
+    if(reduce || av.closest('.speaking')) return;
+    var m = av.getAttribute('data-m'), v = av.querySelector('.mv'), base = av.querySelector('.base');
+    if(v.classList.contains('on') || av._busy) return;
+    av._busy = true;
+    var end = new Image(); end.src = 'team/move-' + m + '-' + kind + '-end.webp';
+    v.onplaying = function(){ v.onplaying = null; v.classList.add('on'); };
+    v.onended = function(){
+      v.onended = null;
+      var swap = function(){ base.src = end.src; requestAnimationFrame(function(){ v.classList.remove('on'); av._busy = false; }); };
+      if(end.decode) end.decode().then(swap, swap); else swap();
+    };
+    var tries = 0;
+    var go = function(){ v.muted = true; var pr = v.play(); if(pr && pr.catch) pr.catch(function(){ if(++tries < 3) setTimeout(go, 400); else av._busy = false; }); };
+    v.preload = 'auto'; v.src = 'team/move-' + m + '-' + kind + '.mp4'; v.load();
+    v.oncanplay = function(){ v.oncanplay = null; go(); };
+    setTimeout(function(){ if(av._busy && v.paused && !v.classList.contains('on')) go(); }, 1500);
+    setTimeout(function(){ if(av._busy && !v.classList.contains('on')){ av._busy = false; } }, 6000);
   }
-};
-
-/* The member's own line stays in English: it is the character's voice. The
-   questions stay in English: they test English. */
-var TEAM = [
-  {id: "netto", name: "Netto", line: "Let's make it land!", coach: "Meet your Concept team. Each of them owns one part of your English, and I'm with you the whole way.", says: ["netto-intro"]},
-  {id: "victor-hugo", name: "Victor Hugo", line: "Read the room, then hit send.", coach: "Victor Hugo here. Tell me who's reading, and I'll tell you how it lands.", says: ["victor-hugo-open1", "victor-hugo-punch"],
-   q: "You need a client to sign the contract by Friday. Which sentence is right for the client?",
-   o: ["Sign the contract by Friday.", "Would it be possible to have the contract signed by Friday?", "I need the contract signed by Friday."], a: 1},
-  {id: "luana", name: "Luana", line: "Every comma counts.", coach: "Luana here. Got a sentence you're not sure about? Let's look at it together.", says: ["luana-open2", "luana-punch"],
-   q: "Which sentence is correct?",
-   o: ["I work here since 2019.", "I have worked here since 2019.", "I am working here since 2019."], a: 1},
-  {id: "bia", name: "Bia", line: "That's how people really say it.", coach: "Bia here. Heard something in a meeting and not sure you can use it? Try me.", says: ["bia-open1", "bia-punch"],
-   q: "Your manager writes: “Let's touch base tomorrow.” What does she want?",
-   o: ["A short conversation to check how things are going", "A meeting at the main office", "To finish the project tomorrow"], a: 0},
-  {id: "murillo", name: "Murillo", line: "Stress the word that matters.", coach: "Murillo here. Ears before mouth. Want to hear something most people miss?", says: ["murillo-open1", "murillo-punch"],
-   q: "How many syllables does “Wednesday” have?",
-   o: ["Three: Wed-nes-day", "Two: WENZ-day"], a: 1},
-  {id: "marcelo", name: "Marcelo", line: "Every word has a story.", coach: "Hi! Marcelo, the intern. Give me any word and I'll dig up where it came from.", says: ["marcelo-open1", "marcelo-punch"],
-   q: "The word “salary” comes from a Latin word connected to…",
-   o: ["salt", "soldiers", "silver"], a: 0}
-];
-
-var EX = {
-  netto: {ang:[-18,6,-2], ask:'Netto, what should I practice this week?', ans:'Start with the two mistakes from Tuesday\u2019s lesson. They came back twice in your writing. Then one short review, five minutes.'},
-  'victor-hugo': {ang:[-24,7,2], ask:'Is this OK for a client? \u201cWe need the contract signed by Friday.\u201d', ans:'It is correct, but it sounds like an order. For a client, try: <span class="q">\u201cWould it be possible to have the contract signed by Friday?\u201d</span>'},
-  luana: {ang:[-14,9,-1], ask:'Luana, is this right? \u201cI work here since 2019.\u201d', ans:'Use the present perfect: <span class="q">\u201cI have worked here since 2019.\u201d</span> It started in the past and it is still true.'},
-  bia: {ang:[-28,5,1], ask:'Bia, can I say \u201clet\u2019s touch base\u201d to my manager?', ans:'Yes. It means a short conversation to check how things are going. It is very common at work. With a new client, <span class="q">\u201ccould we have a quick call?\u201d</span> is safer.'},
-  murillo: {ang:[-16,11,2], ask:'Murillo, how do I say \u201ccomfortable\u201d?', ans:'Three syllables, not four: <span class="q">/\u02c8k\u028cmft\u025ab\u0259l/</span>, COMF-ter-bul. The stress is on the first syllable.'},
-  marcelo: {ang:[-22,7,0], ask:'Marcelo, where does \u201csalary\u201d come from?', ans:'From the Latin <span class="q">salarium</span>, from <span class="q">sal</span>, \u201csalt\u201d. Nobody knows for sure why. The story that Roman soldiers were paid in salt is not proven.'}
-};
-var currentLang = "en";
-var answers = {};
-function t(k){ return window.I18N[currentLang][k]; }
-function esc(x){ return String(x).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
-
-function buildMembers(){
-  var root = document.getElementById('members'), html = '';
-  TEAM.forEach(function(m, i){
-    var quiz = '';
-    if(m.q){
-      quiz = '<div class="quiz" data-id="' + m.id + '">' +
-        '<div class="q-label"><img src="team/' + m.id + '-face.webp" alt="" width="26" height="26"><span class="ql"></span> ' + esc(m.name) + '</div>' +
-        '<p class="q">' + esc(m.q) + '</p><div class="opts">' +
-        m.o.map(function(o, k){ return '<button type="button" class="opt" data-k="' + k + '">' + esc(o) + '</button>'; }).join('') +
-        '</div><div class="verdict" hidden><b class="vw"></b> <span class="vt"></span></div>' +
-        '<a class="next" hidden href="#"></a></div>';
-    }
-    html += '<section class="member bg-black' + (i % 2 ? ' flip' : '') + '" id="' + m.id + '">' +
-      '<div class="wrap mgrid">' +
-        '<div class="mfig ' + (m.id === 'netto' ? 'n3d ' : '') + 'reveal-scale">' +
-        (m.id === 'netto'
-          ? '<div class="n3d-stage"><img class="n3d-point" src="team/netto-point-first.webp?v=7" alt="Netto, coach and director of studies" width="380" height="695">' +
-            '<video class="n3d-talk" playsinline preload="none" src="team/netto-talk.mp4?v=7" width="720" height="1010" aria-hidden="true"></video></div>'
-          : '<video muted playsinline preload="none" poster="team/home-' + m.id + '-still.webp?v=7" data-src="team/home-' + m.id + '.mp4?v=7" width="720" height="1010" aria-hidden="true"></video>') +
-
-        '<button class="hear" type="button" data-id="' + m.id + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="hl"></span></button></div>' +
-        '<div class="mcopy reveal">' +
-          '<p class="kicker mrole"></p>' +
-          '<h2 class="mname">' + esc(m.name) + '</h2>' +
-          '<p class="mline">“' + esc(m.line) + '”</p>' +
-          '<div class="mrow">' +'<div class="mphone" aria-hidden="true"><div class="pfloat"><div class="p3d"><i class="pedge" style="transform:translateZ(-1px)"></i><i class="pedge" style="transform:translateZ(-2px)"></i><i class="pedge" style="transform:translateZ(-3px)"></i><i class="pedge" style="transform:translateZ(-4px)"></i><i class="pedge" style="transform:translateZ(-5px)"></i><i class="pedge" style="transform:translateZ(-6px)"></i><i class="pedge" style="transform:translateZ(-7px)"></i><i class="pedge" style="transform:translateZ(-8px)"></i><i class="pedge rim" style="transform:translateZ(-9px)"></i><div class="pbody"><div class="pscreen">' +
-          '<div class="papp"><img class="pmark" src="team/' + m.id + '-face.webp" alt=""><div><b>' + esc(m.name) + '</b><span class="prole"></span></div></div>' +
-          '<div class="tchat"><div class="tmsg them hi"><div class="lbl"><img src="team/' + m.id + '-face.webp" alt=""><span>' + esc(m.name) + '</span></div><div class="mhi"></div></div><div class="tmsg me"><div class="lbl ml"></div><div class="mask"></div></div>' +
-          '<div class="tmsg them"><div class="lbl"><img src="team/' + m.id + '-face.webp" alt=""><span>' + esc(m.name) + '</span></div><div class="mans"></div></div></div>' +
-          '<div class="pbar"><span>Concept Coach</span></div>' +
-        '</div><i class="pisland"></i><i class="psheen"></i></div></div></div></div>' +
-          quiz + '</div>' +
-        '</div>' +
-      '</div></section>';
+  document.querySelectorAll('.av[data-m]').forEach(function(av){
+    /* each coach opens with their own gesture, then varies (Pedro, 6 Oct 2026: "todos dao tchau, sem diversidade") */
+    var seen = false, timer = null, n = 0, ORDER = ['receive', 'think', 'celebrate', 'signature'];
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){
+      if(es[0].isIntersecting){
+        if(!seen){ seen = true; setTimeout(function(){ move(av, 'signature'); }, 500); }
+        if(!timer) timer = setInterval(function(){ move(av, ORDER[n++ % ORDER.length]); }, 14000);
+      } else { clearInterval(timer); timer = null; }
+    }, {threshold: .5}).observe(av);
   });
-  root.innerHTML = html;
 
-  root.querySelectorAll('.quiz').forEach(function(qz){
-    var id = qz.getAttribute('data-id'), m = TEAM.filter(function(x){ return x.id === id; })[0];
-    qz.querySelectorAll('.opt').forEach(function(b){
-      b.addEventListener('click', function(){
-        if(id in answers) return;
-        var k = +b.getAttribute('data-k'), ok = k === m.a;
-        answers[id] = ok;
-        qz.classList.add('done');
-        qz.querySelectorAll('.opt').forEach(function(o){
-          var kk = +o.getAttribute('data-k');
-          if(kk === m.a) o.classList.add('is-right');
-          else if(kk === k) o.classList.add('is-wrong');
-          o.disabled = true;
+  /* coach avatars: a short entrance the first time they are seen */
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); e.target.classList.add('breathe'); io.unobserve(e.target); } }); }, {threshold: .3});
+    document.querySelectorAll('.enter').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.enter').forEach(function(el){ el.classList.add('in'); }); }
+
+  /* Hear [name]: the coach says their lines in their own voice, then is still again */
+  var players = [];
+  function stopAll(except){ players.forEach(function(p){ if(p !== except) p.stop(); }); var f = document.getElementById('closingFilm'); if(f && !f.paused && !f.muted) { f.pause(); document.getElementById('hearNetto').classList.remove('playing'); } }
+  document.querySelectorAll('section.coach').forEach(function(sec){
+    var says = sec.getAttribute('data-says').split(','), box = sec.querySelector('.c-av'), v = sec.querySelector('.say'), btn = sec.querySelector('.hear'), av = sec.querySelector('.av');
+    v.style.setProperty('--sw', getComputedStyle(av).getPropertyValue('--w'));
+    var q = 0, spoke = false;
+    var p = {
+      play: function(){ stopAll(p); q = 0; spoke = true; next(); },
+      stop: function(){ if(!v.paused) v.pause(); box.classList.remove('speaking'); btn.classList.remove('playing'); }
+    };
+    function next(){
+      v.src = 'team/' + says[q] + '.mp4?v=12'; v.muted = false;
+      box.classList.add('speaking'); btn.classList.add('playing');
+      var pr = v.play(); if(pr && pr.catch) pr.catch(function(){ p.stop(); });
+    }
+    v.addEventListener('ended', function(){ if(++q < says.length) next(); else p.stop(); });
+    btn.addEventListener('click', function(){ p.play(); });
+    players.push(p);
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ if(es[0].isIntersecting){ if(soundOn && !spoke) p.play(); } else p.stop(); }, {threshold: .55}).observe(box);
+    }
+  });
+
+  /* the test: one question at a time; nothing about an answer shows before the pick */
+  var NUM = ['zero','one','two','three','four','five'], answers = [];
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.qcard'));
+  cards.forEach(function(card, i){
+    var right = +card.getAttribute('data-right');
+    card.querySelectorAll('.opt').forEach(function(o){
+      o.addEventListener('click', function(){
+        if(card.classList.contains('done')) return;
+        card.classList.add('done');
+        var k = +o.getAttribute('data-k'), ok = k === right;
+        answers[i] = ok;
+        card.querySelectorAll('.opt').forEach(function(x){
+          var kk = +x.getAttribute('data-k');
+          x.disabled = true; x.querySelector('.o-x').hidden = false;
+          if(kk === right) x.classList.add('lands'); else if(kk === k) x.classList.add('picked-wrong');
         });
-        var v = qz.querySelector('.verdict'); v.hidden = false; v.classList.toggle('ok', ok);
-        qz.querySelector('.next').hidden = false;
-        relabel(); showResult();
+        var ver = card.querySelector('.verdict'); ver.querySelector(ok ? '.v-land' : '.v-slip').hidden = false; ver.hidden = false;
+        card.querySelector('.next').hidden = false;
       });
     });
-    qz.querySelector('.next').addEventListener('click', function(e){
-      e.preventDefault();
-      var idx = TEAM.indexOf(m), nxt = TEAM[idx + 1];
-      var target = document.getElementById(nxt ? nxt.id : 'result');
-      target.scrollIntoView({behavior: 'smooth', block: nxt ? 'center' : 'start'});
+    card.querySelector('.next').addEventListener('click', function(){
+      if(i < cards.length - 1){ card.hidden = true; cards[i + 1].hidden = false; document.getElementById('test').scrollIntoView({block: 'start'}); }
+      else { showResult(); document.getElementById('result').scrollIntoView({block: 'start'}); }
     });
   });
 
-  /* each member, when they are on screen: the phone shows their example, and
-     they say their line in their own voice (or, if the browser has not let the
-     page play sound yet, the scene plays silent until the first tap) */
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  TEAM.forEach(function(m){
-    var sec = document.getElementById(m.id), v = sec.querySelector('video'), btn = sec.querySelector('.hear');
-    var ph = sec.querySelector('.p3d'), ex = EX[m.id], seq = [];
-    var st = {vis: false, spoke: false, mode: ''};
-    ph.style.setProperty('--ry', ex.ang[0] + 'deg'); ph.style.setProperty('--rx', ex.ang[1] + 'deg'); ph.style.setProperty('--rz', ex.ang[2] + 'deg');
-    function phone(){
-      seq.forEach(clearTimeout); seq = [];
-      var hi = sec.querySelector('.tmsg.hi'), me = sec.querySelector('.tmsg.me'), them = sec.querySelector('.tmsg.them:not(.hi)'), q = sec.querySelector('.mask'), a = sec.querySelector('.mans');
-      sec.querySelector('.mhi').textContent = m.coach;
-      hi.classList.remove('on'); me.classList.remove('on'); them.classList.remove('on'); q.textContent = ''; a.innerHTML = '';
-      if(reduce){ hi.classList.add('on'); me.classList.add('on'); them.classList.add('on'); q.textContent = ex.ask; a.innerHTML = ex.ans; return; }
-      var n = 0;
-      seq.push(setTimeout(function(){ hi.classList.add('on'); }, 300));
-      seq.push(setTimeout(function(){ me.classList.add('on');
-        (function step(){ n += 2; q.textContent = ex.ask.slice(0, n); if(n < ex.ask.length) seq.push(setTimeout(step, 30));
-          else { seq.push(setTimeout(function(){ them.classList.add('on'); a.innerHTML = '<span class="tdots"><i></i><i></i><i></i></span>'; }, 350));
-                 seq.push(setTimeout(function(){ a.innerHTML = ex.ans; }, 1700)); } })();
-      }, 2600));
-    }
-    if(m.id === 'netto'){ nettoBlock(m); m._phone = phone; return; }
-    function scene(){
-      st.mode = 'scene'; btn.classList.remove('playing');
-      v.muted = true; v.src = v.getAttribute('data-src');
-      if(reduce) return;
-      var p = v.play(); if(p && p.catch) p.catch(function(){});
-      if(m.id === 'bia') balloons(sec.querySelector('.mfig'));
-    }
-    var q = 0;
-    function voice(){ q = 0; say(); }
-    function say(){
-      st.mode = 'voice'; st.spoke = true; btn.classList.add('playing');
-      sec.querySelectorAll('.bballoon').forEach(function(b){ b.remove(); });
-      v.muted = false; v.src = 'team/home-' + m.says[q] + '.mp4?v=7';
-      var p = v.play();
-      if(p && p.catch) p.catch(function(){ st.spoke = false; askForTap(); scene(); });
-    }
-    v.addEventListener('ended', function(){
-      if(st.mode !== 'voice' || !st.vis) return;
-      if(++q < m.says.length) say(); else scene();
+  function showResult(){
+    var n = answers.filter(Boolean).length;
+    document.getElementById('rNum').textContent = NUM[n];
+    document.getElementById('rWait').hidden = true; document.getElementById('rDone').hidden = false;
+    document.querySelectorAll('.r-row').forEach(function(row, i){
+      var card = cards[i], ok = !!answers[i];
+      row.querySelector(ok ? '.n-land' : '.n-slip').hidden = false; row.querySelector(ok ? '.n-slip' : '.n-land').hidden = true;
+      var pill = row.querySelector('.pill'); pill.querySelector(ok ? '.p-land' : '.p-slip').hidden = false; pill.querySelector(ok ? '.p-slip' : '.p-land').hidden = true; pill.className = 'pill ' + (ok ? 'landed' : 'slipped');
+      row.hidden = false;
     });
-    btn.addEventListener('click', function(){ stopOthers(m.id); voice(); });
-    m._stop = function(){ if(!v.paused) v.pause(); btn.classList.remove('playing'); };
-    m._replay = function(){ if(st.vis && !st.spoke){ stopOthers(m.id); voice(); } };
-    if('IntersectionObserver' in window){
-      new IntersectionObserver(function(es){
-        var was = st.vis; st.vis = es[0].isIntersecting;
-        if(st.vis && !was){ phone(); if(soundOn && !st.spoke){ stopOthers(m.id); voice(); } else scene(); }
-        else if(!st.vis){ m._stop(); st.mode = ''; seq.forEach(clearTimeout); }
-      }, {threshold: 0.55}).observe(v);
-    }
+    playNetto(soundOn);
+  }
+  /* Netto's closing line: on the page from the start, it plays when the result appears or on Hear Netto */
+  var film = document.getElementById('closingFilm'), hn = document.getElementById('hearNetto');
+  function playNetto(withSound){
+    if(!film.src) film.src = film.getAttribute('data-src');
+    stopAll(); film.currentTime = 0; film.muted = !withSound;
+    if(withSound) hn.classList.add('playing');
+    var pr = film.play(); if(pr && pr.catch) pr.catch(function(){ film.muted = true; film.play().catch(function(){}); });
+  }
+  film.addEventListener('ended', function(){ hn.classList.remove('playing'); });
+  hn.addEventListener('click', function(){ playNetto(true); });
+  document.getElementById('shareTest').addEventListener('click', function(e){
+    e.preventDefault();
+    var url = location.origin + location.pathname + '#test';
+    if(navigator.clipboard) navigator.clipboard.writeText(url).catch(function(){});
   });
-  closingFilm();
-}
-
-/* NETTO, the director: he points out of the page (his 3D point), then presents
-   the team in his own voice; both cut out on the page's black. */
-function nettoBlock(m){
-  var sec = document.getElementById('netto'), btn = sec.querySelector('.hear'), au = sec.querySelector('.n3d-talk');
-  var pt = sec.querySelector('.n3d-point'), tk = sec.querySelector('.n3d-talk'), stage = sec.querySelector('.n3d-stage');
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var blobs = {}, timers = [], vis = false, spoke = false, PDUR = 92 * 1000 / 15;
-  ['netto-point'].forEach(function(n){ fetch('team/' + n + '.webp?v=7').then(function(r){ return r.blob(); }).then(function(b){ blobs[n] = b; }).catch(function(){}); });
-  function anim(img, n, still){ if(!blobs[n]){ img.src = still; return; } var u = URL.createObjectURL(blobs[n]); img.src = u; timers.push(setTimeout(function(){ URL.revokeObjectURL(u); }, 20000)); }
-  function clear(){ timers.forEach(clearTimeout); timers = []; }
-  function talk(){
-    stage.classList.add('talking'); btn.classList.add('playing'); spoke = true;
-    /* one video with his voice in it: the mouth and the voice cannot drift */
-    au.currentTime = 0; au.muted = false;
-    var p = au.play();
-    au.onended = function(){ btn.classList.remove('playing'); };
-    if(p && p.catch) p.catch(function(){ spoke = false; btn.classList.remove('playing'); stage.classList.remove('talking'); askForTap(); });
-  }
-  function run(){
-    clear(); stage.classList.remove('talking');
-    if(reduce){ pt.src = 'team/netto-point-still.webp?v=7'; return; }
-    anim(pt, 'netto-point', 'team/netto-point-still.webp?v=7');
-    timers.push(setTimeout(function(){ if(vis && soundOn) talk(); else stage.classList.add('talking'); }, PDUR - 300));
-  }
-  btn.addEventListener('click', function(){ stopOthers('netto'); clear(); talk(); });
-  m._stop = function(){ clear(); if(!au.paused) au.pause(); btn.classList.remove('playing'); };
-  m._replay = function(){ if(vis && !spoke){ stopOthers('netto'); talk(); } };
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){
-      var was = vis; vis = es[0].isIntersecting;
-      if(vis && !was){ if(m._phone) m._phone(); timers.push(setTimeout(run, 400)); }
-      else if(!vis){ m._stop(); }
-    }, {threshold: 0.45}).observe(stage);
-  }
-}
-var soundOn = true, tapAsked = false;
-function askForTap(){
-  if(tapAsked) return; tapAsked = true;
-  var pill = document.getElementById('tapPill'); pill.hidden = false;
-  function go(){ document.removeEventListener('pointerdown', go, true); document.removeEventListener('keydown', go, true); pill.hidden = true;
-    TEAM.forEach(function(x){ if(x._replay) x._replay(); }); }
-  document.addEventListener('pointerdown', go, true); document.addEventListener('keydown', go, true);
-}
-function stopOthers(id){ TEAM.forEach(function(x){ if(x.id !== id && x._stop) x._stop(); }); var f = document.getElementById('closingFilm'); if(f && !f.paused) f.pause(); }
-function paintSound(){
-  var b = document.getElementById('soundBtn');
-  b.setAttribute('aria-pressed', soundOn ? 'true' : 'false');
-  document.getElementById('soundTxt').textContent = soundOn ? t('sound_is_on') : t('sound_on');
-}
-document.getElementById('soundBtn').addEventListener('click', function(){ soundOn = !soundOn; paintSound(); if(!soundOn) TEAM.forEach(function(x){ if(x._stop) x._stop(); }); });
-
-var JOURNEYS = [
-  [['Japanese','一石二鳥'],['Chinese','一石二鸟'],['Italian','prendere due piccioni con una fava'],['Portuguese','matar dois coelhos com uma cajadada só'],['English','kill two birds with one stone']],
-  [['Japanese','早起きは三文の徳'],['Chinese','早起的鸟儿有虫吃'],['Italian','chi dorme non piglia pesci'],['Portuguese','Deus ajuda quem cedo madruga'],['English','the early bird catches the worm']]
-], jn = 0;
-function balloons(box){
-  box.querySelectorAll('.bballoon').forEach(function(b){ b.remove(); });
-  var trip = JOURNEYS[jn++ % JOURNEYS.length];
-  trip.forEach(function(st, i){
-    setTimeout(function(){
-      var b = document.createElement('span');
-      b.className = 'bballoon' + (i === trip.length - 1 ? ' en' : '');
-      b.style.top = (40 + i * 50) + 'px';
-      b.innerHTML = '<span class="bl"></span><span class="bt"></span>';
-      b.firstChild.textContent = st[0]; b.lastChild.textContent = st[1];
-      box.appendChild(b);
-      setTimeout(function(){ b.classList.add('out'); }, 4600 - i * 600);
-      setTimeout(function(){ b.remove(); }, 5100 - i * 600);
-    }, 3800 + i * 600);
-  });
-}
-
-/* Netto's closing film: with his voice when the sound is on, otherwise silent with a button */
-function closingFilm(){
-  var f = document.getElementById('closingFilm'), hb = document.getElementById('closingHear');
-  if(!f || !('IntersectionObserver' in window)) return;
-  hb.addEventListener('click', function(){ stopOthers(''); hb.hidden = true; f.muted = false; f.currentTime = 0; var p = f.play(); if(p && p.catch) p.catch(function(){}); });
-  new IntersectionObserver(function(es){
-    if(es[0].isIntersecting){
-      if(!f.src) f.src = f.getAttribute('data-src');
-      if(f.ended) f.currentTime = 0;
-      f.muted = !soundOn; hb.hidden = soundOn;
-      if(soundOn) stopOthers('');
-      var p = f.play(); if(p && p.catch) p.catch(function(){ f.muted = true; hb.hidden = false; f.play().catch(function(){}); });
-    } else if(!f.paused){ f.pause(); }
-  }, {threshold: 0.55}).observe(f);
-}
-
-function relabel(){
-  var d = window.I18N[currentLang];
-  TEAM.forEach(function(m){
-    var s = document.getElementById(m.id); if(!s) return;
-    s.querySelector('.mrole').textContent = d.m[m.id].role.toUpperCase();
-    var hl = s.querySelector('.hear .hl'); if(hl) hl.textContent = d.hear + ' ' + m.name;
-    s.querySelector('.prole').textContent = d.m[m.id].role;  s.querySelector('.ml').textContent = d.you_ask;
-    var qz = s.querySelector('.quiz'); if(!qz) return;
-    qz.querySelector('.ql').textContent = d.q_label;
-    if(m.id in answers){
-      qz.querySelector('.vw').textContent = answers[m.id] ? d.right : d.wrong;
-      qz.querySelector('.vt').textContent = d.m[m.id].why;
-    }
-    var idx = TEAM.indexOf(m);
-    qz.querySelector('.next').textContent = (TEAM[idx + 1] ? d.next + ': ' + TEAM[idx + 1].name : d.to_result) + ' →';
-  });
-  showResult();
-}
-
-function showResult(){
-  var n = 0, done = 0;
-  for(var k in answers){ done++; if(answers[k]) n++; }
-  document.getElementById('resultLine').textContent = done < 5 ? t('result_none') : t('result_line').replace('{n}', n);
-}
-
-function applyLang(lang){
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  var els = document.querySelectorAll('[data-t]');
-  for(var i = 0; i < els.length; i++){
-    var v = window.I18N[lang][els[i].getAttribute('data-t')];
-    if(typeof v === 'string') els[i].textContent = v;
-  }
-  var links = {navHome: 'index.html', navMethod: 'method.html', navAbout: 'about.html', navTeam: 'team.html', ctaHome: 'index.html'};
-  for(var id in links){ var a = document.getElementById(id); if(a) a.setAttribute('href', links[id] + '?lang=' + lang); }
-  document.getElementById('navCta').setAttribute('href', 'index.html?lang=' + lang + '#contact');
-  document.getElementById('ctaCall').setAttribute('href', 'index.html?lang=' + lang + '#start');
-  var btns = document.querySelectorAll('#langSwitch button');
-  for(var b = 0; b < btns.length; b++) btns[b].className = (btns[b].getAttribute('data-lang') === lang) ? 'active' : '';
-  relabel();
-  paintSound();
-  observeAll();
-}
-
-var observer = null;
-function observeAll(){
-  var els = document.querySelectorAll('.reveal, .reveal-scale');
-  if(!('IntersectionObserver' in window)){ for(var i = 0; i < els.length; i++) els[i].classList.add('visible'); return; }
-  if(!observer){
-    observer = new IntersectionObserver(function(entries){
-      for(var i = 0; i < entries.length; i++) if(entries[i].isIntersecting) entries[i].target.classList.add('visible');
-    }, {threshold: 0.08});
-  }
-  for(var j = 0; j < els.length; j++) observer.observe(els[j]);
-}
-
-document.querySelectorAll('#langSwitch button').forEach(function(btn){
-  btn.addEventListener('click', function(e){ e.preventDefault(); applyLang(btn.getAttribute('data-lang')); });
-});
-
-buildMembers();
-var langParam = new URLSearchParams(window.location.search).get('lang');
-applyLang(langParam && window.I18N[langParam] ? langParam : 'en');
-if(location.hash){ var h = document.getElementById(location.hash.slice(1)); if(h) setTimeout(function(){ h.scrollIntoView({block: location.hash === '#test' ? 'start' : 'center'}); }, 300); }
-
+})();
 </script>
 </body>
 </html>

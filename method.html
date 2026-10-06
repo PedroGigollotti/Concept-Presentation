@@ -222,6 +222,7 @@
     gap:14px;font-size:11.5px;color:#7E838C;}
   .footrow svg{height:22px;width:auto;overflow:visible;vertical-align:middle;margin-right:9px;}
 </style>
+<link rel="stylesheet" href="concept-ui.css?v=8">
 
 
 
@@ -252,11 +253,12 @@
         <circle cx="322.87" cy="113.96" r="7" fill="#B3132B"/>
       </g>
     </svg>
-    <span class="back" data-t="back">BACK TO CONCEPT</span>
+    <span class="wordmark">CONCEPT</span>
   </a>
   <div class="nav-right">
-    <a class="nav-link" id="navMethod" href="method.html">Method</a>
-          <a class="nav-link" id="navAbout" href="about.html">About</a>
+    <a class="nav-link" id="navMethod" href="method.html" aria-current="page">Method</a>
+    <a class="nav-link" id="navAbout" href="about.html">About</a>
+    <a class="nav-link" id="navTeam" href="team.html" data-t="nav_team">Team</a>
     <a class="nav-link" id="navBook" href="book.html">Books</a>
     <a class="nav-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
     <a class="nav-link" id="navTeachers" href="https://lessons.theconceptmethod.com/teaching#teacher">Teachers</a>
@@ -534,7 +536,7 @@ var D3_Q = {q:"We're not going to agree ___ the price today.", a:"on", b:"with",
 /* ============ I18N ============ */
 var I18N = {
 en:{
-  back:"BACK TO CONCEPT", nav_cta:"Book the call", nav_method:"Method", nav_about:"About", nav_book:"Books", nav_lessons:"Students", nav_teachers:"Teachers",
+  back:"BACK TO CONCEPT", nav_cta:"Book the call", nav_method:"Method", nav_about:"About", nav_team:"Team", nav_book:"Books", nav_lessons:"Students", nav_teachers:"Teachers",
   hero_kicker:"THE METHOD, LIVE",
   hero_h1_a:"Don't read the method.", hero_h1_em:"Run it", hero_h1_b:"on yourself.",
   hero_lede:"This page is not a description of how I teach. It is a compressed version of an actual lesson, with you as the student. Six short demonstrations. Nothing to install, nothing to submit, no data leaves your browser.",
@@ -671,7 +673,7 @@ en:{
 },
 
 pt:{
-  back:"VOLTAR AO INÍCIO", nav_cta:"Agendar a conversa", nav_method:"Método", nav_about:"Sobre", nav_book:"Livros", nav_lessons:"Alunos", nav_teachers:"Professores",
+  back:"VOLTAR AO INÍCIO", nav_cta:"Agendar a conversa", nav_method:"Método", nav_about:"Sobre", nav_team:"Time", nav_book:"Livros", nav_lessons:"Alunos", nav_teachers:"Professores",
   hero_kicker:"O MÉTODO, NA PRÁTICA",
   hero_h1_a:"Não leia sobre o método.", hero_h1_em:"Teste-o", hero_h1_b:"em você mesmo.",
   hero_lede:"Esta página não descreve como eu ensino. Ela é uma versão condensada de uma aula real, com você no lugar do aluno. Seis demonstrações curtas. Nada para instalar, nada para enviar, nenhum dado sai do seu navegador.",
@@ -808,7 +810,7 @@ pt:{
 },
 
 it:{
-  back:"TORNA ALLA HOME", nav_cta:"Prenota la call", nav_method:"Metodo", nav_about:"Chi sono", nav_book:"Libri", nav_lessons:"Studenti", nav_teachers:"Insegnanti",
+  back:"TORNA ALLA HOME", nav_cta:"Prenota la call", nav_method:"Metodo", nav_about:"Chi sono", nav_team:"Team", nav_book:"Libri", nav_lessons:"Studenti", nav_teachers:"Insegnanti",
   hero_kicker:"IL METODO, DAL VIVO",
   hero_h1_a:"Non leggere il metodo.", hero_h1_em:"Provalo", hero_h1_b:"su di te.",
   hero_lede:"Questa pagina non descrive come insegno. È una versione compressa di una lezione vera, con te al posto dello studente. Sei brevi dimostrazioni. Niente da installare, niente da inviare, nessun dato esce dal tuo browser.",

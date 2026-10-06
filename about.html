@@ -131,6 +131,7 @@
   .needle{transform-origin:200px 200px;}
   @keyframes tickTock{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 </style>
+<link rel="stylesheet" href="concept-ui.css?v=8">
 
 
 
@@ -164,10 +165,10 @@
     <span class="wordmark">CONCEPT</span>
   </a>
   <div class="nav-right">
-    <a class="nav-link" id="navHome" href="index.html">Home</a>
+    <a class="nav-link" id="navMethod" href="method.html">Method</a>
+    <a class="nav-link" id="navAbout" href="about.html" aria-current="page">About</a>
     <a class="nav-link" id="navTeam" href="team.html" data-t="nav_team">Team</a>
-          <a class="nav-link" id="navMethod" href="method.html">Method</a>
-          <a class="nav-link" id="navBook" href="book.html">Books</a>
+    <a class="nav-link" id="navBook" href="book.html">Books</a>
     <a class="nav-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
     <a class="nav-link" id="navTeachers" href="https://lessons.theconceptmethod.com/teaching#teacher">Teachers</a>
     <div class="lang-switch" id="langSwitch">
@@ -389,8 +390,7 @@ function applyLang(lang){
     var v = window.I18N[lang][els[i].getAttribute('data-t')];
     if(typeof v === 'string') els[i].textContent = v;
   }
-  document.getElementById('navHome').textContent = t('nav_home');
-  document.getElementById('navHome').setAttribute('href', 'index.html?lang=' + lang);
+  var homeBrand = document.querySelector('#nav .brand'); if(homeBrand && homeBrand.tagName === 'A') homeBrand.setAttribute('href', 'index.html?lang=' + lang);
   document.getElementById('navTeam').setAttribute('href', 'team.html?lang=' + lang);
   document.getElementById('navCta').textContent = t('nav_cta');
   document.getElementById('navCta').setAttribute('href', 'index.html?lang=' + lang + '#contact');
