@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pedro Gigollotti · Concept · Language Consulting</title>
-  <meta name="description" content="Corporate English coaching from Pedro Gigollotti: register, pragmatics, and timing under pressure, for professionals who already know English but still lose the room.">
+<title>Concept · Corporate English Training</title>
+  <meta name="description" content="Concept trains professional teams to use English at work: register, pragmatics, and timing under pressure. Founded by Pedro Gigollotti.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
     /* High-end palette */
@@ -62,7 +62,7 @@
   .caret{display:inline-block;width:2px;height:1em;background:#fff;vertical-align:-2px;margin-left:1px;animation:caret 1s steps(1) infinite;}
   @keyframes caret{50%{opacity:0}}
   .tfig{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:center;min-width:0;}
-  .tfig img{display:block;height:100%;max-height:540px;width:auto;max-width:100%;object-fit:contain;object-position:bottom;}
+  .tfig video{display:block;height:540px;width:auto;max-width:100%;aspect-ratio:720/1010;object-fit:contain;object-position:bottom;background:#E7E8EA;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 8%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 8%);mask-composite:intersect;}
   .tswap{transition:opacity .45s ease,transform .6s cubic-bezier(.25,1,.25,1);}
   .tstage.out .tswap{opacity:0;transform:translateY(14px);}
   .tstage.out .tfig .tswap{transform:translateX(30px);}
@@ -82,7 +82,7 @@
   @media (max-width:900px){
     .tstage{grid-template-columns:1fr;min-height:0;}
     .tfig{order:-1;height:320px;}
-    .tfig img{max-height:320px;}
+    .tfig video{height:320px;}
     .tcopy{padding:8px 22px 28px;}
     .ttabs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
     .ttab{flex:none;scroll-snap-align:start;}
@@ -145,10 +145,9 @@
   }
   .instrument-svg{width:100%;height:auto;display:block;overflow:visible;}
 
-  /* TICKING ANIMATION FOR THE LOGO NEEDLE (used on the small marks sitewide) */
+  /* The logo's needle stays at rest, as the master file draws it (BRAND rule 1). */
   .needle {
     transform-origin: 200px 200px;
-    animation: tickTock 60s steps(60) infinite;
   }
   @keyframes tickTock {
     from { transform: rotate(0deg); }
@@ -174,9 +173,9 @@
   @media (prefers-reduced-motion:reduce){ .tick .flag-fade{transition:none;} }
 
   /* LOGO TYPOGRAPHY (Tighter spacing) */
-  .intro-word{margin-top:20px;color:var(--red);font-size:18px;font-weight:600;letter-spacing:12px;opacity:0;
+  .intro-word{margin-top:20px;color:#B3132B;font-family:'Carlito','Calibri','Lato',var(--sans);font-size:20px;font-weight:700;letter-spacing:.43em;opacity:0;
     animation:fadeUp .9s ease forwards 1.55s;position:relative;z-index:2;}
-  .intro-tag{margin-top:2px;color:var(--silver);font-size:11.5px;letter-spacing:5px;opacity:0;
+  .intro-tag{margin-top:2px;color:#9A9EA4;font-family:'Carlito','Calibri','Lato',var(--sans);font-size:11.5px;letter-spacing:5px;opacity:0;
     animation:fadeUp .9s ease forwards 1.75s;position:relative;z-index:2;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 
@@ -232,7 +231,7 @@
   #nav .brand{display:flex;align-items:center;gap:14px;text-decoration:none;}
   #nav .brand svg{height:28px;width:auto;overflow:visible;transition:transform .35s ease;}
   #nav .brand:hover svg{transform:rotate(-10deg) scale(1.1);}
-  #nav .wordmark{color:var(--red);font-weight:600;font-size:15px;letter-spacing:4px;}
+  #nav .wordmark{color:#B3132B;font-family:'Carlito','Calibri','Lato',var(--sans);font-weight:700;font-size:16px;letter-spacing:.43em;}
   .nav-right{display:flex;align-items:center;gap:12px;z-index:105;}
   .nav-link{color:var(--silver);font-family:var(--sans);font-weight:600;font-size:13px;
     text-decoration:none;letter-spacing:.5px;opacity:.85;transition:opacity .22s ease;}
@@ -510,8 +509,8 @@
 <nav id="nav">
   <div class="brand">
     <svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-      <path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" stroke="#E4E6EA" stroke-width="8" stroke-linecap="round" fill="none"/>
-      <circle cx="200" cy="200" r="11" fill="#E4E6EA"/>
+      <path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" stroke="#E7E8EA" stroke-width="8" stroke-linecap="round" fill="none"/>
+      <circle cx="200" cy="200" r="11" fill="#E7E8EA"/>
       <g class="needle">
         <polygon points="322.87,113.96 208.03,211.47 191.97,188.53" fill="#B3132B"/>
         <circle cx="322.87" cy="113.96" r="7" fill="#B3132B"/>
@@ -550,26 +549,6 @@
   </div>
 </section>
 
-<!-- ===== STATS ===== -->
-<section id="stats" class="bg-black">
-  <div class="wrap">
-    <div class="stat-grid">
-      <div class="reveal">
-        <div class="stat-num"><span class="counter" data-target="25">25</span><span class="accent" data-t="stat1_suffix"></span></div>
-        <div class="stat-label" data-t="stat1_label"></div>
-      </div>
-      <div class="reveal d1">
-        <div class="stat-num"><span class="counter" data-target="6">6</span></div>
-        <div class="stat-label" data-t="stat2_label"></div>
-      </div>
-      <div class="reveal d2">
-        <div class="stat-num"><span data-t="stat3_num"></span><span class="accent" data-t="stat3_suffix"></span></div>
-        <div class="stat-label" data-t="stat3_label"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== THE CONCEPT TEAM ===== -->
 <section id="team" class="bg-black section-pad">
   <div class="wrap">
@@ -587,13 +566,33 @@
             <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt=""><span id="tAnsWho"></span></div><div id="tAnsText"></div></div>
           </div>
         </div>
-        <div class="tfig"><img class="tswap" id="tFig" alt="" width="330" height="464"></div>
+        <div class="tfig"><video class="tswap" id="tFig" muted playsinline preload="none" width="720" height="1010" aria-hidden="true"></video></div>
       </div>
       <div class="ttabs" id="tTabs" role="tablist"></div>
     </div>
     <div class="team-foot reveal">
       <p data-t="team_foot"></p>
       <a class="btn btn-solid" href="#start" data-t="team_cta"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section id="stats" class="bg-black">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="reveal">
+        <div class="stat-num"><span class="counter" data-target="25">25</span><span class="accent" data-t="stat1_suffix"></span></div>
+        <div class="stat-label" data-t="stat1_label"></div>
+      </div>
+      <div class="reveal d1">
+        <div class="stat-num"><span class="counter" data-target="6">6</span></div>
+        <div class="stat-label" data-t="stat2_label"></div>
+      </div>
+      <div class="reveal d2">
+        <div class="stat-num"><span data-t="stat3_num"></span><span class="accent" data-t="stat3_suffix"></span></div>
+        <div class="stat-label" data-t="stat3_label"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -820,8 +819,8 @@
     <div class="footrow">
       <div class="fl">
         <svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-      <path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" stroke="#E4E6EA" stroke-width="8" stroke-linecap="round" fill="none"/>
-      <circle cx="200" cy="200" r="11" fill="#E4E6EA"/>
+      <path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" stroke="#E7E8EA" stroke-width="8" stroke-linecap="round" fill="none"/>
+      <circle cx="200" cy="200" r="11" fill="#E7E8EA"/>
       <g class="needle">
         <polygon points="322.87,113.96 208.03,211.47 191.97,188.53" fill="#B3132B"/>
         <circle cx="322.87" cy="113.96" r="7" fill="#B3132B"/>
@@ -838,14 +837,14 @@
 window.I18N = {
   en: {
     "nav_team": "Team",
-    "hero_team": "Meet the team that works between lessons",
+    "hero_team": "Meet the Concept team",
     "team_kicker": "THE CONCEPT TEAM",
-    "team_h2_a": "I teach the lesson.",
-    "team_h2_em": "My team",
-    "team_h2_b": "works with your people until the next one.",
-    "team_p": "The Concept team are AI coaches I built on my method. Each one owns one part of English, and Netto directs them. Your people talk to them in the Concept Coach app, on the days without a lesson.",
+    "team_h2_a": "Between lessons,",
+    "team_h2_em": "the Concept team",
+    "team_h2_b": "works with your people.",
+    "team_p": "The Concept team are AI coaches built on the Concept method. Each one is responsible for one part of English, and Netto, the director of studies, leads them. Your people talk to them in the Concept Coach app on the days without a lesson.",
     "team_you": "Your question",
-    "team_foot": "They never replace the lessons with me. They keep each lesson working until the next one.",
+    "team_foot": "The team never replaces the lessons. It helps your people practice what they learned in the last one.",
     "team_cta": "Book the diagnostic call",
     "role_netto": "Coach and director of studies",
     "role_victor-hugo": "Register",
@@ -853,7 +852,7 @@ window.I18N = {
     "role_bia": "Expressions",
     "role_murillo": "Pronunciation and listening",
     "role_marcelo": "Word origins",
-    nav_cta: "Talk to me",
+    nav_cta: "Talk to us",
     nav_method: "Method", nav_about: "About",
     nav_book: "Books", nav_lessons: "Students", nav_teachers: "Teachers",
     book_kicker: "THE BOOK SERIES",
@@ -862,16 +861,16 @@ window.I18N = {
     book_cta: "See the books",
     hero_market: "SÃO PAULO · ROME · MILANO",
     hero_h1_a: "Your team speaks English.",
-    hero_h1_b: "Do they",
-    hero_h1_em: "close",
+    hero_h1_b: "Can they",
+    hero_h1_em: "negotiate",
     hero_h1_c: "in it?",
-    hero_lede: "I'm Pedro Gigollotti. For 25 years I've trained professionals who already \"know the language\" and still lose the room. I teach the layer standard courses skip: register, pragmatics, and timing under pressure.",
-    hero_cta1: "Run the method on yourself",
+    hero_lede: "Concept trains professionals who already speak English to use it with confidence at work. Our method teaches what standard courses skip: register, pragmatics, and timing under pressure.",
+    hero_cta1: "See how the method works",
     scroll: "SCROLL",
 
-    stat1_suffix: "+", stat1_label: "years training professionals to communicate under pressure",
+    stat1_suffix: "+", stat1_label: "years of the founder's experience training professionals",
     stat2_label: "countries: Brazil, USA, England, Ireland, Malta, Italy",
-    stat3_num: "1", stat3_suffix: "×", stat3_label: "method. Every lesson is built on it and reviewed by me",
+    stat3_num: "1", stat3_suffix: "×", stat3_label: "method. Every lesson is built on it",
 
     problem_kicker: "THE PROBLEM",
     problem_h2_a: "Fluent on paper.",
@@ -881,18 +880,18 @@ window.I18N = {
     problem_p2: "That gap isn't vocabulary. It's pragmatics, register, and timing: the layer standard courses rarely teach, because it's harder to test and harder to sell. It's also the layer your senior people are judged on, in every room that matters.",
     band1: "Built for the moment the meeting gets real, not the moment the test ends.",
 
-    about_kicker: "WHO YOU'LL BE WORKING WITH",
-    about_h2_a: "Not an agency.",
+    about_kicker: "THE FOUNDER",
+    about_h2_a: "Founded by a teacher.",
     about_h2_em: "One method",
     about_h2_b: ", 25 years in.",
-    about_p1: "I've spent a quarter of a century teaching professional communication across six countries: Brazil, the USA, England, Ireland, Malta, and Italy. That range isn't a travel list. It's why I can teach how English actually shifts between a London boardroom, a New York sales call, and a Milan negotiation.",
-    about_p2: "Alongside teaching, I work in teacher training, Cambridge examination preparation, syllabus design, and corporate communication projects. When you hire me, you get the person who designed the program delivering it. No account manager, no rotating junior staff, no diluted method.",
+    about_p1: "Concept was founded by Pedro Gigollotti, who has taught professional communication for 25 years in six countries: Brazil, the USA, England, Ireland, Malta, and Italy. That experience is why Concept can teach how English changes between a London boardroom, a New York sales call, and a Milan negotiation.",
+    about_p2: "Pedro designed the Concept method and directs every program. He also works in teacher training, Cambridge examination preparation, and syllabus design. Every Concept lesson follows the method he designed, the same way each time.",
     cred1_t: "Teacher training",
-    cred1_p: "I train the trainers, which means the method is built to be taught precisely, not improvised.",
+    cred1_p: "Pedro trains teachers in the method, so it is taught precisely and never improvised.",
     cred2_t: "Cambridge examinations",
     cred2_p: "Deep experience preparing candidates for Cambridge and ALTE-benchmarked assessment.",
     cred3_t: "Syllabus & project design",
-    cred3_p: "I build the curriculum around your context: your industry, your scenarios, your real communication goals.",
+    cred3_p: "Concept builds the curriculum around your context: your industry, your scenarios, and your communication goals.",
 
     method_kicker: "THE METHOD",
     method_h2: "A method with a mechanism, not just a name.",
@@ -913,9 +912,9 @@ window.I18N = {
     t2_p: "The key step. Every expression is mapped onto five registers, from frozen to intimate, so students learn exactly when a phrase costs them credibility.",
     t3_t: "Activation",
     t3_p: "That language gets used right away, in a scenario close to what the student will actually face at work.",
-    band2: "Most methods stop at meaning. Mine doesn't stop until the register is right.",
+    band2: "Most methods stop at meaning. Ours doesn't stop until the register is right.",
 
-    who_kicker: "WHO I WORK WITH",
+    who_kicker: "WHO WE WORK WITH",
     who_h2_a: "Trained for the rooms",
     who_h2_em: "your revenue",
     who_h2_b: "depends on.",
@@ -934,13 +933,13 @@ window.I18N = {
 
     courses_kicker: "THE PROGRAMS",
     courses_h2: "Built around you, not a catalogue.",
-    courses_lede: "There is no fixed menu. I design each program around the conversations your people actually have: the clients they lose, the meetings they dread, the deals on the table.",
+    courses_lede: "There is no fixed menu. We design each program around the conversations your people actually have with clients, in meetings, and in negotiations.",
     c1_t: "Individuals",
     c1_p: "One-to-one work with a senior professional who needs to perform in a specific room: a board, a pitch, a negotiation.",
     c2_t: "Teams & departments",
     c2_p: "Group programs shaped around a shared context, whether that's a sales floor, a legal team, or a leadership group.",
     c3_t: "Your sector, your scenarios",
-    c3_p: "I've built programs across finance, law, logistics, marketing, HR, and negotiation. Whatever your field, the syllabus is written after I understand it, not before.",
+    c3_p: "Concept has built programs across finance, law, logistics, marketing, HR, and negotiation. Whatever your field, we write the syllabus after we understand it, not before.",
     c_pills: ["Online or in person","Individual or group","Cambridge exam prep"],
 
     learn_kicker: "THE LEARNING",
@@ -948,43 +947,35 @@ window.I18N = {
     learn_lede: "Hours are structured around ALTE-defined benchmarks. A student who reaches a stage's goals faster than scheduled advances immediately, with no waiting on a fixed calendar built for someone else's pace.",
     chart1_title: "Level reached over 6 months",
     chart1_s1: "Fixed-calendar course",
-    chart1_s2: "My approach (progress-based)",
+    chart1_s2: "Concept (progress-based)",
     chart1_labels: ["M1","M2","M3","M4","M5","M6"],
     chart2_title: "Points per skill, per assessment",
     chart2_labels: ["Listening","Speaking","Reading","Writing"],
-    learn_note: "I weight speaking and listening higher on purpose. Production, actually speaking and understanding in real time, is what separates fluency from a passed test. Every student is assessed after every lesson, and you get a monthly report: hours, attendance, skill-by-skill trend, and my written notes. Progress you can put in front of a budget review.",
+    learn_note: "We weight speaking and listening higher on purpose. Speaking and understanding in real time is what separates fluency from a passed test. Every student is assessed after every lesson, and you get a monthly report with hours, attendance, the trend for each skill, and written notes.",
 
-    why_kicker: "WHY WORK WITH ME",
+    why_kicker: "WHY CONCEPT",
     why_h2_a: "Built for the gap",
     why_h2_em: "the alternatives",
     why_h2_b: "leave behind.",
-    why_rows: [
-      "Real-time speaking practice, not drills",
-      "Register & tone, taught explicitly",
-      "Human feedback, every single lesson",
-      "Progress you can report (CEFR-mapped)",
-      "Pace set by results, not a fixed calendar",
-      "Syllabus written for your business",
-      "Taught by the person who designed it"
-    ],
-    why_cols: ["Self-study apps","Language schools","Working with me"],
+    why_rows: ["Real-time speaking practice, not drills", "Register & tone, taught explicitly", "Practice between lessons, on the same method", "Human feedback, every single lesson", "Progress you can report (CEFR-mapped)", "Pace set by results, not a fixed calendar", "Syllabus written for your business", "Designed and directed by the founder"],
+    why_cols: ["Self-study apps", "Language schools", "Concept"],
 
     contact_kicker: "GET IN TOUCH",
     contact_h2_a: "Let's build the program",
     contact_h2_em: "for your team",
     contact_h2_b: ".",
-    contact_lede: "Tell me the team, the goal, and the deadline. I'll come back with a proposal, not a brochure. Programs run online, in person, or blended, for individuals or full departments.",
-    contact_cta: "Talk to me",
+    contact_lede: "Tell us the team, the goal, and the deadline. We will come back with a proposal, not a brochure. Programs run online, in person, or blended, for individuals or full departments.",
+    contact_cta: "Talk to us",
     contact_copied: "Email address copied to your clipboard",
-    contact_or: "Or write to me directly:",
-    contact_name: "Pedro Gigollotti · Teacher & Academic Director",
+    contact_or: "Or write to us directly:",
+    contact_name: "Pedro Gigollotti · Founder & Academic Director",
     mail_subject: "English program enquiry",
     mail_body: "Team size:\nCurrent level:\nGoal:\nTimeline:",
     proof_kicker: "WHAT CLIENTS SAY",
     proof_h2_a: "Judge the method by",
     proof_h2_em: "the people",
     proof_h2_b: "who lived it.",
-    trust_label: "Professionals I've trained work at",
+    trust_label: "Professionals trained by Concept work at",
     q1: "So grateful for his teaching approach and methodology. Effective learning is important for effective communication: the how and why determine how your register and tone of voice can be tailored to the challenging current landscape of communication.",
     q1_n: "Serena Pistillo", q1_r: "Executive Coach & Business Advisor, ICF ACC",
     q2: "After one month I can say Pedro is more than an English teacher. Thanks to his extensive experience in English and psychology he quickly understood my needs and adapted the learning to my goals and personality. His lessons are interactive, dynamic, and never boring.",
@@ -1002,31 +993,31 @@ window.I18N = {
     start_h2_a: "One call.",
     start_h2_em: "No charge",
     start_h2_b: ", no obligation.",
-    start_lede: "Before anyone commits to anything, I run a 45-minute diagnostic call. I speak with one or two of your people, and I tell you precisely where they break down under pressure and what it would take to fix it. You then decide whether to go further.",
+    start_lede: "Before anyone commits to anything, we run a 45-minute diagnostic call. We speak with one or two of your people and tell you where they have difficulty under pressure and what it would take to fix it. Then you decide whether to go further.",
     start_1_t: "45 minutes",
-    start_1_p: "A real conversation with your people, not a sales pitch. I need to hear them speak to diagnose anything.",
+    start_1_p: "A real conversation with your people, not a sales pitch. We need to hear them speak before we can diagnose anything.",
     start_2_t: "A written diagnosis",
-    start_2_p: "You get my honest read: current CEFR level, the specific gaps, and whether I think training is even worth it.",
+    start_2_p: "You get an honest written assessment: the current CEFR level, the specific gaps, and whether training is worth it.",
     start_3_t: "Then you decide",
-    start_3_p: "If it makes sense, I write a proposal built on what I heard. If it doesn't, I will tell you that too.",
-    capacity_note: "I work with a limited number of clients at a time, because every lesson is built on my method and reviewed by me. If we are a fit, I will tell you honestly what availability looks like.",
+    start_3_p: "If it makes sense, we write a proposal built on what we heard. If it doesn't, we will tell you that too.",
+    capacity_note: "Concept works with a limited number of clients at a time, because every program is built on the method and directed by the founder. If we are a fit, we will tell you honestly what availability looks like.",
     start_cta: "Book the diagnostic call",
     chart1_sub: "Illustrative: how progress-based pacing compares with a fixed calendar.",
-    chart2_sub: "My actual assessment weighting, applied after every lesson.",
-    footer_tag: "PEDRO GIGOLLOTTI · CONCEPT · SÃO PAULO · ROME · MILANO",
+    chart2_sub: "Concept's actual assessment weighting, applied after every lesson.",
+    footer_tag: "CONCEPT · SÃO PAULO · ROME · MILANO",
     footer_copy: "© 2026 Concept. Mind your future."
   },
 
   pt: {
     "nav_team": "Time",
-    "hero_team": "Conheça o time que trabalha entre as aulas",
+    "hero_team": "Conheça o time Concept",
     "team_kicker": "O TIME CONCEPT",
-    "team_h2_a": "Eu dou a aula.",
-    "team_h2_em": "Meu time",
-    "team_h2_b": "trabalha com a sua equipe até a próxima.",
-    "team_p": "O time Concept são coaches de IA que eu criei sobre o meu método. Cada um cuida de uma parte do inglês, e o Netto dirige todos. A sua equipe fala com eles no app Concept Coach, nos dias sem aula.",
+    "team_h2_a": "Entre uma aula e outra,",
+    "team_h2_em": "o time Concept",
+    "team_h2_b": "trabalha com a sua equipe.",
+    "team_p": "O time Concept são coaches de IA criados sobre o método Concept. Cada um cuida de uma parte do inglês, e o Netto, diretor pedagógico, lidera todos. A sua equipe fala com eles no app Concept Coach, nos dias sem aula.",
     "team_you": "Sua pergunta",
-    "team_foot": "Eles nunca substituem as aulas comigo. Eles mantêm cada aula funcionando até a próxima.",
+    "team_foot": "O time nunca substitui as aulas. Ele ajuda a sua equipe a praticar o que aprendeu na última.",
     "team_cta": "Agendar a conversa de diagnóstico",
     "role_netto": "Coach e diretor pedagógico",
     "role_victor-hugo": "Registro",
@@ -1034,7 +1025,7 @@ window.I18N = {
     "role_bia": "Expressões",
     "role_murillo": "Pronúncia e escuta",
     "role_marcelo": "Origem das palavras",
-    nav_cta: "Falar comigo",
+    nav_cta: "Fale conosco",
     nav_method: "Método", nav_about: "Sobre",
     nav_book: "Livros", nav_lessons: "Alunos", nav_teachers: "Professores",
     book_kicker: "A SÉRIE DE LIVROS",
@@ -1043,16 +1034,16 @@ window.I18N = {
     book_cta: "Ver os livros",
     hero_market: "SÃO PAULO · ROMA · MILÃO",
     hero_h1_a: "Sua equipe fala inglês.",
-    hero_h1_b: "Mas eles",
-    hero_h1_em: "fecham",
-    hero_h1_c: "negócios nele?",
-    hero_lede: "Sou Pedro Gigollotti. Há 25 anos preparo profissionais que até \"falam a língua\", mas perdem o controle da reunião. Ensino aquilo que os cursos convencionais pulam: registro, pragmática e timing sob pressão.",
-    hero_cta1: "Teste o método em você",
+    hero_h1_b: "Mas consegue",
+    hero_h1_em: "negociar",
+    hero_h1_c: "em inglês?",
+    hero_lede: "A Concept prepara profissionais que já falam inglês para usá-lo com segurança no trabalho. Nosso método ensina o que os cursos convencionais pulam: registro, pragmática e timing sob pressão.",
+    hero_cta1: "Veja como o método funciona",
     scroll: "ROLE PARA BAIXO",
 
-    stat1_suffix: "+", stat1_label: "anos treinando profissionais para se comunicarem sob pressão",
+    stat1_suffix: "+", stat1_label: "anos de experiência do fundador formando profissionais",
     stat2_label: "países de atuação: Brasil, EUA, Inglaterra, Irlanda, Malta e Itália",
-    stat3_num: "1", stat3_suffix: "×", stat3_label: "método. Cada aula nasce dele e passa pela minha revisão",
+    stat3_num: "1", stat3_suffix: "×", stat3_label: "método. Cada aula nasce dele",
 
     problem_kicker: "O PROBLEMA",
     problem_h2_a: "Fluentes no papel.",
@@ -1062,18 +1053,18 @@ window.I18N = {
     problem_p2: "Isso não é falta de vocabulário. É falta de pragmática, adequação de registro e timing: habilidades que as escolas raramente ensinam, pois são difíceis de testar e padronizar. Mas é exatamente por essa camada que seus profissionais seniores são julgados nas reuniões que realmente importam.",
     band1: "Um método feito para a hora em que o jogo fica sério, e não para tirar nota em prova.",
 
-    about_kicker: "COM QUEM VOCÊ VAI TRABALHAR",
-    about_h2_a: "Nada de agências.",
-    about_h2_em: "Um único método",
-    about_h2_b: ", com 25 anos de estrada.",
-    about_p1: "Passei um quarto de século ensinando comunicação corporativa em seis países: Brasil, EUA, Inglaterra, Irlanda, Malta e Itália. Isso não é só um roteiro de viagens. É o que me permite entender de verdade como o inglês muda entre uma reunião de diretoria em Londres, uma call de vendas em Nova York e uma negociação tensa em Milão.",
-    about_p2: "Além de dar aulas, atuo na formação de professores, na preparação para exames Cambridge, no design de materiais e na condução de projetos de comunicação corporativa. Ao me contratar, você lida diretamente com quem criou o método e vai conduzir o treinamento. Sem gerentes de conta, sem rodízio de professores iniciantes, sem conteúdo diluído.",
+    about_kicker: "O FUNDADOR",
+    about_h2_a: "Fundada por um professor.",
+    about_h2_em: "Um método",
+    about_h2_b: ", 25 anos de prática.",
+    about_p1: "A Concept foi fundada por Pedro Gigollotti, que ensina comunicação profissional há 25 anos em seis países: Brasil, Estados Unidos, Inglaterra, Irlanda, Malta e Itália. É por essa experiência que a Concept ensina como o inglês muda entre uma reunião de diretoria em Londres, uma ligação de vendas em Nova York e uma negociação em Milão.",
+    about_p2: "Pedro criou o método Concept e dirige todos os programas. Ele também atua na formação de professores, na preparação para exames Cambridge e no design de currículos. Toda aula da Concept segue o método que ele criou, sempre da mesma forma.",
     cred1_t: "Formação de professores",
-    cred1_p: "Treino os próprios instrutores, o que garante um método altamente preciso, estruturado e livre de improvisos.",
+    cred1_p: "Pedro forma professores no método, para que ele seja ensinado com precisão e nunca improvisado.",
     cred2_t: "Certificações Cambridge",
     cred2_p: "Sólida experiência preparando candidatos para exames com o alto rigor dos padrões Cambridge e ALTE.",
     cred3_t: "Syllabus sob medida",
-    cred3_p: "Desenvolvo o conteúdo com base na realidade do seu negócio, no seu mercado e nos cenários reais que a sua equipe enfrenta.",
+    cred3_p: "A Concept monta o currículo a partir do seu contexto: o seu setor, as suas situações e os seus objetivos de comunicação.",
 
     method_kicker: "O MÉTODO",
     method_h2: "Uma metodologia com fundamento, não apenas um nome de impacto.",
@@ -1094,9 +1085,9 @@ window.I18N = {
     t2_p: "A etapa mais importante. Cada expressão é analisada em cinco níveis de formalidade (do mais engessado ao mais íntimo), para que o aluno entenda perfeitamente quando uma frase pode custar a sua credibilidade.",
     t3_t: "Activation (Ativação)",
     t3_p: "O vocabulário novo é testado na mesma hora, através de simulações muito próximas da rotina de trabalho real que o aluno tem na empresa.",
-    band2: "A maioria dos cursos para na tradução. O meu só avança quando o tom está perfeito.",
+    band2: "A maioria dos métodos para no significado. O nosso só para quando o registro está certo.",
 
-    who_kicker: "PÚBLICO-ALVO",
+    who_kicker: "COM QUEM TRABALHAMOS",
     who_h2_a: "Preparados para os cenários que",
     who_h2_em: "geram receita",
     who_h2_b: "para a sua empresa.",
@@ -1115,13 +1106,13 @@ window.I18N = {
 
     courses_kicker: "OS PROGRAMAS",
     courses_h2: "Feito sob medida para você, sem soluções de prateleira.",
-    courses_lede: "Aqui não existe menu fixo. O programa é desenhado com base nas conversas que a sua equipe realmente tem no dia a dia: os clientes que estão perdendo, as reuniões mais difíceis e as negociações que estão na mesa.",
+    courses_lede: "Não existe cardápio fixo. Desenhamos cada programa a partir das conversas que a sua equipe tem de verdade: com clientes, em reuniões e em negociações.",
     c1_t: "Treinamento Individual",
     c1_p: "Mentoria direta para executivos seniores que precisam de alta performance num cenário específico: apresentações ao board, pitches ou grandes negociações internacionais.",
     c2_t: "Times e Departamentos",
     c2_p: "Programas em grupo adaptados à realidade específica de cada setor, seja para uma equipe comercial, um time jurídico ou gerentes em formação.",
     c3_t: "O seu setor, a sua realidade",
-    c3_p: "Com vivência em finanças, direito, logística, marketing e negociação, o conteúdo das aulas só é fechado depois que eu entendo profundamente como funciona o seu mercado.",
+    c3_p: "A Concept já criou programas em finanças, direito, logística, marketing, RH e negociação. Seja qual for a sua área, escrevemos o currículo depois de entendê-la, nunca antes.",
     c_pills: ["Aulas online ou presenciais","Formato individual ou em grupo","Preparação para exames Cambridge"],
 
     learn_kicker: "A JORNADA",
@@ -1129,43 +1120,35 @@ window.I18N = {
     learn_lede: "A carga horária é baseada no ritmo ideal de aprendizagem (ALTE). Se o aluno atingir as metas de um nível antes do tempo previsto, ele avança na mesma hora. Sem enrolação e sem ter que esperar o fim do semestre.",
     chart1_title: "Nível de inglês atingido em 6 meses",
     chart1_s1: "Curso padrão de calendário fixo",
-    chart1_s2: "Método Concept (focado em desempenho)",
+    chart1_s2: "Concept (por progresso)",
     chart1_labels: ["M1","M2","M3","M4","M5","M6"],
     chart2_title: "Pontos por competência, por avaliação",
     chart2_labels: ["Compreensão Auditiva","Fala","Leitura","Escrita"],
-    learn_note: "Eu dou muito mais peso à fala e à escuta de propósito. Falar de verdade e entender tudo em tempo real é o que separa alguém fluente de alguém que só passou na prova. Cada aluno é avaliado em todas as aulas, gerando um relatório mensal claro com: presença, horas cumpridas, evolução por habilidade e meu feedback detalhado.",
+    learn_note: "Damos mais peso à fala e à escuta de propósito. Falar e entender em tempo real é o que separa a fluência de uma prova aprovada. Cada aluno é avaliado depois de cada aula, e você recebe um relatório mensal com horas, presença, a evolução de cada habilidade e observações escritas.",
 
-    why_kicker: "POR QUE ME CONTRATAR",
+    why_kicker: "POR QUE A CONCEPT",
     why_h2_a: "Criado para suprir",
     why_h2_em: "as falhas",
     why_h2_b: "do ensino tradicional.",
-    why_rows: [
-      "Prática de fala real, sem repetições robotizadas",
-      "Ensino claro sobre registro de formalidade e pragmática",
-      "Feedback pontual de um profissional sênior em cada aula",
-      "Progresso comprovado e rastreável (padrão CEFR)",
-      "O ritmo acompanha os resultados, não as datas do calendário",
-      "Material desenvolvido exclusivamente para o seu negócio",
-      "Aulas dadas por quem elaborou toda a metodologia"
-    ],
-    why_cols: ["Apps de autoestudo","Escolas de inglês","Trabalhar comigo"],
+    why_rows: ["Prática de fala real, sem repetições robotizadas", "Ensino claro sobre registro de formalidade e pragmática", "Prática entre as aulas, no mesmo método", "Feedback pontual de um profissional sênior em cada aula", "Progresso comprovado e rastreável (padrão CEFR)", "O ritmo acompanha os resultados, não as datas do calendário", "Material desenvolvido exclusivamente para o seu negócio", "Criado e dirigido pelo fundador"],
+    why_cols: ["Apps de autoestudo", "Escolas de inglês", "Concept"],
 
     contact_kicker: "VAMOS CONVERSAR",
     contact_h2_a: "Podemos montar o programa ideal",
     contact_h2_em: "para a sua equipe",
     contact_h2_b: ".",
-    contact_lede: "Me conte o tamanho da equipe, o principal desafio de vocês e o prazo que têm em mente. Eu retorno com uma proposta executiva direta ao ponto. Programas online, presenciais ou híbridos.",
-    contact_cta: "Falar comigo",
+    contact_lede: "Conte para nós a equipe, o objetivo e o prazo. Voltamos com uma proposta, não com um folheto. Os programas são online, presenciais ou mistos, para pessoas ou departamentos inteiros.",
+    contact_cta: "Fale conosco",
     contact_copied: "E-mail copiado com sucesso",
-    contact_or: "Ou me escreva diretamente em:",
-    contact_name: "Pedro Gigollotti · Professor & Diretor Acadêmico",
+    contact_or: "Ou escreva direto para nós:",
+    contact_name: "Pedro Gigollotti · Fundador e Diretor Acadêmico",
     mail_subject: "Interesse no programa de inglês corporativo",
     mail_body: "Tamanho da equipe:\nNível atual de inglês:\nQual é o objetivo principal?:\nPrazo para iniciar:",
     proof_kicker: "O QUE OS CLIENTES DIZEM",
     proof_h2_a: "Avalie o método pela evolução dos",
     proof_h2_em: "líderes",
     proof_h2_b: "que vivenciaram isso na prática.",
-    trust_label: "Profissionais que já treinei estão em empresas como",
+    trust_label: "Profissionais formados pela Concept trabalham em",
     q1: "Sou muito grata pela metodologia dele. Aprender de forma estratégica é o grande diferencial: entender o 'como' e o 'porquê' nos dá a chave para ajustar nosso tom de voz e o registro de formalidade no cenário complexo de hoje.",
     q1_n: "Serena Pistillo", q1_r: "Executive Coach & Business Advisor, ICF ACC",
     q2: "Depois de um mês de aulas, já dá para dizer que o Pedro é muito mais que um professor de inglês. Com sua bagagem e visão de psicologia, ele sacou rápido o que eu precisava e adaptou o ensino ao meu perfil e às minhas metas. As aulas são super dinâmicas, nada daquela mesmice de sempre.",
@@ -1183,31 +1166,31 @@ window.I18N = {
     start_h2_a: "Uma conversa inicial.",
     start_h2_em: "Sem custo",
     start_h2_b: ", sem compromisso.",
-    start_lede: "Antes de fechar qualquer contrato, eu conduzo uma sessão de diagnóstico de 45 minutos. Eu converso com uma ou duas pessoas da sua equipe e te digo com clareza onde a comunicação deles falha sob pressão e o que precisa ser feito para resolver. Depois disso, você decide se quer avançar.",
+    start_lede: "Antes de qualquer compromisso, fazemos uma conversa de diagnóstico de 45 minutos. Falamos com uma ou duas pessoas da sua equipe e dizemos onde elas têm dificuldade sob pressão e o que seria preciso para resolver. Depois você decide se quer seguir.",
     start_1_t: "Sessão Prática de 45 Minutos",
-    start_1_p: "Uma conversa autêntica com a sua equipe, e não um discurso de vendas. Eu preciso ouvi-los falar na prática para conseguir fazer um diagnóstico real.",
+    start_1_p: "Uma conversa real com a sua equipe, não uma apresentação de vendas. Precisamos ouvir as pessoas falarem antes de qualquer diagnóstico.",
     start_2_t: "Diagnóstico por escrito",
-    start_2_p: "Você receberá o meu feedback honesto: o nível CEFR exato de cada um, os pontos técnicos em que estão falhando e se o treinamento realmente vai valer a pena no seu caso.",
+    start_2_p: "Você recebe uma avaliação escrita e honesta: o nível CEFR atual, as lacunas específicas e se o treinamento vale a pena.",
     start_3_t: "A decisão é sua",
-    start_3_p: "Se fizer sentido, montarei uma proposta baseada naquilo que escutei na sessão. Se não fizer sentido, eu serei o primeiro a te falar.",
-    capacity_note: "Trabalho com um número limitado de clientes por vez, porque cada aula nasce do meu método e passa pela minha revisão. Se o seu projeto tiver sinergia com o meu trabalho, te falarei com transparência sobre os horários e a minha disponibilidade.",
+    start_3_p: "Se fizer sentido, escrevemos uma proposta a partir do que ouvimos. Se não fizer, também diremos isso.",
+    capacity_note: "A Concept atende um número limitado de clientes por vez, porque cada programa segue o método e é dirigido pelo fundador. Se fizer sentido trabalharmos juntos, diremos com honestidade qual é a disponibilidade.",
     start_cta: "Agendar a sessão de diagnóstico",
     chart1_sub: "Comparativo ilustrativo: O avanço pelo método Concept vs. cronogramas padrões de escolas.",
-    chart2_sub: "O peso de cada competência aplicado logo após o fim de cada aula.",
-    footer_tag: "PEDRO GIGOLLOTTI · CONCEPT · SÃO PAULO · ROMA · MILÃO",
+    chart2_sub: "O peso real da avaliação da Concept, aplicado depois de cada aula.",
+    footer_tag: "CONCEPT · SÃO PAULO · ROMA · MILÃO",
     footer_copy: "© 2026 Concept. Todos os direitos reservados."
   },
 
   it: {
     "nav_team": "Team",
-    "hero_team": "Conosci il team che lavora tra una lezione e l’altra",
+    "hero_team": "Conosci il team Concept",
     "team_kicker": "IL TEAM CONCEPT",
-    "team_h2_a": "Io faccio la lezione.",
-    "team_h2_em": "Il mio team",
-    "team_h2_b": "lavora con le tue persone fino alla prossima.",
-    "team_p": "Il team Concept è formato da coach di intelligenza artificiale che ho costruito sul mio metodo. Ognuno segue una parte dell’inglese, e Netto li dirige. Le tue persone parlano con loro nell’app Concept Coach, nei giorni senza lezione.",
+    "team_h2_a": "Tra una lezione e l’altra,",
+    "team_h2_em": "il team Concept",
+    "team_h2_b": "lavora con le tue persone.",
+    "team_p": "Il team Concept è formato da coach di intelligenza artificiale costruiti sul metodo Concept. Ognuno segue una parte dell’inglese, e Netto, il direttore didattico, li guida. Le tue persone parlano con loro nell’app Concept Coach, nei giorni senza lezione.",
     "team_you": "La tua domanda",
-    "team_foot": "Non sostituiscono mai le lezioni con me. Fanno in modo che ogni lezione continui a funzionare fino alla prossima.",
+    "team_foot": "Il team non sostituisce mai le lezioni. Aiuta le tue persone a esercitare ciò che hanno imparato nell’ultima.",
     "team_cta": "Prenota la call di diagnosi",
     "role_netto": "Coach e direttore didattico",
     "role_victor-hugo": "Registro",
@@ -1215,7 +1198,7 @@ window.I18N = {
     "role_bia": "Espressioni",
     "role_murillo": "Pronuncia e ascolto",
     "role_marcelo": "Origine delle parole",
-    nav_cta: "Contattami",
+    nav_cta: "Contattaci",
     nav_method: "Metodo", nav_about: "Chi sono",
     nav_book: "Libri", nav_lessons: "Studenti", nav_teachers: "Insegnanti",
     book_kicker: "LA COLLANA DI LIBRI",
@@ -1224,16 +1207,16 @@ window.I18N = {
     book_cta: "Vedi i libri",
     hero_market: "SAN PAOLO · ROMA · MILANO",
     hero_h1_a: "Il tuo team parla inglese.",
-    hero_h1_b: "Ma riesce a",
-    hero_h1_em: "chiudere",
-    hero_h1_c: "i contratti?",
-    hero_lede: "Sono Pedro Gigollotti. Da 25 anni preparo professionisti che, pur conoscendo la lingua, non riescono a tenere in pugno la situazione. Insegno quello che i corsi standard tralasciano: il registro, la pragmatica e la gestione dei tempi sotto pressione.",
-    hero_cta1: "Prova il metodo su di te",
+    hero_h1_b: "Ma sa",
+    hero_h1_em: "negoziare",
+    hero_h1_c: "in inglese?",
+    hero_lede: "Concept prepara professionisti che parlano già inglese a usarlo con sicurezza al lavoro. Il nostro metodo insegna ciò che i corsi standard tralasciano: registro, pragmatica e gestione dei tempi sotto pressione.",
+    hero_cta1: "Scopri come funziona il metodo",
     scroll: "SCORRI VERSO IL BASSO",
 
-    stat1_suffix: "+", stat1_label: "anni di esperienza nel preparare i professionisti a comunicare sotto pressione",
+    stat1_suffix: "+", stat1_label: "anni di esperienza del fondatore nella formazione di professionisti",
     stat2_label: "paesi in cui ho operato: Brasile, USA, Regno Unito, Irlanda, Malta e Italia",
-    stat3_num: "1", stat3_suffix: "×", stat3_label: "metodo. Ogni lezione nasce da esso e passa dalla mia revisione",
+    stat3_num: "1", stat3_suffix: "×", stat3_label: "metodo. Ogni lezione nasce da esso",
 
     problem_kicker: "IL PROBLEMA",
     problem_h2_a: "Fluenti sulla carta.",
@@ -1243,18 +1226,18 @@ window.I18N = {
     problem_p2: "Non è una questione di vocabolario. È questione di pragmatica, di registro linguistico e tempismo: competenze che le scuole raramente insegnano, perché difficili da valutare e da standardizzare. Eppure, è proprio su questo che i tuoi profili senior vengono giudicati nei momenti decisivi.",
     band1: "Pensato per il momento in cui il gioco si fa duro, non per prendere un bel voto all'esame.",
 
-    about_kicker: "CON CHI LAVORERAI",
-    about_h2_a: "Nessun intermediario.",
-    about_h2_em: "Un solo metodo",
-    about_h2_b: "con 25 anni di esperienza.",
-    about_p1: "Ho passato un quarto di secolo a formare i professionisti di sei paesi: Brasile, Stati Uniti, Regno Unito, Irlanda, Malta e Italia. Non è solo un elenco di viaggi, è ciò che mi permette di capire veramente come cambia l'inglese tra un CdA a Londra, una call di vendita a New York e una trattativa complessa a Milano.",
-    about_p2: "Oltre a fare lezione, mi occupo di formare docenti, preparare candidati per le certificazioni Cambridge, sviluppare materiali didattici e gestire progetti di comunicazione aziendale. Quando mi assumi, lavori direttamente con chi ha creato il metodo e condurrà le lezioni. Nessun account manager, nessuna rotazione di insegnanti alle prime armi, nessun programma standardizzato.",
+    about_kicker: "IL FONDATORE",
+    about_h2_a: "Fondata da un insegnante.",
+    about_h2_em: "Un metodo",
+    about_h2_b: ", 25 anni di esperienza.",
+    about_p1: "Concept è stata fondata da Pedro Gigollotti, che insegna comunicazione professionale da 25 anni in sei paesi: Brasile, Stati Uniti, Inghilterra, Irlanda, Malta e Italia. Grazie a questa esperienza, Concept insegna come cambia l’inglese tra un consiglio di amministrazione a Londra, una call di vendita a New York e una trattativa a Milano.",
+    about_p2: "Pedro ha creato il metodo Concept e dirige ogni programma. Si occupa anche di formazione docenti, preparazione alle certificazioni Cambridge e progettazione didattica. Ogni lezione Concept segue il metodo che ha creato, sempre allo stesso modo.",
     cred1_t: "Formazione dei docenti",
-    cred1_p: "Formo i formatori stessi, garantendo un metodo estremamente preciso, strutturato e senza spazio per l'improvvisazione.",
+    cred1_p: "Pedro forma i docenti nel metodo, perché venga insegnato con precisione e mai improvvisato.",
     cred2_t: "Certificazioni Cambridge",
     cred2_p: "Solida esperienza nel preparare candidati agli esami secondo i rigorosi standard Cambridge e ALTE.",
     cred3_t: "Syllabus su misura",
-    cred3_p: "Sviluppo il piano didattico in base alla realtà della tua azienda, al tuo mercato e alle situazioni reali che il tuo team affronta ogni giorno.",
+    cred3_p: "Concept costruisce il programma sul tuo contesto: il tuo settore, i tuoi scenari e i tuoi obiettivi di comunicazione.",
 
     method_kicker: "IL METODO",
     method_h2: "Una metodologia con basi solide, non solo uno slogan.",
@@ -1275,9 +1258,9 @@ window.I18N = {
     t2_p: "Il passaggio chiave. Ogni espressione viene analizzata su cinque livelli di formalità (dall'ingessato al confidenziale), affinché lo studente capisca esattamente quando una determinata frase può comprometterne la credibilità.",
     t3_t: "Activation (Attivazione)",
     t3_p: "Le nuove espressioni vengono messe subito alla prova tramite simulazioni molto vicine alle reali dinamiche lavorative dello studente.",
-    band2: "La maggior parte dei metodi si ferma alla traduzione. Il mio si ferma solo quando il tono è perfetto.",
+    band2: "La maggior parte dei metodi si ferma al significato. Il nostro si ferma solo quando il registro è giusto.",
 
-    who_kicker: "A CHI MI RIVOLGO",
+    who_kicker: "CON CHI LAVORIAMO",
     who_h2_a: "Preparati per i contesti che",
     who_h2_em: "generano fatturato",
     who_h2_b: "per la tua azienda.",
@@ -1296,13 +1279,13 @@ window.I18N = {
 
     courses_kicker: "I PROGRAMMI",
     courses_h2: "Progettato su misura, niente soluzioni preimpostate.",
-    courses_lede: "Non c'è un menu fisso. Il programma è costruito sulle conversazioni reali del tuo team: i clienti che perdono, le riunioni che temono e le trattative più importanti sul tavolo.",
+    courses_lede: "Non esiste un menu fisso. Progettiamo ogni programma sulle conversazioni che le tue persone hanno davvero: con i clienti, nelle riunioni e nelle trattative.",
     c1_t: "Formazione Individuale",
     c1_p: "Sessioni dirette per figure senior che necessitano di prestazioni immediate in un contesto specifico: riunioni del consiglio direttivo, pitch o grandi trattative internazionali.",
     c2_t: "Team e Dipartimenti",
     c2_p: "Programmi di gruppo modellati sulle specifiche esigenze operative del reparto, che si tratti della squadra vendite, del team legale o dei quadri dirigenti.",
     c3_t: "Il tuo settore, la tua realtà",
-    c3_p: "Lavorando da anni nel campo della finanza, legge, logistica, marketing e negoziazione, progetto i contenuti solo dopo aver compreso a fondo i meccanismi del tuo mercato.",
+    c3_p: "Concept ha creato programmi in finanza, diritto, logistica, marketing, HR e negoziazione. Qualunque sia il tuo settore, scriviamo il programma dopo averlo capito, non prima.",
     c_pills: ["Lezioni online o in presenza","Formato individuale o di gruppo","Preparazione esami Cambridge"],
 
     learn_kicker: "IL PERCORSO",
@@ -1310,43 +1293,35 @@ window.I18N = {
     learn_lede: "Il monte ore si basa sui ritmi di apprendimento standard internazionali (ALTE). Se lo studente raggiunge prima gli obiettivi, passa subito al livello successivo. Senza perdite di tempo e senza dover aspettare la fine del trimestre.",
     chart1_title: "Livello di inglese raggiunto in 6 mesi",
     chart1_s1: "Corso standard a calendario fisso",
-    chart1_s2: "Metodo Concept (focalizzato sulle prestazioni)",
+    chart1_s2: "Concept (basato sui progressi)",
     chart1_labels: ["M1","M2","M3","M4","M5","M6"],
     chart2_title: "Punti per competenza ad ogni valutazione",
     chart2_labels: ["Ascolto","Parlato","Lettura","Scrittura"],
-    learn_note: "Do molto più peso all'ascolto e al parlato, e c'è un motivo: parlare davvero e capire tutto in tempo reale è ciò che separa la vera fluenza dal semplice superamento di un test. Valuto ogni studente a ogni singola lezione e ti consegno un report mensile chiaro con: presenze, ore completate, evoluzione per competenza e il mio feedback dettagliato.",
+    learn_note: "Diamo più peso a parlato e ascolto di proposito. Parlare e capire in tempo reale è ciò che separa la fluidità da un esame superato. Ogni studente viene valutato dopo ogni lezione, e ricevi un report mensile con ore, presenze, l’andamento di ogni abilità e note scritte.",
 
-    why_kicker: "PERCHÉ SCEGLIERMI",
+    why_kicker: "PERCHÉ CONCEPT",
     why_h2_a: "Studiato per colmare",
     why_h2_em: "le lacune",
     why_h2_b: "dell'insegnamento tradizionale.",
-    why_rows: [
-      "Pratica di conversazione reale, niente ripetizioni a pappagallo",
-      "Insegnamento chiaro sul livello di formalità e sulla pragmatica",
-      "Feedback preciso da parte di un professionista senior, a ogni lezione",
-      "Progressi documentabili e tracciabili (Standard CEFR)",
-      "Il ritmo segue i risultati reali, non le scadenze del calendario",
-      "Materiale sviluppato in esclusiva per le necessità della tua azienda",
-      "Lezioni condotte da chi ha ideato l'intera metodologia"
-    ],
-    why_cols: ["App di autoapprendimento","Scuole di lingue","Lavorare con me"],
+    why_rows: ["Pratica di conversazione reale, niente ripetizioni a pappagallo", "Insegnamento chiaro sul livello di formalità e sulla pragmatica", "Pratica tra le lezioni, con lo stesso metodo", "Feedback preciso da parte di un professionista senior, a ogni lezione", "Progressi documentabili e tracciabili (Standard CEFR)", "Il ritmo segue i risultati reali, non le scadenze del calendario", "Materiale sviluppato in esclusiva per le necessità della tua azienda", "Ideato e diretto dal fondatore"],
+    why_cols: ["App di autoapprendimento", "Scuole di lingue", "Concept"],
 
     contact_kicker: "PARLIAMONE",
     contact_h2_a: "Possiamo costruire il programma perfetto",
     contact_h2_em: "per la tua squadra",
     contact_h2_b: ".",
-    contact_lede: "Dimmi quante persone compongono il team, qual è la vostra sfida principale e i tempi previsti. Ti risponderò con una proposta chiara e dritta al punto. Formazione online, in presenza o ibrida.",
-    contact_cta: "Contattami ora",
+    contact_lede: "Raccontaci il team, l’obiettivo e la scadenza. Ti rispondiamo con una proposta, non con una brochure. I programmi sono online, in presenza o misti, per singoli o interi reparti.",
+    contact_cta: "Contattaci",
     contact_copied: "Indirizzo e-mail copiato correttamente",
-    contact_or: "Oppure scrivimi direttamente a:",
-    contact_name: "Pedro Gigollotti · Insegnante e Direttore Accademico",
+    contact_or: "Oppure scrivici direttamente:",
+    contact_name: "Pedro Gigollotti · Fondatore e Direttore Accademico",
     mail_subject: "Interesse nel programma di inglese aziendale",
     mail_body: "Dimensioni del team:\nLivello attuale di inglese:\nQual è l'obiettivo principale?:\nTempistiche per iniziare:",
     proof_kicker: "COSA DICONO I CLIENTI",
     proof_h2_a: "Valuta il metodo dai risultati ottenuti dai",
     proof_h2_em: "leader",
     proof_h2_b: "che l'hanno provato sulla loro pelle.",
-    trust_label: "I professionisti che ho formato lavorano in aziende come",
+    trust_label: "Professionisti formati da Concept lavorano in",
     q1: "Sono molto grata per la sua metodologia. Imparare in modo strategico fa davvero la differenza: capire il 'come' e il 'perché' ci offre gli strumenti per adattare il tono e il registro nel panorama complesso della comunicazione odierna.",
     q1_n: "Serena Pistillo", q1_r: "Executive Coach & Business Advisor, ICF ACC",
     q2: "Dopo un mese posso dire che Pedro è molto più di un semplice insegnante di inglese. Grazie alla sua esperienza linguistica e psicologica, ha inquadrato subito le mie necessità, adattando il percorso ai miei obiettivi. Lezioni dinamiche e mai noiose.",
@@ -1364,18 +1339,18 @@ window.I18N = {
     start_h2_a: "Una chiacchierata.",
     start_h2_em: "Senza costi",
     start_h2_b: ", senza impegno.",
-    start_lede: "Prima di firmare qualsiasi contratto, conduco una sessione diagnostica di 45 minuti. Parlo con una o due persone del tuo team e ti dico chiaramente dove la loro comunicazione cede sotto pressione e cosa bisogna fare per risolvere il problema. Dopodiché, decidi tu se vuoi andare avanti.",
+    start_lede: "Prima di qualsiasi impegno, facciamo una call di diagnosi di 45 minuti. Parliamo con una o due delle tue persone e ti diciamo dove hanno difficoltà sotto pressione e cosa servirebbe per risolverle. Poi decidi tu se andare avanti.",
     start_1_t: "Sessione Pratica di 45 Minuti",
-    start_1_p: "Una vera conversazione con la tua squadra, non un discorso di vendita. Ho bisogno di sentirli parlare sul campo per poter fare una diagnosi corretta.",
+    start_1_p: "Una vera conversazione con le tue persone, non una presentazione commerciale. Dobbiamo sentirle parlare prima di fare qualsiasi diagnosi.",
     start_2_t: "Analisi scritta dettagliata",
-    start_2_p: "Riceverai il mio feedback onesto: il livello CEFR esatto di ognuno, i punti tecnici in cui stanno sbagliando e ti dirò se, nel tuo caso specifico, la formazione valga davvero la pena.",
+    start_2_p: "Ricevi una valutazione scritta e onesta: il livello CEFR attuale, le lacune specifiche e se la formazione vale la pena.",
     start_3_t: "A te la decisione",
-    start_3_p: "Se ci sono le basi per procedere, formulerò una proposta in linea con ciò che ho osservato. In caso contrario, sarò il primo a fartelo presente.",
-    capacity_note: "Lavoro con un numero limitato di clienti per volta, perché ogni lezione nasce dal mio metodo e passa dalla mia revisione. Se ritengo che il progetto sia in linea col mio lavoro, ti parlerò in totale trasparenza dei miei orari e della mia disponibilità.",
+    start_3_p: "Se ha senso, scriviamo una proposta basata su ciò che abbiamo sentito. Se non ce l’ha, te lo diciamo.",
+    capacity_note: "Concept segue un numero limitato di clienti alla volta, perché ogni programma segue il metodo ed è diretto dal fondatore. Se siamo adatti, ti diremo con onestà quale disponibilità abbiamo.",
     start_cta: "Prenota la call diagnostica",
     chart1_sub: "Esempio illustrativo: l'avanzamento tramite metodo Concept vs il calendario tipico di una scuola.",
-    chart2_sub: "Il peso effettivo applicato per ogni competenza al termine di ogni singola lezione.",
-    footer_tag: "PEDRO GIGOLLOTTI · CONCEPT · SAN PAOLO · ROMA · MILANO",
+    chart2_sub: "Il peso reale della valutazione Concept, applicato dopo ogni lezione.",
+    footer_tag: "CONCEPT · SAN PAOLO · ROMA · MILANO",
     footer_copy: "© 2026 Concept. Tutti i diritti riservati."
   }
 };
@@ -1391,9 +1366,9 @@ var ICON_X = "M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.
 
 // Binary only: yes or no. No ambiguous middle state.
 var MARKS = [
-  [0,0,0,0,0,0,0],   // self-study apps
-  [0,0,1,0,0,0,0],   // language schools
-  [1,1,1,1,1,1,1]    // working with me
+  [0,0,0,0,0,0,0,0],   // self-study apps
+  [0,0,0,1,0,0,0,0],   // language schools
+  [1,1,1,1,1,1,1,1]    // Concept
 ];
 
 var currentLang = "en";
@@ -1764,7 +1739,7 @@ window.addEventListener('pageshow', function (e) {
      ans:'Yes. It means a short conversation to check how things are going. It is very common at work. With a new client, <span class="q">“could we have a quick call?”</span> is safer.'},
     {id:'murillo', name:'Murillo',
      ask:'Murillo, how do I say “comfortable”?',
-     ans:'Three syllables, not four: <span class="q">COMF-ter-bul</span>. The stress is on the first one. Listen, then say it with me.'},
+     ans:'Three syllables, not four: <span class="q">/\u02c8k\u028cmft\u025ab\u0259l/</span>, COMF-ter-bul. The stress is on the first syllable. Listen, then say it with me.'},
     {id:'marcelo', name:'Marcelo',
      ask:'Marcelo, where does “salary” come from?',
      ans:'From the Latin <span class="q">salarium</span>, from <span class="q">sal</span>, “salt”. Nobody knows for sure why. The story that Roman soldiers were paid in salt is not proven.'}
@@ -1774,7 +1749,7 @@ window.addEventListener('pageshow', function (e) {
   var tabs = document.getElementById('tTabs');
   var fig = document.getElementById('tFig');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var cur = -1, timer = null, seq = [], visible = false, blobs = {}, liveUrl = null, started = false;
+  var cur = -1, timer = null, seq = [], visible = false, started = false;
 
   function L(k){ try{ return window.I18N[currentLang][k] || window.I18N.en[k] || ''; }catch(e){ return ''; } }
   function clearSeq(){ seq.forEach(clearTimeout); seq = []; }
@@ -1788,15 +1763,9 @@ window.addEventListener('pageshow', function (e) {
     tabs.appendChild(b);
   });
   tabs.style.setProperty('--dur', DUR + 'ms');
+  fig.addEventListener('canplay', function(){ if(!reduce && visible && fig.paused && fig.currentTime === 0){ var p = fig.play(); if(p && p.catch) p.catch(function(){}); } });
 
-  function clipUrl(id, cb){
-    if(reduce){ cb('team/'+id+'-still.webp'); return; }
-    if(blobs[id]){ cb(URL.createObjectURL(blobs[id])); return; }
-    fetch('team/'+id+'.webp').then(function(r){ return r.blob(); })
-      .then(function(b){ blobs[id] = b; cb(URL.createObjectURL(b)); })
-      .catch(function(){ cb('team/'+id+'-still.webp'); });
-  }
-  function preload(i){ var id = TEAM[i].id; if(!reduce && !blobs[id]) fetch('team/'+id+'.webp').then(function(r){ return r.blob(); }).then(function(b){ blobs[id] = b; }).catch(function(){}); }
+  function preload(i){ var l = document.createElement('link'); l.rel = 'preload'; l.as = 'image'; l.href = 'team/'+TEAM[i].id+'-still.webp'; document.head.appendChild(l); }
 
   function typeInto(el, text, done){
     if(reduce){ el.textContent = text; done(); return; }
@@ -1817,11 +1786,11 @@ window.addEventListener('pageshow', function (e) {
     var ask = document.getElementById('tAsk'), ans = document.getElementById('tAns');
     var askT = document.getElementById('tAskText'), ansT = document.getElementById('tAnsText');
     ask.classList.remove('on'); ans.classList.remove('on'); askT.textContent = ''; ansT.innerHTML = '';
-    clipUrl(m.id, function(u){
-      if(cur !== i) return;
-      if(liveUrl && liveUrl.indexOf('blob:') === 0) URL.revokeObjectURL(liveUrl);
-      liveUrl = u; fig.src = u; fig.alt = m.name + ', ' + L('role_' + m.id);
-    });
+    fig.poster = 'team/'+m.id+'-still.webp';
+    if(!reduce){
+      fig.src = 'team/'+m.id+'.mp4';
+      var pr = fig.play(); if(pr && pr.catch) pr.catch(function(){});
+    } else { fig.removeAttribute('src'); }
     later(function(){ ask.classList.add('on'); typeInto(askT, m.ask, function(){
       later(function(){ ans.classList.add('on'); ansT.innerHTML = '<span class="tdots"><i></i><i></i><i></i></span>'; }, 350);
       later(function(){ ansT.innerHTML = m.ans; }, reduce ? 0 : 1500);
