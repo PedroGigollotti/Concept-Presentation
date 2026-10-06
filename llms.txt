@@ -1,16 +1,28 @@
 # The Concept Method
 
-> Concept trains professionals who already speak English to use it at work. Its method teaches register, pragmatics, and timing under pressure. Concept works with professionals in São Paulo, Rome, and Milan, online or in person, for individuals and for teams.
+> Concept is a business English training company. It trains professionals who already speak English to use it at work, with a method that teaches register, pragmatics, and timing under pressure. Concept works with professionals in São Paulo, Rome, and Milan, online, in person, or blended, for individuals and teams.
 
-Every program is mapped to the CEFR scale (A1 to C2). Lessons follow the Triple A cycle: Access, Analysis, and Activation. Between lessons, learners practice in the Concept Coach app with the Concept team, six AI coaches built on the Concept method, each responsible for one part of English. A free 45-minute diagnostic call comes before any program.
+## Key facts
+
+- Every program is mapped to the CEFR scale (A1 to C2) and tested against Cambridge and ALTE benchmarks.
+- Every lesson follows the Triple A cycle: Access, Analysis, and Activation.
+- Every student is assessed after every lesson, and clients receive a monthly report.
+- The first step is a free 45-minute diagnostic call, followed by a written diagnosis.
+- Between lessons, learners practice in the Concept Coach app with the Concept team: six AI coaches built on the Concept method and led by Netto, director of studies. Victor Hugo works on register, Luana on grammar and punctuation, Bia on expressions, Murillo on pronunciation and listening, and Marcelo on word origins.
+- The book series: Professional English Practice (five books, A1 to C2, including a phrasal verb book) and Calibrated Speech, a pronunciation manual for Brazilian speakers of American English.
 
 ## Main pages
 
-- [Home](https://theconceptmethod.com/): what Concept teaches, how the method works, levels, programs, and how to start
-- [The Concept team](https://theconceptmethod.com/team.html): the six AI coaches and a 5-question test
+- [Home](https://theconceptmethod.com/): what Concept teaches, how the method works, levels, programs, frequently asked questions, and how to start
+- [The Concept team](https://theconceptmethod.com/team.html): the AI coaches of the Concept Coach app and a 5-question test
 - [Try the method](https://theconceptmethod.com/method.html): six short interactive demonstrations
-- [Our founder](https://theconceptmethod.com/about.html): the founder's background and the method behind every lesson
+- [About](https://theconceptmethod.com/about.html): the founder's background and the method behind every lesson
 - [The books](https://theconceptmethod.com/book.html): the Concept Method book series
+
+## In Portuguese and Italian
+
+- [Início, em português](https://theconceptmethod.com/pt/), [Sobre](https://theconceptmethod.com/pt/about.html), [O método](https://theconceptmethod.com/pt/method.html)
+- [Home, in italiano](https://theconceptmethod.com/it/), [Chi siamo](https://theconceptmethod.com/it/about.html), [Il metodo](https://theconceptmethod.com/it/method.html)
 
 ## Library
 
@@ -20,6 +32,10 @@ Every program is mapped to the CEFR scale (A1 to C2). Lessons follow the Triple 
 - [It's Not Only a Grammar Book, C2](https://theconceptmethod.com/library/professional-english-practice-c2/): Book 4 of Professional English Practice: twenty-two units from aspect and formal conditionals to saying one thing three different ways, on purpose.
 - [It's Not Only a Phrasal Verb List, B1-C2](https://theconceptmethod.com/library/phrasal-verbs/): Book 5 of Professional English Practice: phrasal verbs organized by particle, so the core meaning of up, out, and off carries across dozens of verbs.
 - [Calibrated Speech, A1-C2](https://theconceptmethod.com/library/calibrated-speech/): A pronunciation manual sequenced A1 to C2 for Brazilian speakers of American English, built on two yardsticks: being understood and being taken seriously.
+
+## Optional
+
+- [Full text of the main pages](https://theconceptmethod.com/llms-full.txt)
 
 ## Contact
 
