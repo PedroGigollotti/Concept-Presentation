@@ -1900,7 +1900,7 @@ window.addEventListener('pageshow', function (e) {
       /* the member says the line, then makes their own gesture from the app, mouth closed (Netto greets).
          The old scene clips moved the mouth with no voice (Pedro, 6 Oct 2026: Murillo kept moving
          his mouth); "os agentes estao estaticos no site": they keep moving, silently. */
-      var still = function(){ fig.muted = true; fig.src = m.id === 'netto' ? 'team/app-netto-greet.mp4' : 'team/move-'+m.id+'-signature.mp4'; var p2 = fig.play(); if(p2 && p2.catch) p2.catch(function(){}); };
+      var still = function(){ fig.muted = true; fig.src = m.id === 'netto' ? 'team/app-netto-greet.mp4' : 'team/move-'+m.id+(m.id === 'murillo' ? '-receive' : '-signature')+'.mp4'; var p2 = fig.play(); if(p2 && p2.catch) p2.catch(function(){}); };
       if(m.punch && soundOK !== false){
         fig._after = still;
         fig.muted = false; fig.src = 'team/home-'+m.punch+'.mp4?v=12';
