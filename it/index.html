@@ -13,8 +13,16 @@
   :root{
     /* High-end palette */
     --black:#000; --panel:#0B0B0B; --white:#fff;
-    --red:#E32F2E; --red-hi:#FF4342;
-    --gray:#8A8F98; --gray-dark:#4A4E57; --silver:#E4E6EA;
+    --red:#E12F2E; --red-hi:#FF4342;
+    --gray:#8A8F98;
+    /* O VERMELHO DE TEXTO TROCA COM O FUNDO, E O NUMERO E MEDIDO.
+       Um vermelho so nao passa nos dois lados: #E12F2E da 4,52 sobre branco
+       e 4,43 sobre o quase-preto, e o anterior falhava nos dois, com
+       4,46 e 4,49. Entao o texto vermelho tem dois valores e o fundo escolhe:
+       aqui o claro, porque esta pagina e escura, e `.bg-white` troca para o
+       escuro. `--red` continua a ser a marca e os preenchimentos, onde 3 para
+       1 ja chega e ja passa. */
+    --red-ink:#E85250; --gray-ink:#70757E; --gray-dark:#4A4E57; --silver:#E4E6EA;
     --line-dark:rgba(228, 230, 234, 0.12); --line-light:rgba(0,0,0,.09);
     --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
     --serif:'Instrument Serif',Georgia,serif;
@@ -24,7 +32,7 @@
   body{margin:0;background:#000;color:#000;font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   body.locked{overflow:hidden;height:100vh;}
   a{color:inherit;}
-  em,i{font-family:var(--serif);font-style:italic;color:var(--red);}
+  em,i{font-family:var(--serif);font-style:italic;color:var(--red-ink);}
 
 
   /* ===== THE CONCEPT TEAM ===== */
@@ -42,28 +50,28 @@
   #team{position:relative;scroll-margin-top:90px;}
   #team .tstage{margin-top:44px;}
   .team-hook{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;}
-  .team-note{margin:0;color:var(--gray);font-size:13px;line-height:1.6;max-width:560px;}
+  .team-note{margin:0;color:var(--gray-ink);font-size:13px;line-height:1.6;max-width:560px;}
   .team-test{font-size:14px;padding:13px 22px;}
   .team-test span:first-child{font-weight:400;opacity:.9;}
-  .ttry{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red);text-decoration:none;border-bottom:1px solid rgba(227,47,46,.35);}
+  .ttry{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red-ink);text-decoration:none;border-bottom:1px solid rgba(225,47,46,.35);}
   .ttry:hover{border-bottom-color:var(--red);}
   #team .team-intro{max-width:760px;}
   .tstage{position:relative;margin-top:46px;background:#E7E8EA;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;min-height:540px;color:#0A0B0D;}
   .tcopy{position:relative;z-index:2;padding:48px 20px 40px 48px;display:flex;flex-direction:column;gap:16px;min-width:0;}
-  .tline{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--red);margin-top:8px;}
+  .tline{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--red-ink);margin-top:8px;}
   .tname{font-family:var(--serif);font-size:clamp(40px,5vw,64px);line-height:.95;letter-spacing:-.01em;}
   .trole{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);}
   .tchat{display:flex;flex-direction:column;gap:12px;margin-top:10px;max-width:470px;}
   .tmsg{border-radius:16px;padding:14px 16px;font-size:15.5px;line-height:1.5;box-shadow:0 10px 28px rgba(0,0,0,.08);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.25,1,.25,1);}
   .tmsg.on{opacity:1;transform:none;}
-  .tmsg .lbl{display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+  .tmsg .lbl{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
   .tmsg.me{align-self:flex-end;background:#0A0B0D;color:#fff;border-bottom-right-radius:5px;max-width:88%;}
   .tmsg.me .lbl{color:#8A8F98;}
   .tmsg.them{background:#fff;border-bottom-left-radius:5px;}
-  .tmsg.them .lbl{color:var(--red);}
+  .tmsg.them .lbl{color:var(--red-ink);}
   .tmsg.them .lbl img{width:22px;height:22px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E8E8E8;}
   .tmsg b{font-weight:600;}
-  .tmsg .q{background:rgba(227,47,46,.10);border-radius:4px;padding:0 3px;}
+  .tmsg .q{background:rgba(225,47,46,.10);border-radius:4px;padding:0 3px;}
   .tdots{display:inline-flex;gap:4px;padding:4px 0;}
   .tdots i{width:7px;height:7px;border-radius:50%;background:#B9BCC2;animation:tdot 1s infinite;}
   .tdots i:nth-child(2){animation-delay:.15s}.tdots i:nth-child(3){animation-delay:.3s}
@@ -126,7 +134,7 @@
   @media (max-width:900px){ .tcopy{padding:12px 24px 32px;} .tchat{min-height:0;margin-top:24px;} }
   .ttab:focus-visible{outline:2px solid var(--red);outline-offset:2px;}
   .team-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:34px;}
-  .team-foot p{margin:0;color:var(--gray);font-size:14px;max-width:560px;line-height:1.6;}
+  .team-foot p{margin:0;color:var(--gray-ink);font-size:14px;max-width:560px;line-height:1.6;}
   @media (max-width:900px){
     .tstage{grid-template-columns:1fr;min-height:0;}
     .tfig{order:-1;height:320px;}
@@ -161,30 +169,59 @@
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     padding:40px 20px;box-sizing:border-box;
   }
-  .intro-glow, .intro-ring{pointer-events:none;}
+  .intro-glow, .intro-figure{pointer-events:none;}
   .intro-glow{
     position:absolute;top:50%;left:50%;
     width:900px;height:900px;max-width:150vw;max-height:150vw;
     margin:-450px 0 0 -450px;border-radius:50%;
-    background:radial-gradient(circle, rgba(227,47,46,.15) 0%, rgba(227,47,46,0) 65%);
+    background:radial-gradient(circle, rgba(225,47,46,.15) 0%, rgba(225,47,46,0) 65%);
     opacity:0;animation:glowIn 2.4s ease forwards .25s;z-index:1;
   }
   @keyframes glowIn{to{opacity:1;}}
-  .intro-ring{
-    position:absolute;top:50%;left:50%;margin:-210px 0 0 -210px;
-    border:1px solid rgba(227,47,46,.35);border-radius:50%;
-    width:420px;height:420px;opacity:0;z-index:1;
-    animation:ringPulse 3s cubic-bezier(0.25, 1, 0.25, 1) infinite 1.4s;
+  /* A MARCA COMO FIGURA DA ENTRADA (opcao 3, aprovada em 7 out 2026).
+     Substitui .intro-ring. Dois circulos concentricos no mesmo sitio brigam, e
+     este tem significado. Opacidade .17 porque a .25 compete com as tres
+     linguas e a .10 desaparece no telemovel. Entra com a mesma curva e o mesmo
+     atraso do brilho que ja estava la, para a entrada abrir como uma coisa so,
+     e nao pulsa: um fundo que respira atras de tres palavras para ler e ruido.
+     A AGULHA NAO RODA (regra 1 da marca). */
+  .intro-figure{
+    position:absolute;top:50%;left:41%;z-index:1;pointer-events:none;
+    width:min(58vh,40vw);max-width:560px;aspect-ratio:1;
+    translate:-50% -50%;
+    --fig-op:.17;
+    opacity:0;animation:figureIn 2.4s cubic-bezier(.23,1,.32,1) forwards .25s;
   }
-  .intro-ring.r2{animation-delay:2.1s;}
-  @keyframes ringPulse{0%{opacity:.65;transform:scale(.8);}100%{opacity:0;transform:scale(1.5);}}
+  /* UM SO @keyframes, E O VALOR VEM DE UMA VARIAVEL.
+     A primeira versao redeclarava o @keyframes dentro do media query para o
+     telemovel. E CSS valido e e fragil: ao medir no navegador a opacidade
+     calculada vinha 0 enquanto a tela mostrava a marca, que e o tipo de
+     desacordo que um dia aparece como a figura a nao desenhar em lado nenhum.
+     Uma regra, uma variavel, e o telemovel so troca o numero. */
+  @keyframes figureIn{to{opacity:var(--fig-op);}}
+  /* 41 POR CENTO E NAO O CENTRO, E O NUMERO FOI MEDIDO E NAO ESCOLHIDO.
+     Centrada no ecra, a ponta da agulha caia 84px DENTRO da coluna das linguas,
+     em cima da palavra English. A agulha tem de APONTAR para a lista, nao
+     entrar nela. Com a figura a 41 por cento e a largura limitada por 40vw, a
+     ponta para na calha entre a linha divisoria e o texto, com uns 50px de
+     folga em 1280, 1440 e 1920. O arco fino continua a passar por tras do
+     texto, e isso e bom: e o que liga as duas colunas. */
+  /* NO TELEMOVEL A COLUNA VIRA PILHA, E A FIGURA TEM DE SUBIR COM ELA.
+     Medido num 375x812: centrada, a figura ocupava de 267 a 545 e as tres
+     linguas de 369 a 539, ou seja, o arco e a agulha cruzavam a lista inteira
+     em italico. Aqui ela sobe para a metade de cima, atras do nome, e termina
+     54px antes da primeira lingua. Mais fraca tambem: no telemovel ela e
+     textura e nao objeto, porque nao ha coluna nenhuma para a agulha apontar. */
+  @media (max-width:760px){
+    .intro-figure{left:50%;top:24%;width:min(38vh,64vw);--fig-op:.12;}
+  }
 
   /* INTERACTIVE INSTRUMENT (the gauge IS the language picker) */
   .instrument-wrap{
     width:min(78vw,62vh);max-width:480px;margin:0 auto;position:relative;z-index:2;
     opacity:0;transform:scale(.55) rotate(-8deg);
     animation:instrumentIn 1.4s cubic-bezier(.22,1,.36,1) forwards .15s;
-    filter:drop-shadow(0 0 35px rgba(227,47,46,.28));
+    filter:drop-shadow(0 0 35px rgba(225,47,46,.28));
   }
   @keyframes instrumentIn{
     0%{opacity:0;transform:scale(.55) rotate(-8deg);}
@@ -210,7 +247,7 @@
   }
   @media (prefers-reduced-motion:reduce){ .needle-instrument{transition:none;} }
 
-  .tick{cursor:pointer;outline:none;-webkit-tap-highlight-color:rgba(227,47,46,.3);touch-action:manipulation;}
+  .tick{cursor:pointer;outline:none;-webkit-tap-highlight-color:rgba(225,47,46,.3);touch-action:manipulation;}
   .tick line{stroke:#8A8F98;transition:stroke .25s ease;}
   .tick .flag-fade{transition:transform .3s cubic-bezier(.22,1,.36,1),filter .3s ease;
     transform-origin:0px 0px;filter:saturate(.75);pointer-events:none;}
@@ -227,7 +264,7 @@
     animation:fadeUp .9s ease forwards 1.75s;position:relative;z-index:2;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 
-  .instrument-hint{margin-top:20px;color:#6E727A;font-size:11px;letter-spacing:1.5px;text-align:center;
+  .instrument-hint{margin-top:20px;color:#7D828B;font-size:11px;letter-spacing:1.5px;text-align:center;
     opacity:0;animation:fadeUp .9s ease forwards 1.95s;position:relative;z-index:2;}
 
   @media (max-width:420px){
@@ -250,7 +287,7 @@
   }
   .snap-word.serif-red{
     font-family:var(--serif);font-style:italic;font-weight:400;
-    color:var(--red);letter-spacing:-.01em;
+    color:var(--red-ink);letter-spacing:-.01em;
   }
   .snap-in{animation:snapIn .6s cubic-bezier(.16,1,.3,1) forwards;}
   @keyframes snapIn{
@@ -283,12 +320,12 @@
   .nav-right{display:flex;align-items:center;gap:12px;z-index:105;}
   .nav-link{color:var(--silver);font-family:var(--sans);font-weight:600;font-size:13px;
     text-decoration:none;letter-spacing:.5px;opacity:.85;transition:opacity .22s ease;}
-  .nav-link:hover,.nav-link:focus-visible{opacity:1;color:var(--red);}
+  .nav-link:hover,.nav-link:focus-visible{opacity:1;color:var(--red-ink);}
   .lang-switch{display:flex;gap:3px;background:rgba(255,255,255,.07);border-radius:999px;padding:4px;z-index:110;position:relative;}
   .lang-switch button{background:none;border:none;color:var(--silver);font-family:var(--sans);
     font-weight:600;font-size:11px;padding:7px 11px;border-radius:999px;cursor:pointer;
     display:inline-flex;align-items:center;gap:6px;
-    -webkit-tap-highlight-color:rgba(227,47,46,.3);touch-action:manipulation;transition:all .22s ease;position:relative;z-index:120;}
+    -webkit-tap-highlight-color:rgba(225,47,46,.3);touch-action:manipulation;transition:all .22s ease;position:relative;z-index:120;}
   .lang-switch .flag-chip{
     width:15px;height:15px;border-radius:50%;overflow:hidden;flex:0 0 auto;display:block;
     -webkit-mask-image:radial-gradient(circle, #000 55%, transparent 100%);
@@ -299,7 +336,7 @@
   #nav .cta{background:var(--red);color:#fff;border:none;border-radius:999px;padding:10px 20px;
     font-family:var(--sans);font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;
     touch-action:manipulation;transition:transform .18s ease,background .22s ease,box-shadow .22s ease;z-index:110;position:relative;}
-  #nav .cta:hover{background:var(--red-hi);transform:translateY(-2px);box-shadow:0 8px 22px rgba(227,47,46,.4);}
+  #nav .cta:hover{background:var(--red-hi);transform:translateY(-2px);box-shadow:0 8px 22px rgba(225,47,46,.4);}
   @media (max-width:760px){
     #nav{padding:12px 16px;}
     #nav .wordmark{display:none;}
@@ -311,12 +348,12 @@
   /* ===== LAYOUT ===== */
   .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
   .bg-black{background:#000;color:#fff;}
-  .bg-white{background:#fff;color:#000;}
+  .bg-white{background:#fff;color:#000;--red-ink:#E12F2E;}
   .bg-red{background:var(--red);color:#fff;}
   .section-pad{padding:120px 0;}
   @media (max-width:760px){.section-pad{padding:80px 0;} .wrap{padding:0 20px;}}
 
-  .kicker{font-size:11.5px;font-weight:600;letter-spacing:3px;color:var(--red);margin:0 0 18px;}
+  .kicker{font-size:11.5px;font-weight:600;letter-spacing:3px;color:var(--red-ink);margin:0 0 18px;}
   h1.hero{font-weight:400;margin:0;font-size:clamp(36px,7.2vw,84px);line-height:1.04;letter-spacing:-.03em;}
   h2.headline{font-weight:400;margin:0 0 22px;font-size:clamp(27px,4.3vw,53px);line-height:1.08;letter-spacing:-.02em;}
   .lede{font-size:clamp(15.5px,1.5vw,18.5px);line-height:1.6;color:var(--gray-dark);max-width:680px;}
@@ -329,7 +366,7 @@
     cursor:pointer;background:none;touch-action:manipulation;
     transition:transform .2s ease,background .25s ease,color .25s ease,box-shadow .25s ease;}
   .btn-solid{background:var(--red);border-color:var(--red);color:#fff;}
-  .btn-solid:hover{background:var(--red-hi);transform:translateY(-3px);box-shadow:0 12px 30px rgba(227,47,46,.38);}
+  .btn-solid:hover{background:var(--red-hi);transform:translateY(-3px);box-shadow:0 12px 30px rgba(225,47,46,.38);}
   .btn-outline{color:#fff;}
   .btn-outline:hover{background:#fff;color:#000;transform:translateY(-3px);}
 
@@ -344,14 +381,14 @@
   @media (prefers-reduced-motion:reduce){
     .reveal,.reveal-left,.reveal-scale{opacity:1!important;transform:none!important;transition:none;}
     .instrument-wrap,.intro-word,.intro-tag,.instrument-hint{animation-duration:.01s!important;opacity:1!important;transform:none!important;}
-    .intro-ring{display:none;}
+    .intro-figure{animation:none;opacity:var(--fig-op);}
   }
 
   /* ===== HERO ===== */
   #hero{padding:180px 0 80px;}
   #hero .market{font-size:11.5px;letter-spacing:3px;color:#7E838C;margin-bottom:26px;}
   #hero .ctas{margin-top:40px;}
-  .scrollcue{margin-top:68px;display:flex;align-items:center;gap:11px;font-size:11px;letter-spacing:2px;color:#6E727A;}
+  .scrollcue{margin-top:68px;display:flex;align-items:center;gap:11px;font-size:11px;letter-spacing:2px;color:#7D828B;}
   .scrollcue .bar{width:1px;height:32px;background:linear-gradient(to bottom,var(--red),transparent);animation:cue 1.9s ease-in-out infinite;}
   @keyframes cue{0%,100%{opacity:.25;transform:scaleY(.6);}50%{opacity:1;transform:scaleY(1);}}
 
@@ -359,7 +396,7 @@
   #stats{padding:20px 0 116px;}
   .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:42px;}
   .stat-num{font-size:clamp(38px,5.5vw,66px);letter-spacing:-.02em;color:#fff;line-height:1;}
-  .stat-num .accent{color:var(--red);font-family:var(--serif);font-style:italic;}
+  .stat-num .accent{color:var(--red-ink);font-family:var(--serif);font-style:italic;}
   .stat-label{margin-top:12px;font-size:13.5px;color:#8D929B;line-height:1.5;}
   @media (max-width:760px){.stat-grid{grid-template-columns:1fr;gap:32px;}}
 
@@ -372,7 +409,7 @@
 
   .card{background:#F8F9FA;border:1px solid rgba(0,0,0,.06);border-radius:26px;padding:34px;
     transition:transform .35s cubic-bezier(.25,1,.25,1),box-shadow .35s ease,border-color .35s ease;}
-  .card:hover{transform:translateY(-8px);box-shadow:0 20px 44px rgba(0,0,0,.08);border-color:rgba(227,47,46,.35);}
+  .card:hover{transform:translateY(-8px);box-shadow:0 20px 44px rgba(0,0,0,.08);border-color:rgba(225,47,46,.35);}
   .card h3{font-weight:600;font-size:19px;margin:0 0 12px;line-height:1.3;}
   .card p{margin:0;font-size:14.5px;line-height:1.62;color:var(--gray-dark);}
   .card.on-dark{background:var(--panel);border-color:var(--line-dark);color:#fff;}
@@ -393,7 +430,7 @@
     transition:transform .3s cubic-bezier(.25,1,.25,1);}
   .ladder .rung:hover{transform:translateY(-8px) scale(1.03);}
   .ladder .code{font-size:clamp(18px,2.2vw,28px);font-weight:600;}
-  .ladder .lbl{font-size:10.5px;margin-top:6px;opacity:.86;}
+  .ladder .lbl{font-size:11.5px;margin-top:6px;opacity:.86;}
   @media (max-width:700px){.ladder{grid-template-columns:repeat(3,1fr);}}
 
   .pill{background:#000;color:#fff;border-radius:999px;padding:10px 16px;text-align:center;
@@ -440,7 +477,7 @@
   @media (max-width:760px){
     .why-row{grid-template-columns:1.4fr repeat(3,1fr);gap:4px;}
     .why-row .rowlabel{font-size:12.5px;padding:14px 0;}
-    .why-col-title{font-size:10.5px;}
+    .why-col-title{font-size:11.5px;}
     .cc{padding:0 4px;}
     .mark{width:26px;height:26px;}
   }
@@ -448,7 +485,7 @@
 
   /* ===== TRUST STRIP ===== */
   .trust{padding:52px 0;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
-  .trust-label{font-size:11px;letter-spacing:2.5px;color:#6E727A;text-align:center;margin-bottom:22px;}
+  .trust-label{font-size:11px;letter-spacing:2.5px;color:#7D828B;text-align:center;margin-bottom:22px;}
   .trust-row{display:flex;gap:44px;justify-content:center;align-items:center;flex-wrap:wrap;}
   .trust-row span{font-size:clamp(15px,2vw,21px);font-weight:600;color:#fff;opacity:.72;
     letter-spacing:.5px;transition:opacity .3s ease,transform .3s ease;}
@@ -461,12 +498,12 @@
   .quote{background:#fff;border:1px solid var(--line-light);border-radius:24px;padding:30px;
     display:flex;flex-direction:column;
     transition:transform .35s cubic-bezier(.25,1,.25,1),box-shadow .35s ease,border-color .35s ease;}
-  .quote:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(0,0,0,.09);border-color:rgba(227,47,46,.3);}
+  .quote:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(0,0,0,.09);border-color:rgba(225,47,46,.3);}
   .quote .qm{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--red);
     line-height:.8;margin-bottom:12px;}
   .quote p{margin:0 0 22px;font-size:14.5px;line-height:1.65;color:var(--gray-dark);flex:1;}
   .quote .who{font-weight:600;font-size:14px;color:#000;}
-  .quote .role{font-size:12.5px;color:#8A8F98;margin-top:3px;line-height:1.4;}
+  .quote .role{font-size:12.5px;color:#70757E;margin-top:3px;line-height:1.4;}
   .quote.feature{background:var(--panel);border-color:var(--line-dark);}
   .quote.feature p{color:var(--silver);font-size:16px;}
   .quote.feature .who{color:#fff;}
@@ -507,9 +544,9 @@
   .cascade-left{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 6vw;}
   .cascade-brand{color:var(--red);font-weight:600;letter-spacing:12px;font-size:20px;}
   .cascade-tag{color:var(--silver);letter-spacing:5px;font-size:12px;margin-top:8px;opacity:.7;}
-  .cascade-hint{color:#6E727A;font-size:11px;letter-spacing:2px;margin-top:34px;text-transform:uppercase;}
+  .cascade-hint{color:#7D828B;font-size:11px;letter-spacing:2px;margin-top:34px;text-transform:uppercase;}
   .cascade-right{flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 6vw;border-left:1px solid var(--line-dark);}
-  .lang-choice{display:flex;align-items:center;gap:22px;background:none;border:none;text-align:left;color:var(--silver);font-family:var(--serif);font-style:italic;font-size:clamp(38px,5.6vw,70px);line-height:1.14;cursor:pointer;padding:6px 0;opacity:0;transform:translateX(34px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1),color .25s ease;-webkit-tap-highlight-color:rgba(227,47,46,.3);}
+  .lang-choice{display:flex;align-items:center;gap:22px;background:none;border:none;text-align:left;color:var(--silver);font-family:var(--serif);font-style:italic;font-size:clamp(38px,5.6vw,70px);line-height:1.14;cursor:pointer;padding:6px 0;opacity:0;transform:translateX(34px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1),color .25s ease;-webkit-tap-highlight-color:rgba(225,47,46,.3);}
   .lang-choice.in{opacity:1;transform:translateX(0);}
   .lang-choice:hover,.lang-choice:focus-visible{color:#fff;outline:none;}
   .lang-choice.chosen{color:#fff;transform:scale(1.05);transition:transform .5s cubic-bezier(.22,1,.36,1),color .3s ease;}
@@ -641,8 +678,19 @@
 <!-- ===== INTRO / LANGUAGE GATE ===== -->
 <div id="intro">
   <div class="intro-glow"></div>
-  <div class="intro-ring"></div>
-  <div class="intro-ring r2"></div>
+  <!-- A MARCA E O ANEL (Netto, 7 out 2026, aprovou a opcao 3).
+       A entrada desenhava dois aneis concentricos a pulsar, que eram circulos
+       sem significado nenhum. A marca E um arco aberto com uma agulha: a mesma
+       geometria. Entao o anel do fundo passa a ser a propria marca, e a agulha,
+       na posicao em que o arquivo mestre a desenha -- regra 1 da marca, ela nao
+       roda -- aponta para a coluna das linguas. Nao e um elemento a mais na
+       pagina, e um elemento vazio trocado por um cheio. -->
+  <svg class="intro-figure" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+    <path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" fill="none" stroke="#E7E8EA" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="200" cy="200" r="11" fill="#E7E8EA"/>
+    <polygon points="322.87,113.96 208.03,211.47 191.97,188.53" fill="#B3132B"/>
+    <circle cx="322.87" cy="113.96" r="7" fill="#B3132B"/>
+  </svg>
   <div id="snap-text-container" aria-hidden="true"></div>
   <div class="cascade-wrap" id="cascadeStage">
     <div class="cascade-left">
@@ -696,14 +744,14 @@
       <span data-t="hero_h1_b">Ma sa</span> <i data-t="hero_h1_em">negoziare</i> <span data-t="hero_h1_c">in inglese?</span>
     </h1>
     <p class="lede on-dark reveal d2" style="margin-top:26px;" data-t="hero_lede">Concept prepara professionisti che parlano già inglese a usarlo con sicurezza al lavoro. Il nostro metodo insegna ciò che i corsi standard tralasciano: registro, pragmatica e gestione dei tempi sotto pressione.</p>
-    <div class="ctas reveal d3"><a class="btn btn-outline" id="heroCta1" href="it/#"><!--pre:heroCta1-->Scopri come funziona il metodo<!--/pre:heroCta1--></a></div>
+    <div class="ctas reveal d3"><a class="btn btn-solid" id="heroCta1" href="method.html"><!--pre:heroCta1-->Scopri come funziona il metodo<!--/pre:heroCta1--></a></div>
     <div class="reveal d3" id="team">
       <div class="tstage" id="tStage" aria-live="polite">
         <div class="tcopy">
           <div class="tswap"><div class="trole" id="tRole"></div><div class="tname" id="tName"></div><div class="tline" id="tLine"></div></div>
           <div class="tchat tswap">
             <div class="tmsg me" id="tAsk"><div class="lbl" data-t="team_you">La tua domanda</div><div id="tAskText"></div></div>
-            <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt=""><span id="tAnsWho"></span></div><div id="tAnsText"></div><a class="ttry" id="tTry" href="team.html#test" hidden></a></div>
+            <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt="" hidden><span id="tAnsWho"></span></div><div id="tAnsText"></div><a class="ttry" id="tTry" href="team.html#test" hidden></a></div>
           </div>
         </div>
         <div class="tfig"><video class="tswap" id="tFig" muted playsinline preload="none" width="720" height="1010" aria-hidden="true"></video></div>
@@ -876,7 +924,7 @@
     <p class="kicker reveal" data-t="levels_kicker">LIVELLI DI COMPETENZA</p>
     <h2 class="headline reveal d1" data-t="levels_h2">Livelli di competenza che il mercato comprende già.</h2>
     <p class="lede reveal d2" data-t="levels_lede">Tutti i programmi sono rigorosamente allineati alla scala ufficiale CEFR (da A1 a C2) e valutati secondo le metriche Cambridge e ALTE. L'evoluzione del tuo team viene misurata con uno standard internazionale indiscutibile, non con voti interni.</p>
-    <div class="ladder" id="ladder"><!--pre:ladder--><div class="rung reveal-scale" style="background: rgb(237, 239, 243); color: rgb(0, 0, 0); transition-delay: 0s;"><div class="code">A1</div><div class="lbl">Principiante</div></div><div class="rung reveal-scale" style="background: rgb(201, 206, 218); color: rgb(0, 0, 0); transition-delay: 0.06s;"><div class="code">A2</div><div class="lbl">Elementare</div></div><div class="rung reveal-scale" style="background: rgb(29, 42, 74); color: rgb(255, 255, 255); transition-delay: 0.12s;"><div class="code">B1</div><div class="lbl">Intermedio</div></div><div class="rung reveal-scale" style="background: rgb(122, 31, 31); color: rgb(255, 255, 255); transition-delay: 0.18s;"><div class="code">B2</div><div class="lbl">Interm. Superiore</div></div><div class="rung reveal-scale" style="background: rgb(178, 36, 36); color: rgb(255, 255, 255); transition-delay: 0.24s;"><div class="code">C1</div><div class="lbl">Avanzato</div></div><div class="rung reveal-scale" style="background: rgb(227, 47, 46); color: rgb(255, 255, 255); transition-delay: 0.3s;"><div class="code">C2</div><div class="lbl">Padronanza</div></div><!--/pre:ladder--></div>
+    <div class="ladder" id="ladder"><!--pre:ladder--><div class="rung reveal-scale" style="background: rgb(237, 239, 243); color: rgb(0, 0, 0); transition-delay: 0s;"><div class="code">A1</div><div class="lbl">Principiante</div></div><div class="rung reveal-scale" style="background: rgb(201, 206, 218); color: rgb(0, 0, 0); transition-delay: 0.06s;"><div class="code">A2</div><div class="lbl">Elementare</div></div><div class="rung reveal-scale" style="background: rgb(29, 42, 74); color: rgb(255, 255, 255); transition-delay: 0.12s;"><div class="code">B1</div><div class="lbl">Intermedio</div></div><div class="rung reveal-scale" style="background: rgb(122, 31, 31); color: rgb(255, 255, 255); transition-delay: 0.18s;"><div class="code">B2</div><div class="lbl">Interm. Superiore</div></div><div class="rung reveal-scale" style="background: rgb(178, 36, 36); color: rgb(255, 255, 255); transition-delay: 0.24s;"><div class="code">C1</div><div class="lbl">Avanzato</div></div><div class="rung reveal-scale" style="background: rgb(225, 47, 46); color: rgb(255, 255, 255); transition-delay: 0.3s;"><div class="code">C2</div><div class="lbl">Padronanza</div></div><!--/pre:ladder--></div>
     <p class="body-copy reveal" style="margin-top:26px;font-style:italic;color:#8A8F98;" data-t="levels_note">L'attenzione al registro e alla pragmatica diventa prioritaria a partire dal livello B1, esattamente il momento in cui la maggior parte delle persone smette di progredire.</p>
   </div>
 </section>
@@ -903,8 +951,8 @@
     <h2 class="headline reveal d1" style="color:#fff;" data-t="learn_h2">I progressi dettano il ritmo, non il calendario.</h2>
     <p class="lede on-dark reveal d2" data-t="learn_lede">Il monte ore si basa sui ritmi di apprendimento standard internazionali (ALTE). Se lo studente raggiunge prima gli obiettivi, passa subito al livello successivo. Senza perdite di tempo e senza dover aspettare la fine del trimestre.</p>
     <div class="grid-2" style="margin-top:42px;">
-      <div class="chart-card reveal-scale" id="chart1"><!--pre:chart1--><div class="chart-title">Livello di inglese raggiunto in 6 mesi</div><div class="chart-sub">Esempio illustrativo: l'avanzamento tramite metodo Concept vs il calendario tipico di una scuola.</div><svg aria-label="Livello di inglese raggiunto in 6 mesi" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="200" y2="200"></line><text class="clabel" text-anchor="end" x="26" y="204">0</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="142.15384615384616" y2="142.15384615384616"></line><text class="clabel" text-anchor="end" x="26" y="146.15384615384616">2</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="84.3076923076923" y2="84.3076923076923"></line><text class="clabel" text-anchor="end" x="26" y="88.3076923076923">4</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="26.461538461538453" y2="26.461538461538453"></line><text class="clabel" text-anchor="end" x="26" y="30.461538461538453">6</text><text class="clabel" text-anchor="middle" x="34" y="218">M1</text><text class="clabel" text-anchor="middle" x="112.8" y="218">M2</text><text class="clabel" text-anchor="middle" x="191.6" y="218">M3</text><text class="clabel" text-anchor="middle" x="270.4" y="218">M4</text><text class="clabel" text-anchor="middle" x="349.2" y="218">M5</text><text class="clabel" text-anchor="middle" x="428" y="218">M6</text><path class="cline" d="M34,171.07692307692307 L112.8,147.93846153846152 L191.6,124.8 L270.4,101.66153846153846 L349.2,78.52307692307691 L428,55.38461538461539" stroke="#5A5F68"></path><path class="cline" d="M34,162.4 L112.8,124.8 L191.6,92.9846153846154 L270.4,66.95384615384617 L349.2,43.8153846153846 L428,26.461538461538453" stroke="#E32F2E" style="animation-delay:.25s"></path><circle class="cdot" cx="34" cy="162.4" fill="#E32F2E" r="4" style="animation-delay:0.9s"></circle><circle class="cdot" cx="112.8" cy="124.8" fill="#E32F2E" r="4" style="animation-delay:0.98s"></circle><circle class="cdot" cx="191.6" cy="92.9846153846154" fill="#E32F2E" r="4" style="animation-delay:1.06s"></circle><circle class="cdot" cx="270.4" cy="66.95384615384617" fill="#E32F2E" r="4" style="animation-delay:1.1400000000000001s"></circle><circle class="cdot" cx="349.2" cy="43.8153846153846" fill="#E32F2E" r="4" style="animation-delay:1.22s"></circle><circle class="cdot" cx="428" cy="26.461538461538453" fill="#E32F2E" r="4" style="animation-delay:1.3s"></circle></svg><div class="clegend"><span><i style="background:#5A5F68"></i>Corso standard a calendario fisso</span><span><i style="background:#E32F2E"></i>Concept (basato sui progressi)</span></div><!--/pre:chart1--></div>
-      <div class="chart-card reveal-scale d1" id="chart2"><!--pre:chart2--><div class="chart-title">Punti per competenza ad ogni valutazione</div><div class="chart-sub">Il peso reale della valutazione Concept, applicato dopo ogni lezione.</div><svg aria-label="Punti per competenza ad ogni valutazione" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="196" y2="196"></line><text class="clabel" text-anchor="end" x="22" y="200">0</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="144.8235294117647" y2="144.8235294117647"></line><text class="clabel" text-anchor="end" x="22" y="148.8235294117647">1</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="93.6470588235294" y2="93.6470588235294"></line><text class="clabel" text-anchor="end" x="22" y="97.6470588235294">2</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="42.470588235294116" y2="42.470588235294116"></line><text class="clabel" text-anchor="end" x="22" y="46.470588235294116">3</text><rect class="cbar" fill="#E32F2E" height="153.52941176470588" rx="7" style="animation-delay:0s" width="52" x="38" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.5s" text-anchor="middle" x="64" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="64" y="214">Ascolto</text><rect class="cbar" fill="#E32F2E" height="153.52941176470588" rx="7" style="animation-delay:0.1s" width="52" x="152" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.6s" text-anchor="middle" x="178" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="178" y="214">Parlato</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.2s" width="52" x="266" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.7s" text-anchor="middle" x="292" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="292" y="214">Lettura</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.30000000000000004s" width="52" x="380" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.8s" text-anchor="middle" x="406" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="406" y="214">Scrittura</text></svg><!--/pre:chart2--></div>
+      <div class="chart-card reveal-scale" id="chart1"><!--pre:chart1--><div class="chart-title">Livello di inglese raggiunto in 6 mesi</div><div class="chart-sub">Esempio illustrativo: l'avanzamento tramite metodo Concept vs il calendario tipico di una scuola.</div><svg aria-label="Livello di inglese raggiunto in 6 mesi" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="200" y2="200"></line><text class="clabel" text-anchor="end" x="26" y="204">0</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="142.15384615384616" y2="142.15384615384616"></line><text class="clabel" text-anchor="end" x="26" y="146.15384615384616">2</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="84.3076923076923" y2="84.3076923076923"></line><text class="clabel" text-anchor="end" x="26" y="88.3076923076923">4</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="26.461538461538453" y2="26.461538461538453"></line><text class="clabel" text-anchor="end" x="26" y="30.461538461538453">6</text><text class="clabel" text-anchor="middle" x="34" y="218">M1</text><text class="clabel" text-anchor="middle" x="112.8" y="218">M2</text><text class="clabel" text-anchor="middle" x="191.6" y="218">M3</text><text class="clabel" text-anchor="middle" x="270.4" y="218">M4</text><text class="clabel" text-anchor="middle" x="349.2" y="218">M5</text><text class="clabel" text-anchor="middle" x="428" y="218">M6</text><path class="cline" d="M34,171.07692307692307 L112.8,147.93846153846152 L191.6,124.8 L270.4,101.66153846153846 L349.2,78.52307692307691 L428,55.38461538461539" stroke="#5A5F68"></path><path class="cline" d="M34,162.4 L112.8,124.8 L191.6,92.9846153846154 L270.4,66.95384615384617 L349.2,43.8153846153846 L428,26.461538461538453" stroke="#E12F2E" style="animation-delay:.25s"></path><circle class="cdot" cx="34" cy="162.4" fill="#E12F2E" r="4" style="animation-delay:0.9s"></circle><circle class="cdot" cx="112.8" cy="124.8" fill="#E12F2E" r="4" style="animation-delay:0.98s"></circle><circle class="cdot" cx="191.6" cy="92.9846153846154" fill="#E12F2E" r="4" style="animation-delay:1.06s"></circle><circle class="cdot" cx="270.4" cy="66.95384615384617" fill="#E12F2E" r="4" style="animation-delay:1.1400000000000001s"></circle><circle class="cdot" cx="349.2" cy="43.8153846153846" fill="#E12F2E" r="4" style="animation-delay:1.22s"></circle><circle class="cdot" cx="428" cy="26.461538461538453" fill="#E12F2E" r="4" style="animation-delay:1.3s"></circle></svg><div class="clegend"><span><i style="background:#5A5F68"></i>Corso standard a calendario fisso</span><span><i style="background:#E12F2E"></i>Concept (basato sui progressi)</span></div><!--/pre:chart1--></div>
+      <div class="chart-card reveal-scale d1" id="chart2"><!--pre:chart2--><div class="chart-title">Punti per competenza ad ogni valutazione</div><div class="chart-sub">Il peso reale della valutazione Concept, applicato dopo ogni lezione.</div><svg aria-label="Punti per competenza ad ogni valutazione" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="196" y2="196"></line><text class="clabel" text-anchor="end" x="22" y="200">0</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="144.8235294117647" y2="144.8235294117647"></line><text class="clabel" text-anchor="end" x="22" y="148.8235294117647">1</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="93.6470588235294" y2="93.6470588235294"></line><text class="clabel" text-anchor="end" x="22" y="97.6470588235294">2</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="42.470588235294116" y2="42.470588235294116"></line><text class="clabel" text-anchor="end" x="22" y="46.470588235294116">3</text><rect class="cbar" fill="#E12F2E" height="153.52941176470588" rx="7" style="animation-delay:0s" width="52" x="38" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.5s" text-anchor="middle" x="64" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="64" y="214">Ascolto</text><rect class="cbar" fill="#E12F2E" height="153.52941176470588" rx="7" style="animation-delay:0.1s" width="52" x="152" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.6s" text-anchor="middle" x="178" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="178" y="214">Parlato</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.2s" width="52" x="266" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.7s" text-anchor="middle" x="292" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="292" y="214">Lettura</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.30000000000000004s" width="52" x="380" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.8s" text-anchor="middle" x="406" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="406" y="214">Scrittura</text></svg><!--/pre:chart2--></div>
     </div>
     <p class="body-copy on-dark reveal" style="margin-top:30px;max-width:760px;" data-t="learn_note">Diamo più peso a parlato e ascolto di proposito. Parlare e capire in tempo reale è ciò che separa la fluidità da un esame superato. Ogni studente viene valutato dopo ogni lezione, e ricevi un report mensile con ore, presenze, l’andamento di ogni abilità e note scritte.</p>
   </div>
@@ -1587,7 +1635,7 @@ window.I18N = {
 <script>
 var EMAIL = "contact@theconceptmethod.com";
 var CODES = ["A1","A2","B1","B2","C1","C2"];
-var LADDER_BG = ["#EDEFF3","#C9CEDA","#1D2A4A","#7A1F1F","#B22424","#E32F2E"];
+var LADDER_BG = ["#EDEFF3","#C9CEDA","#1D2A4A","#7A1F1F","#B22424","#E12F2E"];
 var LADDER_FG = ["#000","#000","#fff","#fff","#fff","#fff"];
 var ICON_CHECK = "M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z";
 var ICON_X = "M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z";
@@ -1680,18 +1728,18 @@ function buildCharts(){
   function poly(arr){ var p=''; for(var i=0;i<arr.length;i++){ p += (i?' L':'M')+xs(i)+','+ys(arr[i]); } return p; }
   var dots='';
   for(var i=0;i<mine.length;i++){
-    dots += '<circle class="cdot" cx="'+xs(i)+'" cy="'+ys(mine[i])+'" r="4" fill="#E32F2E" style="animation-delay:'+(0.9+i*0.08)+'s"/>';
+    dots += '<circle class="cdot" cx="'+xs(i)+'" cy="'+ys(mine[i])+'" r="4" fill="#E12F2E" style="animation-delay:'+(0.9+i*0.08)+'s"/>';
     g += '<text class="clabel" x="'+xs(i)+'" y="'+(H-PB+18)+'" text-anchor="middle">'+d.chart1_labels[i]+'</text>';
   }
   document.getElementById('chart1').innerHTML =
     '<div class="chart-title">'+d.chart1_title+'</div><div class="chart-sub">'+d.chart1_sub+'</div>' +
     '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+d.chart1_title+'">' + g +
       '<path class="cline" d="'+poly(fixed)+'" stroke="#5A5F68"/>' +
-      '<path class="cline" d="'+poly(mine)+'" stroke="#E32F2E" style="animation-delay:.25s"/>' + dots +
+      '<path class="cline" d="'+poly(mine)+'" stroke="#E12F2E" style="animation-delay:.25s"/>' + dots +
     '</svg>' +
     '<div class="clegend">' +
       '<span><i style="background:#5A5F68"></i>'+d.chart1_s1+'</span>' +
-      '<span><i style="background:#E32F2E"></i>'+d.chart1_s2+'</span>' +
+      '<span><i style="background:#E12F2E"></i>'+d.chart1_s2+'</span>' +
     '</div>';
 
   // Chart 2: points per skill
@@ -1708,7 +1756,7 @@ function buildCharts(){
     var bx = bPL + 8 + b*(barW+gap);
     var bh = (vals[b]/maxV)*(BH-bPT-bPB);
     var by = BH-bPB-bh;
-    var col = (b<2) ? '#E32F2E' : '#5A5F68';
+    var col = (b<2) ? '#E12F2E' : '#5A5F68';
     g2 += '<rect class="cbar" x="'+bx+'" y="'+by+'" width="'+barW+'" height="'+bh+'" rx="7" fill="'+col+'" style="animation-delay:'+(b*0.1)+'s"/>' +
           '<text class="cvalue" x="'+(bx+barW/2)+'" y="'+(by-8)+'" text-anchor="middle" style="animation-delay:'+(0.5+b*0.1)+'s">'+vals[b]+'</text>' +
           '<text class="clabel" x="'+(bx+barW/2)+'" y="'+(BH-bPB+18)+'" text-anchor="middle">'+d.chart2_labels[b]+'</text>';
@@ -2026,6 +2074,10 @@ window.addEventListener('pageshow', function (e) {
     document.getElementById('tRole').textContent = L('role_' + m.id);
     document.getElementById('tAnsWho').textContent = m.name;
     document.getElementById('tAnsFace').src = 'team/'+m.id+'-face.webp';
+    /* A <img> nasce `hidden` porque uma <img> sem src desenha o icone de
+       imagem partida no Safari e e anunciada por um leitor de ecra. So
+       aparece quando tem de facto um rosto para mostrar. */
+    document.getElementById('tAnsFace').hidden = false;
     if(m.id === 'bia') later(balloons, reduce ? 0 : 3800);
     var tr = document.getElementById('tTry'); tr.hidden = true;
     tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
