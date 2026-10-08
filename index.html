@@ -1982,6 +1982,8 @@ function enterSite(lang){
   applyLang(lang);
   document.getElementById('intro').classList.add('done');
   document.body.classList.remove('locked');
+  /* the team may start now, not before (the team block listens) */
+  document.dispatchEvent(new Event('concept:entered'));
   window.scrollTo(0,0);
   setTimeout(function(){ observeAll(true); }, 400);
 }
@@ -2014,6 +2016,8 @@ if(langParam && window.I18N[langParam]) {
     document.body.classList.remove('locked');
     window.scrollTo(0,0);
     observeAll(true);
+    /* the gate a visitor actually uses: the team may start now */
+    document.dispatchEvent(new Event('concept:entered'));
   }
 
   function startCascade(){
@@ -2203,14 +2207,38 @@ window.addEventListener('pageshow', function (e) {
     timer = setTimeout(function(){ show((cur + 1) % TEAM.length); }, DUR);
   }
 
+  /* NOBODY SPEAKS BEHIND THE DOOR (Pedro, 8 Oct 2026: "o netto no homepage
+     comeca a falar ja na introducao. Esta errado."). The team sits in the
+     first screen, under the language gate, and the gate does not stop the
+     section from counting as on screen: Netto began his line while the
+     visitor was still choosing a language. The team now waits for the gate
+     to lift (enterSite) as well as for the section to be in view. */
+  var inView = false;
+  function gateUp(){ var g = document.getElementById('intro'); return !!(g && !g.classList.contains('done')); }
+  function wake(){
+    visible = inView && !gateUp();
+    if(visible && !started){ started = true; show(0); }
+    else if(visible){ show(cur); }
+    else { clearTimeout(timer); tabs.classList.add('paused'); }
+  }
+  /* when the gate lifts, the page is still sliding its content into place, and
+     the observer's last word may be stale: measure where the stage really is,
+     now and once the entrance has settled */
+  function measure(){
+    var r = stage.getBoundingClientRect(), h = window.innerHeight || document.documentElement.clientHeight;
+    var seen = Math.max(0, Math.min(r.bottom, h) - Math.max(r.top, 0));
+    inView = r.height > 0 && seen / r.height >= 0.35;
+    wake();
+  }
+  document.addEventListener('concept:entered', function(){ measure(); setTimeout(measure, 700); });
   if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){
-      visible = es[0].isIntersecting;
-      if(visible && !started){ started = true; show(0); }
-      else if(visible){ show(cur); }
-      else { clearTimeout(timer); tabs.classList.add('paused'); }
-    }, {threshold:0.35}).observe(stage);
-  } else { visible = true; started = true; show(0); }
+    new IntersectionObserver(function(es){ inView = es[0].isIntersecting; wake(); }, {threshold:0.35}).observe(stage);
+  } else { inView = true; wake(); }
+  /* a link that names the language (?lang=pt) skips the gate before this
+     block has run, so nobody tells it; it measures for itself once the page
+     has settled (the same miss was live before 8 Oct: those visitors never
+     met Netto at all) */
+  if(!gateUp()) setTimeout(measure, 700);
   document.addEventListener('visibilitychange', function(){ if(!document.hidden && visible) show(cur); else { clearTimeout(timer); tabs.classList.add('paused'); } });
 
   window.teamRelabel = function(){
