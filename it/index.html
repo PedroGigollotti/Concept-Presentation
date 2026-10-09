@@ -13,10 +13,11 @@
   :root{
     /* High-end palette */
     --black:#000; --panel:#0B0B0B; --white:#fff;
-    --red:#E12F2E; --red-hi:#FF4342;
+    --red:#B3132B; --red-hi:#8E0F22;
     --gray:#8A8F98;
     /* O VERMELHO DE TEXTO TROCA COM O FUNDO, E O NUMERO E MEDIDO.
-       Um vermelho so nao passa nos dois lados: #E12F2E da 4,52 sobre branco
+       Desde 9 out 2026 (Brand Book 2.0): claro #B3132B (6,90 no branco), escuro #E85250 (5,39).
+       Um vermelho so nao passa nos dois lados: #E12F2E dava 4,52 sobre branco
        e 4,43 sobre o quase-preto, e o anterior falhava nos dois, com
        4,46 e 4,49. Entao o texto vermelho tem dois valores e o fundo escolhe:
        aqui o claro, porque esta pagina e escura, e `.bg-white` troca para o
@@ -43,7 +44,7 @@
   .hero-team:hover .faces img{transform:translateY(-4px);}
   .hero-team:hover .faces img:nth-child(2){transition-delay:.04s}.hero-team:hover .faces img:nth-child(3){transition-delay:.08s}
   .hero-team:hover .faces img:nth-child(4){transition-delay:.12s}.hero-team:hover .faces img:nth-child(5){transition-delay:.16s}.hero-team:hover .faces img:nth-child(6){transition-delay:.2s}
-  .hero-team .arrow{color:var(--red);transition:transform .3s;}
+  .hero-team .arrow{color:var(--red-ink);transition:transform .3s;}
   .hero-team:hover .arrow{transform:translateX(4px);}
   .hero-team:hover span:last-child{color:#fff;}
 
@@ -60,7 +61,7 @@
   .tcopy{position:relative;z-index:2;padding:48px 20px 40px 48px;display:flex;flex-direction:column;gap:16px;min-width:0;}
   .tline{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--red-ink);margin-top:8px;}
   .tname{font-family:var(--serif);font-size:clamp(40px,5vw,64px);line-height:.95;letter-spacing:-.01em;}
-  .trole{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);}
+  .trole{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red-ink);}
   .tchat{display:flex;flex-direction:column;gap:12px;margin-top:10px;max-width:470px;}
   .tmsg{border-radius:16px;padding:14px 16px;font-size:15.5px;line-height:1.5;box-shadow:0 10px 28px rgba(0,0,0,.08);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.25,1,.25,1);}
   .tmsg.on{opacity:1;transform:none;}
@@ -348,7 +349,7 @@
   /* ===== LAYOUT ===== */
   .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
   .bg-black{background:#000;color:#fff;}
-  .bg-white{background:#fff;color:#000;--red-ink:#E12F2E;}
+  .bg-white{background:#fff;color:#000;--red-ink:#B3132B;}
   .bg-red{background:var(--red);color:#fff;}
   .section-pad{padding:120px 0;}
   @media (max-width:760px){.section-pad{padding:80px 0;} .wrap{padding:0 20px;}}
@@ -416,7 +417,7 @@
   .card.on-dark p{color:var(--silver);}
   .card.hero-card{background:var(--red);border-color:var(--red);color:#fff;}
   .card.hero-card p{color:rgba(255,255,255,.93);}
-  .card .num{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--red);
+  .card .num{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--red-ink);
     line-height:1;margin-bottom:14px;display:block;}
   .card.hero-card .num{color:#fff;}
 
@@ -500,12 +501,12 @@
     display:flex;flex-direction:column;
     transition:transform .35s cubic-bezier(.25,1,.25,1),box-shadow .35s ease,border-color .35s ease;}
   .quote:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(0,0,0,.09);border-color:rgba(225,47,46,.3);}
-  .quote .qm{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--red);
+  .quote .qm{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--red-ink);
     line-height:.8;margin-bottom:12px;}
   .quote p{margin:0 0 22px;font-size:14.5px;line-height:1.65;color:var(--gray-dark);flex:1;}
   .quote .who{font-weight:600;font-size:14px;color:#000;}
   .quote .role{font-size:12.5px;color:#70757E;margin-top:3px;line-height:1.4;}
-  .quote.feature{background:var(--panel);border-color:var(--line-dark);}
+  .quote.feature{--red-ink:#E85250;background:var(--panel);border-color:var(--line-dark);}
   .quote.feature p{color:var(--silver);font-size:16px;}
   .quote.feature .who{color:#fff;}
   .quote.feature .role{color:#9AA0A8;}
@@ -528,7 +529,7 @@
   .email-or{font-size:14px;color:#8D929B;}
   .email-link{font-size:clamp(16px,2vw,22px);color:#fff;text-decoration:none;
     border-bottom:2px solid var(--red);padding-bottom:2px;transition:color .25s ease;}
-  .email-link:hover{color:var(--red);}
+  .email-link:hover{color:var(--red-ink);}
   .contact-name{font-size:15px;color:#8D929B;margin-top:38px;}
   footer{padding:34px 0 44px;border-top:1px solid var(--line-dark);}
   .footrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
@@ -543,7 +544,7 @@
   .cascade-wrap{position:absolute;inset:0;z-index:6;display:flex;align-items:stretch;opacity:0;visibility:hidden;transition:opacity .7s ease;}
   .cascade-wrap.show{opacity:1;visibility:visible;}
   .cascade-left{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 6vw;}
-  .cascade-brand{color:var(--red);font-weight:600;letter-spacing:12px;font-size:20px;}
+  .cascade-brand{color:var(--red-ink);font-weight:600;letter-spacing:12px;font-size:20px;}
   .cascade-tag{color:var(--silver);letter-spacing:5px;font-size:12px;margin-top:8px;opacity:.7;}
   .cascade-hint{color:#7D828B;font-size:11px;letter-spacing:2px;margin-top:34px;text-transform:uppercase;}
   .cascade-right{flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 6vw;border-left:1px solid var(--line-dark);}
@@ -925,7 +926,7 @@
     <p class="kicker reveal" data-t="levels_kicker">LIVELLI DI COMPETENZA</p>
     <h2 class="headline reveal d1" data-t="levels_h2">Livelli di competenza che il mercato comprende già.</h2>
     <p class="lede reveal d2" data-t="levels_lede">Ogni programma segue la scala CEFR, dall'A1 al C2. Il CEFR è lo standard internazionale dei livelli linguistici.</p>
-    <div class="ladder" id="ladder"><!--pre:ladder--><div class="rung reveal-scale" style="background: rgb(237, 239, 243); color: rgb(0, 0, 0); transition-delay: 0s;"><div class="code">A1</div><div class="lbl">Principiante</div></div><div class="rung reveal-scale" style="background: rgb(201, 206, 218); color: rgb(0, 0, 0); transition-delay: 0.06s;"><div class="code">A2</div><div class="lbl">Elementare</div></div><div class="rung reveal-scale" style="background: rgb(29, 42, 74); color: rgb(255, 255, 255); transition-delay: 0.12s;"><div class="code">B1</div><div class="lbl">Intermedio</div></div><div class="rung reveal-scale" style="background: rgb(122, 31, 31); color: rgb(255, 255, 255); transition-delay: 0.18s;"><div class="code">B2</div><div class="lbl">Interm. Superiore</div></div><div class="rung reveal-scale" style="background: rgb(178, 36, 36); color: rgb(255, 255, 255); transition-delay: 0.24s;"><div class="code">C1</div><div class="lbl">Avanzato</div></div><div class="rung reveal-scale" style="background: rgb(225, 47, 46); color: rgb(255, 255, 255); transition-delay: 0.3s;"><div class="code">C2</div><div class="lbl">Padronanza</div></div><!--/pre:ladder--></div>
+    <div class="ladder" id="ladder"><!--pre:ladder--><div class="rung reveal-scale" style="background: rgb(237, 239, 243); color: rgb(0, 0, 0); transition-delay: 0s;"><div class="code">A1</div><div class="lbl">Principiante</div></div><div class="rung reveal-scale" style="background: rgb(201, 206, 218); color: rgb(0, 0, 0); transition-delay: 0.06s;"><div class="code">A2</div><div class="lbl">Elementare</div></div><div class="rung reveal-scale" style="background: rgb(29, 42, 74); color: rgb(255, 255, 255); transition-delay: 0.12s;"><div class="code">B1</div><div class="lbl">Intermedio</div></div><div class="rung reveal-scale" style="background: rgb(122, 31, 31); color: rgb(255, 255, 255); transition-delay: 0.18s;"><div class="code">B2</div><div class="lbl">Interm. Superiore</div></div><div class="rung reveal-scale" style="background: rgb(154, 27, 43); color: rgb(255, 255, 255); transition-delay: 0.24s;"><div class="code">C1</div><div class="lbl">Avanzato</div></div><div class="rung reveal-scale" style="background: rgb(179, 19, 43); color: rgb(255, 255, 255); transition-delay: 0.3s;"><div class="code">C2</div><div class="lbl">Padronanza</div></div><!--/pre:ladder--></div>
     <p class="body-copy reveal" style="margin-top:26px;font-style:italic;color:#8A8F98;" data-t="levels_note">L'attenzione al registro e alla pragmatica diventa prioritaria a partire dal livello B1, esattamente il momento in cui la maggior parte delle persone smette di progredire.</p>
   </div>
 </section>
@@ -952,8 +953,8 @@
     <h2 class="headline reveal d1" style="color:#fff;" data-t="learn_h2">I progressi dettano il ritmo, non il calendario.</h2>
     <p class="lede on-dark reveal d2" data-t="learn_lede">Le ore seguono i progressi dello studente. Chi raggiunge prima gli obiettivi di una fase passa alla successiva senza aspettare un calendario fisso.</p>
     <div class="grid-2" style="margin-top:42px;">
-      <div class="chart-card reveal-scale" id="chart1"><!--pre:chart1--><div class="chart-title">Livello di inglese raggiunto in 6 mesi</div><div class="chart-sub">Esempio illustrativo: l'avanzamento tramite metodo Concept vs il calendario tipico di una scuola.</div><svg aria-label="Livello di inglese raggiunto in 6 mesi" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="200" y2="200"></line><text class="clabel" text-anchor="end" x="26" y="204">0</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="142.15384615384616" y2="142.15384615384616"></line><text class="clabel" text-anchor="end" x="26" y="146.15384615384616">2</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="84.3076923076923" y2="84.3076923076923"></line><text class="clabel" text-anchor="end" x="26" y="88.3076923076923">4</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="26.461538461538453" y2="26.461538461538453"></line><text class="clabel" text-anchor="end" x="26" y="30.461538461538453">6</text><text class="clabel" text-anchor="middle" x="34" y="218">M1</text><text class="clabel" text-anchor="middle" x="112.8" y="218">M2</text><text class="clabel" text-anchor="middle" x="191.6" y="218">M3</text><text class="clabel" text-anchor="middle" x="270.4" y="218">M4</text><text class="clabel" text-anchor="middle" x="349.2" y="218">M5</text><text class="clabel" text-anchor="middle" x="428" y="218">M6</text><path class="cline" d="M34,171.07692307692307 L112.8,147.93846153846152 L191.6,124.8 L270.4,101.66153846153846 L349.2,78.52307692307691 L428,55.38461538461539" stroke="#5A5F68"></path><path class="cline" d="M34,162.4 L112.8,124.8 L191.6,92.9846153846154 L270.4,66.95384615384617 L349.2,43.8153846153846 L428,26.461538461538453" stroke="#E12F2E" style="animation-delay:.25s"></path><circle class="cdot" cx="34" cy="162.4" fill="#E12F2E" r="4" style="animation-delay:0.9s"></circle><circle class="cdot" cx="112.8" cy="124.8" fill="#E12F2E" r="4" style="animation-delay:0.98s"></circle><circle class="cdot" cx="191.6" cy="92.9846153846154" fill="#E12F2E" r="4" style="animation-delay:1.06s"></circle><circle class="cdot" cx="270.4" cy="66.95384615384617" fill="#E12F2E" r="4" style="animation-delay:1.1400000000000001s"></circle><circle class="cdot" cx="349.2" cy="43.8153846153846" fill="#E12F2E" r="4" style="animation-delay:1.22s"></circle><circle class="cdot" cx="428" cy="26.461538461538453" fill="#E12F2E" r="4" style="animation-delay:1.3s"></circle></svg><div class="clegend"><span><i style="background:#5A5F68"></i>Corso standard a calendario fisso</span><span><i style="background:#E12F2E"></i>Concept (basato sui progressi)</span></div><!--/pre:chart1--></div>
-      <div class="chart-card reveal-scale d1" id="chart2"><!--pre:chart2--><div class="chart-title">Punti per competenza ad ogni valutazione</div><div class="chart-sub">Come Concept dà peso alle quattro abilità.</div><svg aria-label="Punti per competenza ad ogni valutazione" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="196" y2="196"></line><text class="clabel" text-anchor="end" x="22" y="200">0</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="144.8235294117647" y2="144.8235294117647"></line><text class="clabel" text-anchor="end" x="22" y="148.8235294117647">1</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="93.6470588235294" y2="93.6470588235294"></line><text class="clabel" text-anchor="end" x="22" y="97.6470588235294">2</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="42.470588235294116" y2="42.470588235294116"></line><text class="clabel" text-anchor="end" x="22" y="46.470588235294116">3</text><rect class="cbar" fill="#E12F2E" height="153.52941176470588" rx="7" style="animation-delay:0s" width="52" x="38" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.5s" text-anchor="middle" x="64" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="64" y="214">Ascolto</text><rect class="cbar" fill="#E12F2E" height="153.52941176470588" rx="7" style="animation-delay:0.1s" width="52" x="152" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.6s" text-anchor="middle" x="178" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="178" y="214">Parlato</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.2s" width="52" x="266" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.7s" text-anchor="middle" x="292" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="292" y="214">Lettura</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.30000000000000004s" width="52" x="380" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.8s" text-anchor="middle" x="406" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="406" y="214">Scrittura</text></svg><!--/pre:chart2--></div>
+      <div class="chart-card reveal-scale" id="chart1"><!--pre:chart1--><div class="chart-title">Livello di inglese raggiunto in 6 mesi</div><div class="chart-sub">Esempio illustrativo: l'avanzamento tramite metodo Concept vs il calendario tipico di una scuola.</div><svg aria-label="Livello di inglese raggiunto in 6 mesi" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="200" y2="200"></line><text class="clabel" text-anchor="end" x="26" y="204">0</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="142.15384615384616" y2="142.15384615384616"></line><text class="clabel" text-anchor="end" x="26" y="146.15384615384616">2</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="84.3076923076923" y2="84.3076923076923"></line><text class="clabel" text-anchor="end" x="26" y="88.3076923076923">4</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="26.461538461538453" y2="26.461538461538453"></line><text class="clabel" text-anchor="end" x="26" y="30.461538461538453">6</text><text class="clabel" text-anchor="middle" x="34" y="218">M1</text><text class="clabel" text-anchor="middle" x="112.8" y="218">M2</text><text class="clabel" text-anchor="middle" x="191.6" y="218">M3</text><text class="clabel" text-anchor="middle" x="270.4" y="218">M4</text><text class="clabel" text-anchor="middle" x="349.2" y="218">M5</text><text class="clabel" text-anchor="middle" x="428" y="218">M6</text><path class="cline" d="M34,171.07692307692307 L112.8,147.93846153846152 L191.6,124.8 L270.4,101.66153846153846 L349.2,78.52307692307691 L428,55.38461538461539" stroke="#5A5F68"></path><path class="cline" d="M34,162.4 L112.8,124.8 L191.6,92.9846153846154 L270.4,66.95384615384617 L349.2,43.8153846153846 L428,26.461538461538453" stroke="#E85250" style="animation-delay:.25s"></path><circle class="cdot" cx="34" cy="162.4" fill="#E85250" r="4" style="animation-delay:0.9s"></circle><circle class="cdot" cx="112.8" cy="124.8" fill="#E85250" r="4" style="animation-delay:0.98s"></circle><circle class="cdot" cx="191.6" cy="92.9846153846154" fill="#E85250" r="4" style="animation-delay:1.06s"></circle><circle class="cdot" cx="270.4" cy="66.95384615384617" fill="#E85250" r="4" style="animation-delay:1.1400000000000001s"></circle><circle class="cdot" cx="349.2" cy="43.8153846153846" fill="#E85250" r="4" style="animation-delay:1.22s"></circle><circle class="cdot" cx="428" cy="26.461538461538453" fill="#E85250" r="4" style="animation-delay:1.3s"></circle></svg><div class="clegend"><span><i style="background:#5A5F68"></i>Corso standard a calendario fisso</span><span><i style="background:#E85250"></i>Concept (basato sui progressi)</span></div><!--/pre:chart1--></div>
+      <div class="chart-card reveal-scale d1" id="chart2"><!--pre:chart2--><div class="chart-title">Punti per competenza ad ogni valutazione</div><div class="chart-sub">Come Concept dà peso alle quattro abilità.</div><svg aria-label="Punti per competenza ad ogni valutazione" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="196" y2="196"></line><text class="clabel" text-anchor="end" x="22" y="200">0</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="144.8235294117647" y2="144.8235294117647"></line><text class="clabel" text-anchor="end" x="22" y="148.8235294117647">1</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="93.6470588235294" y2="93.6470588235294"></line><text class="clabel" text-anchor="end" x="22" y="97.6470588235294">2</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="42.470588235294116" y2="42.470588235294116"></line><text class="clabel" text-anchor="end" x="22" y="46.470588235294116">3</text><rect class="cbar" fill="#E85250" height="153.52941176470588" rx="7" style="animation-delay:0s" width="52" x="38" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.5s" text-anchor="middle" x="64" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="64" y="214">Ascolto</text><rect class="cbar" fill="#E85250" height="153.52941176470588" rx="7" style="animation-delay:0.1s" width="52" x="152" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.6s" text-anchor="middle" x="178" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="178" y="214">Parlato</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.2s" width="52" x="266" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.7s" text-anchor="middle" x="292" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="292" y="214">Lettura</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.30000000000000004s" width="52" x="380" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.8s" text-anchor="middle" x="406" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="406" y="214">Scrittura</text></svg><!--/pre:chart2--></div>
     </div>
     <p class="body-copy on-dark reveal" style="margin-top:30px;max-width:760px;" data-t="learn_note">Diamo più peso al parlato e all'ascolto di proposito, perché il lavoro si svolge in tempo reale. L'azienda riceve un report mensile con ore e presenze.</p>
   </div>
@@ -1639,7 +1640,7 @@ window.I18N = {
 <script>
 var EMAIL = "contact@theconceptmethod.com";
 var CODES = ["A1","A2","B1","B2","C1","C2"];
-var LADDER_BG = ["#EDEFF3","#C9CEDA","#1D2A4A","#7A1F1F","#B22424","#E12F2E"];
+var LADDER_BG = ["#EDEFF3","#C9CEDA","#1D2A4A","#7A1F1F","#9A1B2B","#B3132B"];
 var LADDER_FG = ["#000","#000","#fff","#fff","#fff","#fff"];
 var ICON_CHECK = "M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z";
 var ICON_X = "M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z";
@@ -1718,18 +1719,18 @@ function buildCharts(){
   function poly(arr){ var p=''; for(var i=0;i<arr.length;i++){ p += (i?' L':'M')+xs(i)+','+ys(arr[i]); } return p; }
   var dots='';
   for(var i=0;i<mine.length;i++){
-    dots += '<circle class="cdot" cx="'+xs(i)+'" cy="'+ys(mine[i])+'" r="4" fill="#E12F2E" style="animation-delay:'+(0.9+i*0.08)+'s"/>';
+    dots += '<circle class="cdot" cx="'+xs(i)+'" cy="'+ys(mine[i])+'" r="4" fill="#E85250" style="animation-delay:'+(0.9+i*0.08)+'s"/>';
     g += '<text class="clabel" x="'+xs(i)+'" y="'+(H-PB+18)+'" text-anchor="middle">'+d.chart1_labels[i]+'</text>';
   }
   document.getElementById('chart1').innerHTML =
     '<div class="chart-title">'+d.chart1_title+'</div><div class="chart-sub">'+d.chart1_sub+'</div>' +
     '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+d.chart1_title+'">' + g +
       '<path class="cline" d="'+poly(fixed)+'" stroke="#5A5F68"/>' +
-      '<path class="cline" d="'+poly(mine)+'" stroke="#E12F2E" style="animation-delay:.25s"/>' + dots +
+      '<path class="cline" d="'+poly(mine)+'" stroke="#E85250" style="animation-delay:.25s"/>' + dots +
     '</svg>' +
     '<div class="clegend">' +
       '<span><i style="background:#5A5F68"></i>'+d.chart1_s1+'</span>' +
-      '<span><i style="background:#E12F2E"></i>'+d.chart1_s2+'</span>' +
+      '<span><i style="background:#E85250"></i>'+d.chart1_s2+'</span>' +
     '</div>';
 
   // Chart 2: points per skill
@@ -1746,7 +1747,7 @@ function buildCharts(){
     var bx = bPL + 8 + b*(barW+gap);
     var bh = (vals[b]/maxV)*(BH-bPT-bPB);
     var by = BH-bPB-bh;
-    var col = (b<2) ? '#E12F2E' : '#5A5F68';
+    var col = (b<2) ? '#E85250' : '#5A5F68';
     g2 += '<rect class="cbar" x="'+bx+'" y="'+by+'" width="'+barW+'" height="'+bh+'" rx="7" fill="'+col+'" style="animation-delay:'+(b*0.1)+'s"/>' +
           '<text class="cvalue" x="'+(bx+barW/2)+'" y="'+(by-8)+'" text-anchor="middle" style="animation-delay:'+(0.5+b*0.1)+'s">'+vals[b]+'</text>' +
           '<text class="clabel" x="'+(bx+barW/2)+'" y="'+(BH-bPB+18)+'" text-anchor="middle">'+d.chart2_labels[b]+'</text>';

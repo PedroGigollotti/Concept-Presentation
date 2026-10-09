@@ -12,10 +12,11 @@
 <style>
   :root{
     --black:#000; --panel:#0B0B0B; --white:#fff;
-    --red:#E12F2E; --red-hi:#FF4342;
+    --red:#B3132B; --red-hi:#8E0F22;
     --gray:#8A8F98;
     /* O VERMELHO DE TEXTO TROCA COM O FUNDO, E O NUMERO E MEDIDO.
-       Um vermelho so nao passa nos dois lados: #E12F2E da 4,52 sobre branco
+       Desde 9 out 2026 (Brand Book 2.0): claro #B3132B (6,90 no branco), escuro #E85250 (5,39).
+       Um vermelho so nao passa nos dois lados: #E12F2E dava 4,52 sobre branco
        e 4,43 sobre o quase-preto, e o anterior falhava nos dois, com
        4,46 e 4,49. Entao o texto vermelho tem dois valores e o fundo escolhe:
        aqui o claro, porque esta pagina e escura, e `.bg-white` troca para o
@@ -70,7 +71,7 @@
   /* ===== LAYOUT ===== */
   .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
   .bg-black{background:#000;color:#fff;}
-  .bg-white{background:#fff;color:#000;--red-ink:#E12F2E;}
+  .bg-white{background:#fff;color:#000;--red-ink:#B3132B;}
   .section-pad{padding:96px 0;}
   @media (max-width:760px){.section-pad{padding:64px 0;} .wrap{padding:0 20px;}}
 
@@ -131,7 +132,7 @@
   .quote{background:#fff;border:1px solid var(--line-light);border-radius:24px;padding:30px;display:flex;flex-direction:column;
     transition:transform .35s cubic-bezier(.25,1,.25,1),box-shadow .35s ease,border-color .35s ease;}
   .quote:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(0,0,0,.09);border-color:rgba(225,47,46,.3);}
-  .quote .qm{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--red);line-height:.8;margin-bottom:12px;}
+  .quote .qm{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--red-ink);line-height:.8;margin-bottom:12px;}
   .quote p{margin:0 0 22px;font-size:14.5px;line-height:1.65;color:var(--gray-dark);flex:1;}
   .quote .who{font-weight:600;font-size:14px;color:#000;}
   .quote .role{font-size:12.5px;color:#70757E;margin-top:3px;line-height:1.4;}
