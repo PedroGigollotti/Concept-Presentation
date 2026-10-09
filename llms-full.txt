@@ -45,7 +45,7 @@ Pedro designed the Concept method and directs every program. He also works in te
 Teacher training
 Pedro trains teachers in the method, so it is taught precisely and never improvised.
 Cambridge examinations
-Deep experience preparing candidates for Cambridge and ALTE-benchmarked assessment.
+Experience preparing candidates for Cambridge English exams.
 Syllabus & project design
 Concept builds the curriculum around your context: your industry, your scenarios, and your communication goals.
 Professionals trained by Concept work at
@@ -98,7 +98,7 @@ International & expanding companies
 Teams working across borders and cultures, where a misread register costs credibility with partners, investors, and clients.
 03
 HR & L&D departments
-Buyers who need progress they can report: CEFR-mapped levels, monthly per-skill tracking, and outcomes that survive a budget review.
+Buyers who need progress they can report: levels on the CEFR scale and a monthly report with hours and attendance.
 THE METHOD
 A method with a mechanism, not just a name.
 Lexical Approach
@@ -123,7 +123,7 @@ That language gets used right away, in a scenario close to what the student will
 Most methods stop at meaning. Ours doesn't stop until the register is right.
 LEVELS
 Levels the market already recognizes.
-Every program is mapped directly onto the CEFR scale (A1 to C2) and tested against Cambridge and ALTE benchmarks. Progress is measured against a global standard, not an internal scorecard.
+Every program is mapped onto the CEFR scale, from A1 to C2. The CEFR is the international standard for language levels.
 A1
 Beginner
 A2
@@ -144,39 +144,33 @@ There is no fixed menu. We design each program around the conversations your peo
 Individuals
 One-to-one work with a senior professional who needs to perform in a specific room: a board, a pitch, a negotiation.
 02
-Teams & departments
-Group programs shaped around a shared context, whether that's a sales floor, a legal team, or a leadership group.
+Company programs
+Programs for several people in one company. Each person has individual lessons, and the company receives a monthly report with hours and attendance.
 03
 Your sector, your scenarios
 Concept has built programs across finance, law, logistics, marketing, HR, and negotiation. Whatever your field, we write the syllabus after we understand it, not before.
-Online or in person
-Individual or group
-Cambridge exam prep
+Online
+Individual lessons
+CEFR A1 to C2
 THE LEARNING
 Pace tied to progress, not the calendar.
-Hours are structured around ALTE-defined benchmarks. A student who reaches a stage's goals faster than scheduled advances immediately, with no waiting on a fixed calendar built for someone else's pace.
+Hours follow the learner's progress. A learner who reaches the goals of a stage early moves to the next stage without waiting for a fixed calendar.
 Level reached over 6 months
 Illustrative: how progress-based pacing compares with a fixed calendar.
 Fixed-calendar course
 Concept (progress-based)
 Points per skill, per assessment
-Concept's actual assessment weighting, applied after every lesson.
-We weight speaking and listening higher on purpose. Speaking and understanding in real time is what separates fluency from a passed test. Every student is assessed after every lesson, and you get a monthly report with hours, attendance, the trend for each skill, and written notes.
+How Concept weights the four skills.
+We give speaking and listening more weight on purpose, because work happens in real time. The company receives a monthly report with hours and attendance.
 WHY CONCEPT
-Built for the gap
-the alternatives
-leave behind.
-Self-study apps
-Language schools
-Concept
-Real-time speaking practice, not drills
-Register & tone, taught explicitly
-Practice between lessons, on the same method
-Human feedback, every single lesson
-Progress you can report (CEFR-mapped)
-Pace set by results, not a fixed calendar
-Syllabus written for your business
-Designed and directed by the founder
+What every Concept program
+includes.
+Speaking practice in real time in every lesson
+Register and tone, taught explicitly
+Practice between lessons in the Concept Coach app, on the same method
+Feedback from a teacher in every lesson
+Levels on the CEFR scale
+A syllabus written for your company's work
 HOW TO START
 One call.
 No charge
@@ -199,9 +193,9 @@ Individuals and teams: leadership and client-facing teams, international and exp
 How does the method work?
 Every lesson follows three steps: Access, Analysis, and Activation. The method teaches what standard courses skip: register, pragmatics, and timing under pressure.
 Where does Concept teach?
-Concept works with professionals in São Paulo, Rome, and Milan. Programs run online, in person, or blended, for individuals or full departments.
+Concept works with professionals in São Paulo, Rome, and Milan. Programs run online, for one person or for several people in a company.
 How is progress measured?
-Every program is mapped to the CEFR scale, from A1 to C2, and tested against Cambridge and ALTE benchmarks. Every student is assessed after every lesson, and you get a monthly report.
+Every program is mapped to the CEFR scale, from A1 to C2. The company receives a monthly report with hours and attendance.
 What happens between lessons?
 Learners practice in the Concept Coach app with the Concept team: six AI coaches built on the Concept method and led by Netto, director of studies.
 Are there books?
@@ -212,7 +206,7 @@ GET IN TOUCH
 Let's build the program
 for your team
 .
-Tell us the team, the goal, and the deadline. We will come back with a proposal, not a brochure. Programs run online, in person, or blended, for individuals or full departments.
+Tell us the team, the goal, and the deadline. We will come back with a written proposal. Programs run online, for one person or for several people in a company.
 Talk to us
 Or write to us directly:
 contact@theconceptmethod.com
@@ -451,7 +445,7 @@ Alongside teaching, he works in teacher training, Cambridge examination preparat
 Teacher training
 Pedro trains teachers in the method, so it is taught precisely and never improvised.
 Cambridge examinations
-Deep experience preparing candidates for Cambridge and ALTE-benchmarked assessment.
+Experience preparing candidates for Cambridge English exams.
 Syllabus & project design
 He builds each curriculum around the client's context: the industry, the scenarios, and the communication goals.
 25
@@ -522,7 +516,7 @@ Language is learned by using it, not by studying it. Lessons run in English, stu
 ii.
 Where it stops being enough
 The Communicative Approach optimises for one thing: getting the message across. In a negotiation, getting the message across is the floor, not the ceiling. Your client understood the sentence perfectly. They just trusted you slightly less afterwards, and neither of you can say exactly why. That gap is what the next three sections are about.
-Every school teaches your team to be understood. I train them to be believed.
+Every school teaches your team to be understood. Concept trains them to be believed.
 THE TRIPLE A CYCLE
 One real message,
 three
@@ -609,7 +603,7 @@ Now run it on
 your team
 .
 Everything you just did, I do live, with your people, on their actual emails and their actual calls. Forty five minutes, no charge, no obligation. I tell you exactly where they break down under pressure, and whether training is even worth your budget.
-Pedro Gigollotti · Teacher and Academic Director · São Paulo · Rome · Milano
+Pedro Gigollotti · Founder and Academic Director · São Paulo · Rome · Milano
 CONCEPT · MIND YOUR FUTURE
 © 2026 Concept.
 
