@@ -328,8 +328,6 @@ Improve
 in public.
 What stays with the learner
 Conversations with the coaches stay between the learner and the coach. The company never sees an individual's answers or level. People practice the sentence they would never risk in a meeting.
-Are the coaches people?
-The coaches are AI, trained in the Concept Method and supervised by Concept's founder.
 How it fits the lessons
 The app picks up what came up in class, so the practice starts where the lesson stopped. Every coach follows the same method as the teacher in the room.
 Five situations from real work. No sign-up.
