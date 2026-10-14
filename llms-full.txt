@@ -17,14 +17,14 @@ in it?
 Concept trains professionals who already speak English to use it with confidence at work. Our method teaches what standard courses skip: register, pragmatics, and timing under pressure.
 See how the method works
 Your question
-The Concept team are AI coaches built on the Concept method. Your people talk to them in the Concept Coach app on the days without a lesson.
+The Concept team is made up of coaches built on the Concept Method. Your people talk to them in the Concept Coach app on the days without a lesson.
 Would your team get these right?
 Take the 5-question test
 →
 6
 Concept books, from A1 to C2, read inside the app
 7
-AI coaches in the Concept Coach app, each responsible for one part of English
+coaches in the Concept Coach app, each responsible for one part of English
 1
 ×
 method. Every lesson is built on it
@@ -40,9 +40,9 @@ Founded by a teacher.
 One method
 , 25 years in.
 Concept was founded by Pedro Gigollotti, who has taught professional communication for 25 years in six countries: Brazil, the USA, England, Ireland, Malta, and Italy. That experience is why Concept can teach how English changes between a London boardroom, a New York sales call, and a Milan negotiation.
-Pedro designed the Concept method and directs every program. He also works in teacher training, Cambridge examination preparation, and syllabus design. Every Concept lesson follows the method he designed, the same way each time.
+Pedro designed the Concept Method and directs every program. He also works in teacher training, Cambridge examination preparation, and syllabus design. Every Concept lesson follows the method he designed, the same way each time.
 Teacher training
-The Concept method is written down for teachers. Pedro trained teachers for twelve years as academic coordinator at Concept Idiomas in São Paulo.
+The Concept Method is written down for teachers. Pedro trained teachers for twelve years as academic coordinator at Concept Idiomas in São Paulo.
 Cambridge examinations
 Experience preparing candidates for Cambridge English exams.
 Syllabus & project design
@@ -196,7 +196,7 @@ Concept works with professionals in São Paulo, Rome, and Milan. Programs run on
 How is progress measured?
 Every program is mapped to the CEFR scale, from A1 to C2. The company receives a monthly report with hours and attendance.
 What happens between lessons?
-Learners practice in the Concept Coach app with the Concept team: seven AI coaches built on the Concept method and led by Netto, academic director.
+Learners practice in the Concept Coach app with the Concept team: seven coaches built on the Concept Method and led by Netto, academic director.
 Are there books?
 Yes. Professional English Practice is a series of five books, from A1 to C2, with one book on phrasal verbs. Calibrated Speech is a pronunciation manual for Brazilian speakers of American English.
 How do I start?
@@ -215,7 +215,7 @@ CONCEPT · SÃO PAULO · ROME · MILANO
 
 ## https://theconceptmethod.com/team.html
 
-The Concept Team | AI English Coaches for Professionals
+The Concept Team | English Coaches for Professionals
 CONCEPT
 Method
 About
@@ -227,7 +227,7 @@ Talk to us
 THE CONCEPT TEAM
 Your team's English is correct. Now make it
 land.
-Seven AI coaches built on the Concept method, each responsible for one part of English and led by Netto, academic director. Your people work with them in the Concept Coach app on the days between lessons.
+Seven coaches built on the Concept Method and led by Netto, academic director. Each is responsible for one part of English. Your people work with them in the Concept Coach app on the days between lessons.
 Meet the team
 Or go straight to the five-question test
 Netto
@@ -328,6 +328,8 @@ Improve
 in public.
 What stays with the learner
 Conversations with the coaches stay between the learner and the coach. The company never sees an individual's answers or level. People practice the sentence they would never risk in a meeting.
+Are the coaches people?
+The coaches are AI, trained in the Concept Method and supervised by Concept's founder.
 How it fits the lessons
 The app picks up what came up in class, so the practice starts where the lesson stopped. Every coach follows the same method as the teacher in the room.
 Five situations from real work. No sign-up.
