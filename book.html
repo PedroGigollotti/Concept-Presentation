@@ -127,6 +127,13 @@
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
   footer a{color:var(--muted);text-decoration:none;}
   footer a:hover{color:var(--platinum);}
+  /* Follow us: official logos, unmodified (Pedro, 16 Oct 2026) */
+  .follow-us{display:flex;align-items:center;flex-wrap:wrap;gap:4px;flex-basis:100%;margin-top:6px;}
+  .follow-us .follow-label{margin-right:8px;}
+  .follow-us a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;}
+  footer .follow-us a:hover img{opacity:.8;}
+  .follow-us a:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+  .follow-us img{display:block;width:30px;height:auto;border:0;}
 
   @media (max-width:640px){
     .wrap{padding:36px 20px 72px;}
@@ -216,6 +223,12 @@
   <footer>
     <span>Concept &middot; Mind Your Future</span>
     <span><a href="index.html">Back to Concept</a></span>
+    <div class="follow-us"><span class="follow-label">Follow us</span>
+      <a href="https://www.instagram.com/theconceptmethod" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/social/instagram.png" width="30" height="30" alt="Instagram" loading="lazy" decoding="async"></a>
+      <a href="https://www.facebook.com/theconceptmethod" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/social/facebook.png" width="30" height="30" alt="Facebook" loading="lazy" decoding="async"></a>
+      <a href="https://www.tiktok.com/@theconceptmethod" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/social/tiktok.png" width="30" height="30" alt="TikTok" loading="lazy" decoding="async"></a>
+      <a href="https://www.linkedin.com/in/pedro-gigollotti/" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="assets/social/linkedin.png" width="30" height="25" alt="LinkedIn" loading="lazy" decoding="async"></a>
+    </div>
   </footer>
 
   <div id="lightbox" aria-hidden="true">
