@@ -764,7 +764,7 @@
             <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt="" hidden><span id="tAnsWho"></span></div><div id="tAnsText"></div><a class="ttry" id="tTry" href="team.html#test" hidden></a></div>
           </div>
         </div>
-        <div class="tfig"><video class="tswap" id="tFig" muted playsinline preload="none" width="720" height="1010" aria-hidden="true"></video></div>
+        <div class="tfig"><button class="tsound" id="tSound" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span id="tSoundL"></span></button><video class="tswap" id="tFig" muted playsinline preload="none" width="720" height="1010" aria-hidden="true"></video></div>
       </div>
       <div class="ttabs" id="tTabs" role="tablist"></div>
       <div class="team-hook">
@@ -1031,6 +1031,90 @@
   </div>
 </section>
 
+
+<style>
+/* TALK TO US (Pedro, 29 Oct 2026): a form, not a mailto: link, which the
+   Instagram browser refuses. Same ground and red as the page; a sheet from
+   the bottom on a phone, a centred panel on a computer. */
+.talk{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;
+  padding:16px;background:rgba(0,0,0,.72);opacity:0;transition:opacity .2s ease-out;}
+.talk[hidden]{display:none;}
+.talk.open{opacity:1;}
+.talk-box{position:relative;width:min(560px,100%);max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;
+  background:#0B0B0B;color:#E7E8EA;border:1px solid var(--line-dark);border-radius:4px;padding:32px 28px 28px;
+  transform:translateY(12px);transition:transform .24s cubic-bezier(.22,1,.36,1);font-family:var(--sans);}
+.talk.open .talk-box{transform:none;}
+.talk-box h2{margin:0 44px 8px 0;font-family:var(--sans);font-weight:600;font-size:26px;letter-spacing:-.01em;color:#fff;}
+.talk-box .talk-lede{margin:0 0 22px;color:#B8BCC4;font-size:15px;line-height:1.5;}
+.talk-x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;border-radius:4px;background:none;color:#B8BCC4;
+  cursor:pointer;display:grid;place-items:center;touch-action:manipulation;}
+.talk-x:focus-visible{outline:2px solid #E7E8EA;outline-offset:2px;}
+.talk-f{display:grid;gap:14px;}
+.talk-f label{display:grid;gap:6px;font-size:13px;font-weight:600;color:#E7E8EA;}
+.talk-f label small{font-weight:400;color:#8A8F98;}
+.talk-f input,.talk-f textarea{font:inherit;font-size:16px;color:#fff;background:#000;border:1px solid rgba(228,230,234,.24);
+  border-radius:4px;padding:12px 14px;width:100%;}
+.talk-f textarea{min-height:128px;resize:vertical;line-height:1.5;}
+.talk-f input:focus,.talk-f textarea:focus{outline:none;border-color:#E7E8EA;}
+.talk-f .talk-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.talk-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:6px;}
+.talk-row .btn{touch-action:manipulation;user-select:none;-webkit-user-select:none;}
+.talk-row .btn:active{transform:scale(.97);}
+.talk-row .btn[disabled]{opacity:.6;cursor:default;}
+.talk-err{margin:0;color:#E66B7B;font-size:14px;line-height:1.45;}
+.talk-err:empty{display:none;}
+.talk-priv{margin:4px 0 0;color:#8A8F98;font-size:12.5px;line-height:1.5;}
+.talk-priv a{color:#B8BCC4;}
+.talk-done h2{margin-top:6px;}
+@media (max-width:600px){
+  .talk{align-items:flex-end;padding:0;}
+  .talk-box{width:100%;max-height:calc(100dvh - 24px);border-radius:12px 12px 0 0;border-bottom:0;
+    padding:28px 20px calc(24px + env(safe-area-inset-bottom,0px));transform:translateY(24px);}
+}
+@media (prefers-reduced-motion:reduce){.talk,.talk-box{transition:opacity .15s ease;transform:none!important;}}
+body.talk-on{overflow:hidden;}
+/* the members speak only when the visitor asks (Pedro, 29 Oct 2026) */
+.tsound{position:absolute;top:16px;right:16px;z-index:4;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;
+  border:0;border-radius:4px;background:#0A0B0D;color:#E7E8EA;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;
+  touch-action:manipulation;user-select:none;-webkit-user-select:none;}
+.tsound svg{width:18px;height:18px;}
+.tsound .w{opacity:0;}
+.tsound[aria-pressed="true"] .w{opacity:1;}
+.tsound:focus-visible{outline:2px solid #B3132B;outline-offset:2px;}
+/* the intro enters in the browser's language; the choice stays in the bar (Pedro, 29 Oct 2026) */
+.cascade-right,.cascade-hint{display:none!important;}
+.cascade-left{align-items:center;text-align:center;}
+.cascade-brand{color:#B3132B!important;}
+/* one red (Pedro, 29 Oct 2026: "o vermelho nao esta no mesmo tom"): the large
+   italic words take the brand family's red for large type, #C8172F (3.4:1 on
+   black, above the 3:1 large text needs), not the pink #E66B7B */
+h1.hero i,h1.hero em,.headline i,.headline em{color:#C8172F;}
+</style>
+
+<div class="talk" id="talk" role="dialog" aria-modal="true" aria-labelledby="talkTitle" hidden>
+  <div class="talk-box">
+    <button class="talk-x" id="talkX" type="button" aria-label="Close"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    <div id="talkForm">
+      <h2 id="talkTitle"></h2>
+      <p class="talk-lede" id="talkLede"></p>
+      <form class="talk-f" id="talkF" novalidate>
+        <label><span id="talkLName"></span><input id="talkName" name="name" autocomplete="name" maxlength="120" required></label>
+        <label><span id="talkLEmail"></span><input id="talkEmail" name="email" type="email" autocomplete="email" autocapitalize="none" autocorrect="off" maxlength="200" required></label>
+        <label><span><span id="talkLCompany"></span> <small id="talkLOpt"></small></span><input id="talkCompany" name="company" autocomplete="organization" maxlength="160"></label>
+        <label><span id="talkLMsg"></span><textarea id="talkMsg" name="message" maxlength="4000" required></textarea></label>
+        <div class="talk-hp" aria-hidden="true"><input id="talkWeb" name="website" tabindex="-1" autocomplete="off"></div>
+        <p class="talk-err" id="talkErr" role="alert"></p>
+        <div class="talk-row"><button class="btn btn-solid" id="talkSend" type="submit"></button></div>
+        <p class="talk-priv"><span id="talkPriv"></span> <a href="/privacy.html" id="talkPrivLink">Privacy</a></p>
+      </form>
+    </div>
+    <div class="talk-done" id="talkDone" hidden>
+      <h2 id="talkSentTitle" tabindex="-1"></h2>
+      <p class="talk-lede" id="talkSentBody"></p>
+      <div class="talk-row"><button class="btn btn-solid" id="talkClose" type="button"></button></div>
+    </div>
+  </div>
+</div>
 <footer class="bg-black">
   <div class="wrap">
     <div class="footrow">
@@ -1215,6 +1299,26 @@ window.I18N = {
     contact_lede: "Tell us the team, the goal, and the deadline. We will come back with a written proposal. Programs run online, for one person or for several people in a company.",
     contact_cta: "Talk to us",
     contact_copied: "Email address copied to your clipboard",
+    talk_title: "Talk to us",
+    talk_lede: "Tell us the team, the goal, and the deadline. We will reply by e-mail.",
+    talk_name: "Name",
+    talk_email: "Work e-mail",
+    talk_company: "Company",
+    talk_optional: "optional",
+    talk_message: "Message",
+    talk_send: "Send message",
+    talk_sending: "Sending…",
+    talk_sent_title: "Message sent.",
+    talk_sent_body: "We will reply to {email}.",
+    talk_close: "Close",
+    talk_err_missing: "Write your name and a message.",
+    talk_err_email: "Check your e-mail address.",
+    talk_err_limit: "Too many messages from this connection. Try again in an hour, or write to contact@theconceptmethod.com.",
+    talk_err_mail: "The message didn't go through. Try again, or write to contact@theconceptmethod.com.",
+    talk_privacy: "We use these details only to answer you.",
+    talk_privacy_link: "Privacy",
+    sound_on: "Turn sound on",
+    sound_off: "Turn sound off",
     contact_or: "Or write to us directly:",
     contact_name: "Pedro Gigollotti · Founder & Academic Director",
     mail_subject: "English program enquiry",
@@ -1412,6 +1516,26 @@ window.I18N = {
     contact_lede: "Conte para nós a equipe, o objetivo e o prazo. Respondemos com uma proposta por escrito. Os programas são online, para uma pessoa ou para várias pessoas de uma empresa.",
     contact_cta: "Fale conosco",
     contact_copied: "E-mail copiado com sucesso",
+    talk_title: "Fale conosco",
+    talk_lede: "Conte a equipe, o objetivo e o prazo. Respondemos por e-mail.",
+    talk_name: "Nome",
+    talk_email: "E-mail de trabalho",
+    talk_company: "Empresa",
+    talk_optional: "opcional",
+    talk_message: "Mensagem",
+    talk_send: "Enviar mensagem",
+    talk_sending: "Enviando…",
+    talk_sent_title: "Mensagem enviada.",
+    talk_sent_body: "Vamos responder para {email}.",
+    talk_close: "Fechar",
+    talk_err_missing: "Escreva seu nome e uma mensagem.",
+    talk_err_email: "Confira seu endereço de e-mail.",
+    talk_err_limit: "Muitas mensagens desta conexão. Tente de novo em uma hora ou escreva para contact@theconceptmethod.com.",
+    talk_err_mail: "A mensagem não foi enviada. Tente de novo ou escreva para contact@theconceptmethod.com.",
+    talk_privacy: "Usamos estes dados só para responder a você.",
+    talk_privacy_link: "Privacidade",
+    sound_on: "Ativar som",
+    sound_off: "Desativar som",
     contact_or: "Ou escreva direto para nós:",
     contact_name: "Pedro Gigollotti · Fundador e Diretor Acadêmico",
     mail_subject: "Interesse no programa de inglês corporativo",
@@ -1609,6 +1733,26 @@ window.I18N = {
     contact_lede: "Raccontaci il team, l'obiettivo e la scadenza. Rispondiamo con una proposta scritta. I programmi sono online, per una persona o per più persone di un'azienda.",
     contact_cta: "Contattaci",
     contact_copied: "Indirizzo e-mail copiato correttamente",
+    talk_title: "Contattaci",
+    talk_lede: "Raccontaci il team, l'obiettivo e la scadenza. Ti rispondiamo via e-mail.",
+    talk_name: "Nome",
+    talk_email: "E-mail di lavoro",
+    talk_company: "Azienda",
+    talk_optional: "facoltativo",
+    talk_message: "Messaggio",
+    talk_send: "Invia messaggio",
+    talk_sending: "Invio in corso…",
+    talk_sent_title: "Messaggio inviato.",
+    talk_sent_body: "Ti risponderemo a {email}.",
+    talk_close: "Chiudi",
+    talk_err_missing: "Scrivi il tuo nome e un messaggio.",
+    talk_err_email: "Controlla l'indirizzo e-mail.",
+    talk_err_limit: "Troppi messaggi da questa connessione. Riprova tra un'ora o scrivi a contact@theconceptmethod.com.",
+    talk_err_mail: "Il messaggio non è stato inviato. Riprova o scrivi a contact@theconceptmethod.com.",
+    talk_privacy: "Usiamo questi dati solo per risponderti.",
+    talk_privacy_link: "Privacy",
+    sound_on: "Attiva audio",
+    sound_off: "Disattiva audio",
     contact_or: "Oppure scrivici direttamente:",
     contact_name: "Pedro Gigollotti · Fondatore e Direttore Accademico",
     mail_subject: "Interesse nel programma di inglese aziendale",
@@ -1773,6 +1917,7 @@ function buildCharts(){
 }
 
 function applyLang(lang){
+  setTimeout(function(){ document.dispatchEvent(new Event('concept:lang')); }, 0);
   currentLang = lang;
   if(window.teamRelabel) setTimeout(window.teamRelabel, 0);
   document.documentElement.lang = lang;
@@ -1906,8 +2051,8 @@ function fallbackCopy(done){
     done();
   }catch(e){}
 }
-document.getElementById('contactCta').addEventListener('click', copyEmail);
-document.getElementById('startCta').addEventListener('click', copyEmail);
+document.getElementById('contactCta').addEventListener('click', function(){ window.openTalk(); });
+document.getElementById('startCta').addEventListener('click', function(){ window.openTalk(); });
 /* the language buttons in the bar (they lost their click in the August refactor, bf1de6e; found
    6 Oct 2026, Pedro: "a mudanca de idioma nao esta funcionando"). The same as about.html. */
 document.querySelectorAll('#langSwitch button').forEach(function(btn){
@@ -1916,13 +2061,12 @@ document.querySelectorAll('#langSwitch button').forEach(function(btn){
     var l = btn.getAttribute('data-lang');
     if(!window.I18N || !window.I18N[l]) return;
     applyLang(l);
+    try{ localStorage.setItem('concept_lang', l); }catch(err){}
     try{ var u = new URL(location.href); u.searchParams.set('lang', l); history.replaceState(null, '', u); }catch(err){}
   });
 });
 
-document.getElementById('navCta').addEventListener('click', function(){
-  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
-});
+document.getElementById('navCta').addEventListener('click', function(){ window.openTalk(); });
 
 window.addEventListener('scroll', function(){
   var nav = document.getElementById('nav');
@@ -1953,7 +2097,16 @@ if(langParam && window.I18N[langParam]) {
   gateUsed = true;
   enterSite(langParam);
 } else {
-  applyLang('en');
+  /* THE BROWSER CHOOSES (Pedro, 29 Oct 2026): the intro stays, the language
+     column goes. A choice made earlier in the bar wins; then the browser's
+     languages, in order; then English. The bar still changes it. */
+  var browserLang = (function(){
+    try{ var kept = localStorage.getItem('concept_lang'); if(kept && window.I18N[kept]) return kept; }catch(e){}
+    var ls = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+    for(var i = 0; i < ls.length; i++){ var c = String(ls[i] || '').slice(0,2).toLowerCase(); if(window.I18N[c]) return c; }
+    return 'en';
+  })();
+  applyLang(browserLang);
   const intro = document.getElementById('intro');
   const container = document.getElementById('snap-text-container');
   const stage = document.getElementById('cascadeStage');
@@ -1974,6 +2127,8 @@ if(langParam && window.I18N[langParam]) {
   function startCascade(){
     stage.classList.add('show');
     setTimeout(function(){ container.innerHTML = ''; }, 650);
+    setTimeout(function(){ revealSite(browserLang); }, reduceMotion ? 300 : 1500);
+    return;
     var choices = Array.prototype.slice.call(stage.querySelectorAll('.lang-choice'));
     choices.forEach(function(c,i){ setTimeout(function(){ c.classList.add('in'); }, 140 + i*130); });
     choices.forEach(function(c){
@@ -2050,10 +2205,15 @@ window.addEventListener('pageshow', function (e) {
   var tabs = document.getElementById('tTabs');
   var fig = document.getElementById('tFig');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var cur = -1, timer = null, seq = [], visible = false, started = false, soundOK = null;
+  var cur = -1, timer = null, seq = [], visible = false, started = false, soundOn = false;
+  /* SILENT UNTIL ASKED (Pedro, 29 Oct 2026: "o audio do site deve estar mudo com a opcao de clique para ouvir") */
+  var sbtn = document.getElementById('tSound');
+  function soundLabel(){ document.getElementById('tSoundL').textContent = L(soundOn ? 'sound_off' : 'sound_on'); sbtn.setAttribute('aria-pressed', soundOn ? 'true' : 'false'); }
+  sbtn.addEventListener('click', function(){ soundOn = !soundOn; soundLabel(); if(cur >= 0) show(cur, true); });
+  document.addEventListener('concept:lang', soundLabel);
+  setTimeout(soundLabel, 0);
   fig.addEventListener('ended', function(){ if(fig._after && !fig.muted){ var f = fig._after; fig._after = null; f(); } });
   /* the first tap or key on the page lets the members speak again */
-  ['pointerdown','keydown'].forEach(function(ev){ document.addEventListener(ev, function(){ if(soundOK === false) soundOK = null; }, true); });
 
   function L(k){ try{ return window.I18N[currentLang][k] || window.I18N.en[k] || ''; }catch(e){ return ''; } }
   function clearSeq(){ seq.forEach(clearTimeout); seq = []; }
@@ -2105,11 +2265,11 @@ window.addEventListener('pageshow', function (e) {
          The old scene clips moved the mouth with no voice (Pedro, 6 Oct 2026: Murillo kept moving
          his mouth); "os agentes estao estaticos no site": they keep moving, silently. */
       var still = function(){ fig.muted = true; fig.src = m.id === 'netto' ? 'team/app-netto-greet.mp4' : 'team/move-'+m.id+(m.id === 'murillo' ? '-receive' : '-signature')+'.mp4'; var p2 = fig.play(); if(p2 && p2.catch) p2.catch(function(){}); };
-      if(m.punch && soundOK !== false){
+      if(m.punch && soundOn){
         fig._after = still;
         fig.muted = false; fig.src = 'team/home-'+m.punch+'.mp4?v=12';
         var pr = fig.play();
-        if(pr && pr.then) pr.then(function(){ soundOK = true; }, function(){ soundOK = false; if(cur === i) still(); });
+        if(pr && pr.then) pr.then(null, function(){ if(cur === i) still(); });
       } else still();
     } else { fig.removeAttribute('src'); }
     later(function(){ ask.classList.add('on'); typeInto(askT, m.ask, function(){
@@ -2205,6 +2365,71 @@ window.addEventListener('pageshow', function (e) {
     tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
     tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
   };
+})();
+</script>
+
+<script>
+/* TALK TO US: the form (Pedro, 29 Oct 2026). Posts to the lessons' /api/contact,
+   which mails contact@ with the visitor as Reply-To. Nothing is stored. */
+(function(){
+  var box = document.getElementById('talk'); if(!box) return;
+  var API = 'https://lessons.theconceptmethod.com/api/contact';
+  var opener = null, busy = false;
+  var $ = function(id){ return document.getElementById(id); };
+  function fillTalk(){
+    $('talkTitle').textContent = t('talk_title'); $('talkLede').textContent = t('talk_lede');
+    $('talkLName').textContent = t('talk_name'); $('talkLEmail').textContent = t('talk_email');
+    $('talkLCompany').textContent = t('talk_company'); $('talkLOpt').textContent = '(' + t('talk_optional') + ')';
+    $('talkLMsg').textContent = t('talk_message'); $('talkSend').textContent = busy ? t('talk_sending') : t('talk_send');
+    $('talkPriv').textContent = t('talk_privacy'); $('talkClose').textContent = t('talk_close');
+    $('talkX').setAttribute('aria-label', t('talk_close'));
+    $('talkPrivLink').setAttribute('href', '/privacy.html'); $('talkPrivLink').textContent = t('talk_privacy_link');
+  }
+  window.openTalk = function(){
+    opener = document.activeElement;
+    fillTalk(); $('talkErr').textContent = '';
+    $('talkForm').hidden = false; $('talkDone').hidden = true;
+    box.hidden = false; document.body.classList.add('talk-on');
+    requestAnimationFrame(function(){ box.classList.add('open'); });
+    setTimeout(function(){ $('talkName').focus({preventScroll:true}); }, 60);
+  };
+  function closeTalk(){
+    box.classList.remove('open'); document.body.classList.remove('talk-on');
+    setTimeout(function(){ box.hidden = true; }, 200);
+    if(opener && opener.focus) opener.focus({preventScroll:true});
+  }
+  $('talkX').addEventListener('click', closeTalk);
+  $('talkClose').addEventListener('click', closeTalk);
+  box.addEventListener('click', function(e){ if(e.target === box) closeTalk(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !box.hidden) closeTalk(); });
+  $('talkF').addEventListener('submit', function(e){
+    e.preventDefault(); if(busy) return;
+    var d = { name: $('talkName').value.trim(), email: $('talkEmail').value.trim(), company: $('talkCompany').value.trim(),
+              message: $('talkMsg').value.trim(), website: $('talkWeb').value, lang: currentLang };
+    var err = $('talkErr');
+    if(!d.name || !d.message){ err.textContent = t('talk_err_missing'); return; }
+    if(!/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]{2,}$/.test(d.email)){ err.textContent = t('talk_err_email'); $('talkEmail').focus(); return; }
+    err.textContent = ''; busy = true; $('talkSend').disabled = true; $('talkSend').textContent = t('talk_sending');
+    fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d) })
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        if(j && j.ok){
+          $('talkSentTitle').textContent = t('talk_sent_title');
+          $('talkSentBody').textContent = t('talk_sent_body').replace('{email}', d.email);
+          $('talkForm').hidden = true; $('talkDone').hidden = false; $('talkF').reset();
+          $('talkSentTitle').focus({preventScroll:true});
+        } else {
+          var k = j && j.error;
+          err.textContent = t(k === 'email' ? 'talk_err_email' : k === 'missing' ? 'talk_err_missing' : k === 'limit' ? 'talk_err_limit' : 'talk_err_mail');
+        }
+      })
+      .catch(function(){ err.textContent = t('talk_err_mail'); })
+      .then(function(){ busy = false; $('talkSend').disabled = false; $('talkSend').textContent = t('talk_send'); });
+  });
+  /* a Talk to us link from another page lands on #contact: open the form */
+  function fromLink(){ if(location.hash === '#contact'){ setTimeout(window.openTalk, 500); } }
+  if(document.getElementById('intro').classList.contains('done')) fromLink();
+  else document.addEventListener('concept:entered', fromLink, { once: true });
 })();
 </script>
 </body>

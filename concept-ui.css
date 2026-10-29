@@ -112,7 +112,9 @@ h2.headline{font-size:clamp(26px,3.8vw,48px);}
    minimo de 4,5. O #E04A4F da 4,93 e e o mesmo que a linha abaixo ja usava
    para as etiquetas pequenas. Os titulos grandes ficam no #C8172F, onde 3
    para 1 e o minimo e 3,39 passa. */
-#nav .wordmark,.topnav .brand .wordmark{color:#E04A4F;}
+/* THE WORDMARK IS THE LOGO, IN THE BRAND RED (Pedro, 29 Oct 2026: "o vermelho nao esta no mesmo tom").
+   A logotype is exempt from the contrast minimum, and BRAND.md says the red is never lightened. */
+#nav .wordmark,.topnav .brand .wordmark{color:#B3132B;}
 .masthead h1 em{color:#C8172F;}
 .meta .series-label{color:#E04A4F;}
 .quote .role{color:#6B7079;}
