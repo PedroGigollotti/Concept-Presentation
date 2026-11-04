@@ -1,0 +1,67 @@
+/* THE PAGES, ONE BELOW THE OTHER, ON THE LEFT, IN LIQUID GLASS (Pedro, 4 Nov 2026: "as paginas ficam um embaixo
+   do outro, e quando clica, abre a pagina"; proposal v2 "Aprovado"). The glass is the video logo's recipe
+   (marketing/videos/tools/glass_logo.py, Apple's clear variant): a light blur, a highlight fading down from the
+   top edge, a thin bright rim and a soft shadow. Over a light part of the page page-stack.js adds .dim, a dark
+   layer under the glass (35% on the video; 55% here, because the glass carries words and needs 4.5:1).
+   The page you are on is solid platinum. On a wide screen the stack stays in place while the page scrolls and
+   the page's content moves right to make room; below 1100px it sits at the top of the page in two columns. */
+
+:root{--ps-left:32px;--ps-w:176px;--ps-top:124px;--ps-room:248px;}
+
+.page-stack{position:fixed;left:var(--ps-left);top:var(--ps-top);width:var(--ps-w);z-index:99;
+  display:flex;flex-direction:column;gap:14px;}
+.page-stack .ps-grp{display:flex;flex-direction:column;gap:8px;}
+
+.page-stack .ps-link,.page-stack .ps-lang{
+  background:linear-gradient(180deg,rgba(255,255,255,.20),rgba(255,255,255,.04) 40%),rgba(255,255,255,.07);
+  -webkit-backdrop-filter:blur(7px) saturate(170%);backdrop-filter:blur(7px) saturate(170%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.42),inset 0 1px 0 rgba(255,255,255,.6),0 8px 14px rgba(0,0,0,.24);
+  border:0;border-radius:12px;}
+/* no fade on the first paint: page-stack.js adds .ready once each button has its ground */
+.page-stack.ready .ps-link,.page-stack.ready .ps-lang{transition:background-color .2s ease,color .2s ease,transform .12s ease;}
+.page-stack .ps-link{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:44px;padding:0 16px;
+  box-sizing:border-box;color:#F6F7F8;font-family:inherit;font-weight:600;font-size:15px;line-height:1.2;letter-spacing:0;
+  text-transform:none;text-decoration:none;}
+.page-stack .ps-link:hover{background-color:rgba(255,255,255,.14);}
+.page-stack .ps-link:active{transform:scale(.97);}
+/* Students and Teachers open the lessons site: an arrow says so; drawn by CSS because the pages' language script rewrites the link text */
+.page-stack .ps-link[href^="https://"]::after{content:"\2197" / "";color:#A7ABB2;font-weight:400;}
+/* the home pages hid Team on a phone when the bar was full; the stack has room for it */
+.page-stack #navTeam{display:flex;}
+.page-stack .ps-link[aria-current="page"]{background-color:rgba(231,232,234,.94);color:#0A0B0D;}
+.page-stack .ps-link.dim:not([aria-current]),.page-stack .ps-lang.dim{background-color:rgba(10,11,13,.55);}
+.page-stack .ps-link:focus-visible,.page-stack .ps-lang button:focus-visible{outline:2px solid #E7E8EA;outline-offset:3px;}
+
+/* the language switch, under the pages */
+.page-stack .ps-lang{display:flex;gap:2px;padding:3px;}
+.page-stack .ps-lang button{flex:1;display:flex;align-items:center;justify-content:center;min-height:38px;padding:0;border:0;border-radius:9px;background:transparent;color:#F6F7F8;
+  font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;}
+.page-stack .ps-lang button.active{background:rgba(231,232,234,.94);color:#0A0B0D;}
+.page-stack .ps-lang .flag-chip{display:none;}
+
+/* wide screens: the content of every band moves right of the stack; the bands keep their full width */
+@media (min-width:1100px){
+  body:has(.page-stack) section .wrap,body:has(.page-stack) footer .wrap,body:has(.page-stack) .wrap:has(> .page-stack){
+    margin-left:max(var(--ps-room),calc((100% - var(--wm,1180px)) / 2));margin-right:auto;}
+}
+
+/* below 1100px: at the top of the page, two columns, read down each column */
+@media (max-width:1099px){
+  .page-stack{position:static;width:auto;max-width:420px;display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;
+    margin:0 16px 8px;align-items:start;}
+  .page-stack .ps-grp:first-child{grid-row:1 / span 2;}
+  .page-stack .ps-lang{grid-column:2;}
+  /* pages whose bar is fixed at the top: the stack starts under the bar and the first band loses the room it kept for it */
+  body:has(#nav) .page-stack{margin-top:88px;}
+  body:has(#nav) .page-stack + *{padding-top:36px !important;}
+}
+@media (max-width:760px){body:has(#nav) .page-stack{margin-top:84px;}}
+@media (max-width:1099px){
+  /* the Books pages: the stack sits in the page's own column, which already has its side space */
+  .wrap > .page-stack{margin:0 0 24px;}
+  /* the Team page: its bar is in the flow, so the stack follows it and the first band starts closer */
+  body:has(header.nav) .page-stack{margin-top:16px;}
+  body:has(header.nav) .page-stack + *{padding-top:32px !important;}
+}
+
+@media (prefers-reduced-motion:reduce){.page-stack.ready .ps-link,.page-stack.ready .ps-lang{transition:none;}}

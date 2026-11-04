@@ -254,6 +254,7 @@
 }
 </script>
 <!-- seo:end -->
+<link rel="stylesheet" href="page-stack.css?v=1">
 </head>
 <body>
 
@@ -261,17 +262,23 @@
   <div class="wrap">
     <a class="brand" href="index.html"><svg role="img" aria-label="Concept" viewBox="0 0 400 400"><path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" stroke="#1A1A1A" stroke-width="8" stroke-linecap="round" fill="none"/><circle cx="200" cy="200" r="11" fill="#1A1A1A"/><polygon points="322.87,113.96 208.03,211.47 191.97,188.53" fill="#B3132B"/><circle cx="322.87" cy="113.96" r="7" fill="#B3132B"/></svg><span>CONCEPT</span></a>
     <div class="nav-r">
-      <a class="lk" href="method.html">Method</a>
-      <a class="lk" href="about.html">About</a>
-      <a class="lk" href="team.html" aria-current="page">Team</a>
-      <a class="lk" href="book.html">Books</a>
-      <a class="lk" href="https://lessons.theconceptmethod.com">Students</a>
-      <a class="lk" href="https://lessons.theconceptmethod.com/teaching#teacher">Teachers</a>
       <button class="btn-icon" id="soundBtn" type="button" aria-label="Turn sound on" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
       <a class="btn-cta" href="index.html#start">Talk to us</a>
     </div>
   </div>
 </header>
+<nav class="page-stack" aria-label="Pages">
+  <div class="ps-grp">
+    <a class="ps-link" href="method.html">Method</a>
+    <a class="ps-link" href="about.html">About</a>
+    <a class="ps-link" href="team.html" aria-current="page">Team</a>
+    <a class="ps-link" href="book.html">Books</a>
+  </div>
+  <div class="ps-grp">
+    <a class="ps-link" href="https://lessons.theconceptmethod.com">Students</a>
+    <a class="ps-link" href="https://lessons.theconceptmethod.com/teaching#teacher">Teachers</a>
+  </div>
+</nav>
 
 <main>
 <section class="hero">
@@ -469,5 +476,6 @@
   });
 })();
 </script>
+<script src="page-stack.js?v=1" defer></script>
 </body>
 </html>

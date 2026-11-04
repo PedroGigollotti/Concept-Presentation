@@ -265,6 +265,7 @@
 <link rel="alternate" hreflang="it" href="https://theconceptmethod.com/it/method.html">
 <link rel="alternate" hreflang="x-default" href="https://theconceptmethod.com/method.html">
 <!-- seo:end -->
+<link rel="stylesheet" href="page-stack.css?v=1">
 </head>
 <body>
 
@@ -281,19 +282,25 @@
     <span class="wordmark">CONCEPT</span>
   </a>
   <div class="nav-right">
-    <a class="nav-link" id="navMethod" href="method.html" aria-current="page">Method</a>
-    <a class="nav-link" id="navAbout" href="about.html">About</a>
-    <a class="nav-link" id="navTeam" href="team.html" data-t="nav_team">Team</a>
-    <a class="nav-link" id="navBook" href="book.html">Books</a>
-    <a class="nav-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
-    <a class="nav-link" id="navTeachers" href="https://lessons.theconceptmethod.com/teaching#teacher">Teachers</a>
-    <div class="lang-switch" id="langSwitch">
+    <a class="cta" id="navCta" href="#book" data-t="nav_cta">Book the call</a>
+  </div>
+</nav>
+<nav class="page-stack" aria-label="Pages">
+  <div class="ps-grp">
+    <a class="ps-link" id="navMethod" href="method.html" aria-current="page">Method</a>
+    <a class="ps-link" id="navAbout" href="about.html">About</a>
+    <a class="ps-link" id="navTeam" href="team.html" data-t="nav_team">Team</a>
+    <a class="ps-link" id="navBook" href="book.html">Books</a>
+  </div>
+  <div class="ps-grp">
+    <a class="ps-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
+    <a class="ps-link" id="navTeachers" href="https://lessons.theconceptmethod.com/teaching#teacher">Teachers</a>
+  </div>
+  <div class="lang-switch ps-lang" role="group" aria-label="Language" id="langSwitch">
       <button type="button" data-lang="en">EN</button>
       <button type="button" data-lang="pt">PT</button>
       <button type="button" data-lang="it">IT</button>
     </div>
-    <a class="cta" id="navCta" href="#book" data-t="nav_cta">Book the call</a>
-  </div>
 </nav>
 
 <section id="hero">
@@ -1389,5 +1396,6 @@ for(var s=0;s<swb.length;s++){
 
 applyLang(getLang());
 </script>
+<script src="page-stack.js?v=1" defer></script>
 </body>
 </html>
