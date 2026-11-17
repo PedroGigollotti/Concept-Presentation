@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<base href="../">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O time Concept | Coaches de inglês para profissionais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  /* The Team page in the Concept Coach app's colors (approved redesign, 6 Oct 2026) */
+  :root{
+    --platinum:#E7E8EA; --graphite:#0A0B0D; --text-2:#3A3D44; --muted:#5C6068;
+    --hair:#C9CBD0; --outline:#7F838A; --red:#B3132B; --white:#FFFFFF;
+    --g-text:#E7E8EA; --g-text-2:#A7AAB0; --g-red:#B3132B;
+    --graphite-panel:radial-gradient(circle at 100% 0%,#2A2C31 0%,#0A0B0D 55%);
+    --sans:'Carlito','Calibri','Lato',Arial,sans-serif;
+    --serif:Georgia,'Times New Roman',serif;
+    --display-xl:clamp(38px,6vw,80px); --display-l:clamp(28px,3.8vw,51px); --display-m:clamp(24px,2.2vw,32px);
+    --display-s:clamp(22px,1.9vw,26px); --quote:clamp(19px,1.6vw,23px);
+    --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px; --s7:96px; --s8:120px;
+    --side:96px; --pad:120px;
+  }
+  @media (max-width:900px){ :root{ --side:24px; --pad:72px; } }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--platinum);color:var(--graphite);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  p{margin:0;}
+  h1,h2,h3{margin:0;font-weight:400;}
+  .wrap{max-width:calc(1248px + 2 * var(--side));margin:0 auto;padding-left:var(--side);padding-right:var(--side);}
+  section{padding:var(--pad) 0;}
+  .hairline{border-top:1px solid var(--hair);}
+  em,.piv{font-family:var(--serif);font-style:italic;color:var(--red);}
+
+  /* type scale: one role each, the site's scale (concept-ui.css) in Georgia and Carlito, +6% for x-height */
+  .d-xl{font-family:var(--serif);font-size:var(--display-xl);line-height:.98;}
+  .d-l{font-family:var(--serif);font-size:var(--display-l);line-height:1;text-wrap:balance;}
+  .d-m{font-family:var(--serif);font-size:var(--display-m);line-height:1.08;}
+  .d-s{font-family:var(--serif);font-size:var(--display-s);line-height:1.1;}
+  .quote{font-family:var(--serif);font-style:italic;font-size:var(--quote);line-height:1.2;color:var(--red);text-wrap:balance;}
+  .t-card{font-family:var(--serif);font-size:28px;line-height:1.1;}
+  .body-l{font-size:20px;line-height:1.55;color:var(--text-2);}
+  .body{font-size:17px;line-height:1.6;color:var(--text-2);}
+  .caption{font-size:14px;color:var(--muted);}
+  .eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.3em;font-weight:700;color:var(--red);}
+  .micro{font-size:11px;text-transform:uppercase;letter-spacing:.24em;font-weight:600;color:var(--muted);}
+
+  /* buttons: every primary identical, every secondary identical */
+  .btn-pri{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 32px;border-radius:4px;border:0;background:var(--red);color:var(--white);font-family:var(--sans);font-size:16px;font-weight:700;text-decoration:none;cursor:pointer;transition:background .2s;}
+  .btn-pri:hover{background:#8E0F22;}
+  .btn-pri:active{background:#8E0F22;}
+  .btn-sec{display:inline-flex;align-items:center;gap:var(--s1);height:48px;padding:0 24px;border-radius:4px;border:1px solid var(--outline);background:transparent;color:var(--graphite);font-family:var(--sans);font-size:16px;font-weight:500;text-decoration:none;cursor:pointer;transition:border-color .2s,background .2s;}
+  .btn-sec svg{width:18px;height:18px;}
+  .btn-sec:hover{border-color:var(--graphite);}
+  .btn-sec.playing{background:var(--graphite);color:var(--platinum);border-color:var(--graphite);}
+  .btn-icon{width:44px;height:44px;border-radius:4px;border:1px solid var(--outline);background:transparent;color:var(--graphite);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;}
+  .btn-icon svg{width:20px;height:20px;}
+  .btn-icon .w{opacity:.3;}
+  .btn-icon[aria-pressed="true"]{background:var(--graphite);color:var(--platinum);border-color:var(--graphite);}
+  .btn-icon[aria-pressed="true"] .w{opacity:1;}
+  :focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+
+  /* 1. nav */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(231,232,234,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair);}
+  /* the mark sits where it sits on every page of the site: 32px from the edge, in a 96px bar */
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);height:96px;max-width:none;padding:0 32px;}
+  @media (max-width:760px){ .nav .wrap{padding:0 16px;height:72px;} }
+  .brand{display:flex;align-items:center;gap:18px;text-decoration:none;}
+  .brand svg{width:78px;height:78px;}
+  .brand span{font-family:'Carlito','Calibri','Lato',var(--sans);font-weight:700;font-size:26px;letter-spacing:.3em;margin-right:-.3em;line-height:1;color:var(--red);}
+  @media (max-width:760px){ .brand{gap:8px;} .brand svg{width:46px;height:46px;} .brand span{font-size:15px;letter-spacing:.24em;margin-right:-.24em;} }
+  .nav-r{display:flex;align-items:center;gap:24px;}
+  .nav-r .lk{text-decoration:none;font-size:14px;font-weight:700;color:var(--text-2);display:inline-flex;align-items:center;min-height:44px;}
+  .nav-r .lk:hover{color:var(--graphite);}
+  .nav-r .lk[aria-current]{color:var(--graphite);font-weight:600;box-shadow:inset 0 -2px 0 var(--red);}
+  @media (max-width:1000px){ .nav-r .lk{display:none;} }
+  @media (max-width:700px){ .nav-r{gap:var(--s1);} .nav-r .btn-cta{padding:0 14px;} }
+  .btn-cta{display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:4px;background:var(--red);color:var(--white);font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;transition:background .2s;}
+  .btn-cta:hover{background:#8E0F22;}
+
+  /* avatars: sized by head height; their ground is the page's, the body fades into it */
+  .av{width:min(var(--w),82vw);margin:0 auto;position:relative;}
+  .av .mv{position:absolute;inset:0;width:100%;height:auto;opacity:0;-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 96%);mask-image:linear-gradient(to bottom,#000 70%,transparent 96%);}
+  .av .mv.on{opacity:1;}
+  .av img{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 96%);mask-image:linear-gradient(to bottom,#000 70%,transparent 96%);}
+  .enter{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1);}
+  .enter.in{opacity:1;transform:none;}
+  .breathe{animation:breathe 6s ease-in-out infinite;transform-origin:50% 90%;}
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.008) translateY(-1px)}}
+
+  /* 2. hero */
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:var(--s5);align-items:center;}
+  .hero h1{margin:var(--s3) 0 var(--s4);text-wrap:balance;}
+  .hero .body-l{max-width:560px;}
+  .hero .go{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s5);}
+  .hero .go .caption a{color:var(--text-2);text-underline-offset:4px;}
+  .h-netto{text-align:center;}
+  .h-netto .stage{width:min(420px,90vw);margin:0 auto;}
+  .h-netto .stage img{display:block;width:100%;height:auto;}
+  .h-netto .d-s{margin-top:var(--s1);position:relative;}
+  .h-netto .micro{display:block;margin-top:var(--s1);}
+
+  /* 3. team strip */
+  .strip{padding-top:0;}
+  .strip-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3);flex-wrap:wrap;padding-top:var(--s5);}
+  .strip-list{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s3);margin-top:var(--s5);}
+  .s-item{display:flex;flex-direction:column;align-items:center;gap:var(--s1);text-decoration:none;text-align:center;padding:var(--s2) 0;border-radius:8px;transition:background .25s;}
+  .s-item:hover{background:rgba(255,255,255,.5);}
+  .s-av{display:block;width:152px;height:132px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,#000 72%,transparent 100%);}
+  .s-av img{position:absolute;left:50%;top:calc(-1 * var(--t));width:var(--w);height:auto;transform:translateX(-50%);}
+  .s-item .micro{max-width:150px;}
+  @media (max-width:900px){ .strip-list{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--s2);} .s-item{flex:0 0 168px;scroll-snap-align:start;} }
+
+  /* 4. the test */
+  .test{padding-top:var(--s7);}
+  .qcard{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:var(--s5);align-items:start;}
+  .q-av{text-align:center;position:sticky;top:112px;}
+  .q-who{display:flex;flex-direction:column;align-items:center;gap:var(--s1);margin-top:var(--s2);}
+  .qdisc{position:relative;display:block;width:160px;height:160px;margin:40px auto 0;border-radius:50%;background:#F6F7F8;border:1px solid #D3D5D9;box-shadow:0 1px 2px rgba(26,26,26,.08),0 6px 16px rgba(26,26,26,.10);}
+  .qdisc img{position:absolute;height:auto;max-width:none;}
+  .t-intro{margin-bottom:var(--s5);}
+  .bar{height:3px;background:var(--hair);border-radius:2px;margin:var(--s2) 0 var(--s4);overflow:hidden;}
+  .bar i{display:block;height:100%;background:var(--red);transition:width .6s ease;}
+  .goal{margin:var(--s2) 0 var(--s4);}
+  .opts{display:grid;gap:var(--s2);}
+  .opt{display:block;width:100%;text-align:left;background:#F6F7F8;border:2px solid #D3D5D9;border-radius:8px;padding:var(--s3);font-family:var(--sans);cursor:pointer;color:var(--graphite);transition:border-color .25s,box-shadow .25s,transform .2s;box-shadow:0 1px 0 rgba(10,11,13,.04);}
+  .opt:hover:not(:disabled){border-color:#7F838A;background:#EDEEF0;}
+  .opt:disabled{cursor:default;}
+  .o-t{display:block;font-size:18px;line-height:1.5;}
+  .o-x{display:block;font-size:16px;line-height:1.55;color:var(--text-2);margin-top:var(--s1);}
+  .o-x[hidden]{display:none;}
+  .opt.lands{border-color:var(--graphite);}
+  .opt.picked-wrong{border-color:var(--red);}
+  .verdict{margin-top:var(--s4);}
+  .next{margin-top:var(--s4);}
+  [hidden]{display:none !important;}
+
+  /* 5. result */
+  .result .wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:var(--s5);align-items:start;}
+  .result .r-side{text-align:center;}
+  .result .r-side .btn-sec{margin-top:var(--s3);}
+  .r-film{width:min(334px,80vw);margin:0 auto;-webkit-mask-image:linear-gradient(to bottom,#000 85%,transparent 100%);mask-image:linear-gradient(to bottom,#000 85%,transparent 100%);}
+  .r-film video{display:block;width:100%;height:auto;aspect-ratio:720/1280;background:var(--platinum);}
+  .result .d-l{margin:var(--s3) 0;}
+  .r-list{list-style:none;margin:var(--s5) 0;padding:0;}
+  .r-row{display:grid;grid-template-columns:56px minmax(0,190px) minmax(0,1fr) auto;gap:var(--s3);align-items:center;padding:var(--s3) 0;border-top:1px solid var(--hair);}
+  .r-row img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:var(--platinum);}
+  .r-name{display:flex;flex-direction:column;gap:4px;}
+  .pill{font-size:11px;letter-spacing:.24em;font-weight:600;border-radius:4px;padding:8px 16px;white-space:nowrap;}
+  .pill.landed{border:1px solid var(--graphite);color:var(--graphite);}
+  .pill.slipped{background:var(--red);color:var(--white);}
+  .r-go{display:flex;align-items:center;gap:var(--s4);flex-wrap:wrap;}
+  .r-go a.lk{font-weight:600;font-size:17px;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center;}
+  @media (max-width:700px){ .r-row{grid-template-columns:56px minmax(0,1fr);} .r-row .r-note,.r-row .pill{grid-column:2;} .pill{justify-self:start;} }
+
+  /* 6. coaches */
+  .coach + .coach{border-top:1px solid var(--hair);}
+  .cgrid{display:grid;grid-template-columns:424px minmax(0,1fr) 370px;gap:var(--s5);align-items:center;}
+  .c-text{position:relative;z-index:2;}
+  .p-left .c-phone{order:-1;}
+  .p-left .c-av{order:3;}
+  .p-left .cgrid{grid-template-columns:370px minmax(0,1fr) 424px;}
+  .c-av{position:relative;}
+  .c-av .say{position:absolute;left:50%;bottom:0;width:min(var(--sw),82vw);transform:translateX(-50%);opacity:0;transition:opacity .12s;background:var(--platinum);-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 96%),linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 70%,transparent 96%),linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);mask-composite:intersect;}
+  .c-av.speaking .say{opacity:1;}
+  .c-text .d-l{margin:var(--s2) 0 var(--s3);}
+  .c-text .quote{margin-bottom:var(--s3);}
+  .c-text .hear{margin-top:var(--s4);}
+
+  /* the phone: straight on, one size everywhere */
+  .phone{width:370px;height:760px;border-radius:56px;background:#1A1B1F;padding:12px;box-shadow:0 40px 80px rgba(10,11,13,0.18);margin:0 auto;}
+  .ph-screen{height:100%;border-radius:44px;background:var(--platinum);display:flex;flex-direction:column;overflow:hidden;}
+  .ph-top{padding:44px 22px 18px;display:flex;flex-direction:column;gap:10px;}
+  .ph-label{font-size:11px;text-transform:uppercase;letter-spacing:.24em;font-weight:600;color:var(--muted);}
+  .ph-hi{font-family:var(--serif);font-size:30px;line-height:1.1;}
+  .ph-q{font-size:15px;color:var(--text-2);}
+  .ph-card{background:#F6F7F8;border-radius:14px;padding:14px 16px;font-size:15px;line-height:1.45;}
+  .ph-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{font-size:12.5px;border:1px solid var(--outline);border-radius:999px;padding:5px 12px;color:var(--text-2);}
+  .chip.on{background:var(--graphite);border-color:var(--graphite);color:var(--g-text);}
+  .ph-rec{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text-2);}
+  .rec{width:44px;height:44px;border-radius:50%;background:var(--red);flex:none;}
+  .ph-panel{flex:none;margin:0 12px;border-radius:22px;background:var(--graphite-panel);color:var(--g-text);padding:20px 18px;display:flex;flex-direction:column;gap:10px;overflow:hidden;transition:filter .5s;}
+  .ph-panel hr{border:0;border-top:1px solid rgba(231,232,234,.14);margin:4px 0;width:100%;}
+  .pn-label{font-size:11px;text-transform:uppercase;letter-spacing:.24em;font-weight:600;color:var(--g-text-2);}
+  .pn-lead{font-size:14.5px;line-height:1.5;}
+  .pn-s{font-size:14px;line-height:1.45;}
+  .pn-n{font-size:13px;line-height:1.45;color:var(--g-text-2);margin-top:2px;}
+  .pn-pivot{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.2;color:var(--g-red);margin-top:6px;}
+  .ph-tabs{margin-top:auto;display:flex;justify-content:space-around;padding:14px 8px 22px;font-size:11px;color:var(--muted);}
+  .ph-tabs .on{color:var(--graphite);font-weight:600;}
+  /* between phone and wide screens the phone stays beside the coach, never below (Pedro, 6 Oct 2026:
+     "olha pra onde foi o celular"): the coach above the words, the phone at the side */
+  @media (max-width:1250px) and (min-width:901px){
+    .cgrid{grid-template-columns:minmax(0,1fr) 330px;grid-template-areas:"av ph" "tx ph";column-gap:var(--s5);row-gap:var(--s3);}
+    .p-left .cgrid{grid-template-columns:330px minmax(0,1fr);grid-template-areas:"ph av" "ph tx";}
+    .c-av{grid-area:av;} .c-text{grid-area:tx;} .c-phone{grid-area:ph;align-self:center;}
+    .c-av .av{width:min(var(--w),100%);}
+    .phone{width:320px;height:657px;border-radius:50px;padding:11px;}
+    .ph-screen{border-radius:40px;}
+  }
+  @media (max-width:900px){
+    .hero .wrap,.qcard,.result .wrap,.cgrid,.p-left .cgrid{grid-template-columns:1fr;}
+    .q-av{position:static;}
+    .p-left .c-av,.p-left .c-phone{order:0;}
+    .phone{width:300px;height:616px;border-radius:46px;padding:10px;}
+    .ph-screen{border-radius:36px;}
+    .ph-top{padding:34px 18px 14px;}
+  }
+
+  /* 7. closing */
+  .closing h2{margin:var(--s3) 0 var(--s6);max-width:900px;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);}
+  .cols > div{border-top:1px solid var(--hair);padding-top:var(--s4);}
+  .cols .t-card{display:block;margin-bottom:var(--s2);}
+  @media (max-width:900px){ .cols{grid-template-columns:1fr;gap:var(--s4);} }
+
+  @media (prefers-reduced-motion:reduce){
+    .enter{opacity:1;transform:none;transition:none;}
+    .breathe{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+<link rel="stylesheet" href="page-stack.css?v=1">
+<!-- seo:begin -->
+<meta name="description" content="Conheça o time Concept: coaches de inglês criados com o método Concept e liderados por Netto. Depois, faça o teste de cinco perguntas.">
+<link rel="canonical" href="https://theconceptmethod.com/pt/team.html">
+<meta property="og:site_name" content="The Concept Method">
+<meta property="og:title" content="O time Concept | Coaches de inglês para profissionais">
+<meta property="og:description" content="Conheça o time Concept: coaches de inglês criados com o método Concept e liderados por Netto. Depois, faça o teste de cinco perguntas.">
+<meta property="og:url" content="https://theconceptmethod.com/pt/team.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://theconceptmethod.com/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="https://theconceptmethod.com/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://theconceptmethod.com/favicon-192.png">
+<link rel="apple-touch-icon" href="https://theconceptmethod.com/apple-touch-icon.png">
+<meta property="og:image" content="https://theconceptmethod.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://theconceptmethod.com/team.html">
+<link rel="alternate" hreflang="pt-BR" href="https://theconceptmethod.com/pt/team.html">
+<link rel="alternate" hreflang="it" href="https://theconceptmethod.com/it/team.html">
+<link rel="alternate" hreflang="x-default" href="https://theconceptmethod.com/team.html">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="pt/"><svg role="img" aria-label="Concept" viewBox="0 0 400 400"><path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" stroke="#1A1A1A" stroke-width="8" stroke-linecap="round" fill="none"/><circle cx="200" cy="200" r="11" fill="#1A1A1A"/><polygon points="322.87,113.96 208.03,211.47 191.97,188.53" fill="#B3132B"/><circle cx="322.87" cy="113.96" r="7" fill="#B3132B"/></svg><span>CONCEPT</span></a>
+    <div class="nav-r">
+      <button class="btn-icon" id="soundBtn" type="button" aria-label="Ativar som" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <a class="btn-cta" href="pt/#start">Fale conosco</a>
+    </div>
+  </div>
+</header>
+<nav class="page-stack" aria-label="Páginas">
+  <div class="ps-grp">
+    <a class="ps-link" href="pt/method.html">Método</a>
+    <a class="ps-link" href="pt/about.html">Sobre</a>
+    <a class="ps-link" href="pt/team.html" aria-current="page">Time</a>
+    <a class="ps-link" href="pt/book.html">Livros</a>
+  </div>
+  <div class="ps-grp">
+    <a class="ps-link" href="https://lessons.theconceptmethod.com">Alunos</a>
+    <a class="ps-link" href="https://lessons.theconceptmethod.com/teaching#teacher">Professores</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">O TIME CONCEPT</p>
+      <h1 class="d-xl">O inglês da sua equipe está correto. Agora ele precisa dar <em>resultado.</em></h1>
+      <p class="body-l">Sete coaches criados com o método Concept e liderados por Netto, diretor acadêmico. Cada um é responsável por uma parte do inglês. A sua equipe pratica com eles no app Concept Coach nos dias sem aula.</p>
+      <div class="go"><a class="btn-pri" id="teamBtn" href="pt/team.html#victor-hugo">Conheça o time</a><span class="caption"><a href="pt/team.html#test">Ou vá direto para o teste de cinco perguntas</a></span></div>
+    </div>
+    <div class="h-netto">
+      <div class="stage breathe" id="heroNetto"><img src="team/netto-point-first.webp?v=12" alt="Netto, diretor acadêmico" width="440" height="716"></div>
+      <p class="d-s">Netto</p>
+      <span class="micro">DIRETOR ACADÊMICO</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="coach p-left" id="victor-hugo" data-says="home-victor-hugo-open1,home-victor-hugo-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:365px" data-m="victor-hugo" data-moves="signature,receive,think,celebrate"><img class="base" src="team/move-victor-hugo-start.webp" alt="Victor Hugo, coach de registro" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">REGISTRO</p><h2 class="d-l">Victor Hugo</h2><p class="quote">&ldquo;Read the room, then hit send.&rdquo;</p><p class="body-l">Victor Hugo mostra à sua equipe o que uma frase comunica a quem a lê, de um e-mail para um cliente a uma mensagem rápida no Slack. A pessoa escolhe a versão. Ele garante que ela saiba por quê.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Ouvir Victor Hugo</span></button></div><div class="c-phone"><div class="phone" aria-label="Victor Hugo no app Concept Coach"><div class="ph-screen"><div class="ph-top"><p class="ph-label">CHECK</p><p class="ph-q">Who is reading?</p><div class="ph-chips"><span class="chip on">Client</span><span class="chip">Manager</span><span class="chip">Leadership</span><span class="chip">Slack</span></div><div class="ph-card">We need the contract signed by Friday.</div></div><div class="ph-panel"><p class="pn-label">WHAT THIS TELLS A CLIENT</p><p class="pn-lead">Correct, and it reads as an order. The client hears your deadline before their reason to sign.</p><hr><div class="pn-row"><p class="pn-s">Would it be possible to have the contract signed by Friday?</p><p class="pn-n">Reads as a request. The client has room to say yes.</p></div><div class="pn-row"><p class="pn-s">Could we aim to have it signed by Friday?</p><p class="pn-n">Makes the deadline shared work.</p></div><p class="pn-pivot">You know this client. Your call.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="on">Check</span><span class="">Words</span><span class="">Origins</span><span class="">Sounds</span><span class="">British</span><span class="">Books</span></nav></div></div></div></div></section><section class="coach a-left" id="luana" data-says="home-luana-open2,home-luana-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:376px" data-m="luana" data-moves="signature,receive,think,celebrate"><img class="base" src="team/move-luana-start.webp" alt="Luana, coach de gramática e pontuação" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">GRAMÁTICA E PONTUAÇÃO</p><h2 class="d-l">Luana</h2><p class="quote">&ldquo;Every comma counts.&rdquo;</p><p class="body-l">Luana trabalha as frases que estão quase certas. Ela mostra o que uma vírgula ou um tempo verbal muda para quem lê, para que a correção fique na próxima vez.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Ouvir Luana</span></button></div><div class="c-phone"><div class="phone" aria-label="Luana no app Concept Coach"><div class="ph-screen"><div class="ph-top"><p class="ph-label">BOOKS, C1 GRAMMAR</p><div class="ph-card">Our CEO who joined in March will present the results.</div><p class="ph-q">Is this right for an all-hands email?</p></div><div class="ph-panel"><p class="pn-label">WHAT THE COMMAS CHANGE</p><p class="pn-lead">Without commas, the sentence suggests you have more than one CEO and you mean the one who joined in March.</p><hr><div class="pn-row"><p class="pn-s">Our CEO, who joined in March, will present the results.</p><p class="pn-n">One CEO. The March detail is extra information.</p></div><p class="pn-pivot">Two commas. One CEO.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="">Check</span><span class="">Words</span><span class="">Origins</span><span class="">Sounds</span><span class="">British</span><span class="on">Books</span></nav></div></div></div></div></section><section class="coach p-left" id="bia" data-says="home-bia-open1,home-bia-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:453px" data-m="bia" data-moves="signature,receive,think,celebrate"><img class="base" src="team/move-bia-start.webp" alt="Bia, coach de expressões" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">EXPRESSÕES</p><h2 class="d-l">Bia</h2><p class="quote">&ldquo;That&#x27;s how people really say it.&rdquo;</p><p class="body-l">Bia explica as expressões que as pessoas ouvem em reuniões e no Slack, com a versão mais próxima na língua delas e as situações em que cada uma serve.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Ouvir Bia</span></button></div><div class="c-phone"><div class="phone" aria-label="Bia no app Concept Coach"><div class="ph-screen"><div class="ph-top"><p class="ph-label">EXPRESSIONS</p><div class="ph-chips"><span class="chip on">English to Italian</span><span class="chip">English to Portuguese</span></div><div class="ph-card">touch base</div></div><div class="ph-panel"><p class="pn-label">IN ITALIAN</p><p class="pn-lead">Closest to fare il punto or sentirsi un attimo.</p><hr><div class="pn-row"><p class="pn-s">Let&#x27;s touch base tomorrow.</p><p class="pn-n">Very common at work. Fine with your manager and your team.</p></div><div class="pn-row"><p class="pn-s">Could we have a quick call tomorrow?</p><p class="pn-n">Safer with a new client.</p></div><p class="pn-pivot">Same idea, a different room.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="">Check</span><span class="on">Words</span><span class="">Origins</span><span class="">Sounds</span><span class="">British</span><span class="">Books</span></nav></div></div></div></div></section><section class="coach a-left" id="murillo" data-says="home-murillo-open1,home-murillo-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:358px" data-m="murillo" data-moves="receive,think,celebrate"><img class="base" src="team/move-murillo-start.webp" alt="Murillo, coach de pronúncia e escuta" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">PRONÚNCIA E ESCUTA</p><h2 class="d-l">Murillo</h2><p class="quote">&ldquo;Stress the word that matters.&rdquo;</p><p class="body-l">Murillo dá à sua equipe uma frase do trabalho real, ouve a pessoa dizer a frase e mostra exatamente onde caiu a tônica. Depois ela tenta de novo.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Ouvir Murillo</span></button></div><div class="c-phone"><div class="phone" aria-label="Murillo no app Concept Coach"><div class="ph-screen"><div class="ph-top"><p class="ph-label">BOOKS, CALIBRATED SPEECH</p><p class="ph-q">Say it out loud</p><div class="ph-card">I'd like to <b>present</b> the results.</div><div class="ph-rec"><span class="rec" aria-hidden="true"></span><span>Recorded. 4 seconds.</span></div></div><div class="ph-panel"><p class="pn-label">WHAT MURILLO HEARD</p><p class="pn-lead">You said PRES-ent, the noun. As a verb it is pre-SENT.</p><hr><div class="pn-row"><p class="pn-s">The gift is a PRES-ent.</p><p class="pn-n">You pre-SENT the results.</p></div><p class="pn-pivot">Once more, stress on SENT.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="">Check</span><span class="">Words</span><span class="">Origins</span><span class="">Sounds</span><span class="">British</span><span class="on">Books</span></nav></div></div></div></div></section><section class="coach p-left" id="marcelo" data-says="home-marcelo-open1,home-marcelo-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:449px" data-m="marcelo" data-moves="signature,receive,think,celebrate"><img class="base" src="team/move-marcelo-start.webp" alt="Marcelo, coach de origem das palavras" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">ORIGEM DAS PALAVRAS</p><h2 class="d-l">Marcelo</h2><p class="quote">&ldquo;Every word has a story.&rdquo;</p><p class="body-l">Marcelo é o estagiário que pesquisa de onde vêm as palavras. Uma palavra com história é uma palavra que as pessoas lembram e usam com segurança.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Ouvir Marcelo</span></button></div><div class="c-phone"><div class="phone" aria-label="Marcelo no app Concept Coach"><div class="ph-screen"><div class="ph-top"><p class="ph-label">WORD ORIGINS</p><div class="ph-card">budget</div></div><div class="ph-panel"><p class="pn-label">WHERE IT CAME FROM</p><p class="pn-lead">From the Old French bougette, a small leather bag.</p><hr><div class="pn-row"><p class="pn-s">In Britain, the finance minister opened the budget, the bag that held the year&#x27;s accounts. The word moved from the bag to the plan inside it.</p></div><p class="pn-pivot">Now you won&#x27;t forget it.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="">Check</span><span class="">Words</span><span class="on">Origins</span><span class="">Sounds</span><span class="">British</span><span class="">Books</span></nav></div></div></div></div></section><section class="coach a-left" id="ollie" data-says="home-ollie-open1,home-ollie-punch"><div class="wrap cgrid"><div class="c-av"><div class="av coach enter" style="--w:341px" data-m="ollie" data-moves="signature,receive,think,celebrate"><img class="base" src="team/move-ollie-start.webp" alt="Ollie, coach de inglês britânico e exames" width="720" height="1010" loading="lazy"><video class="mv" muted playsinline preload="none" aria-hidden="true" width="720" height="1010"></video></div><video class="say" playsinline preload="none" aria-hidden="true"></video></div><div class="c-text"><p class="eyebrow">INGLÊS BRITÂNICO E EXAMES</p><h2 class="d-l">Ollie</h2><p class="quote">&ldquo;Not bad at all.&rdquo;</p><p class="body-l">Ollie coloca a palavra britânica ao lado da americana, para que uma reunião em Londres não traga surpresas. Se você está se preparando para Cambridge ou IELTS, ele acrescenta uma linha sobre o que o exame espera.</p><button class="btn-sec hear" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Ouvir Ollie</span></button></div><div class="c-phone"><div class="phone" aria-label="Ollie no app Concept Coach"><div class="ph-screen"><div class="ph-top"><p class="ph-label">BRITISH</p><div class="ph-chips"><span class="chip">Cambridge</span><span class="chip on">IELTS</span><span class="chip">Not now</span></div><div class="ph-card">Can you check the schedule with the attorney and let me know?</div></div><div class="ph-panel"><p class="pn-label">OVER HERE, THAT SENTENCE READS</p><div class="pn-row"><p class="pn-s">Can you check the schedule with the solicitor and let me know?</p><p class="pn-n">Careful with solicitor: in Britain it&#x27;s one particular kind of lawyer, the one who advises you and prepares the paperwork. Plain lawyer is safe either way.</p></div><div class="pn-row"><p class="pn-s">For IELTS: either spelling is accepted. The official advice is to keep to one throughout.</p></div><p class="pn-pivot">Not bad at all.</p></div><nav class="ph-tabs" aria-hidden="true"><span class="">Today</span><span class="">Check</span><span class="">Words</span><span class="">Origins</span><span class="">Sounds</span><span class="on">British</span><span class="">Books</span></nav></div></div></div></div></section>
+
+<section class="closing">
+  <div class="wrap">
+    <p class="eyebrow">COMO FUNCIONA PARA A SUA EMPRESA</p>
+    <h2 class="d-l">Pratique em particular. <em>Melhore</em> em público.</h2>
+    <div class="cols">
+      <div><span class="t-card">O que fica com o aluno</span><p class="body">As conversas com os coaches ficam entre o aluno e o coach. A empresa nunca vê as respostas nem o nível de cada pessoa. Cada um pratica a frase que nunca arriscaria numa reunião.</p></div>
+      <div><span class="t-card">Como se encaixa nas aulas</span><p class="body">O app retoma o que apareceu na aula, então a prática começa onde a aula parou. Todo coach segue o mesmo método que o professor em sala.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="test" id="test">
+  <div class="wrap"><p class="caption t-intro">Cinco situações do trabalho real. Sem cadastro.</p><div class="qcard" data-n="1" data-right="2" data-coach="victor-hugo" data-land="You asked for a date and kept the client." data-slip="Your reminder was correct but asked for nothing the client could act on."><div class="q-av"><span class="qdisc" role="img" aria-label="Victor Hugo, coach de registro"><img class="qd-in" src="team/tiles/victor-hugo-still.webp" alt="" width="260" height="270" style="width:240px;left:-40px;top:-46px;clip-path:circle(80px at 120px 126px)"><img class="qd-up" src="team/tiles/victor-hugo-still.webp" alt="" width="260" height="270" style="width:240px;left:-40px;top:-46px;clip-path:inset(-60px -60px 123px -60px)"></span><p class="q-who"><span class="t-card">Victor Hugo</span><span class="micro">REGISTRO</span></p></div><div class="q-body"><p class="eyebrow">PERGUNTA 1 DE 5</p><div class="bar"><i style="width:20%"></i></div><h3 class="d-m">A fatura de um cliente está três semanas atrasada. Que mensagem você envia?</h3><p class="body goal">Você quer o pagamento e quer manter o cliente.</p><div class="opts"><button class="opt" type="button" data-k="0"><span class="o-t">Just a friendly reminder that invoice 214 is now overdue.</span><span class="o-x" hidden>Educada na superfície. Muitos clientes leem “friendly reminder” como um aviso, e a mensagem não pede nada específico.</span></button><button class="opt" type="button" data-k="1"><span class="o-t">As per my last email, invoice 214 is overdue.</span><span class="o-x" hidden>Diz ao cliente que ele ignorou você. É lida como irritação e coloca a relação em risco.</span></button><button class="opt" type="button" data-k="2"><span class="o-t">Could you let me know when we can expect payment on invoice 214?</span><span class="o-x" hidden>Pede uma data em vez de um pedido de desculpas. Mantém a relação e consegue um compromisso.</span></button></div><p class="quote verdict" hidden><span class="v-land" hidden>Essa funciona.</span><span class="v-slip" hidden>Essa não funciona.</span></p><button class="btn-pri next" type="button" hidden>Próxima pergunta</button></div></div><div class="qcard" data-n="2" data-right="0" data-coach="luana" data-land="Clean sentence for a board report." data-slip="“Less” with things you count. Easy to miss, easy for a board to notice." hidden><div class="q-av"><span class="qdisc" role="img" aria-label="Luana, coach de gramática e pontuação"><img class="qd-in" src="team/tiles/luana-still.webp" alt="" width="260" height="270" style="width:263px;left:-52px;top:-70px;clip-path:circle(80px at 132px 150px)"><img class="qd-up" src="team/tiles/luana-still.webp" alt="" width="260" height="270" style="width:263px;left:-52px;top:-70px;clip-path:inset(-60px -60px 123px -60px)"></span><p class="q-who"><span class="t-card">Luana</span><span class="micro">GRAMÁTICA E PONTUAÇÃO</span></p></div><div class="q-body"><p class="eyebrow">PERGUNTA 2 DE 5</p><div class="bar"><i style="width:40%"></i></div><h3 class="d-m">Esta frase abre o seu relatório para o conselho. Qual versão um revisor cuidadoso deixaria como está?</h3><p class="body goal">O conselho lê cada palavra. Você quer que ele leia os números.</p><div class="opts"><button class="opt" type="button" data-k="0"><span class="o-t">Fewer clients renewed this quarter than last.</span><span class="o-x" hidden>Correta. “Fewer” acompanha coisas que se contam, como clientes.</span></button><button class="opt" type="button" data-k="1"><span class="o-t">Less clients renewed this quarter than last.</span><span class="o-x" hidden>Comum na fala, por isso soa bem. Por escrito, para um conselho, alguns leitores vão parar nela.</span></button><button class="opt" type="button" data-k="2"><span class="o-t">Less clients have renewed this quarter compared to last.</span><span class="o-x" hidden>O mesmo erro, com uma comparação mais longa que enfraquece o número.</span></button></div><p class="quote verdict" hidden><span class="v-land" hidden>Essa funciona.</span><span class="v-slip" hidden>Essa não funciona.</span></p><button class="btn-pri next" type="button" hidden>Próxima pergunta</button></div></div><div class="qcard" data-n="3" data-right="1" data-coach="bia" data-land="You read the client the way the client meant it." data-slip="The phrase was softer than its meaning." hidden><div class="q-av"><span class="qdisc" role="img" aria-label="Bia, coach de expressões"><img class="qd-in" src="team/tiles/bia-still.webp" alt="" width="260" height="270" style="width:304px;left:-72px;top:-95px;clip-path:circle(80px at 152px 175px)"><img class="qd-up" src="team/tiles/bia-still.webp" alt="" width="260" height="270" style="width:304px;left:-72px;top:-95px;clip-path:inset(-60px -60px 140px -60px)"></span><p class="q-who"><span class="t-card">Bia</span><span class="micro">EXPRESSÕES</span></p></div><div class="q-body"><p class="eyebrow">PERGUNTA 3 DE 5</p><div class="bar"><i style="width:60%"></i></div><h3 class="d-m">Um cliente diz que a sua proposta “is not quite there yet”. O que o cliente está dizendo?</h3><p class="body goal">Você quer saber se deve ajustar ou repensar.</p><div class="opts"><button class="opt" type="button" data-k="0"><span class="o-t">It&#x27;s almost ready. A few small edits will do.</span><span class="o-x" hidden>A leitura literal. No inglês de negócios, esta frase costuma ser mais suave do que aquilo que quer dizer.</span></button><button class="opt" type="button" data-k="1"><span class="o-t">It needs real changes before the client will say yes.</span><span class="o-x" hidden>A forma educada de dizer não a esta versão. O cliente continua aberto, mas pequenos ajustes não bastam.</span></button><button class="opt" type="button" data-k="2"><span class="o-t">The client is rejecting the proposal.</span><span class="o-x" hidden>Exagero. Um cliente que tivesse desistido não diria “yet”.</span></button></div><p class="quote verdict" hidden><span class="v-land" hidden>Essa funciona.</span><span class="v-slip" hidden>Essa não funciona.</span></p><button class="btn-pri next" type="button" hidden>Próxima pergunta</button></div></div><div class="qcard" data-n="4" data-right="1" data-coach="murillo" data-land="You stressed the word that mattered." data-slip="The stress fell on the wrong word, so the point got lost." hidden><div class="q-av"><span class="qdisc" role="img" aria-label="Murillo, coach de pronúncia e escuta"><img class="qd-in" src="team/tiles/murillo-still.webp" alt="" width="260" height="270" style="width:240px;left:-40px;top:-63px;clip-path:circle(80px at 120px 143px)"><img class="qd-up" src="team/tiles/murillo-still.webp" alt="" width="260" height="270" style="width:240px;left:-40px;top:-63px;clip-path:inset(-60px -60px 107px -60px)"></span><p class="q-who"><span class="t-card">Murillo</span><span class="micro">PRONÚNCIA E ESCUTA</span></p></div><div class="q-body"><p class="eyebrow">PERGUNTA 4 DE 5</p><div class="bar"><i style="width:80%"></i></div><h3 class="d-m">Você está corrigindo uma data numa ligação. Qual palavra leva a tônica?</h3><p class="body goal">Você quer que a correção seja a primeira coisa que a pessoa ouve.</p><div class="opts"><button class="opt" type="button" data-k="0"><span class="o-t">The MEETING is on Thursday, not Tuesday.</span><span class="o-x" hidden>Destaca a ideia errada. Ninguém duvidou de que era uma reunião.</span></button><button class="opt" type="button" data-k="1"><span class="o-t">The meeting is on THURSDAY, not Tuesday.</span><span class="o-x" hidden>O novo dia é a informação nova, por isso leva a tônica.</span></button><button class="opt" type="button" data-k="2"><span class="o-t">The meeting IS on Thursday, not Tuesday.</span><span class="o-x" hidden>Parece uma discussão sobre se a reunião existe.</span></button></div><p class="quote verdict" hidden><span class="v-land" hidden>Essa funciona.</span><span class="v-slip" hidden>Essa não funciona.</span></p><button class="btn-pri next" type="button" hidden>Próxima pergunta</button></div></div><div class="qcard" data-n="5" data-right="0" data-coach="marcelo" data-land="You knew where the word came from." data-slip="The word had a darker start than most people guess." hidden><div class="q-av"><span class="qdisc" role="img" aria-label="Marcelo, coach de origem das palavras"><img class="qd-in" src="team/tiles/marcelo-still.webp" alt="" width="260" height="270" style="width:263px;left:-52px;top:-67px;clip-path:circle(80px at 132px 147px)"><img class="qd-up" src="team/tiles/marcelo-still.webp" alt="" width="260" height="270" style="width:263px;left:-52px;top:-67px;clip-path:inset(-60px -60px 126px -60px)"></span><p class="q-who"><span class="t-card">Marcelo</span><span class="micro">ORIGEM DAS PALAVRAS</span></p></div><div class="q-body"><p class="eyebrow">PERGUNTA 5 DE 5</p><div class="bar"><i style="width:100%"></i></div><h3 class="d-m">A palavra “deadline” significava, no início...</h3><p class="body goal">Toda palavra tem uma história. Esta começa na década de 1860.</p><div class="opts"><button class="opt" type="button" data-k="0"><span class="o-t">A line in a prison camp that prisoners were not allowed to cross.</span><span class="o-x" hidden>Registrada pela primeira vez nos Estados Unidos na década de 1860. Depois, as gráficas usaram a palavra para a margem da área de impressão, e as redações a transformaram em horário.</span></button><button class="opt" type="button" data-k="1"><span class="o-t">The last train of the day.</span><span class="o-x" hidden>Bom palpite, mas as ferrovias não tiveram nada a ver com isso.</span></button><button class="opt" type="button" data-k="2"><span class="o-t">The date a contract expires.</span><span class="o-x" hidden>Isso veio muito depois, quando “deadline” já significava prazo.</span></button></div><p class="quote verdict" hidden><span class="v-land" hidden>Essa funciona.</span><span class="v-slip" hidden>Essa não funciona.</span></p><button class="btn-pri next" type="button" hidden>Ver o seu resultado</button></div></div></div>
+</section>
+
+<section class="result" id="result">
+  <div class="wrap">
+    <div class="r-side"><div class="r-film" id="rFilm"><video id="closingFilm" playsinline muted preload="none" poster="team/netto-closing-first.webp?v=10" data-src="team/netto-closing.mp4?v=10" width="720" height="1280" aria-label="Netto"></video></div>
+      <button class="btn-sec" id="hearNetto" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Ouvir Netto</span></button></div>
+    <div>
+      <p class="eyebrow">O SEU RESULTADO</p>
+      <div id="rWait"><h2 class="d-l">Veja onde a sua equipe <em>acerta.</em></h2>
+        <p class="body-l">Responda às cinco perguntas acima e o seu resultado aparece aqui.</p>
+        <div class="r-go" style="margin-top:var(--s5)"><a class="btn-pri" href="pt/#start">Agendar a conversa de diagnóstico</a></div></div>
+      <div id="rDone" hidden>
+        <h2 class="d-l">Você acertou <em id="rNum">cinco</em> de cinco.</h2>
+        <p class="body-l">Aqui está onde o seu inglês acerta e onde erra. Cada coach trabalha um destes pontos no app, alguns minutos por dia.</p>
+        <ul class="r-list"><li class="r-row" data-n="1" hidden><img src="team/victor-hugo-face.webp" alt="Victor Hugo, coach de registro" width="56" height="56"><div class="r-name"><span class="t-card">Victor Hugo</span><span class="micro">REGISTRO</span></div><p class="body r-note"><span class="n-land" hidden>Você pediu uma data e manteve o cliente.</span><span class="n-slip" hidden>O seu lembrete estava correto, mas não pedia nada que o cliente pudesse fazer.</span></p><span class="pill"><span class="p-land" hidden>ACERTOU</span><span class="p-slip" hidden>ERROU</span></span></li><li class="r-row" data-n="2" hidden><img src="team/luana-face.webp" alt="Luana, coach de gramática e pontuação" width="56" height="56"><div class="r-name"><span class="t-card">Luana</span><span class="micro">GRAMÁTICA E PONTUAÇÃO</span></div><p class="body r-note"><span class="n-land" hidden>Frase correta para um relatório ao conselho.</span><span class="n-slip" hidden>“Less” com coisas que se contam. Fácil de não ver, fácil para um conselho notar.</span></p><span class="pill"><span class="p-land" hidden>ACERTOU</span><span class="p-slip" hidden>ERROU</span></span></li><li class="r-row" data-n="3" hidden><img src="team/bia-face.webp" alt="Bia, coach de expressões" width="56" height="56"><div class="r-name"><span class="t-card">Bia</span><span class="micro">EXPRESSÕES</span></div><p class="body r-note"><span class="n-land" hidden>Você entendeu o cliente do jeito que ele quis dizer.</span><span class="n-slip" hidden>A frase era mais suave do que o seu significado.</span></p><span class="pill"><span class="p-land" hidden>ACERTOU</span><span class="p-slip" hidden>ERROU</span></span></li><li class="r-row" data-n="4" hidden><img src="team/murillo-face.webp" alt="Murillo, coach de pronúncia e escuta" width="56" height="56"><div class="r-name"><span class="t-card">Murillo</span><span class="micro">PRONÚNCIA E ESCUTA</span></div><p class="body r-note"><span class="n-land" hidden>Você deu tônica à palavra que importava.</span><span class="n-slip" hidden>A tônica caiu na palavra errada, e a correção se perdeu.</span></p><span class="pill"><span class="p-land" hidden>ACERTOU</span><span class="p-slip" hidden>ERROU</span></span></li><li class="r-row" data-n="5" hidden><img src="team/marcelo-face.webp" alt="Marcelo, coach de origem das palavras" width="56" height="56"><div class="r-name"><span class="t-card">Marcelo</span><span class="micro">ORIGEM DAS PALAVRAS</span></div><p class="body r-note"><span class="n-land" hidden>Você sabia de onde a palavra veio.</span><span class="n-slip" hidden>A palavra teve uma origem mais sombria do que a maioria imagina.</span></p><span class="pill"><span class="p-land" hidden>ACERTOU</span><span class="p-slip" hidden>ERROU</span></span></li></ul>
+        <div class="r-go"><a class="btn-pri" href="pt/#start">Agendar a conversa de diagnóstico</a><a class="lk" id="shareTest" href="pt/team.html#test">Enviar o teste para a sua equipe</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="caption wrap" style="margin:var(--s5) auto;max-width:1180px">Cambridge e IELTS são marcas registradas dos seus donos. A Concept não tem vínculo com eles. <a href="sources.html">Fontes e créditos</a></p>
+
+</main>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var soundOn = false;
+  var sb = document.getElementById('soundBtn');
+  sb.addEventListener('click', function(){ soundOn = !soundOn; sb.setAttribute('aria-pressed', soundOn ? 'true' : 'false'); if(!soundOn) stopAll(); });
+
+  /* Netto points once, toward the team, then only breathes */
+  var hero = document.getElementById('heroNetto'), himg = hero.querySelector('img');
+  if(!reduce){
+    fetch('team/netto-point.webp?v=12').then(function(r){ return r.blob(); }).then(function(b){
+      var u = URL.createObjectURL(b);
+      setTimeout(function(){ hero.classList.remove('breathe'); himg.src = u;
+        setTimeout(function(){ himg.src = 'team/netto-point-still.webp?v=12'; URL.revokeObjectURL(u); hero.classList.add('breathe'); }, 133 * 1000 / 15 + 60);
+      }, 700);
+    }).catch(function(){});
+  } else { himg.src = 'team/netto-point-still.webp?v=12'; }
+
+  /* the coaches move on their own as in the app, mouth closed (the app's rule: a mouth never moves without a voice) */
+  /* Each move is a 720-wide video of the app's take; when it ends the still underneath becomes that
+     move's own last frame and the video goes away in the same instant, so two poses never show at
+     once (Pedro, 6 Oct 2026: "na transicao os agentes ficam com uma sombra tipo fantasma") */
+  function move(av, kind){
+    if(reduce || av.closest('.speaking')) return;
+    var m = av.getAttribute('data-m'), v = av.querySelector('.mv'), base = av.querySelector('.base');
+    if(v.classList.contains('on') || av._busy) return;
+    av._busy = true;
+    var end = new Image(); end.src = 'team/move-' + m + '-' + kind + '-end.webp';
+    v.onplaying = function(){ v.onplaying = null; v.classList.add('on'); };
+    v.onended = function(){
+      v.onended = null;
+      var swap = function(){ base.src = end.src; requestAnimationFrame(function(){ v.classList.remove('on'); av._busy = false; }); };
+      if(end.decode) end.decode().then(swap, swap); else swap();
+    };
+    var tries = 0;
+    var go = function(){ v.muted = true; var pr = v.play(); if(pr && pr.catch) pr.catch(function(){ if(++tries < 3) setTimeout(go, 400); else av._busy = false; }); };
+    v.preload = 'auto'; v.src = 'team/move-' + m + '-' + kind + '.mp4'; v.load();
+    v.oncanplay = function(){ v.oncanplay = null; go(); };
+    setTimeout(function(){ if(av._busy && v.paused && !v.classList.contains('on')) go(); }, 1500);
+    setTimeout(function(){ if(av._busy && !v.classList.contains('on')){ av._busy = false; } }, 6000);
+  }
+  document.querySelectorAll('.av[data-m]').forEach(function(av){
+    /* each coach opens with their own gesture, then varies (Pedro, 6 Oct 2026: "todos dao tchau, sem diversidade") */
+    var list = (av.getAttribute('data-moves') || 'signature,receive,think,celebrate').split(',');
+    var seen = false, timer = null, n = 0, ORDER = list.slice(1).concat(list[0]);
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){
+      if(es[0].isIntersecting){
+        if(!seen){ seen = true; setTimeout(function(){ move(av, list[0]); }, 500); }
+        if(!timer) timer = setInterval(function(){ move(av, ORDER[n++ % ORDER.length]); }, 14000);
+      } else { clearInterval(timer); timer = null; }
+    }, {threshold: .5}).observe(av);
+  });
+
+  /* coach avatars: a short entrance the first time they are seen */
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); e.target.classList.add('breathe'); io.unobserve(e.target); } }); }, {threshold: .3});
+    document.querySelectorAll('.enter').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.enter').forEach(function(el){ el.classList.add('in'); }); }
+
+  /* Hear [name]: the coach says their lines in their own voice, then is still again */
+  var players = [];
+  function stopAll(except){ players.forEach(function(p){ if(p !== except) p.stop(); }); var f = document.getElementById('closingFilm'); if(f && !f.paused && !f.muted) { f.pause(); document.getElementById('hearNetto').classList.remove('playing'); } }
+  document.querySelectorAll('section.coach').forEach(function(sec){
+    var says = sec.getAttribute('data-says').split(','), box = sec.querySelector('.c-av'), v = sec.querySelector('.say'), btn = sec.querySelector('.hear'), av = sec.querySelector('.av');
+    v.style.setProperty('--sw', getComputedStyle(av).getPropertyValue('--w'));
+    var q = 0, spoke = false;
+    var p = {
+      play: function(){ stopAll(p); q = 0; spoke = true; next(); },
+      stop: function(){ if(!v.paused) v.pause(); box.classList.remove('speaking'); btn.classList.remove('playing'); }
+    };
+    function next(){
+      v.src = 'team/' + says[q] + '.mp4?v=12'; v.muted = false;
+      box.classList.add('speaking'); btn.classList.add('playing');
+      var pr = v.play(); if(pr && pr.catch) pr.catch(function(){ p.stop(); });
+    }
+    v.addEventListener('ended', function(){ if(++q < says.length) next(); else p.stop(); });
+    btn.addEventListener('click', function(){ p.play(); });
+    players.push(p);
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ if(es[0].isIntersecting){ if(soundOn && !spoke) p.play(); } else p.stop(); }, {threshold: .55}).observe(box);
+    }
+  });
+
+  /* the test: one question at a time; nothing about an answer shows before the pick */
+  var NUM = ['zero','uma','duas','três','quatro','cinco'], answers = [];
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.qcard'));
+  cards.forEach(function(card, i){
+    var right = +card.getAttribute('data-right');
+    card.querySelectorAll('.opt').forEach(function(o){
+      o.addEventListener('click', function(){
+        if(card.classList.contains('done')) return;
+        card.classList.add('done');
+        var k = +o.getAttribute('data-k'), ok = k === right;
+        answers[i] = ok;
+        card.querySelectorAll('.opt').forEach(function(x){
+          var kk = +x.getAttribute('data-k');
+          x.disabled = true; x.querySelector('.o-x').hidden = false;
+          if(kk === right) x.classList.add('lands'); else if(kk === k) x.classList.add('picked-wrong');
+        });
+        var ver = card.querySelector('.verdict'); ver.querySelector(ok ? '.v-land' : '.v-slip').hidden = false; ver.hidden = false;
+        card.querySelector('.next').hidden = false;
+      });
+    });
+    card.querySelector('.next').addEventListener('click', function(){
+      if(i < cards.length - 1){ card.hidden = true; cards[i + 1].hidden = false; document.getElementById('test').scrollIntoView({block: 'start'}); }
+      else { showResult(); document.getElementById('result').scrollIntoView({block: 'start'}); }
+    });
+  });
+
+  function showResult(){
+    var n = answers.filter(Boolean).length;
+    document.getElementById('rNum').textContent = NUM[n];
+    document.getElementById('rWait').hidden = true; document.getElementById('rDone').hidden = false;
+    document.querySelectorAll('.r-row').forEach(function(row, i){
+      var card = cards[i], ok = !!answers[i];
+      row.querySelector(ok ? '.n-land' : '.n-slip').hidden = false; row.querySelector(ok ? '.n-slip' : '.n-land').hidden = true;
+      var pill = row.querySelector('.pill'); pill.querySelector(ok ? '.p-land' : '.p-slip').hidden = false; pill.querySelector(ok ? '.p-slip' : '.p-land').hidden = true; pill.className = 'pill ' + (ok ? 'landed' : 'slipped');
+      row.hidden = false;
+    });
+    playNetto(soundOn);
+  }
+  /* Netto's closing line: on the page from the start, it plays when the result appears or on Hear Netto */
+  var film = document.getElementById('closingFilm'), hn = document.getElementById('hearNetto');
+  function playNetto(withSound){
+    if(!film.src) film.src = film.getAttribute('data-src');
+    stopAll(); film.currentTime = 0; film.muted = !withSound;
+    if(withSound) hn.classList.add('playing');
+    var pr = film.play(); if(pr && pr.catch) pr.catch(function(){ film.muted = true; film.play().catch(function(){}); });
+  }
+  film.addEventListener('ended', function(){ hn.classList.remove('playing'); });
+  hn.addEventListener('click', function(){ playNetto(true); });
+  document.getElementById('shareTest').addEventListener('click', function(e){
+    e.preventDefault();
+    var url = location.origin + location.pathname + '#test';
+    if(navigator.clipboard) navigator.clipboard.writeText(url).catch(function(){});
+  });
+})();
+</script>
+<script src="page-stack.js?v=1" defer></script>
+</body>
+</html>

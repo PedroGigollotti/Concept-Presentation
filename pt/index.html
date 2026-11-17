@@ -772,8 +772,8 @@
   <div class="ps-grp">
     <a class="ps-link" id="navMethod" href="method.html">Method</a>
     <a class="ps-link" id="navAbout" href="about.html">About</a>
-    <a class="ps-link" id="navTeam" href="team.html" data-t="nav_team">Time</a>
-    <a class="ps-link" id="navBook" href="book.html">Books</a>
+    <a class="ps-link" id="navTeam" href="pt/team.html" data-t="nav_team">Time</a>
+    <a class="ps-link" id="navBook" href="pt/book.html">Books</a>
   </div>
   <div class="ps-grp">
     <a class="ps-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
@@ -802,7 +802,7 @@
           <div class="tswap"><div class="trole" id="tRole"></div><div class="tname" id="tName"></div><div class="tline" id="tLine"></div></div>
           <div class="tchat tswap">
             <div class="tmsg me" id="tAsk"><div class="lbl" data-t="team_you">Sua pergunta</div><div id="tAskText"></div></div>
-            <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt="" hidden><span id="tAnsWho"></span></div><div id="tAnsText"></div><a class="ttry" id="tTry" href="team.html#test" hidden></a></div>
+            <div class="tmsg them" id="tAns"><div class="lbl"><img id="tAnsFace" alt="" hidden><span id="tAnsWho"></span></div><div id="tAnsText"></div><a class="ttry" id="tTry" href="pt/team.html#test" hidden></a></div>
           </div>
         </div>
         <div class="tfig"><button class="tsound" id="tSound" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span id="tSoundL"></span></button><video class="tswap" id="tFig" muted playsinline preload="none" width="720" height="1010" aria-hidden="true"></video></div>
@@ -810,7 +810,7 @@
       <div class="ttabs" id="tTabs" role="tablist"></div>
       <div class="team-hook">
         <p class="team-note" data-t="team_note">O time Concept é formado por coaches criados com o método Concept. A sua equipe fala com eles no app Concept Coach nos dias sem aula.</p>
-        <a class="btn btn-solid team-test" id="teamTest" href="team.html#test"><span data-t="team_test_q">A sua equipe acertaria?</span> <b data-t="team_test_btn">Fazer o teste de 5 perguntas</b> <span aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-solid team-test" id="teamTest" href="pt/team.html#test"><span data-t="team_test_q">A sua equipe acertaria?</span> <b data-t="team_test_btn">Fazer o teste de 5 perguntas</b> <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </div>
@@ -921,7 +921,7 @@
     <h2 class="headline reveal d1" style="color:#fff;"><span data-t="book_h2_a">O método, </span><i data-t="book_h2_em">no papel</i><span data-t="book_h2_b">.</span></h2>
     <p class="lede on-dark reveal d2" data-t="book_lede">Professional English Practice e Calibrated Speech trazem o mesmo trabalho de registro e pragmática para uma leitura no seu próprio ritmo, organizada por nível do CEFR, da primeira frase ao domínio completo.</p>
     <div class="reveal d3" style="margin-top:34px;">
-      <a class="btn btn-outline" href="book.html" data-t="book_cta">Ver os livros</a>
+      <a class="btn btn-outline" href="pt/book.html" data-t="book_cta">Ver os livros</a>
     </div>
   </div>
 </section>
@@ -1982,6 +1982,7 @@ function applyLang(lang){
   var navBook = document.getElementById('navBook');
   if(navBook){
     navBook.textContent = t('nav_book');
+    navBook.setAttribute('href', (lang==='en'?'':lang+'/') + 'book.html');
   }
   /* The lessons a student actually works in. It leaves this site: the address
      is a separate property, gated, and it carries no language parameter
@@ -2294,7 +2295,7 @@ window.addEventListener('pageshow', function (e) {
     document.getElementById('tAnsFace').hidden = false;
     if(m.id === 'bia') later(balloons, reduce ? 0 : 3800);
     var tr = document.getElementById('tTry'); tr.hidden = true;
-    tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
+    tr.href = (currentLang==='en'?'':currentLang+'/') + 'team.html#' + (m.id === 'netto' ? 'test' : m.id);
     tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
     var ask = document.getElementById('tAsk'), ans = document.getElementById('tAns');
     var askT = document.getElementById('tAskText'), ansT = document.getElementById('tAnsText');
@@ -2397,15 +2398,16 @@ window.addEventListener('pageshow', function (e) {
   document.addEventListener('visibilitychange', function(){ if(!document.hidden && visible) show(cur); else { clearTimeout(timer); tabs.classList.add('paused'); } });
 
   window.teamRelabel = function(){
-    var tt = document.getElementById('teamTest'); if(tt) tt.href = 'team.html?lang=' + currentLang + '#test';
-    var nt = document.getElementById('navTeam'); if(nt) nt.href = 'team.html?lang=' + currentLang;
+    var tt = document.getElementById('teamTest'); if(tt) tt.href = (currentLang==='en'?'':currentLang+'/') + 'team.html#test';
+    var nt = document.getElementById('navTeam'); if(nt) nt.href = (currentLang==='en'?'':currentLang+'/') + 'team.html';
     if(cur < 0) return;
     var m = TEAM[cur];
     document.getElementById('tRole').textContent = L('role_' + m.id);
     var tr = document.getElementById('tTry');
-    tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
+    tr.href = (currentLang==='en'?'':currentLang+'/') + 'team.html#' + (m.id === 'netto' ? 'test' : m.id);
     tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
   };
+  window.teamRelabel();   /* the page may have set its language before this existed */
 })();
 </script>
 

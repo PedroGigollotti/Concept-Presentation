@@ -306,8 +306,8 @@
   <div class="ps-grp">
     <a class="ps-link" id="navMethod" href="method.html" aria-current="page">Method</a>
     <a class="ps-link" id="navAbout" href="about.html">About</a>
-    <a class="ps-link" id="navTeam" href="team.html" data-t="nav_team">Time</a>
-    <a class="ps-link" id="navBook" href="book.html">Books</a>
+    <a class="ps-link" id="navTeam" href="pt/team.html" data-t="nav_team">Time</a>
+    <a class="ps-link" id="navBook" href="pt/book.html">Books</a>
   </div>
   <div class="ps-grp">
     <a class="ps-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
@@ -1067,7 +1067,9 @@ function applyLang(l){
     if(nm){ nm.textContent = T("nav_method"); }
     navAbout.textContent = T("nav_about");
     var nb = document.getElementById("navBook");
-    if(nb){ nb.textContent = T("nav_book"); }
+    if(nb){ nb.textContent = T("nav_book"); nb.setAttribute("href", (l==="en"?"":l+"/") + "book.html"); }
+    var ntm = document.getElementById("navTeam");
+    if(ntm){ ntm.setAttribute("href", (l==="en"?"":l+"/") + "team.html"); }
     var nl = document.getElementById("navLessons");
     if(nl){ nl.textContent = T("nav_lessons"); }
     var nt = document.getElementById("navTeachers");

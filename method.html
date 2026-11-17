@@ -1065,7 +1065,9 @@ function applyLang(l){
     if(nm){ nm.textContent = T("nav_method"); }
     navAbout.textContent = T("nav_about");
     var nb = document.getElementById("navBook");
-    if(nb){ nb.textContent = T("nav_book"); }
+    if(nb){ nb.textContent = T("nav_book"); nb.setAttribute("href", (l==="en"?"":l+"/") + "book.html"); }
+    var ntm = document.getElementById("navTeam");
+    if(ntm){ ntm.setAttribute("href", (l==="en"?"":l+"/") + "team.html"); }
     var nl = document.getElementById("navLessons");
     if(nl){ nl.textContent = T("nav_lessons"); }
     var nt = document.getElementById("navTeachers");

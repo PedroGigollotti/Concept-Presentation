@@ -221,8 +221,8 @@
   <div class="ps-grp">
     <a class="ps-link" id="navMethod" href="method.html">Method</a>
     <a class="ps-link" id="navAbout" href="about.html" aria-current="page">About</a>
-    <a class="ps-link" id="navTeam" href="team.html" data-t="nav_team">Team</a>
-    <a class="ps-link" id="navBook" href="book.html">Books</a>
+    <a class="ps-link" id="navTeam" href="it/team.html" data-t="nav_team">Team</a>
+    <a class="ps-link" id="navBook" href="it/book.html">Books</a>
   </div>
   <div class="ps-grp">
     <a class="ps-link" id="navLessons" href="https://lessons.theconceptmethod.com">Students</a>
@@ -305,7 +305,7 @@
     <p class="lede on-dark reveal" data-t="closing_lede">Una call di diagnosi di 45 minuti, senza costi e senza impegno. Oppure conosci prima il team Concept e fai il test di 5 domande.</p>
     <div class="cta-row reveal">
       <a class="btn btn-solid" id="ctaContact" href="index.html#contact"><!--pre:ctaContact-->Contattaci<!--/pre:ctaContact--></a>
-      <a class="btn btn-outline" id="ctaMethod" href="team.html"><!--pre:ctaMethod-->Conosci il team Concept<!--/pre:ctaMethod--></a>
+      <a class="btn btn-outline" id="ctaMethod" href="it/team.html"><!--pre:ctaMethod-->Conosci il team Concept<!--/pre:ctaMethod--></a>
     </div>
   </div>
 </section>
@@ -454,7 +454,7 @@ function applyLang(lang){
     if(typeof v === 'string') els[i].textContent = v;
   }
   var homeBrand = document.querySelector('#nav .brand'); if(homeBrand && homeBrand.tagName === 'A') homeBrand.setAttribute('href', 'index.html?lang=' + lang);
-  document.getElementById('navTeam').setAttribute('href', 'team.html?lang=' + lang);
+  document.getElementById('navTeam').setAttribute('href', (lang==='en'?'':lang+'/') + 'team.html');
   document.getElementById('navCta').textContent = t('nav_cta');
   document.getElementById('navCta').setAttribute('href', 'index.html?lang=' + lang + '#contact');
   document.getElementById('ctaContact').textContent = t('ctaContact');
@@ -466,9 +466,9 @@ function applyLang(lang){
   var nt = document.getElementById('navTeachers');
   if(nt){ nt.textContent = t('nav_teachers'); }
         var nb = document.getElementById('navBook');
-        if(nb){ nb.textContent = t('nav_book'); }
+        if(nb){ nb.textContent = t('nav_book'); nb.setAttribute('href', (lang==='en'?'':lang+'/') + 'book.html'); }
         document.getElementById('ctaMethod').textContent = t('ctaMethod');
-  document.getElementById('ctaMethod').setAttribute('href', 'team.html?lang=' + lang);
+  document.getElementById('ctaMethod').setAttribute('href', (lang==='en'?'':lang+'/') + 'team.html');
 
   var btns = document.querySelectorAll('#langSwitch button');
   for(var b=0;b<btns.length;b++){

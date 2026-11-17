@@ -1999,6 +1999,7 @@ function applyLang(lang){
   var navBook = document.getElementById('navBook');
   if(navBook){
     navBook.textContent = t('nav_book');
+    navBook.setAttribute('href', (lang==='en'?'':lang+'/') + 'book.html');
   }
   /* The lessons a student actually works in. It leaves this site: the address
      is a separate property, gated, and it carries no language parameter
@@ -2311,7 +2312,7 @@ window.addEventListener('pageshow', function (e) {
     document.getElementById('tAnsFace').hidden = false;
     if(m.id === 'bia') later(balloons, reduce ? 0 : 3800);
     var tr = document.getElementById('tTry'); tr.hidden = true;
-    tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
+    tr.href = (currentLang==='en'?'':currentLang+'/') + 'team.html#' + (m.id === 'netto' ? 'test' : m.id);
     tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
     var ask = document.getElementById('tAsk'), ans = document.getElementById('tAns');
     var askT = document.getElementById('tAskText'), ansT = document.getElementById('tAnsText');
@@ -2414,15 +2415,16 @@ window.addEventListener('pageshow', function (e) {
   document.addEventListener('visibilitychange', function(){ if(!document.hidden && visible) show(cur); else { clearTimeout(timer); tabs.classList.add('paused'); } });
 
   window.teamRelabel = function(){
-    var tt = document.getElementById('teamTest'); if(tt) tt.href = 'team.html?lang=' + currentLang + '#test';
-    var nt = document.getElementById('navTeam'); if(nt) nt.href = 'team.html?lang=' + currentLang;
+    var tt = document.getElementById('teamTest'); if(tt) tt.href = (currentLang==='en'?'':currentLang+'/') + 'team.html#test';
+    var nt = document.getElementById('navTeam'); if(nt) nt.href = (currentLang==='en'?'':currentLang+'/') + 'team.html';
     if(cur < 0) return;
     var m = TEAM[cur];
     document.getElementById('tRole').textContent = L('role_' + m.id);
     var tr = document.getElementById('tTry');
-    tr.href = 'team.html?lang=' + currentLang + '#' + (m.id === 'netto' ? 'test' : m.id);
+    tr.href = (currentLang==='en'?'':currentLang+'/') + 'team.html#' + (m.id === 'netto' ? 'test' : m.id);
     tr.textContent = (m.id === 'netto' ? L('team_meet_all') : L('team_try') + ' ' + m.name) + ' \u2192';
   };
+  window.teamRelabel();   /* the page may have set its language before this existed */
 })();
 </script>
 

@@ -452,7 +452,7 @@ function applyLang(lang){
     if(typeof v === 'string') els[i].textContent = v;
   }
   var homeBrand = document.querySelector('#nav .brand'); if(homeBrand && homeBrand.tagName === 'A') homeBrand.setAttribute('href', 'index.html?lang=' + lang);
-  document.getElementById('navTeam').setAttribute('href', 'team.html?lang=' + lang);
+  document.getElementById('navTeam').setAttribute('href', (lang==='en'?'':lang+'/') + 'team.html');
   document.getElementById('navCta').textContent = t('nav_cta');
   document.getElementById('navCta').setAttribute('href', 'index.html?lang=' + lang + '#contact');
   document.getElementById('ctaContact').textContent = t('ctaContact');
@@ -464,9 +464,9 @@ function applyLang(lang){
   var nt = document.getElementById('navTeachers');
   if(nt){ nt.textContent = t('nav_teachers'); }
         var nb = document.getElementById('navBook');
-        if(nb){ nb.textContent = t('nav_book'); }
+        if(nb){ nb.textContent = t('nav_book'); nb.setAttribute('href', (lang==='en'?'':lang+'/') + 'book.html'); }
         document.getElementById('ctaMethod').textContent = t('ctaMethod');
-  document.getElementById('ctaMethod').setAttribute('href', 'team.html?lang=' + lang);
+  document.getElementById('ctaMethod').setAttribute('href', (lang==='en'?'':lang+'/') + 'team.html');
 
   var btns = document.querySelectorAll('#langSwitch button');
   for(var b=0;b<btns.length;b++){

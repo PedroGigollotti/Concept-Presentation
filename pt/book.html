@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<base href="../">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Livros de inglês corporativo | The Concept Method</title>
+<style>
+  :root{
+    --red:#B3132B;
+    --black:#0A0B0D;
+    --platinum:#E7E8EA;
+    --line:#1A1A1A;
+    --muted:#7C7F84;
+    --display:Georgia,"Times New Roman",serif;
+    --body:Calibri,Carlito,"Segoe UI",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--black);color:var(--platinum);
+    font-family:var(--body);font-size:17px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:56px 28px 96px;}
+
+  .masthead{padding-bottom:30px;border-bottom:1px solid var(--line);}
+  .masthead h1{font-family:var(--display);font-size:40px;line-height:1.1;font-weight:normal;margin:0 0 10px;letter-spacing:-0.01em;}
+  .masthead h1 em{color:var(--red);font-style:italic;}
+  .kicker{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;}
+  .standfirst{color:var(--muted);max-width:60ch;margin:0;font-size:16px;}
+
+  .collection{margin-top:72px;}
+  .collection-head{margin-bottom:8px;}
+  .collection-head h2{font-family:var(--display);font-size:26px;font-weight:normal;color:var(--platinum);margin:0;}
+  .collection-head .sub{font-size:13px;color:var(--muted);margin:4px 0 0;max-width:64ch;}
+  .collection-rule{height:1px;background:var(--line);margin:22px 0 44px;}
+
+  .book{display:flex;gap:36px;align-items:flex-start;padding-bottom:56px;margin-bottom:56px;border-bottom:1px solid var(--line);}
+  .book:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+
+  .covers{flex:0 0 auto;display:flex;gap:12px;align-items:flex-start;}
+
+  /* real cover art, native 440x640 (svg) or scanned png, scaled down */
+  .cover-real{width:168px;height:244px;border-radius:6px;overflow:hidden;display:block;
+    border:1px solid rgba(231,232,234,0.14);
+    box-shadow:0 10px 26px rgba(0,0,0,.55);
+    transition:transform .35s cubic-bezier(.25,1,.25,1), box-shadow .35s ease;
+    cursor:zoom-in;
+  }
+  .cover-real:hover{transform:scale(1.055);box-shadow:0 16px 38px rgba(0,0,0,.65);z-index:2;position:relative;}
+  .cover-real:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+  .cover-real img{width:100%;height:100%;display:block;object-fit:cover;}
+
+  /* placeholder mock cover, used until real art exists */
+  .cover-mock{
+    width:168px;height:244px;
+    background:var(--black);border:1px solid rgba(231,232,234,0.14);border-radius:6px;
+    padding:14px 14px 12px;overflow:hidden;display:flex;flex-direction:column;position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,.55);
+    transition:transform .35s cubic-bezier(.25,1,.25,1), box-shadow .35s ease;
+    cursor:zoom-in;
+  }
+  .cover-mock:hover{transform:scale(1.055);box-shadow:0 16px 38px rgba(0,0,0,.65);z-index:2;}
+  .cover-mock:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+  .cover-mock.front .top{display:flex;justify-content:space-between;align-items:flex-start;}
+  .cover-mock .badge{text-align:right;line-height:1;}
+  .cover-mock .badge .lbl{font-size:5px;letter-spacing:0.16em;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:2px;}
+  .cover-mock .badge .val{font-family:var(--display);font-weight:bold;font-size:15px;color:var(--red);}
+  .cover-mock .hook{font-family:var(--display);font-size:14px;line-height:1.22;color:var(--platinum);margin-top:auto;}
+  .cover-mock .hook i{color:var(--red);font-style:italic;}
+  .cover-mock .hookrule{width:26px;height:2px;background:var(--red);margin:8px 0 9px;}
+  .cover-mock .subtitle{font-size:6px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+  .cover-mock .imprint{margin-top:12px;}
+  .cover-mock .imprint .by{font-size:6px;color:var(--platinum);letter-spacing:0.04em;}
+  .cover-mock .imprint .brand{font-size:4.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+  .cover-mock .inprod{position:absolute;top:8px;left:8px;font-size:5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:3px 5px;border-radius:3px;}
+
+  .meta{flex:1;min-width:0;padding-top:2px;}
+  .meta .series-label{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin:0 0 8px;}
+  .meta h3 .book-link{color:inherit;text-decoration:none;}
+  .meta h3{font-family:var(--display);font-size:24px;font-weight:normal;margin:0 0 4px;line-height:1.2;}
+  .meta .subtitle-line{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;}
+  .meta p{margin:0 0 14px;font-size:15px;color:var(--platinum);max-width:62ch;}
+  .meta p.muted{color:var(--muted);}
+  .whatsinside{list-style:none;margin:0 0 20px;padding:0;font-size:13px;color:var(--platinum);}
+  .whatsinside li{margin-bottom:6px;padding-left:14px;position:relative;}
+  .whatsinside li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:1px;background:var(--red);}
+
+  .get{
+    display:inline-block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  a:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+
+  .companion-cta{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--red);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:11px 20px;border-radius:999px;transition:background .2s ease,transform .2s ease;}
+  .companion-cta:hover{background:#8E0F22;transform:translateY(-2px);}
+  .companion-cta:focus-visible{outline:2px solid var(--platinum);outline-offset:3px;}
+
+  /* ===== ZOOM LIGHTBOX ===== */
+  #lightbox{
+    position:fixed;inset:0;background:rgba(6,6,7,0.92);
+    display:flex;align-items:center;justify-content:center;padding:56px 24px;
+    opacity:0;visibility:hidden;transition:opacity .28s ease;z-index:500;
+  }
+  #lightbox.open{opacity:1;visibility:visible;}
+  #lightbox .lb-inner{position:relative;width:min(92vw,560px);max-height:88vh;}
+  #lightbox .lb-inner img{
+    display:block;width:100%;height:auto;max-height:88vh;object-fit:contain;
+    border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6);
+  }
+  #lightbox .lb-mockwrap{width:168px;height:244px;transform:scale(2.35);transform-origin:center;margin:104px auto;}
+  #lightbox .lb-close{
+    position:absolute;top:-46px;right:0;width:34px;height:34px;border-radius:50%;
+    background:none;border:1px solid var(--line);color:var(--platinum);
+    font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:border-color .2s ease,color .2s ease;
+  }
+  #lightbox .lb-close:hover,#lightbox .lb-close:focus-visible{border-color:var(--red);color:var(--red);outline:none;}
+  @media (max-width:640px){
+    #lightbox{padding:64px 16px 40px;}
+    #lightbox .lb-inner{width:min(94vw,560px);}
+    #lightbox .lb-mockwrap{transform:scale(1.7);margin:70px auto;}
+  }
+
+  footer{margin-top:88px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--muted);text-decoration:none;}
+  footer a:hover{color:var(--platinum);}
+  /* Follow us: official logos, unmodified (Pedro, 16 Oct 2026) */
+  .follow-us{display:flex;align-items:center;flex-wrap:wrap;gap:4px;flex-basis:100%;margin-top:6px;}
+  .follow-us .follow-label{margin-right:8px;}
+  .follow-us a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;}
+  footer .follow-us a:hover img{opacity:.8;}
+  .follow-us a:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+  .follow-us img{display:block;width:30px;height:auto;border:0;}
+
+  @media (max-width:640px){
+    .wrap{padding:36px 20px 72px;}
+    .masthead h1{font-size:31px;}
+    .book{flex-direction:column;}
+    .covers{align-self:center;}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+  .topnav{display:flex;align-items:center;justify-content:space-between;gap:20px;
+    padding-bottom:20px;margin-bottom:34px;border-bottom:1px solid var(--line);}
+  .topnav .brand{font-family:var(--display);font-size:15px;letter-spacing:0.2em;
+    text-transform:uppercase;color:var(--platinum);text-decoration:none;white-space:nowrap;}
+  .topnav .brand:hover{color:var(--red);}
+  .topnav-links{display:flex;gap:26px;flex-wrap:wrap;}
+  .topnav-links a{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+    color:var(--muted);text-decoration:none;transition:color .18s ease;}
+  .topnav-links a:hover{color:var(--platinum);}
+  .topnav-links a.here{color:var(--platinum);}
+  @media(max-width:600px){
+    .topnav{flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:26px;}
+    .topnav-links{gap:18px;}
+  }
+</style>
+<link rel="stylesheet" href="concept-ui.css?v=10">
+
+
+
+
+<link rel="stylesheet" href="page-stack.css?v=1">
+<!-- seo:begin -->
+<meta name="description" content="A coleção do método Concept: Professional English Practice, livros 1 a 5, e Calibrated Speech, um manual de pronúncia para brasileiros.">
+<link rel="canonical" href="https://theconceptmethod.com/pt/book.html">
+<meta property="og:site_name" content="The Concept Method">
+<meta property="og:title" content="Livros de inglês corporativo | The Concept Method">
+<meta property="og:description" content="A coleção do método Concept: Professional English Practice, livros 1 a 5, e Calibrated Speech, um manual de pronúncia para brasileiros.">
+<meta property="og:url" content="https://theconceptmethod.com/pt/book.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://theconceptmethod.com/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="https://theconceptmethod.com/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://theconceptmethod.com/favicon-192.png">
+<link rel="apple-touch-icon" href="https://theconceptmethod.com/apple-touch-icon.png">
+<meta property="og:image" content="https://theconceptmethod.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://theconceptmethod.com/book.html">
+<link rel="alternate" hreflang="pt-BR" href="https://theconceptmethod.com/pt/book.html">
+<link rel="alternate" hreflang="it" href="https://theconceptmethod.com/it/book.html">
+<link rel="alternate" hreflang="x-default" href="https://theconceptmethod.com/book.html">
+<!-- seo:end -->
+</head>
+<body>
+<div class="wrap">
+    <nav class="topnav">
+      <a class="brand" href="pt/"><svg role="img" aria-label="Concept" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><path d="M 340.95 251.30 A 150 150 0 1 1 340.95 148.70" stroke="#E7E8EA" stroke-width="8" stroke-linecap="round" fill="none"/><circle cx="200" cy="200" r="11" fill="#E7E8EA"/><g class="needle"><polygon points="322.87,113.96 208.03,211.47 191.97,188.53" fill="#B3132B"/><circle cx="322.87" cy="113.96" r="7" fill="#B3132B"/></g></svg><span class="wordmark">CONCEPT</span></a>
+      <div class="topnav-links">
+        <a class="cta" href="pt/#start">Fale conosco</a>
+      </div>
+    </nav>
+<nav class="page-stack" aria-label="Páginas">
+  <div class="ps-grp">
+    <a class="ps-link" id="navMethod" href="pt/method.html">Método</a>
+    <a class="ps-link" id="navAbout" href="pt/about.html">Sobre</a>
+    <a class="ps-link" id="navTeam" href="pt/team.html" data-t="nav_team">Time</a>
+    <a class="ps-link" id="navBook" href="pt/book.html" aria-current="page">Livros</a>
+  </div>
+  <div class="ps-grp">
+    <a class="ps-link" id="navLessons" href="https://lessons.theconceptmethod.com">Alunos</a>
+    <a class="ps-link" id="navTeachers" href="https://lessons.theconceptmethod.com/teaching#teacher">Professores</a>
+  </div>
+</nav>
+
+  <header class="masthead">
+    <p class="kicker">The Concept Method</p>
+    <h1>Uma coleção. <em>Um método.</em></h1>
+    <p class="standfirst">Professional English Practice leva você das primeiras palavras ao domínio completo da língua, livro a livro. Calibrated Speech faz o mesmo com a forma como você soa ao falar.</p>
+  </header>
+
+  <section class="collection">
+    <div class="collection-head">
+      <h2>Professional English Practice</h2>
+      <p class="sub">Quatro livros num sistema contínuo, da sua primeira frase em inglês ao domínio completo do C2, e mais um livro dedicado aos phrasal verbs que confundem até profissionais fluentes.</p>
+    </div>
+    <div class="collection-rule"></div>
+    <div id="pep-shelf"><!--pre:pep-shelf--><article class="book"><div class="covers"><div aria-label="Ampliar a capa de It's Not Only a Grammar Book" class="cover-real zoomable" role="button" tabindex="0"><img alt="It's Not Only a Grammar Book, capa, A1-A2" decoding="async" height="1553" loading="lazy" src="PEP_A1-A2_Front_Cover.webp" width="1200"/></div><div aria-label="Ampliar a contracapa de It's Not Only a Grammar Book" class="cover-real zoomable" role="button" tabindex="0"><img alt="It's Not Only a Grammar Book, contracapa, A1-A2" decoding="async" height="1553" loading="lazy" src="PEP_A1-A2_Back_Cover.webp" width="1200"/></div></div><div class="meta"><p class="series-label">Professional English Practice · Livro 1 · CEFR A1-A2</p><h3><a class="book-link" href="library/professional-english-practice-a1-a2/">It's Not Only a Grammar Book</a></h3><p class="subtitle-line">English Communication for Professionals</p><p>Quarenta e quatro unidades corrigem a gramática que você já conhece pela metade: o verbo to be, o presente, o passado, os três futuros, os verbos modais e a oração relativa, que permite parar de falar em frases curtas e separadas. Cada unidade mostra a frase errada ao lado da certa, porque ninguém para de cometer um erro que nunca viu escrito.</p><p class="muted">Para o profissional que ouve que é iniciante e sabe que não é. Você lê o e-mail, acompanha a reunião, e então alguém pergunta algo a você e as palavras somem. Ontem elas estavam lá. Nada do que você diz está errado o bastante para alguém corrigir, então ninguém nunca corrigiu.</p><ul class="whatsinside"><li>Apresentar-se e apresentar o seu trabalho com segurança</li><li>Lidar com cumprimentos, pedidos e conversas do dia a dia</li><li>Transformar frases decoradas em palavras que você realmente quer dizer</li><li>Ter as suas primeiras conversas reais sem travar</li></ul><span class="get">Já disponível</span><div><a class="companion-cta" href="a1a2/a1a2.html">Alunos: acessem as unidades interativas →</a></div></div></article><article class="book"><div class="covers"><div aria-label="Ampliar a capa de It's Not Only a Grammar Book" class="cover-real zoomable" role="button" tabindex="0"><img alt="It's Not Only a Grammar Book, capa, B1-B2" decoding="async" height="1553" loading="lazy" src="PEP_B1-B2_Front_Cover.webp" width="1200"/></div><div aria-label="Ampliar a contracapa de It's Not Only a Grammar Book" class="cover-real zoomable" role="button" tabindex="0"><img alt="It's Not Only a Grammar Book, contracapa, B1-B2" decoding="async" height="1553" loading="lazy" src="PEP_B1-B2_Back_Cover.webp" width="1200"/></div></div><div class="meta"><p class="series-label">Professional English Practice · Livro 2 · CEFR B1-B2</p><h3><a class="book-link" href="library/professional-english-practice-b1-b2/">It's Not Only a Grammar Book</a></h3><p class="subtitle-line">English Communication for Professionals</p><p>Quarenta unidades percorrem as estruturas da fluência real: os sistemas completos de passado e futuro, o irreal e o hipotético, modalidade e dedução, a voz passiva avançada e o discurso indireto, e as estruturas que permitem enfatizar, ceder e perceber o contexto.</p><p class="muted">Para profissionais que já se viram, mas querem parar de simplificar para não errar e começar a conduzir a conversa.</p><ul class="whatsinside"><li>De se virar a dizer o que você realmente quer dizer</li><li>Explicar e justificar o seu raciocínio, não apenas afirmá-lo</li><li>Manter a sua posição quando a reunião acelera</li></ul><span class="get">Já disponível</span><div><a class="companion-cta" href="b1b2/b1b2.html">Alunos: acessem as unidades interativas →</a></div></div></article><article class="book"><div class="covers"><div aria-label="Ampliar a capa de It's Not Only a Grammar Book" class="cover-real zoomable" role="button" tabindex="0"><img alt="It's Not Only a Grammar Book, capa, C1" decoding="async" height="1553" loading="lazy" src="PEP_C1_Front_Cover.webp" width="1200"/></div><div aria-label="Ampliar a contracapa de It's Not Only a Grammar Book" class="cover-real zoomable" role="button" tabindex="0"><img alt="It's Not Only a Grammar Book, contracapa, C1" decoding="async" height="1553" loading="lazy" src="PEP_C1_Back_Cover.webp" width="1200"/></div></div><div class="meta"><p class="series-label">Professional English Practice · Livro 3 · CEFR C1</p><h3><a class="book-link" href="library/professional-english-practice-c1/">It's Not Only a Grammar Book</a></h3><p class="subtitle-line">English Communication for Professionals</p><p>Trinta e seis unidades passam pelo sistema verbal, modalidade, ênfase, coesão, discurso indireto e registro, e terminam na reformulação e no controle do vocabulário que marcam a fluência real. Feito para todo o mundo profissional, não só para executivos.</p><p class="muted">No C1, a gramática já está quase toda lá; o que falta é controle. Este livro trata das escolhas que pesam: quem a frase culpa, quanta certeza você transmite, o que vem primeiro e o que vem por último. A precisão vira estratégia.</p><ul class="whatsinside"><li>Controlar tom, posição e ênfase de propósito</li><li>Ceder num ponto sem perder a sua posição</li><li>Colocar em primeiro plano o que importa</li><li>Relatar e atribuir com precisão</li></ul><span class="get">Já disponível</span><div><a class="companion-cta" href="c1.html">Alunos: acessem as unidades interativas →</a></div></div></article><article class="book"><div class="covers"><div aria-label="Ampliar a capa de It's Not Only a Grammar Book" class="cover-real zoomable" role="button" tabindex="0"><img alt="It's Not Only a Grammar Book, capa, C2" decoding="async" height="1553" loading="lazy" src="PEP_C2_Front_Cover.webp" width="1200"/></div><div aria-label="Ampliar a contracapa de It's Not Only a Grammar Book" class="cover-real zoomable" role="button" tabindex="0"><img alt="It's Not Only a Grammar Book, contracapa, C2" decoding="async" height="1553" loading="lazy" src="PEP_C2_Back_Cover.webp" width="1200"/></div></div><div class="meta"><p class="series-label">Professional English Practice · Livro 4 · CEFR C2</p><h3><a class="book-link" href="library/professional-english-practice-c2/">It's Not Only a Grammar Book</a></h3><p class="subtitle-line">English Communication for Professionals</p><p>Vinte e duas unidades vão do aspecto verbal e das condicionais formais à modalidade, à ordem marcada das palavras, à coesão e ao discurso indireto, e terminam na competência que define o nível: dizer a mesma coisa de três formas diferentes, de propósito, para três públicos diferentes.</p><p class="muted">O C2 retoma o conteúdo do C1 com foco na nuance: reformulação, estrutura marcada, ironia e atenuação, a diferença exata entre quase sinônimos. Este livro ensina a dizer a mesma coisa de três formas e a escolher a que o momento pede.</p><ul class="whatsinside"><li>Reformular a mesma ideia de três formas</li><li>Usar inversão e frases clivadas para dar ênfase</li><li>Dizer menos para dizer mais: ironia, lítotes e atenuação</li><li>Escolher a palavra com o peso exato</li></ul><span class="get">Já disponível</span><div><a class="companion-cta" href="c2.html">Alunos: acessem as unidades interativas →</a></div></div></article><article class="book"><div class="covers"><div aria-label="Ampliar a capa de It's Not Only a Phrasal Verb List" class="cover-real zoomable" role="button" tabindex="0"><img alt="It's Not Only a Phrasal Verb List, capa, B1-C2" decoding="async" height="1553" loading="lazy" src="PEP_PhrasalVerbs_Front_Cover.webp" width="1200"/></div><div aria-label="Ampliar a contracapa de It's Not Only a Phrasal Verb List" class="cover-real zoomable" role="button" tabindex="0"><img alt="It's Not Only a Phrasal Verb List, contracapa, B1-C2" decoding="async" height="1553" loading="lazy" src="PEP_PhrasalVerbs_Back_Cover.webp" width="1200"/></div></div><div class="meta"><p class="series-label">Professional English Practice · Livro 5 · CEFR B1-C2</p><h3><a class="book-link" href="library/phrasal-verbs/">It's Not Only a Phrasal Verb List</a></h3><p class="subtitle-line">English Communication for Professionals</p><p>Organizado por partícula, e não por tema: as mesmas poucas partículas, como up, out e off, se repetem em dezenas de verbos com um significado central que se pode identificar. Assim, o que você reconhece num verbo vale para os outros, em vez de recomeçar do zero a cada verbo novo.</p><p class="muted">Os outros livros de phrasal verbs entregam uma lista sem fim e pedem que você a decore. A lista nunca acaba, então os alunos desistem e usam a palavra de origem latina, mais rígida. Este livro faz o contrário: você aprende vinte partículas, não dois mil verbos, e o significado vem da partícula. Você para de tentar lembrar. Começa a prever.</p><ul class="whatsinside"><li>Ler a partícula e prever um verbo que você nunca viu</li><li>Escolher o phrasal verb que um nativo usaria, não a palavra de origem latina</li><li>Entender phrasal verbs na fala rápida em vez de perdê-los</li><li>Transformar vinte partículas em centenas de verbos que você consegue usar</li></ul><span class="get">Já disponível</span><div><a class="companion-cta" href="phrasal-verbs.html">Alunos: acessem as unidades interativas →</a></div></div></article><!--/pre:pep-shelf--></div>
+  </section>
+
+  <section class="collection">
+    <div class="collection-head">
+      <h2>Calibrated Speech</h2>
+      <p class="sub">Um manual de pronúncia do A1 ao C2, com dois critérios: ser entendido e ser levado a sério.</p>
+    </div>
+    <div class="collection-rule"></div>
+    <div id="cs-shelf"><!--pre:cs-shelf--><article class="book"><div class="covers"><div aria-label="Ampliar a capa de Calibrated Speech" class="cover-real zoomable" role="button" tabindex="0"><img alt="Calibrated Speech, capa, A1-C2" decoding="async" height="1553" loading="lazy" src="PEP_CalibratedSpeech_Front_Cover.webp" width="1200"/></div><div aria-label="Ampliar a contracapa de Calibrated Speech" class="cover-real zoomable" role="button" tabindex="0"><img alt="Calibrated Speech, contracapa, A1-C2" decoding="async" height="1553" loading="lazy" src="PEP_CalibratedSpeech_Back_Cover.webp" width="1200"/></div></div><div class="meta"><p class="series-label">Calibrated Speech · CEFR A1-C2</p><h3><a class="book-link" href="library/calibrated-speech/">Calibrated Speech</a></h3><p class="subtitle-line">American English for Brazilian Speakers</p><p>Um manual de pronúncia organizado nível por nível, do A1 ao C2, com dois critérios: ser entendido e ter credibilidade. Começa pelos sons que mudam o sentido, como o th, as consoantes finais e ship versus sheep, passa pelo ritmo e pelo R americano e chega à entonação e ao controle de registro que soam confiáveis para ouvintes americanos.</p><p class="muted">Para falantes de português brasileiro que se fazem entender, mas cujo sotaque ainda influencia o quanto são levados a sério na reunião.</p><ul class="whatsinside"><li>Sequência som por som, do A1 ao C2</li><li>Texto de diagnóstico e um resumo das correções mais rápidas</li><li>Exercícios completos com gabarito</li></ul><span class="get">Já disponível</span><div><a class="companion-cta" href="calibrated-speech/contents.html">Alunos: acessem as unidades interativas →</a></div></div></article><!--/pre:cs-shelf--></div>
+  </section>
+
+  <footer>
+    <span>Concept &middot; Mind Your Future</span>
+    <span><a href="pt/">Voltar para a Concept</a></span>
+    <div class="follow-us"><span class="follow-label">Siga a Concept</span>
+      <a href="https://www.instagram.com/theconceptmethod" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/social/instagram.png" width="30" height="30" alt="Instagram" loading="lazy" decoding="async"></a>
+      <a href="https://www.facebook.com/theconceptmethod" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/social/facebook.png" width="30" height="30" alt="Facebook" loading="lazy" decoding="async"></a>
+      <a href="https://www.tiktok.com/@theconceptmethod" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/social/tiktok.png" width="30" height="30" alt="TikTok" loading="lazy" decoding="async"></a>
+      <a href="https://www.linkedin.com/in/pedro-gigollotti/" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="assets/social/linkedin.png" width="30" height="25" alt="LinkedIn" loading="lazy" decoding="async"></a>
+    </div>
+    <div class="footer-legal" style="margin-top:10px;font-size:12px;letter-spacing:.06em;text-transform:uppercase"><a href="/privacy.html" style="color:inherit;opacity:.75">Privacidade</a></div>
+  </footer>
+
+  <div id="lightbox" aria-hidden="true">
+    <div class="lb-inner">
+      <button class="lb-close" id="lbClose" type="button" aria-label="Fechar a capa ampliada">&times;</button>
+      <div id="lbContent"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════
+   Netto: everything tagged [DRAFT] is copy pulled or paraphrased from
+   the real manuscripts you sent, tightened for a back-of-book length.
+   Edit freely, the layout doesn't care about text length within reason.
+   Real cover art (Books 1 and 2, and Calibrated Speech) is embedded
+   directly from your files; Books 3-5 use the placeholder mock cover
+   until real art exists for them.
+   ══════════════════════════════════════════════════════════════════ */
+
+const PEP_BOOKS = [
+  {
+    seriesLabel: "Professional English Practice · Livro 1",
+    level: "A1-A2",
+    title: "It's Not Only a Grammar Book",
+    subtitle: "English Communication for Professionals",
+    hook: "It's not <i>only</i> a grammar book.",
+    slug: "professional-english-practice-a1-a2", realCover: "PEP_A1-A2_Front_Cover.webp",
+    realBack: "PEP_A1-A2_Back_Cover.webp",
+    companionUrl: "a1a2/a1a2.html",
+    companionLabel: "Alunos: acessem as unidades interativas",
+    pedagogical: "Quarenta e quatro unidades corrigem a gramática que você já conhece pela metade: o verbo to be, o presente, o passado, os três futuros, os verbos modais e a oração relativa, que permite parar de falar em frases curtas e separadas. Cada unidade mostra a frase errada ao lado da certa, porque ninguém para de cometer um erro que nunca viu escrito.",
+    commercial: "Para o profissional que ouve que é iniciante e sabe que não é. Você lê o e-mail, acompanha a reunião, e então alguém pergunta algo a você e as palavras somem. Ontem elas estavam lá. Nada do que você diz está errado o bastante para alguém corrigir, então ninguém nunca corrigiu.",
+    whatsinside: ["Apresentar-se e apresentar o seu trabalho com segurança", "Lidar com cumprimentos, pedidos e conversas do dia a dia", "Transformar frases decoradas em palavras que você realmente quer dizer", "Ter as suas primeiras conversas reais sem travar"]
+  },
+  {
+    seriesLabel: "Professional English Practice · Livro 2",
+    level: "B1-B2",
+    title: "It's Not Only a Grammar Book",
+    subtitle: "English Communication for Professionals",
+    hook: "It's not <i>only</i> a grammar book.",
+    slug: "professional-english-practice-b1-b2", realCover: "PEP_B1-B2_Front_Cover.webp",
+    realBack: "PEP_B1-B2_Back_Cover.webp",
+    companionUrl: "b1b2/b1b2.html",
+    companionLabel: "Alunos: acessem as unidades interativas",
+    pedagogical: "Quarenta unidades percorrem as estruturas da fluência real: os sistemas completos de passado e futuro, o irreal e o hipotético, modalidade e dedução, a voz passiva avançada e o discurso indireto, e as estruturas que permitem enfatizar, ceder e perceber o contexto.",
+    commercial: "Para profissionais que já se viram, mas querem parar de simplificar para não errar e começar a conduzir a conversa.",
+    whatsinside: ["De se virar a dizer o que você realmente quer dizer", "Explicar e justificar o seu raciocínio, não apenas afirmá-lo", "Manter a sua posição quando a reunião acelera"]
+  },
+  {
+    seriesLabel: "Professional English Practice · Livro 3",
+    level: "C1",
+    title: "It's Not Only a Grammar Book",
+    subtitle: "English Communication for Professionals",
+    hook: "It's not <i>only</i> a grammar book.",
+    slug: "professional-english-practice-c1", realCover: "PEP_C1_Front_Cover.webp", realBack: "PEP_C1_Back_Cover.webp",
+    companionUrl: "c1.html",
+    companionLabel: "Alunos: acessem as unidades interativas",
+    pedagogical: "Trinta e seis unidades passam pelo sistema verbal, modalidade, ênfase, coesão, discurso indireto e registro, e terminam na reformulação e no controle do vocabulário que marcam a fluência real. Feito para todo o mundo profissional, não só para executivos.",
+    commercial: "No C1, a gramática já está quase toda lá; o que falta é controle. Este livro trata das escolhas que pesam: quem a frase culpa, quanta certeza você transmite, o que vem primeiro e o que vem por último. A precisão vira estratégia.",
+    whatsinside: ["Controlar tom, posição e ênfase de propósito", "Ceder num ponto sem perder a sua posição", "Colocar em primeiro plano o que importa", "Relatar e atribuir com precisão"]
+  },
+  {
+    seriesLabel: "Professional English Practice · Livro 4",
+    level: "C2",
+    title: "It's Not Only a Grammar Book",
+    subtitle: "English Communication for Professionals",
+    hook: "It's not <i>only</i> a grammar book.",
+    slug: "professional-english-practice-c2", realCover: "PEP_C2_Front_Cover.webp", realBack: "PEP_C2_Back_Cover.webp",
+    companionUrl: "c2.html",
+    companionLabel: "Alunos: acessem as unidades interativas",
+    pedagogical: "Vinte e duas unidades vão do aspecto verbal e das condicionais formais à modalidade, à ordem marcada das palavras, à coesão e ao discurso indireto, e terminam na competência que define o nível: dizer a mesma coisa de três formas diferentes, de propósito, para três públicos diferentes.",
+    commercial: "O C2 retoma o conteúdo do C1 com foco na nuance: reformulação, estrutura marcada, ironia e atenuação, a diferença exata entre quase sinônimos. Este livro ensina a dizer a mesma coisa de três formas e a escolher a que o momento pede.",
+    whatsinside: ["Reformular a mesma ideia de três formas", "Usar inversão e frases clivadas para dar ênfase", "Dizer menos para dizer mais: ironia, lítotes e atenuação", "Escolher a palavra com o peso exato"]
+  },
+  {
+    seriesLabel: "Professional English Practice · Livro 5",
+    level: "B1-C2",
+    title: "It's Not Only a Phrasal Verb List",
+    subtitle: "English Communication for Professionals",
+    hook: "It's not <i>only</i> a phrasal verb list.",
+    slug: "phrasal-verbs", realCover: "PEP_PhrasalVerbs_Front_Cover.webp", realBack: "PEP_PhrasalVerbs_Back_Cover.webp",
+    companionUrl: "phrasal-verbs.html",
+    companionLabel: "Alunos: acessem as unidades interativas",
+    pedagogical: "Organizado por partícula, e não por tema: as mesmas poucas partículas, como up, out e off, se repetem em dezenas de verbos com um significado central que se pode identificar. Assim, o que você reconhece num verbo vale para os outros, em vez de recomeçar do zero a cada verbo novo.",
+    commercial: "Os outros livros de phrasal verbs entregam uma lista sem fim e pedem que você a decore. A lista nunca acaba, então os alunos desistem e usam a palavra de origem latina, mais rígida. Este livro faz o contrário: você aprende vinte partículas, não dois mil verbos, e o significado vem da partícula. Você para de tentar lembrar. Começa a prever.",
+    whatsinside: ["Ler a partícula e prever um verbo que você nunca viu", "Escolher o phrasal verb que um nativo usaria, não a palavra de origem latina", "Entender phrasal verbs na fala rápida em vez de perdê-los", "Transformar vinte partículas em centenas de verbos que você consegue usar"]
+  }
+];
+
+const CS_BOOKS = [
+  {
+    seriesLabel: "Calibrated Speech",
+    level: "A1-C2",
+    title: "Calibrated Speech",
+    subtitle: "American English for Brazilian Speakers",
+    hook: "Sound the way you want <i>to be heard</i>.",
+    slug: "calibrated-speech", realCover: "PEP_CalibratedSpeech_Front_Cover.webp", realBack: "PEP_CalibratedSpeech_Back_Cover.webp",
+    companionUrl: "calibrated-speech/contents.html",
+    companionLabel: "Alunos: acessem as unidades interativas",
+    pedagogical: "Um manual de pronúncia organizado nível por nível, do A1 ao C2, com dois critérios: ser entendido e ter credibilidade. Começa pelos sons que mudam o sentido, como o th, as consoantes finais e ship versus sheep, passa pelo ritmo e pelo R americano e chega à entonação e ao controle de registro que soam confiáveis para ouvintes americanos.",
+    commercial: "Para falantes de português brasileiro que se fazem entender, mas cujo sotaque ainda influencia o quanto são levados a sério na reunião.",
+    whatsinside: ["Sequência som por som, do A1 ao C2", "Texto de diagnóstico e um resumo das correções mais rápidas", "Exercícios completos com gabarito"]
+  }
+];
+
+/* ══════════════════════════════════════════════════════════════════
+   Nothing below here needs editing.
+   ══════════════════════════════════════════════════════════════════ */
+
+function mockFront(b){
+  return '<div class="cover-mock front zoomable" tabindex="0" role="button" aria-label="Ampliar a capa de ' + b.title + '">'
+    + '<div class="inprod">Capa em produção</div>'
+    + '<div class="top"><span></span>'
+      + '<span class="badge"><span class="lbl">Nível CEFR</span>'
+      + '<span class="val">' + b.level + '</span></span>'
+    + '</div>'
+    + '<div class="hook">' + b.hook + '</div>'
+    + '<div class="hookrule"></div>'
+    + '<div class="subtitle">' + b.subtitle + '</div>'
+    + '<div class="imprint">'
+      + '<div class="by">Por Pedro Gigollotti Netto</div>'
+      + '<div class="brand">Concept &middot; Mind Your Future</div>'
+    + '</div></div>';
+}
+
+function covers(b){
+  const front = b.realCover
+    ? '<div class="cover-real zoomable" tabindex="0" role="button" aria-label="Ampliar a capa de ' + b.title + '"><img src="' + b.realCover + '" width="1200" height="1553" loading="lazy" decoding="async" alt="' + b.title + ', capa, ' + b.level + '"></div>'
+    : mockFront(b);
+  const back = b.realBack
+    ? '<div class="cover-real zoomable" tabindex="0" role="button" aria-label="Ampliar a contracapa de ' + b.title + '"><img src="' + b.realBack + '" width="1200" height="1553" loading="lazy" decoding="async" alt="' + b.title + ', contracapa, ' + b.level + '"></div>'
+    : "";
+  return front + back;
+}
+
+function card(b){
+  const items = (b.whatsinside || []).map(function(i){ return '<li>' + i + '</li>'; }).join("");
+  return '<article class="book">'
+    + '<div class="covers">' + covers(b) + '</div>'
+    + '<div class="meta">'
+      + '<p class="series-label">' + b.seriesLabel + ' &middot; CEFR ' + b.level + '</p>'
+      + '<h3><a class="book-link" href="library/' + b.slug + '/">' + b.title + '</a></h3>'
+      + '<p class="subtitle-line">' + b.subtitle + '</p>'
+      + '<p>' + b.pedagogical + '</p>'
+      + '<p class="muted">' + b.commercial + '</p>'
+      + '<ul class="whatsinside">' + items + '</ul>'
+      + '<span class="get">Já disponível</span>'
+    + (b.companionUrl ? '<div><a class="companion-cta" href="' + b.companionUrl + '">' + b.companionLabel + ' &rarr;</a></div>' : '')
+    + '</div></article>';
+}
+
+document.getElementById("pep-shelf").innerHTML = PEP_BOOKS.map(card).join("");
+document.getElementById("cs-shelf").innerHTML = CS_BOOKS.map(card).join("");
+
+/* ---- Zoom lightbox: click or Enter/Space on any cover to read it up close ---- */
+(function(){
+  const lb = document.getElementById("lightbox");
+  const lbContent = document.getElementById("lbContent");
+  const lbClose = document.getElementById("lbClose");
+  let lastTrigger = null;
+
+  function openFor(trigger){
+    lastTrigger = trigger;
+    lbContent.innerHTML = "";
+    const img = trigger.querySelector("img");
+    if (img){
+      const big = document.createElement("img");
+      big.src = img.src;
+      big.alt = img.alt;
+      lbContent.appendChild(big);
+    } else {
+      const clone = trigger.cloneNode(true);
+      clone.removeAttribute("tabindex");
+      clone.removeAttribute("role");
+      clone.classList.remove("zoomable");
+      const wrap = document.createElement("div");
+      wrap.className = "lb-mockwrap";
+      wrap.appendChild(clone);
+      lbContent.appendChild(wrap);
+    }
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden", "false");
+    lbClose.focus();
+    document.addEventListener("keydown", onKeydown);
+  }
+
+  function close(){
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden", "true");
+    document.removeEventListener("keydown", onKeydown);
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  function onKeydown(e){
+    if (e.key === "Escape") close();
+  }
+
+  document.addEventListener("click", function(e){
+    const trigger = e.target.closest(".zoomable");
+    if (trigger){ openFor(trigger); return; }
+    if (e.target === lb){ close(); }
+  });
+
+  document.addEventListener("keydown", function(e){
+    const trigger = e.target.closest && e.target.closest(".zoomable");
+    if (trigger && (e.key === "Enter" || e.key === " " || e.key === "Spacebar")){
+      e.preventDefault();
+      openFor(trigger);
+    }
+  });
+
+  lbClose.addEventListener("click", close);
+})();
+</script>
+<script src="page-stack.js?v=1" defer></script>
+</body>
+</html>
