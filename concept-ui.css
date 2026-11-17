@@ -5,7 +5,7 @@
    css/app.css .btn): the brand red #B3132B, corners of 4px, no pills, no glow.
    Linked after each page's own <style>, so it wins on equal selectors. */
 
-:root{--concept-red:#B3132B;--concept-red-hover:#C8172F;--concept-red-press:#8E0F22;}
+:root{--concept-red:#B3132B;--concept-red-hover:#8E0F22;--concept-red-press:#8E0F22;}
 
 /* the mark: 2/3 larger than it was, mark and word together, so the master's proportion holds
    (Pedro, 6 Oct 2026: "o logo tem que ser evidente para fixacao da marca"). Ring 60px, word 30px,
@@ -94,7 +94,7 @@ h2.headline{font-size:clamp(26px,3.8vw,48px);}
 .topnav-links .nav-link{color:#B8BCC4;font-family:inherit;}
 .topnav-links .nav-link:hover,.topnav-links .nav-link[aria-current]{color:#E7E8EA;}
 .topnav .cta{text-transform:none;letter-spacing:0;font-family:inherit;display:inline-flex;align-items:center;background:#B3132B;color:#fff;text-decoration:none;white-space:nowrap;transition:background .2s;}
-.topnav .cta:hover{background:#C8172F;}
+.topnav .cta:hover{background:#8E0F22;}
 .topnav{border-bottom:1px solid rgba(231,232,234,.12);margin-bottom:34px;}
 @media (max-width:1100px){ .topnav-links .nav-link{display:none;} }
 @media (max-width:760px){
@@ -103,26 +103,20 @@ h2.headline{font-size:clamp(26px,3.8vw,48px);}
   .topnav .cta{min-height:40px;padding:0 14px;font-size:13px;}
 }
 
-/* CONTRAST AND FOCUS (site audit, 6 Oct 2026). Small text needs 4.5:1, large text 3:1.
-   The brand red #B3132B is 2.85:1 on the near-black ground, so on dark pages the word and
-   the large red titles use the app's lighter red #C8172F (3.4:1) and small red labels #E04A4F
-   (4.9:1). Light pages keep #B3132B (5.6:1 on platinum). */
-/* O WORDMARK DA BARRA USA O VERMELHO CLARO, E O NUMERO E A RAZAO.
-   A 16px ele e texto pequeno, e o #C8172F da 3,39 sobre o escuro, abaixo do
-   minimo de 4,5. O #E04A4F da 4,93 e e o mesmo que a linha abaixo ja usava
-   para as etiquetas pequenas. Os titulos grandes ficam no #C8172F, onde 3
-   para 1 e o minimo e 3,39 passa. */
+/* ONE RED (Pedro, 17 Nov 2026: "Nao é o vermelho da concept"; BRAND.md: never lightened).
+   Every red is #B3132B. On the dark ground it is kept for large type, the wordmark and fills;
+   small labels that used a lighter red are white, and the line-through still marks the wrong form. */
 /* THE WORDMARK IS THE LOGO, IN THE BRAND RED (Pedro, 29 Oct 2026: "o vermelho nao esta no mesmo tom").
    A logotype is exempt from the contrast minimum, and BRAND.md says the red is never lightened. */
 #nav .wordmark,.topnav .brand .wordmark{color:#B3132B;}
-.masthead h1 em{color:#C8172F;}
-.meta .series-label{color:#E04A4F;}
+.masthead h1 em{color:#B3132B;}
+.meta .series-label{color:#fff;}
 .quote .role{color:#6B7079;}
 .trust-label,.cascade-hint{color:#8A8F98;}
 .trole,.tline{color:#B3132B;}
 .out.empty{color:#9A9EA6;}
-.lab-do,.rl-verdict .h,.take .h,.trap .wrong,.em .rate{color:#FF4342;}
-.tick:focus-visible,.lang-choice:focus-visible{outline:2px solid #E04A4F;outline-offset:2px;}
+.lab-do,.rl-verdict .h,.take .h,.trap .wrong,.trap .arrow,.em .rate{color:#fff;}
+.tick:focus-visible,.lang-choice:focus-visible{outline:2px solid #E7E8EA;outline-offset:2px;}
 @media (max-width:480px){
   #nav .nav-right{gap:6px;min-width:0;}
   #nav .cta{padding:0 10px;font-size:12px;white-space:nowrap;}

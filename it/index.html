@@ -15,15 +15,11 @@
     --black:#000; --panel:#0B0B0B; --white:#fff;
     --red:#B3132B; --red-hi:#8E0F22;
     --gray:#8A8F98;
-    /* O VERMELHO DE TEXTO TROCA COM O FUNDO, E O NUMERO E MEDIDO.
-       Desde 9 out 2026 (Brand Book 2.0): claro #B3132B (6,90 no branco), escuro #E66B7B (6,33 no painel; Pedro, 11 out 2026).
-       Um vermelho so nao passa nos dois lados: #E12F2E dava 4,52 sobre branco
-       e 4,43 sobre o quase-preto, e o anterior falhava nos dois, com
-       4,46 e 4,49. Entao o texto vermelho tem dois valores e o fundo escolhe:
-       aqui o claro, porque esta pagina e escura, e `.bg-white` troca para o
-       escuro. `--red` continua a ser a marca e os preenchimentos, onde 3 para
-       1 ja chega e ja passa. */
-    --red-ink:#E66B7B; --gray-ink:#70757E; --gray-dark:#4A4E57; --silver:#E4E6EA;
+    /* ONE RED (Pedro, 17 Nov 2026: "Nao é o vermelho da concept"; BRAND.md: never lightened).
+       Every red is #B3132B. It reads on black only as large type (3.05:1), so red text is
+       large; small text that used to be red is white on dark grounds (--red-small) and stays
+       #B3132B on light grounds, where it passes (6.9:1). */
+    --red-ink:#B3132B; --red-small:#fff; --gray-ink:#70757E; --gray-dark:#4A4E57; --silver:#E4E6EA;
     --line-dark:rgba(228, 230, 234, 0.12); --line-light:rgba(0,0,0,.09);
     --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
     --serif:'Instrument Serif',Georgia,serif;
@@ -54,7 +50,7 @@
   .team-note{margin:0;color:var(--gray-ink);font-size:13px;line-height:1.6;max-width:560px;}
   .team-test{font-size:14px;padding:13px 22px;}
   .team-test span:first-child{font-weight:400;opacity:.9;}
-  .ttry{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red-ink);text-decoration:none;border-bottom:1px solid rgba(225,47,46,.35);}
+  .ttry{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--red-ink);text-decoration:none;border-bottom:1px solid rgba(179,19,43,.35);}
   .ttry:hover{border-bottom-color:var(--red);}
   .ttry[hidden]{display:none;}
   #team .team-intro{max-width:760px;}
@@ -73,7 +69,7 @@
   .tmsg.them .lbl{color:var(--red-ink);}
   .tmsg.them .lbl img{width:22px;height:22px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#E8E8E8;}
   .tmsg b{font-weight:600;}
-  .tmsg .q{background:rgba(225,47,46,.10);border-radius:4px;padding:0 3px;}
+  .tmsg .q{background:rgba(179,19,43,.10);border-radius:4px;padding:0 3px;}
   .tdots{display:inline-flex;gap:4px;padding:4px 0;}
   .tdots i{width:7px;height:7px;border-radius:50%;background:#B9BCC2;animation:tdot 1s infinite;}
   .tdots i:nth-child(2){animation-delay:.15s}.tdots i:nth-child(3){animation-delay:.3s}
@@ -117,14 +113,14 @@
   .tmsg.me .lbl{color:#565A62;}
   .tmsg.me .caret{background:#0A0B0D;}
   .tmsg.them{background:radial-gradient(circle at 100% 0%,#2A2C31 0%,#0A0B0D 55%);color:#E7E8EA;border-bottom-left-radius:2px;}
-  .tmsg.them .lbl{color:#E04A4F;}
+  .tmsg.them .lbl{color:#B3132B;}
   .tmsg.them .q{background:rgba(224,74,79,.2);}
   .tmsg.them .ttry{color:#E7E8EA;border-bottom-color:rgba(231,232,234,.4);}
   .tmsg.them .ttry:hover{border-bottom-color:#E7E8EA;}
   .tdots i{background:#A7AAB0;}
   .bballoon{background:#0A0B0D;color:#E7E8EA;border-radius:8px 8px 2px 8px;}
   .bballoon .bl{color:#A7AAB0;}
-  .bballoon.en{box-shadow:0 0 0 1.5px #E04A4F inset,0 10px 26px rgba(0,0,0,.14);}
+  .bballoon.en{box-shadow:0 0 0 1.5px #B3132B inset,0 10px 26px rgba(0,0,0,.14);}
   .ttabs{gap:12px;margin-top:12px;}
   .ttab{background:#E7E8EA;border:1px solid #E7E8EA;border-radius:8px;color:#3A3D44;font-size:14px;padding:10px 11px;}
   .ttab img{background:#F6F7F8;}
@@ -176,7 +172,7 @@
     position:absolute;top:50%;left:50%;
     width:900px;height:900px;max-width:150vw;max-height:150vw;
     margin:-450px 0 0 -450px;border-radius:50%;
-    background:radial-gradient(circle, rgba(225,47,46,.15) 0%, rgba(225,47,46,0) 65%);
+    background:radial-gradient(circle, rgba(179,19,43,.15) 0%, rgba(179,19,43,0) 65%);
     opacity:0;animation:glowIn 2.4s ease forwards .25s;z-index:1;
   }
   @keyframes glowIn{to{opacity:1;}}
@@ -223,7 +219,7 @@
     width:min(78vw,62vh);max-width:480px;margin:0 auto;position:relative;z-index:2;
     opacity:0;transform:scale(.55) rotate(-8deg);
     animation:instrumentIn 1.4s cubic-bezier(.22,1,.36,1) forwards .15s;
-    filter:drop-shadow(0 0 35px rgba(225,47,46,.28));
+    filter:drop-shadow(0 0 35px rgba(179,19,43,.28));
   }
   @keyframes instrumentIn{
     0%{opacity:0;transform:scale(.55) rotate(-8deg);}
@@ -249,7 +245,7 @@
   }
   @media (prefers-reduced-motion:reduce){ .needle-instrument{transition:none;} }
 
-  .tick{cursor:pointer;outline:none;-webkit-tap-highlight-color:rgba(225,47,46,.3);touch-action:manipulation;}
+  .tick{cursor:pointer;outline:none;-webkit-tap-highlight-color:rgba(179,19,43,.3);touch-action:manipulation;}
   .tick line{stroke:#8A8F98;transition:stroke .25s ease;}
   .tick .flag-fade{transition:transform .3s cubic-bezier(.22,1,.36,1),filter .3s ease;
     transform-origin:0px 0px;filter:saturate(.75);pointer-events:none;}
@@ -327,7 +323,7 @@
   .lang-switch button{background:none;border:none;color:var(--silver);font-family:var(--sans);
     font-weight:600;font-size:11px;padding:7px 11px;border-radius:999px;cursor:pointer;
     display:inline-flex;align-items:center;gap:6px;
-    -webkit-tap-highlight-color:rgba(225,47,46,.3);touch-action:manipulation;transition:all .22s ease;position:relative;z-index:120;}
+    -webkit-tap-highlight-color:rgba(179,19,43,.3);touch-action:manipulation;transition:all .22s ease;position:relative;z-index:120;}
   .lang-switch .flag-chip{
     width:15px;height:15px;border-radius:50%;overflow:hidden;flex:0 0 auto;display:block;
     -webkit-mask-image:radial-gradient(circle, #000 55%, transparent 100%);
@@ -338,7 +334,7 @@
   #nav .cta{background:var(--red);color:#fff;border:none;border-radius:999px;padding:10px 20px;
     font-family:var(--sans);font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;
     touch-action:manipulation;transition:transform .18s ease,background .22s ease,box-shadow .22s ease;z-index:110;position:relative;}
-  #nav .cta:hover{background:var(--red-hi);transform:translateY(-2px);box-shadow:0 8px 22px rgba(225,47,46,.4);}
+  #nav .cta:hover{background:var(--red-hi);transform:translateY(-2px);box-shadow:0 8px 22px rgba(179,19,43,.4);}
   @media (max-width:760px){
     #nav{padding:12px 16px;}
     #nav .wordmark{display:none;}
@@ -350,12 +346,12 @@
   /* ===== LAYOUT ===== */
   .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
   .bg-black{background:#000;color:#fff;}
-  .bg-white{background:#fff;color:#000;--red-ink:#B3132B;}
+  .bg-white{background:#fff;color:#000;--red-ink:#B3132B;--red-small:#B3132B;}
   .bg-red{background:var(--red);color:#fff;}
   .section-pad{padding:120px 0;}
   @media (max-width:760px){.section-pad{padding:80px 0;} .wrap{padding:0 20px;}}
 
-  .kicker{font-size:11.5px;font-weight:600;letter-spacing:3px;color:var(--red-ink);margin:0 0 18px;}
+  .kicker{font-size:11.5px;font-weight:600;letter-spacing:3px;color:var(--red-small);margin:0 0 18px;}
   h1.hero{font-weight:400;margin:0;font-size:clamp(36px,7.2vw,84px);line-height:1.04;letter-spacing:-.03em;}
   h2.headline{font-weight:400;margin:0 0 22px;font-size:clamp(27px,4.3vw,53px);line-height:1.08;letter-spacing:-.02em;}
   .lede{font-size:clamp(15.5px,1.5vw,18.5px);line-height:1.6;color:var(--gray-dark);max-width:680px;}
@@ -368,7 +364,7 @@
     cursor:pointer;background:none;touch-action:manipulation;
     transition:transform .2s ease,background .25s ease,color .25s ease,box-shadow .25s ease;}
   .btn-solid{background:var(--red);border-color:var(--red);color:#fff;}
-  .btn-solid:hover{background:var(--red-hi);transform:translateY(-3px);box-shadow:0 12px 30px rgba(225,47,46,.38);}
+  .btn-solid:hover{background:var(--red-hi);transform:translateY(-3px);box-shadow:0 12px 30px rgba(179,19,43,.38);}
   .btn-outline{color:#fff;}
   .btn-outline:hover{background:#fff;color:#000;transform:translateY(-3px);}
 
@@ -411,14 +407,14 @@
 
   .card{background:#F8F9FA;border:1px solid rgba(0,0,0,.06);border-radius:26px;padding:34px;
     transition:transform .35s cubic-bezier(.25,1,.25,1),box-shadow .35s ease,border-color .35s ease;}
-  .card:hover{transform:translateY(-8px);box-shadow:0 20px 44px rgba(0,0,0,.08);border-color:rgba(225,47,46,.35);}
+  .card:hover{transform:translateY(-8px);box-shadow:0 20px 44px rgba(0,0,0,.08);border-color:rgba(179,19,43,.35);}
   .card h3{font-weight:600;font-size:19px;margin:0 0 12px;line-height:1.3;}
   .card p{margin:0;font-size:14.5px;line-height:1.62;color:var(--gray-dark);}
   .card.on-dark{background:var(--panel);border-color:var(--line-dark);color:#fff;}
   .card.on-dark p{color:var(--silver);}
   .card.hero-card{background:var(--red);border-color:var(--red);color:#fff;}
   .card.hero-card p{color:rgba(255,255,255,.93);}
-  .card .num{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--red-ink);
+  .card .num{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--red-small);
     line-height:1;margin-bottom:14px;display:block;}
   .card.hero-card .num{color:#fff;}
 
@@ -501,13 +497,13 @@
   .quote{background:#fff;border:1px solid var(--line-light);border-radius:24px;padding:30px;
     display:flex;flex-direction:column;
     transition:transform .35s cubic-bezier(.25,1,.25,1),box-shadow .35s ease,border-color .35s ease;}
-  .quote:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(0,0,0,.09);border-color:rgba(225,47,46,.3);}
+  .quote:hover{transform:translateY(-7px);box-shadow:0 20px 44px rgba(0,0,0,.09);border-color:rgba(179,19,43,.3);}
   .quote .qm{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--red-ink);
     line-height:.8;margin-bottom:12px;}
   .quote p{margin:0 0 22px;font-size:14.5px;line-height:1.65;color:var(--gray-dark);flex:1;}
   .quote .who{font-weight:600;font-size:14px;color:#000;}
   .quote .role{font-size:12.5px;color:#70757E;margin-top:3px;line-height:1.4;}
-  .quote.feature{--red-ink:#E66B7B;background:var(--panel);border-color:var(--line-dark);}
+  .quote.feature{--red-ink:#B3132B;background:var(--panel);border-color:var(--line-dark);}
   .quote.feature p{color:var(--silver);font-size:16px;}
   .quote.feature .who{color:#fff;}
   .quote.feature .role{color:#9AA0A8;}
@@ -556,7 +552,7 @@
   .cascade-tag{color:var(--silver);letter-spacing:5px;font-size:12px;margin-top:8px;opacity:.7;}
   .cascade-hint{color:#7D828B;font-size:11px;letter-spacing:2px;margin-top:34px;text-transform:uppercase;}
   .cascade-right{flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 6vw;border-left:1px solid var(--line-dark);}
-  .lang-choice{display:flex;align-items:center;gap:22px;background:none;border:none;text-align:left;color:var(--silver);font-family:var(--serif);font-style:italic;font-size:clamp(38px,5.6vw,70px);line-height:1.14;cursor:pointer;padding:6px 0;opacity:0;transform:translateX(34px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1),color .25s ease;-webkit-tap-highlight-color:rgba(225,47,46,.3);}
+  .lang-choice{display:flex;align-items:center;gap:22px;background:none;border:none;text-align:left;color:var(--silver);font-family:var(--serif);font-style:italic;font-size:clamp(38px,5.6vw,70px);line-height:1.14;cursor:pointer;padding:6px 0;opacity:0;transform:translateX(34px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1),color .25s ease;-webkit-tap-highlight-color:rgba(179,19,43,.3);}
   .lang-choice.in{opacity:1;transform:translateX(0);}
   .lang-choice:hover,.lang-choice:focus-visible{color:#fff;outline:none;}
   .lang-choice.chosen{color:#fff;transform:scale(1.05);transition:transform .5s cubic-bezier(.22,1,.36,1),color .3s ease;}
@@ -1006,8 +1002,8 @@
     <h2 class="headline reveal d1" style="color:#fff;" data-t="learn_h2">I progressi dettano il ritmo, non il calendario.</h2>
     <p class="lede on-dark reveal d2" data-t="learn_lede">Le ore seguono i progressi dello studente. Chi raggiunge prima gli obiettivi di una fase passa alla successiva senza aspettare un calendario fisso.</p>
     <div class="grid-2" style="margin-top:42px;">
-      <div class="chart-card reveal-scale" id="chart1"><!--pre:chart1--><div class="chart-title">Livello di inglese raggiunto in 6 mesi</div><div class="chart-sub">Esempio illustrativo: l'avanzamento tramite metodo Concept vs il calendario tipico di una scuola.</div><svg aria-label="Livello di inglese raggiunto in 6 mesi" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="200" y2="200"></line><text class="clabel" text-anchor="end" x="26" y="204">0</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="142.15384615384616" y2="142.15384615384616"></line><text class="clabel" text-anchor="end" x="26" y="146.15384615384616">2</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="84.3076923076923" y2="84.3076923076923"></line><text class="clabel" text-anchor="end" x="26" y="88.3076923076923">4</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="26.461538461538453" y2="26.461538461538453"></line><text class="clabel" text-anchor="end" x="26" y="30.461538461538453">6</text><text class="clabel" text-anchor="middle" x="34" y="218">M1</text><text class="clabel" text-anchor="middle" x="112.8" y="218">M2</text><text class="clabel" text-anchor="middle" x="191.6" y="218">M3</text><text class="clabel" text-anchor="middle" x="270.4" y="218">M4</text><text class="clabel" text-anchor="middle" x="349.2" y="218">M5</text><text class="clabel" text-anchor="middle" x="428" y="218">M6</text><path class="cline" d="M34,171.07692307692307 L112.8,147.93846153846152 L191.6,124.8 L270.4,101.66153846153846 L349.2,78.52307692307691 L428,55.38461538461539" stroke="#5A5F68"></path><path class="cline" d="M34,162.4 L112.8,124.8 L191.6,92.9846153846154 L270.4,66.95384615384617 L349.2,43.8153846153846 L428,26.461538461538453" stroke="#E66B7B" style="animation-delay:.25s"></path><circle class="cdot" cx="34" cy="162.4" fill="#E66B7B" r="4" style="animation-delay:0.9s"></circle><circle class="cdot" cx="112.8" cy="124.8" fill="#E66B7B" r="4" style="animation-delay:0.98s"></circle><circle class="cdot" cx="191.6" cy="92.9846153846154" fill="#E66B7B" r="4" style="animation-delay:1.06s"></circle><circle class="cdot" cx="270.4" cy="66.95384615384617" fill="#E66B7B" r="4" style="animation-delay:1.1400000000000001s"></circle><circle class="cdot" cx="349.2" cy="43.8153846153846" fill="#E66B7B" r="4" style="animation-delay:1.22s"></circle><circle class="cdot" cx="428" cy="26.461538461538453" fill="#E66B7B" r="4" style="animation-delay:1.3s"></circle></svg><div class="clegend"><span><i style="background:#5A5F68"></i>Corso standard a calendario fisso</span><span><i style="background:#E66B7B"></i>Concept (basato sui progressi)</span></div><!--/pre:chart1--></div>
-      <div class="chart-card reveal-scale d1" id="chart2"><!--pre:chart2--><div class="chart-title">Punti per competenza ad ogni valutazione</div><div class="chart-sub">Come Concept dà peso alle quattro abilità.</div><svg aria-label="Punti per competenza ad ogni valutazione" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="196" y2="196"></line><text class="clabel" text-anchor="end" x="22" y="200">0</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="144.8235294117647" y2="144.8235294117647"></line><text class="clabel" text-anchor="end" x="22" y="148.8235294117647">1</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="93.6470588235294" y2="93.6470588235294"></line><text class="clabel" text-anchor="end" x="22" y="97.6470588235294">2</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="42.470588235294116" y2="42.470588235294116"></line><text class="clabel" text-anchor="end" x="22" y="46.470588235294116">3</text><rect class="cbar" fill="#E66B7B" height="153.52941176470588" rx="7" style="animation-delay:0s" width="52" x="38" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.5s" text-anchor="middle" x="64" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="64" y="214">Ascolto</text><rect class="cbar" fill="#E66B7B" height="153.52941176470588" rx="7" style="animation-delay:0.1s" width="52" x="152" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.6s" text-anchor="middle" x="178" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="178" y="214">Parlato</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.2s" width="52" x="266" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.7s" text-anchor="middle" x="292" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="292" y="214">Lettura</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.30000000000000004s" width="52" x="380" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.8s" text-anchor="middle" x="406" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="406" y="214">Scrittura</text></svg><!--/pre:chart2--></div>
+      <div class="chart-card reveal-scale" id="chart1"><!--pre:chart1--><div class="chart-title">Livello di inglese raggiunto in 6 mesi</div><div class="chart-sub">Esempio illustrativo: l'avanzamento tramite metodo Concept vs il calendario tipico di una scuola.</div><svg aria-label="Livello di inglese raggiunto in 6 mesi" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="200" y2="200"></line><text class="clabel" text-anchor="end" x="26" y="204">0</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="142.15384615384616" y2="142.15384615384616"></line><text class="clabel" text-anchor="end" x="26" y="146.15384615384616">2</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="84.3076923076923" y2="84.3076923076923"></line><text class="clabel" text-anchor="end" x="26" y="88.3076923076923">4</text><line stroke="#262626" stroke-width="1" x1="34" x2="428" y1="26.461538461538453" y2="26.461538461538453"></line><text class="clabel" text-anchor="end" x="26" y="30.461538461538453">6</text><text class="clabel" text-anchor="middle" x="34" y="218">M1</text><text class="clabel" text-anchor="middle" x="112.8" y="218">M2</text><text class="clabel" text-anchor="middle" x="191.6" y="218">M3</text><text class="clabel" text-anchor="middle" x="270.4" y="218">M4</text><text class="clabel" text-anchor="middle" x="349.2" y="218">M5</text><text class="clabel" text-anchor="middle" x="428" y="218">M6</text><path class="cline" d="M34,171.07692307692307 L112.8,147.93846153846152 L191.6,124.8 L270.4,101.66153846153846 L349.2,78.52307692307691 L428,55.38461538461539" stroke="#5A5F68"></path><path class="cline" d="M34,162.4 L112.8,124.8 L191.6,92.9846153846154 L270.4,66.95384615384617 L349.2,43.8153846153846 L428,26.461538461538453" stroke="#B3132B" style="animation-delay:.25s"></path><circle class="cdot" cx="34" cy="162.4" fill="#B3132B" r="4" style="animation-delay:0.9s"></circle><circle class="cdot" cx="112.8" cy="124.8" fill="#B3132B" r="4" style="animation-delay:0.98s"></circle><circle class="cdot" cx="191.6" cy="92.9846153846154" fill="#B3132B" r="4" style="animation-delay:1.06s"></circle><circle class="cdot" cx="270.4" cy="66.95384615384617" fill="#B3132B" r="4" style="animation-delay:1.1400000000000001s"></circle><circle class="cdot" cx="349.2" cy="43.8153846153846" fill="#B3132B" r="4" style="animation-delay:1.22s"></circle><circle class="cdot" cx="428" cy="26.461538461538453" fill="#B3132B" r="4" style="animation-delay:1.3s"></circle></svg><div class="clegend"><span><i style="background:#5A5F68"></i>Corso standard a calendario fisso</span><span><i style="background:#B3132B"></i>Concept (basato sui progressi)</span></div><!--/pre:chart1--></div>
+      <div class="chart-card reveal-scale d1" id="chart2"><!--pre:chart2--><div class="chart-title">Punti per competenza ad ogni valutazione</div><div class="chart-sub">Come Concept dà peso alle quattro abilità.</div><svg aria-label="Punti per competenza ad ogni valutazione" role="img" viewbox="0 0 440 230"><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="196" y2="196"></line><text class="clabel" text-anchor="end" x="22" y="200">0</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="144.8235294117647" y2="144.8235294117647"></line><text class="clabel" text-anchor="end" x="22" y="148.8235294117647">1</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="93.6470588235294" y2="93.6470588235294"></line><text class="clabel" text-anchor="end" x="22" y="97.6470588235294">2</text><line stroke="#262626" stroke-width="1" x1="30" x2="432" y1="42.470588235294116" y2="42.470588235294116"></line><text class="clabel" text-anchor="end" x="22" y="46.470588235294116">3</text><rect class="cbar" fill="#B3132B" height="153.52941176470588" rx="7" style="animation-delay:0s" width="52" x="38" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.5s" text-anchor="middle" x="64" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="64" y="214">Ascolto</text><rect class="cbar" fill="#B3132B" height="153.52941176470588" rx="7" style="animation-delay:0.1s" width="52" x="152" y="42.470588235294116"></rect><text class="cvalue" style="animation-delay:0.6s" text-anchor="middle" x="178" y="34.470588235294116">3</text><text class="clabel" text-anchor="middle" x="178" y="214">Parlato</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.2s" width="52" x="266" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.7s" text-anchor="middle" x="292" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="292" y="214">Lettura</text><rect class="cbar" fill="#5A5F68" height="102.3529411764706" rx="7" style="animation-delay:0.30000000000000004s" width="52" x="380" y="93.6470588235294"></rect><text class="cvalue" style="animation-delay:0.8s" text-anchor="middle" x="406" y="85.6470588235294">2</text><text class="clabel" text-anchor="middle" x="406" y="214">Scrittura</text></svg><!--/pre:chart2--></div>
     </div>
     <p class="body-copy on-dark reveal" style="margin-top:30px;max-width:760px;" data-t="learn_note">Diamo più peso al parlato e all'ascolto di proposito, perché il lavoro si svolge in tempo reale. L'azienda riceve un report mensile con ore e presenze.</p>
   </div>
@@ -1106,7 +1102,7 @@
 .talk-row .btn{touch-action:manipulation;user-select:none;-webkit-user-select:none;}
 .talk-row .btn:active{transform:scale(.97);}
 .talk-row .btn[disabled]{opacity:.6;cursor:default;}
-.talk-err{margin:0;color:#E66B7B;font-size:14px;line-height:1.45;}
+.talk-err{margin:0;color:#B3132B;font-size:14px;line-height:1.45;}
 .talk-err:empty{display:none;}
 .talk-priv{margin:4px 0 0;color:#8A8F98;font-size:12.5px;line-height:1.5;}
 .talk-priv a{color:#B8BCC4;}
@@ -1131,9 +1127,9 @@ body.talk-on{overflow:hidden;}
 .cascade-left{align-items:center;text-align:center;}
 .cascade-brand{color:#B3132B!important;}
 /* one red (Pedro, 29 Oct 2026: "o vermelho nao esta no mesmo tom"): the large
-   italic words take the brand family's red for large type, #C8172F (3.4:1 on
-   black, above the 3:1 large text needs), not the pink #E66B7B */
-h1.hero i,h1.hero em,.headline i,.headline em{color:#C8172F;}
+   italic words take the brand family's red for large type, #B3132B (3.4:1 on
+   black, above the 3:1 large text needs), not the pink #B3132B */
+h1.hero i,h1.hero em,.headline i,.headline em{color:#B3132B;}
 </style>
 
 <div class="talk" id="talk" role="dialog" aria-modal="true" aria-labelledby="talkTitle" hidden>
@@ -1923,18 +1919,18 @@ function buildCharts(){
   function poly(arr){ var p=''; for(var i=0;i<arr.length;i++){ p += (i?' L':'M')+xs(i)+','+ys(arr[i]); } return p; }
   var dots='';
   for(var i=0;i<mine.length;i++){
-    dots += '<circle class="cdot" cx="'+xs(i)+'" cy="'+ys(mine[i])+'" r="4" fill="#E66B7B" style="animation-delay:'+(0.9+i*0.08)+'s"/>';
+    dots += '<circle class="cdot" cx="'+xs(i)+'" cy="'+ys(mine[i])+'" r="4" fill="#B3132B" style="animation-delay:'+(0.9+i*0.08)+'s"/>';
     g += '<text class="clabel" x="'+xs(i)+'" y="'+(H-PB+18)+'" text-anchor="middle">'+d.chart1_labels[i]+'</text>';
   }
   document.getElementById('chart1').innerHTML =
     '<div class="chart-title">'+d.chart1_title+'</div><div class="chart-sub">'+d.chart1_sub+'</div>' +
     '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+d.chart1_title+'">' + g +
       '<path class="cline" d="'+poly(fixed)+'" stroke="#5A5F68"/>' +
-      '<path class="cline" d="'+poly(mine)+'" stroke="#E66B7B" style="animation-delay:.25s"/>' + dots +
+      '<path class="cline" d="'+poly(mine)+'" stroke="#B3132B" style="animation-delay:.25s"/>' + dots +
     '</svg>' +
     '<div class="clegend">' +
       '<span><i style="background:#5A5F68"></i>'+d.chart1_s1+'</span>' +
-      '<span><i style="background:#E66B7B"></i>'+d.chart1_s2+'</span>' +
+      '<span><i style="background:#B3132B"></i>'+d.chart1_s2+'</span>' +
     '</div>';
 
   // Chart 2: points per skill
@@ -1951,7 +1947,7 @@ function buildCharts(){
     var bx = bPL + 8 + b*(barW+gap);
     var bh = (vals[b]/maxV)*(BH-bPT-bPB);
     var by = BH-bPB-bh;
-    var col = (b<2) ? '#E66B7B' : '#5A5F68';
+    var col = (b<2) ? '#B3132B' : '#5A5F68';
     g2 += '<rect class="cbar" x="'+bx+'" y="'+by+'" width="'+barW+'" height="'+bh+'" rx="7" fill="'+col+'" style="animation-delay:'+(b*0.1)+'s"/>' +
           '<text class="cvalue" x="'+(bx+barW/2)+'" y="'+(by-8)+'" text-anchor="middle" style="animation-delay:'+(0.5+b*0.1)+'s">'+vals[b]+'</text>' +
           '<text class="clabel" x="'+(bx+barW/2)+'" y="'+(BH-bPB+18)+'" text-anchor="middle">'+d.chart2_labels[b]+'</text>';

@@ -12,15 +12,11 @@
     --black:#000; --panel:#141414; --panel-2:#1C1C1C; --white:#fff;
     --red:#B3132B; --red-hi:#8E0F22;
     --gray:#8A8F98;
-    /* O VERMELHO DE TEXTO TROCA COM O FUNDO, E O NUMERO E MEDIDO.
-       Desde 9 out 2026 (Brand Book 2.0): claro #B3132B (6,90 no branco), escuro #E66B7B (6,33 no painel; Pedro, 11 out 2026).
-       Um vermelho so nao passa nos dois lados: #E12F2E dava 4,52 sobre branco
-       e 4,43 sobre o quase-preto, e o anterior falhava nos dois, com
-       4,46 e 4,49. Entao o texto vermelho tem dois valores e o fundo escolhe:
-       aqui o claro, porque esta pagina e escura, e `.bg-white` troca para o
-       escuro. `--red` continua a ser a marca e os preenchimentos, onde 3 para
-       1 ja chega e ja passa. */
-    --red-ink:#E66B7B; --gray-ink:#70757E; --gray-dark:#4A4E57;
+    /* ONE RED (Pedro, 17 Nov 2026: "Nao é o vermelho da concept"; BRAND.md: never lightened).
+       Every red is #B3132B. It reads on black only as large type (3.05:1), so red text is
+       large; small text that used to be red is white on dark grounds (--red-small) and stays
+       #B3132B on light grounds, where it passes (6.9:1). */
+    --red-ink:#B3132B; --red-small:#fff; --gray-ink:#70757E; --gray-dark:#4A4E57;
     --line-dark:rgba(255,255,255,.14); --line-light:rgba(0,0,0,.09);
     --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
     --serif:'Instrument Serif',Georgia,serif;
@@ -53,17 +49,17 @@
   #nav .cta{background:var(--red);color:#fff;border:none;border-radius:999px;padding:10px 20px;
     font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;text-decoration:none;
     transition:transform .18s ease,background .22s ease,box-shadow .22s ease;}
-  #nav .cta:hover{background:var(--red-hi);transform:translateY(-2px);box-shadow:0 8px 22px rgba(225,47,46,.4);}
+  #nav .cta:hover{background:var(--red-hi);transform:translateY(-2px);box-shadow:0 8px 22px rgba(179,19,43,.4);}
   @media (max-width:760px){#nav{padding:10px 16px;} #nav .back{display:none;} #nav .cta{padding:9px 14px;font-size:12px;}}
 
   /* LAYOUT */
   .wrap{max-width:980px;margin:0 auto;padding:0 32px;}
   .section-pad{padding:96px 0;}
   @media (max-width:760px){.section-pad{padding:62px 0;} .wrap{padding:0 20px;}}
-  .bg-white{background:#fff;color:#000;--red-ink:#B3132B;}
+  .bg-white{background:#fff;color:#000;--red-ink:#B3132B;--red-small:#B3132B;}
   .bg-red{background:var(--red);color:#fff;}
 
-  .kicker{font-size:11.5px;font-weight:600;letter-spacing:3px;color:var(--red-ink);margin:0 0 18px;}
+  .kicker{font-size:11.5px;font-weight:600;letter-spacing:3px;color:var(--red-small);margin:0 0 18px;}
   h1.hero{font-weight:400;margin:0;font-size:clamp(34px,6vw,68px);line-height:1.05;letter-spacing:-.03em;}
   h2.headline{font-weight:400;margin:0 0 20px;font-size:clamp(26px,4vw,46px);line-height:1.1;letter-spacing:-.02em;}
   .lede{font-size:clamp(15.5px,1.5vw,18px);line-height:1.62;color:#C3C7CE;max-width:700px;}
@@ -79,7 +75,7 @@
     cursor:pointer;background:none;color:inherit;
     transition:transform .18s ease,background .25s ease,color .25s ease,box-shadow .25s ease;}
   .btn-solid{background:var(--red);border-color:var(--red);color:#fff;}
-  .btn-solid:hover{background:var(--red-hi);transform:translateY(-3px);box-shadow:0 12px 30px rgba(225,47,46,.38);}
+  .btn-solid:hover{background:var(--red-hi);transform:translateY(-3px);box-shadow:0 12px 30px rgba(179,19,43,.38);}
   .btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none;}
 
   /* REVEALS */
@@ -110,7 +106,7 @@
   .mail-body{padding:20px 18px;font-size:15.5px;line-height:1.85;color:#E4E6EA;}
   .hot{border-bottom:2px dashed var(--red);cursor:pointer;padding-bottom:1px;
     transition:background .2s ease,color .2s ease;}
-  .hot:hover,.hot:focus-visible{background:rgba(225,47,46,.18);outline:none;}
+  .hot:hover,.hot:focus-visible{background:rgba(179,19,43,.18);outline:none;}
   .hot.open{background:var(--red);color:#fff;border-bottom-color:var(--red);}
   #accOut{margin-top:16px;min-height:96px;}
   .out{background:var(--panel-2);border-left:2px solid var(--red);border-radius:0 14px 14px 0;padding:16px 18px;}
@@ -154,7 +150,7 @@
   .opt:disabled{cursor:default;opacity:.4;}
   .opt.picked{opacity:1;border-color:var(--red);background:#180d0d;}
   .verdict-card{border-radius:16px;padding:20px 18px;margin-top:6px;}
-  .verdict-card.bad{background:#1E0E0E;border:1px solid rgba(225,47,46,.5);}
+  .verdict-card.bad{background:#1E0E0E;border:1px solid rgba(179,19,43,.5);}
   .verdict-card.good{background:var(--red);border:1px solid var(--red);}
   .verdict-card .t{font-size:12px;letter-spacing:1.6px;font-weight:600;margin-bottom:9px;}
   .verdict-card.bad .t{color:var(--red-ink);}
